@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'swiper/swiper-bundle.min.css';
 import 'swiper/swiper.min.css';
 import '/public/fonts/stylesheet.css';
+import '/public/fonts/gilroy/gilroy-font.css';
 import '/public/fonts/icomoon/style.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';

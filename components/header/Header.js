@@ -16,9 +16,9 @@ export default function Header({logo}) {
             <img src={LineImage.src} alt=""/>
         </div>
         <header>
-            <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+            <nav className="navbar navbar-expand-sm navbar-dark py-4">
                 <div className="container-xl bg-include p-0">
-                    <Link href="/" className="navbar-brand">
+                    <Link href="/" className="navbar-brand p-0">
                     
                         <img src={logo.sourceUrl} alt=""/>
                     
@@ -40,14 +40,14 @@ export default function Header({logo}) {
                             <li className="nav-item">
                                 <Link className={router.pathname == "/solutions" ? "nav-link active" : "nav-link"} href="/solutions">Solutions </Link>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <Link className={router.pathname == "/blog" || router.pathname == "/blog/[slug]" ? "nav-link active" : "nav-link"} href="/blog">Blogs </Link>
-                            </li>
+                            </li> */}
                             <li className="nav-item">
                                 <Link className={router.pathname == "/contact" ? "nav-link active" : "nav-link"} href="/contact">Contact Us </Link>
                             </li>
                             <li className="nav-item ms-auto">
-                                <Link className="nav-link call-action" href="/contact">Call to Action </Link>
+                                <Link className="nav-link call-action" href="/contact">Call to Action</Link>
                             </li>
                         </ul>
                     </div>
