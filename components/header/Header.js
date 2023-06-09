@@ -1,4 +1,4 @@
-import LineImage from '/public/images/lines.png';
+import LineImage from '/public/images/lines.svg';
 import Brand from '/public/images/branding.png';
 import Link from 'next/link';
 import Head from 'next/head';

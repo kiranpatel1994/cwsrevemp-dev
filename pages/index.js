@@ -10,8 +10,24 @@ import GraphAPI from '../services/graphQL';
 export default function Home({ homeSettings, portfolioList, testimonialSettings }) {
     useEffect(() => {
         document.body.classList.add('home');
+
+        const maxRot = 70;
+        const mouseMoveFunc = (evt) => {
+            const percent = gsap.utils.normalize(0, innerWidth, evt.pageX);
+
+            gsap.to([".web-icon", ".wp-icon", ".slider-tag-top", ".amz-icon"], {
+                duration: 0.2,
+                // x: percent * maxX - maxX / 2,
+                rotationY: -(percent * maxRot - maxRot / 4),
+                rotationX: -(percent * maxRot - maxRot / 2),
+                overwrite: true
+            });
+        }
+
+        document.addEventListener("mousemove", mouseMoveFunc);
+
         return () => {
-          document.body.classList.remove('home');
+            document.body.classList.remove('home');
         };
     }, []);
 

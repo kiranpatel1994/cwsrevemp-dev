@@ -15,7 +15,7 @@ import Layout from '../components/Layout/layout';
 import GraphAPI from '../services/graphQL';
 gsap.registerPlugin(ScrollTrigger);
 
-export default function MyApp({ Component, pageProps, headerSettings, footerSettings, themeOptions}) {
+export default function MyApp({ Component, pageProps, headerSettings, footerSettings, themeOptions }) {
 
   useEffect(() => {
 
@@ -25,43 +25,27 @@ export default function MyApp({ Component, pageProps, headerSettings, footerSett
     }
 
     loadBootstrap();
-      const maxRot = 70;
-        const mouseMoveFunc = (evt) => {
-        
-        
-        const percent = gsap.utils.normalize(0, innerWidth, evt.pageX);
-        
-        gsap.to([".web-icon", ".wp-icon", ".slider-tag-top", ".amz-icon"], {
-                duration: 0.2,
-                // x: percent * maxX - maxX / 2,
-                rotationY: -(percent * maxRot - maxRot / 4),
-                rotationX: -(percent * maxRot - maxRot / 2),
-                overwrite: true
-            });
-        }
     
-      document.addEventListener("mousemove", mouseMoveFunc);
-
     // counter js area
     const counters = document.querySelectorAll('.count');
     const speed = 600;
     counters.forEach((counter) => {
       const updateCount = () => {
-          const target = parseInt(counter.getAttribute('data-target'));
-          const count = parseInt(counter.innerText);
-          const increment = Math.trunc(target / speed);
+        const target = parseInt(counter.getAttribute('data-target'));
+        const count = parseInt(counter.innerText);
+        const increment = Math.trunc(target / speed);
 
-          if (count < target) {
+        if (count < target) {
           counter.innerText = count + increment;
           setTimeout(updateCount, 1);
-          } else {
+        } else {
           counter.innerText = target;
-          }
+        }
       };
       updateCount();
     });
 
-     // 
+    // 
     const showAnim = gsap.from('header', {
       yPercent: -130,
       paused: true,
@@ -77,40 +61,40 @@ export default function MyApp({ Component, pageProps, headerSettings, footerSett
       }
     });
 
-    }, []);
+  }, []);
 
-    useEffect(() => {
-      AOS.init({
-        once: true,
-        delay: 50,
-        duration: 500,
-        easing: 'ease-in-out',
-      });
-    }, []);
-    useEffect(() => {
-      AOS.refresh()
-    }, []);
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      delay: 50,
+      duration: 500,
+      easing: 'ease-in-out',
+    });
+  }, []);
+  useEffect(() => {
+    AOS.refresh()
+  }, []);
 
-    const handleClose = () => {
-      document.querySelector('.side-modal').classList.toggle('side-modal-off'); 
-      ['overflow-hidden', 'toggleShadow'].map(v=> document.querySelector('body').classList.toggle(v) ) 
+  const handleClose = () => {
+    document.querySelector('.side-modal').classList.toggle('side-modal-off');
+    ['overflow-hidden', 'toggleShadow'].map(v => document.querySelector('body').classList.toggle(v))
   }
-    
+
   return (
     <>
-    <Layout headerSettings={headerSettings} footerSettings={footerSettings}>
-    <div className='main-shadow' onClick={handleClose}></div>
-    <Component {...pageProps} />
-    </Layout>
+      <Layout headerSettings={headerSettings} footerSettings={footerSettings}>
+        <div className='main-shadow' onClick={handleClose}></div>
+        <Component {...pageProps} />
+      </Layout>
     </>
-    
+
   )
 }
 
 MyApp.getInitialProps = async (ctx) => {
   const themeOptions = await GraphAPI.themeOptions();
-return {
-      headerSettings: themeOptions.data.data?.acfOptionsThemeOptions?.themeSettings?.headerLogo,
-      footerSettings: themeOptions.data.data?.acfOptionsThemeOptions?.themeSettings,
-}
+  return {
+    headerSettings: themeOptions.data.data?.acfOptionsThemeOptions?.themeSettings?.headerLogo,
+    footerSettings: themeOptions.data.data?.acfOptionsThemeOptions?.themeSettings,
+  }
 }

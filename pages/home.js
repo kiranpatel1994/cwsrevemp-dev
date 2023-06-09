@@ -60,6 +60,25 @@ const Home = ({ homeSettings, portfolioList, testimonialSettings }) => {
     },
   };
 
+  var bild1 =
+    '<div class="menuSlider swipe-item-0"><img src="images/services/1.png" /></div>';
+  var bild2 =
+    '<div class="menuSlider swipe-item-1"><img src="images/services/2.png" /></div>';
+  var bild3 =
+    '<div class="menuSlider swipe-item-2"><img src="images/services/3.png" /></div>';
+  var bild4 =
+    '<div class="menuSlider swipe-item-3"><img src="images/services/4.png" /></div>';
+  var bild5 =
+    '<div class="menuSlider swipe-item-4"><img src="images/services/5.png" /></div>';
+  var bild6 =
+    '<div class="menuSlider swipe-item-5"><img src="images/services/6.png" /></div>';
+  var menu = [bild1, bild2, bild3, bild4, bild5, bild6];
+
+  var settingsD = {
+    slidesPerView: 6,
+    spaceBetween: 25,
+  };
+
   const handleModal = (title, content, image, url) => {
     document.querySelector(".sideModal-title h3").innerHTML = title;
     document.querySelector(".modal-content").innerHTML = content;
@@ -166,20 +185,140 @@ const Home = ({ homeSettings, portfolioList, testimonialSettings }) => {
           </div>
         </div>
         <div className="brandWeServe">
-            <div className="brandIcon shopify">
-                <img className="normlImg" src="images/shopify-brand-gray.svg" alt="" />
-                <img className="hoverImg" src="images/shopify-brand-color.svg" alt="" />
+          <div className="brandIcon shopify">
+            <img
+              className="normlImg"
+              src="images/shopify-brand-gray.svg"
+              alt=""
+            />
+            <img
+              className="hoverImg"
+              src="images/shopify-brand-color.svg"
+              alt=""
+            />
+          </div>
+          <div className="brandIcon wordpress">
+            <img
+              className="normlImg"
+              src="images/wordpress-brand-gray.png"
+              alt=""
+            />
+            <img
+              className="hoverImg"
+              src="images/wordpress-brand-color.png"
+              alt=""
+            />
+          </div>
+          <div className="brandIcon framer">
+            <img
+              className="normlImg"
+              src="images/framer-brand-gray.svg"
+              alt=""
+            />
+            <img
+              className="hoverImg"
+              src="images/framer-brand-color.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div className="friendly-atmos" id="contacts">
+          <div className="container-xl p-0">
+            <div className="friendly-atmos-inner">
+              <div className="row g-0 align-items-center">
+                <div className="col-12 col-md-7 position-relative">
+                  <div
+                    className="face-information overflow-hidden"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    dangerouslySetInnerHTML={{
+                      __html: homeSettings.friendlyTitle,
+                    }}
+                  ></div>
+                  <div className="demo-container">
+                    <div className="progress-bar">
+                      <div className="progress-bar-value"></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-12 col-md-5">
+                  <div className="atmos-faces">
+                    <img
+                      className="img-fluid"
+                      src={
+                        homeSettings.friendlyImage.sourceUrl
+                          ? homeSettings.friendlyImage.sourceUrl
+                          : "/images/face.png"
+                      }
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="brandIcon wordpress">
-                <img className="normlImg" src="images/wordpress-brand-gray.png" alt="" />
-                <img className="hoverImg" src="images/wordpress-brand-color.png" alt="" />
+          </div>
+          <div className="position-new">
+            <img className="cr-big" src="/images/path10397.svg" alt="" />
+          </div>
+        </div>
+        <div className="companyDevelopment">
+          <div className="container-xl">
+            <div className="title text-center">
+              <h2
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                className="text-white mb-3"
+                dangerouslySetInnerHTML={{ __html: homeSettings.aboutTitle }}
+              ></h2>
+              <em
+                data-aos="fade-up"
+                data-aos-duration="1000"
+                data-aos-delay="300"
+                className="text-white d-inline-block"
+              >
+                {homeSettings.aboutSubtitle}{" "}
+              </em>
             </div>
-            <div className="brandIcon framer">
-                <img className="normlImg" src="images/framer-brand-gray.svg" alt="" />
-                <img className="hoverImg" src="images/framer-brand-color.svg" alt="" />
-            </div>
+
+            {homeSettings.aboutSlider && (
+              <>
+                <div
+                  className="menuall-slider"
+                  id="manual-slider"
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                >
+                  <Swiper className="slider-object" {...settingsD}>
+                    {homeSettings.aboutSlider.map((item, index) => {
+                      return (
+                        <SwiperSlide key={index}>
+                          <div className="sliderBox">
+                            <div className="slideInner">
+                              <div
+                                className="icon"
+                                dangerouslySetInnerHTML={{
+                                  __html: menu[index],
+                                }}
+                              ></div>
+                              <h5>{item.aboutDomain}</h5>
+                            </div>
+                          </div>
+                        </SwiperSlide>
+                      );
+                    })}
+
+                    <div className="swiper-pagination"></div>
+                  </Swiper>
+                </div>
+                <div className="d-flex justify-content-center mt-5 pt-4">
+                  <Link class="btn btn-yellow" href="/home#"><span>Wait, there’s more… </span> <img src="/images/fire_1f525.png" alt="" /></Link>
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </section>
+
       {result && (
         <section className="project-area">
           <div className="container-fluid p-0">
