@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import GraphAPI from "../services/graphQL";
 import SwiperCore, {
   Navigation,
@@ -11,11 +11,14 @@ import SwiperCore, {
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const Home = ({ homeSettings, portfolioList, testimonialSettings }) => {
   // Add Class in Body
   useEffect(() => {
     document.body.classList.add("newHome");
+
     return () => {
       document.body.classList.remove("newHome");
     };
@@ -47,7 +50,7 @@ const Home = ({ homeSettings, portfolioList, testimonialSettings }) => {
     slidesPerView: 2.6,
     spaceBetween: 20,
     autoplay: {
-      delay: 4000,
+      delay: 10000,
       disableOnInteraction: false,
     },
     pagination: {
@@ -311,9 +314,150 @@ const Home = ({ homeSettings, portfolioList, testimonialSettings }) => {
                   </Swiper>
                 </div>
                 <div className="d-flex justify-content-center mt-5 pt-4">
-                  <Link class="btn btn-yellow" href="/home#"><span>Wait, there’s more… </span> <img src="/images/fire_1f525.png" alt="" /></Link>
+                  <Link class="btn btn-yellow" href="/home#">
+                    <span>Wait, there’s more… </span>{" "}
+                    <img src="/images/fire_1f525.png" alt="" />
+                  </Link>
                 </div>
               </>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {homeSettings.whyUsBlocks && (
+        <section className="banner-yll" id="moveToYellow">
+          <div className="container-xl banner-after position-relative">
+            <div className="row">
+              <div className="col-12">
+                <div className="text-center">
+                  <h3>Why Choose Us</h3>
+                </div>
+                <div className="chooseUs-msg">
+                  <ul className="list-unstyled m-0">
+                    {homeSettings.whyUsBlocks.map((item, index) => {
+                      return (
+                        <li key={index}>
+                          <div className="mini-card">
+                            <div className="d-flex align-items-center">
+                              <div className="mini-child">
+                                {item.whyUsTitle && <h5>{item.whyUsTitle} </h5>}
+                                {item.whyUsDescription && (
+                                  <p>{item.whyUsDescription}</p>
+                                )}
+                              </div>
+                              {item.whyUsImage && (
+                                <div className="mini-child">
+                                  <img
+                                    className="right-bild-pull"
+                                    src={item.whyUsImage.sourceUrl}
+                                    alt=""
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      <section className="all-business bg-white">
+        <div className="container-xl">
+          <div className="row align-items-center">
+            <div className="col-12 col-md-6">
+              <div className="update-pseudo">
+                <div className="" data-aos="fade-up" data-aos-duration="1000">
+                  <img
+                    className="flyingImg mb-2"
+                    src="images/rectangle3434.svg"
+                  />
+                  <h2
+                    dangerouslySetInnerHTML={{
+                      __html: homeSettings.businessTitle,
+                    }}
+                  ></h2>
+                  <em className="yello-title-em">
+                    {homeSettings.businessSubtitle}
+                  </em>
+                </div>
+              </div>
+            </div>
+            {homeSettings.businessImage && (
+              <div className="col-12 col-md-6">
+                {/* <img className="img-fluid" src={homeSettings.businessImage.sourceUrl} alt=""/> */}
+                <div className="vr-row-parent">
+                  <div id="#childRow" className="child-row">
+                    <div className="sub-child">
+                      <img src="images/short/leaf-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/windows-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/tesla-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/nira-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/treva-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/tower-icon.svg" />
+                    </div>
+                  </div>
+                  <div className="child-row">
+                    <div className="sub-child">
+                      <img src="images/short/tesla-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/tower-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/treva-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/apple-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/tesla-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/tower-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/treva-icon.svg" />
+                    </div>
+                  </div>
+                  <div className="child-row">
+                    <div className="sub-child">
+                      <img src="images/short/leaf-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/windows-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/tesla-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/nira-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/treva-icon.svg" />
+                    </div>
+                    <div className="sub-child">
+                      <img src="images/short/tower-icon.svg" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             )}
           </div>
         </div>
