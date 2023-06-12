@@ -7,13 +7,13 @@ export default function Contact({ form, themeDetail }) {
   const { title, description } = form;
   useEffect(() => {
     document.body.classList.add('contact');
-      return () => {
+    return () => {
       document.body.classList.remove('contact');
-      };
-  },[])
+    };
+  }, [])
 
   return (
-    <ContactDetail data={themeDetail} form={form}/>
+    <ContactDetail data={themeDetail} form={form} />
   );
 }
 
@@ -21,7 +21,7 @@ export async function getStaticProps() {
   const form = await getGravityForm(1);
   const themeRes = await GraphAPI.themeOptions();
   return {
-    props: { 
+    props: {
       form: form,
       themeDetail: themeRes.data.data.acfOptionsThemeOptions.themeSettings
     },

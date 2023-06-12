@@ -5,7 +5,7 @@ import SolutionDetails from '../components/solutionDetails/SolutionDetails';
 import { useEffect } from 'react';
 import GraphAPI from '../services/graphQL';
 
-function Solutions({ solutionDetails, tagSettings}) {
+function Solutions({ solutionDetails, tagSettings }) {
   useEffect(() => {
     document.body.classList.add('solutions');
     return () => {
@@ -13,19 +13,19 @@ function Solutions({ solutionDetails, tagSettings}) {
     };
   }, []);
   return (
-      <SolutionDetails detail={solutionDetails} tags={tagSettings}/>
+    <SolutionDetails detail={solutionDetails} tags={tagSettings} />
   )
 }
 
 export default Solutions;
 
 export async function getStaticProps() {
-    const solutionD = await GraphAPI.solutionDetails();
-    const portfolioTag = await GraphAPI.portfolioTags();
-    return {
-        props: {
-            solutionDetails: solutionD.data.data.pageBy.solutionsSettings,
-            tagSettings: portfolioTag.data.data.portfolioTags.nodes,
-        }
+  const solutionD = await GraphAPI.solutionDetails();
+  const portfolioTag = await GraphAPI.portfolioTags();
+  return {
+    props: {
+      solutionDetails: solutionD.data.data.pageBy.solutionsSettings,
+      tagSettings: portfolioTag.data.data.portfolioTags.nodes,
     }
+  }
 }

@@ -1,11 +1,11 @@
 import axios from "axios";
 const baseURL = process.env.NEXT_PUBLIC_WORDPRESS_API_URL;
 const headers = {
-	"content-type": "application/json",
+  "content-type": "application/json",
 };
 export default class GraphAPI {
-    static themeOptions() {
-        const themeQuery = `
+  static themeOptions() {
+    const themeQuery = `
         query ThemeQuery {
           acfOptionsThemeOptions {
             themeSettings {
@@ -27,20 +27,20 @@ export default class GraphAPI {
           }
         }
         `;
-        const graphqlQuery = {
-            "operationName": "ThemeQuery",
-            "query": themeQuery,
-        };
-        return axios({
-            url: baseURL,
-            method: 'post',
-            headers: headers,
-            data: graphqlQuery
-        });
-    }
+    const graphqlQuery = {
+      "operationName": "ThemeQuery",
+      "query": themeQuery,
+    };
+    return axios({
+      url: baseURL,
+      method: 'post',
+      headers: headers,
+      data: graphqlQuery
+    });
+  }
 
-    static companyDetails() {
-      const companyQuery = `
+  static companyDetails() {
+    const companyQuery = `
       query CompanyQuery {
         pageBy(pageId: ${process.env.NEXT_PUBLIC_COMPANY_ID}) {
           companySettings {
@@ -61,16 +61,16 @@ export default class GraphAPI {
         }
       }
       `;
-      const graphqlQuery = {
-          "operationName": "CompanyQuery",
-          "query": companyQuery,
-      };
-      return axios({
-          url: baseURL,
-          method: 'post',
-          headers: headers,
-          data: graphqlQuery
-      });
+    const graphqlQuery = {
+      "operationName": "CompanyQuery",
+      "query": companyQuery,
+    };
+    return axios({
+      url: baseURL,
+      method: 'post',
+      headers: headers,
+      data: graphqlQuery
+    });
   }
 
   static teamDetails() {
@@ -92,14 +92,14 @@ export default class GraphAPI {
     }
     `;
     const graphqlQuery = {
-        "operationName": "TeamQuery",
-        "query": teamQuery,
+      "operationName": "TeamQuery",
+      "query": teamQuery,
     };
     return axios({
-        url: baseURL,
-        method: 'post',
-        headers: headers,
-        data: graphqlQuery
+      url: baseURL,
+      method: 'post',
+      headers: headers,
+      data: graphqlQuery
     });
   }
 
@@ -123,19 +123,19 @@ export default class GraphAPI {
     }
     `;
     const graphqlQuery = {
-        "operationName": "PortfolioQuery",
-        "query": portfolioQuery,
+      "operationName": "PortfolioQuery",
+      "query": portfolioQuery,
     };
     return axios({
-        url: baseURL,
-        method: 'post',
-        headers: headers,
-        data: graphqlQuery
+      url: baseURL,
+      method: 'post',
+      headers: headers,
+      data: graphqlQuery
     });
-}
+  }
 
-static portfolioTags() {
-  const portfolioTagsQuery = `
+  static portfolioTags() {
+    const portfolioTagsQuery = `
   query portfolioTags {
     portfolioTags (first: ${process.env.NEXT_PUBLIC_PORTFOLIO_TAGS_LIMIT}) {
       nodes {
@@ -154,20 +154,20 @@ static portfolioTags() {
     }
   }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "portfolioTags",
       "query": portfolioTagsQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static solutionDetails() {
-  const solutionQuery = `
+  static solutionDetails() {
+    const solutionQuery = `
   query SolutionQuery {
     pageBy(pageId: ${process.env.NEXT_PUBLIC_SOLUTION_ID}) {
       solutionsSettings {
@@ -192,20 +192,20 @@ static solutionDetails() {
     }
   }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "SolutionQuery",
       "query": solutionQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static portfolioCategoriesSettings(params) {
-  const portfolioCategorySettingsQuery = `
+  static portfolioCategoriesSettings(params) {
+    const portfolioCategorySettingsQuery = `
   query PortfolioCategorySettingsQuery {
     portfolioCategories(where: {slug: "${params.slug}"}) {
       edges {
@@ -221,20 +221,20 @@ static portfolioCategoriesSettings(params) {
     }
 }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "PortfolioCategorySettingsQuery",
       "query": portfolioCategorySettingsQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static portfolioCategoriesListing() {
-  const portfolioCategoryQuery = `
+  static portfolioCategoriesListing() {
+    const portfolioCategoryQuery = `
   query PortfolioCategoryQuery {
     portfolioCategories(first: 10) {
     edges {
@@ -246,20 +246,20 @@ static portfolioCategoriesListing() {
     }
 }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "PortfolioCategoryQuery",
       "query": portfolioCategoryQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static websiteDesignAndDevelopment() {
-  const websiteDesignAndDevelopmentQuery = `
+  static websiteDesignAndDevelopment() {
+    const websiteDesignAndDevelopmentQuery = `
   query websiteDesignAndDevelopmentQuery {
     pageBy(pageId: ${process.env.NEXT_PUBLIC_WEBSITE_DESIGN}) {
       websiteDesignAndDevelopment {
@@ -304,20 +304,20 @@ static websiteDesignAndDevelopment() {
     }
   }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "websiteDesignAndDevelopmentQuery",
       "query": websiteDesignAndDevelopmentQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static webApplication() {
-  const webApplicationQuery = `
+  static webApplication() {
+    const webApplicationQuery = `
   query webApplicationQuery {
     pageBy(pageId: ${process.env.NEXT_PUBLIC_WEB_APP}) {
       customSystemsWebApplicationDevelopment {
@@ -353,20 +353,20 @@ static webApplication() {
     }
   }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "webApplicationQuery",
       "query": webApplicationQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static socialMediaManagement() {
-  const socialMediaManagementQuery = `
+  static socialMediaManagement() {
+    const socialMediaManagementQuery = `
   query SocialMediaManagementQuery {
     pageBy(pageId: ${process.env.NEXT_PUBLIC_SOCIAL_MEDIA}) {
       SocialMediaManagement {
@@ -413,20 +413,20 @@ static socialMediaManagement() {
     }
   }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "SocialMediaManagementQuery",
       "query": socialMediaManagementQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static ecomDetail() {
-  const ecomDetailQuery = `
+  static ecomDetail() {
+    const ecomDetailQuery = `
   query EcomDetailQuery {
     pageBy(pageId: ${process.env.NEXT_PUBLIC_ECOM_DETAIL}) {
       ecommerceSettings {
@@ -457,20 +457,20 @@ static ecomDetail() {
     }
   }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "EcomDetailQuery",
       "query": ecomDetailQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static hostingDetail() {
-  const hostingDetailQuery = `
+  static hostingDetail() {
+    const hostingDetailQuery = `
   query HostingDetailQuery {
     pageBy(pageId: ${process.env.NEXT_PUBLIC_HOSTING_DETAIL}) {
       hostingSettings {
@@ -512,20 +512,20 @@ static hostingDetail() {
     }
   }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "HostingDetailQuery",
       "query": hostingDetailQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static whiteLabelDetail() {
-  const whiteLabelDetailQuery = `
+  static whiteLabelDetail() {
+    const whiteLabelDetailQuery = `
   query whiteLabelDetailQuery {
     pageBy(pageId: ${process.env.NEXT_PUBLIC_WHITE_LABEL}) {
       whitelabelSettings {
@@ -566,20 +566,20 @@ static whiteLabelDetail() {
     } 
   }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "whiteLabelDetailQuery",
       "query": whiteLabelDetailQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static propertyManagementDetail() {
-  const propertyManagementDetailQuery = `
+  static propertyManagementDetail() {
+    const propertyManagementDetailQuery = `
   query PropertyManagementDetailQuery {
     pageBy(pageId: ${process.env.NEXT_PUBLIC_PROPERTY_MANAGEMENT}) {
       propertyManagement {
@@ -648,20 +648,20 @@ static propertyManagementDetail() {
     }
   }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "PropertyManagementDetailQuery",
       "query": propertyManagementDetailQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static logoDesignandBrandingDetail() {
-  const logoDesignandBrandingDetailQuery = `
+  static logoDesignandBrandingDetail() {
+    const logoDesignandBrandingDetailQuery = `
   query LogoDesignandBrandingDetailQuery {
     pageBy(pageId: ${process.env.NEXT_PUBLIC_LOGO_BRANDING}) {
       logoDesignAndBrandingSettings {
@@ -704,21 +704,21 @@ static logoDesignandBrandingDetail() {
     }
   }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "LogoDesignandBrandingDetailQuery",
       "query": logoDesignandBrandingDetailQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
 
-static printedMarketingDetail() {
-  const printedMarketingDetailQuery = `
+  static printedMarketingDetail() {
+    const printedMarketingDetailQuery = `
   query printedMarketingDetailQuery {
     pageBy(pageId: ${process.env.NEXT_PUBLIC_PRINTED_MARKETING}) {
       printedMarketingSettings {
@@ -761,21 +761,21 @@ static printedMarketingDetail() {
     }
   }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "printedMarketingDetailQuery",
       "query": printedMarketingDetailQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static blogPagination (first, after) {
-  const afterCursor = after ? '"'+after+'"' : null;
-  const blogPaginationQuery = `
+  static blogPagination(first, after) {
+    const afterCursor = after ? '"' + after + '"' : null;
+    const blogPaginationQuery = `
   query blogPaginationQuery {
     posts (first: ${first}, after: ${afterCursor}) {
       pageInfo {
@@ -820,20 +820,20 @@ static blogPagination (first, after) {
     }
   }
   `;
-  const graphqlQuery = {
-    "operationName": "blogPaginationQuery",
-    "query": blogPaginationQuery,
-  };
-  return axios({
+    const graphqlQuery = {
+      "operationName": "blogPaginationQuery",
+      "query": blogPaginationQuery,
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static searchByBlog (keyword) {
-  const searchByBlog = `
+  static searchByBlog(keyword) {
+    const searchByBlog = `
   query searchByBlog {
     posts(where: {search: "${keyword}"}) {
       edges {
@@ -864,21 +864,21 @@ static searchByBlog (keyword) {
     }
   }
   `;
-  const graphqlQuery = {
-    "operationName": "searchByBlog",
-    "query": searchByBlog,
-  };
-  return axios({
+    const graphqlQuery = {
+      "operationName": "searchByBlog",
+      "query": searchByBlog,
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
+    });
 
-}
+  }
 
-static blogListing() {
-  const blogListingQuery = `
+  static blogListing() {
+    const blogListingQuery = `
   query BlogListingQuery {
     pageBy(pageId: ${process.env.NEXT_PUBLIC_BLOG_LISTING}) {
       blogListingSettings {
@@ -891,20 +891,20 @@ static blogListing() {
     }
   }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "BlogListingQuery",
       "query": blogListingQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static blogPostListing() {
-  const blogPostListingQuery = `
+  static blogPostListing() {
+    const blogPostListingQuery = `
   query BlogPostListingQuery {
     posts(first: ${process.env.NEXT_PUBLIC_BLOG_LIST_LIMIT}) {
       edges {
@@ -931,20 +931,20 @@ static blogPostListing() {
     }
   }
   `;
-  const graphqlQuery = {
+    const graphqlQuery = {
       "operationName": "BlogPostListingQuery",
       "query": blogPostListingQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static singlePostSettings({params}) {
-  const singlePostSettingsQuery = `
+  static singlePostSettings({ params }) {
+    const singlePostSettingsQuery = `
   query SinglePostSettingsQuery {
     postBy(slug: "${params.slug}") {
           postId
@@ -977,21 +977,21 @@ static singlePostSettings({params}) {
     }
   }
   `;
-  
-  const graphqlQuery = {
+
+    const graphqlQuery = {
       "operationName": "SinglePostSettingsQuery",
       "query": singlePostSettingsQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static relativePostSettings(catName, notIn) {
-  const relativePostSettingsQuery = `
+  static relativePostSettings(catName, notIn) {
+    const relativePostSettingsQuery = `
   query RelativePostSettingsQuery {
     posts(where: {categoryName: "${catName}", notIn: "${notIn}"}, first: ${process.env.NEXT_PUBLIC_BLOG_RELATIVE}) {
       edges {
@@ -1030,21 +1030,21 @@ static relativePostSettings(catName, notIn) {
     }
   }
   `;
-  
-  const graphqlQuery = {
+
+    const graphqlQuery = {
       "operationName": "RelativePostSettingsQuery",
       "query": relativePostSettingsQuery,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static clientTestimonialSettings() {
-  const clientTestimonialSettings = `
+  static clientTestimonialSettings() {
+    const clientTestimonialSettings = `
   query ThemeQuery {
     acfOptionsThemeOptions {
     themeSettings {
@@ -1060,21 +1060,21 @@ static clientTestimonialSettings() {
   }
 }
 `;
-  
-  const graphqlQuery = {
+
+    const graphqlQuery = {
       "operationName": "ThemeQuery",
       "query": clientTestimonialSettings,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static portfolioListingSettings() {
-  const portfolioListingSettings = `
+  static portfolioListingSettings() {
+    const portfolioListingSettings = `
   query PortfolioListingSettings {
     portfolios(first:${process.env.NEXT_PUBLIC_TEAM_LIMIT}) {
         edges {
@@ -1097,21 +1097,21 @@ static portfolioListingSettings() {
 }
 }
 `;
-  
-  const graphqlQuery = {
+
+    const graphqlQuery = {
       "operationName": "PortfolioListingSettings",
       "query": portfolioListingSettings,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
-static homeSettings() {
-  const homeSettings = `
+  static homeSettings() {
+    const homeSettings = `
   query HomeSettings {
     pageBy(pageId: ${process.env.NEXT_PUBLIC_HOME_ID}) {
       homeSettings {
@@ -1157,17 +1157,17 @@ static homeSettings() {
     }
   }
 `;
-  
-  const graphqlQuery = {
+
+    const graphqlQuery = {
       "operationName": "HomeSettings",
       "query": homeSettings,
-  };
-  return axios({
+    };
+    return axios({
       url: baseURL,
       method: 'post',
       headers: headers,
       data: graphqlQuery
-  });
-}
+    });
+  }
 
 }

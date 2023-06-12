@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function SocialMediaManagement({data}) {
+export default function SocialMediaManagement({ data }) {
     useEffect(() => {
 
         gsap.set('.dragWithme', { top: '-10px' });
@@ -20,7 +20,7 @@ export default function SocialMediaManagement({data}) {
             pinSpacing: false,
             animation: liftArow,
             toggleActions: 'play none none none',
-          //   toggleClass: "active"
+            //   toggleClass: "active"
         });
 
 
@@ -28,29 +28,29 @@ export default function SocialMediaManagement({data}) {
         const action = gsap.to('.profitDrag', { scaleY: "100%", transformOrigin: "top bottom", ease: "none" });
 
         ScrollTrigger.create({
-          trigger: "#start_anim",
-          start: "-=270",
-          endTrigger: '#end_anim',
-          end: '+=2500',
-          markers: false,
-          scrub: -2,
-          pinSpacing: false,
-          animation: action,
-          toggleActions: 'play none none none',
-        //   toggleClass: "active"
+            trigger: "#start_anim",
+            start: "-=270",
+            endTrigger: '#end_anim',
+            end: '+=2500',
+            markers: false,
+            scrub: -2,
+            pinSpacing: false,
+            animation: action,
+            toggleActions: 'play none none none',
+            //   toggleClass: "active"
         });
 
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
-        panels.forEach((panel,i)=>{
+        panels.forEach((panel, i) => {
             ScrollTrigger.create({
                 trigger: panel,
                 start: "-=270",
                 end: "-=270",
                 markers: false,
-                onEnter: ()=>{
+                onEnter: () => {
                     panels[i].classList.add("activate")
                 },
-                onEnterBack: ()=>{
+                onEnterBack: () => {
                     panels[i].classList.remove("activate")
                 }
             })
@@ -58,28 +58,29 @@ export default function SocialMediaManagement({data}) {
 
         document.body.classList.add('social-media');
         return () => {
-        document.body.classList.remove('social-media');
+            document.body.classList.remove('social-media');
         };
     }, []);
-        
-    return(
+
+    return (
         <main className="position-relative sociaManagement zindex-2 overflow-hidden" id="main">
             <div className="banner_content position-relative overflow-hidden">
                 <div className="container-xl p-0">
                     <div className="row g-0">
                         <div className="col-12 ecom__info position-relative">
                             <h1>{data.pageHeading} </h1>
-                            { data.bannerSubtitle &&
+                            {data.bannerSubtitle &&
                                 <div className="sub_title play_fair-ttl">
-                                    <div dangerouslySetInnerHTML={{__html:data.bannerSubtitle
+                                    <div dangerouslySetInnerHTML={{
+                                        __html: data.bannerSubtitle
                                     }}></div>
                                 </div>
                             }
                             <div className="moji_ttl">
                                 <h3>Let them say they saw you on <span className="liftSwap position-relative"><span>Facebook </span><span>Twitter </span></span> </h3>
                             </div>
-                            { data.bannerDescription &&
-                                <div className="mb-4" dangerouslySetInnerHTML={{__html:data.bannerDescription}} />
+                            {data.bannerDescription &&
+                                <div className="mb-4" dangerouslySetInnerHTML={{ __html: data.bannerDescription }} />
                             }
                         </div>
                     </div>
@@ -89,7 +90,7 @@ export default function SocialMediaManagement({data}) {
                 <div className="container-xl position-relative p-0">
                     <div className="line_anim"><div className="profitDrag"></div><div className="dragWithme"><img src="../images/smArrow.png" /></div></div>
                     <section className="row get_row g-0 sec-1" id="start_anim">
-                        { data.benefitsTitle &&
+                        {data.benefitsTitle &&
                             <div className="col-1 benit__ttl">
                                 <div className="benifit_ttl">
                                     <h3 className="vr-title">{data.benefitsTitle}</h3>
@@ -97,15 +98,15 @@ export default function SocialMediaManagement({data}) {
                             </div>
                         }
                         <div className="col-11">
-                            { data.benefitsBlocks &&
+                            {data.benefitsBlocks &&
                                 <ul className="list-inline benifit__inner">
                                     {data.benefitsBlocks.map((item, index) => {
-                                        return(
-                                        <li className="list-inline-item" key={`benefit-${index}`}>
-                                            <div className="ffk_btn">
-                                                <span>{item.benefitBlockTitle}</span>
-                                            </div>
-                                        </li>
+                                        return (
+                                            <li className="list-inline-item" key={`benefit-${index}`}>
+                                                <div className="ffk_btn">
+                                                    <span>{item.benefitBlockTitle}</span>
+                                                </div>
+                                            </li>
                                         )
                                     })}
                                 </ul>
@@ -113,7 +114,7 @@ export default function SocialMediaManagement({data}) {
                         </div>
                     </section>
                     <section className="row get_row g-0 sec-2">
-                        { data.whyUsHeading && 
+                        {data.whyUsHeading &&
                             <div className="col-1 wus__ttl">
                                 <div className="benifit_ttl">
                                     <h3 className="vr-title">{data.whyUsHeading}</h3>
@@ -123,10 +124,10 @@ export default function SocialMediaManagement({data}) {
                         <div className="col-11">
                             <div className="row g-0 why__us align-items-center">
                                 <div className="col-md-7 maxim_effort position-relative">
-                                    <div dangerouslySetInnerHTML={{__html:data.whyUsTitle}}></div>
-                                    <div dangerouslySetInnerHTML={{__html:data.whyUsDescription}}></div>
+                                    <div dangerouslySetInnerHTML={{ __html: data.whyUsTitle }}></div>
+                                    <div dangerouslySetInnerHTML={{ __html: data.whyUsDescription }}></div>
                                 </div>
-                                { data.whyUsImage &&
+                                {data.whyUsImage &&
                                     <div className="col-md-5">
                                         <img className="img-fluid w-100" src={data.whyUsImage.sourceUrl} />
                                     </div>
@@ -138,7 +139,7 @@ export default function SocialMediaManagement({data}) {
                         <div className="floor-1">
                             <img className="dt_1" src="../images/ring_1.png" />
                         </div>
-                        { data.serviceDetailsHeading &&
+                        {data.serviceDetailsHeading &&
                             <div className="col-1 serv__ttl">
                                 <div className="benifit_ttl align-self-center">
                                     <h3 className="vr-title">{data.serviceDetailsHeading}</h3>
@@ -147,28 +148,28 @@ export default function SocialMediaManagement({data}) {
                         }
                         <div className="col-11 time_acquainted">
                             <div className="row g-0 why__us align-items-center">
-                                { data.serviceDetailsDescription && 
+                                {data.serviceDetailsDescription &&
                                     <div className="col-md-12 text-center automate_work position-relative">
-                                        <div dangerouslySetInnerHTML={{__html:data.serviceDetailsDescription}}></div>
+                                        <div dangerouslySetInnerHTML={{ __html: data.serviceDetailsDescription }}></div>
                                     </div>
                                 }
                             </div>
-                            { data.serviceDetailsContent && 
+                            {data.serviceDetailsContent &&
                                 <div className="box__container">
                                     <div className="row">
-                                        {data.serviceDetailsContent.map((item,index)=>{
+                                        {data.serviceDetailsContent.map((item, index) => {
                                             return (
                                                 <div className="col-12 col-md-6 col-lg-4" key={`service${index}`}>
                                                     <div className="box__bg">
                                                         <figure className="mb-0">
-                                                            { item.icon && 
+                                                            {item.icon &&
                                                                 <div className="min-content">
                                                                     <img src={item.icon.sourceUrl} />
                                                                 </div>
                                                             }
                                                             <figcaption className="text-center">
                                                                 <h3>{item.title} </h3>
-                                                                <div dangerouslySetInnerHTML={{__html:item.content}}></div>
+                                                                <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
                                                             </figcaption>
                                                         </figure>
                                                     </div>
@@ -179,21 +180,21 @@ export default function SocialMediaManagement({data}) {
                                 </div>
                             }
                             <div className="row g-0 why__us align-items-center">
-                                { data.automatedImage &&
+                                {data.automatedImage &&
                                     <div className="col-md-5">
                                         <img className="img-fluid" src={data.automatedImage.sourceUrl} />
                                     </div>
                                 }
                                 <div className="col-md-7 automate_work position-relative">
                                     <div className="ps-5">
-                                        { data.automatedSubHeading &&
+                                        {data.automatedSubHeading &&
                                             <div className="text__subtitle">
                                                 <span>{data.automatedSubHeading} </span>
                                             </div>
                                         }
                                         <h2>{data.automatedHeading}</h2>
-                                        { data.automatedContent &&
-                                            <div className="list-unstyled list_y_dots text-white" dangerouslySetInnerHTML={{__html:data.automatedContent}}>
+                                        {data.automatedContent &&
+                                            <div className="list-unstyled list_y_dots text-white" dangerouslySetInnerHTML={{ __html: data.automatedContent }}>
                                             </div>
                                         }
                                     </div>
@@ -203,10 +204,10 @@ export default function SocialMediaManagement({data}) {
                                 <div className="col-md-5 automate_work position-relative">
                                     <div className="d-table ms-auto me-auto">
                                         <h2>{data.maintainingBlogHeading}</h2>
-                                        <div className="list-unstyled list_y_dots text-white" dangerouslySetInnerHTML={{__html:data.maintainingBlogContent}}></div>
+                                        <div className="list-unstyled list_y_dots text-white" dangerouslySetInnerHTML={{ __html: data.maintainingBlogContent }}></div>
                                     </div>
                                 </div>
-                                { data.maintainingBlogImage &&
+                                {data.maintainingBlogImage &&
                                     <div className="col-md-7">
                                         <img className="maintainingBlogImage img-fluid" src={data.maintainingBlogImage.sourceUrl} />
                                     </div>

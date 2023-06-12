@@ -4,7 +4,7 @@ import Footer from '../../components/footer/Footer';
 import ServiceDetails from '../../components/serviceDetails/ServiceDetails';
 import { useEffect } from 'react';
 import GraphAPI from '../../services/graphQL';
-function Services({portfolioCategories}) {
+function Services({ portfolioCategories }) {
   useEffect(() => {
     document.body.classList.add('services');
     return () => {
@@ -12,17 +12,17 @@ function Services({portfolioCategories}) {
     };
   }, []);
   return (
-      <ServiceDetails cat={portfolioCategories}/>
+    <ServiceDetails cat={portfolioCategories} />
   )
 }
 
 export default Services;
 
 export async function getStaticProps() {
-   const portfolioCat = await GraphAPI.portfolioDetails();
-    return {
-        props: {
-            portfolioCategories: portfolioCat.data.data.portfolioCategories.edges
-        }
+  const portfolioCat = await GraphAPI.portfolioDetails();
+  return {
+    props: {
+      portfolioCategories: portfolioCat.data.data.portfolioCategories.edges
     }
+  }
 }

@@ -5,7 +5,7 @@ import CompanyDetails from '../components/companyDetails/CompanyDetails';
 import { useEffect } from 'react';
 import GraphAPI from '../services/graphQL';
 function Company({ companySettings, memberList }) {
-  useEffect(() => { 
+  useEffect(() => {
     document.body.classList.add('company');
     return () => {
       document.body.classList.remove('company');
@@ -13,19 +13,19 @@ function Company({ companySettings, memberList }) {
   }, []);
 
   return (
-      <CompanyDetails details={companySettings} list={memberList}/>
+    <CompanyDetails details={companySettings} list={memberList} />
   )
 }
 
 export default Company;
 
 export async function getStaticProps() {
-    const companyData = await GraphAPI.companyDetails();
-    const members = await GraphAPI.teamDetails();
-    return {
-        props: {
-            companySettings: companyData.data.data.pageBy,
-            memberList: members.data.data.members.edges,
-        }
+  const companyData = await GraphAPI.companyDetails();
+  const members = await GraphAPI.teamDetails();
+  return {
+    props: {
+      companySettings: companyData.data.data.pageBy,
+      memberList: members.data.data.members.edges,
     }
+  }
 }

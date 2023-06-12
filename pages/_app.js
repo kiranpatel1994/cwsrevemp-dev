@@ -26,7 +26,7 @@ export default function MyApp({ Component, pageProps, headerSettings, footerSett
     }
 
     loadBootstrap();
-    
+
     // counter js area
     const counters = document.querySelectorAll('.count');
     const speed = 600;

@@ -17,15 +17,15 @@ import Custom404 from '../../components/404/404';
 import Loader from '../../components/header/Loader';
 
 
-function BlogDetails({blogDetail, relativePostDetail}) {
-    const router = useRouter();
-    if (router.isFallback) {
-        return <Loader/>;
-    }
-    return (
-      <BlogDetail blogDetail={blogDetail} relativeDetail={relativePostDetail} />
-    );
-    
+function BlogDetails({ blogDetail, relativePostDetail }) {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <Loader />;
+  }
+  return (
+    <BlogDetail blogDetail={blogDetail} relativeDetail={relativePostDetail} />
+  );
+
 }
 
 export default BlogDetails;
@@ -44,12 +44,12 @@ export async function getStaticProps({ params }) {
   const blogDetailData = blogDetail.data.data.postBy;
   if (!blogDetailData) {
     return {
-      notFound: true, 
+      notFound: true,
     };
   }
   const catName = blogDetailData.categories?.nodes[0]?.name;
   const notIn = blogDetailData.postId;
-  const relativePostDetail = await GraphAPI.relativePostSettings(catName,notIn);
+  const relativePostDetail = await GraphAPI.relativePostSettings(catName, notIn);
 
   return {
     props: {
