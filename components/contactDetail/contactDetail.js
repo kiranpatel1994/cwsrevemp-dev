@@ -2,11 +2,11 @@ import { GravityFormsForm } from "../../generated/graphql";
 import GravityForm from '../../components/GravityForm';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 const client = new ApolloClient({
-    uri: process.env.NEXT_PUBLIC_WORDPRESS_API_URL,
-    cache: new InMemoryCache(),
-  });
-export default function ContactDetail({data , form}) {
-    return(
+  uri: process.env.NEXT_PUBLIC_WORDPRESS_API_URL,
+  cache: new InMemoryCache(),
+});
+export default function ContactDetail({ data, form }) {
+  return (
     <main>
       <div className="letsTalk_inner position-relative">
         <div className="container-xl">
@@ -15,7 +15,7 @@ export default function ContactDetail({data , form}) {
               <h1 className="position-relative text-center">
                 Let’s talk innovation.
                 {data.phone &&
-                <a href={`tel:`+data.phone} className="d-block w-100">{data.phone}</a>
+                  <a href={`tel:` + data.phone} className="d-block w-100">{data.phone}</a>
                 }
               </h1>
             </div>
@@ -23,28 +23,28 @@ export default function ContactDetail({data , form}) {
               <div className="row align-items-center">
                 <div className="col-12 col-md-6">
                   <ul className="list-unstyled social_inner">
-                  {data.email &&
-                    <li>
+                    {data.email &&
+                      <li>
                         <div className="d-flex align-items-center">
-                            <img src="../images/email.png" alt="email" />
-                            
-                            <a className="ms-3" href={`tel:`+data.email}>{data.email}</a>
-                            
+                          <img src="../images/email.png" alt="email" />
+
+                          <a className="ms-3" href={`tel:` + data.email}>{data.email}</a>
+
                         </div>
-                    </li>
+                      </li>
                     }
                   </ul>
                 </div>
                 <div className="col-12 col-md-6">
                   <ul className="list-unstyled social_inner">
-                  {data.addressLink &&
-                    <li>
-                      <div className="d-flex align-items-start">
+                    {data.addressLink &&
+                      <li>
+                        <div className="d-flex align-items-start">
                           <img src="../images/pin-point.png" alt="pinPoint" />
                           <a className="ms-3" href={data.addressLink} rel="noreferrer" target="_blank" dangerouslySetInnerHTML={{ __html: data.addressText }}></a>
-                          
-                      </div>
-                    </li>
+
+                        </div>
+                      </li>
                     }
                   </ul>
                 </div>
@@ -76,5 +76,5 @@ export default function ContactDetail({data , form}) {
         <img className="img-fluid w-100" src="../images/mapPlace.png" alt="map" />
       </div>
     </main>
-    )
+  )
 }

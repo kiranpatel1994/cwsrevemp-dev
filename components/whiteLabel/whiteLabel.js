@@ -6,13 +6,13 @@ import GravityForm from '../../components/GravityForm';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
 gsap.registerPlugin(ScrollTrigger);
-  
-  const client = new ApolloClient({
+
+const client = new ApolloClient({
     uri: process.env.NEXT_PUBLIC_WORDPRESS_API_URL,
     cache: new InMemoryCache(),
-  });
+});
 
-export default function WhiteLabel({data, themeOptions, form}) {
+export default function WhiteLabel({ data, themeOptions, form }) {
     useEffect(() => {
 
         gsap.set('.dragWithme', { top: '-10px' });
@@ -28,7 +28,7 @@ export default function WhiteLabel({data, themeOptions, form}) {
             pinSpacing: false,
             animation: liftArow,
             toggleActions: 'play none none none',
-          //   toggleClass: "active"
+            //   toggleClass: "active"
         });
 
 
@@ -36,42 +36,42 @@ export default function WhiteLabel({data, themeOptions, form}) {
         const action = gsap.to('.profitDrag', { scaleY: "100%", transformOrigin: "top bottom", ease: "none" });
 
         ScrollTrigger.create({
-          trigger: "#start_anim",
-          start: "-=270",
-          endTrigger: '#end_anim',
-          end: '+=1400',
-          markers: false,
-          scrub: -2,
-          pinSpacing: false,
-          animation: action,
-          toggleActions: 'play none none none',
-        //   toggleClass: "active"
+            trigger: "#start_anim",
+            start: "-=270",
+            endTrigger: '#end_anim',
+            end: '+=1400',
+            markers: false,
+            scrub: -2,
+            pinSpacing: false,
+            animation: action,
+            toggleActions: 'play none none none',
+            //   toggleClass: "active"
         });
 
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
-        panels.forEach((panel,i)=>{
+        panels.forEach((panel, i) => {
             ScrollTrigger.create({
                 trigger: panel,
                 start: "-=270",
                 end: "-=270",
                 markers: false,
-                onEnter: ()=>{
+                onEnter: () => {
                     panels[i].classList.add("activate")
                 },
-                onEnterBack: ()=>{
+                onEnterBack: () => {
                     panels[i].classList.remove("activate")
                 }
             })
         });
         document.body.classList.add('white-label');
         return () => {
-        document.body.classList.remove('white-label');
+            document.body.classList.remove('white-label');
         };
 
     }, []);
-        
 
-    return(
+
+    return (
         <main className="position-relative whitelabel_inner zindex-2 overflow-hidden" id="main">
             <div className="single__banBild">
                 <div className="container-xl">
@@ -88,23 +88,23 @@ export default function WhiteLabel({data, themeOptions, form}) {
                         <div className="col-12 col-md-7 ecom__info position-relative">
                             <h1>White Label Solutions </h1>
                             {data.bannerTagline &&
-                            <div className="sub_title play_fair-ttl">
-                                <h2>{data.bannerTagline}</h2>
-                            </div>
+                                <div className="sub_title play_fair-ttl">
+                                    <h2>{data.bannerTagline}</h2>
+                                </div>
                             }
                             {data.bannerTitle &&
-                            <div className="moji_ttl" dangerouslySetInnerHTML={{__html: data.bannerTitle}}>
-                            </div>
+                                <div className="moji_ttl" dangerouslySetInnerHTML={{ __html: data.bannerTitle }}>
+                                </div>
                             }
                             {data.bannerDescription &&
-                            <div className="mb-4"  dangerouslySetInnerHTML={{__html: data.bannerDescription}}> 
-                            </div>
+                                <div className="mb-4" dangerouslySetInnerHTML={{ __html: data.bannerDescription }}>
+                                </div>
                             }
                         </div>
                         {data.bannerImage &&
-                        <div className="col-12 col-md-5 position-relative group__bild">
-                            <img className="img-fluid" src={data.bannerImage.sourceUrl} />
-                        </div>
+                            <div className="col-12 col-md-5 position-relative group__bild">
+                                <img className="img-fluid" src={data.bannerImage.sourceUrl} />
+                            </div>
                         }
                     </div>
                 </div>
@@ -122,22 +122,22 @@ export default function WhiteLabel({data, themeOptions, form}) {
                             <div className="row g-0 why__us align-items-center">
                                 <div className="col-md-7">
                                     {data.benefitTagline &&
-                                    <div className="mb-3">
-                                        <h2>{data.benefitTagline}</h2> 
-                                    </div>
+                                        <div className="mb-3">
+                                            <h2>{data.benefitTagline}</h2>
+                                        </div>
                                     }
                                     {data.benefitTitle &&
-                                    <p><strong>{data.benefitTitle}</strong></p>
+                                        <p><strong>{data.benefitTitle}</strong></p>
                                     }
                                     {data.benefitDescription &&
-                                    <div className="benefit-desc" dangerouslySetInnerHTML={{__html: data.benefitDescription}}>
-                                    </div>
+                                        <div className="benefit-desc" dangerouslySetInnerHTML={{ __html: data.benefitDescription }}>
+                                        </div>
                                     }
                                 </div>
                                 {data.benefitImage &&
-                                <div className="col-md-5">
-                                    <img className="img-fluid" src={data.benefitImage.sourceUrl} />
-                                </div>
+                                    <div className="col-md-5">
+                                        <img className="img-fluid" src={data.benefitImage.sourceUrl} />
+                                    </div>
                                 }
                             </div>
                         </div>
@@ -150,42 +150,42 @@ export default function WhiteLabel({data, themeOptions, form}) {
                         </div>
                         <div className="col-11">
                             {data.whyUsBlocks &&
-                            <div className="pattern__card">
-                                <div className="row">
-                                    {data.whyUsBlocks.map((item, index) => {
-                                    return (
-                                    <div className="col-12 col-md-6 col-lg-3 pattern__child" key={`whyUs-${index}`}>
-                                        <div className="y_shape_bg" dangerouslySetInnerHTML={{__html:item.whyUsBlockTitle}}>
-                                        </div>
-                                    </div>
-                                        )
-                                    })}
-                                </div>
-                            </div>
-                            }
-                            <div className="why__us pb-0 text-center">
-                                {data.whiteLabelServiceTitle &&
-                                <h2>{data.whiteLabelServiceTitle}</h2>
-                                }
-                                {data.whiteLabelServicePoints &&
-                                <div className="service__label">
-                                    <div className="row align-items-center">
+                                <div className="pattern__card">
+                                    <div className="row">
                                         {data.whyUsBlocks.map((item, index) => {
                                             return (
-                                        <div className="col-12 col-md-4" key={`whyUs-${index}`}>
-                                            <div className="d-flex align-items-center">
-                                                {item.whiteLabelServiceImage &&
-                                                <img src={item.whiteLabelServiceImage.sourceUrl} />
-                                                }
-                                                {item.whiteLabelServicePoint &&
-                                                <p><strong>{item.whiteLabelServicePoint}</strong></p>
-                                                }
-                                            </div>
-                                        </div>
+                                                <div className="col-12 col-md-6 col-lg-3 pattern__child" key={`whyUs-${index}`}>
+                                                    <div className="y_shape_bg" dangerouslySetInnerHTML={{ __html: item.whyUsBlockTitle }}>
+                                                    </div>
+                                                </div>
                                             )
                                         })}
                                     </div>
                                 </div>
+                            }
+                            <div className="why__us pb-0 text-center">
+                                {data.whiteLabelServiceTitle &&
+                                    <h2>{data.whiteLabelServiceTitle}</h2>
+                                }
+                                {data.whiteLabelServicePoints &&
+                                    <div className="service__label">
+                                        <div className="row align-items-center">
+                                            {data.whyUsBlocks.map((item, index) => {
+                                                return (
+                                                    <div className="col-12 col-md-4" key={`whyUs-${index}`}>
+                                                        <div className="d-flex align-items-center">
+                                                            {item.whiteLabelServiceImage &&
+                                                                <img src={item.whiteLabelServiceImage.sourceUrl} />
+                                                            }
+                                                            {item.whiteLabelServicePoint &&
+                                                                <p><strong>{item.whiteLabelServicePoint}</strong></p>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })}
+                                        </div>
+                                    </div>
                                 }
                             </div>
                         </div>
@@ -198,38 +198,38 @@ export default function WhiteLabel({data, themeOptions, form}) {
                     <div className="row">
                         <div className="col-12 col-md-6">
                             {data.contactBlockTitle &&
-                            <h3>{data.contactBlockTitle}</h3>
-                            }  
-                            {data.contactBlockDescription && 
-                            <p>{data.contactBlockDescription}</p>
+                                <h3>{data.contactBlockTitle}</h3>
+                            }
+                            {data.contactBlockDescription &&
+                                <p>{data.contactBlockDescription}</p>
                             }
                             {data.contactBlockTagLine &&
-                            <p><strong>{data.contactBlockTagLine}</strong></p>
+                                <p><strong>{data.contactBlockTagLine}</strong></p>
                             }
                             <ul className="list-unstyled social_inner">
                                 {themeOptions.phone &&
-                                <li>
-                                    <div className="d-flex align-items-center">
-                                        <img src="../images/telephone.png" alt="phone" />
-                                        <a className="ms-3" href={`tel:`+themeOptions.phone}>{themeOptions.phone}</a>
-                                    </div>
-                                </li>
+                                    <li>
+                                        <div className="d-flex align-items-center">
+                                            <img src="../images/telephone.png" alt="phone" />
+                                            <a className="ms-3" href={`tel:` + themeOptions.phone}>{themeOptions.phone}</a>
+                                        </div>
+                                    </li>
                                 }
                                 {themeOptions.email &&
-                                <li>
-                                    <div className="d-flex align-items-center">
-                                        <img src="../images/email.png" alt="email" />
-                                        <a className="ms-3" href={`tel:`+themeOptions.email}>{themeOptions.email}</a>
-                                    </div>
-                                </li>
+                                    <li>
+                                        <div className="d-flex align-items-center">
+                                            <img src="../images/email.png" alt="email" />
+                                            <a className="ms-3" href={`tel:` + themeOptions.email}>{themeOptions.email}</a>
+                                        </div>
+                                    </li>
                                 }
                                 {themeOptions.addressLink &&
-                                <li>
-                                    <div className="d-flex align-items-center">
-                                        <img src="../images/pin-point.png" alt="pinPoint" />
-                                        <a className="ms-3" href={themeOptions.addressLink} target="_blank"rel="noreferrer" dangerouslySetInnerHTML={{ __html: themeOptions.addressText }}></a>
-                                    </div>
-                                </li>
+                                    <li>
+                                        <div className="d-flex align-items-center">
+                                            <img src="../images/pin-point.png" alt="pinPoint" />
+                                            <a className="ms-3" href={themeOptions.addressLink} target="_blank" rel="noreferrer" dangerouslySetInnerHTML={{ __html: themeOptions.addressText }}></a>
+                                        </div>
+                                    </li>
                                 }
                             </ul>
                         </div>
@@ -239,17 +239,17 @@ export default function WhiteLabel({data, themeOptions, form}) {
                                     <h3>Intake Form </h3>
                                 </div>
                                 <div className="placeholder__form form_container">
-                                <ApolloProvider client={client}>
-                                    <GravityForm form={form} />
-                                </ApolloProvider>
+                                    <ApolloProvider client={client}>
+                                        <GravityForm form={form} />
+                                    </ApolloProvider>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            
+
+
         </main>
     )
 }

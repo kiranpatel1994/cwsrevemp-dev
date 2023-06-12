@@ -5,7 +5,7 @@ import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Hosting({data}) {
+export default function Hosting({ data }) {
     useEffect(() => {
         gsap.set('.dragWithme', { top: '-10px' });
         const liftArow = gsap.to('.dragWithme', { top: "100%", ease: "none" });
@@ -20,7 +20,7 @@ export default function Hosting({data}) {
             pinSpacing: false,
             animation: liftArow,
             toggleActions: 'play none none none',
-          //   toggleClass: "active"
+            //   toggleClass: "active"
         });
 
 
@@ -28,42 +28,42 @@ export default function Hosting({data}) {
         const action = gsap.to('.profitDrag', { scaleY: "100%", transformOrigin: "top bottom", ease: "none" });
 
         ScrollTrigger.create({
-          trigger: "#start_anim",
-          start: "-=270",
-          endTrigger: '#end_anim',
-          end: '+=1500',
-          markers: false,
-          scrub: -2,
-          pinSpacing: false,
-          animation: action,
-          toggleActions: 'play none none none',
-        //   toggleClass: "active"
+            trigger: "#start_anim",
+            start: "-=270",
+            endTrigger: '#end_anim',
+            end: '+=1500',
+            markers: false,
+            scrub: -2,
+            pinSpacing: false,
+            animation: action,
+            toggleActions: 'play none none none',
+            //   toggleClass: "active"
         });
 
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
-        panels.forEach((panel,i)=>{
+        panels.forEach((panel, i) => {
             ScrollTrigger.create({
                 trigger: panel,
                 start: "-=270",
                 end: "-=270",
                 markers: false,
-                onEnter: ()=>{
+                onEnter: () => {
                     panels[i].classList.add("activate")
                 },
-                onEnterBack: ()=>{
+                onEnterBack: () => {
                     panels[i].classList.remove("activate")
                 }
             })
         });
         document.body.classList.add('hosting');
         return () => {
-        document.body.classList.remove('hosting');
+            document.body.classList.remove('hosting');
         };
 
     }, []);
-        
 
-    return(
+
+    return (
         <main className="position-relative hosting_inner zindex-2 overflow-hidden" id="main">
             <div className="banner__overlap">
                 <div className="container-xl bbn_1">
@@ -82,23 +82,23 @@ export default function Hosting({data}) {
                             <h1>Hosting </h1>
                             <div className="sub_title play_fair-ttl">
                                 {data.bannerTagline &&
-                                <h2>{data.bannerTagline}</h2>
+                                    <h2>{data.bannerTagline}</h2>
                                 }
                             </div>
                             {data.bannerTitle &&
-                            <div className="moji_ttl" dangerouslySetInnerHTML={{ __html: data.bannerTitle }}>
-                            </div>
+                                <div className="moji_ttl" dangerouslySetInnerHTML={{ __html: data.bannerTitle }}>
+                                </div>
                             }
                             {data.bannerDescription &&
-                            <p className="mb-4">{data.bannerDescription}</p> 
+                                <p className="mb-4">{data.bannerDescription}</p>
                             }
                         </div>
                     </div>
                 </div>
                 {data.bannerImage.sourceUrl &&
-                <div className="mix_bland">
-                    <img className="laptopp__setup" src={data.bannerImage.sourceUrl} />
-                </div>
+                    <div className="mix_bland">
+                        <img className="laptopp__setup" src={data.bannerImage.sourceUrl} />
+                    </div>
                 }
             </div>
             <div className="gl_area hosting_page">
@@ -114,18 +114,18 @@ export default function Hosting({data}) {
                             <div className="row g-0 why__us align-items-center">
                                 <div className="col-md-7">
                                     {data.whyUsTitle &&
-                                    <h2>{data.whyUsTitle}</h2>
+                                        <h2>{data.whyUsTitle}</h2>
                                     }
                                     <div dangerouslySetInnerHTML={{ __html: data.whyUsDescription }}>
                                     </div>
                                 </div>
-                                {data.whyUsImage.sourceUrl && 
-                                <div className="col-md-5">
-                                    <div className="theme__bg">
-                                        <img className="img-fluid" src={data.whyUsImage.sourceUrl} />
+                                {data.whyUsImage.sourceUrl &&
+                                    <div className="col-md-5">
+                                        <div className="theme__bg">
+                                            <img className="img-fluid" src={data.whyUsImage.sourceUrl} />
+                                        </div>
                                     </div>
-                                </div>
-                                }   
+                                }
                             </div>
                         </div>
                     </section>
@@ -138,52 +138,52 @@ export default function Hosting({data}) {
                         <div className="col-11">
                             <div className="row g-0 information__box">
                                 {data.heresWhyBlocks.map((item, index) => {
-                                    return(
-                                    <div className="col-md-4" key={`hereByblock${index}`}>
-                                        <div className="text-center information__title">
-                                            {item.blockTitle &&
-                                            <div dangerouslySetInnerHTML={{ __html: item.blockTitle }}>
-                                            </div>
-                                            }
-                                            {item.blockDescription &&
-                                            <p>{item.blockDescription}</p>
-                                            }
-                                            {item.blockTagline &&
-                                            <h6>{item.blockTagline}</h6>
-                                            }
-                                        </div>
-                                        {item.blockNotifications.map((notification, i) => {
-                                            return (
-                                        <div className="notification_box" key={`notifyblock${i}`}>
-                                            <div className="notification__child">
-                                                <div className="d-flex align-items-start">
-                                                    {notification.notificationUserImage.sourceUrl &&
-                                                    <img className="profileThumb" src={notification.notificationUserImage.sourceUrl} />
-                                                    }
-                                                    <div className="noti__inner">
-                                                        <div className="d-flex align-items-center">
-                                                            {notification.notificationUser &&
-                                                            <h4>{notification.notificationUser}</h4>
-                                                            }
-                                                            {notification.notificationUsername &&
-                                                            <span className="uName">{notification.notificationUsername}</span>
-                                                            }
-                                                        </div>
-                                                        {notification.notificationDescription &&
-                                                        <p>{notification.notificationDescription}</p>
-                                                        }
+                                    return (
+                                        <div className="col-md-4" key={`hereByblock${index}`}>
+                                            <div className="text-center information__title">
+                                                {item.blockTitle &&
+                                                    <div dangerouslySetInnerHTML={{ __html: item.blockTitle }}>
                                                     </div>
-                                                </div>
+                                                }
+                                                {item.blockDescription &&
+                                                    <p>{item.blockDescription}</p>
+                                                }
+                                                {item.blockTagline &&
+                                                    <h6>{item.blockTagline}</h6>
+                                                }
                                             </div>
+                                            {item.blockNotifications.map((notification, i) => {
+                                                return (
+                                                    <div className="notification_box" key={`notifyblock${i}`}>
+                                                        <div className="notification__child">
+                                                            <div className="d-flex align-items-start">
+                                                                {notification.notificationUserImage.sourceUrl &&
+                                                                    <img className="profileThumb" src={notification.notificationUserImage.sourceUrl} />
+                                                                }
+                                                                <div className="noti__inner">
+                                                                    <div className="d-flex align-items-center">
+                                                                        {notification.notificationUser &&
+                                                                            <h4>{notification.notificationUser}</h4>
+                                                                        }
+                                                                        {notification.notificationUsername &&
+                                                                            <span className="uName">{notification.notificationUsername}</span>
+                                                                        }
+                                                                    </div>
+                                                                    {notification.notificationDescription &&
+                                                                        <p>{notification.notificationDescription}</p>
+                                                                    }
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })}
                                         </div>
-                                            )
-                                        })}
-                                    </div>
                                     )
                                 })}
                             </div>
                         </div>
-                        
+
                     </section>
                     <section className="row get_row g-0 sec-3" id="end_anim">
                         <div className="col-1 serv__ttl d-flex">
@@ -201,16 +201,16 @@ export default function Hosting({data}) {
                                 <div className="col-md-6">
                                     <div className="wp_inner had_new">
                                         {data.serviceDetailTitle &&
-                                        <h3 className="text-32_b_white mb-3">{data.serviceDetailTitle}</h3>
+                                            <h3 className="text-32_b_white mb-3">{data.serviceDetailTitle}</h3>
                                         }
                                         {data.serviceDetailDescription &&
-                                        <p className="txlh_20_30 mb-4">{data.serviceDetailDescription}</p>
+                                            <p className="txlh_20_30 mb-4">{data.serviceDetailDescription}</p>
                                         }
-                                        
+
                                         <ul className="list-unstyled list_y_dots text-white">
                                             {data.serviceDetailPoints.map((item, i) => {
-                                            return (
-                                            <li key={`servicepoint${i}`}>{item.serviceDetailPoint}</li>
+                                                return (
+                                                    <li key={`servicepoint${i}`}>{item.serviceDetailPoint}</li>
                                                 )
                                             })}
                                         </ul>
@@ -226,18 +226,18 @@ export default function Hosting({data}) {
                     <div className="row">
                         <div className="col-12 text-center">
                             {data.contactBlockTitle &&
-                            <span>{data.contactBlockTitle}</span>
+                                <span>{data.contactBlockTitle}</span>
                             }
                             {data.contactBlockDescription &&
-                            <h3>{data.contactBlockDescription}</h3>
+                                <h3>{data.contactBlockDescription}</h3>
                             }
                             <Link href="/contact" className="fk-btn">I m in <span><img src="/images/img-stars.png" /></span></Link>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            
+
+
         </main>
     )
 }

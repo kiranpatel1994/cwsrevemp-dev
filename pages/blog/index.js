@@ -13,7 +13,7 @@ function Blog({ blogPagination, blogListingDetail }) {
   }, []);
   return (
     <div>
-      <BlogContent blogData={blogPagination} blogDetail={blogListingDetail}/>
+      <BlogContent blogData={blogPagination} blogDetail={blogListingDetail} />
     </div>
   )
 }
@@ -24,10 +24,10 @@ export async function getStaticProps() {
   const limit = process.env.NEXT_PUBLIC_BLOG_LIMIT;
   const blogPagination = await GraphAPI.blogPagination(limit, '');
   const blogListingDetail = await GraphAPI.blogListing();
-   return {
-       props: {
-        blogPagination: blogPagination.data.data?.posts,
-        blogListingDetail: blogListingDetail.data.data?.pageBy?.blogListingSettings
-       }
-   }
+  return {
+    props: {
+      blogPagination: blogPagination.data.data?.posts,
+      blogListingDetail: blogListingDetail.data.data?.pageBy?.blogListingSettings
+    }
+  }
 }

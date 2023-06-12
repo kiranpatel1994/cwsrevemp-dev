@@ -4,8 +4,8 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function WebApp({data}) {
-    
+export default function WebApp({ data }) {
+
     useEffect(() => {
         gsap.set('.dragWithme', { top: '-10px' });
         const liftArow = gsap.to('.dragWithme', { top: "100%", ease: "none" });
@@ -20,7 +20,7 @@ export default function WebApp({data}) {
             pinSpacing: false,
             animation: liftArow,
             toggleActions: 'play none none none',
-          //   toggleClass: "active"
+            //   toggleClass: "active"
         });
 
 
@@ -28,29 +28,29 @@ export default function WebApp({data}) {
         const action = gsap.to('.profitDrag', { scaleY: "100%", transformOrigin: "top bottom", ease: "none" });
 
         ScrollTrigger.create({
-          trigger: "#start_anim",
-          start: "-=270",
-          endTrigger: '#end_anim',
-          end: '+=1300',
-          markers: false,
-          scrub: -2,
-          pinSpacing: false,
-          animation: action,
-          toggleActions: 'play none none none',
-        //   toggleClass: "active"
+            trigger: "#start_anim",
+            start: "-=270",
+            endTrigger: '#end_anim',
+            end: '+=1300',
+            markers: false,
+            scrub: -2,
+            pinSpacing: false,
+            animation: action,
+            toggleActions: 'play none none none',
+            //   toggleClass: "active"
         });
 
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
-        panels.forEach((panel,i)=>{
+        panels.forEach((panel, i) => {
             ScrollTrigger.create({
                 trigger: panel,
                 start: "-=270",
                 end: "-=270",
                 markers: false,
-                onEnter: ()=>{
+                onEnter: () => {
                     panels[i].classList.add("activate")
                 },
-                onEnterBack: ()=>{
+                onEnterBack: () => {
                     panels[i].classList.remove("activate")
                 }
             })
@@ -58,12 +58,12 @@ export default function WebApp({data}) {
 
         document.body.classList.add('web-app');
         return () => {
-        document.body.classList.remove('web-app');
+            document.body.classList.remove('web-app');
         };
 
-    }, []);        
+    }, []);
 
-    return(
+    return (
         <main className="position-relative webApp_inner zindex-2 overflow-hidden" id="main">
             <div className="banner__overlap">
                 <div className="container-xl bbn_1">
@@ -79,22 +79,22 @@ export default function WebApp({data}) {
                 <div className="container-xl p-0">
                     <div className="row g-0">
                         <div className="col-12 col-md-7 ecom__info position-relative">
-                            <h1 dangerouslySetInnerHTML={{__html:data.pageHeading}} />
+                            <h1 dangerouslySetInnerHTML={{ __html: data.pageHeading }} />
                             {data.bannerSubtitle &&
                                 <div className="sub_title play_fair-ttl">
                                     <h2>{data.bannerSubtitle}</h2>
-                                </div>  
-                            }
-                            {data.bannerTitle &&
-                                <div className="banner-h3 moji_ttl" dangerouslySetInnerHTML={{__html: data.bannerTitle}}>
                                 </div>
                             }
-                            {data.bannerDescription && 
-                                <div className="mb-4" dangerouslySetInnerHTML={{__html:data.bannerDescription}}>
+                            {data.bannerTitle &&
+                                <div className="banner-h3 moji_ttl" dangerouslySetInnerHTML={{ __html: data.bannerTitle }}>
+                                </div>
+                            }
+                            {data.bannerDescription &&
+                                <div className="mb-4" dangerouslySetInnerHTML={{ __html: data.bannerDescription }}>
                                 </div>
                             }
                         </div>
-                        { data.bannerImage &&
+                        {data.bannerImage &&
                             <div className="col-12 col-md-5 position-relative group__bild">
                                 <div className="theme___bg">
                                     <img className="img-fluid" src={data.bannerImage.sourceUrl} />
@@ -109,26 +109,26 @@ export default function WebApp({data}) {
                     <div className="line_anim"><div className="profitDrag"></div><div className="dragWithme"><img src="../images/smArrow.png" /></div></div>
                     <section className="row get_row g-0 sec-1" id="start_anim">
                         <div className="col-1 benit__ttl">
-                            { data.benefitsTitle &&
+                            {data.benefitsTitle &&
                                 <div className="benifit_ttl">
                                     <h3 className="vr-title">{data.benefitsTitle}</h3>
                                 </div>
                             }
                         </div>
                         <div className="col-11">
-                        { data.benefitsBlocks &&
-                            <ul className="list-inline benifit__inner">
-                                {data.benefitsBlocks.map((item,index)=>{
-                                    return(
-                                    <li className="list-inline-item" key={`benefits-${index}`}>
-                                        <div className="ffk_btn">
-                                            <span>{item.benefitBlockTitle} </span>
-                                        </div>
-                                    </li>
-                                    )
-                                })}
-                            </ul>
-                             }
+                            {data.benefitsBlocks &&
+                                <ul className="list-inline benifit__inner">
+                                    {data.benefitsBlocks.map((item, index) => {
+                                        return (
+                                            <li className="list-inline-item" key={`benefits-${index}`}>
+                                                <div className="ffk_btn">
+                                                    <span>{item.benefitBlockTitle} </span>
+                                                </div>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            }
                         </div>
                     </section>
                     <section className="row get_row g-0 sec-2">
@@ -142,14 +142,14 @@ export default function WebApp({data}) {
                         <div className="col-11">
                             <div className="row g-0 why__us align-items-center">
                                 <div className="col-md-7 maxim_effort position-relative">
-                                    {data.whyUsTitle && 
-                                        <h2 dangerouslySetInnerHTML={{__html:data.whyUsTitle}} />
+                                    {data.whyUsTitle &&
+                                        <h2 dangerouslySetInnerHTML={{ __html: data.whyUsTitle }} />
                                     }
-                                    { data.whyUsDescription && 
-                                        <p dangerouslySetInnerHTML={{__html:data.whyUsDescription}} />
+                                    {data.whyUsDescription &&
+                                        <p dangerouslySetInnerHTML={{ __html: data.whyUsDescription }} />
                                     }
                                 </div>
-                                {data.whyUsImage && 
+                                {data.whyUsImage &&
                                     <div className="col-md-5">
                                         <img className="img-fluid w-100" src={data.whyUsImage.sourceUrl} />
                                     </div>
@@ -159,7 +159,7 @@ export default function WebApp({data}) {
                     </section>
                     <section className="row get_row g-0 sec-3" id="end_anim">
                         <div className="col-1 serv__ttl">
-                            { data.serviceDetailsHeading && 
+                            {data.serviceDetailsHeading &&
                                 <div className="benifit_ttl align-self-center">
                                     <h3 className="vr-title">{data.serviceDetailsHeading}</h3>
                                 </div>
@@ -171,10 +171,10 @@ export default function WebApp({data}) {
                                     <img className="img-fluid" src="../images/test1.png" />
                                 </div>
                                 <div className="col-md-7 automate_work position-relative">
-                                    <h2 dangerouslySetInnerHTML={{__html:data.serviceDetailsTitle}} />
-                                    <p dangerouslySetInnerHTML={{__html:data.serviceDetailsDescription}}/>
-                                    <p dangerouslySetInnerHTML={{__html:data.serviceDetailsDescription}}/>
-                                    { data.seeOurWorkLink &&
+                                    <h2 dangerouslySetInnerHTML={{ __html: data.serviceDetailsTitle }} />
+                                    <p dangerouslySetInnerHTML={{ __html: data.serviceDetailsDescription }} />
+                                    <p dangerouslySetInnerHTML={{ __html: data.serviceDetailsDescription }} />
+                                    {data.seeOurWorkLink &&
                                         <div className="d-table"><a className="btn btn-yellow ft-gilroy_b fw-bold" href={data.seeOurWorkLink}><strong>Let’s talk</strong></a></div>
                                     }
                                 </div>
@@ -182,27 +182,27 @@ export default function WebApp({data}) {
                             <div className="row g-0 why__us align-items-center">
                                 <div className="col-md-7 automate_work position-relative">
                                     {data.industryDetailsTitle &&
-                                        <h2 dangerouslySetInnerHTML={{__html:data.industryDetailsTitle}} />
+                                        <h2 dangerouslySetInnerHTML={{ __html: data.industryDetailsTitle }} />
                                     }
-                                    {data.industryDetailsDescription && 
-                                        <p dangerouslySetInnerHTML={{__html:data.industryDetailsDescription}}/>
+                                    {data.industryDetailsDescription &&
+                                        <p dangerouslySetInnerHTML={{ __html: data.industryDetailsDescription }} />
                                     }
-                                    { data.industryDetailsSubtitle && 
+                                    {data.industryDetailsSubtitle &&
                                         <p><strong>{data.industryDetailsSubtitle}  </strong></p>
                                     }
                                 </div>
                                 {data.industryDetailsImage &&
-                                <div className="col-md-5">
-                                    <img className="img-fluid" src={data.industryDetailsImage.sourceUrl} />
-                                </div>
+                                    <div className="col-md-5">
+                                        <img className="img-fluid" src={data.industryDetailsImage.sourceUrl} />
+                                    </div>
                                 }
                             </div>
                         </div>
                     </section>
                 </div>
             </div>
-            
-            
+
+
         </main>
     )
 }
