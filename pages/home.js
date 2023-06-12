@@ -573,7 +573,7 @@ const Home = ({ homeSettings, portfolioList, testimonialSettings }) => {
             <div className="row">
               <div className="col-12">
                 {homeSettings.processMainTitle && (
-                  <div className="text-center overflow-hidden">
+                  <div className="text-center overflow-hidden title">
                     <h2
                       data-aos="fade-up"
                       data-aos-duration="1000"

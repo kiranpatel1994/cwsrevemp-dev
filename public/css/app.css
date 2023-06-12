@@ -993,8 +993,12 @@ a { text-decoration: none; }
 .newHome .aboutUs-title .about-info p{font-weight: 300;font-family: 'Gilroy';}
 .newHome .floating-object::before{display: none;}
 .newHome .about-us::before{left: 100px;}
-.newHome .simple-process{position: relative;}
-.newHome .simple-process:before{content: '';width: 95px;height: 100%;position: absolute;left: 0;top: 0;background: #FDB627;z-index: 3;}
+.newHome .simple-process{position: relative;padding: 0;}
+.newHome .simple-process::before{content: '';width: 95px;height: 100%;position: absolute;left: 0;top: 0;background: #FDB627;z-index: 3;}
+.newHome .simple-process h2 {font-size: 40px;line-height: 1.175;font-weight: 800;font-family: 'Gilroy';}
+.newHome .simple-process .title{padding: 125px 0 40px;position: relative;margin-bottom: 20px;}
+.newHome .simple-process .title::before{content: '';width: 100%;height: 305px;position: absolute;top: 0;left: 0;background-image: url(../images/path10397.svg);background-repeat: no-repeat;background-position: center bottom;z-index: 0;}
+.newHome .simple-process .title::after{content: '';width: 100%;height: 142px;position: absolute;top: 0;left: 0;z-index: 1;background: linear-gradient( 0deg, rgba(255, 255, 255, 0) 0%, #fff 100%);pointer-events: none;}
 
 .newHome header{position: absolute;left: 0;top: 0;z-index: 9;width: 100%;}
 .newHome main{margin-top: 0;}
@@ -1080,5 +1084,5 @@ a { text-decoration: none; }
 .newHome .vr-row-parent .child-row{margin-right: 50px;}
 .newHome .vr-row-parent .child-row:last-child{margin-right: 0;}
 .newHome .about-us::before {height: 281px;width: 201px;}
-.slider-area .slider-scroller::before {content: '';width: 138px;height: 92px;position: absolute;bottom: 60px;left: 33%;background-image: url(../images/preview-new.png);background-repeat: no-repeat;z-index: 0;}
-.slider-area .slider-scroller::after{content: '';width: 19px;height: 19px;position: absolute;bottom: 115px;left: calc(33% + 119px);background-image: url(../images/preview-new-cut.png);background-repeat: no-repeat;z-index: 2;}
+.newHome .slider-area .slider-scroller::before {content: '';width: 138px;height: 92px;position: absolute;bottom: 60px;left: 33%;background-image: url(../images/preview-new.png);background-repeat: no-repeat;z-index: 0;}
+.newHome .slider-area .slider-scroller::after{content: '';width: 19px;height: 19px;position: absolute;bottom: 115px;left: calc(33% + 119px);background-image: url(../images/preview-new-cut.png);background-repeat: no-repeat;z-index: 2;}
