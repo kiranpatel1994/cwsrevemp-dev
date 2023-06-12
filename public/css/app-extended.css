@@ -1,0 +1,106 @@
+/* New Design Update */
+.newHome .about-us::after {content: '';width: 95px;height: 100%;position: absolute;left: 0;top: 0;background: transparent linear-gradient(180deg, #07042A 10%, rgba(253, 182, 39, 0.4) 70%, #FDB627 100%) 0% 0% no-repeat;z-index: 3;}
+.newHome .slider-area .raw-card {background: transparent;position: relative;overflow: hidden;border: 1px solid rgba(255,255,255,1);border-radius: 24px;}
+.newHome .slider-area .raw-card:hover{border-color: #FDB627;}
+.newHome .slider-area .raw-card::before {content: '';background: rgba(255, 255, 255, 0.2);filter: blur(300px);backdrop-filter: blur(300px);-webkit-backdrop-filter: blur(300px);height: 100%;width: 100%;position: absolute;left: 0;top: 0;z-index: 0;}
+.newHome .slider-area .raw-card > *{z-index: 2;position: relative;}
+.newHome .slider-area{max-width: calc(100% - 372px);}
+.newHome .about-us .about-info {margin-bottom: 75px;}
+.newHome .aboutUs-title{padding-left: 420px;padding-right: 15px;}
+.newHome .aboutUs-title .about-info h2{font-size: 40px;font-family: 'Gilroy';font-weight: bold;}
+.newHome .aboutUs-title .about-info p{font-weight: 300;font-family: 'Gilroy';}
+.newHome .floating-object::before{display: none;}
+.newHome .about-us::before{left: 100px;}
+.newHome .simple-process{position: relative;padding: 0;}
+.newHome .simple-process::before{content: '';width: 95px;height: 100%;position: absolute;left: 0;top: 0;background: #FDB627;z-index: 3;}
+.newHome .simple-process h2 {font-size: 40px;line-height: 1.175;font-weight: 800;font-family: 'Gilroy';}
+.newHome .simple-process .title{padding: 125px 0 40px;position: relative;margin-bottom: 20px;}
+.newHome .simple-process .title::before{content: '';width: 100%;height: 305px;position: absolute;top: 0;left: 0;background-image: url(../images/path10397.svg);background-repeat: no-repeat;background-position: center bottom;z-index: 0;}
+.newHome .simple-process .title::after{content: '';width: 100%;height: 142px;position: absolute;top: 0;left: 0;z-index: 1;background: linear-gradient( 0deg, rgba(255, 255, 255, 0) 0%, #fff 100%);pointer-events: none;}
+
+.newHome header{position: absolute;left: 0;top: 0;z-index: 9;width: 100%;}
+.newHome main{margin-top: 0;}
+.newHome .homeBanner{position: relative;padding-top: 270px;}
+.newHome .homeBanner::before{content: '';background: #071533 url(../images/spotlight.png);width: 100%;height: 100%;position: absolute;left: 0;top: 0;opacity: 0.25;z-index: 8;background-blend-mode: screen;background-repeat: no-repeat;pointer-events: none;}
+.newHome .homeBanner .title{margin-bottom: 150px;z-index: 9;position: relative;}
+.newHome .homeBanner .title h1 { font-family: 'Gilroy'; font-weight: 700; font-size: 82px; color: transparent; white-space: nowrap; background: linear-gradient(90deg, #fff 10%, #fff 25%, #FDB627 80%); -webkit-background-clip: text; margin-right: -30px; position: relative; transition: 0.3s all; line-height: 1;margin-bottom: 15px;}
+.newHome .homeBanner .scrollForMore button {height: 110px;width: 110px;left: -110px;bottom: 220px;}
+.newHome .homeBanner .scrollForMore .inner-cirl .arrow-svg img {max-width: 36px;}
+.newHome .homeBanner .bannerVideo{border: 1px solid rgba(255, 255, 255, 0.15);border-radius: 28px;position: relative;z-index: 3;max-width: 1155px;margin: 0 auto;}
+.newHome .homeBanner .bannerVideo::before{content: '';width: calc(100% + 2px);height: 327px;background: linear-gradient(rgba(7, 4, 43, 0) 0%, #07042b 100%);position: absolute;left: -1px;bottom: -1px;z-index: 4;}
+.newHome .homeBanner .bannerVideo iframe{border-radius: 28px;background: #07042b;border: 12px solid #07042b;overflow: hidden;vertical-align: top;}
+.newHome .homeBanner .brandWeServe{position: absolute;right: 0;top: 0;z-index: 9;}
+.newHome .homeBanner .brandWeServe .brandIcon{width: 108px;height: 108px;border: 0.25px solid rgba(255, 255, 255, 0.05);backdrop-filter: blur(300px);--webkit-backdrop-filter: blur(300px);background-color: rgba(255, 255, 255, 0.05);border-radius: 50%;position: relative;transition: all .3s;}
+.newHome .homeBanner .brandWeServe .brandIcon img{position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);transition: all .2s;}
+.newHome .homeBanner .brandWeServe .brandIcon img.hoverImg{opacity: 0;}
+.newHome .homeBanner .brandWeServe .brandIcon:hover{background-color: rgba(255, 255, 255, 0.2);backdrop-filter: blur(30px);--webkit-backdrop-filter: blur(30px);}
+.newHome .homeBanner .brandWeServe .brandIcon:hover img.hoverImg{opacity: 1;}
+.newHome .homeBanner .brandWeServe .brandIcon:hover img.nrmlImg{opacity: 0;}
+.newHome .homeBanner .brandWeServe .brandIcon.shopify{position: absolute;top: 209px;right: 90px;}
+.newHome .homeBanner .brandWeServe .brandIcon.wordpress{position: absolute;top: 338px;right: 223px;transform: rotate(-23deg);}
+.newHome .homeBanner .brandWeServe .brandIcon.framer{position: absolute;top: 473px;right: 75px;}
+.newHome .homeBanner .brandWeServe .brandIcon.shopify:hover{border-color: #BDF623;transform: rotate(-9deg);}
+.newHome .homeBanner .brandWeServe .brandIcon.wordpress:hover{border-color: #0072A3;transform: rotate(-46deg);}
+.newHome .homeBanner .brandWeServe .brandIcon.framer:hover{border-color: #67DBFF;transform: rotate(-15deg);}
+.newHome .friendly-atmos{overflow: hidden;margin: 0;}
+.newHome .friendly-atmos .friendly-atmos-inner{position: relative;padding: 0 0 150px;}
+.newHome .friendly-atmos .friendly-atmos-inner::before{background: linear-gradient(0deg,rgba(7, 4, 43, 0) 0%, #07042b 100%);content: '';width: 100%;height: 281px;position: absolute;top: 0;left: 0;}
+.newHome .friendly-atmos h3 {color: #fff;font-family: 'gilroy';font-size: 35px;line-height: 50px;max-width: 665px;font-weight: 500;}
+.newHome .position-new {position: absolute;bottom: 265px;right: -444px;z-index: -1;top: inherit;}
+.newHome .friendly-atmos .face-information{margin-top: 0;}
+.newHome .atmos-faces {margin-top: 0px;position: relative;z-index: 3;right: 40px;}
+.newHome .demo-container {top: 110px;width: 255px;left: -275px;}
+
+.newHome .companyDevelopment .title{margin-bottom: 84px;}
+.newHome .companyDevelopment .title h2{font-weight: 500;font-size: 25px;line-height: 1.4;}
+.newHome .companyDevelopment .title em{font-family: 'Playfair Display', serif;font-weight: 700;font-size: 25px;line-height: 1.7;position: relative;}
+.newHome .companyDevelopment .title em::after { content: ''; background: url(../images/path10395.png) no-repeat; position: absolute; bottom: -18px; right: 0; height: 12px; width: 141px; }
+
+.newHome .companyDevelopment{padding-bottom: 120px;position: relative;z-index: 9;}
+.newHome .companyDevelopment .slider-object{padding-top: 0;}
+.newHome .companyDevelopment .slider-object .sliderBox{text-align: center;transition: all .5s;position: relative;width: 198px;height: 198px;}
+.newHome .companyDevelopment .slider-object .sliderBox::before{content: '';width: 96px;height: 68px;background: #fff;position: absolute;z-index: -1;left: 0;top: 30px;border-radius: 50%;right: 0;margin: 0 auto;}
+.newHome .companyDevelopment .slider-object .sliderBox::after{content: '';width: calc(100% - 2px);height: calc(100% - 2px);background: transparent;-webkit-backdrop-filter: blur(30px);backdrop-filter: blur(30px);--webkit-backdrop-filter: blur(30px);background-color: rgba(255, 255, 255, 0.15);position: relative;border-radius: 24px;border: 1px solid rgba(255, 255, 255, 0.25);position: absolute;z-index: 0;left: 0;top: 0;right: 0;margin: 0 auto;transition: all .5s;}
+.newHome .companyDevelopment .slider-object .sliderBox *{position: relative;z-index: 2;}
+.newHome .companyDevelopment .slider-object .sliderBox h5{font-family: "Gilroy";font-weight: 600;font-size: 16px;line-height: 22px;text-align: center;color: #fff;margin-bottom: 0;transition: all .5s;}
+.newHome .companyDevelopment .slider-object .sliderBox .slideInner {padding: 0 15px;box-sizing: border-box;display: flex;flex-direction: column;align-items: center;justify-content: center;width: 198px;height: 198px;}
+.newHome .companyDevelopment .slider-object .sliderBox .slideInner .icon{margin-bottom: 10px;}
+.newHome .companyDevelopment .slider-object .sliderBox .slideInner .icon img{transition: all .5s;}
+.newHome .companyDevelopment .slider-object .sliderBox:hover h5{opacity: 0;transform: translateY(50px);visibility: hidden;height: 0;}
+.newHome .companyDevelopment .slider-object .sliderBox:hover .slideInner .icon img{transform: translateY(4px);width: 132px;height: 100px;object-fit: contain;object-position: center;}
+.newHome .companyDevelopment .slider-object .sliderBox:hover:after{border-color: #FDB627;width: 163px;height: 134px;top: 50%;transform: translateY(-50%);transform-origin: center;}
+.newHome .companyDevelopment .slider-object .sliderBox:hover::before{top: 50px;}
+.newHome .companyDevelopment .btn{font-family: 'Playfair Display', serif;font-weight: 700;font-style: italic;color: #000;border-width: 2px;}
+.newHome .companyDevelopment .btn:hover{color: #FDB627;transform: none;}
+
+.newHome .banner-after::before,
+.newHome .banner-after::after {display: none;}
+.newHome .banner-yll {padding: 65px 0 170px;}
+.newHome .banner-yll h3{font-family: 'Gilroy';font-weight: 800;font-size: 40px;color: #071533;}
+.newHome .banner-yll .chooseUs-msg .mini-card .mini-child h5{font-family: 'Gilroy';font-weight: 700;}
+.newHome .banner-yll .chooseUs-msg .mini-card .mini-child p{font-family: 'Gilroy';font-weight: 300;line-height: 1.5;}
+.newHome .banner-yll .chooseUs-msg ul li .mini-card{transition: all 1s;}
+.newHome .banner-yll .chooseUs-msg ul li:nth-child(2) .right-bild-pull{animation: none;}
+.newHome .banner-yll .chooseUs-msg ul li:first-child::after ,
+.newHome .banner-yll .chooseUs-msg ul li:last-child::after { animation: none;}
+.newHome .banner-yll .chooseUs-msg ul li:nth-child(2n + 1) .mini-card:hover{transform: translateX(58px);}
+.newHome .banner-yll .chooseUs-msg ul li:nth-child(2n) .mini-card:hover{transform: translateX(-58px);}
+.newHome .all-business{background-image: url(../images/success-bg.png);color: #fff;background-size: cover;position: relative;overflow: hidden;padding: 0;}
+.newHome .all-business::before{display: none;}
+.newHome .all-business .flyingImg {left: -50px;position: absolute;top: -230px;}
+.newHome .all-business .update-pseudo{margin-top: 0;}
+.newHome .all-business .update-pseudo::after{display: none;}
+.newHome .all-business h2{position: relative;font-family: "Gilroy";font-weight: 700;font-size: 40px;line-height: 1.42;}
+.newHome .all-business h2::after { content: ''; background: url(../images/right-af.png) no-repeat; position: absolute; right: 20px; top: -45px; width: 111px; height: 100px; }
+.newHome .all-business .yello-title-em{font-weight: 700;}
+.newHome .all-business .vr-row-parent{margin-top: 0;margin-bottom: 0;justify-content: flex-end;height: 783px;position: relative;}
+.newHome .all-business .vr-row-parent::before{content: '';width: 100%;height: 285px;background: linear-gradient(0deg, rgba(7, 4, 43, 0) 0%, #07042b 100%);position: absolute;left: 0;top: 0;z-index: 2;}
+.newHome .all-business .vr-row-parent::after{content: '';width: 100%;height: 285px;background: linear-gradient(180deg, rgba(7, 4, 43, 0) 0%, #07042b 100%);position: absolute;left: 0;bottom: 0;z-index: 2;}
+.newHome .all-business .update-pseudo::before{display: none;}
+.newHome .all-business::after { content: ''; display: block; background: url(../images/touch-hand.png) no-repeat; position: absolute; bottom: -10px; left: 30.6%; width: 87px; height: 235px; background-repeat: no-repeat;transform-origin: center bottom;transition: all .5s;}
+.newHome .vr-row-parent .child-row .sub-child{width: 169px;height: 169px;border-radius: 24px;background: rgba(255, 255, 255, 0.03);border: 1px solid rgba(255, 255, 255, 0.25);display: flex;align-items: center;justify-content: center;margin-bottom: 50px;}
+.newHome .vr-row-parent .child-row{margin-right: 50px;}
+.newHome .vr-row-parent .child-row:last-child{margin-right: 0;}
+.newHome .about-us::before {height: 281px;width: 201px;}
+.newHome .slider-area .slider-scroller::before {content: '';width: 138px;height: 92px;position: absolute;bottom: 60px;left: 33%;background-image: url(../images/preview-new.png);background-repeat: no-repeat;z-index: 0;}
+.newHome .slider-area .slider-scroller::after{content: '';width: 19px;height: 19px;position: absolute;bottom: 115px;left: calc(33% + 119px);background-image: url(../images/preview-new-cut.png);background-repeat: no-repeat;z-index: 2;}

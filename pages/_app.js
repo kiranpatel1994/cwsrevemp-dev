@@ -8,6 +8,7 @@ import '/public/fonts/icomoon/style.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '/public/css/app.css';
+import '/public/css/app-extended.css';
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect } from 'react';
