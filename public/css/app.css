@@ -1034,7 +1034,7 @@ a { text-decoration: none; }
 .newHome .companyDevelopment .title em{font-family: 'Playfair Display', serif;font-weight: 700;font-size: 25px;line-height: 1.7;position: relative;}
 .newHome .companyDevelopment .title em::after { content: ''; background: url(../images/path10395.png) no-repeat; position: absolute; bottom: -18px; right: 0; height: 12px; width: 141px; }
 
-.newHome .companyDevelopment{padding-bottom: 120px;}
+.newHome .companyDevelopment{padding-bottom: 120px;position: relative;z-index: 9;}
 .newHome .companyDevelopment .slider-object{padding-top: 0;}
 .newHome .companyDevelopment .slider-object .sliderBox{text-align: center;transition: all .5s;position: relative;width: 198px;height: 198px;}
 .newHome .companyDevelopment .slider-object .sliderBox::before{content: '';width: 96px;height: 68px;background: #fff;position: absolute;z-index: -1;left: 0;top: 30px;border-radius: 50%;right: 0;margin: 0 auto;}
