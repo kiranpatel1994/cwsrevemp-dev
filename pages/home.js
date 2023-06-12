@@ -278,8 +278,8 @@ const Home = ({ homeSettings, portfolioList, testimonialSettings }) => {
                 data-aos-duration="1000"
                 data-aos-delay="300"
                 className="text-white d-inline-block"
+                dangerouslySetInnerHTML={{ __html: homeSettings.aboutSubtitle }}
               >
-                {homeSettings.aboutSubtitle}{" "}
               </em>
             </div>
 

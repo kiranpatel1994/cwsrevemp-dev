@@ -53,8 +53,8 @@
 
 .newHome .companyDevelopment .title{margin-bottom: 84px;}
 .newHome .companyDevelopment .title h2{font-weight: 500;font-size: 25px;line-height: 1.4;}
-.newHome .companyDevelopment .title em{font-family: 'Playfair Display', serif;font-weight: 700;font-size: 25px;line-height: 1.7;position: relative;}
-.newHome .companyDevelopment .title em::after { content: ''; background: url(../images/path10395.png) no-repeat; position: absolute; bottom: -18px; right: 0; height: 12px; width: 141px; }
+.newHome .companyDevelopment .title em p{font-family: 'Playfair Display', serif;font-weight: 700;font-size: 25px;line-height: 1.7;position: relative;margin: 0;}
+.newHome .companyDevelopment .title em p::after { content: ''; background: url(../images/path10395.png) no-repeat; position: absolute; bottom: -18px; right: 50px; height: 12px; width: 141px; }
 
 .newHome .companyDevelopment{padding-bottom: 120px;position: relative;z-index: 9;}
 .newHome .companyDevelopment .slider-object{padding-top: 0;}
