@@ -26,6 +26,7 @@ header { position: -webkit-sticky; position: sticky; top: 0; left: 0; right: 0; 
 header .bg-dark, header .navbar-collapse, header .navbar-brand { position: relative; z-index: 2; }
 header .bg-dark { background-color: #07042b !important; padding: 6px 0; }
 header .navbar-brand img { max-width: 119px; }
+header .navbar{ background-color: #07042b !important; padding: 6px 0; }
 header .nav-link { font-size: 18px; font-weight: 300; }
 header .nav-link.call-action {background-color: transparent;border: 1px solid #FDB627;border-radius: 25px;min-width: 174px;text-align: center;font-weight: 900;color: #fff;font-family: 'gilroy-regularuploaded_file';font-size: 15px;position: relative;background-image: url(../images/rightArrow-orange.svg);background-size: 6px auto;background-repeat: no-repeat;background-position: calc(100% - 33px) center;transition: all 0.5s;}
 header .nav-link.call-action:hover { background-color: #FDB627; border-color: #FDB627; color: #07042b; background-image: url(../images/rightArrow-blue.svg);background-position: 33px center;}
