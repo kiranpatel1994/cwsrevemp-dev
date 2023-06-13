@@ -505,7 +505,7 @@ footer .ft-child:first-child { width: 95px;min-width: 95px; }
 .carouselSlider .swiper-slide { opacity: 0; transition: 0.3s all; }
 .carouselSlider .swiper-slide-visible { opacity: 1; }
 
-
+.companyCard { position: relative; z-index: 5; }
 .companyCard .cardinner { position: relative; background-color: #181636; border: 1px solid rgba(229, 229, 229, 0.1); padding: 71px 38px 60px; border-radius: 6px; height: 100%; }
 .companyCard .cardinner .tileContent p { font-size: 18px; line-height: 30px; }
 .companyCard .cardinner .tileContent h6 { margin-bottom: 10px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; }
@@ -516,11 +516,11 @@ footer .ft-child:first-child { width: 95px;min-width: 95px; }
 .companyCard .companyCol:last-child { z-index: 3; }
 .skyndroket { background-color: #fff; position: relative; padding-top: 80px; }
 /* .skyndroket::before { content: ''; background-color: #07042b; position: absolute; top: 0; left: 0; right: 0; height: 10%; } */
-.skyndroket::before { content: ''; background: #07042b url(../images/smoke.png) no-repeat; background-size: cover; background-position: -15px 0px; position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 1571px; }
+.skyndroket::before { content: ''; background: #07042b url(../images/smoke.png) no-repeat; background-size: cover; background-position: center top; position: absolute; top: -250px; left: 0; right: 0; bottom: 0; height: 1571px; }
 .skyndroket h4 { font-size: 35px; font-family: 'gilroy-bolduploaded_file'; color: #fff; margin-bottom: 15px; }
 .skyndroket h4 em { font-family: 'Playfair Display', serif; font-weight: 700; }
 .skyndroket p { font-size: 20px; line-height: 30px; }
-.smokeContainer { position: relative; height: auto; margin-top: 36%; }
+.smokeContainer { position: relative; height: auto; margin-top: 27%; }
 .smokeBG::before { content: ''; background: url(../images/roketmoke.png) no-repeat; background-position: center; background-size: 102% 100%; position: absolute; left: 0; right: 0; bottom: 0; top: 0; height: 1400px; }
 .roket-cr { display: table; height: 318px; width: 318px; margin: 0 auto; }
 .cloudContainer h4 { margin-bottom: 8px; color: #07042B; }
