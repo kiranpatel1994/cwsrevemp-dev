@@ -29,7 +29,9 @@ export default function SolutionDetails({ detail, tags }) {
                         <div className="row">
                             <div className="col-12">
                                 <div className="text-center solutionInformation">
-                                    <span></span>
+                                    <span>
+                                        <img src="/images/solution-workflow-ani.png" alt="" />
+                                    </span>
                                     <h1>Your workflow just got <em className="text-active">simplified.</em> </h1>
                                     <p>Customizable web pages that speed up operations with less effort and more accuracy. </p>
                                 </div>
@@ -52,9 +54,10 @@ export default function SolutionDetails({ detail, tags }) {
                                             observeParents={true}
                                             coverflowEffect={{
                                                 rotate: 0,
-                                                stretch: 150,
-                                                depth: 220,
-                                                modifier: 1.5,
+                                                stretch: 120,
+                                                grabCursor: true,
+                                                depth: 410,
+                                                modifier: 1,
                                                 slideShadows: false,
                                             }}
                                             pagination={{ clickable: true, }}

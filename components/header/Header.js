@@ -16,7 +16,7 @@ export default function Header({ logo }) {
                 <img src={LineImage.src} alt="" />
             </div>
             <header>
-                <nav className="navbar navbar-expand-sm navbar-dark py-4">
+                <nav className="navbar navbar-expand-sm navbar-dark">
                     <div className="container-xl bg-include p-0">
                         <Link href="/" className="navbar-brand p-0">
 
