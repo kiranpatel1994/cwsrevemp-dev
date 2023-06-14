@@ -69,7 +69,7 @@ export default function WebsiteDesignDev({ data }) {
                     <div className="bottom_shape">
                         <div className="floor-1">
                             <img className="dt_1" src="../images/ring_1.png" />
-                            <img className="dt_2" src="../images/component103.png" />
+                            {/* <img className="dt_2" src="../images/component103.png" /> */}
                         </div>
                         <div className="floor-2">
                             <img className="dt_1" src="../images/design.png" />
@@ -87,7 +87,7 @@ export default function WebsiteDesignDev({ data }) {
                                 <h2 className="sub_title play_fair-ttl">{data.bannerSubtitle}</h2>
                             }
                             {data.bannerTitle &&
-                                <div className="banner-h3 moji_ttl" dangerouslySetInnerHTML={{ __html: data.bannerTitle }}>
+                                <div className="banner-h3 moji_ttl mojiTitle" dangerouslySetInnerHTML={{ __html: data.bannerTitle }}>
                                 </div>
                             }
                             {data.bannerDescription &&

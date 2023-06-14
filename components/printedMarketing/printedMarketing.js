@@ -184,7 +184,7 @@ export default function PrintedMarketing({ data }) {
                                         <div dangerouslySetInnerHTML={{ __html: data.service1Description }}></div>
                                     }
                                     {data.service1ButtonLink &&
-                                        <div className="d-table"><a className="btn btn-yellow ft-gilroy_b fw-bold" href={data.service1ButtonLink}><strong>{data.service1ButtonText}</strong> </a></div>
+                                        <div className="d-table mt-3"><a className="btn btn-yellow ft-gilroy_b fw-bold" href={data.service1ButtonLink}><strong>{data.service1ButtonText}</strong> </a></div>
                                     }
                                 </div>
                             </div>

@@ -556,6 +556,7 @@ footer .ft-child:first-child { width: 95px;min-width: 95px; }
 .play_fair-ttl, .play_fair-ttl h2 { color: #FDB627; font-family: 'Playfair Display', serif; font-style: italic; font-weight: 600; }
 .moji_ttl { color: #fff; font-family: 'gilroy-bolduploaded_file'; font-size: 25px; }
 .moji_ttl img { position: relative; left: -50px; top: -20px; }
+.mojiTitle.moji_ttl img { position: relative; left: 0px; top: -15px; }
 .moji_para p:nth-last-child(2) { max-width: 950px; }
 .moji_para p:nth-last-child(2)::after { content: ''; background: url(../images/img-starsb.png) no-repeat; display: inline-block; height: 58px; width: 56px; background-size: cover; margin: -30px 0 -30px 8px; }
 .im_moji p:last-child { position: relative; color: #fff; font-family: 'gilroy-bolduploaded_file'; font-size: 35px; margin-left: -10px; }
@@ -683,13 +684,15 @@ footer .ft-child:first-child { width: 95px;min-width: 95px; }
 .pattern__card .pattern__child:last-child { margin-top: 150px; }
 .whitelabel_inner .sec-1 .why__us { padding-bottom: 180px; }
 .whitelabel_inner .sec-2 { position: relative; }
-.whitelabel_inner .sec-2::after { content: ''; background: url(../images/design.png) no-repeat; height: 115px; width: 115px; background-size: cover; position: absolute; right: -23%; bottom: 25%; }
+.whitelabel_inner .sec-2::after { content: none; background: url(../images/design.png) no-repeat; height: 115px; width: 115px; background-size: cover; position: absolute; right: -23%; bottom: 25%; }
 .form__inner { padding: 65px 0; }
 .form__inner h3, .form__inner p { color: #07042B; font-size: 20px; line-height: 30px; }
 .form__inner h3 { font-family: 'gilroy-bolduploaded_file'; font-size: 35px; line-height: 40px; }
 .form__inner p strong { color: #FDB627; font-family: 'gilroy-bolduploaded_file'; font-size: 20px; line-height: 30px; }
 .form__inner .form_container { margin: 0; padding: 0; background: none; border-radius: 0; max-width: 100%; position: static; }
+.bg-white-shape { position: relative; background: url(../images/sec_bg.png) no-repeat; background-size: cover; background-position: top; }
 .social_inner li { margin-bottom: 20px; }
+.social_inner li:last-child { margin-bottom: 0; }
 .social_inner a { color: #07042B; text-decoration: none; font-size: 18px; line-height: 28px; }
 .bg__form { background-color: #FDB627; padding: 35px 40px; max-width: 530px; border-radius: 29px; margin: 0 auto; }
 .bg__form .placeholder__form.form_container { padding: 0; margin: 0; }
@@ -733,7 +736,7 @@ footer .ft-child:first-child { width: 95px;min-width: 95px; }
 .webApp_inner .sec-1 { padding-bottom: 80px; }
 .automate_work h2 { color: #fff; }
 .webApp_inner .sec-3 { position: relative; padding-bottom: 0; }
-.webApp_inner .sec-3::before { content: ''; background: url(../images/test2.png) no-repeat; height: 205px; width: 208px; position: absolute; left: -280px; top: -120px; }
+.webApp_inner .sec-3::before { content: none; background: url(../images/test2.png) no-repeat; height: 205px; width: 208px; position: absolute; left: -280px; top: -120px; }
 .webApp_inner .sec-3::after { content: ''; background: url(../images/test3.png) no-repeat; height: 389px; width: 312px; position: absolute; right: -270px; top: 26%; }
 .webApp_inner .sec-3 .why__us:last-child { padding-bottom: 0; }
 .webApp_inner .gl_area { padding-bottom: 49px; }
@@ -785,7 +788,7 @@ footer .ft-child:first-child { width: 95px;min-width: 95px; }
 .work__efficient .benifit__inner::after { height: 212px; width: 212px; top: 160px; right: 330px; z-index: 1; transform: rotate(-150deg); }
 .work__efficient .benifit__inner li:nth-child(4) { margin-left: 65px; }
 .work__efficient .benifit__inner li:last-child { margin-left: 50px; }
-.online_property h2 { color: #fff; margin-bottom: 10px; }
+.online_property h2, .online_property .h2 p { color: #fff; margin-bottom: 10px; font-family: 'gilroy-bolduploaded_file'; font-size: 35px; line-height: 40px; }
 .online_property p { max-width: 100%; }
 .site__management .sec-1 { padding-bottom: 130px; }
 .site__management .min-content { min-height: 226px; display: flex; align-items: center; margin-top: -200px; }
@@ -820,7 +823,7 @@ footer .ft-child:first-child { width: 95px;min-width: 95px; }
 .prpertyManagement .sub_title.play_fair-ttl h2 { position: relative; }
 .prpertyManagement .sub_title.play_fair-ttl h2::after { content: ''; background: url(../images/pin.png) no-repeat; height: 56px; width: 56px; display: inline-block; background-size: cover; position: relative; top: 12px; margin-left: 20px; }
 .site__management .sec-3 { position: relative; }
-.site__management .sec-3::after { content: ''; background: url(../images/boxmedia.png) no-repeat; position: absolute; right: -11%; bottom: 39%; width: 128px; height: 114px; background-size: cover; }
+.site__management .sec-3::after { content: none; background: url(../images/boxmedia.png) no-repeat; position: absolute; right: -11%; bottom: 39%; width: 128px; height: 114px; background-size: cover; }
 .logoBrand_multi .ecom__info .sub_title.play_fair-ttl h2 { position: relative; display: flex; }
 .logoBrand_multi .ecom__info .sub_title.play_fair-ttl h2::after { content: ''; background: url(../images/3d-gallery.png) no-repeat; width: 70px; height: 70px; background-size: cover; display: inline-block; margin-left: 120px; }
 .logoBrand_multi .ecom__info::before { content: ''; background: url(../images/3d-gallery.png) no-repeat; width: 70px; height: 70px; background-size: cover; position: absolute; bottom: 10%; left: 36%; }
@@ -829,7 +832,7 @@ footer .ft-child:first-child { width: 95px;min-width: 95px; }
 .logoBrand_multi .gl_area { margin-top: -380px; }
 .logoBrand_multi.webApp_inner .design_development_container::before { top: 15%; }
 .logoBrand_multi .maxim_effort::after { background: url(../images/3d-gallery.png) no-repeat; }
-.logoBrand_multi.webApp_inner .sec-3::before { background: url(../images/3d-gallery-icon-jpg.png) no-repeat; height: 175px; width: 175px; background-size: cover; left: -230px; bottom: 18%; top: auto; }
+.logoBrand_multi.webApp_inner .sec-3::before { content: ''; background: url(../images/3d-gallery-icon-jpg.png) no-repeat; height: 175px; width: 175px; background-size: cover; left: -230px; bottom: 18%; top: auto; }
 .logoBrand_multi .time_acquainted .why__us:first-child .automate_work::after { content: ''; background: url(../images/3d-gallery.png) no-repeat; height: 83px; width: 83px; background-size: cover; position: absolute; left: 39%; bottom: -85px; }
 .logoBrand_multi .time_acquainted .why__us:first-child { padding-bottom: 160px; }
 .blogMain .ecom__info::before { content: none; }
