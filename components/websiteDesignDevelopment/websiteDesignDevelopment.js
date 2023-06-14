@@ -89,7 +89,7 @@ export default function WebsiteDesignDev({ data }) {
                                 <h2 className="sub_title play_fair-ttl mb-4 pb-2">{data.bannerSubtitle}</h2>
                             }
                             {data.bannerTitle &&
-                                <div className="banner-h3 moji_ttl mb-3" dangerouslySetInnerHTML={{ __html: data.bannerTitle }}>
+                                <div className="banner-h3 moji_ttl" dangerouslySetInnerHTML={{ __html: data.bannerTitle }}>
                                 </div>
                             }
                             {data.bannerDescription &&

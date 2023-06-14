@@ -149,7 +149,7 @@ export default function PropertyManagement({ data, form }) {
                                             )
                                         })}
                                         {data.benefitsLink.url &&
-                                            <li className="list-inline-item">
+                                            <li className="list-inline-item d-none">
                                                 <div className="d-table ms-auto me-auto center-button-project">
                                                     <a href={data.benefitsLink.url} className="btn btn-yellow"><span className="me-2">{data.benefitsLink.title} </span> <img src="/images/fire_1f525.png" alt="" /></a>
                                                 </div>
@@ -172,7 +172,7 @@ export default function PropertyManagement({ data, form }) {
                             <div className="row g-0 why__us align-items-center">
                                 <div className="col-12 online_property position-relative text-center">
                                     {data.whyUsTitle &&
-                                        <div dangerouslySetInnerHTML={{
+                                        <div className="h2" dangerouslySetInnerHTML={{
                                             __html: data.whyUsTitle
                                         }}></div>
                                     }
