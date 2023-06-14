@@ -856,8 +856,8 @@ footer .ft-child:first-child { width: 95px;min-width: 95px; }
 .blogs__tag a.special__tag, .blogs__tag span.special__tag { background-color: rgba(253, 182, 39, .33); color: #FDB627; }
 .artical__card { padding-bottom: 60px; }
 .artical__card .card_max_width { max-width: 100%; width: 100%; }
-.artical__card .card_max_width figcaption h3 { font-size: 25px; color: #fff; font-family: 'gilroy-bolduploaded_file'; margin-bottom: 10px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
-.artical__card .card_max_width figcaption p { font-size: 18px; line-height: 24px; color: rgba(255, 255, 255, 0.48); margin-bottom: 10px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; text-align: left; }
+.artical__card .card_max_width figcaption h3 { font-size: 25px; line-height: 35px; color: #fff; font-family: 'gilroy-bolduploaded_file'; margin-bottom: 10px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.artical__card .card_max_width figcaption p { font-size: 18px; line-height: 24px; font-weight: 400; color: rgba(255, 255, 255, 0.48); margin-bottom: 10px; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; text-align: left; }
 .artical__card .card_max_width figure > img { border-radius: 12px; overflow: hidden; margin-bottom: 13px; height: 257px; object-fit: cover; }
 .artical__card .card_max_width .media__box img { margin: 0 12px 0 0; border-radius: 50%; width: 74px; height: 74px; object-fit: cover; }
 .media__box .blog_user { color: #FDB627; font-family: 'gilroy-bolduploaded_file'; font-size: 20px; line-height: 25px; }
