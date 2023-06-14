@@ -193,25 +193,25 @@ export default function WhiteLabel({ data, themeOptions, form }) {
                 </div>
             </div>
 
-            <div className="form__inner bg-white">
+            <div className="form__inner bg-white-shape">
                 <div className="container-xl">
-                    <div className="row">
+                    <div className="row align-items-center">
                         <div className="col-12 col-md-6">
                             {data.contactBlockTitle &&
-                                <h3>{data.contactBlockTitle}</h3>
+                                <h3 className="text-white">{data.contactBlockTitle}</h3>
                             }
                             {data.contactBlockDescription &&
-                                <p>{data.contactBlockDescription}</p>
+                                <p className="text-white">{data.contactBlockDescription}</p>
                             }
                             {data.contactBlockTagLine &&
-                                <p><strong>{data.contactBlockTagLine}</strong></p>
+                                <p className="text-white"><strong>{data.contactBlockTagLine}</strong></p>
                             }
-                            <ul className="list-unstyled social_inner">
+                            <ul className="list-unstyled social_inner mb-0">
                                 {themeOptions.phone &&
                                     <li>
                                         <div className="d-flex align-items-center">
                                             <img src="../images/telephone.png" alt="phone" />
-                                            <a className="ms-3" href={`tel:` + themeOptions.phone}>{themeOptions.phone}</a>
+                                            <a className="ms-3 text-white" href={`tel:` + themeOptions.phone}>{themeOptions.phone}</a>
                                         </div>
                                     </li>
                                 }
@@ -219,7 +219,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
                                     <li>
                                         <div className="d-flex align-items-center">
                                             <img src="../images/email.png" alt="email" />
-                                            <a className="ms-3" href={`tel:` + themeOptions.email}>{themeOptions.email}</a>
+                                            <a className="ms-3 text-white" href={`tel:` + themeOptions.email}>{themeOptions.email}</a>
                                         </div>
                                     </li>
                                 }
@@ -227,7 +227,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
                                     <li>
                                         <div className="d-flex align-items-center">
                                             <img src="../images/pin-point.png" alt="pinPoint" />
-                                            <a className="ms-3" href={themeOptions.addressLink} target="_blank" rel="noreferrer" dangerouslySetInnerHTML={{ __html: themeOptions.addressText }}></a>
+                                            <a className="ms-3 text-white" href={themeOptions.addressLink} target="_blank" rel="noreferrer" dangerouslySetInnerHTML={{ __html: themeOptions.addressText }}></a>
                                         </div>
                                     </li>
                                 }
