@@ -1,5 +1,9 @@
 /* New Design Update */
-.newHome header .navbar{background-color: transparent !important;}
+@media screen and (min-width: 1600px) {
+    .carouselSection .container-xl {max-width: 1500px;}
+}
+
+.newHome header .navbar{background-color: transparent !important;padding: 23px 0;}
 .newHome .about-us::after {content: '';width: 95px;height: 100%;position: absolute;left: 0;top: 0;background: transparent linear-gradient(180deg, #07042A 10%, rgba(253, 182, 39, 0.4) 70%, #FDB627 100%) 0% 0% no-repeat;z-index: 3;}
 .newHome .slider-area .raw-card {background: transparent;position: relative;overflow: hidden;border: 1px solid rgba(255,255,255,1);border-radius: 24px;}
 .newHome .slider-area .raw-card:hover{border-color: #FDB627;}
@@ -105,3 +109,27 @@
 .newHome .about-us::before {height: 281px;width: 201px;}
 .newHome .slider-area .slider-scroller::before {content: '';width: 138px;height: 92px;position: absolute;bottom: 60px;left: 33%;background-image: url(../images/preview-new.png);background-repeat: no-repeat;z-index: 0;}
 .newHome .slider-area .slider-scroller::after{content: '';width: 19px;height: 19px;position: absolute;bottom: 115px;left: calc(33% + 119px);background-image: url(../images/preview-new-cut.png);background-repeat: no-repeat;z-index: 2;}
+
+/* Solution Page */
+.newsolutions .solutionDetail{margin-top: 72px;}
+.newsolutions .solutionDetail h1{font-size: 55px;}
+
+.newsolutions .carouselSlider .slider-inner{border-radius: 20px;}
+.newsolutions .carouselSection .carouselSlider::after {content: '';background: url(../images/preview-4.png) no-repeat;position: absolute;bottom: -80px;left: 13%;width: 318px;height: 318px;transform: rotate(-150deg);z-index: 2;pointer-events: none;}
+.newsolutions .carouselSection::after {background-image: none;width: 100%;height: 358px;background: linear-gradient(rgba(7, 4, 43, 0) 0%, #07042b 100%);left: 0;top: 8px;transform: none;z-index: 0;}
+.newsolutions .companyCard .row{--bs-gutter-x: 25px;--bs-gutter-y: 100px;}
+.newsolutions .companyCard{margin-bottom: -270px;position: relative;z-index: 2;}
+.newsolutions .companyCard .companyCol:first-child::after,
+.newsolutions .companyCard .companyCol:nth-last-child(2)::before{display: none;}
+.newsolutions .companyCard .companyCol{margin-bottom: 0;}
+.newsolutions .skyndroket{padding-top: 435px;background-position: center top;}
+.newsolutions .skyndroket::before{background-position: 0 -60px;height: calc(100% - 160px);background-color: transparent;background-size: 100% auto;}
+.newsolutions .smokeContainer{margin-top: 29%;}
+
+.newsolutions .tabPanel .nav-pills{border-radius: 50px;}
+.newsolutions .tabPanel .nav-pills .nav-link{border-radius: 50px;}
+.newsolutions .tabPanel .nav-pills::-webkit-scrollbar {width: 4px;height: 4px;}
+.newsolutions .tabPanel .nav-pills::-webkit-scrollbar-track {background: rgba(255, 255, 255, 0.3);}
+.newsolutions .tabPanel .nav-pills::-webkit-scrollbar-thumb {background: #07042b;}
+.newsolutions .tabPanel .nav-pills::-webkit-scrollbar-thumb:hover {background: #07042b;}
+.newsolutions .readyProjectInner .btn-blue{border-radius: 50px;}
