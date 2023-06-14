@@ -56,8 +56,10 @@ export default function Hosting({ data }) {
             })
         });
         document.body.classList.add('hosting');
+        document.body.classList.add('new-hosting');
         return () => {
             document.body.classList.remove('hosting');
+            document.body.classList.remove('new-hosting');
         };
 
     }, []);
@@ -195,7 +197,7 @@ export default function Hosting({ data }) {
                             <div className="row g-0 align-items-center">
                                 <div className="col-md-6">
                                     <div className="ps-0 d-table ms-0 me-auto">
-                                        <img className="img-fluid" src="../images/profile.png" />
+                                        <img className="img-fluid" src={data.serviceDetailImage.sourceUrl} />
                                     </div>
                                 </div>
                                 <div className="col-md-6">

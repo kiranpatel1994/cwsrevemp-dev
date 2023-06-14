@@ -55,8 +55,10 @@ export default function WebsiteDesignDev({ data }) {
         });
 
         document.body.classList.add('webDev');
+        document.body.classList.add('new-webDev');
         return () => {
             document.body.classList.remove('webDev');
+            document.body.classList.remove('new-webDev');
         };
     }, []);
 
@@ -73,7 +75,7 @@ export default function WebsiteDesignDev({ data }) {
                         </div>
                         <div className="floor-2">
                             <img className="dt_1" src="../images/design.png" />
-                            <img className="dt_2" src="../images/preview-4.png" />
+                            {/* <img className="dt_2" src="../images/preview-4.png" /> */}
                         </div>
                     </div>
                 </div>
@@ -84,10 +86,10 @@ export default function WebsiteDesignDev({ data }) {
                         <div className="col-12">
                             <h1>Web Design and Development  </h1>
                             {data.bannerSubtitle &&
-                                <h2 className="sub_title play_fair-ttl">{data.bannerSubtitle}</h2>
+                                <h2 className="sub_title play_fair-ttl mb-4 pb-2">{data.bannerSubtitle}</h2>
                             }
                             {data.bannerTitle &&
-                                <div className="banner-h3 moji_ttl mojiTitle" dangerouslySetInnerHTML={{ __html: data.bannerTitle }}>
+                                <div className="banner-h3 moji_ttl" dangerouslySetInnerHTML={{ __html: data.bannerTitle }}>
                                 </div>
                             }
                             {data.bannerDescription &&
@@ -114,7 +116,7 @@ export default function WebsiteDesignDev({ data }) {
                         </div>
                         <div className="col-11">
                             {data.benefitsBlocks &&
-                                <ul className="list-inline benifit__inner">
+                                <ul className="list-inline benifit__inner benefit_list">
                                     {data.benefitsBlocks.map((item, index) => {
                                         return (
                                             <li className="list-inline-item" key={`benefit-${index}`}>
@@ -194,7 +196,7 @@ export default function WebsiteDesignDev({ data }) {
                             </div>
                             <div className="row g-0">
                                 <div className="col-md-7">
-                                    <div className="wp_inner">
+                                    <div className="wp_inner ps-lg-5">
                                         {data.customSitesTitle &&
                                             <h3 className="text-35_b_white mb-3">{data.customSitesTitle}</h3>
                                         }
@@ -212,7 +214,7 @@ export default function WebsiteDesignDev({ data }) {
                                 }
                             </div>
                             {data.customSitesBlocks &&
-                                <div className="op_up">
+                                <div className="op_up customSites_up">
                                     <ul className="list-inline benifit__inner">
                                         {data.customSitesBlocks.map((item, index) => {
                                             return (
@@ -237,13 +239,13 @@ export default function WebsiteDesignDev({ data }) {
                         <div className="col-11">
                             <div className="row g-0">
                                 <div className="col-md-7">
-                                    <div className="wp_inner had_new">
+                                    <div className="wp_inner had_new ps-lg-5">
                                         {data.serviceDetailsTitle &&
                                             <div className="d-flex align-items-center text-35_b_white mb-3" dangerouslySetInnerHTML={{ __html: data.serviceDetailsTitle }}>
                                             </div>
                                         }
                                         {data.serviceDetailsDescription &&
-                                            <div className="service-desc txlh_20_30 mb-4" dangerouslySetInnerHTML={{ __html: data.serviceDetailsDescription }}>
+                                            <div className="service-desc txlh_20_30" dangerouslySetInnerHTML={{ __html: data.serviceDetailsDescription }}>
                                             </div>
                                         }
                                         {data.serviceDetailsSubtitle &&
@@ -275,7 +277,7 @@ export default function WebsiteDesignDev({ data }) {
                         <div className="col-11">
                             <div className="row g-0 align-items-center">
                                 <div className="col-md-6">
-                                    <div className="ps-0 d-table ms-auto me-auto">
+                                    <div className="ps-0 d-table">
                                         <img className="img-fluid" src="../images/svdetails.png" />
                                     </div>
                                 </div>
