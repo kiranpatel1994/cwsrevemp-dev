@@ -57,8 +57,10 @@ export default function WebApp({ data }) {
         });
 
         document.body.classList.add('web-app');
+        document.body.classList.add('new-web-app');
         return () => {
             document.body.classList.remove('web-app');
+            document.body.classList.remove('new-web-app');
         };
 
     }, []);
@@ -167,42 +169,49 @@ export default function WebApp({ data }) {
                         </div>
                         <div className="col-11 time_acquainted">
                             <div className="row g-0 why__us align-items-center">
-                                <div className="col-md-5">
+                                <div className="col-md-6">
                                     <img className="img-fluid" src="../images/test1.png" />
                                 </div>
-                                <div className="col-md-7 automate_work position-relative">
+                                <div className="col-md-6 automate_work position-relative">
                                     <h2 dangerouslySetInnerHTML={{ __html: data.serviceDetailsTitle }} />
                                     <p dangerouslySetInnerHTML={{ __html: data.serviceDetailsDescription }} />
-                                    <p dangerouslySetInnerHTML={{ __html: data.serviceDetailsDescription }} />
+                                    <p className="mb-4">
+                                        <strong dangerouslySetInnerHTML={{ __html: data.serviceDetailsSubtitle }} />
+                                    </p>
                                     {data.seeOurWorkLink &&
                                         <div className="d-table"><a className="btn btn-yellow ft-gilroy_b fw-bold" href={data.seeOurWorkLink}><strong>Let’s talk</strong></a></div>
                                     }
                                 </div>
                             </div>
-                            <div className="row g-0 why__us align-items-center">
-                                <div className="col-md-7 automate_work position-relative">
-                                    {data.industryDetailsTitle &&
-                                        <h2 dangerouslySetInnerHTML={{ __html: data.industryDetailsTitle }} />
-                                    }
-                                    {data.industryDetailsDescription &&
-                                        <p dangerouslySetInnerHTML={{ __html: data.industryDetailsDescription }} />
-                                    }
-                                    {data.industryDetailsSubtitle &&
-                                        <p><strong>{data.industryDetailsSubtitle}  </strong></p>
-                                    }
-                                </div>
-                                {data.industryDetailsImage &&
-                                    <div className="col-md-5">
-                                        <img className="img-fluid" src={data.industryDetailsImage.sourceUrl} />
-                                    </div>
-                                }
-                            </div>
                         </div>
                     </section>
+                    
                 </div>
             </div>
-
-
+            <div className="industryNeeds">
+                <div className="container-xl">
+                    <div className="row g-0 needs_block align-items-end">
+                        <div className="col-md-5 automate_work position-relative">
+                            {data.industryDetailsTitle &&
+                                <h2 dangerouslySetInnerHTML={{ __html: data.industryDetailsTitle }} />
+                            }
+                            {data.industryDetailsDescription &&
+                                <p dangerouslySetInnerHTML={{ __html: data.industryDetailsDescription }} />
+                            }
+                            {data.industryDetailsSubtitle &&
+                                <h3><strong className="fw-bold">{data.industryDetailsSubtitle}</strong></h3>
+                            }
+                        </div>
+                        {data.industryDetailsImage &&
+                            <div className="col-md-7 d-flex justify-content-end">
+                                <div className="img-inner">
+                                    <img className="img-fluid" src={data.industryDetailsImage.sourceUrl} />
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
         </main>
     )
 }
