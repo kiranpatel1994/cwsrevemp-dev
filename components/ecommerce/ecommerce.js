@@ -56,8 +56,10 @@ export default function Ecommerce({ data }) {
             })
         });
         document.body.classList.add('eCommerce');
+        document.body.classList.add('new-eCommerce');
         return () => {
             document.body.classList.remove('eCommerce');
+            document.body.classList.remove('new-eCommerce');
         };
 
     }, []);
@@ -172,7 +174,7 @@ export default function Ecommerce({ data }) {
                                             <h3 className="text-32_b_white mb-3">{data.serviceDetailTitle}</h3>
                                         }
                                         {data.serviceDetailDescription &&
-                                            <p className="txlh_20_30 mb-4">{data.serviceDetailDescription}</p>
+                                            <p className="txlh_20_30 mb-4" dangerouslySetInnerHTML={{ __html: data.serviceDetailDescription }} />
                                         }
                                         {data.serviceDetailList &&
                                             <ul className="list-unstyled list_y_dots text-white">
@@ -190,7 +192,7 @@ export default function Ecommerce({ data }) {
                     </section>
                 </div>
             </div>
-            {data.readyToSellText &&
+            {/* {data.readyToSellText &&
                 <div className="sellBig">
                     <div className="container-xl">
                         <div className="row">
@@ -200,7 +202,7 @@ export default function Ecommerce({ data }) {
                         </div>
                     </div>
                 </div>
-            }
+            } */}
 
 
         </main>

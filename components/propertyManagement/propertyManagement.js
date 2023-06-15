@@ -65,8 +65,10 @@ export default function PropertyManagement({ data, form }) {
         });
 
         document.body.classList.add('property-management');
+        document.body.classList.add('new-propertyManagement');
         return () => {
             document.body.classList.remove('property-management');
+            document.body.classList.remove('new-propertyManagement');
         };
 
     }, []);
@@ -135,7 +137,7 @@ export default function PropertyManagement({ data, form }) {
                         <div className="col-11">
                             <div className="work__efficient">
                                 {data.benefitsDescription &&
-                                    <div dangerouslySetInnerHTML={{ __html: data.benefitsDescription }}></div>
+                                    <div className="benefitDesc" dangerouslySetInnerHTML={{ __html: data.benefitsDescription }}></div>
                                 }
                                 {data.benefitsBlocks &&
                                     <ul className="list-inline benifit__inner">
@@ -283,9 +285,7 @@ export default function PropertyManagement({ data, form }) {
                     <div className="row g-0 why__us align-items-center">
                         <div className="col-12 automate_work">
                             {data.experienceMarketingAndServiceHeading &&
-                                <div className="text-center">
-                                    <div dangerouslySetInnerHTML={{ __html: data.experienceMarketingAndServiceHeading }}></div>
-                                </div>
+                                <div className="text-center expMarketingHeading" dangerouslySetInnerHTML={{ __html: data.experienceMarketingAndServiceHeading }} />
                             }
                         </div>
                     </div>

@@ -173,3 +173,43 @@
 
 .new-hosting .information__box h5 {display: flex;align-items: center;justify-content: center;}
 .new-hosting .information__box::after{pointer-events: none;}
+
+.new-hosting .hosting_page{position: relative;}
+.new-hosting .hosting_page .sec-3{margin-bottom: 90px;padding-bottom: 0;}
+.new-hosting .hosting_page .sec-3 img{margin-bottom: -90px;}
+.new-hosting .hosting_page::before{content: '';position: absolute;left: 0;bottom: 0;width: 100%;height: 422px;background: linear-gradient(rgba(7, 4, 43, 0) 0%, #1c1e51 100%);z-index: 0;pointer-events: none;}
+
+.new-eCommerce .moji_para p:nth-last-child(2)::after{display: none;}
+.new-eCommerce .im_moji p:last-child{margin-top: 25px;}
+.new-eCommerce .gl_area.ecommerce_page .sec-3 .had_new p b{color: #FDB627;font-weight: 700;font-family: 'Gilroy';}
+.new-eCommerce .gl_area.ecommerce_page{position: relative;}
+.new-eCommerce .gl_area.ecommerce_page::before{content: '';position: absolute;left: 0;bottom: 0;width: 100%;height: 422px;background: linear-gradient(rgba(7, 4, 43, 0) 0%, #1c1e51 100%);z-index: 1;pointer-events: none;}
+.new-eCommerce .banner__overlap .ecom_development_container ~ .bottom_shape .floor-2 .dt_2{display: none;}
+.new-eCommerce .line_anim{bottom: 75px;}
+.new-eCommerce .gl_area.ecommerce_page .sec-3 img{top: inherit;}
+.new-eCommerce .gl_area.ecommerce_page .sec-3 .col-11{position: relative;z-index: 2;}
+
+.new-socialMedia .sociaManagement .whyUsDesc p{max-width: 604px;margin-left: 0;}
+.new-socialMedia .sociaManagement .whyUsDesc p{margin-bottom: 15px;}
+
+.new-socialMedia .list_y_dots ul{padding-right: 30px;}
+.new-socialMedia .list_y_dots li {text-indent: 0;position: relative;}
+.new-socialMedia .list_y_dots li::before {top: 7px;position: absolute;left: 0;}
+.new-socialMedia .time_acquainted .why__us::after{display: none;}
+.new-socialMedia .line_anim{bottom: 90px;}
+.new-socialMedia .sociaManagement .gl_area::before{content: '';position: absolute;left: 0;bottom: 0;width: 100%;height: 422px;background: linear-gradient(rgba(7, 4, 43, 0) 0%, #1c1e51 100%);z-index: 1;pointer-events: none;}
+.new-socialMedia .sociaManagement .banner_content::before{background-image: url(../images/4b.png);}
+
+.new-propertyManagement .ecom__info .moji_ttl{margin-bottom: 25px;}
+.new-propertyManagement .ecom__info .play_fair-ttl{margin-bottom: 25px;}
+.new-propertyManagement .benefitDesc{padding-top: 40px;margin-bottom: 55px;}
+.new-propertyManagement .benefitDesc p{font-family: "Gilroy";font-weight: bold;font-size: 25px;line-height: 35px;color: #fdb627;}
+.new-propertyManagement .expMarketingHeading p{font-family: "Gilroy";font-weight: bold;font-size: 35px;line-height: 40px;text-align: center;color: #fff;max-width: 100%;}
+.new-propertyManagement .last-container .lc-container{--bs-gutter-y: 30px;}
+.new-propertyManagement .last-container{padding-bottom: 105px;}
+.new-propertyManagement .desktop__container{background-image: url(../images/propertyman-bg.png);background-position: 22px bottom;background-color: #FDB627;}
+.new-propertyManagement .desktop__container h2{max-width: 984px;margin: 0 auto;}
+
+.gl_area .ffk_btn{border: 1px solid rgba(255, 255, 255, 0.25);}
+.new-printedMarketing .webApp_inner .gl_area {padding-bottom: 12px;}
+.new-printedMarketing .webApp_inner .gl_area::before{content: '';position: absolute;left: 0;bottom: 0;width: 100%;height: 422px;background: linear-gradient(rgba(7, 4, 43, 0) 0%, #1c1e51 100%);z-index: 1;pointer-events: none;}

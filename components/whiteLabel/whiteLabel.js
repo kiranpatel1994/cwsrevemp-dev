@@ -170,7 +170,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
                                 {data.whiteLabelServicePoints &&
                                     <div className="service__label">
                                         <div className="row align-items-center">
-                                            {data.whyUsBlocks.map((item, index) => {
+                                            {data.whiteLabelServicePoints.map((item, index) => {
                                                 return (
                                                     <div className="col-12 col-md-4" key={`whyUs-${index}`}>
                                                         <div className="d-flex align-items-center">

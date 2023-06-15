@@ -58,8 +58,10 @@ export default function PrintedMarketing({ data }) {
         });
 
         document.body.classList.add('printed-marketing');
+        document.body.classList.add('new-printedMarketing');
         return () => {
             document.body.classList.remove('printed-marketing');
+            document.body.classList.remove('new-printedMarketing');
         };
 
     }, []);
@@ -144,7 +146,7 @@ export default function PrintedMarketing({ data }) {
                             }
                         </div>
                         <div className="col-11">
-                            <div className="row g-0 why__us align-items-center">
+                            <div className="row g-0 why__us align-items-center mb-5">
                                 <div className="col-md-7 maxim_effort position-relative">
                                     {data.whyUsTitle &&
                                         <div dangerouslySetInnerHTML={{ __html: data.whyUsTitle }}></div>
@@ -189,7 +191,7 @@ export default function PrintedMarketing({ data }) {
                                 </div>
                             </div>
 
-                            <div className="row g-0 why__us align-items-center">
+                            <div className="row g-0 why__us align-items-center z-2 position-relative">
                                 <div className="col-md-7 automate_work position-relative">
                                     {data.service2Title &&
                                         <h2>{data.service2Title}</h2>

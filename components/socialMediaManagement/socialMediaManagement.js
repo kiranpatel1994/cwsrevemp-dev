@@ -57,8 +57,10 @@ export default function SocialMediaManagement({ data }) {
         });
 
         document.body.classList.add('social-media');
+        document.body.classList.add('new-socialMedia');
         return () => {
             document.body.classList.remove('social-media');
+            document.body.classList.remove('new-socialMedia');
         };
     }, []);
 
@@ -125,11 +127,11 @@ export default function SocialMediaManagement({ data }) {
                             <div className="row g-0 why__us align-items-center">
                                 <div className="col-md-7 maxim_effort position-relative">
                                     <div dangerouslySetInnerHTML={{ __html: data.whyUsTitle }}></div>
-                                    <div dangerouslySetInnerHTML={{ __html: data.whyUsDescription }}></div>
+                                    <div className="whyUsDesc" dangerouslySetInnerHTML={{ __html: data.whyUsDescription }}></div>
                                 </div>
                                 {data.whyUsImage &&
                                     <div className="col-md-5">
-                                        <img className="img-fluid w-100" src={data.whyUsImage.sourceUrl} />
+                                        <img className="whyUsImg" src={data.whyUsImage.sourceUrl} />
                                     </div>
                                 }
                             </div>
@@ -182,16 +184,16 @@ export default function SocialMediaManagement({ data }) {
                             <div className="row g-0 why__us align-items-center">
                                 {data.automatedImage &&
                                     <div className="col-md-5">
+                                        {data.automatedSubHeading &&
+                                            <div className="text__subtitle text-center">
+                                                <span>{data.automatedSubHeading} </span>
+                                            </div>
+                                        }
                                         <img className="img-fluid" src={data.automatedImage.sourceUrl} />
                                     </div>
                                 }
                                 <div className="col-md-7 automate_work position-relative">
                                     <div className="ps-5">
-                                        {data.automatedSubHeading &&
-                                            <div className="text__subtitle">
-                                                <span>{data.automatedSubHeading} </span>
-                                            </div>
-                                        }
                                         <h2>{data.automatedHeading}</h2>
                                         {data.automatedContent &&
                                             <div className="list-unstyled list_y_dots text-white" dangerouslySetInnerHTML={{ __html: data.automatedContent }}>
@@ -200,7 +202,7 @@ export default function SocialMediaManagement({ data }) {
                                     </div>
                                 </div>
                             </div>
-                            <div className="row g-0 why__us align-items-center">
+                            <div className="row g-0 why__us align-items-center z-2 position-relative">
                                 <div className="col-md-5 automate_work position-relative">
                                     <div className="d-table ms-auto me-auto">
                                         <h2>{data.maintainingBlogHeading}</h2>
