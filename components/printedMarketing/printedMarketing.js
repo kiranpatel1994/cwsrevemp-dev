@@ -58,10 +58,8 @@ export default function PrintedMarketing({ data }) {
         });
 
         document.body.classList.add('printed-marketing');
-        document.body.classList.add('new-printedMarketing');
         return () => {
             document.body.classList.remove('printed-marketing');
-            document.body.classList.remove('new-printedMarketing');
         };
 
     }, []);

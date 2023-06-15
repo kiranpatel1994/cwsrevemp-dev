@@ -57,10 +57,8 @@ export default function SocialMediaManagement({ data }) {
         });
 
         document.body.classList.add('social-media');
-        document.body.classList.add('new-socialMedia');
         return () => {
             document.body.classList.remove('social-media');
-            document.body.classList.remove('new-socialMedia');
         };
     }, []);
 

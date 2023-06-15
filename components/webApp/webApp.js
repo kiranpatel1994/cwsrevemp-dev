@@ -57,10 +57,8 @@ export default function WebApp({ data }) {
         });
 
         document.body.classList.add('web-app');
-        document.body.classList.add('new-web-app');
         return () => {
             document.body.classList.remove('web-app');
-            document.body.classList.remove('new-web-app');
         };
 
     }, []);

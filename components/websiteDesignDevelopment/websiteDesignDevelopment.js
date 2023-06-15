@@ -55,10 +55,8 @@ export default function WebsiteDesignDev({ data }) {
         });
 
         document.body.classList.add('webDev');
-        document.body.classList.add('new-webDev');
         return () => {
             document.body.classList.remove('webDev');
-            document.body.classList.remove('new-webDev');
         };
     }, []);
 

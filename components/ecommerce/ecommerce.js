@@ -56,10 +56,8 @@ export default function Ecommerce({ data }) {
             })
         });
         document.body.classList.add('eCommerce');
-        document.body.classList.add('new-eCommerce');
         return () => {
             document.body.classList.remove('eCommerce');
-            document.body.classList.remove('new-eCommerce');
         };
 
     }, []);

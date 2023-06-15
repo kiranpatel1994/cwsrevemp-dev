@@ -65,10 +65,8 @@ export default function PropertyManagement({ data, form }) {
         });
 
         document.body.classList.add('property-management');
-        document.body.classList.add('new-propertyManagement');
         return () => {
             document.body.classList.remove('property-management');
-            document.body.classList.remove('new-propertyManagement');
         };
 
     }, []);
