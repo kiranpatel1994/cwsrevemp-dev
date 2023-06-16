@@ -1117,6 +1117,7 @@ export default class GraphAPI {
       homeSettings {
         bannerTitle
         bannerSubtitle
+        bannerVideoUrl
         bannerSlider {
           bannerImage {
             sourceUrl
@@ -1142,6 +1143,11 @@ export default class GraphAPI {
         businessSubtitle
         businessImage {
           sourceUrl
+        }
+        businessImageSlider {
+          businessImage {
+            sourceUrl
+          }
         }
         testimonialsTitle
         testimonialsSubtitle
