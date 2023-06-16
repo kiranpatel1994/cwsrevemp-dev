@@ -13,7 +13,7 @@ import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import HomeDetails from "../components/home/homeDetails";
+import HomeDetails from "../components/home/homeDetail";
 
 const Home = ({ homeSettings, portfolioList, testimonialSettings }) => {
     // Add Class in Body
@@ -28,7 +28,6 @@ const Home = ({ homeSettings, portfolioList, testimonialSettings }) => {
         <HomeDetails homeSettings={homeSettings} portfolioList={portfolioList} testimonialSettings={testimonialSettings} />
     )
 };
-
 export default Home;
 
 export async function getStaticProps() {
