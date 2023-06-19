@@ -11,6 +11,8 @@ import SwiperCore, {
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
+import lottieFire from '../public/lottie/fire.json'
+import lottie from "lottie-web";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -137,6 +139,32 @@ const Home = ({ homeSettings, portfolioList, testimonialSettings }) => {
             scroll2El(goto);
         }, 100);
     };
+
+    // Fire Button Hover Animation
+    const fireContainer = useRef(null);
+    useEffect(() => {
+        lottie.loadAnimation({
+            container: fireContainer.current,
+            renderer: "svg",
+            loop: true,
+            autoplay: false,
+            animationData: lottieFire
+        });
+
+        let fireBtn = document.querySelector('.fireBtn');
+        
+        fireBtn.addEventListener('mouseenter', (e) => {
+            lottie.play()
+        });
+
+        fireBtn.addEventListener('mouseleave', (e) => {
+            lottie.stop()
+        });
+
+        return () => {
+            lottie.destroy();
+        };
+    }, []);
 
     return (
         <main>
@@ -314,9 +342,17 @@ const Home = ({ homeSettings, portfolioList, testimonialSettings }) => {
                                     </Swiper>
                                 </div>
                                 <div className="d-flex justify-content-center mt-5 pt-4">
-                                    <Link class="btn btn-yellow" href="/home#">
-                                        <span>Wait, there’s more… </span>{" "}
-                                        <img src="/images/fire_1f525.png" alt="" />
+                                    <Link class="btn btn-yellow fireBtn" href="/home#">
+                                        <span>Wait, there’s more… </span>
+                                        <span className="fireContainer" ref={fireContainer} />
+                                        {/* <Lottie
+                                            options={defaultOptions}
+                                            height={32}
+                                            width={32}
+                                        /> */}
+                                        {/* <span className="hoverAnim">
+                                            <img src="/images/fire_1f525.png" alt="" />
+                                        </span> */}
                                     </Link>
                                 </div>
                             </>

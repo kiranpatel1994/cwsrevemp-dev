@@ -5,6 +5,9 @@ import { GravityFormsForm } from "../../generated/graphql";
 import GravityForm from '../../components/GravityForm';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
+import Lottie from 'react-lottie';
+import torusLanding from "../../public/lottie/3d-torus-loading.json"
+
 gsap.registerPlugin(ScrollTrigger);
 
 const client = new ApolloClient({
@@ -70,6 +73,16 @@ export default function PropertyManagement({ data, form }) {
         };
 
     }, []);
+
+    const torusLandingOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: torusLanding,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    };
+
     return (
         <main className="position-relative prpertyManagement prpertyManagement_nw zindex-2 overflow-hidden" id="main">
             <div className="banner__overlap">
@@ -77,7 +90,10 @@ export default function PropertyManagement({ data, form }) {
                     <div className="design_development_container ecom_development_container"></div>
                     <div className="bottom_shape">
                         <div className="floor-1">
-                            <img className="dt_1" src="../images/ring_1.png" />
+                            <div className="torusLandingLottie">
+                                <Lottie options={torusLandingOptions} />
+                            </div>
+                            {/* <img className="dt_1" src="../images/ring_1.png" /> */}
                         </div>
                     </div>
                 </div>

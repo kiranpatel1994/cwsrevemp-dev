@@ -1,4 +1,4 @@
-import brand from '/public/images/foot-branding.png';
+    import brand from '/public/images/foot-branding.png';
 import telephoneImg from '/public/images/telephone.png';
 import emailImg from '/public/images/email.png';
 import pinPointImg from '/public/images/pin-point.png';
@@ -102,45 +102,45 @@ export default function Footer({ settings }) {
             <div className="last-footer">
                 <div className="container-xl">
                     <div className="row">
-                        <div className="col-12 col-md-6 col-lg-2" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="0">
-                            <h6>Home</h6>
-                            <ul className="list-unstyled">
-                                <li><a href="#">Lorem ipsum</a> </li>
-                                <li><a href="#">Lorem ipsum</a> </li>
-                                <li><a href="#">Lorem ipsum</a> </li>
-                            </ul>
-                        </div>
-                        <div className="col-12 col-md-6 col-lg-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200" data-aos-offset="0">
-                            <h6>Company</h6>
-                            <ul className="list-unstyled">
-                                <li><a href="#">Lorem ipsum</a> </li>
-                                <li><a href="#">Lorem ipsum</a> </li>
-                                <li><a href="#">Lorem ipsum</a> </li>
-                            </ul>
-                        </div>
-                        <div className="col-12 col-md-6 col-lg-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-offset="0">
+                        <div className="col-12 col-md-6 col-lg-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-aos-offset="0">
                             <h6>Services & Specialties</h6>
-                            <ul className="list-unstyled">
-                                <li><a href="#">Lorem ipsum</a> </li>
-                                <li><a href="#">Lorem ipsum</a> </li>
-                                <li><a href="#">Lorem ipsum</a> </li>
-                            </ul>
+                            <div className="row">
+                                <div className="col-lg-6">
+                                    <ul className="list-unstyled">
+                                        <li><Link href="/services/website-design-development">Website Design and Development</Link></li>
+                                        <li><Link href="/services/ecommerce">Ecommerce Development</Link></li>
+                                        <li><Link href="/services/ui-ux-design-web-applications-development">Custom Systems/Web applications</Link></li>
+                                        <li><Link href="/services/ecommerce">Hosting</Link></li>
+                                    </ul>        
+                                </div>
+                                <div className="col-lg-6">
+                                    <ul className="list-unstyled">
+                                        <li><Link href="/services/social-media-management">Social Media Management</Link></li>
+                                        <li><Link href="/services/white-label">White Label</Link></li>
+                                        <li><Link href="/services/logo-design-and-branding">Logo Design and Branding</Link></li>
+                                        <li><Link href="/services/printed-marketing-materials">Printed Marketing Materials</Link></li>
+                                    </ul>        
+                                </div>
+                            </div>
                         </div>
-                        <div className="col-12 col-md-6 col-lg-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-offset="0">
+                        <div className="col-12 col-md-6 col-lg-5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-offset="0">
                             <h6>Solutions</h6>
-                            <ul className="list-unstyled">
-                                <li><a href="#">Lorem ipsum</a> </li>
-                                <li><a href="#">Lorem ipsum</a> </li>
-                                <li><a href="#">Lorem ipsum</a> </li>
-                            </ul>
-                        </div>
-                        <div className="col-12 col-md-6 col-lg-2" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800" data-aos-offset="0">
-                            <h6>Contact Us</h6>
-                            <ul className="list-unstyled">
-                                <li><a href="#">Lorem ipsum</a> </li>
-                                <li><a href="#">Lorem ipsum</a> </li>
-                                <li><a href="#">Lorem ipsum</a> </li>
-                            </ul>
+                            <div className="row">
+                                <div className="col-lg-6">
+                                    <ul className="list-unstyled">
+                                        <li><Link href="#">Company Intranet</Link></li>
+                                        <li><Link href="#">Donation Pages</Link></li>
+                                        <li><Link href="#">Real Estate Property Pages</Link></li>
+                                        <li><Link href="#">Digital Forms</Link></li>
+                                    </ul>        
+                                </div>
+                                <div className="col-lg-6">
+                                    <ul className="list-unstyled">
+                                        <li><Link href="#">Contact Database</Link></li>
+                                        <li><Link href="#">Payment Processing</Link></li>
+                                    </ul>        
+                                </div>
+                            </div>
                         </div>
                         <div className="col-12 col-md-6 col-lg-2">
 

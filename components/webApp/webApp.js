@@ -2,6 +2,10 @@ import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
+import Lottie from 'react-lottie';
+import torusLanding from "../../public/lottie/3d-torus-loading.json"
+import automateImage from "../../public/lottie/3d-torus-loading.json"
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function WebApp({ data }) {
@@ -63,6 +67,24 @@ export default function WebApp({ data }) {
 
     }, []);
 
+    const torusLandingOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: torusLanding,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    };
+
+    const automateOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: automateImage,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    }
+
     return (
         <main className="position-relative webApp_inner zindex-2 overflow-hidden" id="main">
             <div className="banner__overlap">
@@ -70,7 +92,10 @@ export default function WebApp({ data }) {
                     <div className="design_development_container ecom_development_container"></div>
                     <div className="bottom_shape">
                         <div className="floor-1">
-                            <img className="dt_1" src="../images/ring_1.png" />
+                            <div className="torusLandingLottie">
+                                <Lottie options={torusLandingOptions} />
+                            </div>
+                            {/* <img className="dt_1" src="../images/ring_1.png" /> */}
                         </div>
                     </div>
                 </div>
@@ -168,6 +193,9 @@ export default function WebApp({ data }) {
                         <div className="col-11 time_acquainted">
                             <div className="row g-0 why__us align-items-center">
                                 <div className="col-md-6">
+                                    <div className="automateImg">
+                                        <Lottie options={automateOptions} />
+                                    </div>
                                     <img className="img-fluid" src="../images/test1.png" />
                                 </div>
                                 <div className="col-md-6 automate_work position-relative">

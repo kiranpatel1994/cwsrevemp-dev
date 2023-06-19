@@ -11,13 +11,13 @@ var swiper1 = new Swiper(".slider-scroller", {
     },
 });
 
-var swiper2 = new Swiper(".device-slider", { 
+var swiper2 = new Swiper(".device-slider", {
     slidesPerView: 1.5,
     spaceBetween: 0,
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
+        el: ".swiper-pagination",
+        clickable: true,
     },
     effect: "creative",
     creativeEffect: {
@@ -26,7 +26,7 @@ var swiper2 = new Swiper(".device-slider", {
             translate: ["-20%", 0, 0],
             opacity: 0
         },
-            next: {
+        next: {
             translate: ["100%", 0, 0],
         },
     },
@@ -45,7 +45,7 @@ var swiper3 = new Swiper(".slider-object", {
     centeredSlides: true,
     // If we need pagination
     pagination: {
-    el: '.swiper-pagination',
+        el: '.swiper-pagination',
         clickable: true,
         renderBullet: function (index, className) {
             return '<span class="' + className + '">' + (menu[index]) + '</span>';

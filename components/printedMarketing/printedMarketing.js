@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
+import Lottie from 'react-lottie';
+import torusLanding from "../../public/lottie/3d-torus-loading.json"
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function PrintedMarketing({ data }) {
@@ -64,6 +67,14 @@ export default function PrintedMarketing({ data }) {
 
     }, []);
 
+    const torusLandingOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: torusLanding,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    };
 
     return (
         <main className="position-relative webApp_inner logoBrand_multi zindex-2 overflow-hidden" id="main">
@@ -72,7 +83,10 @@ export default function PrintedMarketing({ data }) {
                     <div className="design_development_container ecom_development_container"></div>
                     <div className="bottom_shape">
                         <div className="floor-1">
-                            <img className="dt_1" src="../images/ring_1.png" />
+                            <div className="torusLandingLottie">
+                                <Lottie options={torusLandingOptions} />
+                            </div>
+                            {/* <img className="dt_1" src="../images/ring_1.png" /> */}
                         </div>
                     </div>
                 </div>

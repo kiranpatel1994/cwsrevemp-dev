@@ -3,6 +3,9 @@ import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
+import Lottie from 'react-lottie';
+import torusLanding from "../../public/lottie/3d-torus-loading.json"
+
 export default function WebsiteDesignDev({ data }) {
     useEffect(() => {
         gsap.set('.dragWithme', { top: '-10px' });
@@ -60,6 +63,15 @@ export default function WebsiteDesignDev({ data }) {
         };
     }, []);
 
+    const torusLandingOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: torusLanding,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    };
+
 
     return (
         <main className="position-relative zindex-2 website_design_development overflow-hidden" id="main">
@@ -68,7 +80,9 @@ export default function WebsiteDesignDev({ data }) {
                     <div className="design_development_container"></div>
                     <div className="bottom_shape">
                         <div className="floor-1">
-                            <img className="dt_1" src="../images/ring_1.png" />
+                            <div className="torusLandingLottie">
+                                <Lottie options={torusLandingOptions} />
+                            </div>
                             {/* <img className="dt_2" src="../images/component103.png" /> */}
                         </div>
                         <div className="floor-2">

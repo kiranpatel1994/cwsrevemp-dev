@@ -2,6 +2,10 @@ import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
+import Lottie from 'react-lottie';
+import torusLanding from "../../public/lottie/3d-torus-loading.json"
+import ecommerceBasket from "../../public/lottie/ecommerce-basket.json"
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Ecommerce({ data }) {
@@ -62,6 +66,24 @@ export default function Ecommerce({ data }) {
 
     }, []);
 
+    const torusLandingOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: torusLanding,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    };
+
+    const ecommerceBasketOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: ecommerceBasket,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    };
+
 
     return (
         <main className="position-relative zindex-2 eComm website_design_development overflow-hidden" id="main">
@@ -70,7 +92,10 @@ export default function Ecommerce({ data }) {
                     <div className="design_development_container ecom_development_container"></div>
                     <div className="bottom_shape">
                         <div className="floor-1">
-                            <img className="dt_1" src="../images/ring_1.png" />
+                            <div className="torusLandingLottie">
+                                <Lottie options={torusLandingOptions} />
+                            </div>
+                            {/* <img className="dt_1" src="../images/ring_1.png" /> */}
                         </div>
                         <div className="floor-2">
                             <img className="dt_2" src="../images/component103.png" />
@@ -162,7 +187,12 @@ export default function Ecommerce({ data }) {
                                 {data.serviceDetailImage &&
                                     <div className="col-md-6">
                                         <div className="ps-0 d-table ms-0 me-auto">
-                                            <img className="img-fluid" src={data.serviceDetailImage.sourceUrl} />
+                                            <div className="serviceImg">
+                                                <div className="ecommerceBasket">
+                                                    <Lottie options={ecommerceBasketOptions} />
+                                                </div>
+                                                <img className="img-fluid" src={data.serviceDetailImage.sourceUrl} />
+                                            </div>
                                         </div>
                                     </div>
                                 }

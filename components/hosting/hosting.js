@@ -3,6 +3,11 @@ import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
 
+import Lottie from 'react-lottie';
+import torusLanding from "../../public/lottie/3d-torus-loading.json"
+import cloudServer from "../../public/lottie/cloud-server.json"
+import hostingServer from "../../public/lottie/daily-backups"
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Hosting({ data }) {
@@ -56,14 +61,38 @@ export default function Hosting({ data }) {
             })
         });
         document.body.classList.add('hosting');
-        document.body.classList.add('new-hosting');
         return () => {
             document.body.classList.remove('hosting');
-            document.body.classList.remove('new-hosting');
         };
 
     }, []);
 
+    const torusLandingOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: torusLanding,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    };
+
+    const cloudServerOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: cloudServer,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    }
+
+    const hostingServerOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: hostingServer,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    }
 
     return (
         <main className="position-relative hosting_inner zindex-2 overflow-hidden" id="main">
@@ -72,7 +101,9 @@ export default function Hosting({ data }) {
                     <div className="design_development_container"></div>
                     <div className="bottom_shape">
                         <div className="floor-1">
-                            <img className="dt_1" src="../images/ring_1.png" />
+                            <div className="torusLandingLottie">
+                                <Lottie options={torusLandingOptions} />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -82,10 +113,13 @@ export default function Hosting({ data }) {
                     <div className="row g-0">
                         <div className="col-12 ecom__info position-relative">
                             <h1>Hosting </h1>
-                            <div className="sub_title play_fair-ttl">
+                            <div className="sub_title play_fair-ttl d-flex justify-content-start align-items-center ">
                                 {data.bannerTagline &&
                                     <h2>{data.bannerTagline}</h2>
                                 }
+                                <div className="hostingServer ms-5">
+                                    <Lottie width={65} options={hostingServerOptions} />
+                                </div>
                             </div>
                             {data.bannerTitle &&
                                 <div className="moji_ttl" dangerouslySetInnerHTML={{ __html: data.bannerTitle }}>
@@ -99,7 +133,10 @@ export default function Hosting({ data }) {
                 </div>
                 {data.bannerImage.sourceUrl &&
                     <div className="mix_bland">
-                        <img className="laptopp__setup" src={data.bannerImage.sourceUrl} />
+                        {/* <img className="laptopp__setup" src={data.bannerImage.sourceUrl} /> */}
+                        <div className="cloudServer">
+                            <Lottie options={cloudServerOptions} />
+                        </div>
                     </div>
                 }
             </div>

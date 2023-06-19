@@ -8,10 +8,8 @@ import GraphAPI from '../services/graphQL';
 function Solutions({ solutionDetails, tagSettings }) {
   useEffect(() => {
     document.body.classList.add('solutions');
-    document.body.classList.add('newsolutions');
     return () => {
       document.body.classList.remove('solutions');
-      document.body.classList.remove('newsolutions');
     };
   }, []);
   return (

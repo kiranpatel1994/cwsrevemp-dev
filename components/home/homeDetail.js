@@ -10,6 +10,8 @@ import SwiperCore, {
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
+import lottieFire from '../../public/lottie/fire.json'
+import lottie from "lottie-web";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -58,17 +60,17 @@ export default function HomeDetails({ homeSettings, portfolioList, testimonialSe
     };
 
     var bild1 =
-        '<div class="menuSlider swipe-item-0"><img src="images/services/1.png" /></div>';
+        '<div className="menuSlider swipe-item-0"><img src="images/services/1.png" /></div>';
     var bild2 =
-        '<div class="menuSlider swipe-item-1"><img src="images/services/2.png" /></div>';
+        '<div className="menuSlider swipe-item-1"><img src="images/services/2.png" /></div>';
     var bild3 =
-        '<div class="menuSlider swipe-item-2"><img src="images/services/3.png" /></div>';
+        '<div className="menuSlider swipe-item-2"><img src="images/services/3.png" /></div>';
     var bild4 =
-        '<div class="menuSlider swipe-item-3"><img src="images/services/4.png" /></div>';
+        '<div className="menuSlider swipe-item-3"><img src="images/services/4.png" /></div>';
     var bild5 =
-        '<div class="menuSlider swipe-item-4"><img src="images/services/5.png" /></div>';
+        '<div className="menuSlider swipe-item-4"><img src="images/services/5.png" /></div>';
     var bild6 =
-        '<div class="menuSlider swipe-item-5"><img src="images/services/6.png" /></div>';
+        '<div className="menuSlider swipe-item-5"><img src="images/services/6.png" /></div>';
     var menu = [bild1, bild2, bild3, bild4, bild5, bild6];
 
     var settingsD = {
@@ -131,6 +133,50 @@ export default function HomeDetails({ homeSettings, portfolioList, testimonialSe
             scroll2El(goto);
         }, 100);
     };
+
+    // Fire Button Hover Animation
+    const fireContainer = useRef(null);
+    const fireContainer1 = useRef(null);
+    useEffect(() => {
+        lottie.loadAnimation({
+            container: fireContainer.current,
+            renderer: "svg",
+            loop: true,
+            autoplay: false,
+            animationData: lottieFire
+        });
+
+        lottie.loadAnimation({
+            container: fireContainer1.current,
+            renderer: "svg",
+            loop: true,
+            autoplay: false,
+            animationData: lottieFire
+        });
+
+        let fireBtn = document.querySelector('.fireBtn');
+        let fireBtn1 = document.querySelector('.fireBtn1');
+
+        fireBtn.addEventListener('mouseenter', (e) => {
+            lottie.play();
+        });
+
+        fireBtn.addEventListener('mouseleave', (e) => {
+            lottie.stop()
+        });
+
+        fireBtn1.addEventListener('mouseenter', (e) => {
+            lottie.play();
+        });
+
+        fireBtn1.addEventListener('mouseleave', (e) => {
+            lottie.stop()
+        });
+
+        return () => {
+            lottie.destroy();
+        };
+    }, []);
 
     return (
         <main>
@@ -310,9 +356,9 @@ export default function HomeDetails({ homeSettings, portfolioList, testimonialSe
                                     </Swiper>
                                 </div>
                                 <div className="d-flex justify-content-center mt-5 pt-4">
-                                    <Link class="btn btn-yellow" href="/home#">
+                                    <Link className="btn btn-yellow fireBtn" href="/home#">
                                         <span>Wait, there’s more… </span>
-                                        <img src="/images/fire_1f525.png" alt="" />
+                                        <span className="fireContainer" ref={fireContainer} />
                                     </Link>
                                 </div>
                             </>
@@ -451,9 +497,9 @@ export default function HomeDetails({ homeSettings, portfolioList, testimonialSe
                             </div>
                         </div>
                         <div className="d-table ms-auto me-auto center-button-project">
-                            <Link href="#" className="btn btn-yellow">
-                                <span>View Portfolio </span>{" "}
-                                <img src="/images/fire_1f525.png" alt="" />
+                            <Link href="#" className="btn btn-yellow fireBtn1">
+                                <span>View Portfolio </span>
+                                <span className="fireContainer" ref={fireContainer1} />
                             </Link>
                         </div>
                     </section>
