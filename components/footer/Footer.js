@@ -1,4 +1,4 @@
-    import brand from '/public/images/foot-branding.png';
+import brand from '/public/images/foot-branding.png';
 import telephoneImg from '/public/images/telephone.png';
 import emailImg from '/public/images/email.png';
 import pinPointImg from '/public/images/pin-point.png';
@@ -111,7 +111,7 @@ export default function Footer({ settings }) {
                                         <li><Link href="/services/website-design-development">Website Design and Development</Link></li>
                                         <li><Link href="/services/logo-design-and-branding">Logo Design and Branding</Link></li>
                                         <li><Link href="/services/printed-marketing-materials">Printed Marketing Materials</Link></li>
-                                    </ul>        
+                                    </ul>
                                 </div>
                                 <div className="col-lg-6 ps-lg-4">
                                     <ul className="list-unstyled">
@@ -119,7 +119,7 @@ export default function Footer({ settings }) {
                                         <li><Link href="/services/ecommerce">Ecommerce Development</Link></li>
                                         <li><Link href="/services/white-label">White Label</Link></li>
                                         <li><Link href="/services/ecommerce">Hosting</Link></li>
-                                    </ul>        
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -128,17 +128,17 @@ export default function Footer({ settings }) {
                             <div className="row">
                                 <div className="col-lg-5">
                                     <ul className="list-unstyled">
-                                        <li><Link href="#">Real Estate Property Pages</Link></li>
+                                        <li><Link href="/services/property-management-websites">Real Estate Property Pages</Link></li>
                                         <li><Link href="#">Company Intranet</Link></li>
                                         <li><Link href="#">Donation Pages</Link></li>
-                                    </ul>        
+                                    </ul>
                                 </div>
                                 <div className="col-lg-6">
                                     <ul className="list-unstyled">
                                         <li><Link href="#">Payment Processing</Link></li>
                                         <li><Link href="#">Contact Database</Link></li>
                                         <li><Link href="#">Digital Forms</Link></li>
-                                    </ul>        
+                                    </ul>
                                 </div>
                             </div>
                         </div>

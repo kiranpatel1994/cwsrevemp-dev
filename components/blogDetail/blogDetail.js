@@ -15,6 +15,7 @@ import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function BlogDetail({ blogDetail, relativeDetail }) {
+    console.log("blogD");
     const date = new Date(blogDetail.date);
     const options = { month: 'long', day: 'numeric', year: 'numeric' };
     const formattedDate = date.toLocaleDateString('en-US', options);

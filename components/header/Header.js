@@ -11,6 +11,7 @@ export default function Header({ logo }) {
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <title>Creative Web Services</title>
+                <link rel="icon" type="image/x-icon" href="/images/logo_icon.png"></link>
             </Head>
             <div className="line-last">
                 <img src={LineImage.src} alt="" />
@@ -40,9 +41,9 @@ export default function Header({ logo }) {
                                 <li className="nav-item">
                                     <Link className={router.pathname == "/solutions" ? "nav-link active" : "nav-link"} href="/solutions">Solutions </Link>
                                 </li>
-                                {/* <li className="nav-item">
-                                <Link className={router.pathname == "/blog" || router.pathname == "/blog/[slug]" ? "nav-link active" : "nav-link"} href="/blog">Blogs </Link>
-                            </li> */}
+                                <li className="nav-item">
+                                    <Link className={router.pathname == "/blog" || router.pathname == "/blog/[slug]" ? "nav-link active" : "nav-link"} href="/blog">Blogs </Link>
+                                </li>
                                 <li className="nav-item">
                                     <Link className={router.pathname == "/contact" ? "nav-link active" : "nav-link"} href="/contact">Contact Us </Link>
                                 </li>
