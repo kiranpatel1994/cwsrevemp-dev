@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import Lottie from 'react-lottie';
 import torusLanding from "../../public/lottie/3d-torus-loading.json"
-import automateImage from "../../public/lottie/3d-torus-loading.json"
+import automateImage from "../../public/lottie/loading-cwwws.json"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -196,7 +196,7 @@ export default function WebApp({ data }) {
                                     <div className="automateImg">
                                         <Lottie options={automateOptions} />
                                     </div>
-                                    <img className="img-fluid" src="../images/test1.png" />
+                                    {/* <img className="img-fluid" src="../images/test1.png" /> */}
                                 </div>
                                 <div className="col-md-6 automate_work position-relative">
                                     <h2 dangerouslySetInnerHTML={{ __html: data.serviceDetailsTitle }} />

@@ -122,9 +122,10 @@
 .companyCard .companyCol:first-child::after,
 .companyCard .companyCol:nth-last-child(2)::before{display: none;}
 .companyCard .companyCol{margin-bottom: 0;}
-.skyndroket{padding-top: 435px;background-position: center top;}
-.skyndroket::before{background-position: 0 -60px;height: calc(100% - 160px);background-color: transparent;background-size: 100% auto;top: 0;}
+.skyndroket{padding-top: 435px;background-position: center top;overflow: hidden;}
+.skyndroket::before{background-position: 0 -60px;height: calc(100% - 160px);background-color: #071533;background-size: 100% auto;top: 0;z-index: 1;}
 .smokeContainer{margin-top: 29%;}
+.skyndroket .sootingStarBlock{position: absolute;top: 26%;z-index: 1;right: -30px;width: 829px;mix-blend-mode: normal;opacity: 0.57;pointer-events: none;}
 
 .tabPanel .nav-pills{border-radius: 50px;}
 .tabPanel .nav-pills .nav-link{border-radius: 50px;}
@@ -248,3 +249,5 @@ body.hosting{background-size: 70% auto;}
 .prpertyManagement_nw .floor-1 .torusLandingLottie {top: -80%;}
 
 .whitelabel_inner .floor-1 .torusLandingLottie{top: 40%;}
+
+.socialLove .socialLoveInner{width: 250px;margin-left: 22%;margin-top: -150px;margin-bottom: 15px;transform: rotate(-20deg);}

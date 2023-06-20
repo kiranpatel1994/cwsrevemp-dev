@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 
 import Lottie from 'react-lottie';
 import lottieBalancingShape from "../../public/lottie/balancing-shape.json"
+import shootingStars from "../../public/lottie/shooting-star.json"
 
 
 import SwiperCore, { Navigation, Pagination, EffectCreative, EffectCoverflow, Autoplay, Keyboard, Mousewheel } from 'swiper';
@@ -24,10 +25,19 @@ export default function SolutionDetails({ detail, tags }) {
         setSolutionClass("hideItemOverflow visibleClip");
     }
 
-    const defaultOptions = {
+    const balancingShapeOptions = {
         loop: true,
         autoplay: true,
         animationData: lottieBalancingShape,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    };
+
+    const shootingStarsOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: shootingStars,
         rendererSettings: {
             preserveAspectRatio: "xMidYMid slice"
         }
@@ -42,7 +52,7 @@ export default function SolutionDetails({ detail, tags }) {
                             <div className="col-12">
                                 <div className="text-center solutionInformation">
                                     <div className="balancingShape">
-                                        <Lottie options={defaultOptions} />
+                                        <Lottie options={balancingShapeOptions} />
                                     </div>
                                     <h1>Your workflow just got <em className="text-active">simplified.</em> </h1>
                                     <p>Customizable web pages that speed up operations with less effort and more accuracy. </p>
@@ -124,6 +134,9 @@ export default function SolutionDetails({ detail, tags }) {
                 }
                 {tags &&
                     <section className="skyndroket">
+                        <div className="sootingStarBlock">
+                            <Lottie options={shootingStarsOptions} />
+                        </div>
                         <div className="container-xl position-relative zindex-2">
                             <div className="row">
                                 <div className="col-12 text-center">

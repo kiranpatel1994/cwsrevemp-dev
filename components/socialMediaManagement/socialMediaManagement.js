@@ -4,6 +4,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import Lottie from 'react-lottie';
 import torusLanding from "../../public/lottie/3d-torus-loading.json"
+import socialLove from "../../public/lottie/social-media.json"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -69,6 +70,15 @@ export default function SocialMediaManagement({ data }) {
         loop: true,
         autoplay: true,
         animationData: torusLanding,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice"
+        }
+    };
+    
+    const socialLoveOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: socialLove,
         rendererSettings: {
             preserveAspectRatio: "xMidYMid slice"
         }
@@ -162,6 +172,11 @@ export default function SocialMediaManagement({ data }) {
                             </div>
                         }
                         <div className="col-11 time_acquainted">
+                            <div className="socialLove">
+                                <div className="socialLoveInner">
+                                    <Lottie options={socialLoveOptions} />
+                                </div>
+                            </div>
                             <div className="row g-0 why__us align-items-center">
                                 {data.serviceDetailsDescription &&
                                     <div className="col-md-12 text-center automate_work position-relative">
