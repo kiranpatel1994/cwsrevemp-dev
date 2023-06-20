@@ -12,6 +12,7 @@ import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 import lottieFire from '/public/lottie/fire.json'
 import lottie from "lottie-web";
+import torusLanding from "/public/lottie/3d-torus-loading.json"
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import Lottie from 'react-lottie';
+import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json"
 
 gsap.registerPlugin(ScrollTrigger);
@@ -10,6 +10,14 @@ gsap.registerPlugin(ScrollTrigger);
 export default function PrintedMarketing({ data }) {
 
     useEffect(() => {
+
+        lottie.loadAnimation({
+            container: document.querySelector('.torusLandingContainer'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: torusLanding
+        });
 
         gsap.set('.dragWithme', { top: '-10px' });
         const liftArow = gsap.to('.dragWithme', { top: "100%", ease: "none" });
@@ -67,15 +75,6 @@ export default function PrintedMarketing({ data }) {
 
     }, []);
 
-    const torusLandingOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: torusLanding,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
-        }
-    };
-
     return (
         <main className="position-relative webApp_inner logoBrand_multi zindex-2 overflow-hidden" id="main">
             <div className="banner__overlap">
@@ -84,9 +83,8 @@ export default function PrintedMarketing({ data }) {
                     <div className="bottom_shape">
                         <div className="floor-1">
                             <div className="torusLandingLottie">
-                                <Lottie options={torusLandingOptions} />
+                                <div className="torusLandingContainer" />
                             </div>
-                            {/* <img className="dt_1" src="../images/ring_1.png" /> */}
                         </div>
                     </div>
                 </div>

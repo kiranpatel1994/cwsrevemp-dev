@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import Lottie from 'react-lottie';
+import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json"
 import automateImage from "/public/lottie/loading-cwwws.json"
 
@@ -11,6 +11,25 @@ gsap.registerPlugin(ScrollTrigger);
 export default function WebApp({ data }) {
 
     useEffect(() => {
+
+        lottie.loadAnimation({
+            container: document.querySelector('.torusLandingContainer'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: torusLanding
+        });
+
+        lottie.loadAnimation({
+            container: document.querySelector('.automateContainer'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: automateImage
+        });
+    
+        
+
         gsap.set('.dragWithme', { top: '-10px' });
         const liftArow = gsap.to('.dragWithme', { top: "100%", ease: "none" });
 
@@ -67,24 +86,6 @@ export default function WebApp({ data }) {
 
     }, []);
 
-    const torusLandingOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: torusLanding,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
-        }
-    };
-
-    const automateOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: automateImage,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
-        }
-    }
-
     return (
         <main className="position-relative webApp_inner zindex-2 overflow-hidden" id="main">
             <div className="banner__overlap">
@@ -93,9 +94,8 @@ export default function WebApp({ data }) {
                     <div className="bottom_shape">
                         <div className="floor-1">
                             <div className="torusLandingLottie">
-                                <Lottie options={torusLandingOptions} />
+                                <div className="torusLandingContainer" />
                             </div>
-                            {/* <img className="dt_1" src="../images/ring_1.png" /> */}
                         </div>
                     </div>
                 </div>
@@ -194,9 +194,8 @@ export default function WebApp({ data }) {
                             <div className="row g-0 why__us align-items-center">
                                 <div className="col-md-6">
                                     <div className="automateImg">
-                                        <Lottie options={automateOptions} />
+                                        <div className="automateContainer" />
                                     </div>
-                                    {/* <img className="img-fluid" src="../images/test1.png" /> */}
                                 </div>
                                 <div className="col-md-6 automate_work position-relative">
                                     <h2 dangerouslySetInnerHTML={{ __html: data.serviceDetailsTitle }} />

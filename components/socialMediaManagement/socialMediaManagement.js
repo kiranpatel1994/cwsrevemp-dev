@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import Lottie from 'react-lottie';
+import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json"
 import socialLove from "/public/lottie/social-media.json"
 
@@ -10,6 +10,22 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function SocialMediaManagement({ data }) {
     useEffect(() => {
+
+        lottie.loadAnimation({
+            container: document.querySelector('.torusLandingContainer'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: torusLanding
+        });
+        
+        lottie.loadAnimation({
+            container: document.querySelector('.socialLoveContainer'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: socialLove
+        });
 
         gsap.set('.dragWithme', { top: '-10px' });
         const liftArow = gsap.to('.dragWithme', { top: "100%", ease: "none" });
@@ -65,24 +81,6 @@ export default function SocialMediaManagement({ data }) {
             document.body.classList.remove('social-media');
         };
     }, []);
-
-    const torusLandingOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: torusLanding,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
-        }
-    };
-    
-    const socialLoveOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: socialLove,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
-        }
-    };
 
     return (
         <main className="position-relative sociaManagement zindex-2 overflow-hidden" id="main">
@@ -160,7 +158,7 @@ export default function SocialMediaManagement({ data }) {
                     <section className="row get_row g-0 sec-3" id="end_anim">
                         <div className="floor-1">
                             <div className="torusLandingLottie">
-                                <Lottie options={torusLandingOptions} />
+                                <div className="torusLandingContainer" />
                             </div>
                             {/* <img className="dt_1" src="../images/ring_1.png" /> */}
                         </div>
@@ -174,7 +172,7 @@ export default function SocialMediaManagement({ data }) {
                         <div className="col-11 time_acquainted">
                             <div className="socialLove">
                                 <div className="socialLoveInner">
-                                    <Lottie options={socialLoveOptions} />
+                                    <div className="socialLoveContainer" />
                                 </div>
                             </div>
                             <div className="row g-0 why__us align-items-center">

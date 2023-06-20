@@ -3,11 +3,19 @@ import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
-import Lottie from 'react-lottie';
+import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json"
 
 export default function WebsiteDesignDev({ data }) {
     useEffect(() => {
+        lottie.loadAnimation({
+            container: document.querySelector('.torusLandingContainer'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: torusLanding
+        });
+        
         gsap.set('.dragWithme', { top: '-10px' });
         const liftArow = gsap.to('.dragWithme', { top: "100%", ease: "none" });
 
@@ -63,16 +71,6 @@ export default function WebsiteDesignDev({ data }) {
         };
     }, []);
 
-    const torusLandingOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: torusLanding,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
-        }
-    };
-
-
     return (
         <main className="position-relative zindex-2 website_design_development overflow-hidden" id="main">
             <div className="banner__overlap">
@@ -81,13 +79,11 @@ export default function WebsiteDesignDev({ data }) {
                     <div className="bottom_shape">
                         <div className="floor-1">
                             <div className="torusLandingLottie">
-                                <Lottie options={torusLandingOptions} />
+                                <div className="torusLandingContainer" />
                             </div>
-                            {/* <img className="dt_2" src="../images/component103.png" /> */}
                         </div>
                         <div className="floor-2">
                             <img className="dt_1" src="../images/design.png" />
-                            {/* <img className="dt_2" src="../images/preview-4.png" /> */}
                         </div>
                     </div>
                 </div>

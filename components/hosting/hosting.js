@@ -3,7 +3,7 @@ import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
 
-import Lottie from 'react-lottie';
+import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json"
 import cloudServer from "/public/lottie/cloud-server.json"
 import hostingServer from "/public/lottie/daily-backups"
@@ -12,6 +12,30 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Hosting({ data }) {
     useEffect(() => {
+        lottie.loadAnimation({
+            container: document.querySelector('.torusLandingContainer'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: torusLanding
+        });
+        
+        lottie.loadAnimation({
+            container: document.querySelector('.cloudServerContainer'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: cloudServer
+        });
+        
+        lottie.loadAnimation({
+            container: document.querySelector('.hostingServerContainer'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: hostingServer
+        });
+        
         gsap.set('.dragWithme', { top: '-10px' });
         const liftArow = gsap.to('.dragWithme', { top: "100%", ease: "none" });
 
@@ -67,33 +91,6 @@ export default function Hosting({ data }) {
 
     }, []);
 
-    const torusLandingOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: torusLanding,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
-        }
-    };
-
-    const cloudServerOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: cloudServer,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
-        }
-    }
-
-    const hostingServerOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: hostingServer,
-        rendererSettings: {
-            preserveAspectRatio: "xMidYMid slice"
-        }
-    }
-
     return (
         <main className="position-relative hosting_inner zindex-2 overflow-hidden" id="main">
             <div className="banner__overlap">
@@ -102,7 +99,7 @@ export default function Hosting({ data }) {
                     <div className="bottom_shape">
                         <div className="floor-1">
                             <div className="torusLandingLottie">
-                                <Lottie options={torusLandingOptions} />
+                                <div className="torusLandingContainer" />
                             </div>
                         </div>
                     </div>
@@ -118,7 +115,7 @@ export default function Hosting({ data }) {
                                     <h2>{data.bannerTagline}</h2>
                                 }
                                 <div className="hostingServer ms-5">
-                                    <Lottie width={65} options={hostingServerOptions} />
+                                    <div className="hostingServerContainer" style={{width: '65px'}} />
                                 </div>
                             </div>
                             {data.bannerTitle &&
@@ -135,7 +132,7 @@ export default function Hosting({ data }) {
                     <div className="mix_bland">
                         {/* <img className="laptopp__setup" src={data.bannerImage.sourceUrl} /> */}
                         <div className="cloudServer">
-                            <Lottie options={cloudServerOptions} />
+                            <div className="cloudServerContainer" />
                         </div>
                     </div>
                 }
