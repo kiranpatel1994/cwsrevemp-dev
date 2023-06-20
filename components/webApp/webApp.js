@@ -3,8 +3,8 @@ import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import Lottie from 'react-lottie';
-import torusLanding from "../../public/lottie/3d-torus-loading.json"
-import automateImage from "../../public/lottie/loading-cwwws.json"
+import torusLanding from "/public/lottie/3d-torus-loading.json"
+import automateImage from "/public/lottie/loading-cwwws.json"
 
 gsap.registerPlugin(ScrollTrigger);
 

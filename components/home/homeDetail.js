@@ -10,7 +10,7 @@ import SwiperCore, {
 import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
-import lottieFire from '../../public/lottie/fire.json'
+import lottieFire from '/public/lottie/fire.json'
 import lottie from "lottie-web";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";

@@ -6,7 +6,7 @@ import GravityForm from '../../components/GravityForm';
 import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
 import Lottie from 'react-lottie';
-import torusLanding from "../../public/lottie/3d-torus-loading.json"
+import torusLanding from "/public/lottie/3d-torus-loading.json"
 
 gsap.registerPlugin(ScrollTrigger);
 

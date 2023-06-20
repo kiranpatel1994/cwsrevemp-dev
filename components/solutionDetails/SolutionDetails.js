@@ -9,8 +9,8 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import Lottie from 'react-lottie';
-import lottieBalancingShape from "../../public/lottie/balancing-shape.json"
-import shootingStars from "../../public/lottie/shooting-star.json"
+import lottieBalancingShape from "/public/lottie/balancing-shape.json"
+import shootingStars from "/public/lottie/shooting-star.json"
 
 
 import SwiperCore, { Navigation, Pagination, EffectCreative, EffectCoverflow, Autoplay, Keyboard, Mousewheel } from 'swiper';

@@ -4,9 +4,9 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
 
 import Lottie from 'react-lottie';
-import torusLanding from "../../public/lottie/3d-torus-loading.json"
-import cloudServer from "../../public/lottie/cloud-server.json"
-import hostingServer from "../../public/lottie/daily-backups"
+import torusLanding from "/public/lottie/3d-torus-loading.json"
+import cloudServer from "/public/lottie/cloud-server.json"
+import hostingServer from "/public/lottie/daily-backups"
 
 gsap.registerPlugin(ScrollTrigger);
 
