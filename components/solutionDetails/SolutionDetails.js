@@ -8,7 +8,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
-import Lottie from 'react-lottie';
+import lottie from "lottie-web";
 import lottieBalancingShape from "/public/lottie/balancing-shape.json"
 import shootingStars from "/public/lottie/shooting-star.json"
 
@@ -20,6 +20,24 @@ export default function SolutionDetails({ detail, tags }) {
     SwiperCore.use([Navigation, Pagination, EffectCreative, Autoplay, Keyboard, Mousewheel]);
     const solutionDivClass = "hideItemOverflow";
     const [solutionClass, setSolutionClass] = useState(solutionDivClass);
+
+    useEffect(() => {
+        lottie.loadAnimation({
+            container: document.querySelector('.balancingShapeContainer'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: lottieBalancingShape
+        });
+
+        lottie.loadAnimation({
+            container: document.querySelector('.shootingStarsContainer'),
+            renderer: 'svg',
+            loop: true,
+            autoplay: true,
+            animationData: shootingStars
+        });
+    }, []);
 
     const handleShowMore = () => {
         setSolutionClass("hideItemOverflow visibleClip");
@@ -52,7 +70,7 @@ export default function SolutionDetails({ detail, tags }) {
                             <div className="col-12">
                                 <div className="text-center solutionInformation">
                                     <div className="balancingShape">
-                                        <Lottie options={balancingShapeOptions} />
+                                        <div className="balancingShapeContainer" />
                                     </div>
                                     <h1>Your workflow just got <em className="text-active">simplified.</em> </h1>
                                     <p>Customizable web pages that speed up operations with less effort and more accuracy. </p>
@@ -135,7 +153,7 @@ export default function SolutionDetails({ detail, tags }) {
                 {tags &&
                     <section className="skyndroket">
                         <div className="sootingStarBlock">
-                            <Lottie options={shootingStarsOptions} />
+                            <div className="shootingStarsContainer" />
                         </div>
                         <div className="container-xl position-relative zindex-2">
                             <div className="row">
