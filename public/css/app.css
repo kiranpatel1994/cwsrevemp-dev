@@ -68,7 +68,7 @@ main { margin-top: 150px; }
 .project-area .center-button-project { position: absolute; bottom: 84px; left: 0; right: 0; z-index: 2; }
 /* about */
 .about-us { position: relative; padding: 96px 0; z-index: 2;background: #07042B;}
-.about-us::before { content: ''; background: url(../images/bottom.png) no-repeat left bottom; position: absolute; left: 0; bottom: 0; height: 311px; width: 264px; z-index: 2; }
+.about-us::before { content: none; background: url(../images/bottom.png) no-repeat left bottom; position: absolute; left: 0; bottom: 0; height: 311px; width: 264px; z-index: 2; }
 .floating-object { position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
 .floating-object::before { content: ''; position: absolute; right: 17%; top: -11%; background: url(../images/rectangle3435.png) no-repeat; width: 218px; height: 198px; z-index: 2; animation: jumpp 5s linear alternate infinite; transform-origin: 50% 50%; }
 .floating-object::after {content: '';position: absolute;left: 15px;bottom: 98px;background: url(../images/rectangle3417.png) no-repeat;width: 110px;height: 110px;z-index: 4;animation: jumpp 3s linear alternate infinite;transform-origin: 50% 50%;background-size: 110px auto;}
@@ -172,6 +172,7 @@ body.toggleShadow .main-shadow::before { content: ''; background: rgba(0, 0, 0, 
 .friendly-atmos h3 { color: #fff; font-family: 'gilroy-mediumuploaded_file'; font-size: 47px; line-height: 57px; max-width: 745px; }
 .friendly-atmos .face-information { margin-top: -25%; }
 .friendly-atmos .face-information em { color: #FDB627; font-family: 'Playfair Display', serif; font-weight: 700;}
+.friendly-atmos .face-information img { display: none;}
 
 .demo-container { width: 207px; position: absolute; left: -29%; top: -100px; }
 .progress-bar { height: 2px; background-color: #fff; width: 100%; overflow: hidden; }
@@ -360,7 +361,7 @@ footer .ft-child:first-child { width: 95px;min-width: 95px; }
 /*  */
 .companyBanner h1 { color: #fff; font-size: 70px; font-family: 'gilroy-bolduploaded_file'; margin-bottom: 35px; }
 .companyBanner h1 em, .companyBanner .companysubTitle em { font-family: 'Playfair Display', serif; }
-.companyBanner h1 img { position: relative; right: 10px; }
+.companyBanner h1 img { position: relative; right: 10px; display: none; }
 .companyBanner .banner-information, .companyBanner .companysubTitle { color: #fff; font-size: 25px; font-family: 'gilroy-mediumuploaded_file'; margin-bottom: 32px; }
 .companyBanner .banner-information { padding-bottom: 87px; margin-bottom: 60px; }
 .companyBanner .demo-container { position: static; width: 99px; margin: -30px auto 50px; transform: rotate(90deg); }
@@ -433,7 +434,7 @@ footer .ft-child:first-child { width: 95px;min-width: 95px; }
 .userThree { height: 146px; width: 146px; position: absolute; top: 48%; right: 18px; }
 .userThree img { max-width: 85px; width: 100%; height: 109px; object-fit: contain; }
 .userContainer { height: 640px; }
-.userContainer::after { content: ''; background: url(../images/arry.png) no-repeat; position: absolute; bottom: 0; left: 40%; height: 256px; width: 238px; }
+.userContainer::after { content: none; background: url(../images/arry.png) no-repeat; position: absolute; bottom: 0; left: 40%; height: 256px; width: 238px; }
 /*  */
 .serviceDetail { overflow: hidden; }
 .eyeFriendly { margin-bottom: 130px; position: relative; }
@@ -969,6 +970,18 @@ a { text-decoration: none; }
     -o-animation: rotating 2s linear infinite;
     animation: rotating 2s linear infinite;
 } */
+.new-title em { height: 55px; display: inline-block; position: relative; margin-left: 15px; }
+.new-title .hs-1 { opacity: 0; transition: 0.1s all; animation: 6s autoplay6 linear infinite; animation-delay: 0s }
+.new-title .hs-2 { opacity: 0; transition: 0.1s all; position: absolute; left: 0; animation: 6s autoplay6 linear infinite; animation-delay: 4s }
+.new-title .hs-3 { opacity: 0; transition: 0.1s all; position: absolute; left: 0; animation: 6s autoplay6 linear infinite; animation-delay: 8s }
+
+@keyframes autoplay6 {
+    0% {opacity: 0.0}
+    4% {opacity: 1.0}
+    33.33% {opacity: 1.0}
+    37.33% {opacity: 0.0}
+    100% {opacity: 0.0}
+  }
 
 /* responsive */
 @media (min-width: 1200px) {
