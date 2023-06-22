@@ -236,7 +236,7 @@ export default function SolutionDetails({ detail, tags }) {
                                     <h2>Ready to start your project? </h2>
                                     <ul className="list-inline">
                                         <li className="list-inline-item"><a className="btn btn-yellow" href="#">Get in touch </a> </li>
-                                        <li className="list-inline-item"><a className="btn btn-blue" href="#">Get Instant Quote </a> </li>
+                                        <li className="list-inline-item"><a className="btn btn-blue" href="#">We have such an option? </a> </li>
                                     </ul>
                                 </div>
                             </div>

@@ -207,14 +207,16 @@ export default function SocialMediaManagement({ data }) {
                                     </div>
                                 </div>
                             }
-                            <div className="row g-0 why__us align-items-center">
+                            <div className="row g-0 align-items-center z-2 position-relative pb-5 mb-5">
+                                <div className="col-12 pb-5">
+                                    {data.automatedSubHeading &&
+                                        <h2 className="play_fair-white display-5 text-center">{data.automatedSubHeading}</h2>
+                                    }
+                                </div>
+                            </div>
+                            {/* <div className="row g-0 why__us align-items-center">
                                 {data.automatedImage &&
                                     <div className="col-md-5">
-                                        {data.automatedSubHeading &&
-                                            <div className="text__subtitle text-center">
-                                                <span>{data.automatedSubHeading} </span>
-                                            </div>
-                                        }
                                         <img className="img-fluid" src={data.automatedImage.sourceUrl} />
                                     </div>
                                 }
@@ -227,8 +229,8 @@ export default function SocialMediaManagement({ data }) {
                                         }
                                     </div>
                                 </div>
-                            </div>
-                            <div className="row g-0 why__us align-items-center z-2 position-relative">
+                            </div> */}
+                            {/* <div className="row g-0 why__us align-items-center z-2 position-relative">
                                 <div className="col-md-5 automate_work position-relative">
                                     <div className="d-table ms-auto me-auto">
                                         <h2>{data.maintainingBlogHeading}</h2>
@@ -240,7 +242,7 @@ export default function SocialMediaManagement({ data }) {
                                         <img className="maintainingBlogImage img-fluid" src={data.maintainingBlogImage.sourceUrl} />
                                     </div>
                                 }
-                            </div>
+                            </div> */}
                         </div>
                     </section>
                 </div>

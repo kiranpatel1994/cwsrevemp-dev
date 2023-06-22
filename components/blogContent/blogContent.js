@@ -24,7 +24,7 @@ export default function BlogContent({ blogData, blogDetail }) {
             pageInfo: updatedPageInfo,
         };
         setBlogs(updatedBlogData);
-    }
+    };
     const handleInputChange = (event) => {
         if (event.target.value !== '') {
             setKeyword(event.target.value);
@@ -33,7 +33,7 @@ export default function BlogContent({ blogData, blogDetail }) {
             setSearchFlag(false);
         }
 
-    }
+    };
     const handleSearchSubmit = async (event) => {
         event.preventDefault();
         if (searchFlag) {
