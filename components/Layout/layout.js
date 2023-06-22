@@ -8,5 +8,5 @@ export default function Layout({ children, headerSettings, footerSettings }) {
       {children}
       <Footer settings={footerSettings} />
     </>
-  )
+  );
 }
