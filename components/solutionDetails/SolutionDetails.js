@@ -73,7 +73,7 @@ export default function SolutionDetails({ detail, tags }) {
                                         <div className="balancingShapeContainer" />
                                     </div>
                                     <h1>Your workflow just got <em className="text-active">simplified.</em> </h1>
-                                    <p>Customizable web pages that speed up operations with less effort and more accuracy. </p>
+                                    <p>Get customizable web pages that speed up operations with less effort and more accuracy. </p>
                                 </div>
                             </div>
                         </div>
@@ -141,6 +141,9 @@ export default function SolutionDetails({ detail, tags }) {
                                                     {item.companyCardDescription &&
                                                         <p>{item.companyCardDescription}</p>
                                                     }
+                                                </div>
+                                                <div className="tileBtn">
+                                                    <a class="btn btn-yellow btn-sm mt-4 d-inline-flex" href="#">I Need This</a>
                                                 </div>
                                             </div>
                                         </div>

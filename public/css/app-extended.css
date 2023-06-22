@@ -251,3 +251,11 @@ body.hosting{background-size: 70% auto;}
 .whitelabel_inner .floor-1 .torusLandingLottie{top: 40%;}
 
 .socialLove .socialLoveInner{width: 250px;margin-left: 22%;margin-top: -150px;margin-bottom: 15px;transform: rotate(-20deg);}
+
+.companyCard .cardinner .tileBtn{
+    position: absolute;
+    bottom: 30px;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%);
+}

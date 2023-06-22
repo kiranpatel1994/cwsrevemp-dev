@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function CompanyDetails({ details, list }) {
     const first_row = list.slice(0, 7);
     const second_row = list.slice(7, 13);
@@ -162,7 +164,8 @@ export default function CompanyDetails({ details, list }) {
                         <div className="row h-100">
                             <div className="col-12 text-center">
                                 <h3>
-                                    <span>Ready to supercharge your business? </span>
+                                    {/* <span>Ready to supercharge your business? </span> */}
+                                    <span>Reach out to us at <Link className="text-decoration-none text-black" href="tel:201-212-6367">201-212-6367</Link> </span>
                                 </h3>
                             </div>
                         </div>

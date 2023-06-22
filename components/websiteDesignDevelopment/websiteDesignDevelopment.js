@@ -184,7 +184,7 @@ export default function WebsiteDesignDev({ data }) {
                                         {data.wordpressDescription &&
                                             <p className="txlh_20_30 mb-4">{data.wordpressDescription}</p>
                                         }
-                                        <h4 className="txlh_20_30 mb-3 ft-gilroy_b text-white">WordPress makes it easy to </h4>
+                                        <h4 className="txlh_20_30 mb-3 ft-gilroy_b text-white">With Word Press, you can easily:</h4>
                                         {data.wordpressPointList &&
                                             <ul className="list_y_dots list-unstyled text-white mb-4">
                                                 {data.wordpressPointList.map((item, index) => {
@@ -208,9 +208,9 @@ export default function WebsiteDesignDev({ data }) {
                                         {data.customSitesTitle &&
                                             <h3 className="text-35_b_white mb-3">{data.customSitesTitle}</h3>
                                         }
-                                        {data.customSitesDescription &&
+                                        {/* {data.customSitesDescription &&
                                             <p className="txlh_20_30 mb-4">{data.customSitesDescription}</p>
-                                        }
+                                        } */}
                                     </div>
                                 </div>
                                 {data.customSitesImage &&

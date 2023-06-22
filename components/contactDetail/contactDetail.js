@@ -62,7 +62,7 @@ export default function ContactDetail({ data, form }) {
             <div className="col-12">
               <div className="form_container">
                 <div className="text-center">
-                  <h2>Fill out the information </h2>
+                  <h2>Questions? We're here. <br/>We'd love to hear from you.</h2>
                 </div>
                 <ApolloProvider client={client}>
                   <GravityForm form={form} />

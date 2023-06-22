@@ -42,10 +42,10 @@ export default function Header({ logo }) {
                                     <Link className={router.pathname == "/solutions" ? "nav-link active" : "nav-link"} href="/solutions">Solutions </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className={router.pathname == "/blog" || router.pathname == "/blog/[slug]" ? "nav-link active" : "nav-link"} href="/blog">Blogs </Link>
+                                    <Link className={router.pathname == "/blog" || router.pathname == "/blog/[slug]" ? "nav-link active" : "nav-link"} href="/blog">Blog </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className={router.pathname == "/contact" ? "nav-link active" : "nav-link"} href="/contact">Contact Us </Link>
+                                    <Link className={router.pathname == "/contact" ? "nav-link active" : "nav-link"} href="/contact">Get Started </Link>
                                 </li>
                                 <li className="nav-item ms-auto">
                                     <Link className="nav-link call-action" href="/contact">Call to Action</Link>

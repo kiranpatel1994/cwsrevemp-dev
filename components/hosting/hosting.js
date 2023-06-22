@@ -267,7 +267,7 @@ export default function Hosting({ data }) {
                             {data.contactBlockDescription &&
                                 <h3>{data.contactBlockDescription}</h3>
                             }
-                            <Link href="/contact" className="fk-btn">I m in <span><img src="/images/img-stars.png" /></span></Link>
+                            <Link href="/contact" className="fk-btn">I'm in <span><img src="/images/img-stars.png" /></span></Link>
                         </div>
                     </div>
                 </div>

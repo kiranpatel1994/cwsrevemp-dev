@@ -175,13 +175,13 @@ export default function SocialMediaManagement({ data }) {
                                     <div className="socialLoveContainer" />
                                 </div>
                             </div>
-                            <div className="row g-0 why__us align-items-center">
+                            {/* <div className="row g-0 why__us align-items-center">
                                 {data.serviceDetailsDescription &&
                                     <div className="col-md-12 text-center automate_work position-relative">
                                         <div dangerouslySetInnerHTML={{ __html: data.serviceDetailsDescription }}></div>
                                     </div>
                                 }
-                            </div>
+                            </div> */}
                             {data.serviceDetailsContent &&
                                 <div className="box__container">
                                     <div className="row">
