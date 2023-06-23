@@ -1517,7 +1517,7 @@ div.hands-bild {
 }
 .vr-row-parent .child-row:last-child {
   animation-name: identifier;
-  animation-duration: 8s;
+  animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-delay: 0;
   animation-direction: alternate;
