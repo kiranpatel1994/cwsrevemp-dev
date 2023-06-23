@@ -741,6 +741,7 @@ body.toggleShadow .main-shadow::before {
   line-height: 40px;
   margin-bottom: 5px;
   font-weight: 400;
+  transition: 1s all;
 }
 .banner-yll .chooseUs-msg .mini-card .mini-child p {
   color: #fff;
@@ -751,6 +752,24 @@ body.toggleShadow .main-shadow::before {
 .right-bild-pull {
   margin-top: -33px;
 }
+div.hands-bild {
+  width: auto;
+  display: flex;
+  /* align-items: flex-end; */
+}
+.mini-card .hands-bild .inline-item { transition: 1s all; }
+.mini-card:hover .hands-bild .inline-item:first-child { transform: scale(1.3) translateY(-11%); }
+.mini-card:hover .hands-bild .inline-item:nth-child(2) { transform: scale(0.7) translateY(21%); }
+.mini-card:hover .hands-bild .inline-item:last-child { transform: scale(1.3) translateY(-11.7%); }
+.banner-yll .chooseUs-msg .mini-card:hover .mini-child h5 { font-size: 36px; letter-spacing: 2px; }
+
+/*  */
+.rocket-bild { position: relative; }
+.rocket-bild .inline-item:first-child { position: absolute; left: 0; top: 12px; }
+.rocket-bild .inline-item:nth-child(2) { position: relative; top: 5px; }
+.rocket-bild .inline-item:nth-child(3) { position: absolute; top: 25px; right: -22px; }
+.rocket-bild .inline-item:last-child { position: absolute; }
+
 .banner-yll h3 {
   font-family: "gilroy-semibolduploaded_file";
   font-weight: 400;

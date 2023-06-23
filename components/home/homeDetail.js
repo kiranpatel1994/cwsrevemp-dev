@@ -406,11 +406,22 @@ export default function HomeDetails({
                               </div>
                               {item.whyUsImage && (
                                 <div className="mini-child">
-                                  <img
+                                  {/* <img
                                     className="right-bild-pull"
                                     src={item.whyUsImage.sourceUrl}
                                     alt=""
-                                  />
+                                  /> */}
+                                  {/* <div className="right-bild-pull hands-bild">
+                                    <div className="inline-item"><img src="images/bulb-1.png" /></div>
+                                    <div className="inline-item"><img src="images/bulb-3d.png" /></div>
+                                    <div className="inline-item"><img src="images/bulb-2.png" /></div>
+                                  </div> */}
+                                  <div className="right-bild-pull rocket-bild">
+                                    <div className="inline-item"><img src="images/rocket-1.png" /></div>
+                                    <div className="inline-item"><img src="images/rocket-3d.png" /></div>
+                                    <div className="inline-item"><img src="images/rocket-2.png" /></div>
+                                    <div className="inline-item"><img src="images/rocket-3.png" /></div>
+                                  </div>
                                 </div>
                               )}
                             </div>
