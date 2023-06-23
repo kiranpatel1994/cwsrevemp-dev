@@ -1137,9 +1137,6 @@ export default class GraphAPI {
         whyUsBlocks {
           whyUsTitle
           whyUsDescription
-          whyUsImage {
-            sourceUrl
-          }
         }
         businessTitle
         businessSubtitle
