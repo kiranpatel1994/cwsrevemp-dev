@@ -64,17 +64,17 @@ export default function HomeDetails({
   };
 
   var bild1 =
-    '<div className="menuSlider swipe-item-0"><img src="images/services/1.png" /></div>';
+    '<div className="menuSlider swipe-item-0"><img src="images/services/webDesign-icon.svg" /></div>';
   var bild2 =
-    '<div className="menuSlider swipe-item-1"><img src="images/services/2.png" /></div>';
+    '<div className="menuSlider swipe-item-1"><img src="images/services/customSystem-icon.svg" /></div>';
   var bild3 =
-    '<div className="menuSlider swipe-item-2"><img src="images/services/3.png" /></div>';
+    '<div className="menuSlider swipe-item-2"><img src="images/services/ecommerce-icon.svg" /></div>';
   var bild4 =
-    '<div className="menuSlider swipe-item-3"><img src="images/services/4.png" /></div>';
+    '<div className="menuSlider swipe-item-3"><img src="images/services/hosting-icon.svg" /></div>';
   var bild5 =
-    '<div className="menuSlider swipe-item-4"><img src="images/services/5.png" /></div>';
+    '<div className="menuSlider swipe-item-4"><img src="images/services/whiteLabel-icon.svg" /></div>';
   var bild6 =
-    '<div className="menuSlider swipe-item-5"><img src="images/services/6.png" /></div>';
+    '<div className="menuSlider swipe-item-5"><img src="images/services/socialMedia-icon.svg" /></div>';
   var menu = [bild1, bild2, bild3, bild4, bild5, bild6];
 
   var settingsD = {
@@ -295,15 +295,25 @@ export default function HomeDetails({
                 </div>
                 <div className="col-12 col-md-5">
                   <div className="atmos-faces">
-                    <img
-                      className="img-fluid opacity-0"
+                    <div className="face-1">
+                      <img src="images/crewImg-1.jpg" alt="" />
+                    </div>
+                    <div className="face-2">
+                      <img src="images/crewImg-2.jpg" alt="" />
+                    </div>
+                    <div className="face-3">
+                      <img src="images/crewImg-3.jpg" alt="" />
+                    </div>
+
+                    {/* <img
+                      className="img-fluid"
                       src={
                         homeSettings.friendlyImage.sourceUrl
                           ? homeSettings.friendlyImage.sourceUrl
                           : "/images/face.png"
                       }
                       alt=""
-                    />
+                    /> */}
                   </div>
                 </div>
               </div>
@@ -424,7 +434,7 @@ export default function HomeDetails({
                 <div className="" data-aos="fade-up" data-aos-duration="1000">
                   <img
                     className="flyingImg mb-2"
-                    src="images/rectangle3434.svg"
+                    src="images/rectangle3434.png"
                   />
                   <h2
                     dangerouslySetInnerHTML={{
@@ -563,7 +573,7 @@ export default function HomeDetails({
       )}
       {testimonialSettings.clientTestimonials && (
         <section className="about-us">
-          <div className="floating-object"></div>
+          {/* <div className="floating-object"></div> */}
           <div className="aboutUs-title position-relative zindex-2">
             <div className="row">
               <div className="col-12 about-info overflow-hidden">

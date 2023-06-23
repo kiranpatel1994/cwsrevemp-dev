@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="68" height="68" viewBox="0 0 68 68">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.115" y1="0.115" x2="0.915" y2="0.915" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#feeac2"/>
+      <stop offset="0.252" stop-color="#fbd382"/>
+      <stop offset="0.555" stop-color="#fbc965"/>
+      <stop offset="0.815" stop-color="#f8bf4d"/>
+      <stop offset="1" stop-color="#fdb627"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_5321" data-name="Group 5321" transform="translate(-377 -2642)">
+    <rect id="Rectangle_4170" data-name="Rectangle 4170" width="68" height="68" rx="17" transform="translate(377 2642)" fill="url(#linear-gradient)"/>
+    <g id="Group_5247" data-name="Group 5247" transform="translate(391.45 2666.65)" opacity="0.9">
+      <path id="Path_10701" data-name="Path 10701" d="M21.85,37.2a2.55,2.55,0,0,1-1.8-.746l-6.8-6.8a2.55,2.55,0,0,1,0-3.607l6.8-6.8a2.551,2.551,0,0,1,3.607,3.607l-5,5,5,5a2.55,2.55,0,0,1-1.8,4.353Z" transform="translate(-12.499 -18.5)" fill="#fff"/>
+    </g>
+    <g id="Group_5248" data-name="Group 5248" transform="translate(418.648 2666.65)" opacity="0.9">
+      <path id="Path_10702" data-name="Path 10702" d="M31.05,37.2a2.55,2.55,0,0,1-1.8-4.353l5-5-5-5a2.551,2.551,0,1,1,3.607-3.607l6.8,6.8a2.55,2.55,0,0,1,0,3.607l-6.8,6.8a2.55,2.55,0,0,1-1.8.746Z" transform="translate(-28.499 -18.5)" fill="#fff"/>
+    </g>
+    <g id="Group_5249" data-name="Group 5249" transform="translate(405.049 2661.55)" opacity="0.5">
+      <path id="Path_10703" data-name="Path 10703" d="M23.051,44.4a2.551,2.551,0,0,1-2.453-3.25l6.8-23.8a2.55,2.55,0,1,1,4.9,1.4l-6.8,23.8A2.55,2.55,0,0,1,23.051,44.4Z" transform="translate(-20.499 -15.5)" fill="#fff"/>
+    </g>
+  </g>
+</svg>
