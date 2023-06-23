@@ -108,25 +108,7 @@ export default function CompanyDetails({ details, list }) {
                     </div>
                   </div>
                 </div>
-                <div className="col-12 col-md-5 text-end position-relative userContainer">
-                  <ul className="list-unstyled multie-user">
-                    <li>
-                      <div className="userOne">
-                        <img src="/images/user-1.png" />
-                      </div>
-                    </li>
-                    <li>
-                      <div className="userTwo">
-                        <img src="/images/user-1.png" />
-                      </div>
-                    </li>
-                    <li>
-                      <div className="userThree">
-                        <img src="/images/user-1.png" />
-                      </div>
-                    </li>
-                  </ul>
-                </div>
+                <div className="col-12 col-md-5 text-end position-relative userContainer"></div>
               </div>
             </div>
           </section>
@@ -134,7 +116,7 @@ export default function CompanyDetails({ details, list }) {
         {list && (
           <section className="ourTeam">
             <div className="container-xl">
-              <div className="row">
+              <div className="row pb-5">
                 <div className="col-12">
                   <div className="text-center mb-5">
                     <h4>Our team </h4>
@@ -152,7 +134,7 @@ export default function CompanyDetails({ details, list }) {
                   </div>
                 </div>
               </div>
-              <div className="row team-section">
+              <div className="row team-section" hidden>
                 <div className="col-12">
                   {first_row && (
                     <ul className="list-inline first-team-row">

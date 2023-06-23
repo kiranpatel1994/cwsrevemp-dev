@@ -194,20 +194,23 @@ export default function HomeDetails({
                 data-aos-duration="1000"
               >
                 <h1>
-                  <span>{homeSettings.bannerTitle}</span>
+                  <span>Business Facelift Happen Here </span>
                 </h1>
                 <div className="new-title">
+                  {homeSettings.bannerTitle}
                   <em>
-                    <TypeAnimation
-                      sequence={["Simplify.", 300, "Best."]}
-                      speed={500}
-                      deletionSpeed={300}
-                      cursor={true}
-                      wrapper="span"
-                      repeat={Infinity}
-                    />
+                    {/* <TypeAnimation
+                                            sequence={["Simplify.", 200, "Best."]}
+                                            speed={300}
+                                            deletionSpeed={200}
+                                            cursor={true}
+                                            wrapper="span"
+                                            repeat={Infinity}
+                                        /> */}
+                    <span className="hs-1">Simplify your workflow. </span>
+                    <span className="hs-2">Delight your customers. </span>
+                    <span className="hs-3">Boost your profits. </span>
                   </em>
-                  your workflow.
                 </div>
               </div>
               {homeSettings?.bannerVideoUrl && (
@@ -293,7 +296,7 @@ export default function HomeDetails({
                 <div className="col-12 col-md-5">
                   <div className="atmos-faces">
                     <img
-                      className="img-fluid"
+                      className="img-fluid opacity-0"
                       src={
                         homeSettings.friendlyImage.sourceUrl
                           ? homeSettings.friendlyImage.sourceUrl
@@ -361,7 +364,7 @@ export default function HomeDetails({
                 <div className="d-flex justify-content-center mt-5 pt-4">
                   <Link className="btn btn-yellow fireBtn" href="/home#">
                     <span>Wait, there’s more… </span>
-                    <span className="fireContainer" ref={fireContainer} />
+                    {/* <span className="fireContainer" ref={fireContainer} /> */}
                   </Link>
                 </div>
               </>
@@ -535,7 +538,7 @@ export default function HomeDetails({
                     </p>
                   </div>
                   <Link href="#" className="btn btn-blue">
-                    Visit Websites
+                    Visit Websites{" "}
                   </Link>
                 </div>
                 <div className="device-anim">
