@@ -1,21 +1,20 @@
-import Head from 'next/head';
-import Header from '../../components/header/Header';
-import Footer from '../../components/footer/Footer';
+import Head from "next/head";
+import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 import { useRouter } from "next/router";
-import WebsiteDesignDev from '../../components/websiteDesignDevelopment/websiteDesignDevelopment';
-import WebApp from '../../components/webApp/webApp';
-import Hosting from '../../components/hosting/hosting';
-import Ecommerce from '../../components/ecommerce/ecommerce';
-import SocialMediaManagement from '../../components/socialMediaManagement/socialMediaManagement';
-import WhiteLabel from '../../components/whiteLabel/whiteLabel';
-import LogoBranding from '../../components/logoBranding/logoBranding';
-import PrintedMarketing from '../../components/printedMarketing/printedMarketing';
-import PropertyManagement from '../../components/propertyManagement/propertyManagement';
-import BlogDetail from '../../components/blogDetail/blogDetail';
-import GraphAPI from '../../services/graphQL';
-import Custom404 from '../../components/404/404';
-import Loader from '../../components/header/Loader';
-
+import WebsiteDesignDev from "../../components/websiteDesignDevelopment/websiteDesignDevelopment";
+import WebApp from "../../components/webApp/webApp";
+import Hosting from "../../components/hosting/hosting";
+import Ecommerce from "../../components/ecommerce/ecommerce";
+import SocialMediaManagement from "../../components/socialMediaManagement/socialMediaManagement";
+import WhiteLabel from "../../components/whiteLabel/whiteLabel";
+import LogoBranding from "../../components/logoBranding/logoBranding";
+import PrintedMarketing from "../../components/printedMarketing/printedMarketing";
+import PropertyManagement from "../../components/propertyManagement/propertyManagement";
+import BlogDetail from "../../components/blogDetail/blogDetail";
+import GraphAPI from "../../services/graphQL";
+import Custom404 from "../../components/404/404";
+import Loader from "../../components/header/Loader";
 
 function BlogDetails({ blogDetail, relativePostDetail }) {
   const router = useRouter();
@@ -25,7 +24,6 @@ function BlogDetails({ blogDetail, relativePostDetail }) {
   return (
     <BlogDetail blogDetail={blogDetail} relativeDetail={relativePostDetail} />
   );
-
 }
 
 export default BlogDetails;
@@ -49,16 +47,15 @@ export async function getStaticProps({ params }) {
   }
   const catName = blogDetailData.categories?.nodes[0]?.name;
   const notIn = blogDetailData.postId;
-  const relativePostDetail = await GraphAPI.relativePostSettings(catName, notIn);
+  const relativePostDetail = await GraphAPI.relativePostSettings(
+    catName,
+    notIn
+  );
 
   return {
     props: {
       blogDetail: blogDetailData,
-      relativePostDetail: relativePostDetail.data.data?.posts?.edges
+      relativePostDetail: relativePostDetail.data.data?.posts?.edges,
     },
   };
 }
-
-
-
-

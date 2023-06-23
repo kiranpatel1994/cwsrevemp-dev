@@ -6,15 +6,13 @@ import GraphAPI from "../services/graphQL";
 export default function Contact({ form, themeDetail }) {
   const { title, description } = form;
   useEffect(() => {
-    document.body.classList.add('contact');
+    document.body.classList.add("contact");
     return () => {
-      document.body.classList.remove('contact');
+      document.body.classList.remove("contact");
     };
-  }, [])
+  }, []);
 
-  return (
-    <ContactDetail data={themeDetail} form={form} />
-  );
+  return <ContactDetail data={themeDetail} form={form} />;
 }
 
 export async function getStaticProps() {
@@ -23,7 +21,7 @@ export async function getStaticProps() {
   return {
     props: {
       form: form,
-      themeDetail: themeRes.data.data.acfOptionsThemeOptions.themeSettings
+      themeDetail: themeRes.data.data.acfOptionsThemeOptions.themeSettings,
     },
   };
 }

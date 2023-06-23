@@ -28,14 +28,14 @@ export default class GraphAPI {
         }
         `;
     const graphqlQuery = {
-      "operationName": "ThemeQuery",
-      "query": themeQuery,
+      operationName: "ThemeQuery",
+      query: themeQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -62,14 +62,14 @@ export default class GraphAPI {
       }
       `;
     const graphqlQuery = {
-      "operationName": "CompanyQuery",
-      "query": companyQuery,
+      operationName: "CompanyQuery",
+      query: companyQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -92,14 +92,14 @@ export default class GraphAPI {
     }
     `;
     const graphqlQuery = {
-      "operationName": "TeamQuery",
-      "query": teamQuery,
+      operationName: "TeamQuery",
+      query: teamQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -123,46 +123,40 @@ export default class GraphAPI {
     }
     `;
     const graphqlQuery = {
-      "operationName": "PortfolioQuery",
-      "query": portfolioQuery,
+      operationName: "PortfolioQuery",
+      query: portfolioQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
   static portfolioTags() {
     const portfolioTagsQuery = `
   query portfolioTags {
-    portfolioTags (first: ${process.env.NEXT_PUBLIC_PORTFOLIO_TAGS_LIMIT}) {
+    portfolios (first: ${process.env.NEXT_PUBLIC_PORTFOLIO_TAGS_LIMIT}) {
       nodes {
-        name
-        slug
-        portfolios {
-          nodes {
-            featuredImage {
-              node {
-                sourceUrl
-              }
+          featuredImage {
+            node {
+              sourceUrl
             }
           }
         }
-      }
     }
   }
   `;
     const graphqlQuery = {
-      "operationName": "portfolioTags",
-      "query": portfolioTagsQuery,
+      operationName: "portfolioTags",
+      query: portfolioTagsQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -193,14 +187,14 @@ export default class GraphAPI {
   }
   `;
     const graphqlQuery = {
-      "operationName": "SolutionQuery",
-      "query": solutionQuery,
+      operationName: "SolutionQuery",
+      query: solutionQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -222,14 +216,14 @@ export default class GraphAPI {
 }
   `;
     const graphqlQuery = {
-      "operationName": "PortfolioCategorySettingsQuery",
-      "query": portfolioCategorySettingsQuery,
+      operationName: "PortfolioCategorySettingsQuery",
+      query: portfolioCategorySettingsQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -247,14 +241,14 @@ export default class GraphAPI {
 }
   `;
     const graphqlQuery = {
-      "operationName": "PortfolioCategoryQuery",
-      "query": portfolioCategoryQuery,
+      operationName: "PortfolioCategoryQuery",
+      query: portfolioCategoryQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -305,14 +299,14 @@ export default class GraphAPI {
   }
   `;
     const graphqlQuery = {
-      "operationName": "websiteDesignAndDevelopmentQuery",
-      "query": websiteDesignAndDevelopmentQuery,
+      operationName: "websiteDesignAndDevelopmentQuery",
+      query: websiteDesignAndDevelopmentQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -354,14 +348,14 @@ export default class GraphAPI {
   }
   `;
     const graphqlQuery = {
-      "operationName": "webApplicationQuery",
-      "query": webApplicationQuery,
+      operationName: "webApplicationQuery",
+      query: webApplicationQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -414,14 +408,14 @@ export default class GraphAPI {
   }
   `;
     const graphqlQuery = {
-      "operationName": "SocialMediaManagementQuery",
-      "query": socialMediaManagementQuery,
+      operationName: "SocialMediaManagementQuery",
+      query: socialMediaManagementQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -458,14 +452,14 @@ export default class GraphAPI {
   }
   `;
     const graphqlQuery = {
-      "operationName": "EcomDetailQuery",
-      "query": ecomDetailQuery,
+      operationName: "EcomDetailQuery",
+      query: ecomDetailQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -513,14 +507,14 @@ export default class GraphAPI {
   }
   `;
     const graphqlQuery = {
-      "operationName": "HostingDetailQuery",
-      "query": hostingDetailQuery,
+      operationName: "HostingDetailQuery",
+      query: hostingDetailQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -567,14 +561,14 @@ export default class GraphAPI {
   }
   `;
     const graphqlQuery = {
-      "operationName": "whiteLabelDetailQuery",
-      "query": whiteLabelDetailQuery,
+      operationName: "whiteLabelDetailQuery",
+      query: whiteLabelDetailQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -649,14 +643,14 @@ export default class GraphAPI {
   }
   `;
     const graphqlQuery = {
-      "operationName": "PropertyManagementDetailQuery",
-      "query": propertyManagementDetailQuery,
+      operationName: "PropertyManagementDetailQuery",
+      query: propertyManagementDetailQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -705,17 +699,16 @@ export default class GraphAPI {
   }
   `;
     const graphqlQuery = {
-      "operationName": "LogoDesignandBrandingDetailQuery",
-      "query": logoDesignandBrandingDetailQuery,
+      operationName: "LogoDesignandBrandingDetailQuery",
+      query: logoDesignandBrandingDetailQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
-
 
   static printedMarketingDetail() {
     const printedMarketingDetailQuery = `
@@ -762,14 +755,14 @@ export default class GraphAPI {
   }
   `;
     const graphqlQuery = {
-      "operationName": "printedMarketingDetailQuery",
-      "query": printedMarketingDetailQuery,
+      operationName: "printedMarketingDetailQuery",
+      query: printedMarketingDetailQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -821,14 +814,14 @@ export default class GraphAPI {
   }
   `;
     const graphqlQuery = {
-      "operationName": "blogPaginationQuery",
-      "query": blogPaginationQuery,
+      operationName: "blogPaginationQuery",
+      query: blogPaginationQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -859,22 +852,31 @@ export default class GraphAPI {
               sourceUrl
             }
           }
+          categories {
+            nodes {
+              name
+            }
+          }
+          tags {
+            nodes {
+              name
+            }
+          }
         }
       }
     }
   }
   `;
     const graphqlQuery = {
-      "operationName": "searchByBlog",
-      "query": searchByBlog,
+      operationName: "searchByBlog",
+      query: searchByBlog,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
-
   }
 
   static blogListing() {
@@ -892,14 +894,14 @@ export default class GraphAPI {
   }
   `;
     const graphqlQuery = {
-      "operationName": "BlogListingQuery",
-      "query": blogListingQuery,
+      operationName: "BlogListingQuery",
+      query: blogListingQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -932,14 +934,14 @@ export default class GraphAPI {
   }
   `;
     const graphqlQuery = {
-      "operationName": "BlogPostListingQuery",
-      "query": blogPostListingQuery,
+      operationName: "BlogPostListingQuery",
+      query: blogPostListingQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -979,14 +981,14 @@ export default class GraphAPI {
   `;
 
     const graphqlQuery = {
-      "operationName": "SinglePostSettingsQuery",
-      "query": singlePostSettingsQuery,
+      operationName: "SinglePostSettingsQuery",
+      query: singlePostSettingsQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -1032,14 +1034,14 @@ export default class GraphAPI {
   `;
 
     const graphqlQuery = {
-      "operationName": "RelativePostSettingsQuery",
-      "query": relativePostSettingsQuery,
+      operationName: "RelativePostSettingsQuery",
+      query: relativePostSettingsQuery,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -1062,14 +1064,14 @@ export default class GraphAPI {
 `;
 
     const graphqlQuery = {
-      "operationName": "ThemeQuery",
-      "query": clientTestimonialSettings,
+      operationName: "ThemeQuery",
+      query: clientTestimonialSettings,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -1099,14 +1101,14 @@ export default class GraphAPI {
 `;
 
     const graphqlQuery = {
-      "operationName": "PortfolioListingSettings",
-      "query": portfolioListingSettings,
+      operationName: "PortfolioListingSettings",
+      query: portfolioListingSettings,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
 
@@ -1165,15 +1167,14 @@ export default class GraphAPI {
 `;
 
     const graphqlQuery = {
-      "operationName": "HomeSettings",
-      "query": homeSettings,
+      operationName: "HomeSettings",
+      query: homeSettings,
     };
     return axios({
       url: baseURL,
-      method: 'post',
+      method: "post",
       headers: headers,
-      data: graphqlQuery
+      data: graphqlQuery,
     });
   }
-
 }
