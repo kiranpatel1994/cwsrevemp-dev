@@ -1463,7 +1463,7 @@ div.hands-bild {
 
 .vr-row-parent .child-row:first-child {
   animation-name: identifier;
-  animation-duration: 8s;
+  animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-delay: 0;
   animation-direction: alternate;
@@ -1473,7 +1473,7 @@ div.hands-bild {
 }
 .vr-row-parent .child-row:nth-child(2) {
   animation-name: identifier2;
-  animation-duration: 10s;
+  animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-delay: 0;
   animation-direction: alternate;
@@ -1483,7 +1483,7 @@ div.hands-bild {
 }
 .vr-row-parent .child-row:nth-child(3) {
   animation-name: identifier2;
-  animation-duration: 8s;
+  animation-duration: 1s;
   animation-timing-function: ease-out;
   animation-delay: 0;
   animation-direction: alternate;
