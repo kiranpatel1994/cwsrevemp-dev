@@ -372,7 +372,7 @@ export default function HomeDetails({
                   </Swiper>
                 </div>
                 <div className="d-flex justify-content-center mt-5 pt-4">
-                  <Link className="btn btn-yellow fireBtn" href="/home#">
+                  <Link className="btn btn-yellow fireBtn" href="/services">
                     <span>Wait, there’s more… </span>
                     {/* <span className="fireContainer" ref={fireContainer} /> */}
                   </Link>
