@@ -147,7 +147,7 @@ export default function BlogContent({ blogData, blogDetail }) {
                               src={
                                 item.node.postSettings.blogGridImage !== null
                                   ? item.node.postSettings.blogGridImage
-                                      .sourceUrl
+                                    .sourceUrl
                                   : "../images/placeholder-1.svg"
                               }
                               alt="blogTemp"
@@ -166,9 +166,11 @@ export default function BlogContent({ blogData, blogDetail }) {
                                 {item.node.tags.nodes.length > 0 && (
                                   <li className="list-inline-item">
                                     <span className="normal__tag">
-                                      {item.node.tags.nodes
-                                        .map((node) => node.name)
-                                        .join(",")}
+                                      <em className="fst-normal">
+                                        {item.node.tags.nodes
+                                          .map((node) => node.name)
+                                          .join(",")}
+                                      </em>
                                     </span>
                                   </li>
                                 )}
@@ -186,9 +188,9 @@ export default function BlogContent({ blogData, blogDetail }) {
                                   <img
                                     src={
                                       item.node.postSettings.authorImage !==
-                                      null
+                                        null
                                         ? item.node.postSettings.authorImage
-                                            .sourceUrl
+                                          .sourceUrl
                                         : "../images/logo_icon.png"
                                     }
                                     alt="Media bild"
@@ -284,7 +286,7 @@ export default function BlogContent({ blogData, blogDetail }) {
                                   src={
                                     item.node.postSettings.authorImage !== null
                                       ? item.node.postSettings.authorImage
-                                          .sourceUrl
+                                        .sourceUrl
                                       : "../images/logo_icon.png"
                                   }
                                   alt="Media bild"
