@@ -852,6 +852,16 @@ export default class GraphAPI {
               sourceUrl
             }
           }
+          categories {
+            nodes {
+              name
+            }
+          }
+          tags {
+            nodes {
+              name
+            }
+          }
         }
       }
     }
