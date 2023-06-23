@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="68" height="68" viewBox="0 0 68 68">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.115" y1="0.115" x2="0.915" y2="0.915" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#feeac2"/>
+      <stop offset="0.252" stop-color="#fbd382"/>
+      <stop offset="0.555" stop-color="#fbc965"/>
+      <stop offset="0.815" stop-color="#f8bf4d"/>
+      <stop offset="1" stop-color="#fdb627"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_4179" data-name="Rectangle 4179" width="14.837" height="10.386" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_4180" data-name="Rectangle 4180" width="24.483" height="23.741" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_5317" data-name="Group 5317" transform="translate(-810 -2570)">
+    <rect id="Rectangle_4209" data-name="Rectangle 4209" width="68" height="68" rx="17" transform="translate(810 2570)" fill="url(#linear-gradient)"/>
+    <g id="Group_5318" data-name="Group 5318" transform="translate(11532.167 1972.875)">
+      <g id="Group_5267" data-name="Group 5267" transform="translate(-10695.085 614.27)" opacity="0.5" style="isolation: isolate">
+        <g id="Group_5266" data-name="Group 5266">
+          <g id="Group_5265" data-name="Group 5265" clip-path="url(#clip-path)">
+            <path id="Path_10712" data-name="Path 10712" d="M174.84,98.088v2.967h-2.967V98.088a4.451,4.451,0,1,0-8.9,0v2.967H160V98.088a7.419,7.419,0,0,1,14.837,0" transform="translate(-160.003 -90.669)" fill="#fff"/>
+          </g>
+        </g>
+      </g>
+      <g id="Group_5270" data-name="Group 5270" transform="translate(-10699.908 624.656)" opacity="0.9" style="isolation: isolate">
+        <g id="Group_5269" data-name="Group 5269">
+          <g id="Group_5268" data-name="Group 5268" clip-path="url(#clip-path-2)">
+            <path id="Path_10713" data-name="Path 10713" d="M149.816,168.3V186.1a2.967,2.967,0,0,1-2.967,2.967H128.3a2.967,2.967,0,0,1-2.967-2.967V168.3a2.968,2.968,0,0,1,2.967-2.969h1.856v2.555a1.484,1.484,0,1,0,2.967,0v-2.555h8.9v2.555a1.484,1.484,0,1,0,2.967,0v-2.555h1.856a2.968,2.968,0,0,1,2.967,2.969" transform="translate(-125.333 -165.329)" fill="#fff"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
