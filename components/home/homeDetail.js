@@ -194,10 +194,10 @@ export default function HomeDetails({
                 data-aos-duration="1000"
               >
                 <h1>
-                  <span>Business Facelift Happen Here </span>
+                  <span>{homeSettings.bannerTitle}</span>
                 </h1>
                 <div className="new-title">
-                  {homeSettings.bannerTitle}
+                  {homeSettings.bannerSubtitle}
                   <em>
                     {/* <TypeAnimation
                                             sequence={["Simplify.", 200, "Best."]}
