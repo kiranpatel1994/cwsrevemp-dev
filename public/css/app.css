@@ -765,10 +765,24 @@ div.hands-bild {
 
 /*  */
 .rocket-bild { position: relative; }
-.rocket-bild .inline-item:first-child { position: absolute; left: 0; top: 12px; }
+.mini-card .rocket-bild .inline-item { transition: 1s all; }
+.rocket-bild .inline-item:first-child { position: absolute; left: 0; top: 10px;; }
 .rocket-bild .inline-item:nth-child(2) { position: relative; top: 5px; }
+.mini-card:hover .rocket-bild .inline-item:nth-child(2) { transform: scale(0.8) translateY(10px); }
 .rocket-bild .inline-item:nth-child(3) { position: absolute; top: 25px; right: -22px; }
-.rocket-bild .inline-item:last-child { position: absolute; }
+.mini-card:hover .rocket-bild .inline-item:first-child { transform: scale(1.2) rotate(-54deg); top: 2px; }
+.rocket-bild .inline-item:last-child { position: absolute; right: 16px; top: 140px; }
+.mini-card:hover .rocket-bild .inline-item:nth-child(3) { transform: scale(1.2) rotate(55deg); right: -5px; }
+.mini-card:hover .rocket-bild .inline-item:last-child { transform: scale(1.2) rotate(100deg); right: 10px; }
+
+/*  */
+.voice-bild { position: relative; }
+.mini-card .voice-bild .inline-item { transition: 1s all; }
+.mini-card .voice-bild .inline-item:first-child { position: relative; top: 50px; }
+.mini-card .voice-bild .inline-item:last-child { position: absolute; top: 80px; left: -25px; }
+.mini-card:hover .voice-bild .inline-item:last-child { transform: scale(1.4); left: -30px; }
+
+
 
 .banner-yll h3 {
   font-family: "gilroy-semibolduploaded_file";
