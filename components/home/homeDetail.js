@@ -296,13 +296,13 @@ export default function HomeDetails({
                 <div className="col-12 col-md-5">
                   <div className="atmos-faces">
                     <div className="face-1">
-                      <img src="images/crewImg-1.jpg" alt="" />
-                    </div>
+                      <img src="images/crewImg1.jpg" alt="" /> 
+                    </div> 
                     <div className="face-2">
-                      <img src="images/crewImg-2.jpg" alt="" />
+                      <img src="images/crewImg2.jpg" alt="" /> 
                     </div>
                     <div className="face-3">
-                      <img src="images/crewImg-3.jpg" alt="" />
+                      <img src="images/crewImg3.jpg" alt="" />
                     </div>
 
                     {/* <img
