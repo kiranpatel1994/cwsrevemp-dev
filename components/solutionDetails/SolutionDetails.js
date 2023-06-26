@@ -109,7 +109,7 @@ export default function SolutionDetails({ detail, tags }) {
                   </div>
                   <h1>
                     Your workflow just got
-                    <em className="text-active">simplified.</em>
+                    <em className="text-active"> simplified.</em>
                   </h1>
                   <p>
                     Get customizable web pages that speed up operations with
@@ -175,7 +175,7 @@ export default function SolutionDetails({ detail, tags }) {
                         <div className="tileBtn">
                           <a
                             class="btn btn-yellow btn-sm mt-4 d-inline-flex"
-                            href="#"
+                            href="/contact"
                           >
                             I Need This
                           </a>
@@ -259,14 +259,10 @@ export default function SolutionDetails({ detail, tags }) {
                   <h2>Ready to start your project? </h2>
                   <ul className="list-inline">
                     <li className="list-inline-item">
-                      <a className="btn btn-yellow" href="#">
-                        Get in touch
-                      </a>
+                      <a className="btn btn-yellow" href="#">Get in touch</a>
                     </li>
                     <li className="list-inline-item">
-                      <a className="btn btn-blue" href="#">
-                        We have such an option?
-                      </a>
+                      <a className="btn btn-blue" href="#">See Our Work</a>
                     </li>
                   </ul>
                 </div>

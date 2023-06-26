@@ -214,14 +214,11 @@ export default function HomeDetails({
                 </div>
               </div>
               {homeSettings?.bannerVideoUrl && (
-                <div className="bannerVideo">
-                  <iframe
-                    width="100%"
-                    height="642"
-                    src={homeSettings.bannerVideoUrl}
-                    title="YouTube video player"
-                    frameborder="0"
-                  ></iframe>
+                <div className="bannerVideo" dangerouslySetInnerHTML={{
+                  __html: `<video autoplay muted loop>
+                <source src=` + homeSettings.bannerVideoUrl + ` type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>`}}>
                 </div>
               )}
             </div>
@@ -296,10 +293,10 @@ export default function HomeDetails({
                 <div className="col-12 col-md-5">
                   <div className="atmos-faces">
                     <div className="face-1">
-                      <img src="images/crewImg1.jpg" alt="" /> 
-                    </div> 
+                      <img src="images/crewImg1.jpg" alt="" />
+                    </div>
                     <div className="face-2">
-                      <img src="images/crewImg2.jpg" alt="" /> 
+                      <img src="images/crewImg2.jpg" alt="" />
                     </div>
                     <div className="face-3">
                       <img src="images/crewImg3.jpg" alt="" />
@@ -580,7 +577,7 @@ export default function HomeDetails({
                     </p>
                   </div>
                   <Link href="#" className="btn btn-blue">
-                    Visit Websites{" "}
+                    Visit Websites
                   </Link>
                 </div>
                 <div className="device-anim">

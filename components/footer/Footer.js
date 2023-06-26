@@ -145,15 +145,17 @@ export default function Footer({ settings }) {
         <div className="container-xl">
           <div className="row">
             <div
-              className="col-12 col-md-6 col-lg-5"
+              className="col-12 col-md-auto pe-lg-5"
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay="400"
               data-aos-offset="0"
             >
-              <h6>Services & Specialties</h6>
-              <div className="row">
-                <div className="col-lg-6">
+              <div className="row justify-content-between">
+                <div className="col-lg-auto align-self-center">
+                  <label className="navLabel">Services & Specialties</label>
+                </div>
+                <div className="col-lg-auto">
                   <ul className="list-unstyled">
                     <li>
                       <Link href="/services/ui-ux-design-web-applications-development">
@@ -177,7 +179,7 @@ export default function Footer({ settings }) {
                     </li>
                   </ul>
                 </div>
-                <div className="col-lg-6 ps-lg-4">
+                <div className="col-lg-auto">
                   <ul className="list-unstyled">
                     <li>
                       <Link href="/services/social-media-management">
@@ -200,15 +202,17 @@ export default function Footer({ settings }) {
               </div>
             </div>
             <div
-              className="col-12 col-md-6 col-lg-5"
+              className="col-12 col-md-auto ps-lg-5 solutionRow"
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay="600"
               data-aos-offset="0"
             >
-              <h6>Solutions</h6>
-              <div className="row">
-                <div className="col-lg-5">
+              <div className="row justify-content-between">
+                <div className="col-lg-auto align-self-center">
+                  <label className="navLabel">Solutions</label>
+                </div>
+                <div className="col-lg-auto">
                   <ul className="list-unstyled">
                     <li>
                       <Link href="/services/property-management-websites">
@@ -221,13 +225,13 @@ export default function Footer({ settings }) {
                     <li>
                       <Link href="#">Donation Pages</Link>
                     </li>
-                  </ul>
-                </div>
-                <div className="col-lg-6">
-                  <ul className="list-unstyled">
                     <li>
                       <Link href="#">Payment Processing</Link>
                     </li>
+                  </ul>
+                </div>
+                <div className="col-lg-auto">
+                  <ul className="list-unstyled">
                     <li>
                       <Link href="#">Contact Database</Link>
                     </li>
@@ -238,7 +242,6 @@ export default function Footer({ settings }) {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-6 col-lg-2"></div>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 // Import Swiper React components
@@ -15,6 +15,14 @@ import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function BlogDetail({ blogDetail, relativeDetail }) {
+
+  useEffect(() => {
+    document.body.classList.add('blog-detail');
+    return () => {
+      document.body.classList.remove('blog-detail');
+    }
+  }, []);
+
   const date = new Date(blogDetail.date);
   const options = { month: "long", day: "numeric", year: "numeric" };
   const formattedDate = date.toLocaleDateString("en-US", options);

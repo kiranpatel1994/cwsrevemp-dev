@@ -34,7 +34,7 @@
 .homeBanner .scrollForMore .inner-cirl .arrow-svg img {max-width: 36px;}
 .homeBanner .bannerVideo{border: 1px solid rgba(255, 255, 255, 0.15);border-radius: 28px;position: relative;z-index: 3;max-width: 1155px;margin: 0 auto;}
 .homeBanner .bannerVideo::before{content: '';width: calc(100% + 2px);height: 327px;background: linear-gradient(rgba(7, 4, 43, 0) 0%, #07042b 100%);position: absolute;left: -1px;bottom: -1px;z-index: 4;}
-.homeBanner .bannerVideo iframe{border-radius: 28px;background: #07042b;border: 12px solid #07042b;overflow: hidden;vertical-align: top;}
+.homeBanner .bannerVideo video{border-radius: 28px;background: #07042b;border: 12px solid #07042b;overflow: hidden;vertical-align: top;width: 100%;}
 .homeBanner .brandWeServe{position: absolute;right: 0;top: 0;z-index: 9;}
 .homeBanner .brandWeServe .brandIcon{width: 108px;height: 108px;border: 0.25px solid rgba(255, 255, 255, 0.05);backdrop-filter: blur(300px);--webkit-backdrop-filter: blur(300px);background-color: rgba(255, 255, 255, 0.05);border-radius: 50%;position: relative;transition: all .3s;}
 .homeBanner .brandWeServe .brandIcon img{position: absolute;left: 50%;top: 50%;transform: translate(-50%, -50%);transition: all .2s;}
@@ -136,22 +136,26 @@
 .project-area::before{content: '';width: 100%;height: 285px;background: linear-gradient(360deg, rgba(7, 4, 43, 0) 0%, #07042b 100%);position: absolute;left: 0;top: 0;z-index: 2;pointer-events: none;}
 
 .last-footer {padding: 35px 0 10px;}
-footer::after{bottom: -85px;}
+footer::after {bottom: 110px;width: 185px;background-size: 100% auto;height: 165px;right: 40px;transform: rotate(-15deg);}
 footer .ft-child:last-child {padding: 100px 0 70px;}
 @keyframes jumpp {
-    0% {
-      transform: translate3d(0, 0, 0);
-    }
-    25% {
-      transform: translate3d(0, 5%, 0);
-    }
-    75% {
-      transform: translate3d(0, -5%, 0);
-    }
-    100% {
-      transform: translate3d(0, 0, 0);
-    }
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-15deg);
+  }
+  25% {
+    transform: translate3d(0, 5%, 0) rotate(-15deg);
+  }
+  75% {
+    transform: translate3d(0, -5%, 0) rotate(-15deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-15deg);
+  }
 }
+.last-footer li a{font-size: 16px;font-family: "Gilroy";font-weight: 600;}
+.last-footer .navLabel{padding: 0 20px;height: 48px;background: #07042b;border: 1px solid #07042b;font-family: "Gilroy";font-weight: bold;font-size: 18px;line-height: 46px;text-align: left;color: #fdb627;text-align: center;border-radius: 50px;}
+.last-footer .solutionRow{position: relative;}
+.last-footer .solutionRow::before{content: '';width: 1px;height: 113px;background: #071533;position: absolute;left: 0;top: 50%;transform: translateY(-50%);}
 
 /* Solution Page */
 .solutionDetail{margin-top: 72px;}
@@ -297,22 +301,48 @@ body.hosting{background-size: 70% auto;}
 
 .companyCard .cardinner .tileBtn{position: absolute;bottom: 30px;margin: 0 auto;left: 50%;transform: translateX(-50%);}
 .project-area{display: none;}
-.banner-projects .project-part {
-  margin: 0 0 90px;
-  /* transform: rotate(25deg) skew(-5deg, 5deg); */
-  transform: rotateZ(30deg) skew(5deg, -2deg);
-}
+.banner-projects .project-part {margin: 0 0 90px;transform: rotateZ(30deg) skew(5deg, -2deg);}
 .project-area .banner-projects .hovOnRemove img {opacity: 1;}
 
-/* .line-last,
-.line-last-vr{width: 100%;height: 100%;background-image: url(../images/lines.svg);background-repeat: repeat-y;background-position: center top;} */
-.line-last, .line-last-vr {
-  display: block;
-  pointer-events: none;
-  overflow: hidden;
-  max-height: 100%;
-  text-align: center;
-}
-.line-last img {
-  margin: 0 auto;
-}
+.line-last, .line-last-vr {display: block;pointer-events: none;overflow: hidden;max-height: 100%;text-align: center;}
+.line-last img {margin: 0 auto;}
+
+.founderArea .shapeBox{background-position: center;background-image: url(../images/box.jpg);}
+.founderArea .limboTitle p{font-family: "Gilroy";font-weight: 500;font-size: 20px;line-height: 28px;color: #07042b;}
+.founderArea .dhareBoxArrow img{width: 26px;transition: all .3s;margin: 15px 0;}
+.founderArea .shapeBox:hover .dhareBoxArrow img{transform: scale(1.75);margin: 20px 0 37px;}
+.founderArea .shapeBox .limboTitle h4,
+.founderArea .shapeBox .limboTitle p{transition: all 0.3s;}
+.founderArea .shapeBox:hover .limboTitle h4,
+.founderArea .shapeBox:hover .limboTitle p{transform: translateY(-10px);}
+.founderArea .limboTitle em{font-family: "Gilroy";font-weight: bold;font-size: 25px;line-height: 35px;color: #07042b;font-style: normal;}
+
+.aboutFounder .userContainer {min-height: 790px;}
+.aboutFounder .founderInfo h3{font-family: "Gilroy";font-weight: bold;font-size: 30px;letter-spacing: 0.03em;line-height: 1.3333;color: #fdb627;}
+.aboutFounder{margin-top: 125px;position: relative;background-image: url(../images/aboutFounder-bg.png);background-repeat: no-repeat;background-position: left top;}
+.aboutFounder::before{content: '';width: 100%;height: 304px;background: linear-gradient(#07042b 0%, rgba(7, 4, 43, 0) 100%);position: absolute;left: 0;top: 0;z-index: 0;pointer-events: none;}
+.aboutFounder h5{font-family: "Gilroy";font-weight: bold;font-size: 30px;letter-spacing: 0.03em;line-height: 40px;color: #fdb627;}
+.aboutFounder .userContainer .row{--bs-gutter-x : 60px}
+.aboutFounder .userContainer p{font-family: "Gilroy";font-weight: 300;font-size: 20px;line-height: 1.65;max-width: 375px;margin-bottom: 35px;}
+.aboutFounder .userContainer .headLine p{font-family: "Gilroy";font-weight: 500;font-size: 40px;line-height: 1.375;max-width: 100%;margin-bottom: 30px;}
+
+.ourTeam{padding-top: 125px;padding-bottom: 105px;background-image: url(../images/teamBG.jpg);background-position: left bottom;background-size: cover;}
+.ourTeam::before{display: none;}
+.ourTeam .subTitle p{font-family: "Gilroy";font-weight: 300;font-size: 20px;line-height: 1.6;color: #fff;}
+
+.teamList{color: #fff;list-style: none;padding: 0;margin: 80px 0 0;display: flex;flex-wrap: wrap;border-top: 1px solid rgba(255, 255, 255, 0.30);}
+.teamList li{width: 33.33%;padding: 25px 50px 19px;border-bottom: 1px solid rgba(255, 255, 255, 0.15);}
+.teamList li h2{font-family: "Gilroy";font-weight: 500;font-size: 22px;letter-spacing: 0.04em;line-height: 1.3;color: #fff;opacity: 0.5;transition: all 0.2s;transform-origin: left bottom;}
+.teamList li p{font-family: "Gilroy";font-weight: 600;font-size: 18px;letter-spacing: 0.04em;line-height: 1.77;color: #fdb627;opacity: 0.5;transition: all 0.2s;transform-origin: left bottom;}
+.teamList li:hover h2,
+.teamList li:hover p{opacity: 1;transform: scale(1.2);}
+
+.sngl-title{height: 320px;}
+.sngl-title.companySnglTitle{margin-top: -40px;background: linear-gradient(#ebebeb 0%, #fff 100%);z-index: 2;position: relative;}
+.sngl-title h3 span::before{transform-origin: 129px 18px;transition: all 0.3s;}
+.sngl-title:hover h3 span::before{transform: rotate(-20deg);}
+.company footer{overflow: inherit;}
+.company footer::before{content: '';background-image: url(../images/rocket3d.png);width: 247px;height: 235px;position: absolute;top: -160px;left: 124px;transition: all 0.3s;}
+.company footer:hover::before{top: -194px;left: 158px}
+
+.blog-detail .line-last{display: none;}

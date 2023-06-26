@@ -86,6 +86,9 @@ export default class GraphAPI {
               sourceUrl
               }
           }
+          memberSettings {
+            memberDesignation
+          }
           }
       }
       }

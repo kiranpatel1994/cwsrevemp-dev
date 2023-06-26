@@ -110,7 +110,7 @@ export default function Header({ logo }) {
                 </li>
                 <li className="nav-item ms-auto">
                   <Link className="nav-link call-action" href="/contact">
-                    Call to Action
+                  Get Started
                   </Link>
                 </li>
               </ul>
