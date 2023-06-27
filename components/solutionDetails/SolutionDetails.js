@@ -173,12 +173,12 @@ export default function SolutionDetails({ detail, tags }) {
                           )}
                         </div>
                         <div className="tileBtn">
-                          <a
+                          <Link
                             class="btn btn-yellow btn-sm mt-4 d-inline-flex"
                             href="/contact"
                           >
                             I Need This
-                          </a>
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -259,10 +259,14 @@ export default function SolutionDetails({ detail, tags }) {
                   <h2>Ready to start your project? </h2>
                   <ul className="list-inline">
                     <li className="list-inline-item">
-                      <a className="btn btn-yellow" href="#">Get in touch</a>
+                      <a className="btn btn-yellow" href="#">
+                        Get in touch
+                      </a>
                     </li>
                     <li className="list-inline-item">
-                      <a className="btn btn-blue" href="#">See Our Work</a>
+                      <a className="btn btn-blue" href="#">
+                        See Our Work
+                      </a>
                     </li>
                   </ul>
                 </div>

@@ -15,9 +15,16 @@ import BlogDetail from "../../components/blogDetail/blogDetail";
 import GraphAPI from "../../services/graphQL";
 import Custom404 from "../../components/404/404";
 import Loader from "../../components/header/Loader";
+import { useEffect } from "react";
 
 function BlogDetails({ blogDetail, relativePostDetail }) {
   const router = useRouter();
+  useEffect(() => {
+    document.body.classList.add("blog-detail");
+    return () => {
+      document.body.classList.remove("blog-detail");
+    };
+  }, []);
   if (router.isFallback) {
     return <Loader />;
   }

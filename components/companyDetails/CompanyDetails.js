@@ -112,39 +112,12 @@ export default function CompanyDetails({ details, list }) {
                         }}
                       ></div>
                     </div>
-                    <div className="col-lg-6">
-                      <p>
-                        Consectetuer adipiscing elit, sed diam nonumy euismod
-                        tincidunt ut laoreet Duis autem vel eum iriure dolor in
-                        hendrerit in vulputate velit esse molestie consequat,
-                        vel illum dolore eu feugiat
-                      </p>
-                      <p>
-                        Consectetuer adipiscing elit, sed diam nonumy euismod
-                        tincidunt ut laoreet Duis autem vel eum iriure dolor in
-                      </p>
-                      <p>
-                        Consectetuer adipiscing elit, sed diam nonumy euismod
-                        tincidunt ut laoreet Duis autem vel eum iriure dolor in
-                        hendrerit in vulputate velit esse molestie
-                      </p>
-                    </div>
-                    <div className="col-lg-6">
-                      <p>
-                        Consectetuer adipiscing elit, sed diam nonumy euismod
-                        tincidunt ut laoreet Duis autem vel eum iriure dolor in
-                        hendrerit in
-                      </p>
-                      <p>
-                        Consectetuer adipiscing elit, sed diam nonumy euismod
-                        tincidunt ut laoreet Duis autem vel eum iriure dolor in
-                        hendrerit in vulputate velit esse molestie consequat,
-                        vel illum dolore eu feugiat
-                      </p>
-                      {details.companySettings.founderName && (
-                        <h5>{details.companySettings.founderName}</h5>
-                      )}
-                    </div>
+                    <div
+                      className="col-lg-12"
+                      dangerouslySetInnerHTML={{
+                        __html: details.companySettings.founderDescription,
+                      }}
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -175,12 +148,12 @@ export default function CompanyDetails({ details, list }) {
                       return (
                         <li key={item.index}>
                           <h2>{item.node.title}</h2>
-                            <p
-                              dangerouslySetInnerHTML={{
-                                __html:
-                                  item.node.memberSettings.memberDesignation,
-                              }}
-                            />
+                          <p
+                            dangerouslySetInnerHTML={{
+                              __html:
+                                item.node.memberSettings.memberDesignation,
+                            }}
+                          />
                         </li>
                       );
                     })}

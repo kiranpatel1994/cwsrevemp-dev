@@ -55,6 +55,7 @@ export default class GraphAPI {
               blockTagline
             }
             aboutFounder
+            founderDescription
             founderName
             teamDescription
           }
@@ -1123,11 +1124,6 @@ export default class GraphAPI {
         bannerTitle
         bannerSubtitle
         bannerVideoUrl
-        bannerSlider {
-          bannerImage {
-            sourceUrl
-          }
-        }
         friendlyTitle
         friendlyImage {
           sourceUrl
