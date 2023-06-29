@@ -1,4 +1,14 @@
 import Link from "next/link";
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  EffectCreative,
+  Autoplay,
+  Keyboard,
+  Mousewheel,
+} from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+
 export default function ServiceDetails({ cat }) {
   const perChunk = 2;
   const result = cat.reduce((resultArray, item, index) => {
@@ -26,9 +36,7 @@ export default function ServiceDetails({ cat }) {
                     <em>user-friendly </em> functionality
                     <img src="/images/preview-24.png" />
                   </h1>
-                  <span>
-                    The business boost you’re looking for is right here.
-                  </span>
+                  
                 </div>
               </div>
             </div>
@@ -36,10 +44,67 @@ export default function ServiceDetails({ cat }) {
         </section>
         {result && (
           <section className="designFunctionality">
-            <div className="line-last">
-              <img src="/images/lines.png" alt="" />
+            <div className="line-last d-none">
+              <img src="/images/lines.png" alt="line_off" />
             </div>
-            <div className="container-xl setContainerFunctionality">
+            <div className="container-xl p-0 setContainerFunctionality">
+              <div className="row g-0 align-items-center">
+              <div className="col-12 col-md-6 col-lg-5">
+                <div className="center_title">The business <span>boost </span> you’re looking <br/> for is right here. </div>
+              </div>
+                <div className="col-12 col-md-6 col-lg-7">
+                  <Swiper
+                    direction={"vertical"}
+                    slidesPerView={1}
+                    spaceBetween={0}
+                    mousewheel={true}
+                    pagination={{
+                      type: "progressbar",
+                    }}
+                    modules={[Mousewheel, Pagination]}
+                    className="mySwiper"
+                  >
+                    <SwiperSlide>
+                      <a href="#" className="nw_card">
+                        <div className="inner_infor">
+                          <div className="yllo_box">
+                            <img src="images/code.png" />
+                          </div>
+                          <div className="content-area">
+                            <h2>Website Design and Development </h2>
+                            <ul className="list-unstyled">
+                              <li>UI design </li>
+                              <li>Copywriting </li>
+                              <li>Design and development </li>
+                            </ul>
+                            <div class="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
+                          </div>
+                        </div>
+                      </a>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <a href="#" className="nw_card">
+                        <div className="inner_infor">
+                          <div className="yllo_box">
+                            <img src="images/code.png" />
+                          </div>
+                          <div className="content-area">
+                            <h2>Website Design and Development </h2>
+                            <ul className="list-unstyled">
+                              <li>UI design </li>
+                              <li>Copywriting </li>
+                              <li>Design and development </li>
+                            </ul>
+                            <div class="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
+                          </div>
+                        </div>
+                      </a>
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
+              </div>
+            </div>
+            {/* <div className="container-xl setContainerFunctionality">
               {result.map((item, index) => {
                 return (
                   <div className="row alternative-row" key={`catblock${index}`}>
@@ -85,7 +150,7 @@ export default function ServiceDetails({ cat }) {
                   </div>
                 );
               })}
-            </div>
+            </div> */}
           </section>
         )}
       </main>

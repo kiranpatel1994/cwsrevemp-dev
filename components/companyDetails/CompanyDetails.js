@@ -93,6 +93,7 @@ export default function CompanyDetails({ details, list }) {
             </div>
           </section>
         )}
+        
         {details.companySettings.aboutFounder && (
           <section className="aboutFounder position-relative zindex-2">
             <div className="container-xl p-0">
@@ -113,7 +114,7 @@ export default function CompanyDetails({ details, list }) {
                       ></div>
                     </div>
                     <div
-                      className="col-lg-12"
+                      className="col-lg-12 column-count-2"
                       dangerouslySetInnerHTML={{
                         __html: details.companySettings.founderDescription,
                       }}
@@ -235,7 +236,7 @@ export default function CompanyDetails({ details, list }) {
                 <h3>
                   {/* <span>Ready to supercharge your business? </span> */}
                   <span>
-                    Reach out to us at
+                    Reach out to us at&nbsp;
                     <Link
                       className="text-decoration-none text-black"
                       href="tel:201-212-6367"
