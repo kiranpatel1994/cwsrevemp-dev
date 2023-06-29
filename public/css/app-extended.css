@@ -5,7 +5,7 @@
 
 .newHome header .navbar{background-color: transparent !important;padding: 23px 0;}
 .about-us::after {content: '';width: 95px;height: 100%;position: absolute;left: 0;top: 0;background: transparent linear-gradient(180deg, #07042A 10%, rgba(253, 182, 39, 0.4) 70%, #FDB627 100%) 0% 0% no-repeat;z-index: 3;}
-.slider-area .raw-card {background: transparent;position: relative;overflow: hidden;border: 1px solid rgba(255,255,255,0.5);border-radius: 24px;}
+.slider-area .raw-card {background: transparent;position: relative;overflow: hidden;border: 1px solid rgba(255,255,255,0.5);border-radius: 24px; height: calc(100% - 80px);}
 .slider-area .raw-card:hover{border-color: #FDB627;}
 .slider-area .raw-card::before {content: '';background: rgba(255, 255, 255, 0.2);filter: blur(300px);backdrop-filter: blur(300px);-webkit-backdrop-filter: blur(300px);height: 100%;width: 100%;position: absolute;left: 0;top: 0;z-index: 0;border: 1px solid transparent;}
 .slider-area .raw-card > *{z-index: 2;position: relative;}

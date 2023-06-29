@@ -11,6 +11,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import { TypeAnimation } from "react-type-animation";
 import lottieFire from "/public/lottie/fire.json";
+import lottieMoke from "/public/lottie/green-smoke.json";
 import lottie from "lottie-web";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -176,10 +177,21 @@ export default function HomeDetails({
     fireBtn1.addEventListener("mouseleave", (e) => {
       lottie.stop();
     });
-
+    
+    let iconMenu = document.querySelector('.lotti_smoke');
+    lottie.loadAnimation({
+      container: iconMenu,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: lottieMoke,
+    });
+    
     return () => {
       lottie.destroy();
     };
+    
+
   }, []);
 
   return (
