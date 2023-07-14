@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import SwiperCore, {
   Navigation,
@@ -8,6 +9,7 @@ import SwiperCore, {
   Mousewheel,
 } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { gsap } from "gsap/dist/gsap";
 
 export default function ServiceDetails({ cat }) {
   const perChunk = 2;
@@ -22,6 +24,23 @@ export default function ServiceDetails({ cat }) {
 
     return resultArray;
   }, []);
+
+  useEffect(() => {
+    
+    gsap.to('.scroll_tag', {
+      delay: 1,
+      duration: 2,
+      keyframes: {
+        ease: 'none',
+        easeEach: 'power1',
+        x: [0, 150, 320, 0],
+        y: [0, 100, -40, 0], 
+      },
+      opacity: 0
+    });
+
+  });
+
   return (
     <>
       <main className="serviceDetail position-relative zindex-2">
@@ -47,6 +66,9 @@ export default function ServiceDetails({ cat }) {
             <div className="line-last d-none">
               <img src="/images/lines.png" alt="line_off" />
             </div>
+            <div className="scroll_tag">
+              <img src="/images/scroll_anim.png" alt="scroll_off" />
+            </div>
             <div className="container-xl p-0 setContainerFunctionality">
               <div className="row g-0 align-items-center">
               <div className="col-12 col-md-6 col-lg-5">
@@ -56,7 +78,8 @@ export default function ServiceDetails({ cat }) {
                   <Swiper
                     direction={"vertical"}
                     slidesPerView={1}
-                    spaceBetween={0}
+                    spaceBetween={30}
+                    loop={true}
                     mousewheel={true}
                     pagination={{
                       type: "progressbar",
@@ -86,14 +109,86 @@ export default function ServiceDetails({ cat }) {
                       <a href="#" className="nw_card">
                         <div className="inner_infor">
                           <div className="yllo_box">
-                            <img src="images/code.png" />
+                            <img src="images/csc.png" />
                           </div>
                           <div className="content-area">
-                            <h2>Website Design and Development </h2>
+                            <h2>Custom Systems/Web applications </h2>
                             <ul className="list-unstyled">
-                              <li>UI design </li>
-                              <li>Copywriting </li>
-                              <li>Design and development </li>
+                              <li>Service goes here... </li>
+                              <li>Second Service goes here amare dol... </li>
+                              <li>Third Service goes here ... </li>
+                            </ul>
+                            <div class="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
+                          </div>
+                        </div>
+                      </a>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <a href="#" className="nw_card">
+                        <div className="inner_infor">
+                          <div className="yllo_box">
+                            <img src="images/bag.png" />
+                          </div>
+                          <div className="content-area">
+                            <h2>Ecommerce Development </h2>
+                            <ul className="list-unstyled">
+                              <li>Service goes here... </li>
+                              <li>Second Service goes here amare dol... </li>
+                              <li>Third Service goes here ... </li>
+                            </ul>
+                            <div class="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
+                          </div>
+                        </div>
+                      </a>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <a href="#" className="nw_card">
+                        <div className="inner_infor">
+                          <div className="yllo_box">
+                            <img src="images/cloud.png" />
+                          </div>
+                          <div className="content-area">
+                            <h2>Hosting </h2>
+                            <ul className="list-unstyled">
+                              <li>Service goes here... </li>
+                              <li>Second Service goes here amare dol... </li>
+                              <li>Third Service goes here ... </li>
+                            </ul>
+                            <div class="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
+                          </div>
+                        </div>
+                      </a>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <a href="#" className="nw_card">
+                        <div className="inner_infor">
+                          <div className="yllo_box">
+                            <img src="images/lb.png" />
+                          </div>
+                          <div className="content-area">
+                            <h2>White Label </h2>
+                            <ul className="list-unstyled">
+                              <li>Service goes here... </li>
+                              <li>Second Service goes here amare dol... </li>
+                              <li>Third Service goes here ... </li>
+                            </ul>
+                            <div class="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
+                          </div>
+                        </div>
+                      </a>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <a href="#" className="nw_card">
+                        <div className="inner_infor">
+                          <div className="yllo_box">
+                            <img src="images/mci.png" />
+                          </div>
+                          <div className="content-area">
+                            <h2>Social Media Management </h2>
+                            <ul className="list-unstyled">
+                              <li>Service goes here... </li>
+                              <li>Second Service goes here amare dol... </li>
+                              <li>Third Service goes here ... </li>
                             </ul>
                             <div class="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
                           </div>
