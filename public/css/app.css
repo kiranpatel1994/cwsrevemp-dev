@@ -2090,7 +2090,7 @@ footer .ft-child:first-child {
 .designFunctionality {
   padding-bottom: 109px;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .designFunctionality::before {
   content: none;
@@ -4814,21 +4814,25 @@ a {
 .lotti_smoke { filter: grayscale(1); max-width: 100px; position: absolute; top: -43px; right: 0px; margin-left: -15px; }
 .column-count-2 { column-count: 2; }
 
-.setContainerFunctionality .swiper { height: 422px; max-width: 653px; margin-left: 0; }
+.setContainerFunctionality .swiper { height: 422px; margin-left: 0; padding-right: 140px; }
 .designFunctionality .center_title { font-size: 30px; color: #fff; font-weight: 500; line-height: 40px; }
 .designFunctionality .center_title span { color: #FDB627; }
-.setContainerFunctionality .swiper-pagination { right: 0; left: auto; }
+.setContainerFunctionality .swiper-pagination { right: 60px; left: auto; width: 7px; background-color: transparent; }
+.setContainerFunctionality .swiper-pagination::before { content: ''; background-color: #fff; width: 1px; height: 100%; display: inline-block; }
 .nw_card { display: block; position: relative; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.26); height: auto; overflow: hidden; }
 .nw_card::before { content: ''; background: url(../images/bright-computer.png) no-repeat; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-size: cover; opacity: 0.32; z-index: 1; }
 .nw_card::after { content: ''; background: rgba(255, 255, 255, 0.1); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 2; }
 .nw_card .yllo_box { background: transparent linear-gradient(135deg, #FEEAC2 0%, #FBD382 25%, #FBC965 56%, #F8BF4D 81%, #FDB627 100%) no-repeat; box-shadow: 0px 0px 15px #FFFFFF47; border-radius: 17px; width: 68px; height: 68px; display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
 .inner_infor { position: relative; z-index: 3; padding: 45px 35px; }
-.inner_infor h2 { font-size: 35px; color: #fff; line-height: 40px; margin-bottom: 15px; }
+.inner_infor h2 { font-size: 35px; color: #fff; line-height: 40px; margin-bottom: 15px; font-weight: 700; }
 .inner_infor ul { margin-bottom: 20px; }
 .inner_infor ul li { color: #fff; line-height: 38px; font-size: 22px; font-weight: 600; }
 .inner_infor ul li::before { content: ''; height: 8px; width: 8px; background-color: #fdb627; border-radius: 50%; display: inline-block; margin-right: 8px; }
 .designFunctionality .nw_card .content-area .fk-btn { border: 1px solid #fff; width: 158px; }
 .designFunctionality .nw_card:hover .content-area .fk-btn span::after { opacity: 0; }
+.setContainerFunctionality .swiper-pagination-progressbar-fill { box-shadow: 0px 0px 15px #FDB627BF; background-color: #FDB627; }
+.designFunctionality .scroll_tag { position: absolute; top: -20%; left: 20%; }
+.scroll_tag { pointer-events: none; }
 
 
 /* responsive */
