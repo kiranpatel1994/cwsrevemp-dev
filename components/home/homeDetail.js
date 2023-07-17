@@ -21,6 +21,7 @@ export default function HomeDetails({
   portfolioList,
   testimonialSettings,
 }) {
+  const videoRef = useRef(null);
   const perChunk = 6;
   const parts = Math.ceil(homeSettings?.businessImageSlider.length / 6);
   const businessImageArray = Array.from({ length: parts }, (_, index) =>
@@ -143,6 +144,8 @@ export default function HomeDetails({
   const fireContainer = useRef(null);
   const fireContainer1 = useRef(null);
   useEffect(() => {
+    const videoElement = videoRef.current;
+    videoElement.play();
     lottie.loadAnimation({
       container: fireContainer.current,
       renderer: "svg",
@@ -177,21 +180,19 @@ export default function HomeDetails({
     fireBtn1.addEventListener("mouseleave", (e) => {
       lottie.stop();
     });
-    
-    let iconMenu = document.querySelector('.lotti_smoke');
+
+    let iconMenu = document.querySelector(".lotti_smoke");
     lottie.loadAnimation({
       container: iconMenu,
-      renderer: 'svg',
+      renderer: "svg",
       loop: true,
       autoplay: true,
       animationData: lottieMoke,
     });
-    
+
     return () => {
       lottie.destroy();
     };
-    
-
   }, []);
 
   return (
@@ -226,11 +227,14 @@ export default function HomeDetails({
                 </div>
               </div>
               {homeSettings?.bannerVideoUrl && (
-                <div className="bannerVideo" dangerouslySetInnerHTML={{
-                  __html: `<video autoplay muted loop>
-                <source src=` + homeSettings.bannerVideoUrl + ` type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>`}}>
+                <div className="bannerVideo">
+                  <video ref={videoRef} autoPlay muted loop>
+                    <source
+                      src={homeSettings.bannerVideoUrl}
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
               )}
             </div>
@@ -540,7 +544,7 @@ export default function HomeDetails({
                                   )
                                 }
                               >
-                                <Link href="javascript:void(0)">
+                                <Link href="">
                                   <img
                                     className=""
                                     src={i.node.featuredImage.node.sourceUrl}

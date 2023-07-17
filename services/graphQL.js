@@ -120,6 +120,9 @@ export default class GraphAPI {
               listDescription {
                 listPoint
               }
+              categoryIcon {
+                sourceUrl
+              }
             }
           }
         }
