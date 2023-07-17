@@ -24,25 +24,293 @@ function Portfolio() {
         <div className="project-contaner overflow-hidden">
           <div className="container-fluid">
             <div className="row g-15">
-              <div className="col-12 col-md-6 col-lg-4">
-                <a href="#" className="gif_placer">
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
                   <div className="gif_box">
                     <img className="img-fluid w-100" src="images/placeholder.png" />
                   </div>
-                  <div className="">
-
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
                   </div>
-                </a>
+                </div>
               </div>
-              <div className="col-12 col-md-6 col-lg-4">
-                <a href="#" className="gif_placer">
-                  <img className="img-fluid w-100" src="images/placeholder.png" />
-                </a>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/knh16.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="col-12 col-md-6 col-lg-4">
-                <a href="#" className="gif_placer">
-                  <img className="img-fluid w-100" src="images/placeholder.png" />
-                </a>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/ad3.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/brochure3.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/br9.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/cignature-financialhero.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/bchr1.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/bchr2.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/bchr3.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/placeholder.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/knh16.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/ad3.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/brochure3.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/br9.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/cignature-financialhero.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/bchr1.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/bchr2.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-12 col-md-6 col-lg-4 project-col">
+                <div className="gif_placer">
+                  <div className="gif_box">
+                    <img className="img-fluid w-100" src="images/bchr3.png" />
+                  </div>
+                  <div className="gradient_wall">
+                    <a href="#" className="explore_btn">
+                      <span>Explore <img src="images/down-right.png" /></span>
+                    </a>
+                    <div className="gradient_box">
+                      <h3>YM Ventures </h3>
+                      <span className="fake_button">Website Design & Development </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
