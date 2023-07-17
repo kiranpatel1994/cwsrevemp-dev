@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
 import Link from "next/link";
 
 export default function CompanyDetails({ details, list }) {
@@ -93,7 +95,7 @@ export default function CompanyDetails({ details, list }) {
             </div>
           </section>
         )}
-        
+
         {details.companySettings.aboutFounder && (
           <section className="aboutFounder position-relative zindex-2">
             <div className="container-xl p-0">
@@ -147,7 +149,7 @@ export default function CompanyDetails({ details, list }) {
                   <ul className="teamList">
                     {list.map((item, index) => {
                       return (
-                        <li key={item.index}>
+                        <li key={`tab-list-${index}`}>
                           <h2>{item.node.title}</h2>
                           <p
                             dangerouslySetInnerHTML={{
@@ -159,71 +161,6 @@ export default function CompanyDetails({ details, list }) {
                       );
                     })}
                   </ul>
-                  {/* first_row && (
-                    <ul className="list-inline first-team-row">
-                      {first_row.map((item, index) => {
-                        return (
-                          <li
-                            className="list-inline-item"
-                            key={`firstRow${index}`}
-                          >
-                            <div className="col-box av-1 flex-column">
-                              <img
-                                className="avatar"
-                                src={item.node.featuredImage.node.sourceUrl}
-                              />
-                              <h2>{item.node.title}</h2>
-                              <p
-                                className="text-black"
-                                dangerouslySetInnerHTML={{
-                                  __html:
-                                    item.node.memberSettings.memberDesignation,
-                                }}
-                              />
-                            </div>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  )}
-                  {second_row && (
-                    <ul className="list-inline sec-team-row text-center">
-                      {second_row.map((item, index) => {
-                        return (
-                          <li
-                            className="list-inline-item"
-                            key={`secondRow${index}`}
-                          >
-                            <div className="col-box av-1">
-                              <img
-                                className="avatar"
-                                src={item.node.featuredImage.node.sourceUrl}
-                              />
-                            </div>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  )}
-                  {third_row && (
-                    <ul className="list-inline third-team-row">
-                      {third_row.map((item, index) => {
-                        return (
-                          <li
-                            className="list-inline-item"
-                            key={`thirdRow${index}`}
-                          >
-                            <div className="col-box av-1">
-                              <img
-                                className="avatar"
-                                src={item.node.featuredImage.node.sourceUrl}
-                              />
-                            </div>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                    ) */}
                 </div>
               </div>
             </div>
@@ -234,7 +171,6 @@ export default function CompanyDetails({ details, list }) {
             <div className="row h-100">
               <div className="col-12 text-center">
                 <h3>
-                  {/* <span>Ready to supercharge your business? </span> */}
                   <span>
                     Reach out to us at&nbsp;
                     <Link
