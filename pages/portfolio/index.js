@@ -19,6 +19,16 @@ function Portfolio() {
                 <li className="list-inline-item"><a href="#"><span>Ecommerce </span></a> </li>
               </ul>
             </div>
+            <div className="option_tags">
+              <div className="option-1">
+                <ul className="list-inline mb-0">
+                  <li className="list-inline-item"><a href="#">Industry tag </a></li>
+                  <li className="list-inline-item"><a href="#">Industry tag </a></li>
+                  <li className="list-inline-item"><a href="#">Industry tag </a></li>
+                  <li className="list-inline-item"><a href="#">Industry tag </a></li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
         <div className="project-contaner overflow-hidden">

@@ -4839,7 +4839,7 @@ a {
 .setContainerFunctionality .swiper-pagination-progressbar-fill { box-shadow: 0px 0px 15px #FDB627BF; background-color: #FDB627; }
 .designFunctionality .scroll_tag { position: absolute; top: -20%; left: 20%; }
 .scroll_tag { pointer-events: none; }
-.am_project { margin-bottom: 180px; }
+.am_project { margin-bottom: 108px; }
 .am_project h1 { position: relative; }
 .am_project h1 em { color: #FDB627; }
 .am_project h1::after { content: ''; background: url(../images/screenca.png) no-repeat; display: inline-block; width: 142px; height: 111px; background-size: contain; position: absolute; bottom: -75px; right: 60px; }
@@ -4858,7 +4858,7 @@ a {
 .nav_mixitup .allProject_box ul li.active a span { color: #07042B; font-weight: 700; padding: 6px 12px; }
 .nav_mixitup .allProject_box ul li a:hover { background-color: #FDB627; color: #07042B; border-color: transparent; }
 .nav_mixitup .allProject_box ul li a:hover span { color: #07042B; }
-.project-contaner { margin-top: 180px; }
+.project-contaner { margin-top: 94px; }
 .gif_placer { position: relative; border-radius: 10px; overflow: hidden; z-index: 2; }
 .gif_placer .gradient_wall { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 3; display: flex; flex-direction: column; justify-content: flex-end; }
 .gif_placer .gradient_wall::after { content: ''; background: transparent linear-gradient(180deg, #07042B00 0%, #07042B 100%) 0% 0% no-repeat padding-box; position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0; transition: 0.3s all; }
@@ -4874,6 +4874,14 @@ a {
 .gif_placer .gradient_wall .explore_btn:focus { background-color: #FDB627; }
 .gif_placer .gradient_wall .explore_btn:focus span img { transform: translate(40px, -40px); opacity: 0; }
 .project-col { margin-bottom: 35px; }
+.option_tags { border-top: 1px solid rgba(255, 255, 255, 0.5); margin-top: 30px; }
+.option_tags ul, .list-out-tag ul { padding-top: 30px; text-align: center; }
+.option_tags ul li a, .list-out-tag ul li a { background-color: rgba(253, 182, 39, 0.17); padding: 10px 15px; border-radius: 25px; font-size: 15px; font-weight: 700; color: #FDB627; display: block; transition: 0.3s all; }
+.option_tags ul li a:hover, .list-out-tag ul li a:hover { background-color: rgba(253, 182, 39, 1); color: #07042B; }
+.list-out-tag { margin-bottom: 20px; }
+.list-out-tag ul { text-align: left; padding-top: 0; margin-bottom: 0; }
+.in_project { margin-bottom: 80px; }
+.in_project h1 { margin-bottom: 5px; }
 
 
 
