@@ -4858,7 +4858,7 @@ a {
 .nav_mixitup .allProject_box ul li.active a span { color: #07042B; font-weight: 700; padding: 6px 12px; }
 .nav_mixitup .allProject_box ul li a:hover { background-color: #FDB627; color: #07042B; border-color: transparent; }
 .nav_mixitup .allProject_box ul li a:hover span { color: #07042B; }
-.project-contaner { margin-top: 94px; }
+.project-contaner { margin-top: 94px; margin-bottom: 80px; }
 .gif_placer { position: relative; border-radius: 10px; overflow: hidden; z-index: 2; }
 .gif_placer .gradient_wall { position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 3; display: flex; flex-direction: column; justify-content: flex-end; }
 .gif_placer .gradient_wall::after { content: ''; background: transparent linear-gradient(180deg, #07042B00 0%, #07042B 100%) 0% 0% no-repeat padding-box; position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0; transition: 0.3s all; }
@@ -4878,10 +4878,44 @@ a {
 .option_tags ul, .list-out-tag ul { padding-top: 30px; text-align: center; }
 .option_tags ul li a, .list-out-tag ul li a { background-color: rgba(253, 182, 39, 0.17); padding: 10px 15px; border-radius: 25px; font-size: 15px; font-weight: 700; color: #FDB627; display: block; transition: 0.3s all; }
 .option_tags ul li a:hover, .list-out-tag ul li a:hover { background-color: rgba(253, 182, 39, 1); color: #07042B; }
-.list-out-tag { margin-bottom: 20px; }
+.list-out-tag { margin-bottom: 30px; }
 .list-out-tag ul { text-align: left; padding-top: 0; margin-bottom: 0; }
 .in_project { margin-bottom: 80px; }
-.in_project h1 { margin-bottom: 5px; }
+.in_project h1 { margin-bottom: 15px; }
+.in_project p { font-size: 18px; line-height: 30px; max-width: 807px; }
+.in_project p strong { color: #FDB627; font-weight: 700; font-family: "gilroy-bolduploaded_file"; }
+.in_project .site_link { width: 140px; height: 140px; border: 2px solid #FDB627; display: flex; align-items: center; justify-content: center; flex-direction: column; border-radius: 50%; margin-left: auto; transition: 0.3s all; }
+.in_project .site_link svg { transform: rotate(-85deg); transition: 0.3s all; }
+.in_project .site_link svg path { transition: 0.3s all; }
+.in_project .site_link span { font-size: 15px; color: #fff; font-weight: 600; margin-bottom: 5px; transition: 0.3s all; }
+.in_project .site_link:hover { margin-bottom: 20px; }
+
+.in_project .site_link:focus { background-color: #FDB627; }
+.in_project .site_link:focus span { color: #07042B; }
+.in_project .site_link:focus svg path { fill: #07042B; }
+.in_project .site_link:focus svg { transform: rotate(-85deg) scale(1.2); }
+
+.gll__inner { margin-bottom: 70px; }
+.gll__inner .gll__inner-col { margin-bottom: 10px; }
+.gll__inner .gll__inner-col img { border-radius: 10px; }
+.more_content { padding-bottom: 60px; position: relative; }
+.more_content h2 { color: #fff; font-weight: 700; font-size: 55px; }
+.more_content h2 span { color: #FDB627; font-family: "Playfair Display", serif; font-style: italic; }
+.more_content .project-contaner { margin-top: 50px; }
+.more_content::after { content: ''; background-color: #FDB627; position: absolute; height: 430px; width: 100%; bottom: 0; left: 0; right: 0; }
+.lets_talk_post { position: relative; z-index: 9; display: table; margin: 0 auto; }
+.lets_talk_post .lets_talk { display: flex; align-items: center; justify-content: center; }
+.lets_talk_post .lets_talk span { position: relative; display: flex; align-items: center; justify-content: center; width: 84px; height: 84px; margin-left: 20px; z-index: 4; transition: 0.3s all; }
+.lets_talk_post .lets_talk em { font-style: normal; position: relative; z-index: 3; }
+.lets_talk_post .lets_talk::before { content: ''; border: 3px solid #07042B; background-color: transparent; width: 84px; height: 100%; position: absolute; right: 0; border-radius: 50%; transition: 0.3s all; z-index: 2; }
+.lets_talk_post .lets_talk { font-size: 55px; color: #07042B; font-weight: 700; transition: 0.3s all; }
+.lets_talk_post .lets_talk svg, .lets_talk_post .lets_talk svg path { transition: 0.3s all; }
+.lets_talk_post .lets_talk:hover::before { width: 111%; border-radius: 42px; background-color: #07042B; }
+.lets_talk_post .lets_talk:hover { color: #fff; }
+.lets_talk_post .lets_talk:hover svg { transform: rotate(-45deg) scale(1.5); }
+.lets_talk_post .lets_talk:hover svg path { fill: #FDB627; }
+.lets_talk_post .lets_talk:hover span { margin-left: 0; }
+
 
 
 
