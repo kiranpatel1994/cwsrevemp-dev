@@ -21,6 +21,12 @@ export default function HomeDetails({
   portfolioList,
   testimonialSettings,
 }) {
+
+  useEffect(() => {
+    const bannerVideo = document.querySelector('.bannerVideo video');
+    bannerVideo.play();
+  }, [])
+
   const perChunk = 6;
   const parts = Math.ceil(homeSettings?.businessImageSlider.length / 6);
   const businessImageArray = Array.from({ length: parts }, (_, index) =>
@@ -190,7 +196,6 @@ export default function HomeDetails({
     return () => {
       lottie.destroy();
     };
-    
 
   }, []);
 

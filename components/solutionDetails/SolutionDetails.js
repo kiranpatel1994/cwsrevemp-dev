@@ -32,8 +32,24 @@ export default function SolutionDetails({ detail, tags }) {
     Keyboard,
     Mousewheel,
   ]);
+  
+  // const swiperRef = useRef(null);
+  // useEffect(() => {
+  //   const portfolioSwiper = document.querySelector('.carouselSlider .swiper');
+  //   portfolioSwiper.onmouseenter = () => {
+  //     console.log('stop autoplay');
+  //     console.log(settingsB);
+  //     swiperRef.portfolioSwiper.autoplay.stop();
+  //   };
+  //   portfolioSwiper.onmouseleave = () => {
+  //     console.log('start autoplay');
+  //     swiperRef.portfolioSwiper.autoplay.start();
+  //   }
+  // })
+
   var settingsB = {
     // Install modules
+    // ref : {swiperRef},
     modules: [EffectCoverflow, Pagination, Autoplay],
     effect: "coverflow",
     centeredSlides: true,
@@ -43,7 +59,7 @@ export default function SolutionDetails({ detail, tags }) {
     observeParents: true,
     autoplay: {
       delay: 2500,
-      disableOnInteraction: false,
+      disableOnInteraction: true,
     },
     coverflowEffect: {
       rotate: 0,
@@ -54,9 +70,14 @@ export default function SolutionDetails({ detail, tags }) {
       slideShadows: false,
     },
     pagination: { clickable: true },
+    
   };
 
+ 
+  
   useEffect(() => {
+    
+
     lottie.loadAnimation({
       container: document.querySelector(".balancingShapeContainer"),
       renderer: "svg",
@@ -125,8 +146,8 @@ export default function SolutionDetails({ detail, tags }) {
             <div className="container-xl">
               <div className="row">
                 <div className="col-12">
-                  <div className="carouselSlider position-relative">
-                    <Swiper {...settingsB}>
+                  <div className="carouselSlider position-relative" >
+                    <Swiper className="portfolioSwiper" {...settingsB}>
                       {detail.portfoliosToShowAsFeatured.map((item, index) => {
                         return (
                           <SwiperSlide key={`slideblock${index}`}>
@@ -172,14 +193,14 @@ export default function SolutionDetails({ detail, tags }) {
                             <p>{item.companyCardDescription}</p>
                           )}
                         </div>
-                        <div className="tileBtn">
+                        {/* <div className="tileBtn">
                           <Link
-                            class="btn btn-yellow btn-sm mt-4 d-inline-flex"
+                            className="btn btn-yellow btn-sm mt-4 d-inline-flex"
                             href="/contact"
                           >
                             I Need This
                           </Link>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   );
@@ -206,7 +227,7 @@ export default function SolutionDetails({ detail, tags }) {
                 </div>
               </div>
             </div>
-            <div className="smokeContainer">
+            <div className="smokeContainer solutionProject">
               {/* <div className="smokeBG"></div> */}
               <div className="container-xl p-0 position-relative zindex-2">
                 <div className="row g-0">
@@ -227,14 +248,15 @@ export default function SolutionDetails({ detail, tags }) {
                                     key={`tagWrap${j}`}
                                   >
                                     {elem.featuredImage.node.sourceUrl && (
-                                      <a className="d-block ov-h" href="#">
+                                      <div className="projectBlock d-block ov-h" href="#">
                                         <img
                                           className="img-fluid w-100"
                                           src={
                                             elem.featuredImage.node.sourceUrl
                                           }
                                         />
-                                      </a>
+                                        <a href="#" className="exploreLink">Explore <img src="images/explore-arrow.svg" /></a>
+                                      </div>
                                     )}
                                   </div>
                                 );

@@ -100,6 +100,60 @@ export default function ServiceDetails({ cat }) {
                         </div>
                       </a>
                     </SwiperSlide>
+                    <SwiperSlide>
+                      <a href="#" className="nw_card">
+                        <div className="inner_infor">
+                          <div className="yllo_box">
+                            <img src="images/code.png" />
+                          </div>
+                          <div className="content-area">
+                            <h2>Website Design and Development </h2>
+                            <ul className="list-unstyled">
+                              <li>UI design </li>
+                              <li>Copywriting </li>
+                              <li>Design and development </li>
+                            </ul>
+                            <div class="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
+                          </div>
+                        </div>
+                      </a>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <a href="#" className="nw_card">
+                        <div className="inner_infor">
+                          <div className="yllo_box">
+                            <img src="images/code.png" />
+                          </div>
+                          <div className="content-area">
+                            <h2>Website Design and Development </h2>
+                            <ul className="list-unstyled">
+                              <li>UI design </li>
+                              <li>Copywriting </li>
+                              <li>Design and development </li>
+                            </ul>
+                            <div class="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
+                          </div>
+                        </div>
+                      </a>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <a href="#" className="nw_card">
+                        <div className="inner_infor">
+                          <div className="yllo_box">
+                            <img src="images/code.png" />
+                          </div>
+                          <div className="content-area">
+                            <h2>Website Design and Development </h2>
+                            <ul className="list-unstyled">
+                              <li>UI design </li>
+                              <li>Copywriting </li>
+                              <li>Design and development </li>
+                            </ul>
+                            <div class="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
+                          </div>
+                        </div>
+                      </a>
+                    </SwiperSlide>
                   </Swiper>
                 </div>
               </div>

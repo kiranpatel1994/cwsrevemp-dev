@@ -229,7 +229,7 @@ export default function CompanyDetails({ details, list }) {
             </div>
           </section>
         )}
-        <div className="sngl-title companySnglTitle">
+        <div className="sngl-title companySnglTitle handAnimation">
           <div className="container-xl h-100">
             <div className="row h-100">
               <div className="col-12 text-center">

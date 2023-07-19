@@ -427,7 +427,7 @@ main {
   font-family: "gilroy-lightuploaded_file";
   color: #fff;
   font-size: 20px;
-  line-height: 20px;
+  line-height: 1.4;
   font-weight: 400;
   max-width: 540px;
 }
@@ -4513,7 +4513,7 @@ footer .ft-child:first-child {
 .bologDetail_center .title__content ol li {
   font-size: 18px;
   line-height: 30px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   max-width: 930px;
   margin-bottom: 30px;
 }
@@ -4814,10 +4814,18 @@ a {
 .lotti_smoke { filter: grayscale(1); max-width: 100px; position: absolute; top: -43px; right: 0px; margin-left: -15px; }
 .column-count-2 { column-count: 2; }
 
-.setContainerFunctionality .swiper { height: 422px; max-width: 653px; margin-left: 0; }
+.setContainerFunctionality .swiper { height: 422px; margin-left: 0; }
+.setContainerFunctionality .swiper .swiper-wrapper { height: 422px; max-width: 653px; margin-left: 0; }
 .designFunctionality .center_title { font-size: 30px; color: #fff; font-weight: 500; line-height: 40px; }
 .designFunctionality .center_title span { color: #FDB627; }
-.setContainerFunctionality .swiper-pagination { right: 0; left: auto; }
+.setContainerFunctionality .swiper-pagination { right: 60px; left: auto; }
+.setContainerFunctionality .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+width: 6px;
+border-radius: 5px;
+background: #fdb627;
+box-shadow: 0px 0px 15px rgba(253, 182, 39, 0.75);
+
+}
 .nw_card { display: block; position: relative; border-radius: 24px; border: 1px solid rgba(255, 255, 255, 0.26); height: auto; overflow: hidden; }
 .nw_card::before { content: ''; background: url(../images/bright-computer.png) no-repeat; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-size: cover; opacity: 0.32; z-index: 1; }
 .nw_card::after { content: ''; background: rgba(255, 255, 255, 0.1); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 2; }
