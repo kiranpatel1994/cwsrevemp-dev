@@ -30,6 +30,7 @@
 .homeBanner .title{margin-bottom: 150px;z-index: 9;position: relative;}
 .homeBanner .title h1 { font-family: 'Gilroy'; font-weight: 700; font-size: 82px; color: transparent; white-space: nowrap; background: linear-gradient(90deg, #fff 10%, #fff 25%, #FDB627 80%); -webkit-background-clip: text; margin-right: -30px; position: relative; transition: 0.3s all; line-height: 1;margin-bottom: 25px;}
 .new-title em::after{background-position: center;}
+.scrollForMore .inner-cirl .arrow-svg img{transform: rotate(0)!important;}
 .homeBanner .scrollForMore button {height: 110px;width: 110px;left: -110px;bottom: 220px;}
 .homeBanner .scrollForMore .inner-cirl .arrow-svg img {max-width: 36px;}
 .homeBanner .bannerVideo{border: 1px solid rgba(255, 255, 255, 0.15);border-radius: 28px;position: relative;z-index: 3;max-width: 1155px;margin: 0 auto;}
@@ -363,3 +364,129 @@ body.hosting{background-size: 70% auto;}
 .solutionProject .tab-content .tab-col .projectBlock:hover .exploreLink{opacity: 1;}
 .solutionProject .tab-content .tab-col .projectBlock .exploreLink:hover{background-color: #fdb627;}
 .solutionProject .tab-content .tab-col .projectBlock .exploreLink:hover img{width: 0;margin: 0;}
+
+.scrollForMore .inner-cirl .arrow-svg img{transform: rotate(0deg)!important;}
+
+@media screen and (max-width: 1599px) {
+  .homeBanner .title h1{font-size: 60px;}
+  .new-title{font-size: 30px;}
+  .homeBanner .bannerVideo{max-width: 950px;}
+  .homeBanner .scrollForMore button{left: 0;}
+  .homeBanner{padding-top: 200px;}
+  .homeBanner .title{margin-bottom: 80px;}
+  .friendly-atmos .face-information{padding-left: 40px;}
+  .demo-container{left: -235px;}
+  .banner-yll .chooseUs-msg ul li:nth-child(2) .right-bild-pull{right: -15px;}
+  .banner-yll .chooseUs-msg ul li:nth-child(2n + 1) .mini-card:hover{transform: translateX(40px);}
+  .banner-yll .chooseUs-msg ul li:nth-child(2n) .mini-card:hover{transform: translateX(-40px);}
+  .banner-yll .chooseUs-msg ul li:last-child::after{right: 8%;}
+  .all-business::after{top: 60%;left: -144px;}
+  .aboutUs-title{padding-left: 50px;}
+  .slider-area {max-width: calc(100% - 50px);}
+  .about-us::after,
+  .simple-process::before{width: 30px;}
+  footer .ft-child:first-child{width: 30px;min-width: 30px;}
+  .letstalk .contact-details{font-size: 40px;}
+  .adjust-container{margin-left: 0;}
+  .slider-area .raw-card .para-side-detail p{font-size: 16px;line-height: 1.4;}
+  .card-bunch{margin-bottom: 30px;}
+  .slider-area .raw-card{padding: 30px;}
+  .slider-area .raw-card .sm-user-bild {margin-right: 20px;}
+  .slider-area .raw-card .sm-user-bild img {height: 60px;width: 60px;}
+  .last-footer li a{font-size: 15px;}
+  .last-footer .navLabel{font-size: 16px;}
+  footer::after{right: -110px;}
+  .letstalk{justify-content: flex-end;}
+}
+
+@media screen and (max-width: 1399px) {
+  .homeBanner .bannerVideo {max-width: 780px;}
+  .homeBanner .scrollForMore button {height: 80px;width: 80px;bottom: 180px;}
+  .homeBanner .scrollForMore .inner-cirl .arrow-svg img {max-width: 30px;}
+  
+  .friendly-atmos h3{font-size: 24px;}
+  .friendly-atmos .friendly-atmos-inner{padding-bottom: 100px;}
+  .atmos-faces{height: 500px;}
+  .atmos-faces .face-1 {width: 250px;height: 250px;}
+  .atmos-faces .face-2 {width: 180px;height: 180px;left: 240px;bottom: 290px;}
+  .atmos-faces .face-3 {width: 120px;height: 120px;left: 310px;bottom: 150px;}
+  .atmos-faces::after{right: -20px;top: -30px;}
+  .atmos-faces:hover .face-2 {left: 183px;bottom: 298px;}
+  .atmos-faces:hover .face-3 {left: 316px;bottom: 170px;}
+  .atmos-faces:hover::after {right: 35px;top: -35px;}
+  .atmos-faces:hover::before {left: -70px;bottom: -70px;}
+  .position-new {bottom: 215px;right: -50%;}
+
+  .companyDevelopment{padding-bottom: 80px;}
+  .companyDevelopment .slider-object .sliderBox{width: 170px;height: 170px;}
+  .companyDevelopment .slider-object .sliderBox .slideInner{width: 170px;height: 170px;padding: 0 10px;}
+  .companyDevelopment .slider-object .sliderBox h5{font-size: 14px;line-height: 1.375;}
+
+  .all-business h2{font-size: 32px;}
+  .all-business .yello-title-em{font-size: 22px;}
+  .all-business .flyingImg {width: 140px;}
+  .vr-row-parent .child-row{margin-right: 30px;}
+  .vr-row-parent .child-row .sub-child{width: 140px;height: 140px;}
+  .vr-row-parent .child-row .sub-child img{width: 110px;height: 110px;}
+  .project-area{height: 100vh;}
+  
+  .slider-area .slider-scroller {padding-bottom: 70px;}
+  .slider-area .slider-scroller::before{bottom: 34px;}
+  .slider-area .slider-scroller::after{bottom: 88px;}
+
+  .card-items .card-container{padding: 0 25px 30px;}
+  .card-mor-detail .title-cr{font-size: 24px;}
+  .card-mor-detail p {font-size: 16px;line-height: 1.555;}
+  .card-items .card-items-cols:last-child .card-mor-detail p::after{left: -13px;}
+  
+  footer .ft-child:last-child{padding: 70px 0;}
+  .foot-branding{margin-top: -15px;}
+  .foot-branding a{display: inline-block;}
+  .foot-branding a img{width: 200px;}
+  .letstalk{margin-bottom: 0;}
+  .letstalk img {max-width: 140px;}
+  .letstalk .contact-details{font-size: 30px;}
+  .last-footer li{margin-bottom: 5px;}
+  .last-footer li a{font-size: 13px;}
+  .last-footer .navLabel {font-size: 15px;padding: 0 15px;}
+}
+
+@media screen and (max-width: 1199px) {
+  .newHome header{z-index: 10;}
+  .newHome header .navbar {padding: 17px 0;}
+  header .navbar-brand img {max-width: 107px;}
+  header .navbar-collapse {background-color: #fdb627;width: 100%;position: absolute;top: 86px;left: 0;z-index: 1;}
+  header .navbar-toggler{border: none;padding: 0;border-radius: 0;width: 42px;position: relative;height: 27px;outline: none!important;box-shadow: none!important;}
+  header .navbar-toggler span{position: absolute;top: 0;left: 0;width: 18px;border-radius: 2px;height: 3px;background-color: #fff;display: block;}
+  header .navbar-toggler span:nth-child(2),
+  header .navbar-toggler span:nth-child(3){top: 12px;width: 42px;background-color: #fdb627;}
+  header .navbar-toggler span:nth-child(4){top: 24px;left: inherit;right: 0;}
+  header .navbar-toggler[aria-expanded="true"] span:nth-child(1),
+  header .navbar-toggler[aria-expanded="true"] span:nth-child(4){top: 12px;opacity: 0;}
+  header .navbar-toggler[aria-expanded="true"] span:nth-child(2){transform: rotate(45deg);background-color: #fff;}
+  header .navbar-toggler[aria-expanded="true"] span:nth-child(3){transform: rotate(-45deg);}
+  header .navbar-nav{padding: 105px 0 125px;}
+  header .nav-link {font-weight: 600;font-size: 24px;line-height: 1;text-align: center;color: #07042b;padding: 0;margin-bottom: 40px;}
+  header .nav-link.active{color: #07042b!important;font-weight: 600;}
+  header .nav-link.active::before{display: none;}
+  header .nav-item + .nav-item{margin-left: 0;}
+  header .nav-item.callLink .nav-link{margin-bottom: 0;}
+
+  .homeBanner .bannerVideo {max-width: 700px;}
+  .homeBanner .scrollForMore button {bottom: 90px;left: 20px;}
+
+  .mobileGetStarted {background-color: transparent;border: 1px solid #fdb627;border-radius: 25px;min-width: 174px;text-align: left;padding: 0 0 0 33px;color: #fff;font-family: 'Gilroy';font-weight: 900;font-size: 15px;line-height: 49px;position: relative;background-image: url(../images/rightArrow-orange.svg);background-size: 6px auto;background-repeat: no-repeat;background-position: calc(100% - 33px) center;transition: all 0.5s;position: absolute;left: 50%;top: 18px;transform: translateX(-50%);z-index: 1;}
+  .banner-yll .chooseUs-msg ul li:nth-child(2) .right-bild-pull{right: 0;}
+
+  .headerCallSection{background-color: #07042B;padding-bottom: 55px;}
+  .headerCallSection li .callHand{margin-top: -70px;width: 140px;}
+  .headerCallSection li{font-family: "Gilroy";font-weight: bold;font-size: 35px;line-height: 1.28;text-align: center;color: #fff;}
+  .headerCallSection li a{color: #fff;}
+  .headerCallSection li .contact-details{margin-top: -30px;}
+  .headerCallSection li .contact-details a{position: relative;}
+  .headerCallSection li .contact-details a::after {content: "";background: url(../images/path10395.png) no-repeat center;position: absolute;left: 0;right: 0;bottom: -15px;height: 12px;transition: 0.3s all;}
+
+  .friendly-atmos h3 {font-size: 22px;}
+  .atmos-faces::after {right: -79px;top: -20px;}
+  .atmos-faces:hover::after {right: -25px;top: -25px;}
+}

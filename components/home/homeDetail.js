@@ -205,7 +205,7 @@ export default function HomeDetails({
   return (
     <main>
       <section className="homeBanner">
-        <div className="container-xl position-relative">
+        <div className="container position-relative">
           <div className="row g-0 position-relative">
             <div className="col-12">
               <div
@@ -295,7 +295,7 @@ export default function HomeDetails({
           </div>
         </div>
         <div className="friendly-atmos" id="contacts">
-          <div className="container-xl p-0">
+          <div className="container p-0">
             <div className="friendly-atmos-inner">
               <div className="row g-0 align-items-center">
                 <div className="col-12 col-md-7 position-relative">
@@ -344,7 +344,7 @@ export default function HomeDetails({
           </div>
         </div>
         <div className="companyDevelopment">
-          <div className="container-xl">
+          <div className="container">
             <div className="title text-center">
               <h2
                 data-aos="fade-up"
@@ -405,7 +405,7 @@ export default function HomeDetails({
 
       {homeSettings.whyUsBlocks && (
         <section className="banner-yll" id="moveToYellow">
-          <div className="container-xl banner-after position-relative">
+          <div className="container banner-after position-relative">
             <div className="row">
               <div className="col-12">
                 <div className="text-center">
@@ -479,7 +479,7 @@ export default function HomeDetails({
       )}
 
       <section className="all-business bg-white">
-        <div className="container-xl">
+        <div className="container">
           <div className="row align-items-center">
             <div className="col-12 col-md-6">
               <div className="update-pseudo">
@@ -679,7 +679,7 @@ export default function HomeDetails({
       )}
       {homeSettings.processBlocks && (
         <section className="simple-process">
-          <div className="container-xl position-relative zindex-2">
+          <div className="container position-relative zindex-2">
             <div className="row">
               <div className="col-12">
                 {homeSettings.processMainTitle && (

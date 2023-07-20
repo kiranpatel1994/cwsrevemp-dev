@@ -55,7 +55,7 @@ export default function Footer({ settings }) {
           </div>
         </div>
         <div className="ft-child w-100">
-          <div className="container-xl">
+          <div className="container">
             <div className="row adjust-container">
               <div className="col-12 col-md-3">
                 <div
@@ -142,7 +142,7 @@ export default function Footer({ settings }) {
         </div>
       </div>
       <div className="last-footer">
-        <div className="container-xl">
+        <div className="container">
           <div className="row">
             <div
               className="col-12 col-md-auto pe-lg-5"
@@ -202,7 +202,7 @@ export default function Footer({ settings }) {
               </div>
             </div>
             <div
-              className="col-12 col-md-auto ps-lg-5 solutionRow"
+              className="col-12 col-md-auto ps-xxl-5 ps-4 solutionRow"
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay="600"
