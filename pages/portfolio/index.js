@@ -1,6 +1,6 @@
 function Portfolio() {
   return (
-    <main>
+    <main className="position-relative zindex-2">
       <section className="am_project">
         <div className="container-xl p-0">
           <div className="row g-0">
