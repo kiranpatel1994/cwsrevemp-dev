@@ -1,4 +1,5 @@
 import LineImage from "/public/images/lines.svg";
+import callSignImg from "/public/images/calling_sign.png";
 import Brand from "/public/images/branding.png";
 import Link from "next/link";
 import Head from "next/head";
@@ -21,10 +22,13 @@ export default function Header({ logo }) {
         <img src={LineImage.src} alt="" />
       </div>
       <header>
-        <nav className="navbar navbar-expand-sm navbar-dark">
-          <div className="container-xl bg-include p-0">
+        <nav className="navbar navbar-expand-xl navbar-dark">
+          <div className="container bg-include p-0">
             <Link href="/" className="navbar-brand p-0">
               <img src={logo.sourceUrl} alt="" />
+            </Link>
+            <Link className="d-xl-none mobileGetStarted" href="/contact">
+              Get Started
             </Link>
             <button
               className="navbar-toggler"
@@ -32,11 +36,14 @@ export default function Header({ logo }) {
               data-bs-toggle="collapse"
               data-bs-target="#mynavbar"
             >
-              <span className="navbar-toggler-icon"></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </button>
             <div className="collapse navbar-collapse" id="mynavbar">
               <ul className="navbar-nav me-auto align-items-center justify-content-between w-100">
-                <li className="nav-item ms-auto">
+                <li className="nav-item ms-xl-auto">
                   <Link
                     className={
                       router.pathname == "/" ? "nav-link active" : "nav-link"
@@ -62,7 +69,7 @@ export default function Header({ logo }) {
                   <Link
                     className={
                       router.pathname == "/services" ||
-                      router.pathname == "/services/[slug]"
+                        router.pathname == "/services/[slug]"
                         ? "nav-link active"
                         : "nav-link"
                     }
@@ -87,7 +94,7 @@ export default function Header({ logo }) {
                   <Link
                     className={
                       router.pathname == "/blog" ||
-                      router.pathname == "/blog/[slug]"
+                        router.pathname == "/blog/[slug]"
                         ? "nav-link active"
                         : "nav-link"
                     }
@@ -96,7 +103,7 @@ export default function Header({ logo }) {
                     Blog
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item callLink">
                   <Link
                     className={
                       router.pathname == "/contact"
@@ -108,10 +115,16 @@ export default function Header({ logo }) {
                     Get Started
                   </Link>
                 </li>
-                <li className="nav-item ms-auto">
+                <li className="nav-item ms-auto d-xl-block d-none">
                   <Link className="nav-link call-action" href="/contact">
-                  Get Started
+                    Get Started
                   </Link>
+                </li>
+              </ul>
+              <ul class="headerCallSection m-0 list-unstyled d-xl-none d-flex flex-column align-items-center justify-content-center">
+                <li><img className="callHand" src={callSignImg.src} alt="" /></li>
+                <li class="text-center">
+                  <div class="contact-details"><span>Let’s talk innovation. </span><a href="tel:201-212-6367" class="d-block w-100">201-212-6367</a></div>
                 </li>
               </ul>
             </div>

@@ -4892,7 +4892,7 @@ a {
   }
 }
 @media (min-width: 1440px) {
-  .container-xl {
+  .container, .container-xl {
     max-width: 1365px;
   }
   .g-37 {
