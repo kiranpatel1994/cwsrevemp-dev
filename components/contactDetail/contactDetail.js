@@ -11,7 +11,7 @@ export default function ContactDetail({ data, form }) {
       <div className="letsTalk_inner position-relative">
         <div className="container-xl">
           <div className="row align-items-center">
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-md-5 col-xxl-6">
               <h1 className="position-relative text-center">
                 Let`s talk innovation.
                 {data.phone && (

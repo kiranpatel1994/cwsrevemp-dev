@@ -4880,22 +4880,24 @@ a {
 .option_tags ul li a:hover, .list-out-tag ul li a:hover { background-color: rgba(253, 182, 39, 1); color: #07042B; }
 .list-out-tag { margin-bottom: 30px; }
 .list-out-tag ul { text-align: left; padding-top: 0; margin-bottom: 0; }
-.in_project { margin-bottom: 80px; }
+.in_project .project_container { position: fixed; left: 0; right: 0; top: 230px; z-index: 2; }
+.in_project { margin-bottom: 80px; padding-top: 320px; }
 .in_project h1 { margin-bottom: 15px; }
 .in_project p { font-size: 18px; line-height: 30px; max-width: 807px; }
 .in_project p strong { color: #FDB627; font-weight: 700; font-family: "gilroy-bolduploaded_file"; }
-.in_project .site_link { width: 140px; height: 140px; border: 2px solid #FDB627; display: flex; align-items: center; justify-content: center; flex-direction: column; border-radius: 50%; margin-left: auto; transition: 0.3s all; }
-.in_project .site_link svg { transform: rotate(-85deg); transition: 0.3s all; }
-.in_project .site_link svg path { transition: 0.3s all; }
-.in_project .site_link span { font-size: 15px; color: #fff; font-weight: 600; margin-bottom: 5px; transition: 0.3s all; }
-.in_project .site_link:hover { margin-bottom: 20px; }
+.site_link { width: 140px; height: 140px; border: 2px solid #FDB627; display: flex; align-items: center; justify-content: center; flex-direction: column; border-radius: 50%; margin-left: auto; transition: 0.3s all; }
+.site_link svg { transform: rotate(-85deg); transition: 0.3s all; }
+.site_link svg path { transition: 0.3s all; }
+.site_link span { font-size: 15px; color: #fff; font-weight: 600; margin-bottom: 5px; transition: 0.3s all; }
+.site_link:hover { margin-bottom: 20px; }
 
-.in_project .site_link:focus { background-color: #FDB627; }
-.in_project .site_link:focus span { color: #07042B; }
-.in_project .site_link:focus svg path { fill: #07042B; }
-.in_project .site_link:focus svg { transform: rotate(-85deg) scale(1.2); }
+.site_link:focus { background-color: #FDB627; }
+.site_link:focus span { color: #07042B; }
+.site_link:focus svg path { fill: #07042B; }
+.site_link:focus svg { transform: rotate(-85deg) scale(1.2); }
 
-.gll__inner { margin-bottom: 70px; }
+.gll__inner_box { position: relative; z-index: 5; }
+.gll__inner { margin-bottom: 70px; position: relative; z-index: 5; }
 .gll__inner .gll__inner-col { margin-bottom: 10px; }
 .gll__inner .gll__inner-col img { border-radius: 10px; }
 .more_content { padding-bottom: 60px; position: relative; }
@@ -4915,6 +4917,10 @@ a {
 .lets_talk_post .lets_talk:hover svg { transform: rotate(-45deg) scale(1.5); }
 .lets_talk_post .lets_talk:hover svg path { fill: #FDB627; }
 .lets_talk_post .lets_talk:hover span { margin-left: 0; }
+
+.button_arround { position: fixed; top: 50%; transform: translateY(-50%); right: 50px; }
+.button_arround .site_link { background-color: #fff; }
+.button_arround .site_link span { color: #07042B; }
 
 
 
@@ -4959,3 +4965,7 @@ a {
 }
 
 /*  */
+@media (max-width: 1800px) {
+  .letsTalk_inner h1::before { transform: rotate(0deg); bottom: auto; top: -110px; margin: 0 auto; left: 0; right: 0; }
+  .letsTalk_inner h1 { font-size: 35px; line-height: 45px; }
+}
