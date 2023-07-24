@@ -4366,7 +4366,7 @@ footer .ft-child:first-child {
   text-decoration: none;
   transition: 0.3s all;
 }
-.normal__tag em {
+.normal__tag em, .special__tag em {
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
@@ -4412,7 +4412,7 @@ footer .ft-child:first-child {
   -webkit-box-orient: vertical;
   text-align: left;
 }
-.artical__card .card_max_width figure > img {
+.artical__card .card_max_width figure .card_max_width_fig img {
   border-radius: 12px;
   overflow: hidden;
   margin-bottom: 13px;
@@ -4968,4 +4968,66 @@ a {
 @media (max-width: 1800px) {
   .letsTalk_inner h1::before { transform: rotate(0deg); bottom: auto; top: -110px; margin: 0 auto; left: 0; right: 0; }
   .letsTalk_inner h1 { font-size: 35px; line-height: 45px; }
+}
+@media (max-width: 1440px) {
+  .map-placeholder::before { top: 45%; height: 258px; width: 258px; left: -100px; }
+  .banner_content h1 { font-size: 35px; line-height: 40px; }
+  .moji_ttl { font-size: 20px; }
+  .blogMain .ecom__info p { font-size: 16px; line-height: 24px; }
+  .blogMain .center__bild { margin: 0; }
+  .blogMain .center__bild img { max-width: 200px; display: block; margin: 0 auto; }
+  .artical__card .artical__card-col { margin-bottom: 50px; }
+  .bologDetail_center .title__content h1 { font-size: 25px; line-height: 35px; }
+  .bologDetail_center .title__content h2, .bologDetail_center .title__content h3, .bologDetail_center .title__content h4, .bologDetail_center .title__content h5, .bologDetail_center .title__content h6 { font-size: 20px; line-height: 28px; margin-bottom: 20px; }
+}
+@media (max-width: 1199px) {
+  .letsTalk_inner .social_inner a { font-size: 19px; }
+  .blogMain .ecom__info .banner_content_detail { padding: 0 30px; }
+  .blogMain.prpertyManagement::before { width: 100%; right: 0; }
+  .bologDetail_center .title__content p, .bologDetail_center .title__content ul li, .bologDetail_center .title__content ol li { font-size: 16px; padding-left: 0; }
+  .bologDetail_center .title__content ul, .bologDetail_center .title__content ol { padding-left: 0; }
+  .bologDetail_center .title__content ul li, .bologDetail_center .title__content ol li { margin-bottom: 10px; }
+  .bologDetail_center { margin: 35px auto 40px; }
+}
+@media (max-width: 991px) {
+  .letsTalk_h1 { margin-bottom: 60px; }
+  .letsTalk_inner .social_inner li { margin-bottom: 25px; }
+  .letsTalk_inner .demo-container { margin: 70px auto 0; }
+  .letsTalk_inner { padding-bottom: 205px; }
+  .form_container { padding: 30px 20px; margin: 150px auto 0; }
+  .form_container h2 { font-size: 25px; margin-bottom: 17px; }
+  .map-placeholder { height: 470px; }
+  .map-placeholder img { height: 100%; object-fit: cover; }
+  .prpertyManagement { padding-top: 80px; }
+  .bologDetail_center .bologDetail_max { padding: 0 15px 10px; }
+  .bologDetail_center .tag_date .blogs__tag span, .artical__card .card_max_width .blogs__tag span { border-radius: 21px; padding: 6px 17px; }
+  .blog__detail .blog__cover img { height: 280px; }
+  .bologDetail_center .date_tag { font-size: 16px; }
+  
+}
+@media (max-width: 767px) {
+  .form_container form button[type="submit"] { width: 100%; border-radius: 27px; background-color: #07042B; }
+  .blogMain .ecom__info .banner_content_detail { text-align: center; }
+  .blogMain .ecom__info p { margin: 0 auto; }
+  .blogMain .center__bild img { max-width: 156px; }
+  .blogMain .ecom__info .banner_content_detail { margin-bottom: 30px; }
+  .blogMain.prpertyManagement::before { content: none; }
+  .bild-mob { margin-top: -160px; }
+  .bild-mob img { object-fit: cover; width: 100%; max-width: 100%; height: 100%; }
+  .blogMain .demo-container { margin: 50px auto; }
+  .article__center { margin-top: -150px; }
+  .input_search { border-radius: 25px; padding: 10px 21px 10px 53px; }
+  .artical__card { padding: 0 15px 60px; }
+  .artical__card .card_max_width figcaption p { display: block; }
+  .bologDetail_container { border: 0; }
+  .artical__card .card_max_width figcaption { margin-top: -65px; position: relative; z-index: 5; }
+  .artical__card .card_max_width .blogs__tag { margin-bottom: 20px !important; margin-left: 5px; }
+  .artical__card .card_max_width figure .card_max_width_fig { position: relative; }
+  .artical__card .card_max_width figure .card_max_width_fig::after { content: ''; background: url(../images/rendering.png) no-repeat; position: absolute; bottom: 0; left: 0; right: 0; height: 132px; z-index: 2; background-size: cover; }
+  
+}
+@media (max-width: 425px) {
+  .form_container h2 { font-size: 18px; }
+  .letsTalk_inner h1 { font-size: 28px; line-height: 42px;}
+  .bild-mob img { height: 460px; }
 }

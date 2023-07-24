@@ -24,7 +24,7 @@ export default function Header({ logo }) {
       </div>
       <header>
         <nav className="navbar navbar-expand-xl navbar-dark">
-          <div className="container bg-include p-md-0">
+          <div className="container-xxl bg-include p-xxl-0">
             <Link href="/" className="navbar-brand p-0">
               <img src={logo.sourceUrl} alt="" />
             </Link>
