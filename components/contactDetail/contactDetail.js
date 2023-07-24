@@ -9,10 +9,10 @@ export default function ContactDetail({ data, form }) {
   return (
     <main>
       <div className="letsTalk_inner position-relative">
-        <div className="container-xl">
+        <div className="container-xxl">
           <div className="row align-items-center">
-            <div className="col-12 col-md-5 col-xxl-6">
-              <h1 className="position-relative text-center">
+            <div className="col-12 col-lg-5 col-xxl-6">
+              <h1 className="position-relative text-center letsTalk_h1">
                 Let`s talk innovation.
                 {data.phone && (
                   <a href={`tel:` + data.phone} className="d-block w-100">
@@ -21,13 +21,22 @@ export default function ContactDetail({ data, form }) {
                 )}
               </h1>
             </div>
-            <div className="col-12 col-md-6">
-              <div className="row align-items-center">
-                <div className="col-12 col-md-6">
+            <div className="col-12 col-lg-7 col-xxl-6">
+              <div className="row align-items-center justify-content-center">
+                <div className="col-12 col-lg-6">
                   <ul className="list-unstyled social_inner">
+                    <li className="d-lg-none">
+                      <div className="d-flex align-items-center justify-content-center">
+                        <img src="../images/telephone.png" alt="tel" />
+
+                        <a className="ms-3" href="tel:201.212.6367">
+                          201.212.6367
+                        </a>
+                      </div>
+                    </li>
                     {data.email && (
                       <li>
-                        <div className="d-flex align-items-center">
+                        <div className="d-flex align-items-center justify-content-center">
                           <img src="../images/email.png" alt="email" />
 
                           <a className="ms-3" href={`tel:` + data.email}>
@@ -38,11 +47,11 @@ export default function ContactDetail({ data, form }) {
                     )}
                   </ul>
                 </div>
-                <div className="col-12 col-md-6">
+                <div className="col-12 col-lg-6">
                   <ul className="list-unstyled social_inner">
                     {data.addressLink && (
                       <li>
-                        <div className="d-flex align-items-start">
+                        <div className="d-flex align-items-start justify-content-center">
                           <img src="../images/pin-point.png" alt="pinPoint" />
                           <a
                             className="ms-3"

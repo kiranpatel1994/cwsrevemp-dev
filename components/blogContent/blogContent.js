@@ -58,17 +58,19 @@ export default function BlogContent({ blogData, blogDetail }) {
         <div className="container-xl p-0">
           <div className="row g-0">
             <div className="col-12 col-md-6 ecom__info position-relative">
-              {blogDetail.blogTitle && <h1>{blogDetail.blogTitle}</h1>}
-              {blogDetail.blogSubtitle && (
-                <div className="moji_ttl">
-                  <h3>{blogDetail.blogSubtitle}</h3>
-                </div>
-              )}
-              {blogDetail.blogDescription && (
-                <div className="position-relative">
-                  <p>{blogDetail.blogDescription}</p>
-                </div>
-              )}
+              <div className="banner_content_detail">
+                {blogDetail.blogTitle && <h1>{blogDetail.blogTitle}</h1>}
+                {blogDetail.blogSubtitle && (
+                  <div className="moji_ttl">
+                    <h3>{blogDetail.blogSubtitle}</h3>
+                  </div>
+                )}
+                {blogDetail.blogDescription && (
+                  <div className="position-relative">
+                    <p>{blogDetail.blogDescription}</p>
+                  </div>
+                )}
+              </div>
             </div>
             <div className="col-12 col-md-6">
               <div className="center__bild">
@@ -85,6 +87,9 @@ export default function BlogContent({ blogData, blogDetail }) {
         <div className="progress-bar">
           <div className="progress-bar-value"></div>
         </div>
+      </div>
+      <div className="d-md-none bild-mob">
+        <img src="../images/mask_1.png" alt="blogBnr1" />
       </div>
 
       <div className="article__center">
@@ -136,30 +141,34 @@ export default function BlogContent({ blogData, blogDetail }) {
 
                   return (
                     <div
-                      className="col-12 col-md-6 col-lg-4"
+                      className="col-12 col-md-6 col-lg-4 artical__card-col"
                       key={`blog-${index}`}
                     >
                       <Link href={`/blog/${item.node.slug}`}>
                         <div className="card_max_width">
                           <figure>
-                            <img
-                              className="img-fluid w-100"
-                              src={
-                                item.node.postSettings.blogGridImage !== null
-                                  ? item.node.postSettings.blogGridImage
-                                    .sourceUrl
-                                  : "../images/placeholder-1.svg"
-                              }
-                              alt="blogTemp"
-                            />
+                            <div className="card_max_width_fig">
+                              <img
+                                className="img-fluid w-100"
+                                src={
+                                  item.node.postSettings.blogGridImage !== null
+                                    ? item.node.postSettings.blogGridImage
+                                      .sourceUrl
+                                    : "../images/placeholder-1.svg"
+                                }
+                                alt="blogTemp"
+                              />
+                            </div>
                             <figcaption>
                               <ul className="list-inline blogs__tag mb-0">
                                 {item.node.categories.nodes.length > 0 && (
                                   <li className="list-inline-item">
                                     <span className="special__tag">
-                                      {item.node.categories.nodes
-                                        .map((node) => node.name)
-                                        .join(",")}
+                                      <em className="fst-normal">
+                                        {item.node.categories.nodes
+                                          .map((node) => node.name)
+                                          .join(",")}
+                                        </em>
                                     </span>
                                   </li>
                                 )}
@@ -234,29 +243,33 @@ export default function BlogContent({ blogData, blogDetail }) {
                 const formattedDate = date.toLocaleDateString("en-US", options);
                 return (
                   <div
-                    className="col-12 col-md-6 col-lg-4"
+                    className="col-12 col-md-6 col-lg-4 artical__card-col"
                     key={`blog-${index}`}
                   >
                     <Link href={`/blog/${item.node.slug}`}>
                       <div className="card_max_width">
                         <figure>
-                          <img
-                            className="img-fluid w-100"
-                            src={
-                              item.node.postSettings.blogGridImage !== null
-                                ? item.node.postSettings.blogGridImage.sourceUrl
-                                : "../images/placeholder-1.svg"
-                            }
-                            alt="blogTemp"
-                          />
+                          <div className="card_max_width_fig">
+                            <img
+                              className="img-fluid w-100"
+                              src={
+                                item.node.postSettings.blogGridImage !== null
+                                  ? item.node.postSettings.blogGridImage.sourceUrl
+                                  : "../images/placeholder-1.svg"
+                              }
+                              alt="blogTemp"
+                            />
+                          </div>
                           <figcaption>
                             <ul className="list-inline blogs__tag mb-0">
                               {item.node.categories.nodes.length > 0 && (
                                 <li className="list-inline-item">
                                   <span className="special__tag">
-                                    {item.node.categories.nodes
-                                      .map((node) => node.name)
-                                      .join(",")}
+                                    <em className="fst-normal">
+                                      {item.node.categories.nodes
+                                        .map((node) => node.name)
+                                        .join(",")}
+                                    </em>
                                   </span>
                                 </li>
                               )}
