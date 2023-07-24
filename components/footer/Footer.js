@@ -57,7 +57,7 @@ export default function Footer({ settings }) {
         <div className="ft-child w-100">
           <div className="container">
             <div className="row adjust-container">
-              <div className="col-12 col-md-3">
+              <div className="col-12 col-lg-3">
                 <div
                   className="foot-branding"
                   data-aos="fade-up"
@@ -75,7 +75,7 @@ export default function Footer({ settings }) {
                   </Link>
                 </div>
               </div>
-              <div className="col-12 col-md-3">
+              <div className="col-12 col-lg-3">
                 <ul
                   className="list-unstyled placed-add mb-0"
                   data-aos="fade-up"
@@ -84,7 +84,7 @@ export default function Footer({ settings }) {
                 >
                   {settings.phone && (
                     <li>
-                      <div className="d-flex align-items-center">
+                      <div className="d-flex align-items-center justify-content-lg-start justify-content-center">
                         <img src={telephoneImg.src} alt="" />
                         <Link href={`tel:` + settings.phone}>
                           {settings.phone}
@@ -94,7 +94,7 @@ export default function Footer({ settings }) {
                   )}
                   {settings.email && (
                     <li>
-                      <div className="d-flex align-items-center">
+                      <div className="d-flex align-items-center justify-content-lg-start justify-content-center">
                         <img src={emailImg.src} alt="" />
                         <a href={`mailto:` + settings.email}>
                           {settings.email}
@@ -104,7 +104,7 @@ export default function Footer({ settings }) {
                   )}
                   {settings.addressLink && (
                     <li>
-                      <div className="d-flex align-items-start">
+                      <div className="d-flex align-items-start justify-content-lg-start justify-content-center">
                         <img src={pinPointImg.src} alt="" />
                         <a
                           href={settings.addressLink}
@@ -117,7 +117,7 @@ export default function Footer({ settings }) {
                   )}
                 </ul>
               </div>
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-lg-6">
                 <ul
                   className="list-unstyled d-flex align-items-center letstalk"
                   data-aos="fade-up"
@@ -145,7 +145,7 @@ export default function Footer({ settings }) {
         <div className="container">
           <div className="row">
             <div
-              className="col-12 col-md-auto pe-lg-5"
+              className="col-6 col-lg-auto pe-lg-5 serviceRow"
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay="400"
@@ -202,7 +202,7 @@ export default function Footer({ settings }) {
               </div>
             </div>
             <div
-              className="col-12 col-md-auto ps-xxl-5 ps-4 solutionRow"
+              className="col-6 col-lg-auto ps-xxl-5 ps-xl-4 solutionRow"
               data-aos="fade-up"
               data-aos-duration="1000"
               data-aos-delay="600"

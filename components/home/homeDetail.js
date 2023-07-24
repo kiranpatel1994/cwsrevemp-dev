@@ -55,7 +55,7 @@ export default function HomeDetails({
   var settingsB = {
     // Install modules
     modules: [Navigation, Pagination, EffectCreative],
-    slidesPerView: 2.6,
+    slidesPerView: 1.2,
     spaceBetween: 20,
     autoplay: {
       delay: 10000,
@@ -69,6 +69,16 @@ export default function HomeDetails({
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    breakpoints: {
+      768: {
+        slidesPerView: 1.6,
+        spaceBetween: 20,
+      },
+      992: {
+        slidesPerView: 2.6,
+        spaceBetween: 20,
+      },
+    }
   };
 
   var bild1 =
@@ -298,7 +308,7 @@ export default function HomeDetails({
           <div className="container p-0">
             <div className="friendly-atmos-inner">
               <div className="row g-0 align-items-center">
-                <div className="col-12 col-md-7 position-relative">
+                <div className="col-12 col-lg-7 position-relative order-lg-0 order-1">
                   <div
                     className="face-information overflow-hidden"
                     data-aos="fade-up"
@@ -313,7 +323,7 @@ export default function HomeDetails({
                     </div>
                   </div>
                 </div>
-                <div className="col-12 col-md-5">
+                <div className="col-12 col-lg-5 order-lg-1 order-0">
                   <div className="atmos-faces">
                     <div className="face-1">
                       <img src="images/crewImg1.jpg" alt="" />
@@ -369,7 +379,7 @@ export default function HomeDetails({
                   data-aos="fade-up"
                   data-aos-duration="1000"
                 >
-                  <Swiper className="slider-object" {...settingsD}>
+                  {/* <Swiper className="slider-object" {...settingsD}>
                     {homeSettings.aboutSlider.map((item, index) => {
                       return (
                         <SwiperSlide key={index}>
@@ -389,9 +399,28 @@ export default function HomeDetails({
                     })}
 
                     <div className="swiper-pagination"></div>
-                  </Swiper>
+                  </Swiper> */}
+                  <div className="slider-object d-flex flex-wrap justify-content-between">
+                    {homeSettings.aboutSlider.map((item, index) => {
+                      return (
+                        <div className="sliderObjectInner mx-xl-2 px-xl-0 px-2 mb-3" key={index}>
+                          <div className="sliderBox">
+                            <div className="slideInner">
+                              <div
+                                className="icon"
+                                dangerouslySetInnerHTML={{
+                                  __html: menu[index],
+                                }}
+                              ></div>
+                              <h5>{item.aboutDomain}</h5>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-                <div className="d-flex justify-content-center mt-5 pt-4">
+                <div className="d-flex justify-content-center mt-xl-5 pt-4">
                   <Link className="btn btn-yellow fireBtn" href="/services">
                     <span>Wait, there’s more… </span>
                     {/* <span className="fireContainer" ref={fireContainer} /> */}
@@ -417,7 +446,7 @@ export default function HomeDetails({
                       return (
                         <li key={index}>
                           <div className="mini-card">
-                            <div className="d-flex align-items-center">
+                            <div className="d-flex flex-lg-row flex-column align-items-center">
                               <div className="mini-child">
                                 {item.whyUsTitle && <h5>{item.whyUsTitle} </h5>}
                                 {item.whyUsDescription && (
@@ -481,7 +510,7 @@ export default function HomeDetails({
       <section className="all-business bg-white">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-12 col-md-6">
+            <div className="col-12 col-xl-6">
               <div className="update-pseudo">
                 <div className="" data-aos="fade-up" data-aos-duration="1000">
                   <img
@@ -500,7 +529,7 @@ export default function HomeDetails({
               </div>
             </div>
             {businessImageArray && (
-              <div className="col-12 col-md-6">
+              <div className="col-12 col-xl-6 mt-xl-0 mt-4 pt-xl-0 pt-3">
                 <div className="vr-row-parent">
                   {businessImageArray.map((item, index) => {
                     return (
@@ -649,9 +678,9 @@ export default function HomeDetails({
                 return (
                   <SwiperSlide key={index}>
                     <div className="raw-card">
-                      <div className="d-flex align-items-start card-bunch">
+                      <div className="d-flex flex-xl-row flex-column align-items-start card-bunch">
                         {item.authorImage && (
-                          <div className="sm-user-bild">
+                          <div className="sm-user-bild mb-xl-0 mb-4">
                             <img src={item.authorImage.sourceUrl} alt="" />
                           </div>
                         )}
@@ -699,7 +728,7 @@ export default function HomeDetails({
                     {homeSettings.processBlocks.map((item, index) => {
                       return (
                         <div
-                          className="col-12 col-md-6 col-lg-3 card-items-cols"
+                          className="col-12 col-md-6 col-xl-3 card-items-cols"
                           key={index}
                           data-aos="fade-up"
                           data-aos-duration="1000"

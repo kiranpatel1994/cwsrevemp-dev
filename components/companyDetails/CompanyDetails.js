@@ -30,9 +30,9 @@ export default function CompanyDetails({ details, list }) {
                     __html: details.companySettings.companySubtitle,
                   }}
                 ></p>
-                <div class="demo-container">
-                  <div class="progress-bar">
-                    <div class="progress-bar-value"></div>
+                <div className="demo-container">
+                  <div className="progress-bar">
+                    <div className="progress-bar-value"></div>
                   </div>
                 </div>
               </div>

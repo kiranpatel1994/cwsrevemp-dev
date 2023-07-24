@@ -6,6 +6,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 export default function Header({ logo }) {
   const router = useRouter();
+  
   return (
     <>
       <Head>
@@ -23,7 +24,7 @@ export default function Header({ logo }) {
       </div>
       <header>
         <nav className="navbar navbar-expand-xl navbar-dark">
-          <div className="container bg-include p-0">
+          <div className="container bg-include p-md-0">
             <Link href="/" className="navbar-brand p-0">
               <img src={logo.sourceUrl} alt="" />
             </Link>
@@ -35,6 +36,7 @@ export default function Header({ logo }) {
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#mynavbar"
+              //onClick={handleClick}
             >
               <span></span>
               <span></span>
@@ -121,10 +123,10 @@ export default function Header({ logo }) {
                   </Link>
                 </li>
               </ul>
-              <ul class="headerCallSection m-0 list-unstyled d-xl-none d-flex flex-column align-items-center justify-content-center">
+              <ul className="headerCallSection m-0 list-unstyled d-xl-none d-flex flex-column align-items-center justify-content-center">
                 <li><img className="callHand" src={callSignImg.src} alt="" /></li>
-                <li class="text-center">
-                  <div class="contact-details"><span>Let’s talk innovation. </span><a href="tel:201-212-6367" class="d-block w-100">201-212-6367</a></div>
+                <li className="text-center">
+                  <div className="contact-details"><span>Let’s talk innovation. </span><a href="tel:201-212-6367" className="d-block w-100">201-212-6367</a></div>
                 </li>
               </ul>
             </div>
