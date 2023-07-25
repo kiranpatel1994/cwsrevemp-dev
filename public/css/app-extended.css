@@ -397,6 +397,18 @@ body.hosting{background-size: 70% auto;}
   .last-footer .navLabel{font-size: 16px;}
   footer::after{right: -110px;}
   .letstalk{justify-content: flex-end;}
+
+  .company footer{overflow: hidden;}
+  .aboutFounder .userContainer .headLine p{font-size: 30px;}
+  .aboutFounder .userContainer p{font-size: 18px;}
+  .sngl-title h3{font-size: 36px;}
+  .sngl-title.companySnglTitle {margin-top: -20px;}
+  .sngl-title h3::before {left: 9%;top: -7%;}
+  .company footer::before{display: none;}
+  .companyBanner h1{font-size: 48px;}
+  .aboutFounder h5{font-size: 24px;}
+  .founderArea .limboTitle h4{font-size: 30px;}
+  .aboutFounder .userContainer{min-height: inherit;height: inherit;padding-bottom: 80px;}
 }
 
 @media screen and (max-width: 1399px) {
@@ -543,6 +555,22 @@ body.hosting{background-size: 70% auto;}
   .last-footer .solutionRow::before{display: none;}
   .placed-add li a{font-size: 15px;}
   .last-footer .solutionRow {margin-top: 20px;margin-left: 86px;}
+
+  header .navbar{padding: 17px 0;}
+  .sngl-title h3::before {left: 3%;}
+  .founderArea .shapeBox figure img{width: 70%;margin-top: -90px;margin-bottom: 40px;}
+  .founderArea .limboTitle h4 {font-size: 25px;}
+  .founderArea .limboTitle p{line-height: 1.4;font-size: 16px;}
+  .founderArea .limboTitle em{line-height: 1.4;font-size: 20px;}
+  .aboutFounder .userContainer{padding-left: calc(var(--bs-gutter-x) * .5);padding-right: calc(var(--bs-gutter-x) * .5);}
+  .aboutFounder .userContainer .row {--bs-gutter-x: 1.5rem;}
+  .ourTeam{display: none;}
+  .companyBanner .banner-information, .companyBanner .companysubTitle{line-height: 1.6;font-size: 20px;}
+  .companyBanner .demo-container{width: 40px;}
+  .progress-bar{height: 2px;}
+  .companyBanner .banner-information{padding-bottom: 50px;}
+  .stickyArea {margin-top: 60px;}
+  .companyBanner .companysubTitle{margin-bottom: 0;}
 }
 
 @media screen and (max-width: 991px) {
@@ -600,6 +628,23 @@ body.hosting{background-size: 70% auto;}
   .last-footer ul{margin-bottom: 0;}
   footer::after{bottom: 110px;}
   
+  main {margin-top: 100px;}
+  .progress-bar{height: 2px;}
+
+  .founderArea .founder-col:nth-child(2) .shapeBox,
+  .founderArea .founder-col:last-child .shapeBox{margin-top: 175px;}
+  .founderArea .shapeBox figure img{margin-top: -150px;}
+  .founderArea .shapeBox {background-size: cover;max-width: 100%;margin-left: auto;margin-right: auto;width: 400px;}
+  .founderArea .shapeBox figure img{max-width: 100%;width: 288px;}
+  .founderArea .limboTitle em br{display: none;}
+  .founderArea .limboTitle em{font-size: 20px;}
+
+  .stickyArea img{height: 680px;object-fit: cover;}
+  .founderArea{margin-top: -150px;}
+  
+  .sngl-title.companySnglTitle {margin-top: 0;overflow: hidden;}
+  .sngl-title h3 {font-size: 35px;line-height: 1.25;}
+  .sngl-title h3::before {left: 50%;top: -90px;transform: rotate(87deg);}
 }
 
 @media screen and (max-width: 767px) {
@@ -647,11 +692,32 @@ body.hosting{background-size: 70% auto;}
   .foot-branding a img {width: 260px;}
   .letstalk .contact-details{font-size: 35px;margin-top: -30px;}
   .letstalk .contact-details a::after{bottom: -15px;}
-  .last-footer .navLabel {font-size: 16px;}
+  .last-footer .navLabel{font-size: 16px;}
   footer::after {bottom: 100px;}
   .placed-add li a{font-size: 18px;line-height: 1.3333;}
 
   .slider-area .raw-card .other-detail{position: absolute;top: 15px;left: 95px;}
+
+  .companyBanner h1{font-size: 35px;max-width: 100%;margin: 0 auto 20px;width: 300px;}
+  .companyBanner .banner-information br{display: none;}
+  .companyBanner .banner-information, .companyBanner .companysubTitle{font-size: 16px;max-width: 380px;margin-left: auto;margin-right: auto;}
+  
+  .stickyArea img {object-position: 73%;}
+  .founderArea .shapeBox figure img{margin-bottom: 0;}
+  .aboutFounder {margin-top: 100px;background-size: contain;}
+  .aboutFounder .userContainer{padding-bottom: 45px;}
+  .aboutFounder .founderInfo h3{font-size: 20px;}
+  .aboutFounder .userContainer .headLine p{font-size: 25px;}
+  .aboutFounder .userContainer .headLine p br{display: none;}
+  .aboutFounder .userContainer .column-count-2{column-count: 1;}
+  .aboutFounder .userContainer p{font-size: 16px;margin-bottom: 25px;max-width: 100%;}
+  .aboutFounder h5{font-size: 20px;}
+  
+  .sngl-title{height: auto;padding-top: 80px;padding-bottom: 90px;}
+  .sngl-title h3::before {top: -190px;transform: rotate(95deg);}
+  .sngl-title h3 a{display: block;}
+  .sngl-title h3 span::before {right: -11px;top: 63px;width: 157px;transform-origin: 89px 18px;}
+  .sngl-title h3 span::after{display: none;}
 }
 
 @media screen and (max-width: 575px) {

@@ -11,7 +11,7 @@ export default function CompanyDetails({ details, list }) {
     <>
       <main className="position-relative zindex-2">
         <section className="companyBanner">
-          <div className="container-xl">
+          <div className="container">
             <div className="row">
               <div className="col-12 text-center">
                 <h1>
@@ -53,14 +53,14 @@ export default function CompanyDetails({ details, list }) {
         </section>
         {details.companySettings.founderBlock && (
           <section className="founderArea">
-            <div className="container-xl p-0">
+            <div className="container p-lg-0">
               <div className="row g-36">
                 {details.companySettings.founderBlock.map((item, index) => {
                   var adjustMb = "mb-" + (index + 1);
 
                   return (
                     <div
-                      className="col-12 col-md-4 founder-col"
+                      className="col-12 col-lg-4 founder-col"
                       key={`founderblock${index}`}
                     >
                       <div className="shapeBox">
@@ -71,7 +71,7 @@ export default function CompanyDetails({ details, list }) {
                         )}
                         <div className="limboTitle">
                           {item.blockTitle && (
-                            <h4 className="mb-1">{item.blockTitle}</h4>
+                            <h4 className="mb-xl-1 mb-3">{item.blockTitle}</h4>
                           )}
                           {item.blockDescription && (
                             <p className={adjustMb}>{item.blockDescription}</p>
@@ -98,14 +98,14 @@ export default function CompanyDetails({ details, list }) {
 
         {details.companySettings.aboutFounder && (
           <section className="aboutFounder position-relative zindex-2">
-            <div className="container-xl p-0">
+            <div className="container p-xl-0">
               <div className="row g-36">
-                <div className="col-12 col-md-4 position-relative pt-5">
+                <div className="col-12 col-xl-4 position-relative pt-lg-5">
                   <div className="founderInfo">
                     <h3>About the Founder </h3>
                   </div>
                 </div>
-                <div className="col-12 col-md-8 position-relative userContainer pt-4 mt-2">
+                <div className="col-12 col-xl-8 position-relative userContainer pt-4 mt-2">
                   <div className="row">
                     <div className="col-12">
                       <div
@@ -129,12 +129,12 @@ export default function CompanyDetails({ details, list }) {
         )}
         {list && (
           <section className="ourTeam">
-            <div className="container-xl">
+            <div className="container">
               <div className="row align-items-center">
-                <div className="col-lg-4">
-                  <h4 className="mb-lg-0">Our team </h4>
+                <div className="col-xl-4">
+                  <h4 className="mb-xl-0 mb-4">Our team </h4>
                 </div>
-                <div className="col-lg-8">
+                <div className="col-xl-8">
                   <div className="subTitle">
                     <p
                       dangerouslySetInnerHTML={{
@@ -167,7 +167,7 @@ export default function CompanyDetails({ details, list }) {
           </section>
         )}
         <div className="sngl-title companySnglTitle handAnimation">
-          <div className="container-xl h-100">
+          <div className="container h-100">
             <div className="row h-100">
               <div className="col-12 text-center">
                 <h3>
