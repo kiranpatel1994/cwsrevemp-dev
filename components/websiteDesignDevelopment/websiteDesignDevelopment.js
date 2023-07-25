@@ -21,15 +21,14 @@ export default function WebsiteDesignDev({ data }) {
 
     ScrollTrigger.create({
       trigger: ".gl_area",
-      start: "-=289",
+      start: "-=600",
       endTrigger: "#end_anim",
-      end: "+=2700",
+      end: "+=3000",
       markers: false,
       scrub: -2,
       pinSpacing: false,
       animation: liftArow,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
+      once: true
     });
 
     gsap.to(".profitDrag", { scaleY: 0 });
@@ -41,30 +40,29 @@ export default function WebsiteDesignDev({ data }) {
 
     ScrollTrigger.create({
       trigger: "#start_anim",
-      start: "-=300",
+      start: "-=600",
       endTrigger: "#end_anim",
-      end: "+=2700",
+      end: "+=3000",
       markers: false,
       scrub: -2,
       pinSpacing: false,
       animation: action,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
+      once: true      
     });
 
     const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
     panels.forEach((panel, i) => {
       ScrollTrigger.create({
         trigger: panel,
-        start: "-=200 top",
-        end: "top top",
+        start: "-=500",
+        end: "center",
         markers: false,
         onEnter: () => {
           panels[i].classList.add("activate");
         },
-        onEnterBack: () => {
-          panels[i].classList.remove("activate");
-        },
+        // onEnterBack: () => {
+        //   panels[i].classList.remove("activate");
+        // },
       });
     });
 
@@ -98,24 +96,29 @@ export default function WebsiteDesignDev({ data }) {
         <div className="container-xl p-0">
           <div className="row g-0">
             <div className="col-12">
-              <h1>Web Design and Development </h1>
-              {data.bannerSubtitle && (
-                <h2 className="sub_title play_fair-ttl mb-4 pb-2">
-                  {data.bannerSubtitle}
-                </h2>
-              )}
-              {data.bannerTitle && (
-                <div
-                  className="banner-h3 moji_ttl"
-                  dangerouslySetInnerHTML={{ __html: data.bannerTitle }}
-                ></div>
-              )}
-              {data.bannerDescription && (
-                <div
-                  className="banner-desc mb-4 moji_para position-relative im_moji"
-                  dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
-                ></div>
-              )}
+              <div className="banner_content_info">
+                <h1>Web Design and Development </h1>
+                {data.bannerSubtitle && (
+                  <h2 className="sub_title play_fair-ttl mb-4 pb-2">
+                    {data.bannerSubtitle}
+                  </h2>
+                )}
+                {data.bannerTitle && (
+                  <div
+                    className="banner-h3 moji_ttl"
+                    dangerouslySetInnerHTML={{ __html: data.bannerTitle }}
+                  ></div>
+                )}
+                <div className="d-md-none col_bild">
+                  <img className="w-100 img-fluid" src="../images/op-lap.png" alt="ff" />
+                </div>
+                {data.bannerDescription && (
+                  <div
+                    className="banner-desc mb-4 moji_para position-relative im_moji"
+                    dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
+                  ></div>
+                )}
+              </div>
             </div>
           </div>
         </div>
