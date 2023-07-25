@@ -6,6 +6,7 @@ import SwiperCore, {
   Navigation,
   Pagination,
   EffectCreative,
+  EffectCoverflow,
   Autoplay,
   Keyboard,
   Mousewheel,
@@ -64,16 +65,24 @@ export default function ServiceDetails({ cat }) {
                   </div>
                 </div>
                 <div className="col-12 col-md-6 col-lg-7">
-                  <Swiper
+                  <Swiper 
+                    effect={'coverflow'}
                     direction={"vertical"}
                     slidesPerView={1}
                     spaceBetween={30}
                     loop={true}
                     mousewheel={true}
+                    coverflowEffect={{
+                      rotate: 150,
+                      stretch: 0,
+                      depth: 100,
+                      modifier: 1,
+                      slideShadows: true,
+                    }}
                     pagination={{
                       type: "progressbar",
                     }}
-                    modules={[Mousewheel, Pagination]}
+                    modules={[Mousewheel, Pagination, EffectCoverflow]}
                     className="mySwiper"
                   >
                     {cat.map((item, index) => {
