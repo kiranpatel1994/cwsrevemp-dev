@@ -80,7 +80,7 @@ export default function WebsiteDesignDev({ data }) {
       <div className="banner__overlap">
         <div className="container-xl bbn_1">
           <div className="design_development_container"></div>
-          <div className="bottom_shape">
+          <div className="bottom_shape d-none d-md-block">
             <div className="floor-1">
               <div className="torusLandingLottie">
                 <div className="torusLandingContainer" />
@@ -135,20 +135,23 @@ export default function WebsiteDesignDev({ data }) {
             </div>
           </div>
           <section className="row get_row g-0 sec-1" id="start_anim">
-            <div className="col-1 benit__ttl">
+            <div className="col-12 col-md-1 d-none d-md-block benit__ttl">
               {data.benefitsTitle && (
                 <div className="benifit_ttl">
                   <h3 className="vr-title">{data.benefitsTitle}</h3>
                 </div>
               )}
             </div>
-            <div className="col-11">
+            <div className="col-12 col-md-11">
               {data.benefitsBlocks && (
-                <ul className="list-inline benifit__inner benefit_list">
+                <ul className="list-inline benifit__inner benefit_list benefit_list_mb row g-2">
                   {data.benefitsBlocks.map((item, index) => {
                     return (
-                      <li className="list-inline-item" key={`benefit-${index}`}>
-                        <div className="ffk_btn">
+                      <li className="list-inline-item col-6 col-md-auto" key={`benefit-${index}`}>
+                        <div className="ffk_btn d-flex flex-column">
+                          <div className="d-md-none position-relative zindex-3 mb-3">
+                            <img src="../images/bnf-1.png" />
+                          </div>
                           <span>{item.benefitBlockTitle}</span>
                         </div>
                       </li>
@@ -159,31 +162,33 @@ export default function WebsiteDesignDev({ data }) {
             </div>
           </section>
           <section className="row get_row g-0 sec-2">
-            <div className="col-1 wus__ttl">
+            <div className="col-12 col-md-1 d-none d-md-block wus__ttl">
               <div className="benifit_ttl">
                 <h3 className="vr-title">Why Us</h3>
               </div>
             </div>
-            <div className="col-11">
+            <div className="col-12 col-md-11">
               <div className="row g-0 why__us align-items-center">
-                <div className="col-md-7">
-                  {data.whyUsTitle && (
-                    <div
-                      className="d-flex align-items-center"
-                      dangerouslySetInnerHTML={{ __html: data.whyUsTitle }}
-                    ></div>
-                  )}
-                  {data.whyUsDescription && (
-                    <div
-                      className="why-us-desc"
-                      dangerouslySetInnerHTML={{
-                        __html: data.whyUsDescription,
-                      }}
-                    ></div>
-                  )}
+                <div className="col-12 col-lg-7">
+                  <div className="pd-48-15">
+                    {data.whyUsTitle && (
+                      <div
+                        className="d-flex align-items-center flex-cols-m"
+                        dangerouslySetInnerHTML={{ __html: data.whyUsTitle }}
+                      ></div>
+                    )}
+                    {data.whyUsDescription && (
+                      <div
+                        className="why-us-desc"
+                        dangerouslySetInnerHTML={{
+                          __html: data.whyUsDescription,
+                        }}
+                      ></div>
+                    )}
+                  </div>
                 </div>
                 {data.whyUsImage && (
-                  <div className="col-md-5">
+                  <div className="col-12 col-lg-5">
                     {/* <img className="img-fluid w-100" src={data.whyUsImage.sourceUrl} /> */}
                     <img
                       className="img-fluid w-100"
@@ -195,17 +200,17 @@ export default function WebsiteDesignDev({ data }) {
             </div>
           </section>
           <section className="row get_row g-0 sec-3">
-            <div className="col-1 wordp__ttl">
+            <div className="col-12 col-md-1 d-none d-md-block wordp__ttl">
               <div className="benifit_ttl">
                 <h3 className="vr-title">WordPress</h3>
               </div>
             </div>
-            <div className="col-11">
+            <div className="col-12 col-md-11">
               <div className="row g-0 wp_m_info align-items-center">
-                <div className="col-md-6">
+                <div className="col-12 col-lg-6">
                   <img className="img-fluid" src="../images/wp-in.png" />
                 </div>
-                <div className="col-md-6">
+                <div className="col-12 col-lg-6">
                   <div className="wp_inner">
                     {data.wordpressTitle && (
                       <h3 className="text-35_b_white mb-3">
@@ -287,14 +292,14 @@ export default function WebsiteDesignDev({ data }) {
             </div>
           </section>
           <section className="row get_row g-0 sec-4">
-            <div className="col-1 serviced__ttl">
+            <div className="col-12 col-md-1 d-none d-md-block serviced__ttl">
               <div className="benifit_ttl">
                 <h3 className="vr-title">Service Details</h3>
               </div>
             </div>
-            <div className="col-11">
+            <div className="col-12 col-md-11">
               <div className="row g-0">
-                <div className="col-md-7">
+                <div className="col-12 col-lg-7">
                   <div className="wp_inner had_new ps-lg-5">
                     {data.serviceDetailsTitle && (
                       <div
@@ -330,7 +335,7 @@ export default function WebsiteDesignDev({ data }) {
                     )}
                   </div>
                 </div>
-                <div className="col-md-5">
+                <div className="col-12 col-lg-5">
                   <div className="ps-0">
                     <img className="img-fluid w-100" src="../images/hand.png" />
                   </div>
@@ -339,19 +344,19 @@ export default function WebsiteDesignDev({ data }) {
             </div>
           </section>
           <section className="row get_row g-0 sec-5" id="end_anim">
-            <div className="col-1 serv__ttl">
+            <div className="col-12 col-md-1 d-none d-md-block serv__ttl">
               <div className="benifit_ttl">
                 <h3 className="vr-title">Service Details</h3>
               </div>
             </div>
-            <div className="col-11">
+            <div className="col-12 col-md-11">
               <div className="row g-0 align-items-center">
-                <div className="col-md-6">
+                <div className="col-12 col-lg-6">
                   <div className="ps-0 d-table">
                     <img className="img-fluid" src="../images/svdetails.png" />
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-12 col-lg-6">
                   <div className="wp_inner had_new">
                     {data.designBlockTitle && (
                       <h3 className="text-32_b_white mb-3">
