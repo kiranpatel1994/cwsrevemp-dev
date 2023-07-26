@@ -367,6 +367,12 @@ body.hosting{background-size: 70% auto;}
 
 .scrollForMore .inner-cirl .arrow-svg img{transform: rotate(0deg)!important;}
 
+.carouselSection::before{background-position: center top;}
+
+@media screen and (max-width: 1699px) {
+  .skyndroket{padding-top: 355px;}
+}
+
 @media screen and (max-width: 1599px) {
   .homeBanner .title h1{font-size: 60px;margin-right: 0;}
   .new-title{font-size: 30px;}
@@ -409,6 +415,8 @@ body.hosting{background-size: 70% auto;}
   .aboutFounder h5{font-size: 24px;}
   .founderArea .limboTitle h4{font-size: 30px;}
   .aboutFounder .userContainer{min-height: inherit;height: inherit;padding-bottom: 80px;}
+
+  .skyndroket::before {background-position: 0 40px;}
 }
 
 @media screen and (max-width: 1399px) {
@@ -461,6 +469,9 @@ body.hosting{background-size: 70% auto;}
   .last-footer li{margin-bottom: 5px;}
   .last-footer li a{font-size: 13px;}
   .last-footer .navLabel {font-size: 15px;padding: 0 15px;}
+
+  .skyndroket::before {background-position: top center;background-size: 1460px auto;background-color: #FDB627;}
+  .smokeContainer {margin-top: 430px;}
 }
 
 @media screen and (max-width: 1199px) {
@@ -571,6 +582,10 @@ body.hosting{background-size: 70% auto;}
   .companyBanner .banner-information{padding-bottom: 50px;}
   .stickyArea {margin-top: 60px;}
   .companyBanner .companysubTitle{margin-bottom: 0;}
+
+  .carouselSlider .slider-inner{height: 300px;}
+  .carouselSection::before {background-position: center top;background-size: 1400px auto;}
+  .carouselSection::after{height: 224px;}
 }
 
 @media screen and (max-width: 991px) {
@@ -645,12 +660,25 @@ body.hosting{background-size: 70% auto;}
   .sngl-title.companySnglTitle {margin-top: 0;overflow: hidden;}
   .sngl-title h3 {font-size: 35px;line-height: 1.25;}
   .sngl-title h3::before {left: 50%;top: -90px;transform: rotate(87deg);}
+
+  .carouselSection .carouselSlider::after{display: none;}
+  .carouselSection::before{background-size: 1200px auto;}
+  .carouselSection::after {height: 173px;}
+
+  .solutionDetail h1{font-size: 35px;}
+  .readyProject{height: auto;}
+  .readyProject h2::before {left: 50%;top: -190px;transform: rotate(87deg);}
+  .readyProject h2::after{display: none;}
+  .solutionDetail p {max-width: 358px;line-height: 1.4;font-size: 16px;}
+  .balancingShape {width: 124px;height: 105px;margin-bottom: 20px;}
 }
 
 @media screen and (max-width: 767px) {
   .container{padding-left: 15px;padding-right: 15px;}
   .homeBanner .title h1{white-space: normal;}
   header .navbar-brand img {width: 55px;object-fit: cover;height: 55px;object-position: left center;}
+  header.navOpen .navbar-brand img {width: 110px;max-width: inherit;}
+  header.navOpen .mobileGetStarted{margin-left: 34px;}
   .homeBanner .scrollForMore button{top: 180px;}
   .atmos-faces::before {width: 110px;height: 110px;left: 0;bottom: inherit;transform: rotate(115deg);background-size: 110px auto;top: 80px;}
   .atmos-faces::after {right: 0;top: 0px;width: 78px;height: 72px;background-size: 78px auto;transform: rotate(-5deg);}
@@ -718,6 +746,14 @@ body.hosting{background-size: 70% auto;}
   .sngl-title h3 a{display: block;}
   .sngl-title h3 span::before {right: -11px;top: 63px;width: 157px;transform-origin: 89px 18px;}
   .sngl-title h3 span::after{display: none;}
+
+  .carouselSlider .slider-inner{height: 445px;}
+  .companyCard .cardinner .tileContent p {font-size: 16px;line-height: 26px;max-width: 100%;}
+  .tab-content .tab-col{margin-bottom: 20px;}
+
+  .readyProject .list-inline{display: flex;flex-direction: column;}
+  .readyProject .list-inline .list-inline-item:not(:last-child){margin-right: 0;margin-bottom: 17px;}
+  .readyProjectInner .btn-blue{width: 100%;}
 }
 
 @media screen and (max-width: 575px) {
@@ -735,6 +771,12 @@ body.hosting{background-size: 70% auto;}
   .card-items .card-items-cols:last-child .card-mor-detail p::after {left: 41px;}
 
   .homeBanner .scrollForMore button{top: 240px;}
+
+  .solutionInformation{margin-bottom: 75px;}
+  .carouselSection {overflow: hidden;margin-top: 0;padding-top: 75px;}
+  .carouselSection::before {width: 578px;height: 289px;background-color: #FDB627;border-radius: 578px 578px 0 0;background-image: none;top: 0;left: 50%;transform: translateX(-50%);}
+  .carouselSection::after {height: 283px;}
+  .companyCard .cardinner{padding: 70px 18px 35px;}
 }
 
 @media screen and (max-width: 399px) {

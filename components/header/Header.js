@@ -4,9 +4,21 @@ import Brand from "/public/images/branding.png";
 import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useRef } from "react";
 export default function Header({ logo }) {
   const router = useRouter();
-  
+
+  const ref = useRef(null);
+  const handleClick = (event) => {
+    let navbarButton = event.currentTarget.getAttribute("aria-expanded");
+    let header = document.querySelector("header")
+    if (navbarButton === "true") {
+      header.classList.add("navOpen");
+    } else {
+      header.classList.remove("navOpen");
+    }
+  };
+
   return (
     <>
       <Head>
@@ -32,18 +44,18 @@ export default function Header({ logo }) {
               Get Started
             </Link>
             <button
+              onClick={handleClick}
               className="navbar-toggler"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#mynavbar"
-              //onClick={handleClick}
             >
               <span></span>
               <span></span>
               <span></span>
               <span></span>
             </button>
-            <div className="collapse navbar-collapse" id="mynavbar">
+            <div className="collapse navbar-collapse" id="mynavbar" ref={ref}>
               <ul className="navbar-nav me-auto align-items-center justify-content-between w-100">
                 <li className="nav-item ms-xl-auto">
                   <Link

@@ -121,7 +121,7 @@ export default function SolutionDetails({ detail, tags }) {
     <>
       <main className="solutionDetail position-relative zindex-2">
         <section className="workFlow">
-          <div className="container-xl">
+          <div className="container">
             <div className="row">
               <div className="col-12">
                 <div className="text-center solutionInformation">
@@ -143,7 +143,7 @@ export default function SolutionDetails({ detail, tags }) {
         </section>
         {detail.portfoliosToShowAsFeatured && (
           <section className="carouselSection">
-            <div className="container-xl">
+            <div className="container">
               <div className="row">
                 <div className="col-12">
                   <div className="carouselSlider position-relative" >
@@ -171,7 +171,7 @@ export default function SolutionDetails({ detail, tags }) {
         )}
         {detail.companyCards && (
           <section className="companyCard">
-            <div className="container-xl p-0">
+            <div className="container p-lg-0">
               <div className="row">
                 {detail.companyCards.map((item, index) => {
                   return (
@@ -214,7 +214,7 @@ export default function SolutionDetails({ detail, tags }) {
             <div className="sootingStarBlock">
               <div className="shootingStarsContainer" />
             </div>
-            <div className="container-xl position-relative zindex-2">
+            <div className="container position-relative zindex-2">
               <div className="row">
                 <div className="col-12 text-center">
                   <h4>
@@ -229,7 +229,7 @@ export default function SolutionDetails({ detail, tags }) {
             </div>
             <div className="smokeContainer solutionProject">
               {/* <div className="smokeBG"></div> */}
-              <div className="container-xl p-0 position-relative zindex-2">
+              <div className="container p-lg-0 position-relative zindex-2">
                 <div className="row g-0">
                   <div className="col-12">
                     <div className="cloudContainer text-center">
@@ -274,7 +274,7 @@ export default function SolutionDetails({ detail, tags }) {
           </section>
         )}
         <section className="readyProject">
-          <div className="container-xl">
+          <div className="container">
             <div className="row">
               <div className="col-12">
                 <div className="readyProjectInner">
