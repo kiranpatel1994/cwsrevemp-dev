@@ -2689,6 +2689,9 @@ footer .ft-child:first-child {
   margin-bottom: 150px;
   padding-bottom: 23%;
 }
+.webDev .website_design_development .banner_content {
+  padding-bottom: 437px
+}
 .banner_content h1 {
   font-size: 55px;
   line-height: 63px;
@@ -4921,7 +4924,7 @@ a {
 .button_arround { position: fixed; top: 50%; transform: translateY(-50%); right: 50px; }
 .button_arround .site_link { background-color: #fff; }
 .button_arround .site_link span { color: #07042B; }
-
+.zindex-3 { z-index: 3; }
 
 
 /* responsive */
@@ -4968,6 +4971,7 @@ a {
 @media (max-width: 1800px) {
   .letsTalk_inner h1::before { transform: rotate(0deg); bottom: auto; top: -110px; margin: 0 auto; left: 0; right: 0; }
   .letsTalk_inner h1 { font-size: 35px; line-height: 45px; }
+  .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(4) .ffk_btn { margin-left: 0; }
 }
 @media (max-width: 1440px) {
   .map-placeholder::before { top: 45%; height: 258px; width: 258px; left: -100px; }
@@ -4980,6 +4984,7 @@ a {
   .bologDetail_center .title__content h1 { font-size: 25px; line-height: 35px; }
   .bologDetail_center .title__content h2, .bologDetail_center .title__content h3, .bologDetail_center .title__content h4, .bologDetail_center .title__content h5, .bologDetail_center .title__content h6 { font-size: 20px; line-height: 28px; margin-bottom: 20px; }
   .website_design_development .banner_content h1 { font-size: 45px; line-height: 40px; }
+  .design_development_container::after { width: 401px; height: 401px; background-size: cover; right: -210px; top: -2%; }
 }
 @media (max-width: 1199px) {
   .letsTalk_inner .social_inner a { font-size: 19px; }
@@ -4992,8 +4997,10 @@ a {
   .banner_content_info { padding: 0 15px; }
   .banner_content_info h2 { font-size: 32px; line-height: 38px; }
   .laptop_setup { opacity: 0.2; }
+  .col_bild { margin-bottom: 40px; }
   .col_bild img { opacity: 0.5; }
   .website_design_development { padding-top: 85px; }
+  .design_development_container::after { right: -150px; }
 }
 @media (max-width: 991px) {
   .letsTalk_h1 { margin-bottom: 60px; }
@@ -5012,7 +5019,10 @@ a {
   .banner_content_info h2 { display: none; }
   .webDev .moji_para p { font-size: 18px; line-height: 28px; }
   .website_design_development .banner_content h1 { font-size: 35px; line-height: 45px; }
-  
+  .design_development_container::after { width: 201px; height: 201px; background-size: cover; transform: rotate(-25deg); z-index: 2; right: -80px; top: 0; }
+  .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item .ffk_btn { font-size: 20px; padding: 14px 35px; }
+  .webDev .benifit__inner.benefit_list::after { content: none; }
+  .im_moji.moji_para.banner-desc p:last-child { font-size: 35px; }
 }
 @media (max-width: 767px) {
   .webDev .moji_para p { font-size: 16px; line-height: 26px !important; max-width: 348px; margin-left: auto; margin-right: auto; text-align: center; }
@@ -5034,14 +5044,33 @@ a {
   .artical__card .card_max_width .blogs__tag { margin-bottom: 20px !important; margin-left: 5px; }
   .artical__card .card_max_width figure .card_max_width_fig { position: relative; }
   .artical__card .card_max_width figure .card_max_width_fig::after { content: ''; background: url(../images/rendering.png) no-repeat; position: absolute; bottom: 0; left: 0; right: 0; height: 132px; z-index: 2; background-size: cover; }
-  .moji_para p:nth-last-child(2)::after { content: none; }
+  .moji_para p:nth-last-child(2)::after, .design_development_container::before { content: none; }
   .laptop_setup { display: none; }
   .banner_content_info { text-align: center; }
   .banner_content_info .banner-h3.moji_ttl h3 { font-size: 20px; max-width: 278px; margin-left: auto; margin-right: auto; }
   .webDev .banner_content_info .moji_ttl img { top: 5px; right: -5px; max-width: 35px; }
+  .design_development_container::after { top: 3.5%; }
+  .banner_content_info .banner-h3 { margin-bottom: 45px; }
+  .webDev .benifit__inner.benefit_list.benefit_list_mb { padding-left: 48px; padding-right: 15px; }
+  .line_anim { left: 15px; }
+  .gl_area.websiteDesign .ffk_btn span { font-size: 16px; line-height: 21px; }
+  .webDev .websiteDesign .benifit__inner.benefit_list .list-inline-item .ffk_btn, .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(4) .ffk_btn, .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(5) .ffk_btn { max-width: 100%; padding: 24px 32px; border-radius: 24px; }
+  .benifit__inner.benefit_list_mb .list-inline-item { margin: 0; padding-bottom: 9px; }
+  .pd-48-15 { padding-left: 48px; padding-right: 15px; }
+  .webDev .websiteDesign .why__us h2 { font-size: 25px; line-height: 30px; }
+  .webDev .websiteDesign .why__us h2 ~ p img { max-width: 115px; }
+  
 }
 @media (max-width: 425px) {
   .form_container h2 { font-size: 18px; }
   .letsTalk_inner h1 { font-size: 28px; line-height: 42px;}
   .bild-mob img { height: 460px; }
+  /* .design_development_container::after { right: -24%; top: 3%; } */
+}
+@media (max-width: 424px) {
+  .benifit__inner.benefit_list_mb .list-inline-item { width: 100%; }
+  .flex-cols-m { flex-direction: column; align-items: flex-start !important; }
+  .webDev .websiteDesign .why__us h2 ~ p { text-align: center; width: 100%; }
+  .webDev .websiteDesign .why__us h2 ~ p img { display: block; margin: 0 auto; }
+  .webDev .websiteDesign .why__us p { font-size: 16px; line-height: 26px; }
 }
