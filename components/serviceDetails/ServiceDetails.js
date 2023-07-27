@@ -1,34 +1,27 @@
-/* eslint-disable jsx-a11y/alt-text */
-/* eslint-disable @next/next/no-img-element */
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import SwiperCore, {
   Navigation,
   Pagination,
   EffectCreative,
-  EffectCoverflow,
   Autoplay,
   Keyboard,
   Mousewheel,
 } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { gsap } from "gsap/dist/gsap";
 
 export default function ServiceDetails({ cat }) {
-  useEffect(() => {
-    gsap.to(".scroll_tag", {
-      delay: 1,
-      duration: 2,
-      keyframes: {
-        ease: "none",
-        easeEach: "power1",
-        x: [0, 150, 320, 0],
-        y: [0, 100, -40, 0],
-      },
-      opacity: 0,
-    });
-  });
+  const perChunk = 2;
+  const result = cat.reduce((resultArray, item, index) => {
+    const chunkIndex = Math.floor(index / perChunk);
 
+    if (!resultArray[chunkIndex]) {
+      resultArray[chunkIndex] = [];
+    }
+
+    resultArray[chunkIndex].push(item);
+
+    return resultArray;
+  }, []);
   return (
     <>
       <main className="serviceDetail position-relative zindex-2">
@@ -43,72 +36,96 @@ export default function ServiceDetails({ cat }) {
                     <em>user-friendly </em> functionality
                     <img src="/images/preview-24.png" />
                   </h1>
+                  
                 </div>
               </div>
             </div>
           </div>
         </section>
-        {cat && (
+        {result && (
           <section className="designFunctionality">
             <div className="line-last d-none">
               <img src="/images/lines.png" alt="line_off" />
             </div>
-            <div className="scroll_tag">
-              <img src="/images/scroll_anim.png" alt="scroll_off" />
-            </div>
-            <div className="container-xl p-0 setContainerFunctionality">
+            {/* <div className="container-xl p-0 setContainerFunctionality">
               <div className="row g-0 align-items-center">
-                <div className="col-12 col-md-6 col-lg-5">
-                  <div className="center_title">
-                    The business <span>boost </span> you’re looking <br /> for
-                    is right here.{" "}
-                  </div>
-                </div>
+              <div className="col-12 col-md-6 col-lg-5">
+                <div className="center_title">The business <span>boost </span> you’re looking <br/> for is right here. </div>
+              </div>
                 <div className="col-12 col-md-6 col-lg-7">
-                  <Swiper 
-                    effect={'coverflow'}
+                  <Swiper
                     direction={"vertical"}
                     slidesPerView={1}
-                    spaceBetween={30}
-                    loop={true}
+                    spaceBetween={0}
                     mousewheel={true}
-                    coverflowEffect={{
-                      rotate: 150,
-                      stretch: 0,
-                      depth: 100,
-                      modifier: 1,
-                      slideShadows: true,
-                    }}
                     pagination={{
                       type: "progressbar",
                     }}
-                    modules={[Mousewheel, Pagination, EffectCoverflow]}
+                    modules={[Mousewheel, Pagination]}
                     className="mySwiper"
                   >
-                    {cat.map((item, index) => {
+                    <SwiperSlide>
+                      <a href="#" className="nw_card">
+                        <div className="inner_infor">
+                          <div className="yllo_box">
+                            <img src="images/code.png" />
+                          </div>
+                          <div className="content-area">
+                            <h2>Website Design and Development </h2>
+                            <ul className="list-unstyled">
+                              <li>UI design </li>
+                              <li>Copywriting </li>
+                              <li>Design and development </li>
+                            </ul>
+                            <div class="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
+                          </div>
+                        </div>
+                      </a>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <a href="#" className="nw_card">
+                        <div className="inner_infor">
+                          <div className="yllo_box">
+                            <img src="images/code.png" />
+                          </div>
+                          <div className="content-area">
+                            <h2>Website Design and Development </h2>
+                            <ul className="list-unstyled">
+                              <li>UI design </li>
+                              <li>Copywriting </li>
+                              <li>Design and development </li>
+                            </ul>
+                            <div class="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
+                          </div>
+                        </div>
+                      </a>
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
+              </div>
+            </div> */}
+            <div className="container-xl setContainerFunctionality">
+              {result.map((item, index) => {
+                return (
+                  <div className="row alternative-row" key={`catblock${index}`}>
+                    {item.map((element, j) => {
                       return (
-                        <SwiperSlide key={`catblock${index}`}>
+                        <div
+                          className="col-12 col-md-6 box-col"
+                          key={`catwrap${j}`}
+                        >
                           <Link
-                            href={`/services/${item.node.slug}`}
-                            className="nw_card"
+                            href={`/services/${element.node.slug}`}
+                            className="box-design"
                           >
-                            <div className="inner_infor">
-                              <div className="yllo_box">
-                                <img
-                                  src={
-                                    item.node.portfolioCategoriesSettings
-                                      .categoryIcon?.sourceUrl
-                                      ? item.node.portfolioCategoriesSettings
-                                          .categoryIcon?.sourceUrl
-                                      : "images/code.png"
-                                  }
-                                />
-                              </div>
-                              <div className="content-area">
-                                <h2>{item.node.name}</h2>
-                                <div></div>
+                            <div className="content-area ">
+                              <h5 className="text-white">
+                                {element.node.name}
+                              </h5>
+                              {element.node.portfolioCategoriesSettings
+                                .listDescription && (
                                 <ul className="list-unstyled">
-                                  {item.node.portfolioCategoriesSettings.listDescription.map(
+                                  {element.node.portfolioCategoriesSettings.listDescription.map(
                                     (desc, k) => {
                                       return (
                                         <li key={`catdesc${k}`}>
@@ -118,21 +135,21 @@ export default function ServiceDetails({ cat }) {
                                     }
                                   )}
                                 </ul>
-                                <div className="fk-btn">
-                                  Explore more
-                                  <span>
-                                    <img src="/images/img-stars.png" />
-                                  </span>
-                                </div>
+                              )}
+                              <div className="fk-btn">
+                                Explore more
+                                <span>
+                                  <img src="/images/img-stars.png" />
+                                </span>
                               </div>
                             </div>
                           </Link>
-                        </SwiperSlide>
+                        </div>
                       );
                     })}
-                  </Swiper>
-                </div>
-              </div>
+                  </div>
+                );
+              })}
             </div>
           </section>
         )}
