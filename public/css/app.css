@@ -2093,7 +2093,7 @@ footer .ft-child:first-child {
   /* overflow: hidden; */
 }
 .designFunctionality::before {
-  content: none;
+  content: '';
   background-color: #fff;
   position: absolute;
   top: 145px;
