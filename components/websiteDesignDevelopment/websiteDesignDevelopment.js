@@ -143,6 +143,13 @@ export default function WebsiteDesignDev({ data }) {
               )}
             </div>
             <div className="col-12 col-md-11">
+              <div className="d-md-none">
+                {data.benefitsTitle && (
+                  <div className="benifit_ttl_mb pd-48-15">
+                    <h3 className="vr-title_mb">{data.benefitsTitle}</h3>
+                  </div>
+                )}
+              </div>
               {data.benefitsBlocks && (
                 <ul className="list-inline benifit__inner benefit_list benefit_list_mb row g-2">
                   {data.benefitsBlocks.map((item, index) => {
@@ -161,13 +168,18 @@ export default function WebsiteDesignDev({ data }) {
               )}
             </div>
           </section>
-          <section className="row get_row g-0 sec-2">
+          <section className="row get_row g-0 sec-2 banifit_up">
             <div className="col-12 col-md-1 d-none d-md-block wus__ttl">
               <div className="benifit_ttl">
                 <h3 className="vr-title">Why Us</h3>
               </div>
             </div>
             <div className="col-12 col-md-11">
+            <div className="d-md-none">
+                <div className="benifit_ttl_mb mb-stl pd-48-15">
+                  <h3 className="vr-title_mb">Why Us</h3>
+                </div>
+              </div>
               <div className="row g-0 why__us align-items-center">
                 <div className="col-12 col-lg-7">
                   <div className="pd-48-15">
@@ -208,10 +220,20 @@ export default function WebsiteDesignDev({ data }) {
             <div className="col-12 col-md-11">
               <div className="row g-0 wp_m_info align-items-center">
                 <div className="col-12 col-lg-6">
-                  <img className="img-fluid" src="../images/wp-in.png" />
+                  <div className="d-none d-md-block">
+                    <img className="img-fluid" src="../images/wp-in.png" />
+                  </div>
+                  <div className="d-md-none pd-48-15">
+                    <div className="d-flex align-items-center">
+                      <div className="benifit_ttl_mb me-4">
+                        <h3 className="vr-title_mb">WordPress </h3>
+                      </div>
+                      <img className="img-fluid" src="../images/WordPress-Logo-Free-Download-PNG.png" />
+                    </div>
+                  </div>
                 </div>
                 <div className="col-12 col-lg-6">
-                  <div className="wp_inner">
+                  <div className="wp_inner pd-48-15">
                     {data.wordpressTitle && (
                       <h3 className="text-35_b_white mb-3">
                         {data.wordpressTitle}
@@ -250,23 +272,27 @@ export default function WebsiteDesignDev({ data }) {
               <div className="row g-0">
                 <div className="col-md-7">
                   <div className="wp_inner ps-lg-5">
-                    {data.customSitesTitle && (
-                      <h3 className="text-35_b_white mb-3">
-                        {data.customSitesTitle}
-                      </h3>
-                    )}
-                    {/* {data.customSitesDescription &&
-                                            <p className="txlh_20_30 mb-4">{data.customSitesDescription}</p>
-                                        } */}
+                    <div className="pd-48-15">
+                      {data.customSitesTitle && (
+                        <h3 className="text-35_b_white mb-3">
+                          {data.customSitesTitle}
+                        </h3>
+                      )}
+                      {/* {data.customSitesDescription &&
+                                              <p className="txlh_20_30 mb-4">{data.customSitesDescription}</p>
+                                          } */}
+                    </div>
                   </div>
                 </div>
                 {data.customSitesImage && (
-                  <div className="col-md-5">
-                    <div className="ps-0 sp-top-1">
-                      <img
-                        className="img-fluid w-100"
-                        src={data.customSitesImage.sourceUrl}
-                      />
+                  <div className="col-md-5 d-none d-md-block">
+                    <div className="pd-48-15">
+                      <div className="ps-0 sp-top-1">
+                        <img
+                          className="img-fluid w-100"
+                          src={data.customSitesImage.sourceUrl}
+                        />
+                      </div>
                     </div>
                   </div>
                 )}
@@ -299,45 +325,49 @@ export default function WebsiteDesignDev({ data }) {
             </div>
             <div className="col-12 col-md-11">
               <div className="row g-0">
-                <div className="col-12 col-lg-7">
-                  <div className="wp_inner had_new ps-lg-5">
-                    {data.serviceDetailsTitle && (
-                      <div
-                        className="d-flex align-items-center text-35_b_white mb-3"
-                        dangerouslySetInnerHTML={{
-                          __html: data.serviceDetailsTitle,
-                        }}
-                      ></div>
-                    )}
-                    {data.serviceDetailsDescription && (
-                      <div
-                        className="service-desc txlh_20_30"
-                        dangerouslySetInnerHTML={{
-                          __html: data.serviceDetailsDescription,
-                        }}
-                      ></div>
-                    )}
-                    {data.serviceDetailsSubtitle && (
-                      <h4 className="txlh_20_30 mb-4 ft-gilroy_b text-white">
-                        {data.serviceDetailsSubtitle}
-                      </h4>
-                    )}
-                    {data.seeOurWorkLink && (
-                      <div className="d-table">
-                        <a
-                          href={data.seeOurWorkLink}
-                          className="btn btn-yellow"
-                        >
-                          <span>See our work </span>
-                          <img src="/images/preview-22.png" alt="" />
-                        </a>
-                      </div>
-                    )}
+                <div className="col-12 col-lg-7 order-2 order-lg-1">
+                  <div className="wp_inner had_new ps-lg-5 mouse_content_cols">
+                    <div className="pd-48-15">
+                      {data.serviceDetailsTitle && (
+                        <div
+                          className="d-flex align-items-center text-35_b_white mb-3 mouse_content_bild"
+                          dangerouslySetInnerHTML={{
+                            __html: data.serviceDetailsTitle,
+                          }}
+                        ></div>
+                      )}
+                      {data.serviceDetailsDescription && (
+                        <div
+                          className="service-desc txlh_20_30"
+                          dangerouslySetInnerHTML={{
+                            __html: data.serviceDetailsDescription,
+                          }}
+                        ></div>
+                      )}
+                      {data.serviceDetailsSubtitle && (
+                        <h4 className="txlh_20_30 mb-4 ft-gilroy_b text-white">
+                          {data.serviceDetailsSubtitle}
+                        </h4>
+                      )}
+                      {data.seeOurWorkLink && (
+                        <div className="d-table">
+                          <a
+                            href={data.seeOurWorkLink}
+                            className="btn btn-yellow"
+                          >
+                            <span>See our work </span>
+                            <img src="/images/preview-22.png" alt="" />
+                          </a>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
-                <div className="col-12 col-lg-5">
-                  <div className="ps-0">
-                    <img className="img-fluid w-100" src="../images/hand.png" />
+                <div className="col-12 col-lg-5 order-1 order-lg-2">
+                  <div className="pd-48-15">
+                    <div className="ps-0">
+                      <img className="img-fluid w-100" src="../images/hand.png" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -352,43 +382,47 @@ export default function WebsiteDesignDev({ data }) {
             <div className="col-12 col-md-11">
               <div className="row g-0 align-items-center">
                 <div className="col-12 col-lg-6">
-                  <div className="ps-0 d-table">
-                    <img className="img-fluid" src="../images/svdetails.png" />
+                  <div className="pd-48-15">
+                    <div className="ps-0 d-table">
+                      <img className="img-fluid" src="../images/svdetails.png" />
+                    </div>
                   </div>
                 </div>
                 <div className="col-12 col-lg-6">
-                  <div className="wp_inner had_new">
-                    {data.designBlockTitle && (
-                      <h3 className="text-32_b_white mb-3">
-                        {data.designBlockTitle}
-                      </h3>
-                    )}
-                    {data.designBlockDescription && (
-                      <div
-                        className="txlh_20_30 mb-4"
-                        dangerouslySetInnerHTML={{
-                          __html: data.designBlockDescription,
-                        }}
-                      ></div>
-                    )}
-                    {data.designBlockSubTitle && (
-                      <div
-                        className="txlh_20_30 mb-5 ft-gilroy_b text-white"
-                        dangerouslySetInnerHTML={{
-                          __html: data.designBlockSubTitle,
-                        }}
-                      ></div>
-                    )}
-                    <div className="d-table">
-                      {data.seeOurWorkLinkDesign && (
-                        <a
-                          href={data.seeOurWorkLinkDesign}
-                          className="btn btn-yellow"
-                        >
-                          <span>See our work </span>
-                          <img src="/images/preview-22.png" alt="" />
-                        </a>
+                  <div className="pd-48-15 mouse_content_cols">
+                    <div className="wp_inner had_new">
+                      {data.designBlockTitle && (
+                        <h3 className="text-32_b_white mb-3">
+                          {data.designBlockTitle}
+                        </h3>
                       )}
+                      {data.designBlockDescription && (
+                        <div
+                          className="txlh_20_30 mb-4"
+                          dangerouslySetInnerHTML={{
+                            __html: data.designBlockDescription,
+                          }}
+                        ></div>
+                      )}
+                      {data.designBlockSubTitle && (
+                        <div
+                          className="txlh_20_30 mb-5 ft-gilroy_b text-white"
+                          dangerouslySetInnerHTML={{
+                            __html: data.designBlockSubTitle,
+                          }}
+                        ></div>
+                      )}
+                      <div className="d-table">
+                        {data.seeOurWorkLinkDesign && (
+                          <a
+                            href={data.seeOurWorkLinkDesign}
+                            className="btn btn-yellow"
+                          >
+                            <span>See our work </span>
+                            <img src="/images/preview-22.png" alt="" />
+                          </a>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
