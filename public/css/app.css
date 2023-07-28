@@ -2964,7 +2964,7 @@ footer .ft-child:first-child {
 .sec-3 {
   padding-bottom: 70px;
 }
-.benifit_ttl.activate .vr-title {
+.benifit_ttl.activate .vr-title, .benifit_ttl_mb.activate .vr-title_mb {
   color: #fff;
   font-weight: 700;
 }
@@ -4928,7 +4928,8 @@ a {
 .mouse_content_bild h3 { position: relative; display: flex; align-items: center; }
 .mouse_content_bild h3::after { content: ''; background: url(../images/preview-25.png) no-repeat; background-size: cover; display: inline-block; width: 39px; height: 48px; }
 .mouse_content_bild p { display: none; }
-.benifit_ttl_mb .vr-title_mb { font-size: 35px; color: #fff; font-family: "gilroy-bolduploaded_file"; }
+.benifit_ttl_mb .vr-title_mb { font-size: 35px; font-family: "gilroy-bolduploaded_file"; }
+.benifit_ttl_mb .vr-title_mb { color: rgba(255, 255, 255, 0.39); font-weight: 400; }
 
 
 /* responsive */
@@ -5010,6 +5011,21 @@ a {
   .col_bild img { opacity: 0.5; }
   .website_design_development { padding-top: 85px; }
   .design_development_container::after { right: -150px; }
+  .webDev .customSites_up .benifit__inner { padding-left: 48px !important; padding-right: 25px; }
+}
+@media (min-width: 768px) and (max-width: 1600px) {
+  .webDev .website_design_development .benifit_ttl { display: flex; justify-content: center; }
+  .webDev .website_design_development .wus__ttl .vr-title, .webDev .website_design_development .sec-4 { padding-bottom: 70px; }
+  .webDev .website_design_development .vr-title { font-size: 30px; }
+  .webDev .benifit__inner.benefit_list { padding-left: 0 !important; }
+  .pd-30-mix { padding-left: 30px; }
+  .webDev .benifit__inner.benefit_list::after { width: 200px; height: 200px; top: 80px; }
+  .webDev .websiteDesign .benifit__inner.benefit_list .list-inline-item .ffk_btn, .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(4) .ffk_btn, .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(5) .ffk_btn { padding: 14px 32px; font-size: 22px; }
+  .webDev .customSites_up .benifit__inner, .remove-lg-5-ps { padding-left: 0 !important; }
+  .webDev .websiteDesign .sec-3 { padding-bottom: 150px; }
+  .mouse_content_bild h3 { display: block; }
+  .mouse_content_bild h3::after { width: 24px; height: 29px; position: relative; top: 10px; background-size: cover; margin-left: 7px; }
+
 }
 @media (max-width: 991px) {
   .letsTalk_h1 { margin-bottom: 60px; }
@@ -5033,10 +5049,11 @@ a {
   .webDev .benifit__inner.benefit_list::after { content: none; }
   .im_moji.moji_para.banner-desc p:last-child { font-size: 35px; }
   .webDev .customSites_up .benifit__inner .ffk_btn { min-width: 180px !important; font-size: 16px; padding: 16px 15px; }
-  .webDev .customSites_up .benifit__inner { padding-left: 48px !important; padding-right: 25px; }
+  
   .sp-top-1 { opacity: 0.17; margin-top: -38px; width: 140%; }
-  .op_up { margin-top: 0; }
+  
   .mouse_content_cols { margin-top: 60px; }
+  .hand_pen img { max-width: 400px; }
   
 }
 @media (max-width: 767px) {
@@ -5081,12 +5098,24 @@ a {
   .mouse_content_bild h3::after { width: 24px; height: 29px; position: relative; top: 10px; background-size: cover; margin-left: 7px; }
   .banifit_up { padding-top: 100px; }
   .mb-stl { margin-bottom: 30px; }
+  .benifit_wp { max-width: 90px; }
+  .webDev .banifit_up .why__us { padding-bottom: 50px; }
+  .txlh_20_30, .txlh_20_30 p, .txlh_20_30 h4, .list_y_dots li { font-size: 16px; line-height: 26px; }
+  .ft-gilroy_b.txlh_20_30 { font-size: 18px; line-height: 30px; }
+  .webDev .websiteDesign .wp_m_info { padding-bottom: 60px; }
+  .webDev .websiteDesign .sec-3 { padding-bottom: 150px; }
+  .text-yy-md { color: #FDB627 !important; }
+  .webDev .websiteDesign .sec-4 { padding-bottom: 80px; }
+  .op_up { margin-top: 0; }
+
+}
+@media (max-width: 568px) {
+  .d-100-sm { width: 100%; }
 }
 @media (max-width: 425px) {
   .form_container h2 { font-size: 18px; }
   .letsTalk_inner h1 { font-size: 28px; line-height: 42px;}
   .bild-mob img { height: 460px; }
-  /* .design_development_container::after { right: -24%; top: 3%; } */
 }
 @media (max-width: 424px) {
   .benifit__inner.benefit_list_mb .list-inline-item { width: 100%; }
@@ -5095,4 +5124,5 @@ a {
   .webDev .websiteDesign .why__us h2 ~ p img { display: block; margin: 0 auto; }
   .webDev .websiteDesign .why__us p { font-size: 16px; line-height: 26px; }
   .webDev .customSites_up .benifit__inner { grid-template-columns: repeat(1, 1fr) !important; }
+  .benifit_ttl_mb .vr-title_mb { font-size: 28px; }
 }
