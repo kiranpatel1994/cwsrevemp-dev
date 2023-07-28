@@ -145,7 +145,7 @@ export default function WebsiteDesignDev({ data }) {
       <div className="banner__overlap">
         <div className="container-xl bbn_1">
           <div className="design_development_container"></div>
-          <div className="bottom_shape d-none d-md-block">
+          <div className="bottom_shape">
             <div className="floor-1">
               <div className="torusLandingLottie">
                 <div className="torusLandingContainer" />

@@ -31,15 +31,14 @@ export default function Ecommerce({ data }) {
 
     ScrollTrigger.create({
       trigger: ".gl_area",
-      start: "-=289",
+      start: "-=600",
       endTrigger: "#end_anim",
-      end: "+=800",
+      end: "+=1100",
       markers: false,
       scrub: -2,
       pinSpacing: false,
       animation: liftArow,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
+      once: true
     });
 
     gsap.to(".profitDrag", { scaleY: 0 });
@@ -51,30 +50,29 @@ export default function Ecommerce({ data }) {
 
     ScrollTrigger.create({
       trigger: "#start_anim",
-      start: "-=300",
+      start: "-=600",
       endTrigger: "#end_anim",
-      end: "+=800",
+      end: "+=1100",
       markers: false,
       scrub: -2,
       pinSpacing: false,
       animation: action,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
+      once: true
     });
 
     const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
     panels.forEach((panel, i) => {
       ScrollTrigger.create({
         trigger: panel,
-        start: "-=400",
-        end: "-=400",
+        start: "-=600",
+        end: "center",
         markers: false,
         onEnter: () => {
           panels[i].classList.add("activate");
         },
-        onEnterBack: () => {
-          panels[i].classList.remove("activate");
-        },
+        // onEnterBack: () => {
+        //   panels[i].classList.remove("activate");
+        // },
       });
     });
     document.body.classList.add("eCommerce");
@@ -107,30 +105,37 @@ export default function Ecommerce({ data }) {
         <div className="container-xl p-0">
           <div className="row g-0">
             <div className="col-12 ecom__info position-relative">
-              <h1>E-commerce Development </h1>
-              {data.bannerTagline && (
-                <h2 className="sub_title play_fair-ttl">
-                  {data.bannerTagline}
-                </h2>
-              )}
-              {data.bannerTitle && (
-                <div
-                  className="banner-h3 moji_ttl"
-                  dangerouslySetInnerHTML={{ __html: data.bannerTitle }}
-                ></div>
-              )}
-              {data.bannerDescription && (
-                <div
-                  className="banner-desc moji_para position-relative mb-5 im_moji"
-                  dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
-                ></div>
-              )}
+              <div className="banner_content_info">
+                <h1>E-commerce Development </h1>
+                {data.bannerTagline && (
+                  <h2 className="sub_title play_fair-ttl">
+                    {data.bannerTagline}
+                  </h2>
+                )}
+                {data.bannerTitle && (
+                  <div
+                    className="banner-h3 moji_ttl"
+                    dangerouslySetInnerHTML={{ __html: data.bannerTitle }}
+                  ></div>
+                )}
+                <div className="d-lg-none">
+                  <img src="../images/lp-bnr.png" alt="laBnnar" />
+                </div>
+                {data.bannerDescription && (
+                  <div
+                    className="banner-desc moji_para position-relative mb-5 im_moji"
+                    dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
+                  ></div>
+                )}
+              </div>
             </div>
           </div>
         </div>
-        {data.bannerImage && (
-          <img className="laptop__setup" src={data.bannerImage.sourceUrl} />
-        )}
+        <div className="d-none d-lg-block">
+          {data.bannerImage && (
+            <img className="laptop__setup" src={data.bannerImage.sourceUrl} />
+          )}
+        </div>
       </div>
       <div className="gl_area ecommerce_page">
         <div className="container-xl position-relative p-0">
