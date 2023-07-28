@@ -6,6 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json";
 
+
 export default function WebsiteDesignDev({ data }) {
   useEffect(() => {
     lottie.loadAnimation({
@@ -16,61 +17,125 @@ export default function WebsiteDesignDev({ data }) {
       animationData: torusLanding,
     });
 
-    gsap.set(".dragWithme", { top: "-10px" });
-    const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
+    
 
-    ScrollTrigger.create({
-      trigger: ".gl_area",
-      start: "-=600",
-      endTrigger: "#end_anim",
-      end: "+=3000",
-      markers: false,
-      scrub: -2,
-      pinSpacing: false,
-      animation: liftArow,
-      once: true
-    });
+    
 
-    gsap.to(".profitDrag", { scaleY: 0 });
-    const action = gsap.to(".profitDrag", {
-      scaleY: "100%",
-      transformOrigin: "top bottom",
-      ease: "none",
-    });
 
-    ScrollTrigger.create({
-      trigger: "#start_anim",
-      start: "-=600",
-      endTrigger: "#end_anim",
-      end: "+=3000",
-      markers: false,
-      scrub: -2,
-      pinSpacing: false,
-      animation: action,
-      once: true      
-    });
+    if (typeof(window) !== "undefined") {
+      gsap.set(".dragWithme", { top: "-10px" });
+      const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
 
-    const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
-    panels.forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "-=500",
-        end: "center",
-        markers: false,
-        onEnter: () => {
-          panels[i].classList.add("activate");
-        },
-        // onEnterBack: () => {
-        //   panels[i].classList.remove("activate");
-        // },
+      gsap.to(".profitDrag", { scaleY: 0 });
+      const action = gsap.to(".profitDrag", {
+        scaleY: "100%",
+        transformOrigin: "top bottom",
+        ease: "none",
       });
-    });
+      const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
+      
+      if (window.innerWidth >= 1024) {
+        ScrollTrigger.create({
+          trigger: ".gl_area",
+          start: "-=600",
+          endTrigger: "#end_anim",
+          end: "+=3000",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: liftArow,
+          once: true
+        });
+    
+        ScrollTrigger.create({
+          trigger: "#start_anim",
+          start: "-=600",
+          endTrigger: "#end_anim",
+          end: "+=3000",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: action,
+          once: true      
+        });
+    
+        panels.forEach((panel, i) => {
+          ScrollTrigger.create({
+            trigger: panel,
+            start: "-=600",
+            end: "center",
+            markers: false,
+            onEnter: () => {
+              panels[i].classList.add("activate");
+            },
+            // onEnterBack: () => {
+            //   panels[i].classList.remove("activate");
+            // },
+          });
+        });
+        
+      } else {
+
+        gsap.set(".dragWithme", { top: "-10px" });
+        const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
+
+        ScrollTrigger.create({
+          trigger: ".gl_area",
+          start: "-=200",
+          endTrigger: ".end_anim",
+          end: "bottom +=300",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: liftArow,
+          once: true
+        });
+
+        gsap.to(".profitDrag", { scaleY: 0 });
+        const action = gsap.to(".profitDrag", {
+          scaleY: "100%",
+          transformOrigin: "top bottom",
+          ease: "none",
+        });
+        ScrollTrigger.create({
+          trigger: ".start_anim",
+          start: "-=200",
+          endTrigger: ".end_anim",
+          end: "bottom +=300",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: action,
+          once: true      
+        });
+    
+        const panels = gsap.utils.toArray([".gl_area .benifit_ttl_mb"]);
+        panels.forEach((panel, i) => {
+          ScrollTrigger.create({
+            trigger: panel,
+            start: "-=250",
+            end: "center",
+            markers: false,
+            onEnter: () => {
+              panels[i].classList.add("activate");
+            },
+            // onEnterBack: () => {
+            //   panels[i].classList.remove("activate");
+            // },
+          });
+        });
+      }
+    }
+
 
     document.body.classList.add("webDev");
     return () => {
       document.body.classList.remove("webDev");
     };
+
   }, []);
+
+  
 
   return (
     <main
@@ -134,7 +199,7 @@ export default function WebsiteDesignDev({ data }) {
               <img src="../images/smArrow.png" />
             </div>
           </div>
-          <section className="row get_row g-0 sec-1" id="start_anim">
+          <section className="row get_row g-0 sec-1 start_anim" id="start_anim">
             <div className="col-12 col-md-1 d-none d-md-block benit__ttl">
               {data.benefitsTitle && (
                 <div className="benifit_ttl">
@@ -142,7 +207,7 @@ export default function WebsiteDesignDev({ data }) {
                 </div>
               )}
             </div>
-            <div className="col-12 col-md-11">
+            <div className="col-12 col-md-11 pd-30-mix">
               <div className="d-md-none">
                 {data.benefitsTitle && (
                   <div className="benifit_ttl_mb pd-48-15">
@@ -155,7 +220,7 @@ export default function WebsiteDesignDev({ data }) {
                   {data.benefitsBlocks.map((item, index) => {
                     return (
                       <li className="list-inline-item col-6 col-md-auto" key={`benefit-${index}`}>
-                        <div className="ffk_btn d-flex flex-column">
+                        <div className="ffk_btn d-flex flex-column justify-content-center">
                           <div className="d-md-none position-relative zindex-3 mb-3">
                             <img src="../images/bnf-1.png" />
                           </div>
@@ -174,8 +239,8 @@ export default function WebsiteDesignDev({ data }) {
                 <h3 className="vr-title">Why Us</h3>
               </div>
             </div>
-            <div className="col-12 col-md-11">
-            <div className="d-md-none">
+            <div className="col-12 col-md-11 pd-30-mix">
+              <div className="d-md-none">
                 <div className="benifit_ttl_mb mb-stl pd-48-15">
                   <h3 className="vr-title_mb">Why Us</h3>
                 </div>
@@ -217,23 +282,23 @@ export default function WebsiteDesignDev({ data }) {
                 <h3 className="vr-title">WordPress</h3>
               </div>
             </div>
-            <div className="col-12 col-md-11">
+            <div className="col-12 col-md-11 pd-30-mix">
               <div className="row g-0 wp_m_info align-items-center">
                 <div className="col-12 col-lg-6">
-                  <div className="d-none d-md-block">
+                  <div className="d-none d-md-block pe-md-3 pe-xxl-0">
                     <img className="img-fluid" src="../images/wp-in.png" />
                   </div>
                   <div className="d-md-none pd-48-15">
-                    <div className="d-flex align-items-center">
+                    <div className="d-flex align-items-center mb-4">
                       <div className="benifit_ttl_mb me-4">
                         <h3 className="vr-title_mb">WordPress </h3>
                       </div>
-                      <img className="img-fluid" src="../images/WordPress-Logo-Free-Download-PNG.png" />
+                      <img className="benifit_wp img-fluid" src="../images/WordPress-Logo-Free-Download-PNG.png" />
                     </div>
                   </div>
                 </div>
                 <div className="col-12 col-lg-6">
-                  <div className="wp_inner pd-48-15">
+                  <div className="wp_inner ps-md-3 pe-md-3 ps-xxl-0 pe-xxl-0 pd-48-15">
                     {data.wordpressTitle && (
                       <h3 className="text-35_b_white mb-3">
                         {data.wordpressTitle}
@@ -257,7 +322,7 @@ export default function WebsiteDesignDev({ data }) {
                       </ul>
                     )}
                     {data.getQuoteLink && (
-                      <div className="d-table">
+                      <div className="d-table d-100-sm">
                         <a
                           className="btn btn-yellow ft-gilroy_b fw-bold"
                           href={data.getQuoteLink}
@@ -271,7 +336,7 @@ export default function WebsiteDesignDev({ data }) {
               </div>
               <div className="row g-0">
                 <div className="col-md-7">
-                  <div className="wp_inner ps-lg-5">
+                  <div className="wp_inner ps-lg-5 remove-lg-5-ps">
                     <div className="pd-48-15">
                       {data.customSitesTitle && (
                         <h3 className="text-35_b_white mb-3">
@@ -323,10 +388,15 @@ export default function WebsiteDesignDev({ data }) {
                 <h3 className="vr-title">Service Details</h3>
               </div>
             </div>
-            <div className="col-12 col-md-11">
+            <div className="col-12 col-md-11 pd-30-mix">
+              <div className="d-md-none">
+                <div className="benifit_ttl_mb mb-stl pd-48-15">
+                  <h3 className="vr-title_mb">Service Details </h3>
+                </div>
+              </div>
               <div className="row g-0">
                 <div className="col-12 col-lg-7 order-2 order-lg-1">
-                  <div className="wp_inner had_new ps-lg-5 mouse_content_cols">
+                  <div className="wp_inner had_new ps-lg-5 mouse_content_cols remove-lg-5-ps">
                     <div className="pd-48-15">
                       {data.serviceDetailsTitle && (
                         <div
@@ -339,18 +409,18 @@ export default function WebsiteDesignDev({ data }) {
                       {data.serviceDetailsDescription && (
                         <div
                           className="service-desc txlh_20_30"
-                          dangerouslySetInnerHTML={{
+                          dangerouslySetInnerHTML={{ 
                             __html: data.serviceDetailsDescription,
                           }}
                         ></div>
                       )}
                       {data.serviceDetailsSubtitle && (
-                        <h4 className="txlh_20_30 mb-4 ft-gilroy_b text-white">
+                        <h4 className="txlh_20_30 mb-4 ft-gilroy_b text-white text-yy-md">
                           {data.serviceDetailsSubtitle}
                         </h4>
                       )}
                       {data.seeOurWorkLink && (
-                        <div className="d-table">
+                        <div className="d-table d-100-sm">
                           <a
                             href={data.seeOurWorkLink}
                             className="btn btn-yellow"
@@ -365,7 +435,7 @@ export default function WebsiteDesignDev({ data }) {
                 </div>
                 <div className="col-12 col-lg-5 order-1 order-lg-2">
                   <div className="pd-48-15">
-                    <div className="ps-0">
+                    <div className="ps-0 hand_pen">
                       <img className="img-fluid w-100" src="../images/hand.png" />
                     </div>
                   </div>
@@ -373,13 +443,13 @@ export default function WebsiteDesignDev({ data }) {
               </div>
             </div>
           </section>
-          <section className="row get_row g-0 sec-5" id="end_anim">
+          <section className="row get_row g-0 sec-5 end_anim" id="end_anim">
             <div className="col-12 col-md-1 d-none d-md-block serv__ttl">
               <div className="benifit_ttl">
                 <h3 className="vr-title">Service Details</h3>
               </div>
             </div>
-            <div className="col-12 col-md-11">
+            <div className="col-12 col-md-11 pd-30-mix">
               <div className="row g-0 align-items-center">
                 <div className="col-12 col-lg-6">
                   <div className="pd-48-15">
@@ -412,7 +482,7 @@ export default function WebsiteDesignDev({ data }) {
                           }}
                         ></div>
                       )}
-                      <div className="d-table">
+                      <div className="d-table d-100-sm">
                         {data.seeOurWorkLinkDesign && (
                           <a
                             href={data.seeOurWorkLinkDesign}
