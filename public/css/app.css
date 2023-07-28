@@ -2687,7 +2687,8 @@ footer .ft-child:first-child {
 }
 .banner_content {
   margin-bottom: 150px;
-  padding-bottom: 23%;
+  /* padding-bottom: 23%; */
+  padding-bottom: 437px
 }
 .webDev .website_design_development .banner_content {
   padding-bottom: 437px
@@ -4979,6 +4980,8 @@ a {
   .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(4) .ffk_btn { margin-left: 0; }
   .webDev .customSites_up .benifit__inner .ffk_btn { font-size: 18px; min-width: 261px; }
   .webDev .customSites_up .benifit__inner .list-inline-item:nth-child(5), .webDev .customSites_up .benifit__inner .list-inline-item:nth-child(6), .webDev .customSites_up .benifit__inner .list-inline-item:nth-child(7), .webDev .customSites_up .benifit__inner .list-inline-item:nth-child(8) { left: 0 !important; }
+  .moji_para p:nth-last-child(2)::after, .design_development_container::before { content: none; }
+  .bottom_shape { display: none; }
 }
 @media (max-width: 1440px) {
   .map-placeholder::before { top: 45%; height: 258px; width: 258px; left: -100px; }
@@ -5012,6 +5015,7 @@ a {
   .website_design_development { padding-top: 85px; }
   .design_development_container::after { right: -150px; }
   .webDev .customSites_up .benifit__inner { padding-left: 48px !important; padding-right: 25px; }
+  .ecom__info p { max-width: 710px; }
 }
 @media (min-width: 768px) and (max-width: 1600px) {
   .webDev .website_design_development .benifit_ttl { display: flex; justify-content: center; }
@@ -5042,11 +5046,11 @@ a {
   .blog__detail .blog__cover img { height: 280px; }
   .bologDetail_center .date_tag { font-size: 16px; }
   .banner_content_info h2 { display: none; }
-  .webDev .moji_para p { font-size: 18px; line-height: 28px; }
+  .webDev .moji_para p, .eCommerce .moji_para p { font-size: 18px; line-height: 28px; }
   .website_design_development .banner_content h1 { font-size: 35px; line-height: 45px; }
   .design_development_container::after { width: 201px; height: 201px; background-size: cover; transform: rotate(-25deg); z-index: 2; right: -80px; top: 0; }
   .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item .ffk_btn { font-size: 20px; padding: 14px 35px; }
-  .webDev .benifit__inner.benefit_list::after { content: none; }
+  .webDev .benifit__inner.benefit_list::after, .ecom_development_container.design_development_container::after { content: none; }
   .im_moji.moji_para.banner-desc p:last-child { font-size: 35px; }
   .webDev .customSites_up .benifit__inner .ffk_btn { min-width: 180px !important; font-size: 16px; padding: 16px 15px; }
   
@@ -5076,7 +5080,7 @@ a {
   .artical__card .card_max_width .blogs__tag { margin-bottom: 20px !important; margin-left: 5px; }
   .artical__card .card_max_width figure .card_max_width_fig { position: relative; }
   .artical__card .card_max_width figure .card_max_width_fig::after { content: ''; background: url(../images/rendering.png) no-repeat; position: absolute; bottom: 0; left: 0; right: 0; height: 132px; z-index: 2; background-size: cover; }
-  .moji_para p:nth-last-child(2)::after, .design_development_container::before { content: none; }
+  
   .laptop_setup { display: none; }
   .banner_content_info { text-align: center; }
   .banner_content_info .banner-h3.moji_ttl h3 { font-size: 20px; max-width: 278px; margin-left: auto; margin-right: auto; }
