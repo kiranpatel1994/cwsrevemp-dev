@@ -17,11 +17,6 @@ export default function WebsiteDesignDev({ data }) {
       animationData: torusLanding,
     });
 
-    
-
-    
-
-
     if (typeof(window) !== "undefined") {
       gsap.set(".dragWithme", { top: "-10px" });
       const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
@@ -56,7 +51,7 @@ export default function WebsiteDesignDev({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true      
+          once: true
         });
     
         panels.forEach((panel, i) => {

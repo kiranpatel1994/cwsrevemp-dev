@@ -3043,6 +3043,7 @@ footer .ft-child:first-child {
 }
 .ecommerce_page.gl_area .benifit__inner {
   max-width: 100%;
+  justify-content: flex-start;
 }
 .ecommerce_page.gl_area .ffk_btn {
   padding: 24px 25px;
@@ -3166,6 +3167,7 @@ footer .ft-child:first-child {
   position: absolute;
   top: -17%;
   left: 52%;
+  pointer-events: none;
 }
 .mix_bland::after {
   content: "";
@@ -3176,6 +3178,7 @@ footer .ft-child:first-child {
   bottom: 0;
   background-color: #07042b;
   mix-blend-mode: color;
+  pointer-events: none;
 }
 .gl_area p strong,
 .ecom__info p strong {
@@ -4982,6 +4985,10 @@ a {
   .webDev .customSites_up .benifit__inner .list-inline-item:nth-child(5), .webDev .customSites_up .benifit__inner .list-inline-item:nth-child(6), .webDev .customSites_up .benifit__inner .list-inline-item:nth-child(7), .webDev .customSites_up .benifit__inner .list-inline-item:nth-child(8) { left: 0 !important; }
   .moji_para p:nth-last-child(2)::after, .design_development_container::before { content: none; }
   .bottom_shape { display: none; }
+  .hosting .banner_content_info { max-width: 620px; }
+  .hosting .cloudServer { width: 100% !important; }
+  .hosting .mix_bland { top: 10% !important; }
+  .hosting .ecom__info .moji_ttl br { display: none; }
 }
 @media (max-width: 1440px) {
   .map-placeholder::before { top: 45%; height: 258px; width: 258px; left: -100px; }
@@ -4995,6 +5002,9 @@ a {
   .bologDetail_center .title__content h2, .bologDetail_center .title__content h3, .bologDetail_center .title__content h4, .bologDetail_center .title__content h5, .bologDetail_center .title__content h6 { font-size: 20px; line-height: 28px; margin-bottom: 20px; }
   .website_design_development .banner_content h1 { font-size: 45px; line-height: 40px; }
   .design_development_container::after { width: 401px; height: 401px; background-size: cover; right: -210px; top: -2%; }
+  .secOnlineShoping { max-width: 350px; right: -15%; top: -30px; }
+  .hosting .hosting_inner .banner_content { padding-top: 30px; }
+  .hosting .mix_bland { top: 5% !important; }
 }
 @media (max-width: 1300px) {
   .webDev .customSites_up .benifit__inner { grid-template-columns: repeat(2, 1fr) !important; }
@@ -5016,11 +5026,13 @@ a {
   .design_development_container::after { right: -150px; }
   .webDev .customSites_up .benifit__inner { padding-left: 48px !important; padding-right: 25px; }
   .ecom__info p { max-width: 710px; }
+  .benifit__inner .list-inline-item:not(:last-child) { margin-right: 15px; }
+  .benifit__inner .list-inline-item { margin-bottom: 15px; }
 }
 @media (min-width: 768px) and (max-width: 1600px) {
-  .webDev .website_design_development .benifit_ttl { display: flex; justify-content: center; }
+  .webDev .website_design_development .benifit_ttl, .eCommerce .ecommerce_page .benifit_ttl { display: flex; justify-content: center; }
   .webDev .website_design_development .wus__ttl .vr-title, .webDev .website_design_development .sec-4 { padding-bottom: 70px; }
-  .webDev .website_design_development .vr-title { font-size: 30px; }
+  .webDev .website_design_development .vr-title, .eCommerce .ecommerce_page .vr-title { font-size: 30px; }
   .webDev .benifit__inner.benefit_list { padding-left: 0 !important; }
   .pd-30-mix { padding-left: 30px; }
   .webDev .benifit__inner.benefit_list::after { width: 200px; height: 200px; top: 80px; }
@@ -5053,12 +5065,17 @@ a {
   .webDev .benifit__inner.benefit_list::after, .ecom_development_container.design_development_container::after { content: none; }
   .im_moji.moji_para.banner-desc p:last-child { font-size: 35px; }
   .webDev .customSites_up .benifit__inner .ffk_btn { min-width: 180px !important; font-size: 16px; padding: 16px 15px; }
-  
   .sp-top-1 { opacity: 0.17; margin-top: -38px; width: 140%; }
-  
   .mouse_content_cols { margin-top: 60px; }
   .hand_pen img { max-width: 400px; }
-  
+  .benifit__inner .list-inline-item:nth-child(even) { position: static; }
+  .eCommerce .banner_content .ecom__info::after { width: 91px; height: 73px; right: 20px; left: auto; transform: rotate(-35deg); bottom: -24%; }
+  .ecommerce_page .sec-1 { padding-bottom: 80px; }
+  .eCommerce .gl_area.ecommerce_page::before { content: none !important; }
+  .hosting .mix_bland_2 { left: 0 !important; right: 0; }
+  .hosting .ecom__info .moji_ttl h3 { font-size: 20px; line-height: 28px; }
+  .hosting .hosting_inner .banner_content { padding-top: 0; }
+  .hosting .mix_bland_2 { margin-bottom: 80px; }
 }
 @media (max-width: 767px) {
   .webDev .moji_para p { font-size: 16px; line-height: 26px !important; max-width: 348px; margin-left: auto; margin-right: auto; text-align: center; }
@@ -5087,13 +5104,14 @@ a {
   .webDev .banner_content_info .moji_ttl img { top: 5px; right: -5px; max-width: 35px; }
   .design_development_container::after { top: 3.5%; }
   .banner_content_info .banner-h3 { margin-bottom: 45px; }
-  .webDev .benifit__inner.benefit_list.benefit_list_mb { padding-left: 48px; padding-right: 15px; margin-top: 20px; }
+  .webDev .benifit__inner.benefit_list.benefit_list_mb, .eCommerce .benifit__inner.benefit_list.benefit_list_mb { padding-left: 48px; padding-right: 15px; margin-top: 20px; }
   .line_anim { left: 15px; }
-  .gl_area.websiteDesign .ffk_btn span { font-size: 16px; line-height: 21px; }
+  .gl_area.websiteDesign .ffk_btn span, .eCommerce .gl_area .ffk_btn span { font-size: 16px; line-height: 21px; }
   .webDev .websiteDesign .benifit__inner.benefit_list .list-inline-item .ffk_btn, .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(4) .ffk_btn, .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(5) .ffk_btn { max-width: 100%; padding: 24px 32px; border-radius: 24px; }
+  .ecommerce_page.gl_area .ffk_btn { max-width: 100%; padding: 24px 22px; border-radius: 24px; }
   .benifit__inner.benefit_list_mb .list-inline-item { margin: 0; padding-bottom: 9px; }
   .pd-48-15 { padding-left: 48px; padding-right: 15px; }
-  .webDev .websiteDesign .why__us h2 { font-size: 25px; line-height: 30px; }
+  .webDev .websiteDesign .why__us h2, .eCommerce .ecommerce_page .why__us h2 { font-size: 25px; line-height: 30px; }
   .webDev .websiteDesign .why__us h2 ~ p img { max-width: 115px; }
   .op_up.customSites_up { position: relative; }
   .op_up.customSites_up::before { content: ''; background: url(../images/gr-bild.png) no-repeat; position: absolute; top: -40px; right: -250px; height: 356px; width: 498px; }
@@ -5104,13 +5122,24 @@ a {
   .mb-stl { margin-bottom: 30px; }
   .benifit_wp { max-width: 90px; }
   .webDev .banifit_up .why__us { padding-bottom: 50px; }
-  .txlh_20_30, .txlh_20_30 p, .txlh_20_30 h4, .list_y_dots li { font-size: 16px; line-height: 26px; }
+  .txlh_20_30, .txlh_20_30 p, .txlh_20_30 h4, .list_y_dots li, .eCommerce .ecommerce_page .why__us p { font-size: 16px; line-height: 26px; }
   .ft-gilroy_b.txlh_20_30 { font-size: 18px; line-height: 30px; }
   .webDev .websiteDesign .wp_m_info { padding-bottom: 60px; }
   .webDev .websiteDesign .sec-3 { padding-bottom: 150px; }
   .text-yy-md { color: #FDB627 !important; }
   .webDev .websiteDesign .sec-4 { padding-bottom: 80px; }
   .op_up { margin-top: 0; }
+  .banner_content_info .banner-h3.moji_ttl.banner-h3_mob h3 { max-width: 350px; }
+  .ecom__info .moji_ttl.banner-desc_mob { display: table; margin-left: auto; margin-right: auto; }
+  .ecom__info .moji_ttl.banner-desc_mob img { position: absolute; top: -30px; right: -10px; left: auto; max-width: 36px; }
+  .bild-lp { margin-bottom: 40px; }
+  .eCommerce .moji_para p, .hosting .ecom__info p { font-size: 16px; line-height: 26px; }
+  .eCommerce .moji_para p br { display: none; }
+  .ecommerce_page .sec-2::before { content: none; }
+  .why-us-mob p:last-child { font-family: "gilroy-bolduploaded_file"; font-size: 18px !important; }
+  .wp_inner_mob .text-32_b_white { max-width: 310px; }
+  .hosting .ecom__info .moji_ttl { max-width: 390px; margin-left: auto; margin-right: auto; margin: 0 auto 40px; }
+  .hosting .ecom__info p { max-width: 350px; margin-left: auto; margin-right: auto; }
 
 }
 @media (max-width: 568px) {
@@ -5129,4 +5158,8 @@ a {
   .webDev .websiteDesign .why__us p { font-size: 16px; line-height: 26px; }
   .webDev .customSites_up .benifit__inner { grid-template-columns: repeat(1, 1fr) !important; }
   .benifit_ttl_mb .vr-title_mb { font-size: 28px; }
+}
+@media (max-width: 359px) {
+  .banner_content_info .banner-h3.moji_ttl.banner-h3_mob h3 { max-width: 190px; }
+  .ecom__info .moji_ttl.banner-desc_mob img { top: -10px; right: -30px; }
 }

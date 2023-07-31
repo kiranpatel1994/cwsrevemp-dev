@@ -27,6 +27,13 @@ export default function Hosting({ data }) {
       autoplay: true,
       animationData: cloudServer,
     });
+    lottie.loadAnimation({
+      container: document.querySelector(".cloudServerContainer1"),
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      animationData: cloudServer,
+    });
 
     lottie.loadAnimation({
       container: document.querySelector(".hostingServerContainer"),
@@ -41,15 +48,14 @@ export default function Hosting({ data }) {
 
     ScrollTrigger.create({
       trigger: ".gl_area",
-      start: "-=259",
+      start: "-=600",
       endTrigger: "#end_anim",
-      end: "+=1500",
+      end: "+=1700",
       markers: false,
       scrub: -2,
       pinSpacing: false,
       animation: liftArow,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
+      once: true
     });
 
     gsap.to(".profitDrag", { scaleY: 0 });
@@ -61,32 +67,32 @@ export default function Hosting({ data }) {
 
     ScrollTrigger.create({
       trigger: "#start_anim",
-      start: "-=270",
+      start: "-=600",
       endTrigger: "#end_anim",
-      end: "+=1500",
+      end: "+=1700",
       markers: false,
       scrub: -2,
       pinSpacing: false,
       animation: action,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
+      once: true
     });
 
     const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
     panels.forEach((panel, i) => {
       ScrollTrigger.create({
         trigger: panel,
-        start: "-=270",
-        end: "-=270",
+        start: "-=600",
+        end: "center",
         markers: false,
         onEnter: () => {
           panels[i].classList.add("activate");
         },
-        onEnterBack: () => {
-          panels[i].classList.remove("activate");
-        },
+        // onEnterBack: () => {
+        //   panels[i].classList.remove("activate");
+        // },
       });
     });
+    
     document.body.classList.add("hosting");
     return () => {
       document.body.classList.remove("hosting");
@@ -114,36 +120,49 @@ export default function Hosting({ data }) {
         <div className="container-xl p-0">
           <div className="row g-0">
             <div className="col-12 ecom__info position-relative">
-              <h1>Hosting </h1>
-              <div className="sub_title play_fair-ttl d-flex justify-content-start align-items-center ">
-                {data.bannerTagline && <h2>{data.bannerTagline}</h2>}
-                <div className="hostingServer ms-5">
-                  <div
-                    className="hostingServerContainer"
-                    style={{ width: "65px" }}
-                  />
+              <div className="banner_content_info">
+                <h1>Hosting </h1>
+                <div className="sub_title play_fair-ttl d-flex justify-content-start align-items-center d-none d-lg-flex">
+                  {data.bannerTagline && <h2>{data.bannerTagline}</h2>}
+                  <div className="hostingServer ms-5">
+                    <div
+                      className="hostingServerContainer"
+                      style={{ width: "65px" }}
+                    />
+                  </div>
                 </div>
+                {data.bannerTitle && (
+                  <div
+                    className="moji_ttl"
+                    dangerouslySetInnerHTML={{ __html: data.bannerTitle }}
+                  ></div>
+                )}
+                <div className="d-lg-none">
+                  {data.bannerImage.sourceUrl && (
+                    <div className="mix_bland mix_bland_2 position-relative">
+                      <div className="cloudServer w-100">
+                        <div className="cloudServerContainer1" />
+                      </div>
+                    </div>
+                  )}
+                </div>
+                {data.bannerDescription && (
+                  <p className="mb-4">{data.bannerDescription}</p>
+                )}
               </div>
-              {data.bannerTitle && (
-                <div
-                  className="moji_ttl"
-                  dangerouslySetInnerHTML={{ __html: data.bannerTitle }}
-                ></div>
-              )}
-              {data.bannerDescription && (
-                <p className="mb-4">{data.bannerDescription}</p>
-              )}
+
             </div>
           </div>
         </div>
-        {data.bannerImage.sourceUrl && (
-          <div className="mix_bland">
-            {/* <img className="laptopp__setup" src={data.bannerImage.sourceUrl} /> */}
-            <div className="cloudServer">
-              <div className="cloudServerContainer" />
+        <div className="d-none d-lg-block">
+          {data.bannerImage.sourceUrl && (
+            <div className="mix_bland">
+              <div className="cloudServer">
+                <div className="cloudServerContainer" />
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
       <div className="gl_area hosting_page">
         <div className="container-xl position-relative p-0">
