@@ -5030,9 +5030,9 @@ a {
   .benifit__inner .list-inline-item { margin-bottom: 15px; }
 }
 @media (min-width: 768px) and (max-width: 1600px) {
-  .webDev .website_design_development .benifit_ttl, .eCommerce .ecommerce_page .benifit_ttl { display: flex; justify-content: center; }
+  .benifit_ttl { display: flex; justify-content: center; }
   .webDev .website_design_development .wus__ttl .vr-title, .webDev .website_design_development .sec-4 { padding-bottom: 70px; }
-  .webDev .website_design_development .vr-title, .eCommerce .ecommerce_page .vr-title { font-size: 30px; }
+  .vr-title { font-size: 30px; }
   .webDev .benifit__inner.benefit_list { padding-left: 0 !important; }
   .pd-30-mix { padding-left: 30px; }
   .webDev .benifit__inner.benefit_list::after { width: 200px; height: 200px; top: 80px; }
