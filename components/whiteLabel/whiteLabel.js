@@ -25,57 +25,106 @@ export default function WhiteLabel({ data, themeOptions, form }) {
       animationData: torusLanding,
     });
 
-    gsap.set(".dragWithme", { top: "-10px" });
-    const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
+    if (typeof(window) !== "undefined") {
+      gsap.set(".dragWithme", { top: "-10px" });
+      const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
 
-    ScrollTrigger.create({
-      trigger: ".gl_area",
-      start: "-=259",
-      endTrigger: "#end_anim",
-      end: "+=1400",
-      markers: false,
-      scrub: -2,
-      pinSpacing: false,
-      animation: liftArow,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
-    });
-
-    gsap.to(".profitDrag", { scaleY: 0 });
-    const action = gsap.to(".profitDrag", {
-      scaleY: "100%",
-      transformOrigin: "top bottom",
-      ease: "none",
-    });
-
-    ScrollTrigger.create({
-      trigger: "#start_anim",
-      start: "-=270",
-      endTrigger: "#end_anim",
-      end: "+=1400",
-      markers: false,
-      scrub: -2,
-      pinSpacing: false,
-      animation: action,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
-    });
-
-    const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
-    panels.forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "-=270",
-        end: "-=270",
-        markers: false,
-        onEnter: () => {
-          panels[i].classList.add("activate");
-        },
-        onEnterBack: () => {
-          panels[i].classList.remove("activate");
-        },
+      gsap.to(".profitDrag", { scaleY: 0 });
+      const action = gsap.to(".profitDrag", {
+        scaleY: "100%",
+        transformOrigin: "top bottom",
+        ease: "none",
       });
-    });
+      const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
+
+      if (window.innerWidth >= 1024) {
+        ScrollTrigger.create({
+          trigger: ".gl_area",
+          start: "-=259",
+          endTrigger: "#end_anim",
+          end: "+=1400",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: liftArow,
+          toggleActions: "play none none none",
+          //   toggleClass: "active"
+        });
+
+        ScrollTrigger.create({
+          trigger: "#start_anim",
+          start: "-=270",
+          endTrigger: "#end_anim",
+          end: "+=1400",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: action,
+          toggleActions: "play none none none",
+          //   toggleClass: "active"
+        });
+
+        const panels = gsap.utils.toArray(".gl_area .benifit_ttl_mb");
+        panels.forEach((panel, i) => {
+          ScrollTrigger.create({
+            trigger: panel,
+            start: "-=270",
+            end: "-=270",
+            markers: false,
+            onEnter: () => {
+              panels[i].classList.add("activate");
+            },
+            onEnterBack: () => {
+              panels[i].classList.remove("activate");
+            },
+          });
+        });
+      } else {
+
+        ScrollTrigger.create({
+          trigger: ".gl_area",
+          start: "-=259",
+          endTrigger: "#end_anim",
+          end: "+=1400",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: liftArow,
+          toggleActions: "play none none none",
+          //   toggleClass: "active"
+        });
+
+        ScrollTrigger.create({
+          trigger: "#start_anim",
+          start: "-=270",
+          endTrigger: "#end_anim",
+          end: "+=1400",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: action,
+          toggleActions: "play none none none",
+          //   toggleClass: "active"
+        });
+
+        const panels = gsap.utils.toArray(".gl_area .benifit_ttl_mb");
+        panels.forEach((panel, i) => {
+          ScrollTrigger.create({
+            trigger: panel,
+            start: "-=270",
+            end: "-=270",
+            markers: false,
+            onEnter: () => {
+              panels[i].classList.add("activate");
+            },
+            onEnterBack: () => {
+              panels[i].classList.remove("activate");
+            },
+          });
+        });
+      }
+    }
+
     document.body.classList.add("white-label");
     return () => {
       document.body.classList.remove("white-label");
@@ -109,9 +158,9 @@ export default function WhiteLabel({ data, themeOptions, form }) {
         </div>
       </div>
       <div className="banner_content position-relative overflow-hidden">
-        <div className="container-xl p-0">
+        <div className="container p-lg-0">
           <div className="row g-0">
-            <div className="col-12 col-md-7 ecom__info position-relative">
+            <div className="col-12 col-xl-7 ecom__info position-relative">
               <h1>White Label Solutions </h1>
               {data.bannerTagline && (
                 <div className="sub_title play_fair-ttl">
@@ -126,16 +175,25 @@ export default function WhiteLabel({ data, themeOptions, form }) {
               )}
               {data.bannerDescription && (
                 <div
-                  className="mb-4"
+                  className="mb-4 d-xl-block d-none"
                   dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
                 ></div>
               )}
             </div>
             {data.bannerImage && (
-              <div className="col-12 col-md-5 position-relative group__bild">
+              <div className="col-12 col-xl-5 position-relative group__bild">
                 <img className="img-fluid" src={data.bannerImage.sourceUrl} />
               </div>
             )}
+
+            <div className="d-xl-none d-block mobileDesc">
+              {data.bannerDescription && (
+                <div
+                  className="mb-4"
+                  dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
+                ></div>
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -148,14 +206,19 @@ export default function WhiteLabel({ data, themeOptions, form }) {
             </div>
           </div>
           <section className="row get_row g-0 sec-1" id="start_anim">
-            <div className="col-1 benit__ttl">
+            <div className="col-12 col-md-1 d-none d-md-block benit__ttl">
               <div className="benifit_ttl">
                 <h3 className="vr-title">Benefits</h3>
               </div>
             </div>
-            <div className="col-11">
+            <div className="col-12 col-md-11 pd-30-mix">
+              <div className="d-md-none">
+                <div className="benifit_ttl_mb pd-48-15">
+                  <h3 className="vr-title_mb">Benefits</h3>
+                </div>
+              </div>
               <div className="row g-0 why__us align-items-center">
-                <div className="col-md-7">
+                <div className="col-md-7 pd-48-15">
                   {data.benefitTagline && (
                     <div className="mb-3">
                       <h2>{data.benefitTagline}</h2>
@@ -176,7 +239,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
                   )}
                 </div>
                 {data.benefitImage && (
-                  <div className="col-md-5">
+                  <div className="col-md-5 pd-48-15">
                     <img
                       className="img-fluid"
                       src={data.benefitImage.sourceUrl}
@@ -187,12 +250,17 @@ export default function WhiteLabel({ data, themeOptions, form }) {
             </div>
           </section>
           <section className="row get_row why__usc g-0 sec-2" id="end_anim">
-            <div className="col-1 serv__ttl">
+            <div className="col-12 col-md-1 d-none d-md-block serv__ttl">
               <div className="benifit_ttl align-self-center">
                 <h3 className="vr-title">Why Us </h3>
               </div>
             </div>
-            <div className="col-11">
+            <div className="col-12 col-md-11 pd-30-mix pd-48-15">
+              <div className="d-md-none mb-4">
+                <div className="benifit_ttl_mb">
+                  <h3 className="vr-title_mb">Why Us</h3>
+                </div>
+              </div>
               {data.whyUsBlocks && (
                 <div className="pattern__card">
                   <div className="row">
@@ -227,7 +295,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
                             className="col-12 col-md-4"
                             key={`whyUs-${index}`}
                           >
-                            <div className="d-flex align-items-center">
+                            <div className="d-flex flex-md-row flex-column align-items-center serviceBox">
                               {item.whiteLabelServiceImage && (
                                 <img
                                   src={item.whiteLabelServiceImage.sourceUrl}
