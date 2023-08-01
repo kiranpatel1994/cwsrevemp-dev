@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
 import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -55,7 +57,7 @@ export default function Hosting({ data }) {
       scrub: -2,
       pinSpacing: false,
       animation: liftArow,
-      once: true
+      once: true,
     });
 
     gsap.to(".profitDrag", { scaleY: 0 });
@@ -74,7 +76,7 @@ export default function Hosting({ data }) {
       scrub: -2,
       pinSpacing: false,
       animation: action,
-      once: true
+      once: true,
     });
 
     const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
@@ -92,7 +94,7 @@ export default function Hosting({ data }) {
         // },
       });
     });
-    
+
     document.body.classList.add("hosting");
     return () => {
       document.body.classList.remove("hosting");
@@ -150,7 +152,6 @@ export default function Hosting({ data }) {
                   <p className="mb-4">{data.bannerDescription}</p>
                 )}
               </div>
-
             </div>
           </div>
         </div>

@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -25,7 +27,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
       animationData: torusLanding,
     });
 
-    if (typeof(window) !== "undefined") {
+    if (typeof window !== "undefined") {
       gsap.set(".dragWithme", { top: "-10px" });
       const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
 
@@ -80,7 +82,6 @@ export default function WhiteLabel({ data, themeOptions, form }) {
           });
         });
       } else {
-
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=259",

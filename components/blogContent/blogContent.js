@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -153,7 +154,7 @@ export default function BlogContent({ blogData, blogDetail }) {
                                 src={
                                   item.node.postSettings.blogGridImage !== null
                                     ? item.node.postSettings.blogGridImage
-                                      .sourceUrl
+                                        .sourceUrl
                                     : "../images/placeholder-1.svg"
                                 }
                                 alt="blogTemp"
@@ -168,7 +169,7 @@ export default function BlogContent({ blogData, blogDetail }) {
                                         {item.node.categories.nodes
                                           .map((node) => node.name)
                                           .join(",")}
-                                        </em>
+                                      </em>
                                     </span>
                                   </li>
                                 )}
@@ -197,9 +198,9 @@ export default function BlogContent({ blogData, blogDetail }) {
                                   <img
                                     src={
                                       item.node.postSettings.authorImage !==
-                                        null
+                                      null
                                         ? item.node.postSettings.authorImage
-                                          .sourceUrl
+                                            .sourceUrl
                                         : "../images/logo_icon.png"
                                     }
                                     alt="Media bild"
@@ -254,7 +255,8 @@ export default function BlogContent({ blogData, blogDetail }) {
                               className="img-fluid w-100"
                               src={
                                 item.node.postSettings.blogGridImage !== null
-                                  ? item.node.postSettings.blogGridImage.sourceUrl
+                                  ? item.node.postSettings.blogGridImage
+                                      .sourceUrl
                                   : "../images/placeholder-1.svg"
                               }
                               alt="blogTemp"
@@ -299,7 +301,7 @@ export default function BlogContent({ blogData, blogDetail }) {
                                   src={
                                     item.node.postSettings.authorImage !== null
                                       ? item.node.postSettings.authorImage
-                                        .sourceUrl
+                                          .sourceUrl
                                       : "../images/logo_icon.png"
                                   }
                                   alt="Media bild"

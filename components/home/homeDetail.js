@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import React, { useRef, useEffect } from "react";
 import SwiperCore, {
   Navigation,
@@ -21,11 +23,10 @@ export default function HomeDetails({
   portfolioList,
   testimonialSettings,
 }) {
-
   useEffect(() => {
-    const bannerVideo = document.querySelector('.bannerVideo video');
+    const bannerVideo = document.querySelector(".bannerVideo video");
     bannerVideo.play();
-  }, [])
+  }, []);
 
   const videoRef = useRef(null);
   const perChunk = 6;
@@ -78,7 +79,7 @@ export default function HomeDetails({
         slidesPerView: 2.6,
         spaceBetween: 20,
       },
-    }
+    },
   };
 
   var bild1 =
@@ -209,7 +210,6 @@ export default function HomeDetails({
     return () => {
       lottie.destroy();
     };
-
   }, []);
 
   return (
@@ -403,7 +403,10 @@ export default function HomeDetails({
                   <div className="slider-object d-flex flex-wrap justify-content-between">
                     {homeSettings.aboutSlider.map((item, index) => {
                       return (
-                        <div className="sliderObjectInner mx-xl-2 px-xl-0 px-2 mb-3" key={index}>
+                        <div
+                          className="sliderObjectInner mx-xl-2 px-xl-0 px-2 mb-3"
+                          key={index}
+                        >
                           <div className="sliderBox">
                             <div className="slideInner">
                               <div
