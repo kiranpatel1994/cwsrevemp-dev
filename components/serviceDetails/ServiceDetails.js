@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import SwiperCore, {
   Navigation,
@@ -36,7 +38,6 @@ export default function ServiceDetails({ cat }) {
                     <em>user-friendly </em> functionality
                     <img src="/images/preview-24.png" />
                   </h1>
-                  
                 </div>
               </div>
             </div>

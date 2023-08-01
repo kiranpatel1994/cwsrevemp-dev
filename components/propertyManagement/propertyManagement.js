@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -26,8 +28,9 @@ export default function PropertyManagement({ data, form }) {
     });
 
     if (typeof window !== "undefined") {
+      if (typeof window !== "undefined") {
       gsap.set(".dragWithme", { top: "-10px" });
-      const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
+        const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
 
       gsap.to(".profitDrag", { scaleY: 0 });
       const action = gsap.to(".profitDrag", {
@@ -50,7 +53,40 @@ export default function PropertyManagement({ data, form }) {
           toggleActions: "play none none none",
           //   toggleClass: "active"
         });
+      gsap.to(".profitDrag", { scaleY: 0 });
+      const action = gsap.to(".profitDrag", {
+        scaleY: "100%",
+        transformOrigin: "top bottom",
+        ease: "none",
+      });
+      const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
 
+      if (window.innerWidth >= 1024) {
+        ScrollTrigger.create({
+          trigger: ".gl_area",
+          start: "-=259",
+          endTrigger: "#end_anim",
+          end: "+=2600",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: liftArow,
+          toggleActions: "play none none none",
+          //   toggleClass: "active"
+        });
+
+        ScrollTrigger.create({
+          trigger: "#start_anim",
+          start: "-=270",
+          endTrigger: "#end_anim",
+          end: "+=2600",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: action,
+          toggleActions: "play none none none",
+          //   toggleClass: "active"
+        });
         ScrollTrigger.create({
           trigger: "#start_anim",
           start: "-=270",
@@ -306,6 +342,7 @@ export default function PropertyManagement({ data, form }) {
                   )}
                 </div>
               </div>
+              <div className="box__container pd-48-15">
               <div className="box__container pd-48-15">
                 {data.whyUsContent && (
                   <div className="row g-xl-5 corporateBoxes align-items-end">

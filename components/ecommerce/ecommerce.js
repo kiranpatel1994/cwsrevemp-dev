@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -26,13 +28,11 @@ export default function Ecommerce({ data }) {
       animationData: ecommerceBasket,
     });
 
-    
-    
-    if (typeof(window) !== "undefined") {
+    if (typeof window !== "undefined") {
       if (window.innerWidth >= 1024) {
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=600",
@@ -42,16 +42,16 @@ export default function Ecommerce({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         gsap.to(".profitDrag", { scaleY: 0 });
         const action = gsap.to(".profitDrag", {
           scaleY: "100%",
           transformOrigin: "top bottom",
           ease: "none",
         });
-    
+
         ScrollTrigger.create({
           trigger: "#start_anim",
           start: "-=600",
@@ -61,9 +61,9 @@ export default function Ecommerce({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
+
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
@@ -74,17 +74,12 @@ export default function Ecommerce({ data }) {
             onEnter: () => {
               panels[i].classList.add("activate");
             },
-            // onEnterBack: () => {
-            //   panels[i].classList.remove("activate");
-            // },
           });
         });
-
       } else {
-
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=200",
@@ -94,16 +89,16 @@ export default function Ecommerce({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         gsap.to(".profitDrag", { scaleY: 0 });
         const action = gsap.to(".profitDrag", {
           scaleY: "100%",
           transformOrigin: "top bottom",
           ease: "none",
         });
-    
+
         ScrollTrigger.create({
           trigger: ".start_anim",
           start: "-=200",
@@ -113,9 +108,9 @@ export default function Ecommerce({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
+
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl_mb");
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
@@ -126,15 +121,10 @@ export default function Ecommerce({ data }) {
             onEnter: () => {
               panels[i].classList.add("activate");
             },
-            // onEnterBack: () => {
-            //   panels[i].classList.remove("activate");
-            // },
           });
         });
-
       }
     }
-
 
     document.body.classList.add("eCommerce");
     return () => {
@@ -167,7 +157,9 @@ export default function Ecommerce({ data }) {
           <div className="row g-0">
             <div className="col-12 ecom__info position-relative">
               <div className="banner_content_info">
-                <h1 className="main_title-h1">E-commerce <br className="d-md-none" /> Development </h1>
+                <h1 className="main_title-h1">
+                  E-commerce <br className="d-md-none" /> Development{" "}
+                </h1>
                 {data.bannerTagline && (
                   <h2 className="sub_title play_fair-ttl">
                     {data.bannerTagline}
@@ -180,7 +172,11 @@ export default function Ecommerce({ data }) {
                   ></div>
                 )}
                 <div className="d-lg-none bild-lp">
-                  <img className="img-fluid" src="../images/lp-bnr.png" alt="laBnnar" />
+                  <img
+                    className="img-fluid"
+                    src="../images/lp-bnr.png"
+                    alt="laBnnar"
+                  />
                 </div>
                 {data.bannerDescription && (
                   <div
@@ -222,7 +218,10 @@ export default function Ecommerce({ data }) {
                 <ul className="list-inline benifit__inner benefit_list benefit_list_mb row g-2">
                   {data.benefitBlocks.map((item, index) => {
                     return (
-                      <li className="list-inline-item col-6 col-md-auto" key={`benefit-${index}`}>
+                      <li
+                        className="list-inline-item col-6 col-md-auto"
+                        key={`benefit-${index}`}
+                      >
                         <div className="ffk_btn d-flex flex-column justify-content-center">
                           <div className="d-md-none position-relative zindex-3 mb-3">
                             <img src="../images/enf-1.png" />
@@ -269,7 +268,11 @@ export default function Ecommerce({ data }) {
                 </div>
                 <div className="col-12 col-md-4">
                   <div className="d-md-none pd-48-15">
-                    <img className="img-fluid" src="../images/ecc.png" alt="eco1" />
+                    <img
+                      className="img-fluid"
+                      src="../images/ecc.png"
+                      alt="eco1"
+                    />
                   </div>
                 </div>
               </div>
@@ -348,17 +351,6 @@ export default function Ecommerce({ data }) {
           </section>
         </div>
       </div>
-      {/* {data.readyToSellText &&
-                <div className="sellBig">
-                    <div className="container-xl">
-                        <div className="row">
-                            <div className="col-12">
-                                <h3>{data.readyToSellText}</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            } */}
     </main>
   );
 }
