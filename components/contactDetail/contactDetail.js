@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { GravityFormsForm } from "../../generated/graphql";
 import GravityForm from "../../components/GravityForm";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
@@ -25,15 +26,17 @@ export default function ContactDetail({ data, form }) {
               <div className="row align-items-center justify-content-center">
                 <div className="col-12 col-lg-6">
                   <ul className="list-unstyled social_inner">
-                    <li className="d-lg-none">
-                      <div className="d-flex align-items-center justify-content-center">
-                        <img src="../images/telephone.png" alt="tel" />
+                    {data.phone && (
+                      <li className="d-lg-none">
+                        <div className="d-flex align-items-center justify-content-center">
+                          <img src="../images/telephone.png" alt="tel" />
 
-                        <a className="ms-3" href="tel:201.212.6367">
-                          201.212.6367
-                        </a>
-                      </div>
-                    </li>
+                          <a className="ms-3" href={`tel:` + data.phone}>
+                            {data.phone}
+                          </a>
+                        </div>
+                      </li>
+                    )}
                     {data.email && (
                       <li>
                         <div className="d-flex align-items-center justify-content-center">

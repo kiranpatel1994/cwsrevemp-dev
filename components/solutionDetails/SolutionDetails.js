@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useRef, useState } from "react";
 // Import Swiper React components
 
@@ -32,7 +34,7 @@ export default function SolutionDetails({ detail, tags }) {
     Keyboard,
     Mousewheel,
   ]);
-  
+
   // const swiperRef = useRef(null);
   // useEffect(() => {
   //   const portfolioSwiper = document.querySelector('.carouselSlider .swiper');
@@ -70,14 +72,9 @@ export default function SolutionDetails({ detail, tags }) {
       slideShadows: false,
     },
     pagination: { clickable: true },
-    
   };
 
- 
-  
   useEffect(() => {
-    
-
     lottie.loadAnimation({
       container: document.querySelector(".balancingShapeContainer"),
       renderer: "svg",
@@ -146,7 +143,7 @@ export default function SolutionDetails({ detail, tags }) {
             <div className="container">
               <div className="row">
                 <div className="col-12">
-                  <div className="carouselSlider position-relative" >
+                  <div className="carouselSlider position-relative">
                     <Swiper className="portfolioSwiper" {...settingsB}>
                       {detail.portfoliosToShowAsFeatured.map((item, index) => {
                         return (
@@ -248,14 +245,20 @@ export default function SolutionDetails({ detail, tags }) {
                                     key={`tagWrap${j}`}
                                   >
                                     {elem.featuredImage.node.sourceUrl && (
-                                      <div className="projectBlock d-block ov-h" href="#">
+                                      <div
+                                        className="projectBlock d-block ov-h"
+                                        href="#"
+                                      >
                                         <img
                                           className="img-fluid w-100"
                                           src={
                                             elem.featuredImage.node.sourceUrl
                                           }
                                         />
-                                        <a href="#" className="exploreLink">Explore <img src="images/explore-arrow.svg" /></a>
+                                        <a href="#" className="exploreLink">
+                                          Explore{" "}
+                                          <img src="images/explore-arrow.svg" />
+                                        </a>
                                       </div>
                                     )}
                                   </div>

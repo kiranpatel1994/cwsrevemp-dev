@@ -2,7 +2,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import Link from "next/link";
 
-export default function CompanyDetails({ details, list }) {
+export default function CompanyDetails({ details, list, themeData }) {
   const first_row = list.slice(0, 7);
   const second_row = list.slice(7, 13);
   const third_row = list.slice(13, 20);
@@ -170,17 +170,19 @@ export default function CompanyDetails({ details, list }) {
           <div className="container h-100">
             <div className="row h-100">
               <div className="col-12 text-center">
-                <h3>
-                  <span>
-                    Reach out to us at&nbsp;
-                    <Link
-                      className="text-decoration-none text-black"
-                      href="tel:201-212-6367"
-                    >
-                      201-212-6367
-                    </Link>
-                  </span>
-                </h3>
+                {themeData.phone && (
+                  <h3>
+                    <span>
+                      Reach out to us at&nbsp;
+                      <Link
+                        className="text-decoration-none text-black"
+                        href={`tel:${themeData.phone}`}
+                      >
+                        {themeData.phone}
+                      </Link>
+                    </span>
+                  </h3>
+                )}
               </div>
             </div>
           </div>

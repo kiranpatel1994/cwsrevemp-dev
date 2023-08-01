@@ -1,3 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
+/* eslint-disable jsx-a11y/alt-text */
 import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -94,7 +96,7 @@ export default function Hosting({ data }) {
             // },
           });
         });
-
+        
       } else {
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
@@ -147,9 +149,7 @@ export default function Hosting({ data }) {
         });
       }
     }
-    
 
-    
     document.body.classList.add("hosting");
     return () => {
       document.body.classList.remove("hosting");
@@ -207,7 +207,6 @@ export default function Hosting({ data }) {
                   <p className="mb-4">{data.bannerDescription}</p>
                 )}
               </div>
-
             </div>
           </div>
         </div>

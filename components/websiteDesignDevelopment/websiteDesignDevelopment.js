@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -5,7 +7,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json";
-
 
 export default function WebsiteDesignDev({ data }) {
   useEffect(() => {
@@ -17,7 +18,7 @@ export default function WebsiteDesignDev({ data }) {
       animationData: torusLanding,
     });
 
-    if (typeof(window) !== "undefined") {
+    if (typeof window !== "undefined") {
       gsap.set(".dragWithme", { top: "-10px" });
       const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
 
@@ -28,7 +29,7 @@ export default function WebsiteDesignDev({ data }) {
         ease: "none",
       });
       const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
-      
+
       if (window.innerWidth >= 1024) {
         ScrollTrigger.create({
           trigger: ".gl_area",
@@ -39,9 +40,9 @@ export default function WebsiteDesignDev({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         ScrollTrigger.create({
           trigger: "#start_anim",
           start: "-=600",
@@ -51,9 +52,9 @@ export default function WebsiteDesignDev({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
+
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
             trigger: panel,
@@ -68,9 +69,7 @@ export default function WebsiteDesignDev({ data }) {
             // },
           });
         });
-        
       } else {
-
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
 
@@ -83,7 +82,7 @@ export default function WebsiteDesignDev({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
 
         gsap.to(".profitDrag", { scaleY: 0 });
@@ -101,9 +100,9 @@ export default function WebsiteDesignDev({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true      
+          once: true,
         });
-    
+
         const panels = gsap.utils.toArray([".gl_area .benifit_ttl", ".gl_area .benifit_ttl_mb"]);
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
@@ -122,15 +121,11 @@ export default function WebsiteDesignDev({ data }) {
       }
     }
 
-
     document.body.classList.add("webDev");
     return () => {
       document.body.classList.remove("webDev");
     };
-
   }, []);
-
-  
 
   return (
     <main
@@ -170,7 +165,11 @@ export default function WebsiteDesignDev({ data }) {
                   ></div>
                 )}
                 <div className="d-md-none col_bild">
-                  <img className="w-100 img-fluid" src="../images/op-lap.png" alt="ff" />
+                  <img
+                    className="w-100 img-fluid"
+                    src="../images/op-lap.png"
+                    alt="ff"
+                  />
                 </div>
                 {data.bannerDescription && (
                   <div
@@ -214,7 +213,10 @@ export default function WebsiteDesignDev({ data }) {
                 <ul className="list-inline benifit__inner benefit_list benefit_list_mb row g-2">
                   {data.benefitsBlocks.map((item, index) => {
                     return (
-                      <li className="list-inline-item col-6 col-md-auto" key={`benefit-${index}`}>
+                      <li
+                        className="list-inline-item col-6 col-md-auto"
+                        key={`benefit-${index}`}
+                      >
                         <div className="ffk_btn d-flex flex-column justify-content-center">
                           <div className="d-md-none position-relative zindex-3 mb-3">
                             <img src="../images/bnf-1.png" />
@@ -288,7 +290,10 @@ export default function WebsiteDesignDev({ data }) {
                       <div className="benifit_ttl_mb me-4">
                         <h3 className="vr-title_mb">WordPress </h3>
                       </div>
-                      <img className="benifit_wp img-fluid" src="../images/WordPress-Logo-Free-Download-PNG.png" />
+                      <img
+                        className="benifit_wp img-fluid"
+                        src="../images/WordPress-Logo-Free-Download-PNG.png"
+                      />
                     </div>
                   </div>
                 </div>
@@ -404,7 +409,7 @@ export default function WebsiteDesignDev({ data }) {
                       {data.serviceDetailsDescription && (
                         <div
                           className="service-desc txlh_20_30"
-                          dangerouslySetInnerHTML={{ 
+                          dangerouslySetInnerHTML={{
                             __html: data.serviceDetailsDescription,
                           }}
                         ></div>
@@ -431,7 +436,10 @@ export default function WebsiteDesignDev({ data }) {
                 <div className="col-12 col-lg-5 order-1 order-lg-2">
                   <div className="pd-48-15">
                     <div className="ps-0 hand_pen">
-                      <img className="img-fluid w-100" src="../images/hand.png" />
+                      <img
+                        className="img-fluid w-100"
+                        src="../images/hand.png"
+                      />
                     </div>
                   </div>
                 </div>
@@ -449,7 +457,10 @@ export default function WebsiteDesignDev({ data }) {
                 <div className="col-12 col-lg-6">
                   <div className="pd-48-15">
                     <div className="ps-0 d-table">
-                      <img className="img-fluid" src="../images/svdetails.png" />
+                      <img
+                        className="img-fluid"
+                        src="../images/svdetails.png"
+                      />
                     </div>
                   </div>
                 </div>

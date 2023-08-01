@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import brand from "/public/images/foot-branding.png";
 import telephoneImg from "/public/images/telephone.png";
 import emailImg from "/public/images/email.png";
