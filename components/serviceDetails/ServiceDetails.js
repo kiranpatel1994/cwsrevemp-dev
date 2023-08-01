@@ -32,11 +32,13 @@ export default function ServiceDetails({ cat }) {
                 <div className="service-title text-center">
                   <h1>
                     <em>Eye-catching </em> design
-                    <img src="/images/blue_plus_sign.png" /> <br />
+                    <img className="bl_plus" src="/images/blue_plus_sign.png" /> <br />
                     <em>user-friendly </em> functionality
-                    <img src="/images/preview-24.png" />
+                    <img className="bl_arrow" src="/images/preview-24.png" />
                   </h1>
-                  
+                  <div className="d-md-none">
+                    <h2 className="boot_ttitel">The business <span>boost </span> you’re looking for is right here. </h2>
+                  </div>
                 </div>
               </div>
             </div>

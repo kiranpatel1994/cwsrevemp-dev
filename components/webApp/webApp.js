@@ -31,15 +31,14 @@ export default function WebApp({ data }) {
 
     ScrollTrigger.create({
       trigger: ".gl_area",
-      start: "-=259",
+      start: "-=600",
       endTrigger: "#end_anim",
-      end: "+=1300",
+      end: "+=1400",
       markers: false,
       scrub: -2,
       pinSpacing: false,
       animation: liftArow,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
+      once: true
     });
 
     gsap.to(".profitDrag", { scaleY: 0 });
@@ -51,30 +50,29 @@ export default function WebApp({ data }) {
 
     ScrollTrigger.create({
       trigger: "#start_anim",
-      start: "-=270",
+      start: "-=600",
       endTrigger: "#end_anim",
-      end: "+=1300",
+      end: "+=1400",
       markers: false,
       scrub: -2,
       pinSpacing: false,
       animation: action,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
+      once: true
     });
 
     const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
     panels.forEach((panel, i) => {
       ScrollTrigger.create({
         trigger: panel,
-        start: "-=270",
-        end: "-=270",
+        start: "-=600",
+        end: "center",
         markers: false,
         onEnter: () => {
           panels[i].classList.add("activate");
         },
-        onEnterBack: () => {
-          panels[i].classList.remove("activate");
-        },
+        // onEnterBack: () => {
+        //   panels[i].classList.remove("activate");
+        // },
       });
     });
 
@@ -105,7 +103,7 @@ export default function WebApp({ data }) {
         <div className="container-xl p-0">
           <div className="row g-0">
             <div className="col-12 col-md-7 ecom__info position-relative">
-              <h1 dangerouslySetInnerHTML={{ __html: data.pageHeading }} />
+              <div className="main__title" dangerouslySetInnerHTML={{ __html: data.pageHeading }}></div>
               {data.bannerSubtitle && (
                 <div className="sub_title play_fair-ttl">
                   <h2>{data.bannerSubtitle}</h2>
