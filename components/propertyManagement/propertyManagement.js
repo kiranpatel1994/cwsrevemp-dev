@@ -25,57 +25,104 @@ export default function PropertyManagement({ data, form }) {
       animationData: torusLanding,
     });
 
-    gsap.set(".dragWithme", { top: "-10px" });
-    const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
+    if (typeof window !== "undefined") {
+      gsap.set(".dragWithme", { top: "-10px" });
+      const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
 
-    ScrollTrigger.create({
-      trigger: ".gl_area",
-      start: "-=259",
-      endTrigger: "#end_anim",
-      end: "+=2600",
-      markers: false,
-      scrub: -2,
-      pinSpacing: false,
-      animation: liftArow,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
-    });
-
-    gsap.to(".profitDrag", { scaleY: 0 });
-    const action = gsap.to(".profitDrag", {
-      scaleY: "100%",
-      transformOrigin: "top bottom",
-      ease: "none",
-    });
-
-    ScrollTrigger.create({
-      trigger: "#start_anim",
-      start: "-=270",
-      endTrigger: "#end_anim",
-      end: "+=2600",
-      markers: false,
-      scrub: -2,
-      pinSpacing: false,
-      animation: action,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
-    });
-
-    const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
-    panels.forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "-=270",
-        end: "-=270",
-        markers: false,
-        onEnter: () => {
-          panels[i].classList.add("activate");
-        },
-        onEnterBack: () => {
-          panels[i].classList.remove("activate");
-        },
+      gsap.to(".profitDrag", { scaleY: 0 });
+      const action = gsap.to(".profitDrag", {
+        scaleY: "100%",
+        transformOrigin: "top bottom",
+        ease: "none",
       });
-    });
+      const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
+
+      if (window.innerWidth >= 1024) {
+        ScrollTrigger.create({
+          trigger: ".gl_area",
+          start: "-=259",
+          endTrigger: "#end_anim",
+          end: "+=2600",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: liftArow,
+          toggleActions: "play none none none",
+          //   toggleClass: "active"
+        });
+
+        ScrollTrigger.create({
+          trigger: "#start_anim",
+          start: "-=270",
+          endTrigger: "#end_anim",
+          end: "+=2600",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: action,
+          toggleActions: "play none none none",
+          //   toggleClass: "active"
+        });
+
+        const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
+        panels.forEach((panel, i) => {
+          ScrollTrigger.create({
+            trigger: panel,
+            start: "-=270",
+            end: "-=270",
+            markers: false,
+            onEnter: () => {
+              panels[i].classList.add("activate");
+            },
+            onEnterBack: () => {
+              panels[i].classList.remove("activate");
+            },
+          });
+        });
+      } else {
+        ScrollTrigger.create({
+          trigger: ".gl_area",
+          start: "-=259",
+          endTrigger: "#end_anim",
+          end: "+=2600",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: liftArow,
+          toggleActions: "play none none none",
+          //   toggleClass: "active"
+        });
+
+        ScrollTrigger.create({
+          trigger: "#start_anim",
+          start: "-=270",
+          endTrigger: "#end_anim",
+          end: "+=2600",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: action,
+          toggleActions: "play none none none",
+          //   toggleClass: "active"
+        });
+
+        const panels = gsap.utils.toArray(".gl_area .benifit_ttl_mb");
+        panels.forEach((panel, i) => {
+          ScrollTrigger.create({
+            trigger: panel,
+            start: "-=270",
+            end: "-=270",
+            markers: false,
+            onEnter: () => {
+              panels[i].classList.add("activate");
+            },
+            onEnterBack: () => {
+              panels[i].classList.remove("activate");
+            },
+          });
+        });
+      }
+    }
 
     document.body.classList.add("property-management");
     return () => {
@@ -89,7 +136,7 @@ export default function PropertyManagement({ data, form }) {
       id="main"
     >
       <div className="banner__overlap">
-        <div className="container-xl bbn_1">
+        <div className="container bbn_1">
           <div className="design_development_container ecom_development_container"></div>
           <div className="bottom_shape">
             <div className="floor-1">
@@ -101,29 +148,35 @@ export default function PropertyManagement({ data, form }) {
         </div>
       </div>
       <div className="banner_content position-relative overflow-hidden">
-        <div className="container-xl p-0">
+        <div className="container p-lg-0">
           <div className="row g-0">
-            <div className="col-12 col-md-8 ecom__info position-relative">
-              {data.pageHeading && <h1>{data.pageHeading} </h1>}
-              {data.bannerSubtitle && (
-                <div className="sub_title play_fair-ttl">
-                  <h2>{data.bannerSubtitle} </h2>
+            <div className="col-12 col-xl-8 ecom__info position-relative">
+              <div className="banner_content_info">
+                {data.pageHeading && <h1>{data.pageHeading} </h1>}
+                {data.bannerSubtitle && (
+                  <div className="sub_title play_fair-ttl">
+                    <h2>{data.bannerSubtitle} </h2>
+                  </div>
+                )}
+                {data.bannerTitle && (
+                  <div className="moji_ttl">
+                    <h3>{data.bannerTitle} </h3>
+                  </div>
+                )}
+                <div className="d-none d-lg-block">
+                  {data.bannerDescription && (
+                    <div className="position-relative im_moji">
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: data.bannerDescription,
+                        }}
+                      ></div>
+                    </div>
+                  )}
                 </div>
-              )}
-              {data.bannerTitle && (
-                <div className="moji_ttl">
-                  <h3>{data.bannerTitle} </h3>
-                </div>
-              )}
-              {data.bannerDescription && (
-                <div className="position-relative im_moji">
-                  <div
-                    dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
-                  ></div>
-                </div>
-              )}
+              </div>
             </div>
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-xl-4 my-xl-0 my-5">
               <div className="bg__form">
                 <div className="text-center">
                   <h3>Intake Form </h3>
@@ -134,6 +187,18 @@ export default function PropertyManagement({ data, form }) {
                     <GravityForm form={form} />
                   </ApolloProvider>
                 </div>
+              </div>
+
+              <div className="d-block d-lg-none text-center mt-lg-0 mt-4 pt-lg-0 pt-3 bannerDesc">
+                {data.bannerDescription && (
+                  <div className="position-relative im_moji">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: data.bannerDescription,
+                      }}
+                    ></div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -148,15 +213,22 @@ export default function PropertyManagement({ data, form }) {
             </div>
           </div>
           <section className="row get_row g-0 sec-1" id="start_anim">
-            <div className="col-1 benit__ttl">
+            <div className="col-12 col-md-1 d-none d-md-block benit__ttl">
               {data.mainHeading && (
                 <div className="benifit_ttl">
                   <h3 className="vr-title">{data.mainHeading}</h3>
                 </div>
               )}
             </div>
-            <div className="col-11">
-              <div className="work__efficient">
+            <div className="col-md-11 col-12 pd-30-mix">
+              <div className="work__efficient pd-48-15">
+                <div className="d-md-none mb-4">
+                  {data.mainHeading && (
+                    <div className="benifit_ttl_mb">
+                      <h3 className="vr-title_mb">{data.mainHeading}</h3>
+                    </div>
+                  )}
+                </div>
                 {data.benefitsDescription && (
                   <div
                     className="benefitDesc"
@@ -200,15 +272,22 @@ export default function PropertyManagement({ data, form }) {
             </div>
           </section>
           <section className="row get_row g-0 sec-2">
-            <div className="col-1 wus__ttl">
+            <div className="col-12 col-md-1 d-none d-md-block wus__ttl">
               {data.whyUsHeading && (
                 <div className="benifit_ttl">
                   <h3 className="vr-title">{data.whyUsHeading}</h3>
                 </div>
               )}
             </div>
-            <div className="col-11">
-              <div className="row g-0 why__us align-items-center">
+            <div className="col-md-11 col-12 pd-30-mix">
+              <div className="row g-0 why__us align-items-center pd-48-15">
+                <div className="d-md-none mb-4">
+                  {data.whyUsHeading && (
+                    <div className="benifit_ttl_mb">
+                      <h3 className="vr-title_mb">{data.whyUsHeading}</h3>
+                    </div>
+                  )}
+                </div>
                 <div className="col-12 online_property position-relative text-center">
                   {data.whyUsTitle && (
                     <div
@@ -227,13 +306,13 @@ export default function PropertyManagement({ data, form }) {
                   )}
                 </div>
               </div>
-              <div className="box__container">
+              <div className="box__container pd-48-15">
                 {data.whyUsContent && (
-                  <div className="row g-5 align-items-end">
+                  <div className="row g-5 corporateBoxes align-items-end">
                     {data.whyUsContent.map((item, index) => {
                       return (
                         <div
-                          className="col-12 col-md-6 col-lg-4 box__container_col"
+                          className="col-12 col-lg-4 box__container_col"
                           key={`whyUs${index}`}
                         >
                           <div className="box__bg">
@@ -268,14 +347,23 @@ export default function PropertyManagement({ data, form }) {
             </div>
           </section>
           <section className="row get_row g-0 sec-3" id="end_anim">
-            <div className="col-1 serv__ttl">
+            <div className="col-12 col-md-1 d-none d-md-block serv__ttl">
               {data.serviceDetailsHeading && (
                 <div className="benifit_ttl align-self-center">
                   <h3 className="vr-title">{data.serviceDetailsHeading}</h3>
                 </div>
               )}
             </div>
-            <div className="col-11 time_acquainted ps-5">
+            <div className="col-md-11 col-12 pd-30-mix time_acquainted ps-lg-5 pd-48-15">
+              <div className="d-md-none mb-4">
+                {data.serviceDetailsHeading && (
+                  <div className="benifit_ttl_mb">
+                    <h3 className="vr-title_mb">
+                      {data.serviceDetailsHeading}
+                    </h3>
+                  </div>
+                )}
+              </div>
               <div className="row g-0 why__us align-items-center">
                 {data.serviceDetailsTitle && (
                   <div className="col-12 automate_work">
@@ -284,7 +372,7 @@ export default function PropertyManagement({ data, form }) {
                 )}
               </div>
               <div className="row why__us">
-                <div className="col-12 col-md-4 position-relative arrow_area">
+                <div className="col-12 col-lg-4 position-relative arrow_area">
                   {data.serviceDetailsSubtitle && (
                     <h4>{data.serviceDetailsSubtitle}</h4>
                   )}
@@ -297,25 +385,32 @@ export default function PropertyManagement({ data, form }) {
                   )}
                 </div>
                 {data.serviceDetailsImage.sourceUrl && (
-                  <div className="col-12 col-md-8">
+                  <div className="col-12 col-lg-8 mt-lg-0 mt-4 d-lg-block d-none">
                     <img
                       className="img-fluid"
                       src={data.serviceDetailsImage.sourceUrl}
                     />
                   </div>
                 )}
+                <div className="d-lg-none mt-4 text-center">
+                  <img
+                    className="img-fluid"
+                    src="/images/management-mobile-img.png"
+                    alt=""
+                  />
+                </div>
               </div>
-              <div className="row g-0 why__us align-items-center">
+              <div className="row g-0 why__us align-items-lg-center">
                 {data.socialMediaImage.sourceUrl && (
-                  <div className="col-md-5">
+                  <div className="col-lg-5 text-lg-start text-center order-lg-0 order-1 mb-lg-0 mb-5 pb-lg-0 pb-5">
                     <img
                       className="img-fluid"
                       src={data.socialMediaImage.sourceUrl}
                     />
                   </div>
                 )}
-                <div className="col-md-7 automate_work position-relative">
-                  <div className="d-table ms-auto me-auto">
+                <div className="col-lg-7 automate_work position-relative mt-lg-0 mt-5 pb-lg-0 pb-5 order-lg-1 order-0">
+                  <div className="d-table ms-lg-auto me-auto">
                     {data.socialMediaHeading && (
                       <h4>{data.socialMediaHeading}</h4>
                     )}
@@ -330,8 +425,8 @@ export default function PropertyManagement({ data, form }) {
                 </div>
               </div>
               <div className="row g-0 why__us align-items-center">
-                <div className="col-12 col-md-6 automate_work position-relative">
-                  <div className="d-table ms-auto me-auto">
+                <div className="col-12 col-lg-6 automate_work position-relative">
+                  <div className="d-table ms-lg-auto me-auto">
                     {data.flexiblePaymentOptionsHeading && (
                       <h4>{data.flexiblePaymentOptionsHeading}</h4>
                     )}
@@ -345,7 +440,7 @@ export default function PropertyManagement({ data, form }) {
                   </div>
                 </div>
                 {data.flexiblePaymentOptionsImage.sourceUrl && (
-                  <div className="col-12 col-md-6">
+                  <div className="col-12 col-lg-6 text-lg-start text-center">
                     <img
                       className="img-fluid"
                       src={data.flexiblePaymentOptionsImage.sourceUrl}
@@ -358,7 +453,7 @@ export default function PropertyManagement({ data, form }) {
         </div>
       </div>
       <div className="last-container">
-        <div className="container-xl">
+        <div className="container">
           <div className="row g-0 why__us align-items-center">
             <div className="col-12 automate_work">
               {data.experienceMarketingAndServiceHeading && (
@@ -378,7 +473,7 @@ export default function PropertyManagement({ data, form }) {
                   className="col-12 col-md-6 col-lg-4"
                   key={`service${index}`}
                 >
-                  <div className="d-flex align-items-center">
+                  <div className="d-flex flex-md-row flex-column align-items-center">
                     <img src={item.icon.sourceUrl} />
                     <span>{item.title}</span>
                   </div>
@@ -387,7 +482,7 @@ export default function PropertyManagement({ data, form }) {
             })}
           </div>
           {data.experienceMarketingButtonUrl && (
-            <div className="d-table ms-auto me-auto">
+            <div className="d-md-table ms-auto me-auto">
               <a
                 className="btn btn-yellow"
                 href={data.experienceMarketingButtonUrl}
@@ -399,7 +494,7 @@ export default function PropertyManagement({ data, form }) {
         </div>
       </div>
       <div className="desktop__container">
-        <div className="container-xl">
+        <div className="container">
           <div className="row g-0 why__us align-items-center">
             <div className="col-12 automate_work">
               <div className="text-center">
@@ -425,7 +520,7 @@ export default function PropertyManagement({ data, form }) {
             </div>
           </div>
           {data.propertyManagementButtonLink && (
-            <div className="d-table ms-auto me-auto">
+            <div className="d-md-table ms-auto me-auto">
               <a
                 className="btn btn-yellow"
                 href={data.propertyManagementButtonLink}

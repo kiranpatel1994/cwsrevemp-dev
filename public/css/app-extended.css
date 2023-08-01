@@ -598,6 +598,14 @@ body.hosting{background-size: 70% auto;}
   .mobileDesc p{font-size: 16px;line-height: 1.625;margin-bottom: 100px;}
 
   .pattern__card .y_shape_bg p {padding: 0 20px;-webkit-line-clamp: 4;}
+
+  .property-management .desktop__container h2,
+  .property-management .expMarketingHeading p{font-size: 30px;}
+  .last-container span{font-size: 18px;}
+  .property-management .last-container .lc-container img{width: 60px;}
+  .prpertyManagement .ecom__info .im_moji p{margin-left: 0;}
+  .work__efficient .benifit__inner::after{display: none;}
+  .work__efficient .benifit__inner{margin-left: 0;}
 }
 
 @media screen and (max-width: 991px) {
@@ -692,6 +700,29 @@ body.hosting{background-size: 70% auto;}
   .pattern__card .pattern__child:nth-last-child(2),
   .pattern__card .pattern__child:last-child{margin-top: 16px;}
   .why__us h2{font-size: 25px;line-height: 1.625;}
+
+  .prpertyManagement .bannerDesc p{font-size: 16px;line-height: 1.625;}
+  .prpertyManagement .bannerDesc p b{font-size: 35px;}
+  .work__efficient .benifit__inner{justify-content: space-between;}
+  .work__efficient .benifit__inner li:nth-child(4){margin-left: 0;}
+  .work__efficient .benifit__inner .list-inline-item{width: 48%;margin: 0 0 20px;}
+  .work__efficient .benifit__inner .list-inline-item .ffk_btn{max-width: 100%;width: 100%;}
+  .property-management .benefitDesc p{font-size: 18px;line-height: 1.625;}
+  .site__management .sec-1{padding-bottom: 70px;}
+  .online_property h2, .online_property .h2 p{font-size: 25px;line-height: 1.625;text-align: left;}
+  .online_property p{text-align: left;}
+  .corporateBoxes{--bs-gutter-y: 150px;}
+  .site__management .box__container .box__container_col:first-child, .site__management .box__container .box__container_col:last-child{margin-bottom: 0;}
+  .site__management .box__container{padding-bottom: 110px;}
+  .prpertyManagement .ecom__info::before {background-size: cover;height: 75px;width: 75px;right: 0;top: 93%;left: 0;margin: 0 auto;}
+  .prpertyManagement .bg__form{margin-top: 50px;border-radius: 10px;padding: 30px 20px;}
+  .prpertyManagement .bg__form h3{font-size: 25px;}
+  .prpertyManagement .banner_content_info{text-align: center;}
+  .prpertyManagement .ecom__info .moji_ttl h3{font-size: 20px;line-height: 1.4;}
+  .time_acquainted .why__us{padding-bottom: 0;}
+  .time_acquainted .why__us::after{display: none;}
+  .time_acquainted .why__us:nth-child(2){margin-bottom: 90px;padding-bottom: 0;}
+  .work__efficient .benifit__inner .list-inline-item .ffk_btn{justify-content: center;}
 }
 
 @media screen and (max-width: 767px) {
@@ -794,6 +825,20 @@ body.hosting{background-size: 70% auto;}
   .whitelabel_inner .ecom__info::before {right: inherit;top: 200px;left: 40px;width: 54px;height: 54px;}
   .group__bild{margin-top: 40px;}
   .group__bild img{max-width: 85%;}
+
+  .prpertyManagement::before {width: 100%;height: 548px;right: 0;top: 0px;}
+  .prpertyManagement .banner_content_info{padding-left: 0;padding-right: 0;}
+  .work__efficient .benifit__inner .list-inline-item{width: 100%;}
+  .property-management .benefitDesc p br{display: none;}
+  .site__management .arrow_area::after{display: none;}
+  .property-management .expMarketingHeading p{font-size: 25px;line-height: 1.4;}
+  .property-management .last-container .lc-container img{width: 78px;}
+  .last-container span{font-size: 20px;}
+  .property-management .last-container .lc-container{--bs-gutter-y: 55px;}
+  .time_acquainted .why__us:nth-child(2){margin-bottom: 0;}
+  .property-management .desktop__container h2{font-size: 24px;line-height: 1.4;}
+  .property-management .desktop__container{background-image: none;}
+  .property-management .desktop__container .btn-yellow{background-color: #07042B;color: #fff;font-family: "Playfair Display", serif;font-style: italic;font-weight: 600;}
 }
 
 @media screen and (max-width: 575px) {
@@ -817,6 +862,8 @@ body.hosting{background-size: 70% auto;}
   .carouselSection::before {width: 578px;height: 289px;background-color: #FDB627;border-radius: 578px 578px 0 0;background-image: none;top: 0;left: 50%;transform: translateX(-50%);}
   .carouselSection::after {height: 283px;}
   .companyCard .cardinner{padding: 70px 18px 35px;}
+
+  .sub_title, .sub_title h2{font-size: 35px;}
 }
 
 @media screen and (max-width: 399px) {
@@ -834,4 +881,9 @@ body.hosting{background-size: 70% auto;}
   .atmos-faces:hover::after {right: 30px;top: -35px;}
   .friendly-atmos h3{font-size: 14px;}
   .demo-container {width: 100px;top: 70px;}
+
+  .banner_content h1{font-size: 30px;}
+  .sub_title, .sub_title h2{font-size: 30px;}
+  .ecom__info .moji_ttl h3{font-size: 16px;}
+  .service__label p{font-size: 28px;}
 }
