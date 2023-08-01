@@ -149,7 +149,7 @@ export default function PropertyManagement({ data, form }) {
       </div>
       <div className="banner_content position-relative overflow-hidden">
         <div className="container p-lg-0">
-          <div className="row g-0">
+          <div className="row g-xl-0">
             <div className="col-12 col-xl-8 ecom__info position-relative">
               <div className="banner_content_info">
                 {data.pageHeading && <h1>{data.pageHeading} </h1>}
@@ -308,7 +308,7 @@ export default function PropertyManagement({ data, form }) {
               </div>
               <div className="box__container pd-48-15">
                 {data.whyUsContent && (
-                  <div className="row g-5 corporateBoxes align-items-end">
+                  <div className="row g-xl-5 corporateBoxes align-items-end">
                     {data.whyUsContent.map((item, index) => {
                       return (
                         <div

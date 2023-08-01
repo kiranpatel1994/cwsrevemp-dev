@@ -26,57 +26,101 @@ export default function SocialMediaManagement({ data }) {
       animationData: socialLove,
     });
 
-    gsap.set(".dragWithme", { top: "-10px" });
-    const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
+    if (typeof window !== "undefined") {
+      gsap.set(".dragWithme", { top: "-10px" });
+      const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
 
-    ScrollTrigger.create({
-      trigger: ".gl_area",
-      start: "-=259",
-      endTrigger: "#end_anim",
-      end: "+=2500",
-      markers: false,
-      scrub: -2,
-      pinSpacing: false,
-      animation: liftArow,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
-    });
-
-    gsap.to(".profitDrag", { scaleY: 0 });
-    const action = gsap.to(".profitDrag", {
-      scaleY: "100%",
-      transformOrigin: "top bottom",
-      ease: "none",
-    });
-
-    ScrollTrigger.create({
-      trigger: "#start_anim",
-      start: "-=270",
-      endTrigger: "#end_anim",
-      end: "+=2500",
-      markers: false,
-      scrub: -2,
-      pinSpacing: false,
-      animation: action,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
-    });
-
-    const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
-    panels.forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "-=270",
-        end: "-=270",
-        markers: false,
-        onEnter: () => {
-          panels[i].classList.add("activate");
-        },
-        onEnterBack: () => {
-          panels[i].classList.remove("activate");
-        },
+      gsap.to(".profitDrag", { scaleY: 0 });
+      const action = gsap.to(".profitDrag", {
+        scaleY: "100%",
+        transformOrigin: "top bottom",
+        ease: "none",
       });
-    });
+
+      if (window.innerWidth >= 1024) {
+        ScrollTrigger.create({
+          trigger: ".gl_area",
+          start: "-=259",
+          endTrigger: "#end_anim",
+          end: "+=2500",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: liftArow,
+          toggleActions: "play none none none",
+          //   toggleClass: "active"
+        });
+
+        ScrollTrigger.create({
+          trigger: "#start_anim",
+          start: "-=270",
+          endTrigger: "#end_anim",
+          end: "+=2500",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: action,
+          toggleActions: "play none none none",
+          //   toggleClass: "active"
+        });
+
+        const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
+        panels.forEach((panel, i) => {
+          ScrollTrigger.create({
+            trigger: panel,
+            start: "-=270",
+            end: "-=270",
+            markers: false,
+            onEnter: () => {
+              panels[i].classList.add("activate");
+            },
+            onEnterBack: () => {
+              panels[i].classList.remove("activate");
+            },
+          });
+        });
+      } else {
+        ScrollTrigger.create({
+          trigger: ".gl_area",
+          start: "-=259",
+          endTrigger: "#end_anim",
+          end: "+=2500",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: liftArow,
+          toggleActions: "play none none none",
+        });
+
+        ScrollTrigger.create({
+          trigger: "#start_anim",
+          start: "-=270",
+          endTrigger: "#end_anim",
+          end: "+=2500",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: action,
+          toggleActions: "play none none none",
+        });
+
+        const panels = gsap.utils.toArray(".gl_area .benifit_ttl_mb");
+        panels.forEach((panel, i) => {
+          ScrollTrigger.create({
+            trigger: panel,
+            start: "-=270",
+            end: "-=270",
+            markers: false,
+            onEnter: () => {
+              panels[i].classList.add("activate");
+            },
+            onEnterBack: () => {
+              panels[i].classList.remove("activate");
+            },
+          });
+        });
+      }
+    }
 
     document.body.classList.add("social-media");
     return () => {
@@ -90,34 +134,36 @@ export default function SocialMediaManagement({ data }) {
       id="main"
     >
       <div className="banner_content position-relative overflow-hidden">
-        <div className="container-xl p-0">
+        <div className="container p-lg-0">
           <div className="row g-0">
             <div className="col-12 ecom__info position-relative">
-              <h1>{data.pageHeading} </h1>
-              {data.bannerSubtitle && (
-                <div className="sub_title play_fair-ttl">
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: data.bannerSubtitle,
-                    }}
-                  ></div>
+              <div className="banner_content_info">
+                <h1>{data.pageHeading} </h1>
+                {data.bannerSubtitle && (
+                  <div className="sub_title play_fair-ttl">
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: data.bannerSubtitle,
+                      }}
+                    ></div>
+                  </div>
+                )}
+                <div className="moji_ttl">
+                  <h3>
+                    Let them say they saw you on
+                    <span className="liftSwap position-relative">
+                      <span>Facebook </span>
+                      <span>Twitter </span>
+                    </span>
+                  </h3>
                 </div>
-              )}
-              <div className="moji_ttl">
-                <h3>
-                  Let them say they saw you on
-                  <span className="liftSwap position-relative">
-                    <span>Facebook </span>
-                    <span>Twitter </span>
-                  </span>
-                </h3>
+                {data.bannerDescription && (
+                  <div
+                    className="mb-4"
+                    dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
+                  />
+                )}
               </div>
-              {data.bannerDescription && (
-                <div
-                  className="mb-4"
-                  dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
-                />
-              )}
             </div>
           </div>
         </div>
@@ -132,13 +178,20 @@ export default function SocialMediaManagement({ data }) {
           </div>
           <section className="row get_row g-0 sec-1" id="start_anim">
             {data.benefitsTitle && (
-              <div className="col-1 benit__ttl">
+              <div className="col-md-1 d-none d-md-block benit__ttl">
                 <div className="benifit_ttl">
                   <h3 className="vr-title">{data.benefitsTitle}</h3>
                 </div>
               </div>
             )}
-            <div className="col-11">
+            <div className="col-md-11 pd-30-mix pd-48-15">
+              <div className="d-md-none mb-4">
+                {data.benefitsTitle && (
+                  <div className="benifit_ttl_mb">
+                    <h3 className="vr-title_mb">{data.benefitsTitle}</h3>
+                  </div>
+                )}
+              </div>
               {data.benefitsBlocks && (
                 <ul className="list-inline benifit__inner">
                   {data.benefitsBlocks.map((item, index) => {
@@ -156,15 +209,22 @@ export default function SocialMediaManagement({ data }) {
           </section>
           <section className="row get_row g-0 sec-2">
             {data.whyUsHeading && (
-              <div className="col-1 wus__ttl">
+              <div className="col-1 wus__ttl d-none d-md-block">
                 <div className="benifit_ttl">
                   <h3 className="vr-title">{data.whyUsHeading}</h3>
                 </div>
               </div>
             )}
-            <div className="col-11">
-              <div className="row g-0 why__us align-items-center">
-                <div className="col-md-7 maxim_effort position-relative">
+            <div className="col-md-11 pd-30-mix pd-48-15">
+              {data.whyUsHeading && (
+                <div className="d-md-none mb-4">
+                  <div className="benifit_ttl_mb">
+                    <h3 className="vr-title_mb">{data.whyUsHeading}</h3>
+                  </div>
+                </div>
+              )}
+              <div className="row g-lg-0 why__us align-items-center">
+                <div className="col-lg-7 maxim_effort position-relative">
                   <div
                     dangerouslySetInnerHTML={{ __html: data.whyUsTitle }}
                   ></div>
@@ -174,7 +234,7 @@ export default function SocialMediaManagement({ data }) {
                   ></div>
                 </div>
                 {data.whyUsImage && (
-                  <div className="col-md-5">
+                  <div className="col-lg-5">
                     <img className="whyUsImg" src={data.whyUsImage.sourceUrl} />
                   </div>
                 )}
@@ -189,13 +249,22 @@ export default function SocialMediaManagement({ data }) {
               {/* <img className="dt_1" src="../images/ring_1.png" /> */}
             </div>
             {data.serviceDetailsHeading && (
-              <div className="col-1 serv__ttl">
+              <div className="col-1 serv__ttl d-none d-md-block">
                 <div className="benifit_ttl align-self-center">
                   <h3 className="vr-title">{data.serviceDetailsHeading}</h3>
                 </div>
               </div>
             )}
-            <div className="col-11 time_acquainted">
+            <div className="col-md-11 time_acquainted pd-30-mix pd-48-15">
+              {data.serviceDetailsHeading && (
+                <div className="d-md-none mb-5">
+                  <div className="benifit_ttl_mb pb-5">
+                    <h3 className="vr-title_mb">
+                      {data.serviceDetailsHeading}
+                    </h3>
+                  </div>
+                </div>
+              )}
               <div className="socialLove">
                 <div className="socialLoveInner">
                   <div className="socialLoveContainer" />
@@ -214,7 +283,7 @@ export default function SocialMediaManagement({ data }) {
                     {data.serviceDetailsContent.map((item, index) => {
                       return (
                         <div
-                          className="col-12 col-md-6 col-lg-4"
+                          className="col-12 col-lg-4"
                           key={`service${index}`}
                         >
                           <div className="box__bg">
@@ -240,8 +309,8 @@ export default function SocialMediaManagement({ data }) {
                   </div>
                 </div>
               )}
-              <div className="row g-0 align-items-center z-2 position-relative pb-5 mb-5">
-                <div className="col-12 pb-5">
+              <div className="row g-0 align-items-center z-2 position-relative pb-5 mb-5 neverHassleBlock">
+                <div className="col-12 pb-md-5">
                   {data.automatedSubHeading && (
                     <h2 className="play_fair-white display-5 text-center">
                       {data.automatedSubHeading}
