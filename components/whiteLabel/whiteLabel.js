@@ -162,44 +162,46 @@ export default function WhiteLabel({ data, themeOptions, form }) {
         <div className="container p-lg-0">
           <div className="row g-0">
             <div className="col-12 col-xl-7 ecom__info position-relative">
-              <h1>White Label Solutions </h1>
-              {data.bannerTagline && (
-                <div className="sub_title play_fair-ttl">
-                  <h2>{data.bannerTagline}</h2>
+              <div className="banner_content_info">
+                <h1>White Label Solutions </h1>
+                {data.bannerTagline && (
+                  <div className="sub_title play_fair-ttl">
+                    <h2>{data.bannerTagline}</h2>
+                  </div>
+                )}
+                {data.bannerTitle && (
+                  <div
+                    className="moji_ttl"
+                    dangerouslySetInnerHTML={{ __html: data.bannerTitle }}
+                  ></div>
+                )}
+                {data.bannerDescription && (
+                  <div
+                    className="mb-4 d-xl-block d-none"
+                    dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
+                  ></div>
+                )}
+              </div>
+              {data.bannerImage && (
+                <div className="col-12 col-xl-5 position-relative group__bild">
+                  <img className="img-fluid" src={data.bannerImage.sourceUrl} />
                 </div>
               )}
-              {data.bannerTitle && (
-                <div
-                  className="moji_ttl"
-                  dangerouslySetInnerHTML={{ __html: data.bannerTitle }}
-                ></div>
-              )}
-              {data.bannerDescription && (
-                <div
-                  className="mb-4 d-xl-block d-none"
-                  dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
-                ></div>
-              )}
-            </div>
-            {data.bannerImage && (
-              <div className="col-12 col-xl-5 position-relative group__bild">
-                <img className="img-fluid" src={data.bannerImage.sourceUrl} />
-              </div>
-            )}
 
-            <div className="d-xl-none d-block mobileDesc">
-              {data.bannerDescription && (
-                <div
-                  className="mb-4"
-                  dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
-                ></div>
-              )}
+              <div className="d-xl-none d-block mobileDesc">
+                {data.bannerDescription && (
+                  <div
+                    className="mb-4"
+                    dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
+                  ></div>
+                )}
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div className="gl_area hosting_page">
-        <div className="container-xl position-relative p-0">
+        <div className="container-xl position-relative p-lg-0">
           <div className="line_anim">
             <div className="profitDrag"></div>
             <div className="dragWithme">
@@ -293,7 +295,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
                       {data.whiteLabelServicePoints.map((item, index) => {
                         return (
                           <div
-                            className="col-12 col-md-4"
+                            className="col-12 col-lg-4 mb-lg-0 mb-4"
                             key={`whyUs-${index}`}
                           >
                             <div className="d-flex flex-md-row flex-column align-items-center serviceBox">
