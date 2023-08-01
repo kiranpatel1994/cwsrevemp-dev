@@ -2677,6 +2677,7 @@ footer .ft-child:first-child {
   bottom: 0;
   width: 4px;
   background-color: rgba(255, 255, 255, 0.16);
+  z-index: 1;
 }
 .profitDrag {
   background-color: #fdb627;
@@ -3287,6 +3288,7 @@ footer .ft-child:first-child {
   bottom: 0;
   left: 0;
   height: 500px;
+  pointer-events: none;
 }
 .hosting_inner .design_development_container::after,
 .whitelabel_inner .design_development_container::after {
@@ -4934,6 +4936,8 @@ a {
 .mouse_content_bild p { display: none; }
 .benifit_ttl_mb .vr-title_mb { font-size: 35px; font-family: "gilroy-bolduploaded_file"; }
 .benifit_ttl_mb .vr-title_mb { color: rgba(255, 255, 255, 0.39); font-weight: 400; }
+.boot_ttitel { color: #fff; font-size: 20px; font-family: "gilroy-mediumuploaded_file"; max-width: 320px; margin: 0 auto; }
+.services .boot_ttitel span { font-size: 20px; font-family: "gilroy-mediumuploaded_file"; color: #FDB627; }
 
 
 /* responsive */
@@ -4989,6 +4993,10 @@ a {
   .hosting .cloudServer { width: 100% !important; }
   .hosting .mix_bland { top: 10% !important; }
   .hosting .ecom__info .moji_ttl br { display: none; }
+  .services .eyeFriendly .service-title h1 { font-size: 52px; line-height: 52px; }
+  .services .eyeFriendly .service-title .bl_plus { max-width: 24px; margin-left: 5px; }
+  .services .eyeFriendly .service-title .bl_arrow { max-width: 31px; margin-left: 8px; }
+  .services .serviceDetail::after { content: none; }
 }
 @media (max-width: 1440px) {
   .map-placeholder::before { top: 45%; height: 258px; width: 258px; left: -100px; }
@@ -5005,6 +5013,12 @@ a {
   .secOnlineShoping { max-width: 350px; right: -15%; top: -30px; }
   .hosting .hosting_inner .banner_content { padding-top: 30px; }
   .hosting .mix_bland { top: 5% !important; }
+  .hosting .hosting_page .information__box.information__space .information__title h5 { justify-content: flex-start; max-width: 100%; align-items: flex-start; font-size: 21px; }
+  .hosting .hosting_page .information__box.information__space .information__title h6, .hosting .hosting_page .information__box.information__space .information__title p { max-width: 100%; }
+  .hosting .hosting_page .information__box.information__space .information__title p { font-size: 16px; line-height: 26px; }
+  .hosting .hosting_page .information__box.information__space .notification_box { max-width: 100%; }
+  .services .eyeFriendly .service-title h1 { font-size: 42px; line-height: 42px; }
+  .designFunctionality .box-col:nth-child(2) .box-design::after, .designFunctionality .box-col:first-child .box-design::after, .designFunctionality .alternative-row:nth-child(3) .box-col:first-child .box-design::after { height: 150px; width: 200px; top: 65px; }
 }
 @media (max-width: 1300px) {
   .webDev .customSites_up .benifit__inner { grid-template-columns: repeat(2, 1fr) !important; }
@@ -5028,6 +5042,15 @@ a {
   .ecom__info p { max-width: 710px; }
   .benifit__inner .list-inline-item:not(:last-child) { margin-right: 15px; }
   .benifit__inner .list-inline-item { margin-bottom: 15px; }
+  .hosting_page .why__us { margin-top: 0; }
+  .hosting .hosting_inner .banner_content { margin-bottom: 80px; }
+  .information__space { padding-right: 15px; }
+  .services .eyeFriendly .service-title h1 { font-size: 30px; }
+  .designFunctionality .box-col:nth-child(even) .box-design { margin: 0; }
+}
+@media (max-width: 1024px) {
+  .designFunctionality .box-design .content-area h5 { font-size: 25px; line-height: 33px; }
+
 }
 @media (min-width: 768px) and (max-width: 1600px) {
   .benifit_ttl { display: flex; justify-content: center; }
@@ -5041,7 +5064,8 @@ a {
   .webDev .websiteDesign .sec-3 { padding-bottom: 150px; }
   .mouse_content_bild h3 { display: block; }
   .mouse_content_bild h3::after { width: 24px; height: 29px; position: relative; top: 10px; background-size: cover; margin-left: 7px; }
-
+  .hosting .banner_content_info { text-align: left; }
+  
 }
 @media (max-width: 991px) {
   .letsTalk_h1 { margin-bottom: 60px; }
@@ -5076,6 +5100,8 @@ a {
   .hosting .ecom__info .moji_ttl h3 { font-size: 20px; line-height: 28px; }
   .hosting .hosting_inner .banner_content { padding-top: 0; }
   .hosting .mix_bland_2 { margin-bottom: 80px; }
+  .designFunctionality .box-col:nth-child(2) .box-design::after, .designFunctionality .box-col:first-child .box-design::after, .designFunctionality .alternative-row:nth-child(3) .box-col:first-child .box-design::after { height: 100px; width: 140px; top: 95px; }
+  
 }
 @media (max-width: 767px) {
   .webDev .moji_para p { font-size: 16px; line-height: 26px !important; max-width: 348px; margin-left: auto; margin-right: auto; text-align: center; }
@@ -5140,15 +5166,36 @@ a {
   .wp_inner_mob .text-32_b_white { max-width: 310px; }
   .hosting .ecom__info .moji_ttl { max-width: 390px; margin-left: auto; margin-right: auto; margin: 0 auto 40px; }
   .hosting .ecom__info p { max-width: 350px; margin-left: auto; margin-right: auto; }
+  .hosting .hosting_page .information__box .information__title h5 { justify-content: flex-start; max-width: 100%; min-height: inherit; }
+  .hosting .hosting_page .information__box .information__title p { max-width: 100%; min-height: inherit; }
+  .hosting .hosting_page .information__box h6 { max-width: 100%; }
+  .hosting .hosting_page .information__box .col-info_boxarea:not(:last-child) .notification_box { display: none; }
+  .hosting .hosting_page .col-info_boxarea .information__title { margin-bottom: 60px; }
+  .hosting .hosting_page .information__box .col-info_boxarea:last-child .information__title { margin-bottom: 45px; }
+  .hosting .hosting_page .sec-3 .bild-hosting { margin-bottom: -30px !important; }
+  .footerstarted .fk-btn.footerstarted_btn { width: 100%; border-radius: 27px; background-color: #07042B; }
+  .designFunctionality .box-col:nth-child(odd) .box-design, .designFunctionality .alternative-row:nth-child(even) .box-col:nth-child(odd) .box-design, .designFunctionality .box-col:nth-child(even) .box-design, .designFunctionality .alternative-row:nth-child(even) .box-col:nth-child(even) .box-design { margin: 0 auto !important; }
+  .designFunctionality .alternative-row { margin: 0; }
+  .setContainerFunctionality .alternative-row .box-col:not(:last-child) { margin-bottom: 30px; }
+  .setContainerFunctionality .alternative-row:not(:first-child) { margin-top: 30px; }
+  .designFunctionality { padding-bottom: 80px; }
+  .designFunctionality .box-design { height: auto; }
+  .eyeFriendly { margin-bottom: 60px; }
+  .services main.serviceDetail { margin-top: 60px; }
 
 }
 @media (max-width: 568px) {
   .d-100-sm { width: 100%; }
+  .designFunctionality .box-design .content-area ul li { align-items: flex-start; font-size: 16px; line-height: 26px; }
+  .designFunctionality .box-design .content-area ul li::before { position: relative; top: 10px; flex-shrink: 0; }
+  .designFunctionality .box-design .content-area h5 { font-size: 18px; line-height: 28px; }
+  
 }
 @media (max-width: 425px) {
   .form_container h2 { font-size: 18px; }
   .letsTalk_inner h1 { font-size: 28px; line-height: 42px;}
   .bild-mob img { height: 460px; }
+  .designFunctionality .box-col:nth-child(2) .box-design::after, .designFunctionality .box-col:first-child .box-design::after, .designFunctionality .alternative-row:nth-child(3) .box-col:first-child .box-design::after { height: 170px; width: 220px; top: 65px; opacity: 0.2; }
 }
 @media (max-width: 424px) {
   .benifit__inner.benefit_list_mb .list-inline-item { width: 100%; }
@@ -5158,8 +5205,10 @@ a {
   .webDev .websiteDesign .why__us p { font-size: 16px; line-height: 26px; }
   .webDev .customSites_up .benifit__inner { grid-template-columns: repeat(1, 1fr) !important; }
   .benifit_ttl_mb .vr-title_mb { font-size: 28px; }
+  .services .eyeFriendly .service-title h1 { font-size: 24px; line-height: 30px; }
 }
 @media (max-width: 359px) {
   .banner_content_info .banner-h3.moji_ttl.banner-h3_mob h3 { max-width: 190px; }
   .ecom__info .moji_ttl.banner-desc_mob img { top: -10px; right: -30px; }
+  .services .eyeFriendly .service-title h1 { font-size: 20px; }
 }

@@ -110,8 +110,7 @@ export default function Ecommerce({ data }) {
           animation: action,
           once: true,
         });
-
-        const panels = gsap.utils.toArray(".gl_area .benifit_ttl_mb");
+        const panels = gsap.utils.toArray([".gl_area .benifit_ttl", ".gl_area .benifit_ttl_mb"]);
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
             trigger: panel,
