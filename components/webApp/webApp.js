@@ -28,55 +28,110 @@ export default function WebApp({ data }) {
       animationData: automateImage,
     });
 
-    gsap.set(".dragWithme", { top: "-10px" });
-    const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-
-    ScrollTrigger.create({
-      trigger: ".gl_area",
-      start: "-=600",
-      endTrigger: "#end_anim",
-      end: "+=1400",
-      markers: false,
-      scrub: -2,
-      pinSpacing: false,
-      animation: liftArow,
-      once: true
-    });
-
-    gsap.to(".profitDrag", { scaleY: 0 });
-    const action = gsap.to(".profitDrag", {
-      scaleY: "100%",
-      transformOrigin: "top bottom",
-      ease: "none",
-    });
-
-    ScrollTrigger.create({
-      trigger: "#start_anim",
-      start: "-=600",
-      endTrigger: "#end_anim",
-      end: "+=1400",
-      markers: false,
-      scrub: -2,
-      pinSpacing: false,
-      animation: action,
-      once: true
-    });
-
-    const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
-    panels.forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "-=600",
-        end: "center",
-        markers: false,
-        onEnter: () => {
-          panels[i].classList.add("activate");
-        },
-        // onEnterBack: () => {
-        //   panels[i].classList.remove("activate");
-        // },
-      });
-    });
+    if (typeof(window) !== "undefined") {
+      if (window.innerWidth >= 1024) {  
+        gsap.set(".dragWithme", { top: "-10px" });
+        const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
+    
+        ScrollTrigger.create({
+          trigger: ".gl_area",
+          start: "-=600",
+          endTrigger: "#end_anim",
+          end: "+=1400",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: liftArow,
+          once: true
+        });
+    
+        gsap.to(".profitDrag", { scaleY: 0 });
+        const action = gsap.to(".profitDrag", {
+          scaleY: "100%",
+          transformOrigin: "top bottom",
+          ease: "none",
+        });
+    
+        ScrollTrigger.create({
+          trigger: "#start_anim",
+          start: "-=600",
+          endTrigger: "#end_anim",
+          end: "+=1400",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: action,
+          once: true
+        });
+    
+        const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
+        panels.forEach((panel, i) => {
+          ScrollTrigger.create({
+            trigger: panel,
+            start: "-=600",
+            end: "center",
+            markers: false,
+            onEnter: () => {
+              panels[i].classList.add("activate");
+            },
+            // onEnterBack: () => {
+            //   panels[i].classList.remove("activate");
+            // },
+          });
+        });
+        
+      } else {
+        gsap.set(".dragWithme", { top: "-10px" });
+        const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
+    
+        ScrollTrigger.create({
+          trigger: ".gl_area",
+          start: "-=200",
+          endTrigger: ".end_anim",
+          end: "bottom +=300",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: liftArow,
+          once: true
+        });
+    
+        gsap.to(".profitDrag", { scaleY: 0 });
+        const action = gsap.to(".profitDrag", {
+          scaleY: "100%",
+          transformOrigin: "top bottom",
+          ease: "none",
+        });
+    
+        ScrollTrigger.create({
+          trigger: ".start_anim",
+          start: "-=200",
+          endTrigger: ".end_anim",
+          end: "bottom +=300",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: action,
+          once: true
+        });
+    
+        const panels = gsap.utils.toArray([".gl_area .benifit_ttl", ".gl_area .benifit_ttl_mb"]);
+        panels.forEach((panel, i) => {
+          ScrollTrigger.create({
+            trigger: panel,
+            start: "-=250",
+            end: "center",
+            markers: false,
+            onEnter: () => {
+              panels[i].classList.add("activate");
+            },
+            // onEnterBack: () => {
+            //   panels[i].classList.remove("activate");
+            // },
+          });
+        });
+      }
+    }
 
     document.body.classList.add("web-app");
     return () => {
@@ -105,28 +160,40 @@ export default function WebApp({ data }) {
         <div className="container-xl p-0">
           <div className="row g-0">
             <div className="col-12 col-md-7 ecom__info position-relative">
-              <div className="main__title" dangerouslySetInnerHTML={{ __html: data.pageHeading }}></div>
-              {data.bannerSubtitle && (
-                <div className="sub_title play_fair-ttl">
-                  <h2>{data.bannerSubtitle}</h2>
+              <div className="banner_content_info">
+                <div className="main__title" dangerouslySetInnerHTML={{ __html: data.pageHeading }}></div>
+                {data.bannerSubtitle && (
+                  <div className="sub_title play_fair-ttl">
+                    <h2>{data.bannerSubtitle}</h2>
+                  </div>
+                )}
+                {data.bannerTitle && (
+                  <div
+                    className="banner-h3 moji_ttl mb-0"
+                    dangerouslySetInnerHTML={{ __html: data.bannerTitle }}
+                  ></div>
+                )}
+                <div className="d-md-none bild-before position-relative">
+                {data.bannerImage && (
+                  <div className="position-relative group__bild">
+                    <div className="theme___bg">
+                      <img className="img-fluid" src={data.bannerImage.sourceUrl} />
+                    </div>
+                  </div>
+                )}
                 </div>
-              )}
-              {data.bannerTitle && (
-                <div
-                  className="banner-h3 moji_ttl"
-                  dangerouslySetInnerHTML={{ __html: data.bannerTitle }}
-                ></div>
-              )}
-              {data.bannerDescription && (
-                <div
-                  className="mb-4"
-                  dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
-                ></div>
-              )}
+                {data.bannerDescription && (
+                  <div
+                    className="mb-4"
+                    dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
+                  ></div>
+                )}
+
+              </div>
             </div>
             {data.bannerImage && (
               <div className="col-12 col-md-5 position-relative group__bild">
-                <div className="theme___bg">
+                <div className="theme___bg d-none d-md-block">
                   <img className="img-fluid" src={data.bannerImage.sourceUrl} />
                 </div>
               </div>
@@ -142,17 +209,22 @@ export default function WebApp({ data }) {
               <img src="../images/smArrow.png" />
             </div>
           </div>
-          <section className="row get_row g-0 sec-1" id="start_anim">
-            <div className="col-1 benit__ttl">
+          <section className="row get_row g-0 sec-1 start_anim" id="start_anim">
+            <div className="col-12 col-md-1 d-none d-md-block benit__ttl">
               {data.benefitsTitle && (
                 <div className="benifit_ttl">
                   <h3 className="vr-title">{data.benefitsTitle}</h3>
                 </div>
               )}
             </div>
-            <div className="col-11">
+            <div className="col-12 col-md-11 pd-30-l-mix">
+              <div className="d-md-none">
+                <div className="benifit_ttl_mb mb-stl pd-48-15">
+                  <h3 className="vr-title_mb">{data.benefitsTitle}</h3>
+                </div>
+              </div>
               {data.benefitsBlocks && (
-                <ul className="list-inline benifit__inner">
+                <ul className="list-inline benifit__inner benefit_list_mb">
                   {data.benefitsBlocks.map((item, index) => {
                     return (
                       <li
@@ -160,7 +232,12 @@ export default function WebApp({ data }) {
                         key={`benefits-${index}`}
                       >
                         <div className="ffk_btn">
-                          <span>{item.benefitBlockTitle} </span>
+                          <div className="btn-flex-col d-flex align-items-center">
+                            <div className="d-md-none position-relative zindex-3 me-3">
+                              <img src="../images/wb-1.png" alt="wp1" />
+                            </div>
+                            <span>{item.benefitBlockTitle} </span>
+                          </div>
                         </div>
                       </li>
                     );
@@ -170,81 +247,111 @@ export default function WebApp({ data }) {
             </div>
           </section>
           <section className="row get_row g-0 sec-2">
-            <div className="col-1 wus__ttl">
+            <div className="col-12 col-md-1 d-none d-md-block wus__ttl">
               {data.whyUsHeading && (
                 <div className="benifit_ttl">
                   <h3 className="vr-title">{data.whyUsHeading}</h3>
                 </div>
               )}
             </div>
-            <div className="col-11">
+            <div className="col-12 col-md-11 pd-30-l-mix">
+              <div className="d-md-none">
+                {data.whyUsHeading && (
+                <div className="benifit_ttl_mb mb-stl pd-48-15">
+                  <h3 className="vr-title_mb">{data.whyUsHeading}</h3>
+                </div>
+                )}
+              </div>
               <div className="row g-0 why__us align-items-center">
-                <div className="col-md-7 maxim_effort position-relative">
-                  {data.whyUsTitle && (
-                    <h2 dangerouslySetInnerHTML={{ __html: data.whyUsTitle }} />
-                  )}
-                  {data.whyUsDescription && (
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: data.whyUsDescription,
-                      }}
-                    />
-                  )}
+                <div className="col-12 col-md-7 maxim_effort position-relative">
+                  <div className="pd-48-15">
+                    {data.whyUsTitle && (
+                      <h2 dangerouslySetInnerHTML={{ __html: data.whyUsTitle }} />
+                    )}
+                    {data.whyUsDescription && (
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: data.whyUsDescription,
+                        }}
+                      />
+                    )}
+                  </div>
                 </div>
                 {data.whyUsImage && (
-                  <div className="col-md-5">
-                    <img
-                      className="img-fluid w-100"
-                      src={data.whyUsImage.sourceUrl}
-                    />
+                  <div className="col-12 col-md-5">
+                    <div className="pd-48-15 pe-0">
+                      <div className="d-md-none">
+                        <img className="img-fluid w-100" src="../images/trgt.png" alt="bldrp" />
+                      </div>
+                      <div className="d-none d-md-block">
+                        <img
+                          className="img-fluid w-100"
+                          src={data.whyUsImage.sourceUrl}
+                        />
+                      </div>
+                    </div>
                   </div>
                 )}
               </div>
             </div>
           </section>
-          <section className="row get_row g-0 sec-3" id="end_anim">
-            <div className="col-1 serv__ttl">
-              {data.serviceDetailsHeading && (
-                <div className="benifit_ttl align-self-center">
-                  <h3 className="vr-title">{data.serviceDetailsHeading}</h3>
-                </div>
-              )}
+          <section className="row get_row g-0 sec-3 end_anim" id="end_anim">
+            <div className="col-12 col-md-1 d-none d-md-block serv__ttl">
+              <div className="pd-48-15">
+                {data.serviceDetailsHeading && (
+                  <div className="benifit_ttl align-self-center">
+                    <h3 className="vr-title">{data.serviceDetailsHeading}</h3>
+                  </div>
+                )}
+              </div>
             </div>
-            <div className="col-11 time_acquainted">
+            <div className="col-12 col-md-11 pd-30-l-mix time_acquainted">
+              <div className="d-md-none">
+              {data.serviceDetailsHeading && (
+                <div className="benifit_ttl_mb mb-stl pd-48-15">
+                  <h3 className="vr-title_mb">{data.serviceDetailsHeading}</h3>
+                </div>
+                )}
+              </div>
               <div className="row g-0 why__us align-items-center">
-                <div className="col-md-6">
-                  <div className="automateImg">
-                    <div className="automateContainer" />
+                <div className="col-12 col-md-6 order-2 order-md-1">
+                  <div className="pd-48-15">
+                    <div className="automateImg">
+                      <div className="automateContainer" />
+                    </div>
                   </div>
                 </div>
-                <div className="col-md-6 automate_work position-relative">
-                  <h2
-                    dangerouslySetInnerHTML={{
-                      __html: data.serviceDetailsTitle,
-                    }}
-                  />
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: data.serviceDetailsDescription,
-                    }}
-                  />
-                  <p className="mb-4">
-                    <strong
+                <div className="col-12 col-md-6 automate_work automate_work_last position-relative order-1 order-md-2">
+                  <div className="pd-48-15">
+                    <h2
                       dangerouslySetInnerHTML={{
-                        __html: data.serviceDetailsSubtitle,
+                        __html: data.serviceDetailsTitle,
                       }}
                     />
-                  </p>
-                  {data.seeOurWorkLink && (
-                    <div className="d-table">
-                      <a
-                        className="btn btn-yellow ft-gilroy_b fw-bold"
-                        href={data.seeOurWorkLink}
-                      >
-                        <strong>Let’s talk</strong>
-                      </a>
-                    </div>
-                  )}
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: data.serviceDetailsDescription,
+                      }}
+                    />
+                    <p className="mb-4">
+                      <strong
+                        dangerouslySetInnerHTML={{
+                          __html: data.serviceDetailsSubtitle,
+                        }}
+                      />
+                    </p>
+                    {data.seeOurWorkLink && (
+                      <div className="d-sm-table">
+                        <a
+                          className="btn btn-yellow ft-gilroy_b fw-bold"
+                          href={data.seeOurWorkLink}
+                        >
+                          <strong>Let’s talk</strong>
+                        </a>
+                      </div>
+                    )}
+
+                  </div>
                 </div>
               </div>
             </div>

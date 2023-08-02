@@ -5058,6 +5058,7 @@ a {
   .vr-title { font-size: 30px; }
   .webDev .benifit__inner.benefit_list { padding-left: 0 !important; }
   .pd-30-mix { padding-left: 30px; }
+  .pd-30-l-mix { padding-left: 30px; }
   .webDev .benifit__inner.benefit_list::after { width: 200px; height: 200px; top: 80px; }
   .webDev .websiteDesign .benifit__inner.benefit_list .list-inline-item .ffk_btn, .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(4) .ffk_btn, .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(5) .ffk_btn { padding: 14px 32px; font-size: 22px; }
   .webDev .customSites_up .benifit__inner, .remove-lg-5-ps { padding-left: 0 !important; }
@@ -5101,6 +5102,7 @@ a {
   .hosting .hosting_inner .banner_content { padding-top: 0; }
   .hosting .mix_bland_2 { margin-bottom: 80px; }
   .designFunctionality .box-col:nth-child(2) .box-design::after, .designFunctionality .box-col:first-child .box-design::after, .designFunctionality .alternative-row:nth-child(3) .box-col:first-child .box-design::after { height: 100px; width: 140px; top: 95px; }
+  .web-app .webApp_inner .banner_content h1 br { display: none; }
   
 }
 @media (max-width: 767px) {
@@ -5130,10 +5132,10 @@ a {
   .webDev .banner_content_info .moji_ttl img { top: 5px; right: -5px; max-width: 35px; }
   .design_development_container::after { top: 3.5%; }
   .banner_content_info .banner-h3 { margin-bottom: 45px; }
-  .webDev .benifit__inner.benefit_list.benefit_list_mb, .eCommerce .benifit__inner.benefit_list.benefit_list_mb { padding-left: 48px; padding-right: 15px; margin-top: 20px; }
+  .webDev .benifit__inner.benefit_list.benefit_list_mb, .eCommerce .benifit__inner.benefit_list.benefit_list_mb, .web-app .webApp_inner .sec-1 .benefit_list_mb { padding-left: 48px; padding-right: 15px; margin-top: 20px; }
   .line_anim { left: 15px; }
   .gl_area.websiteDesign .ffk_btn span, .eCommerce .gl_area .ffk_btn span { font-size: 16px; line-height: 21px; }
-  .webDev .websiteDesign .benifit__inner.benefit_list .list-inline-item .ffk_btn, .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(4) .ffk_btn, .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(5) .ffk_btn { max-width: 100%; padding: 24px 32px; border-radius: 24px; }
+  .webDev .websiteDesign .benifit__inner.benefit_list .list-inline-item .ffk_btn, .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(4) .ffk_btn, .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(5) .ffk_btn, .web-app .webApp_inner .gl_area .ffk_btn { max-width: 100% !important; width: 100%; padding: 24px 28px; border-radius: 24px; }
   .ecommerce_page.gl_area .ffk_btn { max-width: 100%; padding: 24px 22px; border-radius: 24px; }
   .benifit__inner.benefit_list_mb .list-inline-item { margin: 0; padding-bottom: 9px; }
   .pd-48-15 { padding-left: 48px; padding-right: 15px; }
@@ -5182,6 +5184,21 @@ a {
   .designFunctionality .box-design { height: auto; }
   .eyeFriendly { margin-bottom: 60px; }
   .services main.serviceDetail { margin-top: 60px; }
+  .webApp_inner .theme___bg img { width: 100%; max-width: 100%; }
+  .web-app .webApp_inner .banner_content h1 { font-size: 30px; }
+  .web-app .ecom__info .moji_ttl h3 { font-size: 20px; line-height: 25px; max-width: 100%; }
+  .web-app .webApp_inner .theme___bg::before { left: -20px; }
+  .web-app .webApp_inner .bild-before::before { content: ''; background: url(../images/preview-4.png) no-repeat; height: 215px; width: 215px; position: absolute; z-index: 1; right: -65px; background-size: cover; transform: rotate(90deg); top: 30px; }
+  .web-app .webApp_inner .bild-before { margin-bottom: 90px; }
+  .webApp_inner .benifit__inner::after, .web-app .industryNeeds .needs_block h3 strong::after { content: none !important; }
+  .webApp_inner .gl_area .ffk_btn span { font-size: 16px; line-height: 21px; text-align: left; }
+  .maxim_effort::after { content: none; }
+  .automate_work_last { margin-bottom: 70px; }
+  .web-app .industryNeeds { padding-top: 150px !important; }
+  .web-app .industryNeeds .automate_work h2 { font-size: 25px !important; line-height: 30px; margin-bottom: 25px !important; }
+  .web-app .industryNeeds .automate_work p { font-size: 16px !important; line-height: 26px !important; margin-bottom: 20px !important; }
+  .web-app .industryNeeds .automate_work h3 { font-size: 18px !important; line-height: 30px !important; }
+  .web-app .why__us { padding-bottom: 100px !important; }
 
 }
 @media (max-width: 568px) {
@@ -5206,9 +5223,17 @@ a {
   .webDev .customSites_up .benifit__inner { grid-template-columns: repeat(1, 1fr) !important; }
   .benifit_ttl_mb .vr-title_mb { font-size: 28px; }
   .services .eyeFriendly .service-title h1 { font-size: 24px; line-height: 30px; }
+  .web-app .webApp_inner .banner_content h1 { font-size: 26px; line-height: 36px; }
+}
+@media (max-width: 375px) {
+  .btn-flex-col { flex-flow: column; }
+  .btn-flex-col .me-3 { margin-right: 0 !important; margin-bottom: 20px; }
+  .webApp_inner .gl_area .ffk_btn span { text-align: center; }
+
 }
 @media (max-width: 359px) {
   .banner_content_info .banner-h3.moji_ttl.banner-h3_mob h3 { max-width: 190px; }
   .ecom__info .moji_ttl.banner-desc_mob img { top: -10px; right: -30px; }
   .services .eyeFriendly .service-title h1 { font-size: 20px; }
+  .web-app .webApp_inner .banner_content h1 { font-size: 22px; line-height: 34px; }
 }
