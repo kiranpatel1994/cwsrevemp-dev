@@ -208,7 +208,7 @@ export default function Ecommerce({ data }) {
               </div>
             </div>
             {data.benefitBlocks && (
-              <div className="col-12 col-md-11 pd-30-mix">
+              <div className="col-12 col-md-11 pd-30-l-mix">
                 <div className="d-md-none">
                   <div className="benifit_ttl_mb mb-stl pd-48-15">
                     <h3 className="vr-title_mb">Benefits</h3>
@@ -240,7 +240,7 @@ export default function Ecommerce({ data }) {
                 <h3 className="vr-title">Why Us</h3>
               </div>
             </div>
-            <div className="col-12 col-md-11 pd-30-mix">
+            <div className="col-12 col-md-11 pd-30-l-mix">
               <div className="d-md-none">
                 <div className="benifit_ttl_mb mb-stl pd-48-15">
                   <h3 className="vr-title_mb">Why Us</h3>
@@ -291,7 +291,7 @@ export default function Ecommerce({ data }) {
                 <h3 className="vr-title">Service Details</h3>
               </div>
             </div>
-            <div className="col-12 col-md-11 pd-30-mix">
+            <div className="col-12 col-md-11 pd-30-l-mix">
               <div className="d-md-none">
                 <div className="benifit_ttl_mb mb-stl pd-48-15">
                   <h3 className="vr-title_mb">Service Details </h3>

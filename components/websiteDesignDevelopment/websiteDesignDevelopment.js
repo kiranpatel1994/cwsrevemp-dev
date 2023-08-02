@@ -201,7 +201,7 @@ export default function WebsiteDesignDev({ data }) {
                 </div>
               )}
             </div>
-            <div className="col-12 col-md-11 pd-30-mix">
+            <div className="col-12 col-md-11 pd-30-l-mix">
               <div className="d-md-none">
                 {data.benefitsTitle && (
                   <div className="benifit_ttl_mb pd-48-15">
@@ -236,7 +236,7 @@ export default function WebsiteDesignDev({ data }) {
                 <h3 className="vr-title">Why Us</h3>
               </div>
             </div>
-            <div className="col-12 col-md-11 pd-30-mix">
+            <div className="col-12 col-md-11 pd-30-l-mix">
               <div className="d-md-none">
                 <div className="benifit_ttl_mb mb-stl pd-48-15">
                   <h3 className="vr-title_mb">Why Us</h3>
@@ -279,7 +279,7 @@ export default function WebsiteDesignDev({ data }) {
                 <h3 className="vr-title">WordPress</h3>
               </div>
             </div>
-            <div className="col-12 col-md-11 pd-30-mix">
+            <div className="col-12 col-md-11 pd-30-l-mix">
               <div className="row g-0 wp_m_info align-items-center">
                 <div className="col-12 col-lg-6">
                   <div className="d-none d-md-block pe-md-3 pe-xxl-0">
@@ -388,7 +388,7 @@ export default function WebsiteDesignDev({ data }) {
                 <h3 className="vr-title">Service Details</h3>
               </div>
             </div>
-            <div className="col-12 col-md-11 pd-30-mix">
+            <div className="col-12 col-md-11 pd-30-l-mix">
               <div className="d-md-none">
                 <div className="benifit_ttl_mb mb-stl pd-48-15">
                   <h3 className="vr-title_mb">Service Details </h3>
@@ -452,7 +452,7 @@ export default function WebsiteDesignDev({ data }) {
                 <h3 className="vr-title">Service Details</h3>
               </div>
             </div>
-            <div className="col-12 col-md-11 pd-30-mix">
+            <div className="col-12 col-md-11 pd-30-l-mix">
               <div className="row g-0 align-items-center">
                 <div className="col-12 col-lg-6">
                   <div className="pd-48-15">
