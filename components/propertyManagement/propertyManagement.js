@@ -27,19 +27,11 @@ export default function PropertyManagement({ data, form }) {
       animationData: torusLanding,
     });
 
-    if (typeof (window) !== "undefined") {
-      gsap.set(".dragWithme", { top: "-10px" });
-      const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-
-      gsap.to(".profitDrag", { scaleY: 0 });
-      const action = gsap.to(".profitDrag", {
-        scaleY: "100%",
-        transformOrigin: "top bottom",
-        ease: "none",
-      });
-
-      if (window.innerWidth >= 1024) {
-
+    if (typeof(window) !== "undefined") {
+      if (window.innerWidth >= 1024) {  
+        gsap.set(".dragWithme", { top: "-10px" });
+        const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
+    
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=600",
@@ -51,7 +43,14 @@ export default function PropertyManagement({ data, form }) {
           animation: liftArow,
           once: true
         });
-
+    
+        gsap.to(".profitDrag", { scaleY: 0 });
+        const action = gsap.to(".profitDrag", {
+          scaleY: "100%",
+          transformOrigin: "top bottom",
+          ease: "none",
+        });
+    
         ScrollTrigger.create({
           trigger: "#start_anim",
           start: "-=600",
@@ -63,7 +62,7 @@ export default function PropertyManagement({ data, form }) {
           animation: action,
           once: true
         });
-
+    
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
@@ -79,33 +78,42 @@ export default function PropertyManagement({ data, form }) {
             // },
           });
         });
-
+        
       } else {
-
+        gsap.set(".dragWithme", { top: "-10px" });
+        const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
+    
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=200",
           endTrigger: ".end_anim",
-          end: "+=4500",
+          end: "bottom +=300",
           markers: false,
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
           once: true
         });
-
+    
+        gsap.to(".profitDrag", { scaleY: 0 });
+        const action = gsap.to(".profitDrag", {
+          scaleY: "100%",
+          transformOrigin: "top bottom",
+          ease: "none",
+        });
+    
         ScrollTrigger.create({
           trigger: ".start_anim",
           start: "-=200",
           endTrigger: ".end_anim",
-          end: "+=4500",
+          end: "bottom +=300",
           markers: false,
           scrub: -2,
           pinSpacing: false,
           animation: action,
           once: true
         });
-
+    
         const panels = gsap.utils.toArray([".gl_area .benifit_ttl", ".gl_area .benifit_ttl_mb"]);
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
