@@ -4997,6 +4997,7 @@ a {
   .services .eyeFriendly .service-title .bl_plus { max-width: 24px; margin-left: 5px; }
   .services .eyeFriendly .service-title .bl_arrow { max-width: 31px; margin-left: 8px; }
   .services .serviceDetail::after { content: none; }
+  .webDev .customSites_up .benifit__inner li.list-inline-item .ffk_btn { width: 100% !important; }
 }
 @media (max-width: 1440px) {
   .map-placeholder::before { top: 45%; height: 258px; width: 258px; left: -100px; }
@@ -5019,6 +5020,7 @@ a {
   .hosting .hosting_page .information__box.information__space .notification_box { max-width: 100%; }
   .services .eyeFriendly .service-title h1 { font-size: 42px; line-height: 42px; }
   .designFunctionality .box-col:nth-child(2) .box-design::after, .designFunctionality .box-col:first-child .box-design::after, .designFunctionality .alternative-row:nth-child(3) .box-col:first-child .box-design::after { height: 150px; width: 200px; top: 65px; }
+  .webDev .website_design_development .banner_content { padding-bottom: 100px; }
 }
 @media (max-width: 1300px) {
   .webDev .customSites_up .benifit__inner { grid-template-columns: repeat(2, 1fr) !important; }
@@ -5066,6 +5068,7 @@ a {
   .mouse_content_bild h3 { display: block; }
   .mouse_content_bild h3::after { width: 24px; height: 29px; position: relative; top: 10px; background-size: cover; margin-left: 7px; }
   .hosting .banner_content_info { text-align: left; }
+  .webDev .customSites_up .benifit__inner li.list-inline-item { width: 100% !important; }
   
 }
 @media (max-width: 991px) {
@@ -5089,7 +5092,7 @@ a {
   .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item .ffk_btn { font-size: 20px; padding: 14px 35px; }
   .webDev .benifit__inner.benefit_list::after, .ecom_development_container.design_development_container::after { content: none; }
   .im_moji.moji_para.banner-desc p:last-child { font-size: 35px; }
-  .webDev .customSites_up .benifit__inner .ffk_btn { min-width: 180px !important; font-size: 16px; padding: 16px 15px; }
+  .webDev .customSites_up .benifit__inner .ffk_btn { min-width: 180px !important; width: auto !important; font-size: 16px; padding: 16px 15px; }
   .sp-top-1 { opacity: 0.17; margin-top: -38px; width: 140%; }
   .mouse_content_cols { margin-top: 60px; }
   .hand_pen img { max-width: 400px; }

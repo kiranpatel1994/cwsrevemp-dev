@@ -19,99 +19,106 @@ export default function PrintedMarketing({ data }) {
       animationData: torusLanding,
     });
 
-    if (typeof window !== "undefined") {
-      gsap.set(".dragWithme", { top: "-10px" });
-      const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-
-      gsap.to(".profitDrag", { scaleY: 0 });
-      const action = gsap.to(".profitDrag", {
-        scaleY: "100%",
-        transformOrigin: "top bottom",
-        ease: "none",
-      });
-
-      if (window.innerWidth >= 1024) {
+    if (typeof(window) !== "undefined") {
+      if (window.innerWidth >= 1024) {  
+        gsap.set(".dragWithme", { top: "-10px" });
+        const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
+    
         ScrollTrigger.create({
           trigger: ".gl_area",
-          start: "-=259",
+          start: "-=600",
           endTrigger: "#end_anim",
-          end: "+=1600",
+          end: "+=1800",
           markers: false,
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true,
-          //   toggleClass: "active"
+          once: true
         });
-
+    
+        gsap.to(".profitDrag", { scaleY: 0 });
+        const action = gsap.to(".profitDrag", {
+          scaleY: "100%",
+          transformOrigin: "top bottom",
+          ease: "none",
+        });
+    
         ScrollTrigger.create({
           trigger: "#start_anim",
-          start: "-=270",
+          start: "-=600",
           endTrigger: "#end_anim",
-          end: "+=1600",
+          end: "+=1800",
           markers: false,
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true,
-          //   toggleClass: "active"
+          once: true
         });
-
+    
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
             trigger: panel,
-            start: "-=270",
-            end: "-=270",
+            start: "-=600",
+            end: "center",
             markers: false,
             onEnter: () => {
               panels[i].classList.add("activate");
             },
-            onEnterBack: () => {
-              panels[i].classList.remove("activate");
-            },
+            // onEnterBack: () => {
+            //   panels[i].classList.remove("activate");
+            // },
           });
         });
+        
       } else {
+        gsap.set(".dragWithme", { top: "-10px" });
+        const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
+    
         ScrollTrigger.create({
           trigger: ".gl_area",
-          start: "-=259",
-          endTrigger: "#end_anim",
-          end: "+=3180",
+          start: "-=200",
+          endTrigger: ".end_anim",
+          end: "bottom +=300",
           markers: false,
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true,
-          //   toggleClass: "active"
+          once: true
         });
-
+    
+        gsap.to(".profitDrag", { scaleY: 0 });
+        const action = gsap.to(".profitDrag", {
+          scaleY: "100%",
+          transformOrigin: "top bottom",
+          ease: "none",
+        });
+    
         ScrollTrigger.create({
-          trigger: "#start_anim",
-          start: "-=270",
-          endTrigger: "#end_anim",
-          end: "+=3180",
+          trigger: ".start_anim",
+          start: "-=200",
+          endTrigger: ".end_anim",
+          end: "bottom +=300",
           markers: false,
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true,
-          //   toggleClass: "active"
+          once: true
         });
-
-        const panels = gsap.utils.toArray(".gl_area .benifit_ttl_mb");
+    
+        const panels = gsap.utils.toArray([".gl_area .benifit_ttl", ".gl_area .benifit_ttl_mb"]);
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
             trigger: panel,
-            start: "-=270",
-            end: "-=270",
+            start: "-=250",
+            end: "center",
             markers: false,
             onEnter: () => {
               panels[i].classList.add("activate");
             },
-            onEnterBack: () => {
-              panels[i].classList.remove("activate");
-            },
+            // onEnterBack: () => {
+            //   panels[i].classList.remove("activate");
+            // },
           });
         });
       }
@@ -185,7 +192,7 @@ export default function PrintedMarketing({ data }) {
               <img src="../images/smArrow.png" />
             </div>
           </div>
-          <section className="row get_row g-0 sec-1" id="start_anim">
+          <section className="row get_row g-0 sec-1 start_anim" id="start_anim">
             <div className="col-1 d-none d-md-block benit__ttl">
               {data.benefitsHeading && (
                 <div className="benifit_ttl">
@@ -261,7 +268,7 @@ export default function PrintedMarketing({ data }) {
               </div>
             </div>
           </section>
-          <section className="row get_row g-0 sec-3" id="end_anim">
+          <section className="row get_row g-0 sec-3 end_anim" id="end_anim">
             <div className="col-1 d-none d-md-block serv__ttl">
               {data.servicesHeading && (
                 <div className="benifit_ttl align-self-center">
