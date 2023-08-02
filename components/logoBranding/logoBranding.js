@@ -19,57 +19,99 @@ export default function LogoBranding({ data }) {
       animationData: torusLanding,
     });
 
-    gsap.set(".dragWithme", { top: "-10px" });
-    const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
+    if (typeof window !== "undefined") {
+      gsap.set(".dragWithme", { top: "-10px" });
+      const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
 
-    ScrollTrigger.create({
-      trigger: ".gl_area",
-      start: "-=259",
-      endTrigger: "#end_anim",
-      end: "+=1600",
-      markers: false,
-      scrub: -2,
-      pinSpacing: false,
-      animation: liftArow,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
-    });
-
-    gsap.to(".profitDrag", { scaleY: 0 });
-    const action = gsap.to(".profitDrag", {
-      scaleY: "100%",
-      transformOrigin: "top bottom",
-      ease: "none",
-    });
-
-    ScrollTrigger.create({
-      trigger: "#start_anim",
-      start: "-=270",
-      endTrigger: "#end_anim",
-      end: "+=1600",
-      markers: false,
-      scrub: -2,
-      pinSpacing: false,
-      animation: action,
-      toggleActions: "play none none none",
-      //   toggleClass: "active"
-    });
-
-    const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
-    panels.forEach((panel, i) => {
-      ScrollTrigger.create({
-        trigger: panel,
-        start: "-=270",
-        end: "-=270",
-        markers: false,
-        onEnter: () => {
-          panels[i].classList.add("activate");
-        },
-        onEnterBack: () => {
-          panels[i].classList.remove("activate");
-        },
+      gsap.to(".profitDrag", { scaleY: 0 });
+      const action = gsap.to(".profitDrag", {
+        scaleY: "100%",
+        transformOrigin: "top bottom",
+        ease: "none",
       });
-    });
+
+      if (window.innerWidth >= 1024) {
+        ScrollTrigger.create({
+          trigger: ".gl_area",
+          start: "-=259",
+          endTrigger: "#end_anim",
+          end: "+=1600",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: liftArow,
+          once: true,
+        });
+
+        ScrollTrigger.create({
+          trigger: "#start_anim",
+          start: "-=270",
+          endTrigger: "#end_anim",
+          end: "+=1600",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: action,
+          once: true,
+        });
+
+        const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
+        panels.forEach((panel, i) => {
+          ScrollTrigger.create({
+            trigger: panel,
+            start: "-=270",
+            end: "-=270",
+            markers: false,
+            onEnter: () => {
+              panels[i].classList.add("activate");
+            },
+            onEnterBack: () => {
+              panels[i].classList.remove("activate");
+            },
+          });
+        });
+      } else {
+        ScrollTrigger.create({
+          trigger: ".gl_area",
+          start: "-=259",
+          endTrigger: "#end_anim",
+          end: "+=3180",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: liftArow,
+          once: true,
+        });
+
+        ScrollTrigger.create({
+          trigger: "#start_anim",
+          start: "-=270",
+          endTrigger: "#end_anim",
+          end: "+=3180",
+          markers: false,
+          scrub: -2,
+          pinSpacing: false,
+          animation: action,
+          once: true,
+        });
+
+        const panels = gsap.utils.toArray(".gl_area .benifit_ttl_mb");
+        panels.forEach((panel, i) => {
+          ScrollTrigger.create({
+            trigger: panel,
+            start: "-=270",
+            end: "-=270",
+            markers: false,
+            onEnter: () => {
+              panels[i].classList.add("activate");
+            },
+            onEnterBack: () => {
+              panels[i].classList.remove("activate");
+            },
+          });
+        });
+      }
+    }
 
     document.body.classList.add("logo-branding");
     return () => {
@@ -95,28 +137,30 @@ export default function LogoBranding({ data }) {
         </div>
       </div>
       <div className="banner_content position-relative overflow-hidden">
-        <div className="container-xl p-0">
-          <div className="row g-0">
-            <div className="col-12 col-md-7 ecom__info position-relative">
-              {data.pageHeading && <h1>{data.pageHeading} </h1>}
-              {data.bannerSubtitle && (
-                <div className="sub_title play_fair-ttl">
-                  <h2>{data.bannerSubtitle}</h2>
-                </div>
-              )}
-              {data.bannerTitle && (
-                <div className="moji_ttl">
-                  <h3>{data.bannerTitle}</h3>
-                </div>
-              )}
-              {data.bannerDescription && (
-                <div
-                  className="mb-4"
-                  dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
-                />
-              )}
+        <div className="container p-lg-0">
+          <div className="row g-xxl-0">
+            <div className="col-12 col-xl-7 ecom__info position-relative">
+              <div className="banner_content_info">
+                {data.pageHeading && <h1>{data.pageHeading} </h1>}
+                {data.bannerSubtitle && (
+                  <div className="sub_title play_fair-ttl">
+                    <h2>{data.bannerSubtitle}</h2>
+                  </div>
+                )}
+                {data.bannerTitle && (
+                  <div className="moji_ttl">
+                    <h3>{data.bannerTitle}</h3>
+                  </div>
+                )}
+                {data.bannerDescription && (
+                  <div
+                    className="mb-4"
+                    dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
+                  />
+                )}
+              </div>
             </div>
-            <div className="col-12 col-md-5 position-relative group__bild">
+            <div className="col-12 col-xl-5 position-relative group__bild">
               {data.bannerImage.sourceUrl && (
                 <div className="theme___bg">
                   <img
@@ -138,20 +182,30 @@ export default function LogoBranding({ data }) {
             </div>
           </div>
           <section className="row get_row g-0 sec-1" id="start_anim">
-            <div className="col-1 benit__ttl">
+            <div className="col-1 d-md-block d-none benit__ttl">
               {data.benefitsHeading && (
                 <div className="benifit_ttl">
                   <h3 className="vr-title">{data.benefitsHeading}</h3>
                 </div>
               )}
             </div>
-            <div className="col-11">
+            <div className="col-md-11 pd-30-mix pd-48-15">
+              <div className="d-md-none mb-4">
+                {data.benefitsHeading && (
+                  <div className="benifit_ttl_mb">
+                    <h3 className="vr-title_mb">{data.benefitsHeading}</h3>
+                  </div>
+                )}
+              </div>
               {data.benefitsBlocks && (
                 <ul className="list-inline benifit__inner">
                   {data.benefitsBlocks.map((item, index) => {
                     return (
                       <li className="list-inline-item" key={`benefit-${index}`}>
                         <div className="ffk_btn">
+                          <div className="d-md-none position-relative zindex-3">
+                            <img src="../images/enf-1.png" />
+                          </div>
                           <span>{item.benefitBlockTitle}</span>
                         </div>
                       </li>
@@ -162,16 +216,23 @@ export default function LogoBranding({ data }) {
             </div>
           </section>
           <section className="row get_row g-0 sec-2">
-            <div className="col-1 wus__ttl">
+            <div className="col-1 d-md-block d-none wus__ttl">
               {data.whyUsHeading && (
                 <div className="benifit_ttl">
                   <h3 className="vr-title">{data.whyUsHeading}</h3>
                 </div>
               )}
             </div>
-            <div className="col-11">
-              <div className="row g-0 why__us align-items-center">
-                <div className="col-md-7 maxim_effort position-relative">
+            <div className="col-md-11 pd-30-mix pd-48-15">
+              <div className="d-md-none mb-4">
+                {data.whyUsHeading && (
+                  <div className="benifit_ttl_mb">
+                    <h3 className="vr-title_mb">{data.whyUsHeading}</h3>
+                  </div>
+                )}
+              </div>
+              <div className="row g-xxl-0 why__us align-items-center mb-5">
+                <div className="col-lg-7 maxim_effort position-relative">
                   {data.whyUsTitle && (
                     <div
                       dangerouslySetInnerHTML={{ __html: data.whyUsTitle }}
@@ -186,7 +247,7 @@ export default function LogoBranding({ data }) {
                   )}
                 </div>
                 {data.whyUsImage.sourceUrl && (
-                  <div className="col-md-5 text-end">
+                  <div className="col-lg-5 text-lg-end text-center mt-lg-0 mt-4 pt-lg-0 pt-4">
                     <img
                       className="img-fluid"
                       src={data.whyUsImage.sourceUrl}
@@ -197,24 +258,31 @@ export default function LogoBranding({ data }) {
             </div>
           </section>
           <section className="row get_row g-0 sec-3" id="end_anim">
-            <div className="col-1 serv__ttl">
+            <div className="col-1 d-md-block d-none serv__ttl">
               {data.servicesHeading && (
                 <div className="benifit_ttl align-self-center">
                   <h3 className="vr-title">{data.servicesHeading} </h3>
                 </div>
               )}
             </div>
-            <div className="col-11 time_acquainted">
-              <div className="row g-0 why__us align-items-center">
+            <div className="col-md-11 pd-30-mix pd-48-15 time_acquainted">
+              <div className="row g-xxl-0 why__us align-items-center">
+                <div className="d-md-none mb-4">
+                  {data.servicesHeading && (
+                    <div className="benifit_ttl_mb">
+                      <h3 className="vr-title_mb">{data.servicesHeading}</h3>
+                    </div>
+                  )}
+                </div>
                 {data.service1Image.sourceUrl && (
-                  <div className="col-12 col-md-6">
+                  <div className="col-12 col-lg-6 text-lg-left text-center order-lg-0 order-1 mt-lg-0 mt-4 pt-lg-0 pt-4">
                     <img
                       className="img-fluid"
                       src={data.service1Image.sourceUrl}
                     />
                   </div>
                 )}
-                <div className="col-12 col-md-6 automate_work position-relative">
+                <div className="col-12 col-lg-6 automate_work position-relative order-lg-1 order-0">
                   {data.service1Title && <h2>{data.service1Title}</h2>}
                   {data.service1Description && (
                     <div
@@ -236,8 +304,8 @@ export default function LogoBranding({ data }) {
                 </div>
               </div>
 
-              <div className="row g-0 why__us align-items-center">
-                <div className="col-md-7 automate_work position-relative">
+              <div className="row g-xxl-0 why__us align-items-center mt-lg-0 mt-4 pt-lg-0 pt-4">
+                <div className="col-lg-7 automate_work position-relative">
                   {data.service2Title && <h2>{data.service2Title}</h2>}
                   {data.service2Description && (
                     <div
@@ -248,7 +316,7 @@ export default function LogoBranding({ data }) {
                   )}
                 </div>
                 {data.service2Image.sourceUrl && (
-                  <div className="col-md-5">
+                  <div className="col-lg-5 text-lg-start text-center mt-lg-0 mt-4 pt-lg-0 pt-4">
                     <img
                       className="img-fluid"
                       src={data.service2Image.sourceUrl}

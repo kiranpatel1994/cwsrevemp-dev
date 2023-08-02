@@ -2086,8 +2086,8 @@ body.hosting {
   .sociaManagement .benifit__inner::after {
     display: none;
   }
-  .pd-30-mix {
-    padding-right: 15px;
+  .logoBrand_multi .ecom__info::before {
+    bottom: -60px;
   }
 }
 
@@ -2430,7 +2430,7 @@ body.hosting {
 
   header .navbar {
     padding: 17px 0;
-    background-color: transparent !important;
+    /* background-color: transparent !important; */
   }
   .sngl-title h3::before {
     left: 3%;
@@ -2610,6 +2610,55 @@ body.hosting {
   .box__container .box__bg p {
     font-size: 16px;
     line-height: 1.625;
+  }
+  .logoBrand_multi .gl_area {
+    margin-top: 0;
+  }
+  .logoBrand_multi .ecom__info .sub_title.play_fair-ttl h2 {
+    justify-content: center;
+  }
+  .logoBrand_multi .ecom__info .sub_title.play_fair-ttl h2::after {
+    display: none;
+  }
+  .printed-marketing .webApp_inner .theme___bg img,
+  .logo-branding .webApp_inner .theme___bg img {
+    max-width: 500px;
+    margin-bottom: 80px;
+  }
+  .logo-branding .ecom__info p,
+  .printed-marketing .ecom__info p {
+    margin-left: auto;
+  }
+  .printed-marketing .ecom__info::before,
+  .logo-branding .ecom__info::before {
+    display: none;
+  }
+  .printed-marketing .banner_content_info,
+  .logo-branding .banner_content_info {
+    margin-bottom: 50px;
+  }
+  .printed-marketing
+    .webApp_inner
+    .ecom_development_container.design_development_container::after,
+  .logo-branding
+    .webApp_inner
+    .ecom_development_container.design_development_container::after {
+    top: 7%;
+    right: -90px;
+    width: 300px;
+    background-size: 100% auto;
+  }
+  .printed-marketing .webApp_inner .gl_area .ffk_btn,
+  .logo-branding .webApp_inner .gl_area .ffk_btn {
+    max-width: 100%;
+    width: 100%;
+  }
+  .logoBrand_multi .maxim_effort::after {
+    display: none;
+  }
+  .printed-marketing .webApp_inner .gl_area,
+  .logo-branding .webApp_inner .gl_area {
+    padding-bottom: 70px;
   }
 }
 
@@ -2908,7 +2957,7 @@ body.hosting {
   }
   .why__us h2 {
     font-size: 25px;
-    line-height: 1.625;
+    line-height: 1.4;
   }
 
   .prpertyManagement .bannerDesc p {
@@ -3038,6 +3087,20 @@ body.hosting {
   }
   .property-management .expMarketingHeading p br {
     display: none;
+  }
+  .time_acquainted .why__us:last-child p:last-child strong::after {
+    display: none;
+  }
+  .printed-marketing .webApp_inner .sec-1,
+  .logo-branding .webApp_inner .sec-1 {
+    padding-bottom: 40px;
+  }
+  .logoBrand_multi .time_acquainted .why__us:first-child {
+    padding-bottom: 50px;
+  }
+  .printed-marketing .webApp_inner .sec-3 .why__us:last-child,
+  .logo-branding .webApp_inner .sec-3 .why__us:last-child {
+    margin-bottom: 30px;
   }
 }
 
@@ -3460,6 +3523,123 @@ body.hosting {
   }
   .box__container {
     padding-bottom: 50px;
+  }
+  .work__efficient .benifit__inner .list-inline-item .ffk_btn {
+    justify-content: flex-start;
+  }
+
+  .property-management
+    .work__efficient
+    .benifit__inner
+    .list-inline-item
+    .ffk_btn,
+  .sociaManagement .gl_area .ffk_btn,
+  .printed-marketing .webApp_inner .gl_area .ffk_btn,
+  .logo-branding .webApp_inner .gl_area .ffk_btn {
+    padding: 18px 15px;
+    border-radius: 24px;
+  }
+
+  .property-management
+    .work__efficient
+    .benifit__inner
+    .list-inline-item
+    .ffk_btn
+    span,
+  .sociaManagement .gl_area .ffk_btn span,
+  .printed-marketing .webApp_inner .gl_area .ffk_btn span,
+  .logo-branding .webApp_inner .gl_area .ffk_btn span {
+    -webkit-line-clamp: 2;
+    font-size: 16px;
+    line-height: 1.3;
+    text-align: left;
+    padding-left: 15px;
+  }
+  .whitelabel_inner .why__us .serviceBox p {
+    font-size: 30px;
+    line-height: 1;
+  }
+  .whitelabel_inner .why__us p,
+  .social-media .sociaManagement .whyUsDesc p {
+    font-size: 16px;
+    line-height: 1.625;
+  }
+  .whitelabel_inner .why__us .benefit-desc p strong {
+    font-size: 18px;
+    color: #fdb627;
+  }
+  .whitelabel_inner .why__us .benefit-desc p strong br {
+    display: none;
+  }
+  .mobNormalWeight {
+    font-family: "Gilroy" !important;
+    font-weight: 400;
+  }
+  .whitelabel_inner .sec-1 .why__us {
+    padding-bottom: 100px;
+  }
+  .removeMobBr br {
+    display: none;
+  }
+  .prpertyManagement .bannerDesc p b {
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    margin-top: 30px;
+  }
+  .prpertyManagement .im_moji p:last-child b::before,
+  .prpertyManagement .im_moji p:last-child b::after {
+    position: absolute;
+  }
+  .prpertyManagement .im_moji p:last-child b::before {
+    left: -40px;
+    top: -15px;
+  }
+  .prpertyManagement .im_moji p:last-child b::after {
+    right: -40px;
+    top: 25px;
+    left: inherit;
+  }
+  .property-management .benefitDesc {
+    margin-bottom: 0;
+  }
+  .property-management .box__container .box__bg .min-content {
+    margin-bottom: 0;
+    margin-top: -150px;
+  }
+  .property-management .box__container .row .col-12:not(:last-child) .box__bg {
+    margin-bottom: 0;
+  }
+  .property-management .corporateBoxes {
+    --bs-gutter-y: 110px;
+  }
+  .property-management .gl_area {
+    padding-bottom: 80px;
+  }
+  .property-management .last-container {
+    padding-bottom: 52px;
+  }
+  .mobFS16,
+  .mobFS16 p {
+    font-size: 16px !important;
+    line-height: 1.625 !important;
+  }
+  .mobFS20,
+  .mobFS20 p {
+    font-size: 20px !important;
+    line-height: 1.4 !important;
+  }
+  .printed-marketing
+    .logoBrand_multi
+    .time_acquainted
+    .why__us:first-child
+    .automate_work::after,
+  .logo-branding
+    .logoBrand_multi
+    .time_acquainted
+    .why__us:first-child
+    .automate_work::after {
+    display: none;
   }
 }
 
