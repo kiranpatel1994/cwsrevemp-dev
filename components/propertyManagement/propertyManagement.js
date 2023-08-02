@@ -27,11 +27,19 @@ export default function PropertyManagement({ data, form }) {
       animationData: torusLanding,
     });
 
-    if (typeof(window) !== "undefined") {
-      if (window.innerWidth >= 1024) {  
-        gsap.set(".dragWithme", { top: "-10px" });
-        const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+    if (typeof (window) !== "undefined") {
+      gsap.set(".dragWithme", { top: "-10px" });
+      const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
+
+      gsap.to(".profitDrag", { scaleY: 0 });
+      const action = gsap.to(".profitDrag", {
+        scaleY: "100%",
+        transformOrigin: "top bottom",
+        ease: "none",
+      });
+
+      if (window.innerWidth >= 1024) {
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=600",
@@ -43,14 +51,7 @@ export default function PropertyManagement({ data, form }) {
           animation: liftArow,
           once: true
         });
-    
-        gsap.to(".profitDrag", { scaleY: 0 });
-        const action = gsap.to(".profitDrag", {
-          scaleY: "100%",
-          transformOrigin: "top bottom",
-          ease: "none",
-        });
-    
+
         ScrollTrigger.create({
           trigger: "#start_anim",
           start: "-=600",
@@ -62,7 +63,7 @@ export default function PropertyManagement({ data, form }) {
           animation: action,
           once: true
         });
-    
+
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
@@ -78,42 +79,33 @@ export default function PropertyManagement({ data, form }) {
             // },
           });
         });
-        
+
       } else {
-        gsap.set(".dragWithme", { top: "-10px" });
-        const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=200",
           endTrigger: ".end_anim",
-          end: "bottom +=300",
+          end: "+=4500",
           markers: false,
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
           once: true
         });
-    
-        gsap.to(".profitDrag", { scaleY: 0 });
-        const action = gsap.to(".profitDrag", {
-          scaleY: "100%",
-          transformOrigin: "top bottom",
-          ease: "none",
-        });
-    
+
         ScrollTrigger.create({
           trigger: ".start_anim",
           start: "-=200",
           endTrigger: ".end_anim",
-          end: "bottom +=300",
+          end: "+=4500",
           markers: false,
           scrub: -2,
           pinSpacing: false,
           animation: action,
           once: true
         });
-    
+
         const panels = gsap.utils.toArray([".gl_area .benifit_ttl", ".gl_area .benifit_ttl_mb"]);
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
@@ -254,6 +246,9 @@ export default function PropertyManagement({ data, form }) {
                           key={`benefit${index}`}
                         >
                           <div className="ffk_btn">
+                            <div className="d-md-none position-relative zindex-3">
+                              <img src="../images/enf-1.png" />
+                            </div>
                             <span>{item.benefitBlockTitle}</span>
                           </div>
                         </li>
@@ -299,14 +294,14 @@ export default function PropertyManagement({ data, form }) {
                 <div className="col-12 online_property position-relative text-center">
                   {data.whyUsTitle && (
                     <div
-                      className="h2"
+                      className="h2 removeMobBr"
                       dangerouslySetInnerHTML={{
                         __html: data.whyUsTitle,
                       }}
                     ></div>
                   )}
                   {data.whyUsDescription && (
-                    <div
+                    <div className="mobFS16"
                       dangerouslySetInnerHTML={{
                         __html: data.whyUsDescription,
                       }}
@@ -382,10 +377,10 @@ export default function PropertyManagement({ data, form }) {
               <div className="row why__us">
                 <div className="col-12 col-lg-4 position-relative arrow_area">
                   {data.serviceDetailsSubtitle && (
-                    <h4>{data.serviceDetailsSubtitle}</h4>
+                    <h4 className="mobFS20">{data.serviceDetailsSubtitle}</h4>
                   )}
                   {data.serviceDetailsDescription && (
-                    <div
+                    <div className="mobFS16"
                       dangerouslySetInnerHTML={{
                         __html: data.serviceDetailsDescription,
                       }}
@@ -417,7 +412,7 @@ export default function PropertyManagement({ data, form }) {
                     />
                   </div>
                 )}
-                <div className="col-lg-7 automate_work position-relative mt-lg-0 mt-5 pb-lg-0 pb-5 order-lg-1 order-0">
+                <div className="col-lg-7 automate_work position-relative mt-lg-0 mt-5 py-lg-0 py-5 order-lg-1 order-0">
                   <div className="d-table ms-lg-auto me-auto">
                     {data.socialMediaHeading && (
                       <h4>{data.socialMediaHeading}</h4>

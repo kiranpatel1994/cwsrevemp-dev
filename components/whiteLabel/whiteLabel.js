@@ -49,7 +49,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          toggleActions: "play none none none",
+          once: true,
           //   toggleClass: "active"
         });
 
@@ -62,7 +62,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          toggleActions: "play none none none",
+          once: true,
           //   toggleClass: "active"
         });
 
@@ -86,12 +86,12 @@ export default function WhiteLabel({ data, themeOptions, form }) {
           trigger: ".gl_area",
           start: "-=259",
           endTrigger: "#end_anim",
-          end: "+=1400",
+          end: "+=2600",
           markers: false,
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          toggleActions: "play none none none",
+          once: true,
           //   toggleClass: "active"
         });
 
@@ -99,12 +99,12 @@ export default function WhiteLabel({ data, themeOptions, form }) {
           trigger: "#start_anim",
           start: "-=270",
           endTrigger: "#end_anim",
-          end: "+=1400",
+          end: "+=2600",
           markers: false,
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          toggleActions: "play none none none",
+          once: true,
           //   toggleClass: "active"
         });
 
@@ -201,7 +201,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
         </div>
       </div>
       <div className="gl_area hosting_page">
-        <div className="container-xl position-relative p-lg-0">
+        <div className="container-xl position-relative p-0">
           <div className="line_anim">
             <div className="profitDrag"></div>
             <div className="dragWithme">
@@ -215,21 +215,21 @@ export default function WhiteLabel({ data, themeOptions, form }) {
               </div>
             </div>
             <div className="col-12 col-md-11 pd-30-mix">
-              <div className="d-md-none">
+              <div className="d-md-none mb-4">
                 <div className="benifit_ttl_mb pd-48-15">
                   <h3 className="vr-title_mb">Benefits</h3>
                 </div>
               </div>
               <div className="row g-0 why__us align-items-center">
-                <div className="col-md-7 pd-48-15">
+                <div className="col-md-7 pd-48-15 order-lg-0 order-1 mt-lg-0 mt-5">
                   {data.benefitTagline && (
-                    <div className="mb-3">
+                    <div className="mb-md-3">
                       <h2>{data.benefitTagline}</h2>
                     </div>
                   )}
                   {data.benefitTitle && (
                     <p>
-                      <strong>{data.benefitTitle}</strong>
+                      <strong className="mobNormalWeight">{data.benefitTitle}</strong>
                     </p>
                   )}
                   {data.benefitDescription && (
@@ -242,7 +242,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
                   )}
                 </div>
                 {data.benefitImage && (
-                  <div className="col-md-5 pd-48-15">
+                  <div className="col-md-5 pd-48-15 order-lg-1 order-0">
                     <img
                       className="img-fluid"
                       src={data.benefitImage.sourceUrl}

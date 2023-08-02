@@ -49,7 +49,7 @@ export default function SocialMediaManagement({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          toggleActions: "play none none none",
+          once: true,
           //   toggleClass: "active"
         });
 
@@ -62,7 +62,7 @@ export default function SocialMediaManagement({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          toggleActions: "play none none none",
+          once: true,
           //   toggleClass: "active"
         });
 
@@ -86,24 +86,24 @@ export default function SocialMediaManagement({ data }) {
           trigger: ".gl_area",
           start: "-=259",
           endTrigger: "#end_anim",
-          end: "+=2500",
+          end: "+=3065",
           markers: false,
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          toggleActions: "play none none none",
+          once: true,
         });
 
         ScrollTrigger.create({
           trigger: "#start_anim",
           start: "-=270",
           endTrigger: "#end_anim",
-          end: "+=2500",
+          end: "+=3065",
           markers: false,
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          toggleActions: "play none none none",
+          once: true,
         });
 
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl_mb");
@@ -200,6 +200,9 @@ export default function SocialMediaManagement({ data }) {
                     return (
                       <li className="list-inline-item" key={`benefit-${index}`}>
                         <div className="ffk_btn">
+                          <div className="d-md-none position-relative zindex-3">
+                            <img src="../images/enf-1.png" />
+                          </div>
                           <span>{item.benefitBlockTitle}</span>
                         </div>
                       </li>
