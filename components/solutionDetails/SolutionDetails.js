@@ -255,10 +255,20 @@ export default function SolutionDetails({ detail, tags }) {
                                             elem.featuredImage.node.sourceUrl
                                           }
                                         />
-                                        <a href="#" className="exploreLink">
-                                          Explore{" "}
-                                          <img src="images/explore-arrow.svg" />
-                                        </a>
+                                        {elem.portfolioSettings
+                                          .portfolioUrl && (
+                                          <Link
+                                            href={
+                                              elem.portfolioSettings
+                                                .portfolioUrl
+                                            }
+                                            className="exploreLink"
+                                            target="_blank"
+                                          >
+                                            Explore
+                                            <img src="images/explore-arrow.svg" />
+                                          </Link>
+                                        )}
                                       </div>
                                     )}
                                   </div>
@@ -284,14 +294,14 @@ export default function SolutionDetails({ detail, tags }) {
                   <h2>Ready to start your project? </h2>
                   <ul className="list-inline">
                     <li className="list-inline-item">
-                      <a className="btn btn-yellow" href="#">
+                      <Link className="btn btn-yellow" href="/contact">
                         Get in touch
-                      </a>
+                      </Link>
                     </li>
                     <li className="list-inline-item">
-                      <a className="btn btn-blue" href="#">
+                      <Link className="btn btn-blue" href="/portfolio">
                         See Our Work
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>

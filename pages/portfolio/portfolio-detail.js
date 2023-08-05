@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from "react";
 import { gsap } from "gsap/dist/gsap";
@@ -40,16 +42,16 @@ function PortfolioDetail() {
               <div className="list-out-tag">
                 <ul className="list-inline">
                   <li className="list-inline-item">
-                    <a href="#">Industry tag </a>{" "}
+                    <a href="#">Industry tag </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#">Industry tag </a>{" "}
+                    <a href="#">Industry tag </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#">Industry tag </a>{" "}
+                    <a href="#">Industry tag </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#">Industry tag </a>{" "}
+                    <a href="#">Industry tag </a>
                   </li>
                 </ul>
               </div>
@@ -58,8 +60,8 @@ function PortfolioDetail() {
                 design and development of their dynamic and engaging website.
                 With a keen focus on showcasing their innovative solutions and
                 fostering a seamless user experience, our team crafted a
-                visually captivating interface that perfectly aligned with{" "}
-                <strong>YM Ventures' brand identity. </strong>{" "}
+                visually captivating interface that perfectly aligned with
+                <strong>YM Ventures' brand identity. </strong>
               </p>
             </div>
             <div className="col-12 col-md-2 align-self-end">
@@ -200,7 +202,7 @@ function PortfolioDetail() {
             <div className="row">
               <div className="col-12 text-center">
                 <h2>
-                  More like <span>this</span>.{" "}
+                  More like <span>this</span>.
                 </h2>
               </div>
             </div>
@@ -223,7 +225,7 @@ function PortfolioDetail() {
                       <div className="gradient_box">
                         <h3>YM Ventures </h3>
                         <span className="fake_button">
-                          Website Design & Development{" "}
+                          Website Design & Development
                         </span>
                       </div>
                     </div>
@@ -246,7 +248,7 @@ function PortfolioDetail() {
                       <div className="gradient_box">
                         <h3>YM Ventures </h3>
                         <span className="fake_button">
-                          Website Design & Development{" "}
+                          Website Design & Development
                         </span>
                       </div>
                     </div>
@@ -269,7 +271,7 @@ function PortfolioDetail() {
                       <div className="gradient_box">
                         <h3>YM Ventures </h3>
                         <span className="fake_button">
-                          Website Design & Development{" "}
+                          Website Design & Development
                         </span>
                       </div>
                     </div>
@@ -279,10 +281,8 @@ function PortfolioDetail() {
             </div>
             <div className="text-center lets_talk_post">
               <a href="#" className="lets_talk">
-                {" "}
-                <em>Let's talk </em>{" "}
+                <em>Let's talk </em>
                 <span>
-                  {" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="35.798"
@@ -306,10 +306,10 @@ function PortfolioDetail() {
                         d="M26.948,28.943H8.995a1.995,1.995,0,0,1,0-3.99H24.953V8.995a1.995,1.995,0,0,1,3.99,0V26.948A1.885,1.885,0,0,1,26.948,28.943Z"
                         transform="translate(2.37 2.37)"
                         fill="#07042b"
-                      />{" "}
+                      />
                     </g>
-                  </svg>{" "}
-                </span>{" "}
+                  </svg>
+                </span>
               </a>
             </div>
           </div>
