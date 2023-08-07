@@ -123,6 +123,7 @@ export default function ServiceDetails({ cat }) {
                             className="box-design"
                           >
                             <div className="content-area ">
+                              <img className="cod_placeholder" src="../images/cod.png" alt="placeholder" />
                               <h5 className="text-white">
                                 {element.node.name}
                               </h5>
