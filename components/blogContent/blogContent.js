@@ -161,7 +161,7 @@ export default function BlogContent({ blogData, blogDetail }) {
                               />
                             </div>
                             <figcaption>
-                              <ul className="list-inline blogs__tag mb-0">
+                              {/* <ul className="list-inline blogs__tag mb-0">
                                 {item.node.categories.nodes.length > 0 && (
                                   <li className="list-inline-item">
                                     <span className="special__tag">
@@ -184,7 +184,7 @@ export default function BlogContent({ blogData, blogDetail }) {
                                     </span>
                                   </li>
                                 )}
-                              </ul>
+                              </ul> */}
                               {item.node.title && <h3>{item.node.title}</h3>}
                               {item.node.excerpt && (
                                 <div
@@ -263,7 +263,7 @@ export default function BlogContent({ blogData, blogDetail }) {
                             />
                           </div>
                           <figcaption>
-                            <ul className="list-inline blogs__tag mb-0">
+                            {/* <ul className="list-inline blogs__tag mb-0">
                               {item.node.categories.nodes.length > 0 && (
                                 <li className="list-inline-item">
                                   <span className="special__tag">
@@ -286,7 +286,7 @@ export default function BlogContent({ blogData, blogDetail }) {
                                   </span>
                                 </li>
                               )}
-                            </ul>
+                            </ul> */}
                             {item.node.title && <h3>{item.node.title}</h3>}
                             {item.node.excerpt && (
                               <div

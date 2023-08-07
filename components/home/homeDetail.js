@@ -601,7 +601,7 @@ export default function HomeDetails({
               </div>
             </div>
             <div className="d-table ms-auto me-auto center-button-project">
-              <Link href="#" className="btn btn-yellow fireBtn1">
+              <Link href="/portfolio" className="btn btn-yellow fireBtn1">
                 <span>View Portfolio </span>
                 <span className="fireContainer" ref={fireContainer1} />
               </Link>

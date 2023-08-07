@@ -175,7 +175,7 @@ export default function BlogDetail({ blogDetail, relativeDetail }) {
                               alt="blogTemp"
                             />
                             <figcaption>
-                              <ul className="list-inline blogs__tag mb-0">
+                              {/* <ul className="list-inline blogs__tag mb-0">
                                 {item.node.categories.nodes.length > 0 && (
                                   <li className="list-inline-item">
                                     <span className="special__tag">
@@ -196,7 +196,7 @@ export default function BlogDetail({ blogDetail, relativeDetail }) {
                                     </span>
                                   </li>
                                 )}
-                              </ul>
+                              </ul> */}
                               {item.node.title && <h3>{item.node.title}</h3>}
                               {item.node.excerpt && (
                                 <div

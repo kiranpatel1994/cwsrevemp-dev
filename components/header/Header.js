@@ -11,7 +11,7 @@ export default function Header({ logo }) {
   const ref = useRef(null);
   const handleClick = (event) => {
     let navbarButton = event.currentTarget.getAttribute("aria-expanded");
-    let header = document.querySelector("header")
+    let header = document.querySelector("header");
     if (navbarButton === "true") {
       header.classList.add("navOpen");
     } else {
@@ -83,7 +83,7 @@ export default function Header({ logo }) {
                   <Link
                     className={
                       router.pathname == "/services" ||
-                        router.pathname == "/services/[slug]"
+                      router.pathname == "/services/[slug]"
                         ? "nav-link active"
                         : "nav-link"
                     }
@@ -108,7 +108,7 @@ export default function Header({ logo }) {
                   <Link
                     className={
                       router.pathname == "/blog" ||
-                        router.pathname == "/blog/[slug]"
+                      router.pathname == "/blog/[slug]"
                         ? "nav-link active"
                         : "nav-link"
                     }
@@ -120,13 +120,13 @@ export default function Header({ logo }) {
                 <li className="nav-item callLink">
                   <Link
                     className={
-                      router.pathname == "/contact"
+                      router.pathname == "/portfolio"
                         ? "nav-link active"
                         : "nav-link"
                     }
-                    href="/contact"
+                    href="/portfolio"
                   >
-                    Get Started
+                    Portfolio
                   </Link>
                 </li>
                 <li className="nav-item ms-auto d-xl-block d-none">
@@ -136,9 +136,16 @@ export default function Header({ logo }) {
                 </li>
               </ul>
               <ul className="headerCallSection m-0 list-unstyled d-xl-none d-flex flex-column align-items-center justify-content-center">
-                <li><img className="callHand" src={callSignImg.src} alt="" /></li>
+                <li>
+                  <img className="callHand" src={callSignImg.src} alt="" />
+                </li>
                 <li className="text-center">
-                  <div className="contact-details"><span>Let’s talk innovation. </span><a href="tel:201-212-6367" className="d-block w-100">201-212-6367</a></div>
+                  <div className="contact-details">
+                    <span>Let’s talk innovation. </span>
+                    <a href="tel:201-212-6367" className="d-block w-100">
+                      201-212-6367
+                    </a>
+                  </div>
                 </li>
               </ul>
             </div>
