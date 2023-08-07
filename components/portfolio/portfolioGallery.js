@@ -148,7 +148,7 @@ function PortfolioGallery({ data, portfolios }) {
                   {portfolio?.edges?.map((item, index) => {
                     return (
                       <div
-                        className="col-12 col-md-6 col-lg-4 project-col"
+                        className="col-12 col-md-6 col-xl-4 project-col"
                         key={`allPortfolio-${index}`}
                       >
                         <div className="gif_placer">
@@ -179,7 +179,7 @@ function PortfolioGallery({ data, portfolios }) {
                               <span className="fake_button">
                                 {item?.node?.portfolioCategories?.nodes
                                   ?.length && (
-                                  <span className="fake_button">
+                                  <span className="fake_button_1">
                                     {item.node.portfolioCategories.nodes
                                       .map((node) => node.name)
                                       .join(",")}
