@@ -151,6 +151,9 @@ export default class GraphAPI {
               sourceUrl
             }
           }
+          portfolioSettings {
+            portfolioUrl
+          }
         }
     }
   }
@@ -158,6 +161,105 @@ export default class GraphAPI {
     const graphqlQuery = {
       operationName: "portfolioTags",
       query: portfolioTagsQuery,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
+
+  static allPortfolioCat(first, after) {
+    const afterCursor = after ? '"' + after + '"' : null;
+    const allPortfolioQuery = `
+    query allPortfolio {
+    portfolioCategories {
+      nodes {
+        name
+        slug
+        portfolios(first: ${first}, after: ${afterCursor}) {
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+          edges {
+            cursor
+            node {
+              featuredImage {
+                node {
+                  sourceUrl
+                }
+              }
+              title
+              portfolioSettings {
+                portfolioUrl
+              }
+              portfolioCategories {
+                nodes {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  `;
+    const graphqlQuery = {
+      operationName: "allPortfolio",
+      query: allPortfolioQuery,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
+
+  static allPortfolioCatPagination(first, after, cat) {
+    const afterCursor = after ? '"' + after + '"' : null;
+    const catName = cat ? '"' + cat + '"' : null;
+    const allPortfolioQuery = `
+    query allPortfolio {
+    portfolioCategories(where: {name: ${catName}}) {
+      nodes {
+        name
+        slug
+        portfolios(first: ${first}, after: ${afterCursor}) {
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+          edges {
+            cursor
+            node {
+              featuredImage {
+                node {
+                  sourceUrl
+                }
+              }
+              title
+              portfolioSettings {
+                portfolioUrl
+              }
+              portfolioCategories {
+                nodes {
+                  name
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  `;
+    const graphqlQuery = {
+      operationName: "allPortfolio",
+      query: allPortfolioQuery,
     };
     return axios({
       url: baseURL,
@@ -823,6 +925,49 @@ export default class GraphAPI {
     const graphqlQuery = {
       operationName: "blogPaginationQuery",
       query: blogPaginationQuery,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
+
+  static allportfolioPagination(first, after) {
+    const afterCursor = after ? '"' + after + '"' : null;
+    const allportfolioPaginationQuery = `
+  query allportfolioPaginationQuery {
+    portfolios(first: ${first}, after: ${afterCursor}) {
+    pageInfo {
+      hasNextPage
+      endCursor
+    }
+    edges {
+      cursor
+      node {
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        title
+        portfolioSettings {
+          portfolioUrl
+        }
+        portfolioCategories {
+          nodes {
+            name
+          }
+        }
+      }
+    }
+  }
+  }
+  `;
+    const graphqlQuery = {
+      operationName: "allportfolioPaginationQuery",
+      query: allportfolioPaginationQuery,
     };
     return axios({
       url: baseURL,
