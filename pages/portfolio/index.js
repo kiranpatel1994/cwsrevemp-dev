@@ -3,7 +3,7 @@ import GraphAPI from "../../services/graphQL";
 
 function Portfolio({ allPortfolioCat, allportfolioPagination }) {
   return (
-    <main className="position-relative zindex-2">
+    <main className="position-relative zindex-2 am_project_main">
       <PortfolioGallery
         data={allPortfolioCat}
         portfolios={allportfolioPagination}

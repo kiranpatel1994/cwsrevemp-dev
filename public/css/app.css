@@ -5015,6 +5015,9 @@ a {
 }
 
 /*  */
+@media (max-width: 1900px) {
+  .gif_placer .gif_box img { height: 300px; }
+}
 @media (max-width: 1800px) {
   .letsTalk_inner h1::before { transform: rotate(0deg); bottom: auto; top: -110px; margin: 0 auto; left: 0; right: 0; }
   .letsTalk_inner h1 { font-size: 35px; line-height: 45px; }
@@ -5032,6 +5035,14 @@ a {
   .services .eyeFriendly .service-title .bl_arrow { max-width: 31px; margin-left: 8px; }
   .services .serviceDetail::after { content: none; }
   .webDev .customSites_up .benifit__inner li.list-inline-item .ffk_btn { width: 100% !important; }
+  .explore_btn { width: 100px; height: 100px; right: 8%; top: 10%; }
+  .explore_btn span { font-size: 14px; }
+}
+@media (max-width: 1550px) {
+  .nav_mixitup .allProject_box a span { font-size: 14px; }
+  .nav_mixitup .allProject_box { display: table; margin: 0 auto; padding: 14px 12px; }
+  .gif_placer .gif_box img { height: 240px; }
+  .am_project_main { margin-top: 80px; }
 }
 @media (max-width: 1440px) {
   .map-placeholder::before { top: 45%; height: 258px; width: 258px; left: -100px; }
@@ -5053,11 +5064,16 @@ a {
   .hosting .hosting_page .information__box.information__space .information__title p { font-size: 16px; line-height: 26px; }
   .hosting .hosting_page .information__box.information__space .notification_box { max-width: 100%; }
   .services .eyeFriendly .service-title h1 { font-size: 42px; line-height: 42px; }
-  .designFunctionality .box-col:nth-child(2) .box-design::after, .designFunctionality .box-col:first-child .box-design::after, .designFunctionality .alternative-row:nth-child(3) .box-col:first-child .box-design::after { height: 150px; width: 200px; top: 65px; }
+  /* .designFunctionality .box-col:nth-child(2) .box-design::after, .designFunctionality .box-col:first-child .box-design::after, .designFunctionality .alternative-row:nth-child(3) .box-col:first-child .box-design::after { height: 150px; width: 200px; top: 65px; } */
   .webDev .website_design_development .banner_content { padding-bottom: 100px; }
+  .am_project h1 { max-width: 650px; margin: 0 auto; font-size: 52px; }
+  .am_project h1::after { bottom: -82px; right: 67px; }
 }
 @media (max-width: 1300px) {
   .webDev .customSites_up .benifit__inner { grid-template-columns: repeat(2, 1fr) !important; }
+  .gif_placer .gradient_wall .gradient_box { opacity: 1; transform: none; }
+  .gif_placer .gradient_wall .explore_btn { display: none; }
+  .gif_placer .gradient_wall::after { opacity: 1; }
 }
 @media (max-width: 1199px) {
   .letsTalk_inner .social_inner a { font-size: 19px; }
@@ -5083,6 +5099,16 @@ a {
   .information__space { padding-right: 15px; }
   .services .eyeFriendly .service-title h1 { font-size: 30px; }
   .designFunctionality .box-col:nth-child(even) .box-design { margin: 0; }
+  .nav_mixitup .allProject_box ul li, .nav_mixitup .allProject_box ul { display: block; }
+  .nav_mixitup .allProject_box ul li + li { margin: 10px 0 0; }
+  .nav_mixitup .allProject_box { padding: 14px 12px; border-radius: 18px; max-width: 500px; width: calc(100% - 30px); }
+  
+  .nav_mixitup .allProject_box a span { font-size: 16px; text-align: left; }
+  .am_project h1 { font-size: 35px; max-width: 424px; }
+  .am_project h1::after { bottom: -87px; right: 19px; }
+  
+  
+  
 }
 @media (max-width: 1024px) {
   .designFunctionality .box-design .content-area h5 { font-size: 25px; line-height: 33px; }
@@ -5138,8 +5164,9 @@ a {
   .hosting .ecom__info .moji_ttl h3 { font-size: 20px; line-height: 28px; }
   .hosting .hosting_inner .banner_content { padding-top: 0; }
   .hosting .mix_bland_2 { margin-bottom: 80px; }
-  .designFunctionality .box-col:nth-child(2) .box-design::after, .designFunctionality .box-col:first-child .box-design::after, .designFunctionality .alternative-row:nth-child(3) .box-col:first-child .box-design::after { height: 100px; width: 140px; top: 95px; }
+  /* .designFunctionality .box-col:nth-child(2) .box-design::after, .designFunctionality .box-col:first-child .box-design::after, .designFunctionality .alternative-row:nth-child(3) .box-col:first-child .box-design::after { height: 100px; width: 140px; top: 95px; } */
   .web-app .webApp_inner .banner_content h1 br { display: none; }
+  .gif_placer .gradient_wall .gradient_box h3 { font-size: 20px; margin-bottom: 10px; }
   
 }
 @media (max-width: 767px) {
@@ -5158,7 +5185,7 @@ a {
   .artical__card { padding: 0 15px 60px; }
   .artical__card .card_max_width figcaption p { display: block; }
   .bologDetail_container { border: 0; }
-  .artical__card .card_max_width figcaption { margin-top: -65px; position: relative; z-index: 5; }
+  .artical__card .card_max_width figcaption { /*margin-top: -65px;*/ position: relative; z-index: 5; }
   .artical__card .card_max_width .blogs__tag { margin-bottom: 20px !important; margin-left: 5px; }
   .artical__card .card_max_width figure .card_max_width_fig { position: relative; }
   .artical__card .card_max_width figure .card_max_width_fig::after { content: ''; background: url(../images/rendering.png) no-repeat; position: absolute; bottom: 0; left: 0; right: 0; height: 132px; z-index: 2; background-size: cover; }
@@ -5236,6 +5263,9 @@ a {
   .web-app .industryNeeds .automate_work p { font-size: 16px !important; line-height: 26px !important; margin-bottom: 20px !important; }
   .web-app .industryNeeds .automate_work h3 { font-size: 18px !important; line-height: 30px !important; }
   .web-app .why__us { padding-bottom: 100px !important; }
+  .nav_mixitup .allProject_box a span { font-size: 14px; }
+  .gif_placer .gif_box img { height: 300px; }
+  .gif_placer .gradient_wall .gradient_box .fake_button { background-color: transparent; font-size: 14px; border: 1px solid #FDB627; color: #fff; }
 
 }
 @media (max-width: 568px) {
@@ -5249,7 +5279,7 @@ a {
   .form_container h2 { font-size: 18px; }
   .letsTalk_inner h1 { font-size: 28px; line-height: 42px;}
   .bild-mob img { height: 460px; }
-  .designFunctionality .box-col:nth-child(2) .box-design::after, .designFunctionality .box-col:first-child .box-design::after, .designFunctionality .alternative-row:nth-child(3) .box-col:first-child .box-design::after { height: 170px; width: 220px; top: 65px; opacity: 0.2; }
+  /* .designFunctionality .box-col:nth-child(2) .box-design::after, .designFunctionality .box-col:first-child .box-design::after, .designFunctionality .alternative-row:nth-child(3) .box-col:first-child .box-design::after { height: 170px; width: 220px; top: 65px; opacity: 0.2; } */
 }
 @media (max-width: 424px) {
   .benifit__inner.benefit_list_mb .list-inline-item { width: 100%; }
@@ -5261,12 +5291,13 @@ a {
   .benifit_ttl_mb .vr-title_mb { font-size: 28px; }
   .services .eyeFriendly .service-title h1 { font-size: 24px; line-height: 30px; }
   .web-app .webApp_inner .banner_content h1 { font-size: 26px; line-height: 36px; }
+  .am_project h1::after { content: none; }
 }
 @media (max-width: 375px) {
   .btn-flex-col { flex-flow: column; }
   .btn-flex-col .me-3 { margin-right: 0 !important; margin-bottom: 20px; }
   .webApp_inner .gl_area .ffk_btn span { text-align: center; }
-
+  .gif_placer .gradient_wall .gradient_box .fake_button { font-size: 12px; }
 }
 @media (max-width: 359px) {
   .banner_content_info .banner-h3.moji_ttl.banner-h3_mob h3 { max-width: 190px; }
