@@ -174,19 +174,19 @@ export default function Footer({ settings }) {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/printed-marketing-materials">
-                        Printed Marketing Materials
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-                <div className="col-lg-auto">
-                  <ul className="list-unstyled">
-                    <li>
                       <Link href="/services/social-media-management">
                         Social Media Management
                       </Link>
                     </li>
+                    {/* <li>
+                      <Link href="/services/printed-marketing-materials">
+                        Printed Marketing Materials
+                      </Link>
+                    </li> */}
+                  </ul>
+                </div>
+                <div className="col-lg-auto">
+                  <ul className="list-unstyled">
                     <li>
                       <Link href="/services/ecommerce">
                         Ecommerce Development

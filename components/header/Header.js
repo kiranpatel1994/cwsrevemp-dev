@@ -82,6 +82,18 @@ export default function Header({ logo }) {
                 <li className="nav-item">
                   <Link
                     className={
+                      router.pathname == "/portfolio"
+                        ? "nav-link active"
+                        : "nav-link"
+                    }
+                    href="/portfolio"
+                  >
+                    Portfolio
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link
+                    className={
                       router.pathname == "/services" ||
                       router.pathname == "/services/[slug]"
                         ? "nav-link active"
@@ -117,18 +129,7 @@ export default function Header({ logo }) {
                     Blog
                   </Link>
                 </li>
-                <li className="nav-item callLink">
-                  <Link
-                    className={
-                      router.pathname == "/portfolio"
-                        ? "nav-link active"
-                        : "nav-link"
-                    }
-                    href="/portfolio"
-                  >
-                    Portfolio
-                  </Link>
-                </li>
+
                 <li className="nav-item ms-auto d-xl-block d-none">
                   <Link className="nav-link call-action" href="/contact">
                     Get Started
