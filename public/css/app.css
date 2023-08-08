@@ -3331,6 +3331,7 @@ footer .ft-child:first-child {
   margin: 0 auto 15px;
   border-radius: 6px;
   padding: 12px;
+  display: none;
 }
 .notification_box .profileThumb {
   border-radius: 50%;
@@ -3371,7 +3372,7 @@ footer .ft-child:first-child {
   position: relative;
 }
 .information__box::after {
-  content: "";
+  content: none;
   background: url(../images/dots.png) no-repeat center bottom;
   background-size: contain;
   position: absolute;
@@ -3381,7 +3382,7 @@ footer .ft-child:first-child {
   left: 0;
 }
 .information__box::before {
-  content: "";
+  content: none;
   background: linear-gradient(
     180deg,
     rgba(7, 4, 43, 0) 0%,
@@ -5596,6 +5597,8 @@ a {
 .artical__card .artical__card-col .card_max_width .media__box {
   margin-top: 10px;
 }
+.ecommerce_page.ecommerce_page_impo.gl_area .ffk_btn {  width: 100%; }
+
 
 /* responsive */
 @media (min-width: 1200px) {
@@ -5719,6 +5722,8 @@ a {
   .explore_btn span {
     font-size: 14px;
   }
+  .ecommerce_page.ecommerce_page_impo.gl_area .ffk_btn span { font-size: 18px; line-height: normal; max-width: 160px; }
+  .ecommerce_page.ecommerce_page_impo.gl_area .list-inline-item:not(:last-child) { margin-right: 20px; }
 }
 @media (max-width: 1550px) {
   .nav_mixitup .allProject_box a span {
@@ -5735,8 +5740,10 @@ a {
   .am_project_main {
     margin-top: 80px;
   }
+  
 }
 @media (max-width: 1440px) {
+  
   .map-placeholder::before {
     top: 45%;
     height: 258px;
@@ -5868,6 +5875,7 @@ a {
   .gif_placer .gradient_wall::after {
     opacity: 1;
   }
+  
 }
 @media (max-width: 1199px) {
   .letsTalk_inner .social_inner a {
@@ -5973,6 +5981,7 @@ a {
     bottom: -87px;
     right: 19px;
   }
+  .ecommerce_page.ecommerce_page_impo.gl_area .ffk_btn { max-width: 100%; }
 }
 @media (max-width: 1024px) {
   .designFunctionality .box-design .content-area h5 {
