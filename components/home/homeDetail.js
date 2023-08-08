@@ -684,7 +684,9 @@ export default function HomeDetails({
                       <div className="d-flex flex-xl-row flex-column align-items-start card-bunch">
                         {item.authorImage && (
                           <div className="sm-user-bild mb-xl-0 mb-4">
-                            <img src={item.authorImage.sourceUrl} alt="" />
+                            <div className="circle_area">
+                              <img src={item.authorImage.sourceUrl} alt="" />
+                            </div>
                           </div>
                         )}
                         {item.authorDescription && (

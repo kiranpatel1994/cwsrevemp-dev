@@ -467,12 +467,19 @@ main {
 .slider-area .raw-card .sm-user-bild {
   margin-right: 24px;
 }
-.slider-area .raw-card .sm-user-bild img {
-  border: 2px solid #fff;
-  border-radius: 50%;
+.slider-area .raw-card .sm-user-bild .circle_area {
   height: 75px;
   width: 75px;
-  object-fit: cover;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: beige;
+}
+.slider-area .raw-card .sm-user-bild img {
+  object-fit: cover; 
+  padding: 5px;
+  width: 65px;
+  height: 65px;
 }
 .slider-area .raw-card .para-side-detail p {
   margin-bottom: 0;
