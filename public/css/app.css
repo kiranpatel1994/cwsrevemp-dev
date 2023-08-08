@@ -1380,6 +1380,9 @@ div.hands-bild {
   margin: 0 0 80px;
   transform: rotate(25deg);
 }
+.project-area .banner-projects {
+  pointer-events: none;
+}
 .project-area .banner-projects .bild-cont a img {
   border-radius: 20px;
   overflow: hidden;
