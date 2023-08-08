@@ -19,7 +19,7 @@ function PortfolioGallery({ data, portfolios }) {
     setActiveTabPortfolio(selectedCategoryPortfolios[0].portfolios);
   };
   const handleInfiniteScroll = async (e, c) => {
-    if (e === selectedCat && c) {
+    if (e === selectedCat && c !== null) {
       const portfolioCatPagination = await GraphAPI.allPortfolioCatPagination(
         15,
         c,
@@ -152,7 +152,11 @@ function PortfolioGallery({ data, portfolios }) {
                   }
                   hasMore={portfolio.pageInfo?.hasNextPage ? true : false}
                   loader={<h4 className="loading_portfolio">Loading...</h4>}
-                  endMessage={<h4 className="portfolio_lastline">Yay! you have seen it all.</h4>}
+                  endMessage={
+                    <h4 className="portfolio_lastline">
+                      Yay! you have seen it all.
+                    </h4>
+                  }
                 >
                   <div className="row g-15">
                     {portfolio?.edges?.map((item, index) => {
@@ -240,8 +244,12 @@ function PortfolioGallery({ data, portfolios }) {
                           ? true
                           : false
                       }
-                      loader={<h4>Loading...</h4>}
-                      endMessage={<h4>Yay! you have seen it all.</h4>}
+                      loader={<h4 className="loading_portfolio">Loading...</h4>}
+                      endMessage={
+                        <h4 className="portfolio_lastline">
+                          Yay! you have seen it all.
+                        </h4>
+                      }
                     >
                       <div className="row g-15">
                         {activeTabPortfolio === null

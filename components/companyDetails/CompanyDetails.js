@@ -103,6 +103,9 @@ export default function CompanyDetails({ details, list, themeData }) {
                 <div className="col-12 col-xl-4 position-relative pt-lg-5">
                   <div className="founderInfo">
                     <h3>About the Founder </h3>
+                    {details.companySettings.founderName && (
+                      <h4>{details.companySettings.founderName}</h4>
+                    )}
                   </div>
                 </div>
                 <div className="col-12 col-xl-8 position-relative userContainer pt-4 mt-2">
