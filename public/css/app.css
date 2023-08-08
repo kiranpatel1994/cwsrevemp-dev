@@ -4972,6 +4972,8 @@ a {
 .benifit_ttl_mb .vr-title_mb { color: rgba(255, 255, 255, 0.39); font-weight: 400; }
 .boot_ttitel { color: #fff; font-size: 20px; font-family: "gilroy-mediumuploaded_file"; max-width: 320px; margin: 0 auto; }
 .services .boot_ttitel span { font-size: 20px; font-family: "gilroy-mediumuploaded_file"; color: #FDB627; }
+.infinite-scroll-component { overflow: hidden !important; }
+.infinite-scroll-component .loading_portfolio, .infinite-scroll-component .portfolio_lastline { color: #FDB627; text-align: center; }
 
 
 /* responsive */
