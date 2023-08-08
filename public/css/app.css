@@ -5567,6 +5567,33 @@ a {
   text-align: center;
 }
 
+.rdmore_btn {
+  background-color: rgba(253,182,39,.33);
+  color: #fdb627;
+  display: table;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 8px 15px;
+  width: 140px;
+  border-radius: 6px;
+  transition: 0.3s all;
+}
+.artical__card .artical__card-col a:hover .rdmore_btn {
+  background-color: #fdb627;
+  color: #07042b;
+}
+.rdmore_btn svg {
+  fill: #fdb627;
+  max-width: 26px;
+  transition: 0.3s all;
+}
+.artical__card .artical__card-col a:hover .rdmore_btn svg {
+  fill: #07042b;
+}
+.artical__card .artical__card-col .card_max_width .media__box {
+  margin-top: 10px;
+}
+
 /* responsive */
 @media (min-width: 1200px) {
   .container-xl {
