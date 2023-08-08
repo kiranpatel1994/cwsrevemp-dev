@@ -189,7 +189,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
                 )}
               </div>
               {data.bannerImage && (
-                <div className="col-12 col-xl-5 position-relative group__bild">
+                <div className="col-12 col-xl-5 position-relative group__bild d-none">
                   <img className="img-fluid" src={data.bannerImage.sourceUrl} />
                 </div>
               )}

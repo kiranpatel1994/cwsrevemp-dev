@@ -5598,6 +5598,7 @@ a {
   margin-top: 10px;
 }
 .ecommerce_page.ecommerce_page_impo.gl_area .ffk_btn {  width: 100%; }
+.founder_name { font-family: "Gilroy"; font-weight: bold; font-size: 26px; letter-spacing: 0.03em; line-height: 1.3333; color: #fdb627; }
 
 
 /* responsive */
@@ -5848,8 +5849,8 @@ a {
     line-height: 42px;
   }
   /* .designFunctionality .box-col:nth-child(2) .box-design::after, .designFunctionality .box-col:first-child .box-design::after, .designFunctionality .alternative-row:nth-child(3) .box-col:first-child .box-design::after { height: 150px; width: 200px; top: 65px; } */
-  .webDev .website_design_development .banner_content {
-    padding-bottom: 100px;
+  .webDev .laptop_setup {
+    bottom: 20%;
   }
   .am_project h1 {
     max-width: 650px;
@@ -5981,7 +5982,13 @@ a {
     bottom: -87px;
     right: 19px;
   }
+  .banner_content .ecom__info::after { width: 121px; height: 100px; bottom: 2%; }
   .ecommerce_page.ecommerce_page_impo.gl_area .ffk_btn { max-width: 100%; }
+  .webDev .website_design_development .banner_content { padding-bottom: 100px; }
+  .webDev .laptop_setup { bottom: 0; }
+  .webDev .benifit__inner.benefit_list .list-inline-item .ffk_btn { width: 100%; max-width: 100% !important; }
+  .webDev .benifit__inner.benefit_list::after { content: none; }
+  .webApp_inner .web-app_inner.gl_area .ffk_btn { max-width: 100%; width: 100%; }
 }
 @media (max-width: 1024px) {
   .designFunctionality .box-design .content-area h5 {
@@ -6014,22 +6021,12 @@ a {
     width: 200px;
     height: 200px;
     top: 80px;
+    right: 10% !important;
   }
-  .webDev
-    .websiteDesign
-    .benifit__inner.benefit_list
-    .list-inline-item
-    .ffk_btn,
-  .webDev
-    .benifit__inner.benefit_list.benefit_list_mb
-    .list-inline-item:nth-child(4)
-    .ffk_btn,
-  .webDev
-    .benifit__inner.benefit_list.benefit_list_mb
-    .list-inline-item:nth-child(5)
-    .ffk_btn {
+  .webDev .websiteDesign .benifit__inner.benefit_list .list-inline-item .ffk_btn, .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(4) .ffk_btn, .webDev .benifit__inner.benefit_list.benefit_list_mb .list-inline-item:nth-child(5) .ffk_btn {
     padding: 14px 32px;
-    font-size: 22px;
+    font-size: 20px;
+    line-height: normal;
   }
   .webDev .customSites_up .benifit__inner,
   .remove-lg-5-ps {
