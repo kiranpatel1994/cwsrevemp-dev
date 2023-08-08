@@ -201,7 +201,7 @@ export default function WebApp({ data }) {
           </div>
         </div>
       </div>
-      <div className="gl_area">
+      <div className="gl_area web-app_inner">
         <div className="container-xl position-relative p-0">
           <div className="line_anim">
             <div className="profitDrag"></div>
