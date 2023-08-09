@@ -292,7 +292,7 @@ export default function SolutionDetails({ detail, tags }) {
               <div className="col-12">
                 <div className="readyProjectInner">
                   <h2>Ready to start your project? </h2>
-                  <ul className="list-inline">
+                  <ul className="list-inline readyProjectInner_button">
                     <li className="list-inline-item">
                       <Link className="btn btn-yellow" href="/contact">
                         Get in touch
