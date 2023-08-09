@@ -38,11 +38,11 @@ function PortfolioDetailContent({ data, relativeData }) {
   });
 
   return (
-    <main className="position-relative zindex-2">
+    <main className="position-relative zindex-2 in_project_main">
       <section className="in_project">
-        <div className="container-xl project_container p-0">
-          <div className="row g-0">
-            <div className="col-12 col-md-10">
+        <div className="container-xl project_container p-xl-0">
+          <div className="row g-xl-0">
+            <div className="col-12 col-md-8 col-xl-10 text-center text-md-start mb-5 mb-md-0">
               {data.title && <h1>{data.title}</h1>}
               <div className="list-out-tag">
                 {data.portfolioTags?.nodes?.length && (
@@ -66,10 +66,10 @@ function PortfolioDetailContent({ data, relativeData }) {
               )}
             </div>
             {data?.portfolioSettings?.portfolioUrl && (
-              <div className="col-12 col-md-2 align-self-end">
+              <div className="col-12 col-md-4 col-xl-2 align-self-md-end">
                 <Link
                   href={data.portfolioSettings.portfolioUrl}
-                  className="site_link"
+                  className="site_link ms-auto me-auto m-xl-0"
                   target="_blank"
                 >
                   <span>Go to website </span>
@@ -114,7 +114,7 @@ function PortfolioDetailContent({ data, relativeData }) {
                   <div
                     className={
                       index === 1 || index === 2
-                        ? "row gll__inner-col grid-2"
+                        ? "row gll__inner-col grid-2 g-1 g-xl-2"
                         : "row gll__inner-col"
                     }
                     key={`gallery-img-${index}`}
@@ -176,11 +176,11 @@ function PortfolioDetailContent({ data, relativeData }) {
                 </div>
               </div>
               <div className="project-contaner overflow-hidden">
-                <div className="row g-15">
+                <div className="row g-15 justify-content-center">
                   {relativeData.map((item, index) => {
                     return (
                       <div
-                        className="col-12 col-md-6 col-lg-4"
+                        className="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0"
                         key={`relative-${index}`}
                       >
                         <div className="gif_placer">
