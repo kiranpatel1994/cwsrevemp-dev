@@ -1881,7 +1881,7 @@ body.hosting {
     font-size: 30px;
   }
   .aboutFounder .userContainer {
-    min-height: inherit;
+    min-height: 600px;
     height: inherit;
     padding-bottom: 80px;
   }
@@ -3310,7 +3310,10 @@ body.hosting {
   }
   .aboutFounder {
     margin-top: 100px;
-    background-size: contain;
+    background-size: cover;
+  }
+  .aboutFounder .userContainer {
+    min-height: inherit;
   }
   .aboutFounder .userContainer {
     padding-bottom: 45px;
