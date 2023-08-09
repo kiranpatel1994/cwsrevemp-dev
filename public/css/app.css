@@ -2723,6 +2723,9 @@ footer .ft-child:first-child {
 .readyProjectInner .btn-blue {
   color: #fff;
 }
+.readyProjectInner_button li .btn:hover {
+  transform: none;
+}
 .hideItemOverflow {
   height: 680px;
   overflow: hidden;
