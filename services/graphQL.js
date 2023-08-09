@@ -170,6 +170,29 @@ export default class GraphAPI {
     });
   }
 
+  static allPortfolioSlug() {
+    const allPortfolioQuery = `
+    query allPortfolio {
+      portfolios {
+        nodes {
+          slug
+          id
+        }
+      }
+    }
+  `;
+    const graphqlQuery = {
+      operationName: "allPortfolio",
+      query: allPortfolioQuery,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
+
   static allPortfolioCat(first, after) {
     const afterCursor = after ? '"' + after + '"' : null;
     const allPortfolioQuery = `
@@ -1097,6 +1120,45 @@ export default class GraphAPI {
     });
   }
 
+  static singlePortfolioSettings(params) {
+    const singlePortfolioSettingsQuery = `
+      query SinglePortfolioSettingsQuery {
+        portfolioBy(uri: "/portfolio/${params.slug}/") {
+        slug
+        title
+        portfolioSettings {
+          portfolioUrl
+          portfolioGallery {
+            sourceUrl
+          }
+        }
+        portfolioCategories {
+          nodes {
+            name
+          }
+        }
+        portfolioTags {
+          nodes {
+            name
+          }
+        }
+        content
+        portfolioId
+      }
+    }`;
+
+    const graphqlQuery = {
+      operationName: "SinglePortfolioSettingsQuery",
+      query: singlePortfolioSettingsQuery,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
+
   static singlePostSettings({ params }) {
     const singlePostSettingsQuery = `
   query SinglePostSettingsQuery {
@@ -1188,6 +1250,56 @@ export default class GraphAPI {
     const graphqlQuery = {
       operationName: "RelativePostSettingsQuery",
       query: relativePostSettingsQuery,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
+
+  static relativePortfolioSettings(catName, notIn) {
+    const relativePortfolioSettingsQuery = `
+  query RelativePortfolioSettingsQuery {
+  portfolioCategories(where: {name: "${catName}"}) {
+    nodes {
+      portfolios(where: {notIn: "${notIn}"}, first: ${process.env.NEXT_PUBLIC_BLOG_RELATIVE}) {
+        nodes {
+          slug
+        title
+        featuredImage {
+                node {
+                sourceUrl
+                }
+            }
+        portfolioSettings {
+          portfolioUrl
+          portfolioGallery {
+            sourceUrl
+          }
+        }
+        portfolioCategories {
+          nodes {
+            name
+          }
+        }
+        portfolioTags {
+          nodes {
+            name
+          }
+        }
+        content
+        portfolioId
+        }
+      }
+    }
+  }
+}`;
+
+    const graphqlQuery = {
+      operationName: "RelativePortfolioSettingsQuery",
+      query: relativePortfolioSettingsQuery,
     };
     return axios({
       url: baseURL,
