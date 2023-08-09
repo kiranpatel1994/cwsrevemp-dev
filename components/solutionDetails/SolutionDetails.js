@@ -255,20 +255,15 @@ export default function SolutionDetails({ detail, tags }) {
                                             elem.featuredImage.node.sourceUrl
                                           }
                                         />
-                                        {elem.portfolioSettings
-                                          .portfolioUrl && (
-                                          <Link
-                                            href={
-                                              elem.portfolioSettings
-                                                .portfolioUrl
-                                            }
-                                            className="exploreLink"
-                                            target="_blank"
-                                          >
-                                            Explore
-                                            <img src="images/explore-arrow.svg" />
-                                          </Link>
-                                        )}
+
+                                        <Link
+                                          href={`/portfolio/${elem.slug}`}
+                                          className="exploreLink"
+                                          target="_blank"
+                                        >
+                                          Explore
+                                          <img src="images/explore-arrow.svg" />
+                                        </Link>
                                       </div>
                                     )}
                                   </div>

@@ -82,7 +82,8 @@ export default function Header({ logo }) {
                 <li className="nav-item">
                   <Link
                     className={
-                      router.pathname == "/portfolio"
+                      router.pathname == "/portfolio" ||
+                      router.pathname == "/portfolio/[slug]"
                         ? "nav-link active"
                         : "nav-link"
                     }

@@ -146,6 +146,7 @@ export default class GraphAPI {
   query portfolioTags {
     portfolios (first: ${process.env.NEXT_PUBLIC_PORTFOLIO_TAGS_LIMIT}) {
       nodes {
+          slug
           featuredImage {
             node {
               sourceUrl
@@ -250,7 +251,6 @@ export default class GraphAPI {
     portfolioCategories(where: {name: ${catName}}) {
       nodes {
         name
-        slug
         portfolios(first: ${first}, after: ${afterCursor}) {
           pageInfo {
             hasNextPage
@@ -265,6 +265,7 @@ export default class GraphAPI {
                 }
               }
               title
+              slug
               portfolioSettings {
                 portfolioUrl
               }
@@ -975,6 +976,7 @@ export default class GraphAPI {
           }
         }
         title
+        slug
         portfolioSettings {
           portfolioUrl
         }

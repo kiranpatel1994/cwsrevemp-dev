@@ -177,19 +177,15 @@ function PortfolioGallery({ data, portfolios }) {
                               />
                             </div>
                             <div className="gradient_wall">
-                              {item?.node?.portfolioSettings?.portfolioUrl && (
-                                <Link
-                                  href={
-                                    item.node.portfolioSettings.portfolioUrl
-                                  }
-                                  className="explore_btn"
-                                  target="_blank"
-                                >
-                                  <span>
-                                    Explore <img src="images/down-right.png" />
-                                  </span>
-                                </Link>
-                              )}
+                              <Link
+                                href={`/portfolio/${item.node.slug}`}
+                                className="explore_btn"
+                              >
+                                <span>
+                                  Explore <img src="images/down-right.png" />
+                                </span>
+                              </Link>
+
                               <div className="gradient_box">
                                 {item.node.title && <h3>{item.node.title}</h3>}
                                 <span className="fake_button">
@@ -272,22 +268,16 @@ function PortfolioGallery({ data, portfolios }) {
                                       />
                                     </div>
                                     <div className="gradient_wall">
-                                      {item.node.portfolioSettings
-                                        .portfolioUrl && (
-                                        <Link
-                                          href={
-                                            item.node.portfolioSettings
-                                              .portfolioUrl
-                                          }
-                                          className="explore_btn"
-                                          target="_blank"
-                                        >
-                                          <span>
-                                            Explore{" "}
-                                            <img src="images/down-right.png" />
-                                          </span>
-                                        </Link>
-                                      )}
+                                      <Link
+                                        href={`/portfolio/${item.node.slug}`}
+                                        className="explore_btn"
+                                      >
+                                        <span>
+                                          Explore{" "}
+                                          <img src="images/down-right.png" />
+                                        </span>
+                                      </Link>
+
                                       <div className="gradient_box">
                                         {item.node.title && (
                                           <h3>{item.node.title}</h3>
@@ -325,22 +315,16 @@ function PortfolioGallery({ data, portfolios }) {
                                       />
                                     </div>
                                     <div className="gradient_wall">
-                                      {item.node.portfolioSettings
-                                        .portfolioUrl && (
-                                        <Link
-                                          href={
-                                            item.node.portfolioSettings
-                                              .portfolioUrl
-                                          }
-                                          className="explore_btn"
-                                          target="_blank"
-                                        >
-                                          <span>
-                                            Explore{" "}
-                                            <img src="images/down-right.png" />
-                                          </span>
-                                        </Link>
-                                      )}
+                                      <Link
+                                        href={`/portfolio/${item.node.slug}`}
+                                        className="explore_btn"
+                                      >
+                                        <span>
+                                          Explore{" "}
+                                          <img src="images/down-right.png" />
+                                        </span>
+                                      </Link>
+
                                       <div className="gradient_box">
                                         {item.node.title && (
                                           <h3>{item.node.title}</h3>
