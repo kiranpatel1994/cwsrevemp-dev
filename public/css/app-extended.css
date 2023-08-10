@@ -1347,6 +1347,9 @@ body.solutions {
 .hosting .cloudServer > div {
   transform: scale(1.65);
 }
+.hosting .cloudServer .cloudServerContainer {
+  transform: none !important;
+}
 
 .hostingServer {
   position: relative;
