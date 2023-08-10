@@ -31,8 +31,8 @@ export default function BlogDetail({ blogDetail, relativeDetail }) {
               <img
                 className="w-100 img-fluid"
                 src={
-                  blogDetail.featuredImage !== null
-                    ? blogDetail.featuredImage.node.sourceUrl
+                  blogDetail.postSettings.blogGridImage !== null
+                    ? blogDetail.postSettings.blogGridImage.sourceUrl
                     : "../images/placeholder-3.svg"
                 }
                 alt="blog banner"

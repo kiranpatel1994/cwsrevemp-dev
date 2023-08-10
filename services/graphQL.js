@@ -1175,6 +1175,9 @@ export default class GraphAPI {
           date
           content
           postSettings {
+            blogGridImage {
+              sourceUrl
+            }
             authorName
             authorImage {
               sourceUrl
@@ -1320,6 +1323,8 @@ export default class GraphAPI {
   query ThemeQuery {
     acfOptionsThemeOptions {
     themeSettings {
+        testimonialsThemeTitle
+        testimonialsThemeSubtitle
         clientTestimonials {
         authorDescription
         authorDesignation

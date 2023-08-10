@@ -1,8 +1,59 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/alt-text */
 import Link from "next/link";
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  EffectCreative,
+  Autoplay,
+  Keyboard,
+  Mousewheel,
+} from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function CompanyDetails({ details, list, themeData }) {
+export default function CompanyDetails({
+  details,
+  list,
+  themeData,
+  testimonialSettings,
+}) {
+  SwiperCore.use([
+    Navigation,
+    Pagination,
+    EffectCreative,
+    Autoplay,
+    Keyboard,
+    Mousewheel,
+  ]);
+  var settingsB = {
+    // Install modules
+    modules: [Navigation, Pagination, EffectCreative],
+    slidesPerView: 1.2,
+    spaceBetween: 20,
+    autoplay: {
+      delay: 10000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      type: "progressbar",
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 1.6,
+        spaceBetween: 20,
+      },
+      992: {
+        slidesPerView: 2.6,
+        spaceBetween: 20,
+      },
+    },
+  };
+
   const first_row = list.slice(0, 7);
   const second_row = list.slice(7, 13);
   const third_row = list.slice(13, 20);
@@ -104,7 +155,9 @@ export default function CompanyDetails({ details, list, themeData }) {
                   <div className="founderInfo">
                     <h3>About the Founder </h3>
                     {details.companySettings.founderName && (
-                      <h4 className="founder_name">{details.companySettings.founderName}</h4>
+                      <h4 className="founder_name">
+                        {details.companySettings.founderName}
+                      </h4>
                     )}
                   </div>
                 </div>
@@ -166,6 +219,62 @@ export default function CompanyDetails({ details, list, themeData }) {
                   </ul>
                 </div>
               </div>
+            </div>
+          </section>
+        )}
+        {testimonialSettings.clientTestimonials && (
+          <section className="about-us">
+            {/* <div className="floating-object"></div> */}
+            <div className="aboutUs-title position-relative zindex-2">
+              <div className="row">
+                <div className="col-12 about-info overflow-hidden">
+                  <h2 data-aos="fade-up" data-aos-duration="1000">
+                    {testimonialSettings.testimonialsThemeTitle}
+                  </h2>
+                  <p
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-delay="300"
+                  >
+                    {testimonialSettings.testimonialsThemeSubtitle}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="slider-area">
+              <Swiper className="slider-scroller" {...settingsB}>
+                {testimonialSettings.clientTestimonials.map((item, index) => {
+                  return (
+                    <SwiperSlide key={index}>
+                      <div className="raw-card">
+                        <div className="d-flex flex-xl-row flex-column align-items-start card-bunch">
+                          {item.authorImage && (
+                            <div className="sm-user-bild mb-xl-0 mb-4">
+                              <div className="circle_area">
+                                <img src={item.authorImage.sourceUrl} alt="" />
+                              </div>
+                            </div>
+                          )}
+                          {item.authorDescription && (
+                            <div className="para-side-detail">
+                              <p>{item.authorDescription}</p>
+                            </div>
+                          )}
+                        </div>
+                        <div className="other-detail">
+                          <h5>
+                            {item.authorName}
+                            <span>{item.authorDesignation}</span>
+                          </h5>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
+
+                <div className="swiper-pagination"></div>
+              </Swiper>
             </div>
           </section>
         )}

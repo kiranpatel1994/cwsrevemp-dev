@@ -4,7 +4,12 @@ import Footer from "../components/footer/Footer";
 import CompanyDetails from "../components/companyDetails/CompanyDetails";
 import { useEffect } from "react";
 import GraphAPI from "../services/graphQL";
-function Company({ companySettings, memberList, themeDetail }) {
+function Company({
+  companySettings,
+  memberList,
+  themeDetail,
+  testimonialSettings,
+}) {
   useEffect(() => {
     document.body.classList.add("company");
     return () => {
@@ -17,6 +22,7 @@ function Company({ companySettings, memberList, themeDetail }) {
       details={companySettings}
       list={memberList}
       themeData={themeDetail}
+      testimonialSettings={testimonialSettings}
     />
   );
 }
@@ -27,8 +33,11 @@ export async function getStaticProps() {
   const companyData = await GraphAPI.companyDetails();
   const members = await GraphAPI.teamDetails();
   const themeRes = await GraphAPI.themeOptions();
+  const testimonial = await GraphAPI.clientTestimonialSettings();
   return {
     props: {
+      testimonialSettings:
+        testimonial.data?.data?.acfOptionsThemeOptions.themeSettings,
       companySettings: companyData.data.data.pageBy,
       memberList: members.data.data.members.edges,
       themeDetail: themeRes.data.data.acfOptionsThemeOptions.themeSettings,
