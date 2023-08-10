@@ -23,6 +23,9 @@ export default class GraphAPI {
               headerLogo { 
                 sourceUrl
               }
+              contactBlockTitle
+              contactBlockDescription
+              contactBlockTagLine
             }
           }
         }
@@ -216,6 +219,7 @@ export default class GraphAPI {
                 }
               }
               title
+              slug
               portfolioSettings {
                 portfolioUrl
               }

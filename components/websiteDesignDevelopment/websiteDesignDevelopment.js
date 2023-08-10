@@ -7,8 +7,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json";
+import ServiceContact from "../commonServiceContact/commonServiceContact";
 
-export default function WebsiteDesignDev({ data }) {
+export default function WebsiteDesignDev({ data, themeOptions, form }) {
   useEffect(() => {
     lottie.loadAnimation({
       container: document.querySelector(".torusLandingContainer"),
@@ -18,11 +19,11 @@ export default function WebsiteDesignDev({ data }) {
       animationData: torusLanding,
     });
 
-    if (typeof(window) !== "undefined") {
-      if (window.innerWidth >= 1024) {  
+    if (typeof window !== "undefined") {
+      if (window.innerWidth >= 1024) {
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=600",
@@ -32,16 +33,16 @@ export default function WebsiteDesignDev({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         gsap.to(".profitDrag", { scaleY: 0 });
         const action = gsap.to(".profitDrag", {
           scaleY: "100%",
           transformOrigin: "top bottom",
           ease: "none",
         });
-    
+
         ScrollTrigger.create({
           trigger: "#start_anim",
           start: "-=600",
@@ -51,9 +52,9 @@ export default function WebsiteDesignDev({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
+
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
@@ -69,11 +70,10 @@ export default function WebsiteDesignDev({ data }) {
             // },
           });
         });
-        
       } else {
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=200",
@@ -83,16 +83,16 @@ export default function WebsiteDesignDev({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         gsap.to(".profitDrag", { scaleY: 0 });
         const action = gsap.to(".profitDrag", {
           scaleY: "100%",
           transformOrigin: "top bottom",
           ease: "none",
         });
-    
+
         ScrollTrigger.create({
           trigger: ".start_anim",
           start: "-=200",
@@ -102,10 +102,13 @@ export default function WebsiteDesignDev({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
-        const panels = gsap.utils.toArray([".gl_area .benifit_ttl", ".gl_area .benifit_ttl_mb"]);
+
+        const panels = gsap.utils.toArray([
+          ".gl_area .benifit_ttl",
+          ".gl_area .benifit_ttl_mb",
+        ]);
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
             trigger: panel,
@@ -509,6 +512,7 @@ export default function WebsiteDesignDev({ data }) {
           </section>
         </div>
       </div>
+      <ServiceContact data={themeOptions} form={form} />
     </main>
   );
 }

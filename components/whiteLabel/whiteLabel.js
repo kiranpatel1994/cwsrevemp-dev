@@ -9,6 +9,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 
 import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json";
+import ServiceContact from "../commonServiceContact/commonServiceContact";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,11 +28,11 @@ export default function WhiteLabel({ data, themeOptions, form }) {
       animationData: torusLanding,
     });
 
-    if (typeof(window) !== "undefined") {
-      if (window.innerWidth >= 1024) {  
+    if (typeof window !== "undefined") {
+      if (window.innerWidth >= 1024) {
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=600",
@@ -41,16 +42,16 @@ export default function WhiteLabel({ data, themeOptions, form }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         gsap.to(".profitDrag", { scaleY: 0 });
         const action = gsap.to(".profitDrag", {
           scaleY: "100%",
           transformOrigin: "top bottom",
           ease: "none",
         });
-    
+
         ScrollTrigger.create({
           trigger: "#start_anim",
           start: "-=600",
@@ -60,9 +61,9 @@ export default function WhiteLabel({ data, themeOptions, form }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
+
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
@@ -78,11 +79,10 @@ export default function WhiteLabel({ data, themeOptions, form }) {
             // },
           });
         });
-        
       } else {
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=200",
@@ -92,16 +92,16 @@ export default function WhiteLabel({ data, themeOptions, form }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         gsap.to(".profitDrag", { scaleY: 0 });
         const action = gsap.to(".profitDrag", {
           scaleY: "100%",
           transformOrigin: "top bottom",
           ease: "none",
         });
-    
+
         ScrollTrigger.create({
           trigger: ".start_anim",
           start: "-=200",
@@ -111,10 +111,13 @@ export default function WhiteLabel({ data, themeOptions, form }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
-        const panels = gsap.utils.toArray([".gl_area .benifit_ttl", ".gl_area .benifit_ttl_mb"]);
+
+        const panels = gsap.utils.toArray([
+          ".gl_area .benifit_ttl",
+          ".gl_area .benifit_ttl_mb",
+        ]);
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
             trigger: panel,
@@ -235,7 +238,9 @@ export default function WhiteLabel({ data, themeOptions, form }) {
                   )}
                   {data.benefitTitle && (
                     <p>
-                      <strong className="mobNormalWeight">{data.benefitTitle}</strong>
+                      <strong className="mobNormalWeight">
+                        {data.benefitTitle}
+                      </strong>
                     </p>
                   )}
                   {data.benefitDescription && (
@@ -258,7 +263,10 @@ export default function WhiteLabel({ data, themeOptions, form }) {
               </div>
             </div>
           </section>
-          <section className="row get_row why__usc g-0 sec-2 end_anim" id="end_anim">
+          <section
+            className="row get_row why__usc g-0 sec-2 end_anim"
+            id="end_anim"
+          >
             <div className="col-12 col-md-1 d-none d-md-block serv__ttl">
               <div className="benifit_ttl align-self-center">
                 <h3 className="vr-title">Why Us </h3>
@@ -328,81 +336,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
         </div>
       </div>
 
-      <div className="form__inner bg-white-shape">
-        <div className="container-xl">
-          <div className="row align-items-center">
-            <div className="col-12 col-md-6">
-              {data.contactBlockTitle && (
-                <h3 className="text-white">{data.contactBlockTitle}</h3>
-              )}
-              {data.contactBlockDescription && (
-                <p className="text-white">{data.contactBlockDescription}</p>
-              )}
-              {data.contactBlockTagLine && (
-                <p className="text-white">
-                  <strong>{data.contactBlockTagLine}</strong>
-                </p>
-              )}
-              <ul className="list-unstyled social_inner mb-0">
-                {themeOptions.phone && (
-                  <li>
-                    <div className="d-flex align-items-center">
-                      <img src="../images/telephone.png" alt="phone" />
-                      <a
-                        className="ms-3 text-white"
-                        href={`tel:` + themeOptions.phone}
-                      >
-                        {themeOptions.phone}
-                      </a>
-                    </div>
-                  </li>
-                )}
-                {themeOptions.email && (
-                  <li>
-                    <div className="d-flex align-items-center">
-                      <img src="../images/email.png" alt="email" />
-                      <a
-                        className="ms-3 text-white"
-                        href={`tel:` + themeOptions.email}
-                      >
-                        {themeOptions.email}
-                      </a>
-                    </div>
-                  </li>
-                )}
-                {themeOptions.addressLink && (
-                  <li>
-                    <div className="d-flex align-items-center">
-                      <img src="../images/pin-point.png" alt="pinPoint" />
-                      <a
-                        className="ms-3 text-white"
-                        href={themeOptions.addressLink}
-                        target="_blank"
-                        rel="noreferrer"
-                        dangerouslySetInnerHTML={{
-                          __html: themeOptions.addressText,
-                        }}
-                      ></a>
-                    </div>
-                  </li>
-                )}
-              </ul>
-            </div>
-            <div className="col-12 col-md-6">
-              <div className="bg__form">
-                <div className="text-center">
-                  <h3>Intake Form </h3>
-                </div>
-                <div className="placeholder__form form_container">
-                  <ApolloProvider client={client}>
-                    <GravityForm form={form} />
-                  </ApolloProvider>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ServiceContact data={themeOptions} form={form} />
     </main>
   );
 }

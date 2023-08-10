@@ -7,10 +7,11 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json";
 import automateImage from "/public/lottie/loading-cwwws.json";
+import ServiceContact from "../commonServiceContact/commonServiceContact";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function WebApp({ data }) {
+export default function WebApp({ data, themeOptions, form }) {
   useEffect(() => {
     lottie.loadAnimation({
       container: document.querySelector(".torusLandingContainer"),
@@ -28,11 +29,11 @@ export default function WebApp({ data }) {
       animationData: automateImage,
     });
 
-    if (typeof(window) !== "undefined") {
-      if (window.innerWidth >= 1024) {  
+    if (typeof window !== "undefined") {
+      if (window.innerWidth >= 1024) {
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=600",
@@ -42,16 +43,16 @@ export default function WebApp({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         gsap.to(".profitDrag", { scaleY: 0 });
         const action = gsap.to(".profitDrag", {
           scaleY: "100%",
           transformOrigin: "top bottom",
           ease: "none",
         });
-    
+
         ScrollTrigger.create({
           trigger: "#start_anim",
           start: "-=600",
@@ -61,9 +62,9 @@ export default function WebApp({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
+
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
@@ -79,11 +80,10 @@ export default function WebApp({ data }) {
             // },
           });
         });
-        
       } else {
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=200",
@@ -93,16 +93,16 @@ export default function WebApp({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         gsap.to(".profitDrag", { scaleY: 0 });
         const action = gsap.to(".profitDrag", {
           scaleY: "100%",
           transformOrigin: "top bottom",
           ease: "none",
         });
-    
+
         ScrollTrigger.create({
           trigger: ".start_anim",
           start: "-=200",
@@ -112,10 +112,13 @@ export default function WebApp({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
-        const panels = gsap.utils.toArray([".gl_area .benifit_ttl", ".gl_area .benifit_ttl_mb"]);
+
+        const panels = gsap.utils.toArray([
+          ".gl_area .benifit_ttl",
+          ".gl_area .benifit_ttl_mb",
+        ]);
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
             trigger: panel,
@@ -161,7 +164,10 @@ export default function WebApp({ data }) {
           <div className="row g-0">
             <div className="col-12 col-md-7 ecom__info position-relative">
               <div className="banner_content_info">
-                <div className="main__title" dangerouslySetInnerHTML={{ __html: data.pageHeading }}></div>
+                <div
+                  className="main__title"
+                  dangerouslySetInnerHTML={{ __html: data.pageHeading }}
+                ></div>
                 {data.bannerSubtitle && (
                   <div className="sub_title play_fair-ttl">
                     <h2>{data.bannerSubtitle}</h2>
@@ -174,13 +180,16 @@ export default function WebApp({ data }) {
                   ></div>
                 )}
                 <div className="d-md-none bild-before position-relative">
-                {data.bannerImage && (
-                  <div className="position-relative group__bild">
-                    <div className="theme___bg">
-                      <img className="img-fluid" src={data.bannerImage.sourceUrl} />
+                  {data.bannerImage && (
+                    <div className="position-relative group__bild">
+                      <div className="theme___bg">
+                        <img
+                          className="img-fluid"
+                          src={data.bannerImage.sourceUrl}
+                        />
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )}
                 </div>
                 {data.bannerDescription && (
                   <div
@@ -188,7 +197,6 @@ export default function WebApp({ data }) {
                     dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
                   ></div>
                 )}
-
               </div>
             </div>
             {data.bannerImage && (
@@ -257,16 +265,18 @@ export default function WebApp({ data }) {
             <div className="col-12 col-md-11 pd-30-l-mix">
               <div className="d-md-none">
                 {data.whyUsHeading && (
-                <div className="benifit_ttl_mb mb-stl pd-48-15">
-                  <h3 className="vr-title_mb">{data.whyUsHeading}</h3>
-                </div>
+                  <div className="benifit_ttl_mb mb-stl pd-48-15">
+                    <h3 className="vr-title_mb">{data.whyUsHeading}</h3>
+                  </div>
                 )}
               </div>
               <div className="row g-0 why__us align-items-center">
                 <div className="col-12 col-md-7 maxim_effort position-relative">
                   <div className="pd-48-15">
                     {data.whyUsTitle && (
-                      <h2 dangerouslySetInnerHTML={{ __html: data.whyUsTitle }} />
+                      <h2
+                        dangerouslySetInnerHTML={{ __html: data.whyUsTitle }}
+                      />
                     )}
                     {data.whyUsDescription && (
                       <p
@@ -281,7 +291,11 @@ export default function WebApp({ data }) {
                   <div className="col-12 col-md-5">
                     <div className="pd-48-15 pe-0">
                       <div className="d-md-none">
-                        <img className="img-fluid w-100" src="../images/trgt.png" alt="bldrp" />
+                        <img
+                          className="img-fluid w-100"
+                          src="../images/trgt.png"
+                          alt="bldrp"
+                        />
                       </div>
                       <div className="d-none d-md-block">
                         <img
@@ -307,10 +321,12 @@ export default function WebApp({ data }) {
             </div>
             <div className="col-12 col-md-11 pd-30-l-mix time_acquainted">
               <div className="d-md-none">
-              {data.serviceDetailsHeading && (
-                <div className="benifit_ttl_mb mb-stl pd-48-15">
-                  <h3 className="vr-title_mb">{data.serviceDetailsHeading}</h3>
-                </div>
+                {data.serviceDetailsHeading && (
+                  <div className="benifit_ttl_mb mb-stl pd-48-15">
+                    <h3 className="vr-title_mb">
+                      {data.serviceDetailsHeading}
+                    </h3>
+                  </div>
                 )}
               </div>
               <div className="row g-0 why__us align-items-center">
@@ -350,7 +366,6 @@ export default function WebApp({ data }) {
                         </a>
                       </div>
                     )}
-
                   </div>
                 </div>
               </div>
@@ -397,6 +412,7 @@ export default function WebApp({ data }) {
           </div>
         </div>
       </div>
+      <ServiceContact data={themeOptions} form={form} />
     </main>
   );
 }

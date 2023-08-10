@@ -1,16 +1,17 @@
 /* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 
 import Link from "next/link";
 import { useState } from "react";
 import GraphAPI from "../../services/graphQL";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-/* eslint-disable @next/next/no-img-element */
 function PortfolioGallery({ data, portfolios }) {
   const [portfolio, setPortfolio] = useState(portfolios);
   const [portfolioCat, setPortfolioCat] = useState(null);
   const [selectedCat, setSelectedCat] = useState(null);
   const [activeTabPortfolio, setActiveTabPortfolio] = useState(null);
+  const limit = process.env.NEXT_PUBLIC_PORTFOLIO_LIMIT;
   const updateSelectedCat = async (e) => {
     setSelectedCat(e.target.innerText);
     const selectedCategoryPortfolios = data.filter((element) =>
@@ -21,7 +22,7 @@ function PortfolioGallery({ data, portfolios }) {
   const handleInfiniteScroll = async (e, c) => {
     if (e === selectedCat && c !== null) {
       const portfolioCatPagination = await GraphAPI.allPortfolioCatPagination(
-        15,
+        limit,
         c,
         selectedCat
       );
@@ -45,7 +46,7 @@ function PortfolioGallery({ data, portfolios }) {
   };
 
   const handleLoadMore = async (c) => {
-    const portfolioPagination = await GraphAPI.allportfolioPagination(15, c);
+    const portfolioPagination = await GraphAPI.allportfolioPagination(limit, c);
 
     const updatedEdges = [
       ...portfolio.edges,

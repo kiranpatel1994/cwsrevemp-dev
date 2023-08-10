@@ -6,10 +6,11 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json";
+import ServiceContact from "../commonServiceContact/commonServiceContact";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function LogoBranding({ data }) {
+export default function LogoBranding({ data, themeOptions, form }) {
   useEffect(() => {
     lottie.loadAnimation({
       container: document.querySelector(".torusLandingContainer"),
@@ -19,11 +20,11 @@ export default function LogoBranding({ data }) {
       animationData: torusLanding,
     });
 
-    if (typeof(window) !== "undefined") {
-      if (window.innerWidth >= 1024) {  
+    if (typeof window !== "undefined") {
+      if (window.innerWidth >= 1024) {
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=600",
@@ -33,16 +34,16 @@ export default function LogoBranding({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         gsap.to(".profitDrag", { scaleY: 0 });
         const action = gsap.to(".profitDrag", {
           scaleY: "100%",
           transformOrigin: "top bottom",
           ease: "none",
         });
-    
+
         ScrollTrigger.create({
           trigger: "#start_anim",
           start: "-=600",
@@ -52,9 +53,9 @@ export default function LogoBranding({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
+
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
@@ -70,11 +71,10 @@ export default function LogoBranding({ data }) {
             // },
           });
         });
-        
       } else {
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=200",
@@ -84,16 +84,16 @@ export default function LogoBranding({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         gsap.to(".profitDrag", { scaleY: 0 });
         const action = gsap.to(".profitDrag", {
           scaleY: "100%",
           transformOrigin: "top bottom",
           ease: "none",
         });
-    
+
         ScrollTrigger.create({
           trigger: ".start_anim",
           start: "-=200",
@@ -103,10 +103,13 @@ export default function LogoBranding({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
-        const panels = gsap.utils.toArray([".gl_area .benifit_ttl", ".gl_area .benifit_ttl_mb"]);
+
+        const panels = gsap.utils.toArray([
+          ".gl_area .benifit_ttl",
+          ".gl_area .benifit_ttl_mb",
+        ]);
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
             trigger: panel,
@@ -339,6 +342,7 @@ export default function LogoBranding({ data }) {
           </section>
         </div>
       </div>
+      <ServiceContact data={themeOptions} form={form} />
     </main>
   );
 }

@@ -9,10 +9,11 @@ import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json";
 import cloudServer from "/public/lottie/cloud-server.json";
 import hostingServer from "/public/lottie/daily-backups";
+import ServiceContact from "../commonServiceContact/commonServiceContact";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Hosting({ data }) {
+export default function Hosting({ data, themeOptions, form }) {
   useEffect(() => {
     lottie.loadAnimation({
       container: document.querySelector(".torusLandingContainer"),
@@ -45,11 +46,11 @@ export default function Hosting({ data }) {
       animationData: hostingServer,
     });
 
-    if (typeof(window) !== "undefined") {
-      if (window.innerWidth >= 1024) {  
+    if (typeof window !== "undefined") {
+      if (window.innerWidth >= 1024) {
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=600",
@@ -59,16 +60,16 @@ export default function Hosting({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         gsap.to(".profitDrag", { scaleY: 0 });
         const action = gsap.to(".profitDrag", {
           scaleY: "100%",
           transformOrigin: "top bottom",
           ease: "none",
         });
-    
+
         ScrollTrigger.create({
           trigger: "#start_anim",
           start: "-=600",
@@ -78,9 +79,9 @@ export default function Hosting({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
+
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
@@ -96,11 +97,10 @@ export default function Hosting({ data }) {
             // },
           });
         });
-        
       } else {
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=200",
@@ -110,16 +110,16 @@ export default function Hosting({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         gsap.to(".profitDrag", { scaleY: 0 });
         const action = gsap.to(".profitDrag", {
           scaleY: "100%",
           transformOrigin: "top bottom",
           ease: "none",
         });
-    
+
         ScrollTrigger.create({
           trigger: ".start_anim",
           start: "-=200",
@@ -129,10 +129,13 @@ export default function Hosting({ data }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
-        const panels = gsap.utils.toArray([".gl_area .benifit_ttl", ".gl_area .benifit_ttl_mb"]);
+
+        const panels = gsap.utils.toArray([
+          ".gl_area .benifit_ttl",
+          ".gl_area .benifit_ttl_mb",
+        ]);
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
             trigger: panel,
@@ -245,7 +248,9 @@ export default function Hosting({ data }) {
                   <div className="pd-48-15">
                     {data.whyUsTitle && <h2>{data.whyUsTitle}</h2>}
                     <div
-                      dangerouslySetInnerHTML={{ __html: data.whyUsDescription }}
+                      dangerouslySetInnerHTML={{
+                        __html: data.whyUsDescription,
+                      }}
                     ></div>
                   </div>
                 </div>
@@ -277,7 +282,10 @@ export default function Hosting({ data }) {
               <div className="row g-3 g-xxl-0 information__box information__space">
                 {data.heresWhyBlocks.map((item, index) => {
                   return (
-                    <div className="col-12 col-md-4 col-info_boxarea" key={`hereByblock${index}`}>
+                    <div
+                      className="col-12 col-md-4 col-info_boxarea"
+                      key={`hereByblock${index}`}
+                    >
                       <div className="pd-48-15">
                         <div className="text-xxl-center information__title">
                           {item.blockTitle && (
@@ -411,6 +419,7 @@ export default function Hosting({ data }) {
           </div>
         </div>
       </div>
+      <ServiceContact data={themeOptions} form={form} />
     </main>
   );
 }
