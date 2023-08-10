@@ -9,6 +9,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 
 import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -27,11 +28,11 @@ export default function PropertyManagement({ data, form }) {
       animationData: torusLanding,
     });
 
-    if (typeof(window) !== "undefined") {
-      if (window.innerWidth >= 1024) {  
+    if (typeof window !== "undefined") {
+      if (window.innerWidth >= 1024) {
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=600",
@@ -41,16 +42,16 @@ export default function PropertyManagement({ data, form }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         gsap.to(".profitDrag", { scaleY: 0 });
         const action = gsap.to(".profitDrag", {
           scaleY: "100%",
           transformOrigin: "top bottom",
           ease: "none",
         });
-    
+
         ScrollTrigger.create({
           trigger: "#start_anim",
           start: "-=600",
@@ -60,9 +61,9 @@ export default function PropertyManagement({ data, form }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
+
         const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
@@ -78,11 +79,10 @@ export default function PropertyManagement({ data, form }) {
             // },
           });
         });
-        
       } else {
         gsap.set(".dragWithme", { top: "-10px" });
         const liftArow = gsap.to(".dragWithme", { top: "100%", ease: "none" });
-    
+
         ScrollTrigger.create({
           trigger: ".gl_area",
           start: "-=200",
@@ -92,16 +92,16 @@ export default function PropertyManagement({ data, form }) {
           scrub: -2,
           pinSpacing: false,
           animation: liftArow,
-          once: true
+          once: true,
         });
-    
+
         gsap.to(".profitDrag", { scaleY: 0 });
         const action = gsap.to(".profitDrag", {
           scaleY: "100%",
           transformOrigin: "top bottom",
           ease: "none",
         });
-    
+
         ScrollTrigger.create({
           trigger: ".start_anim",
           start: "-=200",
@@ -111,10 +111,13 @@ export default function PropertyManagement({ data, form }) {
           scrub: -2,
           pinSpacing: false,
           animation: action,
-          once: true
+          once: true,
         });
-    
-        const panels = gsap.utils.toArray([".gl_area .benifit_ttl", ".gl_area .benifit_ttl_mb"]);
+
+        const panels = gsap.utils.toArray([
+          ".gl_area .benifit_ttl",
+          ".gl_area .benifit_ttl_mb",
+        ]);
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
             trigger: panel,
@@ -265,7 +268,7 @@ export default function PropertyManagement({ data, form }) {
                     {data.benefitsLink.url && (
                       <li className="list-inline-item d-none">
                         <div className="d-table ms-auto me-auto center-button-project">
-                          <a
+                          <Link
                             href={data.benefitsLink.url}
                             className="btn btn-yellow"
                           >
@@ -273,7 +276,7 @@ export default function PropertyManagement({ data, form }) {
                               {data.benefitsLink.title}
                             </span>
                             <img src="/images/fire_1f525.png" alt="" />
-                          </a>
+                          </Link>
                         </div>
                       </li>
                     )}
@@ -309,7 +312,8 @@ export default function PropertyManagement({ data, form }) {
                     ></div>
                   )}
                   {data.whyUsDescription && (
-                    <div className="mobFS16"
+                    <div
+                      className="mobFS16"
                       dangerouslySetInnerHTML={{
                         __html: data.whyUsDescription,
                       }}
@@ -340,12 +344,12 @@ export default function PropertyManagement({ data, form }) {
                                     __html: item.description,
                                   }}
                                 ></div>
-                                <a
+                                <Link
                                   className="btn btn-yellow"
                                   href={item.buttonLink}
                                 >
                                   {item.buttonText}
-                                </a>
+                                </Link>
                               </figcaption>
                             </figure>
                           </div>
@@ -388,7 +392,8 @@ export default function PropertyManagement({ data, form }) {
                     <h4 className="mobFS20">{data.serviceDetailsSubtitle}</h4>
                   )}
                   {data.serviceDetailsDescription && (
-                    <div className="mobFS16"
+                    <div
+                      className="mobFS16"
                       dangerouslySetInnerHTML={{
                         __html: data.serviceDetailsDescription,
                       }}
@@ -494,12 +499,12 @@ export default function PropertyManagement({ data, form }) {
           </div>
           {data.experienceMarketingButtonUrl && (
             <div className="d-md-table ms-auto me-auto">
-              <a
+              <Link
                 className="btn btn-yellow"
                 href={data.experienceMarketingButtonUrl}
               >
                 {data.experienceMarketingButtonText}
-              </a>
+              </Link>
             </div>
           )}
         </div>
@@ -532,12 +537,12 @@ export default function PropertyManagement({ data, form }) {
           </div>
           {data.propertyManagementButtonLink && (
             <div className="d-md-table ms-auto me-auto">
-              <a
+              <Link
                 className="btn btn-yellow"
                 href={data.propertyManagementButtonLink}
               >
                 {data.propertyManagementButtonText}
-              </a>
+              </Link>
             </div>
           )}
         </div>

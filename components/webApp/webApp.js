@@ -8,6 +8,7 @@ import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json";
 import automateImage from "/public/lottie/loading-cwwws.json";
 import ServiceContact from "../commonServiceContact/commonServiceContact";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -358,12 +359,12 @@ export default function WebApp({ data, themeOptions, form }) {
                     </p>
                     {data.seeOurWorkLink && (
                       <div className="d-sm-table">
-                        <a
+                        <Link
                           className="btn btn-yellow ft-gilroy_b fw-bold"
                           href={data.seeOurWorkLink}
                         >
                           <strong>Let’s talk</strong>
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </div>

@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json";
 import ServiceContact from "../commonServiceContact/commonServiceContact";
+import Link from "next/link";
 
 export default function WebsiteDesignDev({ data, themeOptions, form }) {
   useEffect(() => {
@@ -328,12 +329,12 @@ export default function WebsiteDesignDev({ data, themeOptions, form }) {
                     )}
                     {data.getQuoteLink && (
                       <div className="d-table d-100-sm">
-                        <a
+                        <Link
                           className="btn btn-yellow ft-gilroy_b fw-bold"
                           href={data.getQuoteLink}
                         >
                           Get A Quote
-                        </a>
+                        </Link>
                       </div>
                     )}
                   </div>
@@ -426,13 +427,13 @@ export default function WebsiteDesignDev({ data, themeOptions, form }) {
                       )}
                       {data.seeOurWorkLink && (
                         <div className="d-table d-100-sm">
-                          <a
+                          <Link
                             href={data.seeOurWorkLink}
                             className="btn btn-yellow"
                           >
                             <span>See our work </span>
                             <img src="/images/preview-22.png" alt="" />
-                          </a>
+                          </Link>
                         </div>
                       )}
                     </div>
@@ -495,13 +496,13 @@ export default function WebsiteDesignDev({ data, themeOptions, form }) {
                       )}
                       <div className="d-table d-100-sm">
                         {data.seeOurWorkLinkDesign && (
-                          <a
+                          <Link
                             href={data.seeOurWorkLinkDesign}
                             className="btn btn-yellow"
                           >
                             <span>See our work </span>
                             <img src="/images/preview-22.png" alt="" />
-                          </a>
+                          </Link>
                         )}
                       </div>
                     </div>

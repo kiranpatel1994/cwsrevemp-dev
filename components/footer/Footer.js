@@ -221,23 +221,23 @@ export default function Footer({ settings }) {
                       </Link>
                     </li>
                     <li>
-                      <Link href="#">Company Intranet</Link>
+                      <Link href="/solutions">Company Intranet</Link>
                     </li>
                     <li>
-                      <Link href="#">Donation Pages</Link>
+                      <Link href="/solutions">Donation Pages</Link>
                     </li>
                     <li>
-                      <Link href="#">Payment Processing</Link>
+                      <Link href="/solutions">Payment Processing</Link>
                     </li>
                   </ul>
                 </div>
                 <div className="col-lg-auto">
                   <ul className="list-unstyled">
                     <li>
-                      <Link href="#">Contact Database</Link>
+                      <Link href="/solutions">Contact Database</Link>
                     </li>
                     <li>
-                      <Link href="#">Digital Forms</Link>
+                      <Link href="/solutions">Digital Forms</Link>
                     </li>
                   </ul>
                 </div>
