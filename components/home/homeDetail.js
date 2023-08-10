@@ -366,7 +366,7 @@ export default function HomeDetails({
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay="300"
-                className="text-white d-inline-block"
+                className="text-white d-inline-block bunch_em"
                 dangerouslySetInnerHTML={{ __html: homeSettings.aboutSubtitle }}
               ></em>
             </div>
