@@ -28,7 +28,7 @@ export async function getStaticProps() {
   return {
     props: {
       testimonialSettings:
-        testimonial.data.data.acfOptionsThemeOptions.themeSettings,
+        testimonial.data?.data?.acfOptionsThemeOptions.themeSettings,
       homeSettings: homeJson.data.data.pageBy.homeSettings,
       portfolioList: portfolioJson.data.data.portfolios.edges,
     },

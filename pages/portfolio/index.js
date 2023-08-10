@@ -15,12 +15,12 @@ function Portfolio({ allPortfolioCat, allportfolioPagination }) {
 export default Portfolio;
 
 export async function getStaticProps() {
-  const limit = 15;
+  const limit = process.env.NEXT_PUBLIC_PORTFOLIO_LIMIT;
   const allportfolioPagination = await GraphAPI.allportfolioPagination(
     limit,
     ""
   );
-  const allPortfolioCat = await GraphAPI.allPortfolioCat(15, null);
+  const allPortfolioCat = await GraphAPI.allPortfolioCat(limit, null);
   return {
     props: {
       allPortfolioCat: allPortfolioCat.data.data?.portfolioCategories?.nodes,

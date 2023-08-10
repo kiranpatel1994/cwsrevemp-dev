@@ -27,6 +27,7 @@ function ServiceDetail({
   socialMediaDetail,
   logoDesignandBrandingDetail,
   printedMarketingDetail,
+  themeOptions,
 }) {
   const router = useRouter();
   if (router.isFallback) {
@@ -35,25 +36,47 @@ function ServiceDetail({
   return (
     <div>
       {catDetail[0].node.id == "dGVybToz" && (
-        <WebsiteDesignDev data={webResDetail} />
+        <WebsiteDesignDev
+          data={webResDetail}
+          themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
+          form={form}
+        />
       )}
-      {catDetail[0].node.id == "dGVybTo1" && <WebApp data={webApplication} />}
+      {catDetail[0].node.id == "dGVybTo1" && (
+        <WebApp
+          data={webApplication}
+          themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
+          form={form}
+        />
+      )}
       {catDetail[0].node.id == "dGVybTo2NQ==" && (
-        <Hosting data={hostingDetail} />
+        <Hosting
+          data={hostingDetail}
+          themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
+          form={form}
+        />
       )}
       {catDetail[0].node.id == "dGVybTo2" && <Ecommerce data={ecomDetail} />}
       {catDetail[0].node.id == "dGVybTo0" && (
-        <SocialMediaManagement data={socialMediaDetail} />
+        <SocialMediaManagement
+          data={socialMediaDetail}
+          themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
+          form={form}
+        />
       )}
       {catDetail[0].node.id == "dGVybTo2Ng==" && (
         <WhiteLabel
           data={whiteLabelDetail.pageBy.whitelabelSettings}
-          themeOptions={whiteLabelDetail.acfOptionsThemeOptions.themeSettings}
+          themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
           form={form}
         />
       )}
       {catDetail[0].node.id == "dGVybTo2OA==" && (
-        <LogoBranding data={logoDesignandBrandingDetail} />
+        <LogoBranding
+          data={logoDesignandBrandingDetail}
+          themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
+          form={form}
+        />
       )}
       {catDetail[0].node.id == "dGVybTo2OQ==" && (
         <PrintedMarketing data={printedMarketingDetail} />
@@ -87,6 +110,7 @@ export async function getStaticProps({ params }) {
   const printedMarketing = await GraphAPI.printedMarketingDetail();
   const jsonDetail = await GraphAPI.portfolioCategoriesSettings(params);
   const form = await getGravityForm(1);
+  const themeOptions = await GraphAPI.themeOptions();
   if (jsonDetail.data.data.portfolioCategories.edges.length == 0) {
     return {
       notFound: true,
@@ -109,6 +133,7 @@ export async function getStaticProps({ params }) {
       printedMarketingDetail:
         printedMarketing.data.data.pageBy.printedMarketingSettings,
       form: form,
+      themeOptions: themeOptions.data.data,
     },
   };
 }
