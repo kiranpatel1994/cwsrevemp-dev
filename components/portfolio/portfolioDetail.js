@@ -193,11 +193,8 @@ function PortfolioDetailContent({ data, relativeData }) {
                             )}
                           </div>
                           <div className="gradient_wall">
-                            {item?.portfolioSettings?.portfolioUrl && (
-                              <Link
-                                href={item.portfolioSettings.portfolioUrl}
-                                className="explore_btn"
-                              >
+                            {item?.slug && (
+                              <Link href={item.slug} className="explore_btn">
                                 <span>
                                   Explore <img src="../images/down-right.png" />
                                 </span>
