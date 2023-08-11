@@ -4,7 +4,7 @@ import Footer from "../footer/Footer";
 export default function Layout({ children, headerSettings, footerSettings }) {
   return (
     <>
-      <Header logo={headerSettings} />
+      <Header data={headerSettings} />
       {children}
       <Footer settings={footerSettings} />
     </>

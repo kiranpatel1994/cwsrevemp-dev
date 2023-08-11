@@ -583,13 +583,15 @@ export default function HomeDetails({
                                   )
                                 }
                               >
-                                <Link href="">
-                                  <img
-                                    className=""
-                                    src={i.node.featuredImage.node.sourceUrl}
-                                  />
-                                  {/* <Image className='' width={} height={} src={i.node.featuredImage.node.sourceUrl} /> */}
-                                </Link>
+                                {i.node?.featuredImage?.node?.sourceUrl && (
+                                  <Link href="">
+                                    <img
+                                      className=""
+                                      src={i.node.featuredImage.node.sourceUrl}
+                                    />
+                                    {/* <Image className='' width={} height={} src={i.node.featuredImage.node.sourceUrl} /> */}
+                                  </Link>
+                                )}
                               </div>
                             );
                           })}

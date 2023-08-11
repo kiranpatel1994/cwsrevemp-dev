@@ -103,7 +103,7 @@ MyApp.getInitialProps = async (ctx) => {
   const themeOptions = await GraphAPI.themeOptions();
   return {
     headerSettings:
-      themeOptions.data.data?.acfOptionsThemeOptions?.themeSettings?.headerLogo,
+      themeOptions.data.data?.acfOptionsThemeOptions?.themeSettings,
     footerSettings:
       themeOptions.data.data?.acfOptionsThemeOptions?.themeSettings,
   };

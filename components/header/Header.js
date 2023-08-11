@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import LineImage from "/public/images/lines.svg";
 import callSignImg from "/public/images/calling_sign.png";
 import Brand from "/public/images/branding.png";
@@ -5,7 +6,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useRef } from "react";
-export default function Header({ logo }) {
+export default function Header({ data }) {
   const router = useRouter();
 
   const ref = useRef(null);
@@ -38,7 +39,7 @@ export default function Header({ logo }) {
         <nav className="navbar navbar-expand-xl navbar-dark">
           <div className="container-xxl bg-include p-xxl-0">
             <Link href="/" className="navbar-brand p-0">
-              <img src={logo.sourceUrl} alt="" />
+              <img src={data.headerLogo.sourceUrl} alt="" />
             </Link>
             <Link className="d-xl-none mobileGetStarted" href="/contact">
               Get Started
@@ -64,7 +65,12 @@ export default function Header({ logo }) {
                     }
                     href="/"
                   >
-                    Home
+                    <span
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
+                    >
+                      Home
+                    </span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -76,7 +82,12 @@ export default function Header({ logo }) {
                     }
                     href="/company"
                   >
-                    Company
+                    <span
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
+                    >
+                      Company
+                    </span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -89,7 +100,12 @@ export default function Header({ logo }) {
                     }
                     href="/portfolio"
                   >
-                    Portfolio
+                    <span
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
+                    >
+                      Portfolio
+                    </span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -102,7 +118,12 @@ export default function Header({ logo }) {
                     }
                     href="/services"
                   >
-                    Services & Specialties
+                    <span
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
+                    >
+                      Services & Specialties
+                    </span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -114,7 +135,12 @@ export default function Header({ logo }) {
                     }
                     href="/solutions"
                   >
-                    Solutions
+                    <span
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
+                    >
+                      Solutions
+                    </span>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -127,13 +153,23 @@ export default function Header({ logo }) {
                     }
                     href="/blog"
                   >
-                    Blog
+                    <span
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
+                    >
+                      Blog
+                    </span>
                   </Link>
                 </li>
 
                 <li className="nav-item ms-auto d-xl-block d-none">
                   <Link className="nav-link call-action" href="/contact">
-                    Get Started
+                    <span
+                      data-bs-toggle="collapse"
+                      data-bs-target=".navbar-collapse.show"
+                    >
+                      Get Started
+                    </span>
                   </Link>
                 </li>
               </ul>
@@ -141,14 +177,16 @@ export default function Header({ logo }) {
                 <li>
                   <img className="callHand" src={callSignImg.src} alt="" />
                 </li>
-                <li className="text-center">
-                  <div className="contact-details">
-                    <span>Let’s talk innovation. </span>
-                    <a href="tel:201-212-6367" className="d-block w-100">
-                      201-212-6367
-                    </a>
-                  </div>
-                </li>
+                {data?.phone && (
+                  <li className="text-center">
+                    <div className="contact-details">
+                      <span>Let’s talk innovation. </span>
+                      <a href={`tel:${data.phone}`} className="d-block w-100">
+                        {data.phone}
+                      </a>
+                    </div>
+                  </li>
+                )}
               </ul>
             </div>
           </div>
