@@ -595,6 +595,7 @@ main {
   z-index: 9;
   transform: translateX(100%);
   transition: 1s all;
+  display: none;
 }
 
 body.toggleShadow .main-shadow::before {
