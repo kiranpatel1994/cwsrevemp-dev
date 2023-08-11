@@ -6677,7 +6677,7 @@ a {
   .more_content::after { height: 85%; }
   .designFunctionality .box-design .content-area .cod_placeholder { margin: -20px 0px 0 -25px; }
   .bunch_em { max-width: 260px; }
-  .bunch_em p span.position-relative { display: inline-block; top: 40px; right: -70px; }
+  .bunch_em p span.position-relative { display: inline-block; top: 40px; right: -10px; }
   
 }
 @media (max-width: 568px) {
