@@ -1387,10 +1387,43 @@ export default class GraphAPI {
     });
   }
 
+  static seoSettings(uri) {
+    const seoSettings = `
+  query SeoSettings {
+    pageBy(uri: "${uri}") {
+    seo {
+      fullHead
+       metaDesc
+      metaKeywords
+      opengraphDescription
+      title
+      opengraphUrl
+      twitterDescription
+      twitterTitle
+    }
+  }
+}
+`;
+
+    const graphqlQuery = {
+      operationName: "SeoSettings",
+      query: seoSettings,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
+
   static homeSettings() {
     const homeSettings = `
   query HomeSettings {
     pageBy(pageId: ${process.env.NEXT_PUBLIC_HOME_ID}) {
+      seo {
+        fullHead
+      }
       homeSettings {
         bannerTitle
         bannerSubtitle

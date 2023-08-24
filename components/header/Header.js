@@ -6,9 +6,8 @@ import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useRef } from "react";
-export default function Header({ data }) {
+export default function Header({ data, seo }) {
   const router = useRouter();
-
   const ref = useRef(null);
   const handleClick = (event) => {
     let navbarButton = event.currentTarget.getAttribute("aria-expanded");
@@ -25,12 +24,17 @@ export default function Header({ data }) {
       <Head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Creative Web Services</title>
+        <title>{seo?.title ? seo?.title : "Creative Web Services"}</title>
         <link
           rel="icon"
           type="image/x-icon"
           href="/images/logo_icon.png"
         ></link>
+        {seo?.metaDesc && <meta name="description" content={seo.metaDesc} />}
+        {seo?.title && <meta property="og:title" content={seo.title} />}
+        {seo?.opengraphDescription && (
+          <meta property="og:description" content={seo.opengraphDescription} />
+        )}
       </Head>
       <div className="line-last">
         <img src={LineImage.src} alt="" />

@@ -22,6 +22,7 @@ export default function MyApp({
   headerSettings,
   footerSettings,
   themeOptions,
+  seo,
 }) {
   useEffect(() => {
     async function loadBootstrap() {
@@ -91,7 +92,11 @@ export default function MyApp({
 
   return (
     <>
-      <Layout headerSettings={headerSettings} footerSettings={footerSettings}>
+      <Layout
+        headerSettings={headerSettings}
+        footerSettings={footerSettings}
+        seo={seo}
+      >
         <div className="main-shadow" onClick={handleClose}></div>
         <Component {...pageProps} />
       </Layout>
@@ -101,10 +106,13 @@ export default function MyApp({
 
 MyApp.getInitialProps = async (ctx) => {
   const themeOptions = await GraphAPI.themeOptions();
+  //console.log(ctx.router.pathname);
+  const seo = await GraphAPI.seoSettings(ctx.router.pathname);
   return {
     headerSettings:
       themeOptions.data.data?.acfOptionsThemeOptions?.themeSettings,
     footerSettings:
       themeOptions.data.data?.acfOptionsThemeOptions?.themeSettings,
+    seo: seo.data.data?.pageBy?.seo,
   };
 };
