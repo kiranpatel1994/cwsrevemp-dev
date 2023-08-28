@@ -228,16 +228,45 @@ export default class GraphAPI {
                   name
                 }
               }
+              portfolioTags {
+              nodes {
+                name
+                count
+              }
             }
           }
         }
       }
     }
   }
+}
   `;
     const graphqlQuery = {
       operationName: "allPortfolio",
       query: allPortfolioQuery,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
+
+  static allPortfolioTags() {
+    const allPortfolioTagsQuery = `
+    query allPortfolioTags {
+    portfolioTags {
+      nodes {
+        name
+        count
+      }
+    }
+  }
+  `;
+    const graphqlQuery = {
+      operationName: "allPortfolioTags",
+      query: allPortfolioTagsQuery,
     };
     return axios({
       url: baseURL,
@@ -278,6 +307,12 @@ export default class GraphAPI {
                   name
                 }
               }
+              portfolioTags {
+              nodes {
+                name
+                count
+              }
+            }
             }
           }
         }
@@ -962,6 +997,61 @@ export default class GraphAPI {
     });
   }
 
+  static allPortfolio() {
+    const allPortfolioQuery = `
+    query allPortfolio {
+    portfolioCategories {
+      nodes {
+        name
+        slug
+        portfolios(first: 500) {
+          pageInfo {
+            hasNextPage
+            endCursor
+          }
+          edges {
+            cursor
+            node {
+              featuredImage {
+                node {
+                  sourceUrl
+                }
+              }
+              title
+              slug
+              portfolioSettings {
+                portfolioUrl
+              }
+              portfolioCategories {
+                nodes {
+                  name
+                }
+              }
+              portfolioTags {
+              nodes {
+                name
+                count
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+  `;
+    const graphqlQuery = {
+      operationName: "allPortfolio",
+      query: allPortfolioQuery,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
+
   static allportfolioPagination(first, after) {
     const afterCursor = after ? '"' + after + '"' : null;
     const allportfolioPaginationQuery = `
@@ -989,6 +1079,12 @@ export default class GraphAPI {
             name
           }
         }
+        portfolioTags {
+        nodes {
+          name
+          count
+        }
+      }
       }
     }
   }

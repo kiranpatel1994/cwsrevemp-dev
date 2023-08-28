@@ -6,17 +6,82 @@ import { useState } from "react";
 import GraphAPI from "../../services/graphQL";
 import InfiniteScroll from "react-infinite-scroll-component";
 
-function PortfolioGallery({ data, portfolios }) {
+function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
+  const [tag, setTag] = useState(tags);
   const [portfolio, setPortfolio] = useState(portfolios);
   const [portfolioCat, setPortfolioCat] = useState(null);
   const [selectedCat, setSelectedCat] = useState(null);
   const [activeTabPortfolio, setActiveTabPortfolio] = useState(null);
+  const [selectedTag, setSelectedTag] = useState(null);
   const limit = process.env.NEXT_PUBLIC_PORTFOLIO_LIMIT;
+
+  const handleAllPortfolio = () => {
+    const siblingElements = document.querySelectorAll(".tag-li");
+    siblingElements.forEach((siblingElement) => {
+      siblingElement.classList.remove("active");
+    });
+    setSelectedTag(null);
+    setTag(tags);
+    setPortfolio({ ...portfolios });
+  };
+
+  const updateSelectedTag = async (e) => {
+    const siblingElements = document.querySelectorAll(".tag-li");
+    siblingElements.forEach((siblingElement) => {
+      siblingElement.classList.remove("active");
+    });
+    setSelectedTag(e.target.innerText);
+    const tagName = e.target.innerText;
+    e.target.closest("li").classList.add("active");
+    if (selectedCat) {
+      const portfolioCatFilterPagination =
+        await GraphAPI.allPortfolioCatPagination(500, null, selectedCat);
+      const filteredCatPortfolio =
+        portfolioCatFilterPagination.data.data.portfolioCategories?.nodes[0].portfolios.edges.filter(
+          (portfolio) => {
+            const tags = portfolio.node.portfolioTags.nodes;
+            return tags.some((tag) => tag.name === tagName);
+          }
+        );
+      setActiveTabPortfolio({
+        ...activeTabPortfolio,
+        edges: filteredCatPortfolio,
+      });
+    } else {
+      const allPortfolioForTag = await GraphAPI.allportfolioPagination(
+        500,
+        null
+      );
+      const filteredAllPortfolio =
+        allPortfolioForTag.data.data?.portfolios.edges.filter((portfolio) => {
+          const tags = portfolio.node.portfolioTags.nodes;
+          return tags.some((tag) => tag.name === tagName);
+        });
+      setPortfolio({ ...portfolio, edges: filteredAllPortfolio });
+    }
+  };
+
   const updateSelectedCat = async (e) => {
+    const siblingElements = document.querySelectorAll(".tag-li");
+    siblingElements.forEach((siblingElement) => {
+      siblingElement.classList.remove("active");
+    });
+    setSelectedTag(null);
     setSelectedCat(e.target.innerText);
     const selectedCategoryPortfolios = data.filter((element) =>
       element.name.toLowerCase().includes(e.target.innerText.toLowerCase())
     );
+    const selectedCategoryFromAllPortfolios = allPortfolio.filter((element) =>
+      element.name.toLowerCase().includes(e.target.innerText.toLowerCase())
+    );
+    const portfolioTags =
+      selectedCategoryFromAllPortfolios[0].portfolios.edges.flatMap((item) =>
+        item.node.portfolioTags.nodes.map((tag) => ({ name: tag.name }))
+      );
+    const uniquePortfolioTags = [
+      ...new Set(portfolioTags.map((tag) => tag.name)),
+    ].map((name) => ({ name }));
+    setTag(uniquePortfolioTags);
     setActiveTabPortfolio(selectedCategoryPortfolios[0].portfolios);
   };
   const handleInfiniteScroll = async (e, c) => {
@@ -29,12 +94,12 @@ function PortfolioGallery({ data, portfolios }) {
 
       const updatedEdges = [
         ...activeTabPortfolio.edges,
-        ...portfolioCatPagination.data.data.portfolioCategories.nodes[0]
+        ...portfolioCatPagination.data.data.portfolioCategories?.nodes[0]
           .portfolios.edges,
       ];
       const updatedPageInfo =
-        portfolioCatPagination.data.data.portfolioCategories.nodes[0].portfolios
-          .pageInfo;
+        portfolioCatPagination.data.data.portfolioCategories?.nodes[0]
+          .portfolios.pageInfo;
 
       const updatedPortfolioData = {
         ...activeTabPortfolio,
@@ -47,11 +112,11 @@ function PortfolioGallery({ data, portfolios }) {
 
   const handleLoadMore = async (c) => {
     const portfolioPagination = await GraphAPI.allportfolioPagination(limit, c);
-
     const updatedEdges = [
       ...portfolio.edges,
       ...portfolioPagination.data.data?.portfolios.edges,
     ];
+
     const updatedPageInfo = portfolioPagination.data.data?.portfolios.pageInfo;
 
     const updatedPortfolioData = {
@@ -83,6 +148,7 @@ function PortfolioGallery({ data, portfolios }) {
                   role="tab"
                   aria-controls="all"
                   aria-selected="true"
+                  onClick={handleAllPortfolio}
                 >
                   <a>
                     <span>All projects </span>
@@ -113,24 +179,27 @@ function PortfolioGallery({ data, portfolios }) {
               })}
             </ul>
           </div>
-          {/* <div className="option_tags">
+          {tag && (
+            <div className="option_tags">
               <div className="option-1">
                 <ul className="list-inline mb-0">
-                  <li className="list-inline-item">
-                    <a href="#">Industry tag </a>
-                  </li>
-                  <li className="list-inline-item">
-                    <a href="#">Industry tag </a>
-                  </li>
-                  <li className="list-inline-item">
-                    <a href="#">Industry tag </a>
-                  </li>
-                  <li className="list-inline-item">
-                    <a href="#">Industry tag </a>
-                  </li>
+                  {tag.map((item, index) => {
+                    return (
+                      <li
+                        className="list-inline-item tag-li"
+                        key={`tag-${index}`}
+                        onClick={updateSelectedTag}
+                      >
+                        <a>
+                          <span>{item.name}</span>
+                        </a>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
-            </div> */}
+            </div>
+          )}
         </div>
       </div>
       <div className="project-contaner overflow-hidden">
@@ -148,10 +217,14 @@ function PortfolioGallery({ data, portfolios }) {
                   dataLength={portfolio?.edges?.length}
                   next={() =>
                     handleLoadMore(
-                      portfolio.edges[portfolio.edges.length - 1].cursor
+                      portfolio.edges[portfolio.edges.length - 1]?.cursor
                     )
                   }
-                  hasMore={portfolio.pageInfo?.hasNextPage ? true : false}
+                  hasMore={
+                    portfolio.pageInfo?.hasNextPage && selectedTag === null
+                      ? true
+                      : false
+                  }
                   loader={<h4 className="loading_portfolio">Loading...</h4>}
                   endMessage={
                     <h4 className="portfolio_lastline">
@@ -193,7 +266,7 @@ function PortfolioGallery({ data, portfolios }) {
                                   {item?.node?.portfolioCategories?.nodes
                                     ?.length && (
                                     <span className="fake_button_1">
-                                      {item.node.portfolioCategories.nodes
+                                      {item.node.portfolioCategories?.nodes
                                         .map((node) => node.name)
                                         .join(",")}
                                     </span>
@@ -212,11 +285,11 @@ function PortfolioGallery({ data, portfolios }) {
             {data.map((item, index) => {
               if (item?.portfolios?.edges?.length) {
                 let cursor = activeTabPortfolio
-                  ? activeTabPortfolio.edges[
-                      activeTabPortfolio.edges.length - 1
-                    ].cursor
-                  : item.portfolios.edges[item.portfolios.edges.length - 1]
-                      .cursor;
+                  ? activeTabPortfolio?.edges[
+                      activeTabPortfolio?.edges.length - 1
+                    ]?.cursor
+                  : item.portfolios?.edges[item.portfolios.edges.length - 1]
+                      ?.cursor;
                 return (
                   <div
                     key={`nav-tab-content-${index}`}
@@ -235,9 +308,11 @@ function PortfolioGallery({ data, portfolios }) {
                       next={() => handleInfiniteScroll(item.name, cursor)}
                       hasMore={
                         (activeTabPortfolio &&
-                          activeTabPortfolio?.pageInfo?.hasNextPage) ||
+                          activeTabPortfolio?.pageInfo?.hasNextPage &&
+                          selectedTag === null) ||
                         (activeTabPortfolio === null &&
-                          item?.portfolios?.pageInfo?.hasNextPage)
+                          item?.portfolios?.pageInfo?.hasNextPage &&
+                          selectedTag === null)
                           ? true
                           : false
                       }
@@ -286,7 +361,7 @@ function PortfolioGallery({ data, portfolios }) {
                                         {item?.node?.portfolioCategories?.nodes
                                           ?.length && (
                                           <span className="fake_button">
-                                            {item.node.portfolioCategories.nodes
+                                            {item.node.portfolioCategories?.nodes
                                               .map((node) => node.name)
                                               .join(",")}
                                           </span>
@@ -333,7 +408,7 @@ function PortfolioGallery({ data, portfolios }) {
                                         {item?.node?.portfolioCategories?.nodes
                                           ?.length && (
                                           <span className="fake_button">
-                                            {item.node.portfolioCategories.nodes
+                                            {item.node.portfolioCategories?.nodes
                                               .map((node) => node.name)
                                               .join(",")}
                                           </span>

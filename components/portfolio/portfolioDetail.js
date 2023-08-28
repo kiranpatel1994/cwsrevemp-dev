@@ -203,7 +203,7 @@ function PortfolioDetailContent({ data, relativeData }) {
                             <div className="gradient_box">
                               {item.title && <h3>{item.title}</h3>}
                               <span className="fake_button">
-                                {item.portfolioCategories.nodes[0].name}
+                                {item.portfolioCategories?.nodes[0].name}
                               </span>
                             </div>
                           </div>
