@@ -5337,6 +5337,9 @@ a {
   width: 160px;
   text-align: center;
 }
+.option_tags li.active a { background-color: rgba(253, 182, 39, 1); }
+.option_tags li a { cursor: pointer; }
+.option_tags li { margin-bottom: 8px; }
 .option_tags ul li a:hover
 /*.list-out-tag ul li:hover*/ {
   background-color: rgba(253, 182, 39, 1);
