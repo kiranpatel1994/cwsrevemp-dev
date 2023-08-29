@@ -39,6 +39,15 @@ export default function BlogDetail({ blogDetail, relativeDetail }) {
               />
             </div>
           </div>
+          <div className="bologDetail_max_back">
+            <div className="container">
+              <div className="row">
+                  <div className="col-12">
+                    <a href="#" className="btn btn_back">&larr; Back </a>
+                  </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
