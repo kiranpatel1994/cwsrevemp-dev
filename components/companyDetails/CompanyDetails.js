@@ -288,7 +288,7 @@ export default function CompanyDetails({
             </div>
           </section>
         )}
-        <div className="sngl-title companySnglTitle handAnimation">
+        <div className="sngl-title companySnglTitle handAnimation" hidden>
           <div className="container h-100">
             <div className="row h-100">
               <div className="col-12 text-center">

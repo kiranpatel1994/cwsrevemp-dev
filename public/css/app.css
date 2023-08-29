@@ -1594,7 +1594,7 @@ div.hands-bild {
 }
 @keyframes identifier {
   0% {
-    transform: translateY(-70px);
+    transform: translateY(0px);
   }
   100% {
     transform: translateY(80px);
@@ -3628,7 +3628,7 @@ footer .ft-child:first-child {
   margin-bottom: 24px;
 }
 .letsTalk_inner {
-  padding-bottom: 225px;
+  padding-bottom: 0;
 }
 .letsTalk_inner h1 {
   font-size: 45px;
@@ -3655,11 +3655,11 @@ footer .ft-child:first-child {
 .letsTalk_inner h1::before {
   content: "";
   background: url(../images/calling_sign.png) no-repeat;
-  height: 135px;
-  width: 135px;
+  height: 80px;
+  width: 80px;
   position: absolute;
-  left: 60px;
-  bottom: -75px;
+  left: -20px;
+  bottom: -35px;
   background-size: cover;
   transform: rotate(-25deg);
 }
@@ -3678,13 +3678,13 @@ footer .ft-child:first-child {
   transform: rotate(90deg);
 }
 .talkBanner {
-  background: url(../images/group-diverse-people-having-business-meeting.png)
-    no-repeat center;
-  background-size: cover;
-  height: 731px;
+  /* background: url(../images/group-diverse-people-having-business-meeting.png) */
+    /* no-repeat center; */
+  /* background-size: cover; */
+  /* height: 731px; */
 }
 .talkBanner::before {
-  content: "";
+  content: none;
   background: url(../images/logo.svg) no-repeat center;
   background-size: cover;
   height: 198px;
@@ -3704,7 +3704,7 @@ footer .ft-child:first-child {
   max-width: 788px;
   border-radius: 29px;
   padding: 60px 70px;
-  margin: 175px auto 0;
+  margin: 0 auto 0;
   position: relative;
   z-index: 9;
 }
@@ -6788,4 +6788,13 @@ a {
     font-size: 22px;
     line-height: 34px;
   }
+}
+.cpyright {    
+   display: block;
+  width: auto;
+  color: #fdb627;
+  font-size: 16px;
+  position: absolute;
+  left: 0;
+  bottom: -10px; 
 }

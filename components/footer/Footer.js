@@ -73,6 +73,7 @@ export default function Footer({ settings }) {
                       }
                       alt=""
                     />
+                    <span className="cpyright">©</span>
                   </Link>
                 </div>
               </div>
@@ -144,7 +145,7 @@ export default function Footer({ settings }) {
       </div>
       <div className="last-footer">
         <div className="container">
-          <div className="row">
+          <div className="row justify-content-xxl-center">
             <div
               className="col-6 col-lg-auto pe-lg-5 serviceRow"
               data-aos="fade-up"
@@ -152,10 +153,12 @@ export default function Footer({ settings }) {
               data-aos-delay="400"
               data-aos-offset="0"
             >
-              <div className="row justify-content-between">
-                <div className="col-lg-auto align-self-center">
+              <div className="mb-4">
                   <label className="navLabel">Services & Specialties</label>
-                </div>
+              </div>
+              <div className="row">
+                {/* <div className="col-lg-auto align-self-center">
+                </div> */}
                 <div className="col-lg-auto">
                   <ul className="list-unstyled">
                     <li>
@@ -209,10 +212,12 @@ export default function Footer({ settings }) {
               data-aos-delay="600"
               data-aos-offset="0"
             >
-              <div className="row justify-content-between">
-                <div className="col-lg-auto align-self-center">
+              <div className="mb-4">
                   <label className="navLabel">Solutions</label>
-                </div>
+              </div>
+              <div className="row">
+                {/* <div className="col-lg-auto align-self-center">
+                </div> */}
                 <div className="col-lg-auto">
                   <ul className="list-unstyled">
                     <li>
