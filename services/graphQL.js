@@ -1532,6 +1532,7 @@ export default class GraphAPI {
         aboutSubtitle
         aboutSlider {
           aboutDomain
+          domainUrl
         }
         whyUsBlocks {
           whyUsTitle

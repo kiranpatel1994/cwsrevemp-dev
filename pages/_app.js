@@ -33,6 +33,10 @@ export default function MyApp({
 
     loadBootstrap();
 
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+
     // counter js area
     const counters = document.querySelectorAll(".count");
     const speed = 600;

@@ -407,17 +407,19 @@ export default function HomeDetails({
                           className="sliderObjectInner mx-xl-2 px-xl-0 px-2 mb-3"
                           key={index}
                         >
-                          <div className="sliderBox">
-                            <div className="slideInner">
-                              <div
-                                className="icon"
-                                dangerouslySetInnerHTML={{
-                                  __html: menu[index],
-                                }}
-                              ></div>
-                              <h5>{item.aboutDomain}</h5>
+                          <Link href={item.domainUrl}>
+                            <div className="sliderBox">
+                              <div className="slideInner">
+                                <div
+                                  className="icon"
+                                  dangerouslySetInnerHTML={{
+                                    __html: menu[index],
+                                  }}
+                                ></div>
+                                <h5>{item.aboutDomain}</h5>
+                              </div>
                             </div>
-                          </div>
+                          </Link>
                         </div>
                       );
                     })}

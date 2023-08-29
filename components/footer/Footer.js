@@ -196,7 +196,7 @@ export default function Footer({ settings }) {
                       <Link href="/services/white-label">White Label</Link>
                     </li>
                     <li>
-                      <Link href="/services/ecommerce">Hosting</Link>
+                      <Link href="/services/ecommerce">Managed Hosting</Link>
                     </li>
                   </ul>
                 </div>
