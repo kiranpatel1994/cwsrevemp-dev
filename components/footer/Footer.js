@@ -104,7 +104,7 @@ export default function Footer({ settings }) {
                       </div>
                     </li>
                   )}
-                  {settings.addressLink && (
+                  {/* {settings.addressLink && (
                     <li>
                       <div className="d-flex align-items-start justify-content-lg-start justify-content-center">
                         <img src={pinPointImg.src} alt="" />
@@ -116,7 +116,7 @@ export default function Footer({ settings }) {
                         ></a>
                       </div>
                     </li>
-                  )}
+                  )} */}
                 </ul>
               </div>
               <div className="col-12 col-lg-6">
@@ -154,7 +154,7 @@ export default function Footer({ settings }) {
               data-aos-offset="0"
             >
               <div className="mb-4">
-                  <label className="navLabel">Services & Specialties</label>
+                <label className="navLabel">Services & Specialties</label>
               </div>
               <div className="row">
                 {/* <div className="col-lg-auto align-self-center">
@@ -213,7 +213,7 @@ export default function Footer({ settings }) {
               data-aos-offset="0"
             >
               <div className="mb-4">
-                  <label className="navLabel">Solutions</label>
+                <label className="navLabel">Solutions</label>
               </div>
               <div className="row">
                 {/* <div className="col-lg-auto align-self-center">

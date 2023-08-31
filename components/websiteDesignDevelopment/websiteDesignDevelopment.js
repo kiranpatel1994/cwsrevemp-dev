@@ -513,7 +513,7 @@ export default function WebsiteDesignDev({ data, themeOptions, form }) {
           </section>
         </div>
       </div>
-      <ServiceContact data={themeOptions} form={form} />
+      {/* <ServiceContact data={themeOptions} form={form} /> */}
     </main>
   );
 }

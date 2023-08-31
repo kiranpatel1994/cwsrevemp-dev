@@ -42,9 +42,11 @@ export default function BlogDetail({ blogDetail, relativeDetail }) {
           <div className="bologDetail_max_back">
             <div className="container">
               <div className="row">
-                  <div className="col-12">
-                    <a href="#" className="btn btn_back">&larr; Back </a>
-                  </div>
+                <div className="col-12">
+                  <Link href="/blog" className="btn btn_back">
+                    &larr; Back
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

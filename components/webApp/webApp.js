@@ -413,7 +413,7 @@ export default function WebApp({ data, themeOptions, form }) {
           </div>
         </div>
       </div>
-      <ServiceContact data={themeOptions} form={form} />
+      {/* <ServiceContact data={themeOptions} form={form} /> */}
     </main>
   );
 }

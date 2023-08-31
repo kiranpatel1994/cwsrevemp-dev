@@ -419,7 +419,7 @@ export default function Hosting({ data, themeOptions, form }) {
           </div>
         </div>
       </div>
-      <ServiceContact data={themeOptions} form={form} />
+      {/* <ServiceContact data={themeOptions} form={form} /> */}
     </main>
   );
 }
