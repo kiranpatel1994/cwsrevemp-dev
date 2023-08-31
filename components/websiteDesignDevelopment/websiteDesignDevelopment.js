@@ -425,17 +425,17 @@ export default function WebsiteDesignDev({ data, themeOptions, form }) {
                           {data.serviceDetailsSubtitle}
                         </h4>
                       )}
-                      {data.seeOurWorkLink && (
+                      {/* {data.seeOurWorkLink && ( */}
                         <div className="d-table d-100-sm">
                           <Link
-                            href={data.seeOurWorkLink}
+                            href="/contact"
                             className="btn btn-yellow"
                           >
-                            <span>See our work </span>
+                            <span>Reach out </span>
                             <img src="/images/preview-22.png" alt="" />
                           </Link>
                         </div>
-                      )}
+                      {/* )} */}
                     </div>
                   </div>
                 </div>
@@ -495,15 +495,15 @@ export default function WebsiteDesignDev({ data, themeOptions, form }) {
                         ></div>
                       )}
                       <div className="d-table d-100-sm">
-                        {data.seeOurWorkLinkDesign && (
+                        {/* {data.seeOurWorkLinkDesign && ( */}
                           <Link
-                            href={data.seeOurWorkLinkDesign}
+                            href="/contact"
                             className="btn btn-yellow"
                           >
-                            <span>See our work </span>
+                            <span>Reach out </span>
                             <img src="/images/preview-22.png" alt="" />
                           </Link>
-                        )}
+                        {/* )} */}
                       </div>
                     </div>
                   </div>
