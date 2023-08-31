@@ -3698,7 +3698,7 @@ footer .ft-child:first-child {
 .form_container {
   background: linear-gradient(
     180deg,
-    rgba(253, 182, 39, 0.77) 0%,
+    rgba(253, 182, 39, 1) 0%,
     rgba(253, 182, 39, 1) 100%
   );
   max-width: 788px;
@@ -6833,3 +6833,4 @@ a {
   max-width: 965px;
   margin: 0 auto;
 }
+.process__action { position: absolute; bottom: -40px; right: 8%; }

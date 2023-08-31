@@ -82,7 +82,7 @@
 }
 .simple-process {
   position: relative;
-  padding: 0;
+  padding: 0 0 100px;
 }
 .simple-process::before {
   content: "";
@@ -2666,6 +2666,7 @@ body.hosting {
   .logo-branding .webApp_inner .gl_area {
     padding-bottom: 70px;
   }
+  .process__action { bottom: -70px; right: 8%; }
 }
 
 @media screen and (max-width: 991px) {
@@ -3650,6 +3651,7 @@ body.hosting {
     .automate_work::after {
     display: none;
   }
+  .process__action { bottom: -50px; right: 0; left: 0; margin: 0 auto; }
 }
 
 @media screen and (max-width: 575px) {
