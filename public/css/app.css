@@ -5347,14 +5347,13 @@ a {
   width: 160px;
   text-align: center;
 }
-.option_tags ul li a {background-color: rgba(253, 182, 39, 0.9);}
-.option_tags li.active a { background-color: rgba(253, 182, 39, 1); }
+.option_tags ul li a {background-color: rgba(253, 182, 39, 0.9); border: 2px solid transparent;}
+.option_tags li.active a { background-color: #07042b; border-color: rgba(253, 182, 39, 1); color: rgba(253, 182, 39, 1); }
 .option_tags li a { cursor: pointer; }
 .option_tags li { margin-bottom: 8px; }
 .option_tags ul li a:hover
 /*.list-out-tag ul li:hover*/ {
   background-color: rgba(253, 182, 39, 1);
-  color: #07042b;
 }
 .list-out-tag {
   margin-bottom: 30px;

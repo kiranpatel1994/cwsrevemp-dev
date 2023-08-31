@@ -857,7 +857,8 @@ footer .ft-child:last-child {
   --bs-gutter-y: 100px;
 }
 .companyCard {
-  margin-bottom: -270px;
+  /* margin-bottom: -270px; */
+  margin-bottom: 0;
   position: relative;
   z-index: 2;
 }
