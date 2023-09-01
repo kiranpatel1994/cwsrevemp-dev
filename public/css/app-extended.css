@@ -995,7 +995,7 @@ footer .ft-child:last-child {
   padding-bottom: 130px;
 }
 .webDev .website_design_development::before {
-  content: "";
+  content: none;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -1019,7 +1019,7 @@ footer .ft-child:last-child {
   padding-top: 200px;
 }
 .web-app .industryNeeds::before {
-  content: "";
+  content: none;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -1185,7 +1185,7 @@ footer .ft-child:last-child {
   bottom: 90px;
 }
 .social-media .sociaManagement .gl_area::before {
-  content: "";
+  content: none;
   position: absolute;
   left: 0;
   bottom: 0;
@@ -2310,16 +2310,18 @@ body.hosting {
     height: auto;
     flex-direction: column;
     position: inherit;
+    display: block;
   }
   .vr-row-parent .child-row {
     display: flex;
     margin: 0 0 14px;
+    display: block;
   }
   .vr-row-parent .child-row .sub-child {
     margin-bottom: 0;
-    margin-right: 14px;
+    margin-right: 0;
   }
-  .vr-row-parent .child-row:nth-child(1),
+  /* .vr-row-parent .child-row:nth-child(1),
   .vr-row-parent .child-row:nth-child(3) {
     animation-name: identifierMobile;
     animation-duration: 3s;
@@ -2327,8 +2329,8 @@ body.hosting {
   .vr-row-parent .child-row:nth-child(2) {
     animation-name: identifierMobile1;
     animation-duration: 3s;
-  }
-  @keyframes identifierMobile {
+  } */
+  /* @keyframes identifierMobile {
     0% {
       transform: translateX(-70px);
     }
@@ -2343,7 +2345,7 @@ body.hosting {
     100% {
       transform: translateX(-70px);
     }
-  }
+  } */
   .project-area {
     height: 720px;
   }
@@ -2667,6 +2669,7 @@ body.hosting {
     padding-bottom: 70px;
   }
   .process__action { bottom: -70px; right: 8%; }
+  .vr-row-parent .child-row .sub-child { width: 100%; }
 }
 
 @media screen and (max-width: 991px) {
@@ -2775,7 +2778,7 @@ body.hosting {
   }
 
   .vr-row-parent .child-row .sub-child {
-    width: 117px;
+    width: 100%;
     height: 117px;
   }
   .vr-row-parent .child-row .sub-child img {
