@@ -56,7 +56,12 @@ function ServiceDetail({
           form={form}
         />
       )}
-      {catDetail[0].node.id == "dGVybTo2" && <Ecommerce data={ecomDetail} />}
+      {catDetail[0].node.id == "dGVybTo2" && (
+        <Ecommerce
+          data={ecomDetail}
+          themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
+        />
+      )}
       {catDetail[0].node.id == "dGVybTo0" && (
         <SocialMediaManagement
           data={socialMediaDetail}
@@ -82,7 +87,11 @@ function ServiceDetail({
         <PrintedMarketing data={printedMarketingDetail} />
       )}
       {catDetail[0].node.id == "dGVybTo2Nw==" && (
-        <PropertyManagement data={propertyManagementDetail} form={form} />
+        <PropertyManagement
+          data={propertyManagementDetail}
+          themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
+          form={form}
+        />
       )}
     </div>
   );

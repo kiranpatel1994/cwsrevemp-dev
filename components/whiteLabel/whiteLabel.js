@@ -336,7 +336,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
         </div>
       </div>
 
-      {/* <ServiceContact data={themeOptions} form={form} /> */}
+      <ServiceContact data={themeOptions} />
     </main>
   );
 }

@@ -230,6 +230,7 @@ export default class GraphAPI {
               }
               portfolioTags {
               nodes {
+                slug
                 name
                 count
               }
@@ -258,6 +259,7 @@ export default class GraphAPI {
     query allPortfolioTags {
     portfolioTags {
       nodes {
+        slug
         name
         count
       }
@@ -281,7 +283,7 @@ export default class GraphAPI {
     const catName = cat ? '"' + cat + '"' : null;
     const allPortfolioQuery = `
     query allPortfolio {
-    portfolioCategories(where: {name: ${catName}}) {
+    portfolioCategories(where: {slug: ${catName}}) {
       nodes {
         name
         portfolios(first: ${first}, after: ${afterCursor}) {
@@ -310,6 +312,7 @@ export default class GraphAPI {
               portfolioTags {
               nodes {
                 name
+                slug
                 count
               }
             }
@@ -1029,6 +1032,7 @@ export default class GraphAPI {
               }
               portfolioTags {
               nodes {
+                slug
                 name
                 count
               }
@@ -1081,6 +1085,7 @@ export default class GraphAPI {
         }
         portfolioTags {
         nodes {
+          slug
           name
           count
         }
@@ -1241,6 +1246,7 @@ export default class GraphAPI {
         }
         portfolioTags {
           nodes {
+            slug
             name
           }
         }
@@ -1391,6 +1397,7 @@ export default class GraphAPI {
         }
         portfolioTags {
           nodes {
+            slug
             name
           }
         }

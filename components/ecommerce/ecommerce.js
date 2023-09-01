@@ -7,10 +7,11 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json";
 import ecommerceBasket from "/public/lottie/ecommerce-basket.json";
+import ServiceContact from "../commonServiceContact/commonServiceContact";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Ecommerce({ data }) {
+export default function Ecommerce({ data, themeOptions }) {
   useEffect(() => {
     lottie.loadAnimation({
       container: document.querySelector(".torusLandingContainer"),
@@ -110,7 +111,10 @@ export default function Ecommerce({ data }) {
           animation: action,
           once: true,
         });
-        const panels = gsap.utils.toArray([".gl_area .benifit_ttl", ".gl_area .benifit_ttl_mb"]);
+        const panels = gsap.utils.toArray([
+          ".gl_area .benifit_ttl",
+          ".gl_area .benifit_ttl_mb",
+        ]);
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
             trigger: panel,
@@ -350,6 +354,7 @@ export default function Ecommerce({ data }) {
           </section>
         </div>
       </div>
+      <ServiceContact data={themeOptions} />
     </main>
   );
 }

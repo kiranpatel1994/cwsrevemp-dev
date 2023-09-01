@@ -1,21 +1,27 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GraphAPI from "../../services/graphQL";
 import InfiniteScroll from "react-infinite-scroll-component";
+import { useRouter } from "next/router";
 
 function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
+  const router = useRouter();
   const [tag, setTag] = useState(tags);
   const [portfolio, setPortfolio] = useState(portfolios);
   const [portfolioCat, setPortfolioCat] = useState(null);
   const [selectedCat, setSelectedCat] = useState(null);
   const [activeTabPortfolio, setActiveTabPortfolio] = useState(null);
   const [selectedTag, setSelectedTag] = useState(null);
+  const [matchingCategory, setMatchingCategory] = useState(null);
   const limit = process.env.NEXT_PUBLIC_PORTFOLIO_LIMIT;
 
   const handleAllPortfolio = () => {
+    router.push(router.pathname, undefined, { shallow: true });
+    setSelectedCat(null);
     const siblingElements = document.querySelectorAll(".tag-li");
     siblingElements.forEach((siblingElement) => {
       siblingElement.classList.remove("active");
@@ -25,14 +31,37 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
     setPortfolio({ ...portfolios });
   };
 
-  const updateSelectedTag = async (e) => {
+  const handleSelectTag = (e) => {
+    e.preventDefault();
+    setSelectedTag(e.target.getAttribute("data-slug"));
+
+    if (selectedCat) {
+      router.push(
+        `?category=${encodeURIComponent(selectedCat)}&tag=${encodeURIComponent(
+          e.target.getAttribute("data-slug")
+        )}`,
+        undefined,
+        {
+          shallow: true,
+        }
+      );
+    } else {
+      router.push(
+        `?tag=${encodeURIComponent(e.target.getAttribute("data-slug"))}`,
+        undefined,
+        {
+          shallow: true,
+        }
+      );
+    }
+    updateSelectedTag(e.target.getAttribute("data-slug"), null);
+  };
+
+  const updateSelectedTag = async (selectedTag, selectedCat) => {
     const siblingElements = document.querySelectorAll(".tag-li");
     siblingElements.forEach((siblingElement) => {
       siblingElement.classList.remove("active");
     });
-    setSelectedTag(e.target.innerText);
-    const tagName = e.target.innerText;
-    e.target.closest("li").classList.add("active");
     if (selectedCat) {
       const portfolioCatFilterPagination =
         await GraphAPI.allPortfolioCatPagination(500, null, selectedCat);
@@ -40,7 +69,7 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
         portfolioCatFilterPagination.data.data.portfolioCategories?.nodes[0].portfolios.edges.filter(
           (portfolio) => {
             const tags = portfolio.node.portfolioTags.nodes;
-            return tags.some((tag) => tag.name === tagName);
+            return tags.some((tag) => tag.slug === selectedTag);
           }
         );
       setActiveTabPortfolio({
@@ -55,32 +84,54 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
       const filteredAllPortfolio =
         allPortfolioForTag.data.data?.portfolios.edges.filter((portfolio) => {
           const tags = portfolio.node.portfolioTags.nodes;
-          return tags.some((tag) => tag.name === tagName);
+          return tags.some((tag) => tag.slug === selectedTag);
         });
       setPortfolio({ ...portfolio, edges: filteredAllPortfolio });
     }
   };
 
-  const updateSelectedCat = async (e) => {
+  const handleSelectCat = (e, category) => {
+    e.preventDefault();
+    router.push(
+      `?category=${encodeURIComponent(e.target.getAttribute("data-slug"))}`,
+      undefined,
+      {
+        shallow: true,
+      }
+    );
+    updateSelectedCat(e.target.getAttribute("data-slug"));
+  };
+
+  const updateSelectedCat = async (catSlug) => {
     const siblingElements = document.querySelectorAll(".tag-li");
     siblingElements.forEach((siblingElement) => {
       siblingElement.classList.remove("active");
     });
-    setSelectedTag(null);
-    setSelectedCat(e.target.innerText);
-    const selectedCategoryPortfolios = data.filter((element) =>
-      element.name.toLowerCase().includes(e.target.innerText.toLowerCase())
+    if (!selectedTag) {
+      setSelectedTag(null);
+    }
+    const selectedCategoryPortfolios = data.filter(
+      (element) => element.slug.toLowerCase() === catSlug.toLowerCase()
     );
-    const selectedCategoryFromAllPortfolios = allPortfolio.filter((element) =>
-      element.name.toLowerCase().includes(e.target.innerText.toLowerCase())
+    const selectedCategoryFromAllPortfolios = allPortfolio.filter(
+      (element) => element.slug.toLowerCase() === catSlug.toLowerCase()
     );
     const portfolioTags =
       selectedCategoryFromAllPortfolios[0].portfolios.edges.flatMap((item) =>
-        item.node.portfolioTags.nodes.map((tag) => ({ name: tag.name }))
+        item.node.portfolioTags.nodes.map((tag) => ({
+          name: tag.name,
+          slug: tag.slug,
+        }))
       );
-    const uniquePortfolioTags = [
-      ...new Set(portfolioTags.map((tag) => tag.name)),
-    ].map((name) => ({ name }));
+    const uniquePortfolioTags = Array.from(
+      new Set(portfolioTags.map((tag) => tag.name))
+    ).map((name) => {
+      const tag = portfolioTags.find((tag) => tag.name === name);
+      return {
+        name: name,
+        slug: tag.slug,
+      };
+    });
     setTag(uniquePortfolioTags);
     setActiveTabPortfolio(selectedCategoryPortfolios[0].portfolios);
   };
@@ -126,6 +177,33 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
     };
     setPortfolio(updatedPortfolioData);
   };
+
+  useEffect(() => {
+    setSelectedCat(null);
+    setSelectedTag(null);
+    const categorySlug = router.query.category;
+    const tagSlug = router.query.tag;
+    if (categorySlug) {
+      var routerCategory = data.find(
+        (item) => item.slug.toLowerCase() === categorySlug.toLowerCase()
+      );
+
+      if (routerCategory) {
+        setSelectedCat(categorySlug);
+        updateSelectedCat(categorySlug);
+      }
+    }
+    if (tagSlug) {
+      const routerTag = tags.find(
+        (item) => item.slug.toLowerCase() === tagSlug.toLowerCase()
+      );
+      if (routerTag) {
+        setSelectedTag(tagSlug);
+        updateSelectedTag(tagSlug, categorySlug);
+      }
+    }
+  }, [router.query.category, router.query.tag]);
+
   return (
     <section className="am_project">
       <div className="container-xl p-0">
@@ -142,7 +220,11 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
             <ul className="list-inline text-center mb-0" role="tablist">
               {portfolio && (
                 <li
-                  className="list-inline-item active"
+                  className={
+                    selectedCat === null
+                      ? "list-inline-item active"
+                      : "list-inline-item"
+                  }
                   data-bs-toggle="tab"
                   data-bs-target="#all"
                   role="tab"
@@ -160,18 +242,21 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                   return (
                     <li
                       key={`nav-tabs-${index}`}
-                      className="list-inline-item"
+                      className={
+                        item.slug === selectedCat
+                          ? "list-inline-item active"
+                          : "list-inline-item"
+                      }
                       data-bs-toggle="tab"
                       data-bs-target={`#${item.slug}`}
                       role="tab"
                       aria-controls={item.slug}
                       aria-selected="false"
-                      onClick={updateSelectedCat}
+                      onClick={handleSelectCat}
+                      data-slug={item.slug}
                     >
                       <a>
-                        <span data-portfolio={item.portfolios}>
-                          {item.name}
-                        </span>
+                        <span data-slug={item.slug}>{item.name}</span>
                       </a>
                     </li>
                   );
@@ -186,12 +271,17 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                   {tag.map((item, index) => {
                     return (
                       <li
-                        className="list-inline-item tag-li"
+                        className={
+                          item.slug === selectedTag
+                            ? "list-inline-item tag-li active"
+                            : "list-inline-item tag-li"
+                        }
                         key={`tag-${index}`}
-                        onClick={updateSelectedTag}
+                        onClick={handleSelectTag}
+                        data-slug={item.slug}
                       >
-                        <a>
-                          <span>{item.name}</span>
+                        <a data-slug={item.slug}>
+                          <span data-slug={item.slug}>{item.name}</span>
                         </a>
                       </li>
                     );
@@ -207,7 +297,11 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
           <div className="tab-content clearfix">
             {portfolio && (
               <div
-                className="tab-pane active fade show active"
+                className={
+                  selectedCat === null
+                    ? "tab-pane active fade show"
+                    : "tab-pane"
+                }
                 id="all"
                 role="tabpanel"
                 aria-labelledby="all-tab"
@@ -293,7 +387,11 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                 return (
                   <div
                     key={`nav-tab-content-${index}`}
-                    className="tab-pane fade"
+                    className={
+                      item.slug === selectedCat
+                        ? "tab-pane fade show active"
+                        : "tab-pane fade"
+                    }
                     id={item.slug}
                     role="tabpanel"
                     aria-labelledby={`${item.slug}-tab`}
@@ -305,7 +403,7 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                           ? item?.portfolios?.edges?.length
                           : activeTabPortfolio.edges?.length
                       }
-                      next={() => handleInfiniteScroll(item.name, cursor)}
+                      next={() => handleInfiniteScroll(item.slug, cursor)}
                       hasMore={
                         (activeTabPortfolio &&
                           activeTabPortfolio?.pageInfo?.hasNextPage &&

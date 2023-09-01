@@ -401,25 +401,7 @@ export default function Hosting({ data, themeOptions, form }) {
           </section>
         </div>
       </div>
-      <div className="footerstarted">
-        <div className="container-xl">
-          <div className="row">
-            <div className="col-12 text-center">
-              {data.contactBlockTitle && <span>{data.contactBlockTitle}</span>}
-              {data.contactBlockDescription && (
-                <h3>{data.contactBlockDescription}</h3>
-              )}
-              <Link href="/contact" className="fk-btn footerstarted_btn">
-                I`m in
-                <span>
-                  <img src="/images/img-stars.png" />
-                </span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* <ServiceContact data={themeOptions} form={form} /> */}
+      <ServiceContact data={themeOptions} />
     </main>
   );
 }

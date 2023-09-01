@@ -10,6 +10,7 @@ import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
 import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json";
 import Link from "next/link";
+import ServiceContact from "../commonServiceContact/commonServiceContact";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -18,7 +19,7 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export default function PropertyManagement({ data, form }) {
+export default function PropertyManagement({ data, form, themeOptions }) {
   useEffect(() => {
     lottie.loadAnimation({
       container: document.querySelector(".torusLandingContainer"),
@@ -547,6 +548,7 @@ export default function PropertyManagement({ data, form }) {
           )}
         </div>
       </div>
+      <ServiceContact data={themeOptions} />
     </main>
   );
 }
