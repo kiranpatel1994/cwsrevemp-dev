@@ -827,6 +827,9 @@ export default function HomeDetails({
       {result && (
         <>
           <section className="project-area">
+            <div className="title">
+              <h2 className="text-center text-white">Check out our work. Be blown away.</h2>
+            </div>
             <div className="container-fluid p-0">
               <div className="row g-0">
                 <div className="col-12 position-relative">
@@ -960,9 +963,7 @@ export default function HomeDetails({
                           </div>
                         )}
                         {item.authorDescription && (
-                          <div className="para-side-detail">
-                            <p>{item.authorDescription}</p>
-                          </div>
+                          <div className="para-side-detail" dangerouslySetInnerHTML={{ __html: item.authorDescription, }} />
                         )}
                       </div>
                       <div className="other-detail">
