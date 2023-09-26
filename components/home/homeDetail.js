@@ -694,9 +694,12 @@ export default function HomeDetails({
                           </div>
                         )}
                         {item.authorDescription && (
-                          <div className="para-side-detail">
-                            <p>{item.authorDescription}</p>
-                          </div>
+                          <div
+                            className="para-side-detail"
+                            dangerouslySetInnerHTML={{
+                              __html: item.authorDescription,
+                            }}
+                          ></div>
                         )}
                       </div>
                       <div className="other-detail">
