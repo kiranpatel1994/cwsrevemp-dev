@@ -71,7 +71,7 @@ export default function ContactDetail({ data, form }) {
                 <div className="form_container">
                   <div className="text-center">
                     <h2>
-                      Questions? We`re here. <br />
+                      Questions? <br />
                       We`d love to hear from you.
                     </h2>
                   </div>

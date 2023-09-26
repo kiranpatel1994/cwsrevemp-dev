@@ -166,7 +166,7 @@ export default function PropertyManagement({ data, form, themeOptions }) {
               <div className="banner_content_info">
                 {data.pageHeading && <h1>{data.pageHeading} </h1>}
                 {data.bannerSubtitle && (
-                  <div className="sub_title play_fair-ttl">
+                  <div className="sub_title play_fair-ttl mb-lg-5">
                     <h2>{data.bannerSubtitle} </h2>
                   </div>
                 )}

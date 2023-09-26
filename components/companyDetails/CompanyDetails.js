@@ -272,7 +272,7 @@ export default function CompanyDetails({
                               dangerouslySetInnerHTML={{
                                 __html: item.authorDescription,
                               }}
-                            ></div>
+                            />
                           )}
                         </div>
                         <div className="other-detail">
