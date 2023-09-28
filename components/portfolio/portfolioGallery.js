@@ -451,7 +451,7 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                                         className="explore_btn"
                                       >
                                         <span>
-                                          Explore{" "}
+                                          Explore
                                           <img src="images/down-right.png" />
                                         </span>
                                       </Link>
@@ -498,7 +498,7 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                                         className="explore_btn"
                                       >
                                         <span>
-                                          Explore{" "}
+                                          Explore
                                           <img src="images/down-right.png" />
                                         </span>
                                       </Link>

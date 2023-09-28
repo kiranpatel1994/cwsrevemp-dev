@@ -161,7 +161,7 @@ export default function Ecommerce({ data, themeOptions }) {
             <div className="col-12 ecom__info position-relative">
               <div className="banner_content_info">
                 <h1 className="main_title-h1">
-                  E-commerce <br className="d-md-none" /> Development{" "}
+                  E-commerce <br className="d-md-none" /> Development
                 </h1>
                 {data.bannerTagline && (
                   <h2 className="sub_title play_fair-ttl">
