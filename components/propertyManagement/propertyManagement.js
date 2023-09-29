@@ -527,10 +527,19 @@ export default function PropertyManagement({ data, form, themeOptions }) {
                     className="col-12 col-md-6 col-lg-4"
                     key={`property-${index}`}
                   >
-                    <img
-                      className="img-fluid"
-                      src={item.screenImage.sourceUrl}
-                    />
+                    <Link
+                      href={
+                        item?.screenWebsiteLink
+                          ? item?.screenWebsiteLink
+                          : "javscript:void(0)"
+                      }
+                      target="_blank"
+                    >
+                      <img
+                        className="img-fluid"
+                        src={item.screenImage.sourceUrl}
+                      />
+                    </Link>
                   </div>
                 );
               })}
