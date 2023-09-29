@@ -17,10 +17,14 @@
   position: absolute;
   left: 0;
   top: 0;
-  background: transparent linear-gradient(180deg,
+  background: transparent
+    linear-gradient(
+      180deg,
       #07042a 10%,
       rgba(253, 182, 39, 0.4) 70%,
-      #fdb627 100%) 0% 0% no-repeat;
+      #fdb627 100%
+    )
+    0% 0% no-repeat;
   z-index: 3;
 }
 
@@ -52,7 +56,7 @@
   border: 1px solid transparent;
 }
 
-.slider-area .raw-card>* {
+.slider-area .raw-card > * {
   z-index: 2;
   position: relative;
 }
@@ -398,12 +402,12 @@
   border-radius: 50%;
 }
 
-.atmos-faces>div {
+.atmos-faces > div {
   position: absolute;
   transition: all 0.3s;
 }
 
-.atmos-faces>div::before {
+.atmos-faces > div::before {
   content: "";
   position: absolute;
   left: 0;
@@ -415,7 +419,7 @@
   background: linear-gradient(#ddffe7 4.12%, #ecbaf0 100%);
 }
 
-.atmos-faces>div img {
+.atmos-faces > div img {
   padding: 5px;
   z-index: 2;
   position: relative;
@@ -1296,22 +1300,24 @@ footer .ft-child:last-child {
   margin-top: 25px;
 } */
 
-.time_acquainted .why__us:nth-child(3){
+.time_acquainted .why__us:nth-child(3) {
   margin-bottom: 50px;
 }
 
 .webDev .moji_para p:last-child,
 .prpertyManagement .im_moji p:last-child,
-.eCommerce .im_moji p:last-child{
+.eCommerce .im_moji p:last-child {
   font-size: 25px;
   line-height: 35px;
   color: #fff;
   font-family: "gilroy-lightuploaded_file";
-  margin-left: 0; 
+  margin-left: 0;
   max-width: 950px;
 }
 
-.prpertyManagement .ecom__info .im_moji p{max-width: 690px;}
+.prpertyManagement .ecom__info .im_moji p {
+  max-width: 690px;
+}
 
 .eCommerce .gl_area.ecommerce_page .sec-3 .had_new p b {
   color: #fdb627;
@@ -1335,7 +1341,12 @@ footer .ft-child:last-child {
   pointer-events: none;
 }
 
-.eCommerce .banner__overlap .ecom_development_container~.bottom_shape .floor-2 .dt_2 {
+.eCommerce
+  .banner__overlap
+  .ecom_development_container
+  ~ .bottom_shape
+  .floor-2
+  .dt_2 {
   display: none;
 }
 
@@ -1506,7 +1517,7 @@ body.solutions {
   width: 164px;
 }
 
-.banner__overlap .bottom_shape .floor-1 .torusLandingLottie>div {
+.banner__overlap .bottom_shape .floor-1 .torusLandingLottie > div {
   transform: scale(2);
 }
 
@@ -1566,7 +1577,7 @@ body.solutions {
   width: 640px;
 }
 
-.hosting .cloudServer>div {
+.hosting .cloudServer > div {
   transform: scale(1.65);
 }
 
@@ -1606,7 +1617,7 @@ body.hosting {
   top: 48%;
 }
 
-.social-media-management .floor-1 .torusLandingLottie>div {
+.social-media-management .floor-1 .torusLandingLottie > div {
   transform: scale(2);
 }
 
@@ -2552,7 +2563,7 @@ body.hosting {
     display: none;
   }
 
-  header .nav-item+.nav-item {
+  header .nav-item + .nav-item {
     margin-left: 0;
   }
 
@@ -3110,8 +3121,12 @@ body.hosting {
     margin-bottom: 50px;
   }
 
-  .printed-marketing .webApp_inner .ecom_development_container.design_development_container::after,
-  .logo-branding .webApp_inner .ecom_development_container.design_development_container::after {
+  .printed-marketing
+    .webApp_inner
+    .ecom_development_container.design_development_container::after,
+  .logo-branding
+    .webApp_inner
+    .ecom_development_container.design_development_container::after {
     top: 7%;
     right: -90px;
     width: 300px;
@@ -3677,8 +3692,8 @@ body.hosting {
 
   .webDev .moji_para p:last-child,
   .prpertyManagement .im_moji p:last-child,
-  .eCommerce .im_moji p:last-child{
-    font-size: 18px!important;
+  .eCommerce .im_moji p:last-child {
+    font-size: 18px !important;
     line-height: 28px;
   }
 }
@@ -4210,7 +4225,11 @@ body.hosting {
     justify-content: flex-start;
   }
 
-  .property-management .work__efficient .benifit__inner .list-inline-item .ffk_btn,
+  .property-management
+    .work__efficient
+    .benifit__inner
+    .list-inline-item
+    .ffk_btn,
   .sociaManagement .gl_area .ffk_btn,
   .printed-marketing .webApp_inner .gl_area .ffk_btn,
   .logo-branding .webApp_inner .gl_area .ffk_btn {
@@ -4218,7 +4237,12 @@ body.hosting {
     border-radius: 24px;
   }
 
-  .property-management .work__efficient .benifit__inner .list-inline-item .ffk_btn span,
+  .property-management
+    .work__efficient
+    .benifit__inner
+    .list-inline-item
+    .ffk_btn
+    span,
   .sociaManagement .gl_area .ffk_btn span,
   .printed-marketing .webApp_inner .gl_area .ffk_btn span,
   .logo-branding .webApp_inner .gl_area .ffk_btn span {
@@ -4322,8 +4346,16 @@ body.hosting {
     line-height: 1.4 !important;
   }
 
-  .printed-marketing .logoBrand_multi .time_acquainted .why__us:first-child .automate_work::after,
-  .logo-branding .logoBrand_multi .time_acquainted .why__us:first-child .automate_work::after {
+  .printed-marketing
+    .logoBrand_multi
+    .time_acquainted
+    .why__us:first-child
+    .automate_work::after,
+  .logo-branding
+    .logoBrand_multi
+    .time_acquainted
+    .why__us:first-child
+    .automate_work::after {
     display: none;
   }
 
@@ -4336,8 +4368,8 @@ body.hosting {
 
   .webDev .moji_para p:last-child,
   .prpertyManagement .im_moji p:last-child,
-  .eCommerce .im_moji p:last-child{
-    font-size: 16px!important;
+  .eCommerce .im_moji p:last-child {
+    font-size: 16px !important;
     line-height: 26px;
   }
 }

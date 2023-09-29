@@ -320,8 +320,8 @@ export default function LogoBranding({ data, themeOptions, form }) {
 
               <div className="row g-xxl-0 why__us align-items-center mt-lg-0 mt-4 pt-lg-0 pt-4">
                 <div className="col-lg-7 automate_work position-relative">
-                  {data.service2Title && <h2>{data.service2Title}</h2>}
-                  {data.service2Description && (
+                  {data?.service2Title && <h2>{data.service2Title}</h2>}
+                  {data?.service2Description && (
                     <div
                       dangerouslySetInnerHTML={{
                         __html: data.service2Description,
@@ -329,7 +329,7 @@ export default function LogoBranding({ data, themeOptions, form }) {
                     ></div>
                   )}
                 </div>
-                {data.service2Image.sourceUrl && (
+                {data?.service2Image?.sourceUrl && (
                   <div className="col-lg-5 text-lg-start text-center mt-lg-0 mt-4 pt-lg-0 pt-4">
                     <img
                       className="img-fluid"

@@ -322,8 +322,11 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                   loader={<h4 className="loading_portfolio">Loading...</h4>}
                   endMessage={
                     <div className="mx-auto d-table d-100-sm center">
+                      <h3>
+                        Like what you see? The next project here could be yours.
+                      </h3>
                       <Link href="/contact" className="btn center btn-yellow">
-                        <span>Reach out </span>
+                        <span>Reach Out</span>
                       </Link>
                     </div>
                   }
@@ -419,8 +422,15 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                       loader={<h4 className="loading_portfolio">Loading...</h4>}
                       endMessage={
                         <div className="mx-auto d-table d-100-sm">
-                          <Link href="/contact" className="btn btn-yellow">
-                            <span>Reach out </span>
+                          <h3>
+                            Like what you see? The next project here could be
+                            yours.
+                          </h3>
+                          <Link
+                            href="/contact"
+                            className="btn center btn-yellow"
+                          >
+                            <span>Reach Out</span>
                           </Link>
                         </div>
                       }

@@ -61,6 +61,14 @@ export default class GraphAPI {
             founderDescription
             founderName
             teamDescription
+             testimonialBlocks {
+              authorName
+              authorImage {
+                sourceUrl
+              }
+              authorDesignation
+              authorDescription
+            }
           }
         }
       }

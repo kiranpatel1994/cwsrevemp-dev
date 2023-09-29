@@ -533,15 +533,15 @@ export default function HomeDetails({
                 </div>
               </div>
             </div>
-            {businessImageArray?.length > 0 && (
+            {businessImageArray && (
               <div className="col-12 col-xl-6 mt-xl-0 mt-4 pt-xl-0 pt-3">
                 <div className="d-none d-xl-block">
                   <div className="vr-row-parent">
                     {businessImageArray.map((item, index) => {
                       return (
-                        <div className="child-row" key={`bi-${index}`}>
+                        <div className="child-row" key={`ibi-${index}`}>
                           <Swiper
-                            // direction={'vertical'}
+                            direction={"vertical"}
                             slidesPerView={4.2}
                             spaceBetween={50}
                             autoplay={{
@@ -550,28 +550,12 @@ export default function HomeDetails({
                             }}
                             loop={true}
                             breakpoints={{
-                              319: {
-                                slidesPerView: 2,
-                                spaceBetween: 14,
-                              },
-                              360: {
-                                slidesPerView: 2.5,
-                                spaceBetween: 14,
-                              },
-                              425: {
-                                slidesPerView: 3,
-                                spaceBetween: 14,
-                              },
-                              568: {
-                                slidesPerView: 4,
-                                spaceBetween: 14,
-                              },
-                              768: {
-                                slidesPerView: 4,
+                              1200: {
+                                slidesPerView: 5.5,
                                 spaceBetween: 20,
                               },
-                              1024: {
-                                slidesPerView: 5,
+                              1400: {
+                                slidesPerView: 4.5,
                                 spaceBetween: 30,
                               },
                             }}
@@ -580,7 +564,7 @@ export default function HomeDetails({
                           >
                             {item.map((element, elementIndex) => {
                               return (
-                                <SwiperSlide key={`image-${elementIndex}`}>
+                                <SwiperSlide key={`eleI-${elementIndex}`}>
                                   <div class="sub-child">
                                     <img
                                       src={element.businessImage.sourceUrl}
@@ -599,70 +583,68 @@ export default function HomeDetails({
             )}
           </div>
         </div>
-        {businessImageArray?.length > 0 && (
-          <div className="container-fluid p-0 d-xl-none">
-            <div className="row g-0">
-              <div className="col-12">
-                <div className="vr-row-parent">
-                  {businessImageArray.map((item, index) => {
-                    return (
-                      <div className="child-row" key={`bi-${index}`}>
-                        <Swiper
-                          // direction={'vertical'}
-                          slidesPerView={4.2}
-                          spaceBetween={50}
-                          autoplay={{
-                            delay: 1500,
-                            disableOnInteraction: false,
-                          }}
-                          loop={true}
-                          breakpoints={{
-                            319: {
-                              slidesPerView: 2,
-                              spaceBetween: 14,
-                            },
-                            360: {
-                              slidesPerView: 2.5,
-                              spaceBetween: 14,
-                            },
-                            425: {
-                              slidesPerView: 3,
-                              spaceBetween: 14,
-                            },
-                            568: {
-                              slidesPerView: 4,
-                              spaceBetween: 14,
-                            },
-                            768: {
-                              slidesPerView: 4,
-                              spaceBetween: 20,
-                            },
-                            1024: {
-                              slidesPerView: 5,
-                              spaceBetween: 30,
-                            },
-                          }}
-                          modules={[Autoplay]}
-                          className="mySwiper"
-                        >
-                          {item.map((element, elementIndex) => {
-                            return (
-                              <SwiperSlide key={`image-${elementIndex}`}>
-                                <div class="sub-child">
-                                  <img src={element.businessImage.sourceUrl} />
-                                </div>
-                              </SwiperSlide>
-                            );
-                          })}
-                        </Swiper>
-                      </div>
-                    );
-                  })}
-                </div>
+        <div className="container-fluid p-0 d-xl-none">
+          <div className="row g-0">
+            <div className="col-12">
+              <div className="vr-row-parent">
+                {businessImageArray.map((item, index) => {
+                  return (
+                    <div className="child-row" key={`ibi-${index}`}>
+                      <Swiper
+                        //direction={"vertical"}
+                        slidesPerView={4.2}
+                        spaceBetween={50}
+                        autoplay={{
+                          delay: 1500,
+                          disableOnInteraction: false,
+                        }}
+                        loop={true}
+                        breakpoints={{
+                          319: {
+                            slidesPerView: 2,
+                            spaceBetween: 14,
+                          },
+                          360: {
+                            slidesPerView: 2.5,
+                            spaceBetween: 14,
+                          },
+                          425: {
+                            slidesPerView: 3,
+                            spaceBetween: 14,
+                          },
+                          568: {
+                            slidesPerView: 4,
+                            spaceBetween: 14,
+                          },
+                          768: {
+                            slidesPerView: 4,
+                            spaceBetween: 20,
+                          },
+                          1024: {
+                            slidesPerView: 5,
+                            spaceBetween: 30,
+                          },
+                        }}
+                        modules={[Autoplay]}
+                        className="mySwiper"
+                      >
+                        {item.map((element, elementIndex) => {
+                          return (
+                            <SwiperSlide key={`eleI-${elementIndex}`}>
+                              <div class="sub-child">
+                                <img src={element.businessImage.sourceUrl} />
+                              </div>
+                            </SwiperSlide>
+                          );
+                        })}
+                      </Swiper>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           </div>
-        )}
+        </div>
       </section>
       {result && (
         <>

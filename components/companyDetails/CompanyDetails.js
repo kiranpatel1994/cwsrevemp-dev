@@ -66,7 +66,7 @@ export default function CompanyDetails({
     return array;
   }
 
-  shuffleArray(testimonialSettings.clientTestimonials);
+  shuffleArray(details?.companySettings?.testimonialBlocks);
 
   return (
     <>
@@ -232,7 +232,7 @@ export default function CompanyDetails({
             </div>
           </section>
         )}
-        {testimonialSettings.clientTestimonials && (
+        {details.companySettings.testimonialBlocks && (
           <section className="about-us">
             {/* <div className="floating-object"></div> */}
             <div className="aboutUs-title position-relative zindex-2">
@@ -254,37 +254,42 @@ export default function CompanyDetails({
 
             <div className="slider-area">
               <Swiper className="slider-scroller" {...settingsB}>
-                {testimonialSettings.clientTestimonials.map((item, index) => {
-                  return (
-                    <SwiperSlide key={index}>
-                      <div className="raw-card">
-                        <div className="d-flex flex-xl-row flex-column align-items-start card-bunch">
-                          {item.authorImage && (
-                            <div className="sm-user-bild mb-xl-0 mb-4">
-                              <div className="circle_area">
-                                <img src={item.authorImage.sourceUrl} alt="" />
+                {details.companySettings.testimonialBlocks.map(
+                  (item, index) => {
+                    return (
+                      <SwiperSlide key={index}>
+                        <div className="raw-card">
+                          <div className="d-flex flex-xl-row flex-column align-items-start card-bunch">
+                            {item.authorImage && (
+                              <div className="sm-user-bild mb-xl-0 mb-4">
+                                <div className="circle_area">
+                                  <img
+                                    src={item.authorImage.sourceUrl}
+                                    alt=""
+                                  />
+                                </div>
                               </div>
-                            </div>
-                          )}
-                          {item.authorDescription && (
-                            <div
-                              className="para-side-detail"
-                              dangerouslySetInnerHTML={{
-                                __html: item.authorDescription,
-                              }}
-                            />
-                          )}
+                            )}
+                            {item.authorDescription && (
+                              <div
+                                className="para-side-detail"
+                                dangerouslySetInnerHTML={{
+                                  __html: item.authorDescription,
+                                }}
+                              />
+                            )}
+                          </div>
+                          <div className="other-detail">
+                            <h5>
+                              {item.authorName}
+                              <span>{item.authorDesignation}</span>
+                            </h5>
+                          </div>
                         </div>
-                        <div className="other-detail">
-                          <h5>
-                            {item.authorName}
-                            <span>{item.authorDesignation}</span>
-                          </h5>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                  );
-                })}
+                      </SwiperSlide>
+                    );
+                  }
+                )}
 
                 <div className="swiper-pagination"></div>
               </Swiper>
