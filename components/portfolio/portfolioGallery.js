@@ -34,7 +34,14 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
   const handleSelectTag = (e) => {
     e.preventDefault();
     setSelectedTag(e.target.getAttribute("data-slug"));
-
+    const siblingElements = document.querySelectorAll(".tag-li");
+    siblingElements.forEach((siblingElement) => {
+      siblingElement.classList.remove("active");
+    });
+    const closestElement = e.target.closest(".tag-li");
+    if (closestElement) {
+      closestElement.classList.add("active");
+    }
     if (selectedCat) {
       router.push(
         `?category=${encodeURIComponent(selectedCat)}&tag=${encodeURIComponent(
@@ -58,10 +65,6 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
   };
 
   const updateSelectedTag = async (selectedTag, selectedCat) => {
-    const siblingElements = document.querySelectorAll(".tag-li");
-    siblingElements.forEach((siblingElement) => {
-      siblingElement.classList.remove("active");
-    });
     if (selectedCat) {
       const portfolioCatFilterPagination =
         await GraphAPI.allPortfolioCatPagination(500, null, selectedCat);
