@@ -533,302 +533,144 @@ export default function HomeDetails({
                 </div>
               </div>
             </div>
-            {businessImageArray && (
+            {businessImageArray?.length > 0 && (
               <div className="col-12 col-xl-6 mt-xl-0 mt-4 pt-xl-0 pt-3">
-                {/* <div className="vr-row-parent">
-                  {businessImageArray.map((item, index) => {
-                    return (
-                      <div className="child-row" key={`business-${index}`}>
-                        {item.map((element, elementIndex) => {
-                          return (
-                            <div
-                              className="sub-child"
-                              key={`businessImage-${elementIndex}`}
-                            >
-                              <img src={element.businessImage.sourceUrl} />
-                            </div>
-                          );
-                        })}
-                      </div>
-                    );
-                  })}
-                </div> */}
                 <div className="d-none d-xl-block">
                   <div className="vr-row-parent">
-                    <div className="child-row">
-                      <Swiper
-                        direction={'vertical'}
-                        slidesPerView={4.2}
-                        spaceBetween={50}
-                        autoplay={{
-                          delay: 1500,
-                          disableOnInteraction: false,
-                        }}
-                        loop={true}
-                        breakpoints={{
-                          1200: {
-                            slidesPerView: 5.5,
-                            spaceBetween: 20,
-                          },
-                          1400: {
-                            slidesPerView: 4.5,
-                            spaceBetween: 30,
-                          },
-                        }}
-                        modules={[Autoplay]}
-                        className="mySwiper"
-                      >
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                      </Swiper>
-                    </div>
-                    <div className="child-row">
-                      <Swiper
-                        direction={'vertical'}
-                        slidesPerView={4.2}
-                        spaceBetween={50}
-                        autoplay={{
-                          delay: 1500,
-                          disableOnInteraction: false,
-                          reverseDirection: true,
-                        }}
-                        loop={true}
-                        breakpoints={{
-                          1200: {
-                            slidesPerView: 5.5,
-                            spaceBetween: 20,
-                          },
-                          1400: {
-                            slidesPerView: 4.5,
-                            spaceBetween: 30,
-                          },
-                        }}
-                        modules={[Autoplay]}
-                        className="mySwiper"
-                      >
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                      </Swiper>
-                    </div>
-                    <div className="child-row">
-                      <Swiper
-                        direction={'vertical'}
-                        slidesPerView={4.2}
-                        spaceBetween={50}
-                        autoplay={{
-                          delay: 1500,
-                          disableOnInteraction: false,
-                        }}
-                        loop={true}
-                        breakpoints={{
-                          1200: {
-                            slidesPerView: 5.5,
-                            spaceBetween: 20,
-                          },
-                          1400: {
-                            slidesPerView: 4.5,
-                            spaceBetween: 30,
-                          },
-                        }}
-                        modules={[Autoplay]}
-                        className="mySwiper"
-                      >
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                        <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                      </Swiper>
-                    </div>
+                    {businessImageArray.map((item, index) => {
+                      return (
+                        <div className="child-row" key={`bi-${index}`}>
+                          <Swiper
+                            // direction={'vertical'}
+                            slidesPerView={4.2}
+                            spaceBetween={50}
+                            autoplay={{
+                              delay: 1500,
+                              disableOnInteraction: false,
+                            }}
+                            loop={true}
+                            breakpoints={{
+                              319: {
+                                slidesPerView: 2,
+                                spaceBetween: 14,
+                              },
+                              360: {
+                                slidesPerView: 2.5,
+                                spaceBetween: 14,
+                              },
+                              425: {
+                                slidesPerView: 3,
+                                spaceBetween: 14,
+                              },
+                              568: {
+                                slidesPerView: 4,
+                                spaceBetween: 14,
+                              },
+                              768: {
+                                slidesPerView: 4,
+                                spaceBetween: 20,
+                              },
+                              1024: {
+                                slidesPerView: 5,
+                                spaceBetween: 30,
+                              },
+                            }}
+                            modules={[Autoplay]}
+                            className="mySwiper"
+                          >
+                            {item.map((element, elementIndex) => {
+                              return (
+                                <SwiperSlide key={`image-${elementIndex}`}>
+                                  <div class="sub-child">
+                                    <img
+                                      src={element.businessImage.sourceUrl}
+                                    />
+                                  </div>
+                                </SwiperSlide>
+                              );
+                            })}
+                          </Swiper>
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
               </div>
             )}
           </div>
         </div>
-        <div className="container-fluid p-0 d-xl-none">
-          <div className="row g-0">
-            <div className="col-12">  
-              <div className="vr-row-parent">
-                <div className="child-row">
-                  <Swiper
-                    // direction={'vertical'}
-                    slidesPerView={4.2}
-                    spaceBetween={50}
-                    autoplay={{
-                      delay: 1500,
-                      disableOnInteraction: false,
-                    }}
-                    loop={true}
-                    breakpoints={{
-                      319: {
-                        slidesPerView: 2,
-                        spaceBetween: 14,
-                      },
-                      360: {
-                        slidesPerView: 2.5,
-                        spaceBetween: 14,
-                      },
-                      425: {
-                        slidesPerView: 3,
-                        spaceBetween: 14,
-                      },
-                      568: {
-                        slidesPerView: 4,
-                        spaceBetween: 14,
-                      },
-                      768: {
-                        slidesPerView: 4,
-                        spaceBetween: 20,
-                      },
-                      1024: {
-                        slidesPerView: 5,
-                        spaceBetween: 30,
-                      },
-                    }}
-                    modules={[Autoplay]}
-                    className="mySwiper"
-                  >
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                  </Swiper>
-                </div>
-                <div className="child-row">
-                  <Swiper
-                    // direction={'vertical'}
-                    slidesPerView={4.2}
-                    spaceBetween={50}
-                    autoplay={{
-                      delay: 1500,
-                      disableOnInteraction: false,
-                      reverseDirection: true,
-                    }}
-                    loop={true}
-                    breakpoints={{
-                      319: {
-                        slidesPerView: 2,
-                        spaceBetween: 14,
-                      },
-                      360: {
-                        slidesPerView: 2.5,
-                        spaceBetween: 14,
-                      },
-                      425: {
-                        slidesPerView: 3,
-                        spaceBetween: 14,
-                      },
-                      568: {
-                        slidesPerView: 4,
-                        spaceBetween: 14,
-                      },
-                      768: {
-                        slidesPerView: 4,
-                        spaceBetween: 20,
-                      },
-                      1024: {
-                        slidesPerView: 5,
-                        spaceBetween: 30,
-                      },
-                    }}
-                    modules={[Autoplay]}
-                    className="mySwiper"
-                  >
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                  </Swiper>
-                </div>
-                <div className="child-row">
-                  <Swiper
-                    // direction={'vertical'}
-                    slidesPerView={4.2}
-                    spaceBetween={50}
-                    autoplay={{
-                      delay: 1500,
-                      disableOnInteraction: false,
-                    }}
-                    loop={true}
-                    breakpoints={{
-                      319: {
-                        slidesPerView: 2,
-                        spaceBetween: 14,
-                      },
-                      360: {
-                        slidesPerView: 2.5,
-                        spaceBetween: 14,
-                      },
-                      425: {
-                        slidesPerView: 3,
-                        spaceBetween: 14,
-                      },
-                      568: {
-                        slidesPerView: 4,
-                        spaceBetween: 14,
-                      },
-                      768: {
-                        slidesPerView: 4,
-                        spaceBetween: 20,
-                      },
-                      1024: {
-                        slidesPerView: 5,
-                        spaceBetween: 30,
-                      },
-                    }}
-                    modules={[Autoplay]}
-                    className="mySwiper"
-                  >
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                    <SwiperSlide><div class="sub-child"><img src="https://cwsrevamp.cdn4.net/wp-content/uploads/2023/06/cropped-Divine-Steps-Logo-Main-01.png" /> </div></SwiperSlide>
-                  </Swiper>
+        {businessImageArray?.length > 0 && (
+          <div className="container-fluid p-0 d-xl-none">
+            <div className="row g-0">
+              <div className="col-12">
+                <div className="vr-row-parent">
+                  {businessImageArray.map((item, index) => {
+                    return (
+                      <div className="child-row" key={`bi-${index}`}>
+                        <Swiper
+                          // direction={'vertical'}
+                          slidesPerView={4.2}
+                          spaceBetween={50}
+                          autoplay={{
+                            delay: 1500,
+                            disableOnInteraction: false,
+                          }}
+                          loop={true}
+                          breakpoints={{
+                            319: {
+                              slidesPerView: 2,
+                              spaceBetween: 14,
+                            },
+                            360: {
+                              slidesPerView: 2.5,
+                              spaceBetween: 14,
+                            },
+                            425: {
+                              slidesPerView: 3,
+                              spaceBetween: 14,
+                            },
+                            568: {
+                              slidesPerView: 4,
+                              spaceBetween: 14,
+                            },
+                            768: {
+                              slidesPerView: 4,
+                              spaceBetween: 20,
+                            },
+                            1024: {
+                              slidesPerView: 5,
+                              spaceBetween: 30,
+                            },
+                          }}
+                          modules={[Autoplay]}
+                          className="mySwiper"
+                        >
+                          {item.map((element, elementIndex) => {
+                            return (
+                              <SwiperSlide key={`image-${elementIndex}`}>
+                                <div class="sub-child">
+                                  <img src={element.businessImage.sourceUrl} />
+                                </div>
+                              </SwiperSlide>
+                            );
+                          })}
+                        </Swiper>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
       </section>
       {result && (
         <>
           <section className="project-area">
             <div className="title">
-              <h2 className="text-center text-white">Check out our work. Be blown away.</h2>
+              <h2 className="text-center text-white">
+                Check out our work. Be blown away.
+              </h2>
             </div>
             <div className="container-fluid p-0">
               <div className="row g-0">
@@ -963,7 +805,12 @@ export default function HomeDetails({
                           </div>
                         )}
                         {item.authorDescription && (
-                          <div className="para-side-detail" dangerouslySetInnerHTML={{ __html: item.authorDescription, }} />
+                          <div
+                            className="para-side-detail"
+                            dangerouslySetInnerHTML={{
+                              __html: item.authorDescription,
+                            }}
+                          />
                         )}
                       </div>
                       <div className="other-detail">

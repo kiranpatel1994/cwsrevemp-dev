@@ -321,9 +321,11 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                   }
                   loader={<h4 className="loading_portfolio">Loading...</h4>}
                   endMessage={
-                    <h4 className="portfolio_lastline">
-                      Yay! you have seen it all.
-                    </h4>
+                    <div className="mx-auto d-table d-100-sm center">
+                      <Link href="/contact" className="btn center btn-yellow">
+                        <span>Reach out </span>
+                      </Link>
+                    </div>
                   }
                 >
                   <div className="row g-15">
@@ -416,9 +418,11 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                       }
                       loader={<h4 className="loading_portfolio">Loading...</h4>}
                       endMessage={
-                        <h4 className="portfolio_lastline">
-                          Yay! you have seen it all.
-                        </h4>
+                        <div className="mx-auto d-table d-100-sm">
+                          <Link href="/contact" className="btn btn-yellow">
+                            <span>Reach out </span>
+                          </Link>
+                        </div>
                       }
                     >
                       <div className="row g-15">
@@ -447,7 +451,7 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                                         className="explore_btn"
                                       >
                                         <span>
-                                          Explore{" "}
+                                          Explore
                                           <img src="images/down-right.png" />
                                         </span>
                                       </Link>
@@ -494,7 +498,7 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                                         className="explore_btn"
                                       >
                                         <span>
-                                          Explore{" "}
+                                          Explore
                                           <img src="images/down-right.png" />
                                         </span>
                                       </Link>
