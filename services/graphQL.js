@@ -818,6 +818,7 @@ export default class GraphAPI {
           screenImage{
             sourceUrl
           }
+          screenWebsiteLink
         }
         propertyManagementButtonText
         propertyManagementButtonLink
