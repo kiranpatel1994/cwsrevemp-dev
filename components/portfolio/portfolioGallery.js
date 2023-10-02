@@ -303,11 +303,11 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
         </div>
       </div>
       <div className="project-contaner overflow-hidden">
-        <div className="container-fluid">
+        <div className="container-fluid position-relative">
           <div className="tab-loader d-none">
-            <span className="dot"></span>
-            <span className="dot"></span>
-            <span className="dot"></span>
+            <div class="stage">
+              <div class="dot-pulse"></div>
+            </div>
           </div>
           <div className="tab-content clearfix">
             {portfolio && (
