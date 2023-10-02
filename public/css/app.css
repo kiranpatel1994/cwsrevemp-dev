@@ -5700,7 +5700,13 @@ a {
 .aboutFounder .btn-yellow:hover {
   background-color: #fdb627;
 }
-
+.st_text {
+  padding: 10px 0;
+}
+.st_text h3 {
+  color: #fff;
+  padding: 10px 0 15px;
+}
 
 
 
