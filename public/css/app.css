@@ -5689,7 +5689,17 @@ a {
   font-weight: 600;
   text-align: right;
 }
-
+.img_bilder img {
+  border-radius: 50%;    
+  height: 400px;
+  object-fit: cover;
+}
+.aboutFounder .btn-yellow svg {
+  width: 30px;
+}
+.aboutFounder .btn-yellow:hover {
+  background-color: #fdb627;
+}
 
 
 
@@ -6997,6 +7007,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: scale(1.5);
 }
 .dot-pulse {
   position: relative;
@@ -7020,6 +7031,7 @@ a {
   border-radius: 5px;
   background-color: rgba(253, 182, 39, 1);
   color: rgba(253, 182, 39, 1);
+  
 }
 .dot-pulse::before {
   box-shadow: 9984px 0 0 -5px;
