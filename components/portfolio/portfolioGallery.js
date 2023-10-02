@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
   const router = useRouter();
   const [tag, setTag] = useState(tags);
-  const [portfolio, setPortfolio] = useState(portfolios);
+  const [portfolio, setPortfolio] = useState(null);
   const [portfolioCat, setPortfolioCat] = useState(null);
   const [selectedCat, setSelectedCat] = useState(null);
   const [activeTabPortfolio, setActiveTabPortfolio] = useState(null);
@@ -33,6 +33,7 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
 
   const handleSelectTag = (e) => {
     e.preventDefault();
+    document.querySelector(".tab-loader")?.classList.remove("d-none");
     setSelectedTag(e.target.getAttribute("data-slug"));
     const siblingElements = document.querySelectorAll(".tag-li");
     siblingElements.forEach((siblingElement) => {
@@ -91,6 +92,7 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
         });
       setPortfolio({ ...portfolio, edges: filteredAllPortfolio });
     }
+    document.querySelector(".tab-loader")?.classList.add("d-none");
   };
 
   const handleSelectCat = (e, category) => {
@@ -180,6 +182,10 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
     };
     setPortfolio(updatedPortfolioData);
   };
+
+  useEffect(() => {
+    setPortfolio(portfolios);
+  }, [portfolios]);
 
   useEffect(() => {
     setSelectedCat(null);
@@ -297,6 +303,11 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
       </div>
       <div className="project-contaner overflow-hidden">
         <div className="container-fluid">
+          <div className="tab-loader d-none">
+            <span className="dot"></span>
+            <span className="dot"></span>
+            <span className="dot"></span>
+          </div>
           <div className="tab-content clearfix">
             {portfolio && (
               <div
@@ -384,6 +395,7 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                 </InfiniteScroll>
               </div>
             )}
+
             {data.map((item, index) => {
               if (item?.portfolios?.edges?.length) {
                 let cursor = activeTabPortfolio
