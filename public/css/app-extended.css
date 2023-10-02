@@ -44,9 +44,9 @@
 .slider-area .raw-card::before {
   content: "";
   background: rgba(255, 255, 255, 0.2);
-  filter: blur(300px);
+  /* filter: blur(300px);
   backdrop-filter: blur(300px);
-  -webkit-backdrop-filter: blur(300px);
+  -webkit-backdrop-filter: blur(300px); */
   height: 100%;
   width: 100%;
   position: absolute;
@@ -1736,7 +1736,7 @@ body.hosting {
 }
 
 .aboutFounder .userContainer {
-  min-height: 790px;
+  /* min-height: 790px; */
 }
 
 .aboutFounder .founderInfo h3 {
@@ -1751,9 +1751,9 @@ body.hosting {
 .aboutFounder {
   margin-top: 125px;
   position: relative;
-  background-image: url(../images/aboutFounder-bg.png);
-  background-repeat: no-repeat;
-  background-position: left top;
+  /* background-image: url(../images/aboutFounder-bg.png); */
+  /* background-repeat: no-repeat; */
+  /* background-position: left top; */
 }
 
 .aboutFounder::before {
@@ -2213,7 +2213,7 @@ body.hosting {
   }
 
   .aboutFounder .userContainer {
-    min-height: 600px;
+    /* min-height: 600px; */
     height: inherit;
     padding-bottom: 80px;
   }
@@ -3919,7 +3919,8 @@ body.hosting {
   }
 
   .slider-area .raw-card .other-detail {
-    position: absolute;
+    /* position: absolute; */
+    position: static;
     top: 15px;
     left: 95px;
   }

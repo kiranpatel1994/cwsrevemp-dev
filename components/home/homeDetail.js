@@ -56,7 +56,7 @@ export default function HomeDetails({
   var settingsB = {
     // Install modules
     modules: [Navigation, Pagination, EffectCreative],
-    slidesPerView: 1.2,
+    slidesPerView: 2,
     spaceBetween: 20,
     autoplay: {
       delay: 10000,
@@ -71,12 +71,28 @@ export default function HomeDetails({
       prevEl: ".swiper-button-prev",
     },
     breakpoints: {
-      768: {
-        slidesPerView: 1.6,
+      319: {
+        slidesPerView: 1,
         spaceBetween: 20,
       },
-      992: {
-        slidesPerView: 2.6,
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1600: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1800: {
+        slidesPerView: 3,
         spaceBetween: 20,
       },
     },

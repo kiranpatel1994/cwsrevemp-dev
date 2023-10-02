@@ -28,7 +28,7 @@ export default function CompanyDetails({
   var settingsB = {
     // Install modules
     modules: [Navigation, Pagination, EffectCreative],
-    slidesPerView: 1.2,
+    slidesPerView: 2,
     spaceBetween: 20,
     autoplay: {
       delay: 10000,
@@ -43,12 +43,28 @@ export default function CompanyDetails({
       prevEl: ".swiper-button-prev",
     },
     breakpoints: {
-      768: {
-        slidesPerView: 1.6,
+      319: {
+        slidesPerView: 1,
         spaceBetween: 20,
       },
-      992: {
-        slidesPerView: 2.6,
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+      1600: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1800: {
+        slidesPerView: 3,
         spaceBetween: 20,
       },
     },
@@ -164,6 +180,9 @@ export default function CompanyDetails({
                 <div className="col-12 col-xl-4 position-relative pt-lg-5">
                   <div className="founderInfo">
                     <h3>About the Founder </h3>
+                    <div className="img_bilder mb-3">
+                      <img className="img-fluid w-100" src="images/self.jpg" alt="self_por" />
+                    </div>
                     {details.companySettings.founderName && (
                       <h4 className="founder_name">
                         {details.companySettings.founderName}
@@ -187,6 +206,16 @@ export default function CompanyDetails({
                         __html: details.companySettings.founderDescription,
                       }}
                     ></div>
+                  </div>
+                  <div className="row mt-3 align-items-center">
+                    <div className="col-12 col-md-6">
+                      <div className="d-block">
+                        <a class="btn btn-yellow d-table" href="#"><span>Linkedin </span></a>
+                      </div>
+                    </div>
+                    <div className="col-12 col-md-6">
+                      <div className="sign_name">Signature Here!</div>
+                    </div>
                   </div>
                 </div>
               </div>
