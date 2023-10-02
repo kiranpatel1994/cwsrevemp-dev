@@ -336,7 +336,7 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                   }
                   loader={<h4 className="loading_portfolio">Loading...</h4>}
                   endMessage={
-                    <div className="mx-auto d-table d-100-sm center">
+                    <div className="mx-auto d-table d-100-sm st_text center">
                       <h3>
                         Like what you see? The next project here could be yours.
                       </h3>
@@ -437,7 +437,7 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
                       }
                       loader={<h4 className="loading_portfolio">Loading...</h4>}
                       endMessage={
-                        <div className="mx-auto d-table d-100-sm">
+                        <div className="mx-auto d-table d-100-sm st_text">
                           <h3>
                             Like what you see? The next project here could be
                             yours.
