@@ -5691,7 +5691,9 @@ a {
 }
 .img_bilder img {
   border-radius: 50%;    
-  height: 400px;
+  height: 300px;
+  max-width: 300px;
+  width: 100%;
   object-fit: cover;
 }
 .aboutFounder .btn-yellow svg {
@@ -5713,6 +5715,7 @@ a {
   margin: 0 auto;
   display: table;
 }
+
 
 
 
@@ -6173,6 +6176,7 @@ a {
   .vr-row-parent .child-row .mySwiper {
     height: auto;
   }
+  .aboutFounder .founderInfo { display: table; margin: 0 auto; text-align: center; }
 }
 @media (max-width: 1024px) {
   .designFunctionality .box-design .content-area h5 {
