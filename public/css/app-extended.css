@@ -2390,7 +2390,9 @@ body.hosting {
   }
 
   .foot-branding a {
-    display: inline-block;
+    display: table;
+    margin: 0 auto;
+    position: relative;
   }
 
   .foot-branding a img {
