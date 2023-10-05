@@ -12,11 +12,8 @@ export default class GraphAPI {
               addressLink
               addressText
               email
-              facebookLink
-              instagramLink
               linkedinLink
               phone
-              twitterLink
               footerLogo {
                 sourceUrl
               }
