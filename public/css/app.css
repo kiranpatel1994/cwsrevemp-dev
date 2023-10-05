@@ -5770,7 +5770,7 @@ a {
   .letsTalk_inner h1::before {
     transform: rotate(0deg);
     bottom: auto;
-    top: -110px;
+    top: -70px;
     margin: 0 auto;
     left: 0;
     right: 0;
@@ -6271,11 +6271,14 @@ a {
     margin: 70px auto 0;
   }
   .letsTalk_inner {
-    padding-bottom: 205px;
+    padding-bottom: 80px;
   }
   .form_container {
     padding: 30px 20px;
     margin: 150px auto 0;
+  }
+  .letsTalk_inner .form_container {
+    margin: 50px auto 0;
   }
   .form_container h2 {
     font-size: 25px;

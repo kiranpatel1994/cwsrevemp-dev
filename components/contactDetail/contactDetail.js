@@ -13,58 +13,60 @@ export default function ContactDetail({ data, form }) {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-12 col-lg-5 col-xxl-6 text-center">
-              <h1 className="position-relative letsTalk_h1 d-table mb-5">
-                Let`s talk innovation.
-                {data.phone && (
-                  <a href={`tel:` + data.phone} className="d-block w-100">
-                    {data.phone}
-                  </a>
-                )}
-              </h1>
+              <div className="d-table ms-auto me-auto">
+                <h1 className="position-relative letsTalk_h1 d-table mb-5">
+                  Let`s talk innovation.
+                  {data.phone && (
+                    <a href={`tel:` + data.phone} className="d-block w-100">
+                      {data.phone}
+                    </a>
+                  )}
+                </h1>
 
-              <ul className="list-unstyled social_inner mb-4">
-                {data.phone && (
-                  <li className="d-lg-none">
-                    <div className="d-flex align-items-center">
-                      <img src="../images/telephone.png" alt="tel" />
+                <ul className="list-unstyled social_inner mb-4">
+                  {data.phone && (
+                    <li className="d-lg-none">
+                      <div className="d-flex align-items-center">
+                        <img src="../images/telephone.png" alt="tel" />
 
-                      <a className="ms-3" href={`tel:` + data.phone}>
-                        {data.phone}
-                      </a>
-                    </div>
-                  </li>
-                )}
-                {data.email && (
-                  <li>
-                    <div className="d-flex align-items-center">
-                      <img src="../images/email.png" alt="email" />
+                        <a className="ms-3" href={`tel:` + data.phone}>
+                          {data.phone}
+                        </a>
+                      </div>
+                    </li>
+                  )}
+                  {data.email && (
+                    <li>
+                      <div className="d-flex align-items-center">
+                        <img src="../images/email.png" alt="email" />
 
-                      <a className="ms-3" href={`tel:` + data.email}>
-                        {data.email}
-                      </a>
-                    </div>
-                  </li>
-                )}
-              </ul>
+                        <a className="ms-3" href={`tel:` + data.email}>
+                          {data.email}
+                        </a>
+                      </div>
+                    </li>
+                  )}
+                </ul>
 
-              <ul className="list-unstyled social_inner">
-                {data.addressLink && (
-                  <li>
-                    <div className="d-flex align-items-start">
-                      <img src="../images/pin-point.png" alt="pinPoint" />
-                      <a
-                        className="ms-3"
-                        href={data.addressLink}
-                        rel="noreferrer"
-                        target="_blank"
-                        dangerouslySetInnerHTML={{
-                          __html: data.addressText,
-                        }}
-                      ></a>
-                    </div>
-                  </li>
-                )}
-              </ul>
+                <ul className="list-unstyled social_inner">
+                  {data.addressLink && (
+                    <li>
+                      <div className="d-flex align-items-start">
+                        <img src="../images/pin-point.png" alt="pinPoint" />
+                        <a
+                          className="ms-3"
+                          href={data.addressLink}
+                          rel="noreferrer"
+                          target="_blank"
+                          dangerouslySetInnerHTML={{
+                            __html: data.addressText,
+                          }}
+                        ></a>
+                      </div>
+                    </li>
+                  )}
+                </ul>
+              </div>
             </div>
             <div className="col-12 col-lg-7 col-xxl-6">
               <div className="talkBanner position-relative">
