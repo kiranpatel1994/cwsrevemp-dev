@@ -6,7 +6,7 @@ html {
   -ms-font-smoothing: antialiased;
   -moz-text-rendering: optimizelegibility;
   text-rendering: optimizelegibility;
-  scroll-behavior: inherit;
+  scroll-behavior: inherit !important;
 }
 *,
 :after,
@@ -5693,7 +5693,7 @@ a {
   max-width: 250px;
 }
 .img_bilder img {
-  border-radius: 50%;    
+  border-radius: 50%;
   height: 300px;
   max-width: 300px;
   width: 100%;
@@ -5718,9 +5718,6 @@ a {
   margin: 0 auto;
   display: table;
 }
-
-
-
 
 /* responsive */
 @media (min-width: 1200px) {
@@ -6179,7 +6176,11 @@ a {
   .vr-row-parent .child-row .mySwiper {
     height: auto;
   }
-  .aboutFounder .founderInfo { display: table; margin: 0 auto; text-align: center; }
+  .aboutFounder .founderInfo {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 @media (max-width: 1024px) {
   .designFunctionality .box-design .content-area h5 {
@@ -7043,7 +7044,8 @@ a {
   animation: dot-pulse 1.5s infinite linear;
   animation-delay: 0.25s;
 }
-.dot-pulse::before, .dot-pulse::after {
+.dot-pulse::before,
+.dot-pulse::after {
   content: "";
   display: inline-block;
   position: absolute;
@@ -7053,7 +7055,6 @@ a {
   border-radius: 5px;
   background-color: rgba(253, 182, 39, 1);
   color: rgba(253, 182, 39, 1);
-  
 }
 .dot-pulse::before {
   box-shadow: 9984px 0 0 -5px;
@@ -7073,7 +7074,8 @@ a {
   30% {
     box-shadow: 9984px 0 0 2px;
   }
-  60%, 100% {
+  60%,
+  100% {
     box-shadow: 9984px 0 0 -5px;
   }
 }
@@ -7084,7 +7086,8 @@ a {
   30% {
     box-shadow: 9999px 0 0 2px;
   }
-  60%, 100% {
+  60%,
+  100% {
     box-shadow: 9999px 0 0 -5px;
   }
 }
@@ -7095,7 +7098,8 @@ a {
   30% {
     box-shadow: 10014px 0 0 2px;
   }
-  60%, 100% {
+  60%,
+  100% {
     box-shadow: 10014px 0 0 -5px;
   }
 }
