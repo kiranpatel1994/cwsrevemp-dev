@@ -5689,6 +5689,9 @@ a {
   font-weight: 600;
   text-align: right;
 }
+.sign_name img {
+  max-width: 250px;
+}
 .img_bilder img {
   border-radius: 50%;    
   height: 300px;

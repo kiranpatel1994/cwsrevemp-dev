@@ -219,7 +219,7 @@ export default function CompanyDetails({
                     ></div>
                   </div>
                   <div className="row mt-3 align-items-center">
-                    <div className="col-12 col-md-6">
+                    <div className="col-6 col-md-6">
                       {themeData?.linkedinLink && (
                         <div className="d-block">
                           <a
@@ -242,8 +242,10 @@ export default function CompanyDetails({
                         </div>
                       )}
                     </div>
-                    <div className="col-12 col-md-6">
-                      <div className="sign_name">Signature Here!</div>
+                    <div className="col-6 col-md-6">
+                      <div className="sign_name">
+                        <img className="w-100 img-fluid" src="images/signature.png" alt="sign" />
+                      </div>
                     </div>
                   </div>
                 </div>
