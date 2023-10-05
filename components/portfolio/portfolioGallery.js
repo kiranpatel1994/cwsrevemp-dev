@@ -8,7 +8,13 @@ import GraphAPI from "../../services/graphQL";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useRouter } from "next/router";
 
-function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
+function PortfolioGallery({
+  data,
+  portfolios,
+  tags,
+  allPortfolio,
+  themeOptions,
+}) {
   const router = useRouter();
   const [tag, setTag] = useState(tags);
   const [portfolio, setPortfolio] = useState(null);
