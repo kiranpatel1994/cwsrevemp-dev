@@ -35,13 +35,8 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
     e.preventDefault();
     document.querySelector(".tab-loader")?.classList.remove("d-none");
     setSelectedTag(e.target.getAttribute("data-slug"));
-    // const siblingElements = document.querySelectorAll(".tag-li");
-    // siblingElements.forEach((siblingElement) => {
-    //   siblingElement.classList.remove("active");
-    // });
     const closestElement = e.target.closest(".tag-li");
     if (closestElement) {
-      console.log("here");
       closestElement.classList.add("active");
     }
     if (selectedCat) {
@@ -109,10 +104,6 @@ function PortfolioGallery({ data, portfolios, tags, allPortfolio }) {
   };
 
   const updateSelectedCat = async (catSlug) => {
-    // const siblingElements = document.querySelectorAll(".tag-li");
-    // siblingElements.forEach((siblingElement) => {
-    //   siblingElement.classList.remove("active");
-    // });
     if (!selectedTag) {
       setSelectedTag(null);
     }
