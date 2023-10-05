@@ -6,7 +6,7 @@ html {
   -ms-font-smoothing: antialiased;
   -moz-text-rendering: optimizelegibility;
   text-rendering: optimizelegibility;
-  /* scroll-behavior: smooth; */
+  scroll-behavior: inherit;
 }
 *,
 :after,
