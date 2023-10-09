@@ -2558,7 +2558,7 @@ body.hosting {
 
   header .nav-link.active {
     color: #07042b !important;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   header .nav-link.active::before {
