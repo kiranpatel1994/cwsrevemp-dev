@@ -613,6 +613,7 @@ export default function HomeDetails({
             <div className="col-12">
               <div className="vr-row-parent">
                 {businessImageArray.map((item, index) => {
+                  const directionV = index === 1 ? true : false;
                   return (
                     <div className="child-row" key={`ibi-${index}`}>
                       <Swiper
@@ -622,6 +623,7 @@ export default function HomeDetails({
                         autoplay={{
                           delay: 1500,
                           disableOnInteraction: false,
+                          reverseDirection: directionV,
                         }}
                         loop={true}
                         breakpoints={{
