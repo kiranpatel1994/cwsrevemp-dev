@@ -1385,7 +1385,7 @@ div.hands-bild {
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 40px;
-  grid-row-gap: 0;
+  grid-row-gap: 40px;
   margin: 0 0 80px;
   transform: rotate(25deg);
 }
@@ -1432,6 +1432,7 @@ div.hands-bild {
 }
 .project-area .banner-projects .bild-cont a img {
   max-width: 545px;
+  width: 545px;
   height: 290px;
   object-fit: cover;
 }
