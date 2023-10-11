@@ -30,12 +30,18 @@ export default function HomeDetails({
 
   const videoRef = useRef(null);
   const perChunk = 6;
-  const parts = Math.ceil(homeSettings?.businessImageSlider.length / 6);
+  const parts = 3;
+  const chunkSize = Math.ceil(homeSettings?.businessImageSlider.length / parts);
+
   const businessImageArray = Array.from({ length: parts }, (_, index) =>
-    homeSettings?.businessImageSlider.slice(index * 6, (index + 1) * 6)
+    homeSettings?.businessImageSlider.slice(
+      index * chunkSize,
+      (index + 1) * chunkSize
+    )
   );
+
   const result = portfolioList.reduce((resultArray, item, index) => {
-    const chunkIndex = Math.floor(index / perChunk);
+    const chunkIndex = Math.floor(index / chunkSize);
 
     if (!resultArray[chunkIndex]) {
       resultArray[chunkIndex] = [];
@@ -45,6 +51,7 @@ export default function HomeDetails({
 
     return resultArray;
   }, []);
+
   SwiperCore.use([
     Navigation,
     Pagination,
@@ -554,6 +561,7 @@ export default function HomeDetails({
                 <div className="d-none d-xl-block">
                   <div className="vr-row-parent">
                     {businessImageArray.map((item, index) => {
+                      const directionV = index === 1 ? true : false;
                       return (
                         <div className="child-row" key={`ibi-${index}`}>
                           <Swiper
@@ -563,6 +571,7 @@ export default function HomeDetails({
                             autoplay={{
                               delay: 1500,
                               disableOnInteraction: false,
+                              reverseDirection: directionV,
                             }}
                             loop={true}
                             breakpoints={{
