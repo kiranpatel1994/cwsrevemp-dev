@@ -19,7 +19,6 @@ header .nav-item.dropdown .nav-link::after {
 }
 
 header .nav-item.dropdown .dropdown-menu {
-  display: block;
   left: 50%;
   transform: translateX(-50%);
   background-color: #07042b;
