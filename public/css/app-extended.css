@@ -14,6 +14,31 @@
   }
 }
 
+header .nav-item.dropdown .nav-link::after {
+  display: none;
+}
+
+header .nav-item.dropdown .dropdown-menu {
+  display: block;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #07042b;
+  padding: 15px 0;
+  border-radius: 10px;
+}
+
+header .nav-item.dropdown .dropdown-menu .dropdown-item {
+  color: #fff;
+  padding: 6px 20px;
+  transition: all 0.3s;
+}
+
+header .nav-item.dropdown .dropdown-menu .dropdown-item:hover,
+header .nav-item.dropdown .dropdown-menu .dropdown-item:focus {
+  background-color: transparent;
+  color: #fdb627;
+}
+
 /* New Design Update */
 @media screen and (min-width: 1600px) {
   .carouselSection .container-xl {
