@@ -35,6 +35,7 @@ export default function Header({ data, seo }) {
         {seo?.opengraphDescription && (
           <meta property="og:description" content={seo.opengraphDescription} />
         )}
+        {seo?.focuskw && <meta name="keywords" content={seo.focuskw} />}
       </Head>
       <div className="line-last">
         <img src={LineImage.src} alt="" />
@@ -134,39 +135,51 @@ export default function Header({ data, seo }) {
                   </Link>
                   <ul class="dropdown-menu">
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <Link
+                        class="dropdown-item"
+                        href="/services/ui-ux-design-web-applications-development"
+                      >
                         Custom Systems/Web applications
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <Link
+                        class="dropdown-item"
+                        href="/services/website-design-development"
+                      >
                         Website Design and Development
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <Link
+                        class="dropdown-item"
+                        href="/services/logo-design-and-branding"
+                      >
                         Logo Design and Branding
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <Link
+                        class="dropdown-item"
+                        href="/services/social-media-management"
+                      >
                         Social Media Management
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <Link class="dropdown-item" href="/services/ecommerce">
                         Ecommerce Development
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <Link class="dropdown-item" href="/services/white-label">
                         White Label
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <Link class="dropdown-item" href="/services/hosting">
                         Managed Hosting
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </li>
