@@ -112,13 +112,16 @@ export default function Header({ data, seo }) {
                     </span>
                   </Link>
                 </li>
-                <li className="nav-item">
+                <li className="nav-item dropdown">
                   <Link
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
                     className={
                       router.pathname == "/services" ||
                       router.pathname == "/services/[slug]"
-                        ? "nav-link active"
-                        : "nav-link"
+                        ? "nav-link active dropdown-toggle"
+                        : "nav-link dropdown-toggle"
                     }
                     href="/services"
                   >
@@ -129,6 +132,43 @@ export default function Header({ data, seo }) {
                       Services & Specialties
                     </span>
                   </Link>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        Custom Systems/Web applications
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        Website Design and Development
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        Logo Design and Branding
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        Social Media Management
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        Ecommerce Development
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        White Label
+                      </a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">
+                        Managed Hosting
+                      </a>
+                    </li>
+                  </ul>
                 </li>
                 <li className="nav-item">
                   <Link
