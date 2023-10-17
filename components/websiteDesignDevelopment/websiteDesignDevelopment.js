@@ -303,7 +303,7 @@ export default function WebsiteDesignDev({ data, themeOptions, form }) {
                     </div>
                   </div>
                 </div>
-                <div className="col-12 col-lg-6">
+                <div className="col-12 col-lg-6 ps-lg-5">
                   <div className="wp_inner ps-md-3 pe-md-3 ps-xxl-0 pe-xxl-0 pd-48-15">
                     {data.wordpressTitle && (
                       <h3 className="text-35_b_white mb-3">
@@ -371,7 +371,7 @@ export default function WebsiteDesignDev({ data, themeOptions, form }) {
                 )}
               </div>
               {data.customSitesBlocks && (
-                <div className="op_up customSites_up">
+                <div className="customSites_up">
                   <ul className="list-inline benifit__inner">
                     {data.customSitesBlocks.map((item, index) => {
                       return (
