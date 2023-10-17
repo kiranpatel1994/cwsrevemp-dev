@@ -349,9 +349,11 @@ export default function WebsiteDesignDev({ data, themeOptions, form }) {
                           {data.customSitesTitle}
                         </h3>
                       )}
-                      {/* {data.customSitesDescription &&
-                                              <p className="txlh_20_30 mb-4">{data.customSitesDescription}</p>
-                                          } */}
+                      {data.customSitesDescription && (
+                        <p className="txlh_20_30 mb-4">
+                          {data.customSitesDescription}
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>

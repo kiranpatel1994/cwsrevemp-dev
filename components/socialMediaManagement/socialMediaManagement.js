@@ -329,9 +329,12 @@ export default function SocialMediaManagement({ data, themeOptions, form }) {
               <div className="row g-0 align-items-center z-2 position-relative pb-5 mb-5 neverHassleBlock">
                 <div className="col-12 pb-md-5">
                   {data.automatedSubHeading && (
-                    <h2 className="play_fair-white display-5 text-center">
-                      {data.automatedSubHeading}
-                    </h2>
+                    <div
+                      className="play_fair-white display-5 text-center"
+                      dangerouslySetInnerHTML={{
+                        __html: data.automatedSubHeading,
+                      }}
+                    />
                   )}
                 </div>
               </div>
