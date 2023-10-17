@@ -136,7 +136,12 @@ export default function Header({ data, seo }) {
                   <ul class="dropdown-menu">
                     <li>
                       <Link
-                        class="dropdown-item"
+                        className={
+                          router.asPath ==
+                          "/services/ui-ux-design-web-applications-development"
+                            ? "dropdown-item active"
+                            : "dropdown-item"
+                        }
                         href="/services/ui-ux-design-web-applications-development"
                       >
                         Custom Systems/Web applications
@@ -144,7 +149,12 @@ export default function Header({ data, seo }) {
                     </li>
                     <li>
                       <Link
-                        class="dropdown-item"
+                        className={
+                          router.asPath ==
+                          "/services/website-design-development"
+                            ? "dropdown-item active"
+                            : "dropdown-item"
+                        }
                         href="/services/website-design-development"
                       >
                         Website Design and Development
@@ -152,7 +162,11 @@ export default function Header({ data, seo }) {
                     </li>
                     <li>
                       <Link
-                        class="dropdown-item"
+                        className={
+                          router.asPath == "/services/logo-design-and-branding"
+                            ? "dropdown-item active"
+                            : "dropdown-item"
+                        }
                         href="/services/logo-design-and-branding"
                       >
                         Logo Design and Branding
@@ -160,24 +174,49 @@ export default function Header({ data, seo }) {
                     </li>
                     <li>
                       <Link
-                        class="dropdown-item"
+                        className={
+                          router.asPath == "/services/social-media-management"
+                            ? "dropdown-item active"
+                            : "dropdown-item"
+                        }
                         href="/services/social-media-management"
                       >
                         Social Media Management
                       </Link>
                     </li>
                     <li>
-                      <Link class="dropdown-item" href="/services/ecommerce">
+                      <Link
+                        className={
+                          router.asPath == "/services/ecommerce"
+                            ? "dropdown-item active"
+                            : "dropdown-item"
+                        }
+                        href="/services/ecommerce"
+                      >
                         Ecommerce Development
                       </Link>
                     </li>
                     <li>
-                      <Link class="dropdown-item" href="/services/white-label">
+                      <Link
+                        className={
+                          router.asPath == "/services/white-label"
+                            ? "dropdown-item active"
+                            : "dropdown-item"
+                        }
+                        href="/services/white-label"
+                      >
                         White Label
                       </Link>
                     </li>
                     <li>
-                      <Link class="dropdown-item" href="/services/hosting">
+                      <Link
+                        className={
+                          router.asPath == "/services/hosting"
+                            ? "dropdown-item active"
+                            : "dropdown-item"
+                        }
+                        href="/services/hosting"
+                      >
                         Managed Hosting
                       </Link>
                     </li>
