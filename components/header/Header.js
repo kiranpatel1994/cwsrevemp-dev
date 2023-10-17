@@ -115,9 +115,7 @@ export default function Header({ data, seo }) {
                 </li>
                 <li className="nav-item dropdown">
                   <Link
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
+                    data-target="/services"
                     className={
                       router.pathname == "/services" ||
                       router.pathname == "/services/[slug]"
