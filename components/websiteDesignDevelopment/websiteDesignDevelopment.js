@@ -249,7 +249,7 @@ export default function WebsiteDesignDev({ data, themeOptions, form }) {
                 </div>
               </div>
               <div className="row g-0 why__us align-items-center">
-                <div className="col-12 col-lg-7">
+                <div className="col-12 col-lg-7 ps-lg-5">
                   <div className="pd-48-15">
                     {data.whyUsTitle && (
                       <div
@@ -286,10 +286,13 @@ export default function WebsiteDesignDev({ data, themeOptions, form }) {
               </div>
             </div>
             <div className="col-12 col-md-11 pd-30-l-mix">
-              <div className="row g-0 wp_m_info align-items-center">
-                <div className="col-12 col-lg-6">
+              <div className="row g-0 wp_m_info align-items-center position-relative imgOverlayBlock">
+                <div className="col-12 col-lg-6 h-100">
                   <div className="d-none d-md-block pe-md-3 pe-xxl-0">
-                    <img className="img-fluid" src="../images/wp-in.png" />
+                    <img
+                      className="wordpressImgOverlay"
+                      src="../images/wp-in.png"
+                    />
                   </div>
                   <div className="d-md-none pd-48-15">
                     <div className="d-flex align-items-center mb-4">
@@ -303,7 +306,7 @@ export default function WebsiteDesignDev({ data, themeOptions, form }) {
                     </div>
                   </div>
                 </div>
-                <div className="col-12 col-lg-6 ps-lg-5">
+                <div className="col-12 col-lg-6">
                   <div className="wp_inner ps-md-3 pe-md-3 ps-xxl-0 pe-xxl-0 pd-48-15">
                     {data.wordpressTitle && (
                       <h3 className="text-35_b_white mb-3">

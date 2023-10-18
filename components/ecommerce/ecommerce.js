@@ -197,7 +197,7 @@ export default function Ecommerce({ data, themeOptions }) {
           )}
         </div>
       </div>
-      <div className="gl_area ecommerce_page ecommerce_page_impo">
+      <div className="gl_area ecommerce_page ecommerce_page_impo noShadow">
         <div className="container-xl position-relative p-0">
           <div className="line_anim">
             <div className="profitDrag"></div>

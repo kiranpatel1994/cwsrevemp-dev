@@ -1380,6 +1380,10 @@ footer .ft-child:last-child {
   pointer-events: none;
 }
 
+.eCommerce .gl_area.ecommerce_page.noShadow::before {
+  display: none;
+}
+
 .eCommerce .banner__overlap .ecom_development_container~.bottom_shape .floor-2 .dt_2 {
   display: none;
 }
@@ -1677,9 +1681,9 @@ body.hosting {
 
 .socialLove .socialLoveInner {
   width: 250px;
-  margin-left: 22%;
+  margin-left: 25%;
   margin-top: -150px;
-  margin-bottom: 15px;
+  margin-bottom: -50px;
   transform: rotate(-20deg);
 }
 
@@ -2078,6 +2082,22 @@ body.hosting {
   font-size: 40px;
   font-family: "Gilroy";
   font-weight: bold;
+}
+
+.imgOverlayBlock {
+  min-height: 550px;
+  padding-bottom: 0 !important;
+  margin-bottom: 115px;
+}
+
+.wordpressImgOverlay {
+  width: 80%;
+  position: absolute;
+  left: 3rem;
+  top: 0;
+  z-index: -1;
+  height: 550px;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 1699px) {
