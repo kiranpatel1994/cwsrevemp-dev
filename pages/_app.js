@@ -110,8 +110,7 @@ export default function MyApp({
 
 MyApp.getInitialProps = async (ctx) => {
   const themeOptions = await GraphAPI.themeOptions();
-  //console.log(ctx.router.pathname);
-  const seo = await GraphAPI.seoSettings(ctx.router.pathname);
+  const seo = await GraphAPI.seoSettings(ctx.router.asPath);
   return {
     headerSettings:
       themeOptions.data.data?.acfOptionsThemeOptions?.themeSettings,
