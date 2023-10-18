@@ -142,7 +142,12 @@ export default function Header({ data, seo }) {
                         }
                         href="/services/ui-ux-design-web-applications-development"
                       >
-                        Custom Systems/Web applications
+                        <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
+                          Custom Systems/Web applications
+                        </span>
                       </Link>
                     </li>
                     <li>
@@ -155,7 +160,12 @@ export default function Header({ data, seo }) {
                         }
                         href="/services/website-design-development"
                       >
-                        Website Design and Development
+                        <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
+                          Website Design and Development
+                        </span>
                       </Link>
                     </li>
                     <li>
@@ -167,7 +177,12 @@ export default function Header({ data, seo }) {
                         }
                         href="/services/logo-design-and-branding"
                       >
-                        Logo Design and Branding
+                        <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
+                          Logo Design and Branding
+                        </span>
                       </Link>
                     </li>
                     <li>
@@ -179,7 +194,12 @@ export default function Header({ data, seo }) {
                         }
                         href="/services/social-media-management"
                       >
-                        Social Media Management
+                        <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
+                          Social Media Management
+                        </span>
                       </Link>
                     </li>
                     <li>
@@ -191,7 +211,12 @@ export default function Header({ data, seo }) {
                         }
                         href="/services/ecommerce"
                       >
-                        Ecommerce Development
+                        <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
+                          Ecommerce Development
+                        </span>
                       </Link>
                     </li>
                     <li>
@@ -203,7 +228,12 @@ export default function Header({ data, seo }) {
                         }
                         href="/services/white-label"
                       >
-                        White Label
+                        <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
+                          White Label
+                        </span>
                       </Link>
                     </li>
                     <li>
@@ -215,7 +245,12 @@ export default function Header({ data, seo }) {
                         }
                         href="/services/hosting"
                       >
-                        Managed Hosting
+                        <span
+                          data-bs-toggle="collapse"
+                          data-bs-target=".navbar-collapse.show"
+                        >
+                          Managed Hosting
+                        </span>
                       </Link>
                     </li>
                   </ul>
