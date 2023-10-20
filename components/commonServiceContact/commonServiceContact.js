@@ -12,12 +12,20 @@ function ServiceContact({ data }) {
             {data.contactBlockTitle && (
               <span>
                 {router.asPath === "/services/logo-design-and-branding"
-                  ? "Let's tell your story without words."
+                  ? "Tell your story without words."
+                  : router.asPath === "/services/ecommerce"
+                  ? "Ready to sell, big time?"
                   : data.contactBlockTitle}
               </span>
             )}
             {data.contactBlockDescription && (
-              <h3>{data.contactBlockDescription}</h3>
+              <h3>
+                {router.asPath === "/services/ecommerce"
+                  ? "Let's talk innovation."
+                  : router.asPath === "/services/white-label"
+                  ? "Let's team up."
+                  : data.contactBlockDescription}
+              </h3>
             )}
             <Link href="/contact" className="fk-btn footerstarted_btn">
               I`m in
