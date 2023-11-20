@@ -291,7 +291,7 @@ export default function WebsiteDesignDev({ data, themeOptions, form }) {
                   <div className="d-none d-md-block pe-md-3 pe-xxl-0">
                     <img
                       className="wordpressImgOverlay"
-                      src="../images/wp-in.png"
+                      src="../images/kinder-university.png"
                     />
                   </div>
                   <div className="d-md-none pd-48-15">

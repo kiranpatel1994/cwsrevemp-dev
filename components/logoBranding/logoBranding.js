@@ -153,28 +153,30 @@ export default function LogoBranding({ data, themeOptions, form }) {
       <div className="banner_content position-relative overflow-hidden">
         <div className="container p-lg-0">
           <div className="row g-xxl-0">
-            <div className="col-12 col-xl-7 ecom__info position-relative">
-              <div className="banner_content_info">
+            <div className="col-12 ecom__info position-relative">
+              <div className="banner_content_info text-center">
                 {data.pageHeading && <h1>{data.pageHeading} </h1>}
-                {data.bannerSubtitle && (
+                {/* {data.bannerSubtitle && (
                   <div className="sub_title play_fair-ttl">
-                    <h2>{data.bannerSubtitle}</h2>
+                    <h2 className="justify-content-center">
+                      {data.bannerSubtitle}
+                    </h2>
                   </div>
-                )}
+                )} 
                 {data.bannerTitle && (
                   <div className="moji_ttl">
                     <h3>{data.bannerTitle}</h3>
                   </div>
-                )}
+                )}*/}
                 {data.bannerDescription && (
                   <div
-                    className="mb-4"
+                    className="mb-4 text-center text-white moji_ttl"
                     dangerouslySetInnerHTML={{ __html: data.bannerDescription }}
                   />
                 )}
               </div>
             </div>
-            <div className="col-12 col-xl-5 position-relative group__bild">
+            {/* <div className="col-12 col-xl-5 position-relative group__bild">
               {data.bannerImage.sourceUrl && (
                 <div className="theme___bg">
                   <img
@@ -183,7 +185,7 @@ export default function LogoBranding({ data, themeOptions, form }) {
                   />
                 </div>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
