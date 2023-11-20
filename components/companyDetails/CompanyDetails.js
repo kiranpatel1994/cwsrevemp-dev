@@ -184,7 +184,7 @@ export default function CompanyDetails({
               <div className="row g-36 align-items-center">
                 <div className="col-12 col-xl-4 position-relative pt-lg-5">
                   <div className="founderInfo">
-                    <div className="img_bilder mb-3">
+                    <div className="img_bilder">
                       <img
                         className="img-fluid w-100"
                         src={obfuscatedImage}
@@ -195,7 +195,7 @@ export default function CompanyDetails({
                     </div>
                   </div>
                   {themeData?.linkedinLink && (
-                    <div className="d-block">
+                    <div className="d-block bt-linkedin">
                       <a
                         class="btn btn-yellow d-table mx-auto"
                         href={themeData.linkedinLink}
