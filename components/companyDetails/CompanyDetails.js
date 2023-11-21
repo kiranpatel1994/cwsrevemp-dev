@@ -241,7 +241,7 @@ export default function CompanyDetails({
                       }}
                     ></div>
                   </div>
-                  <div className="row mt-3 align-items-center">
+                  <div className="row mt-3 align-items-center justify-content-center justify-content-md-start">
                     <div className="col-6 col-md-6">
                       <div className="sign_name">
                         <img

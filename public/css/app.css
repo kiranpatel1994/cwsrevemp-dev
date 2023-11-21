@@ -5104,6 +5104,11 @@ footer .ft-child:first-child {
   background: url(../images/3d-gallery.png) no-repeat;
 }
 
+.logoBrand_multi.webApp_inner.webapp_logobr .maxim_effort::after {
+  content: none;
+}
+
+
 .logoBrand_multi.webApp_inner .sec-3::before {
   content: "";
   background: url(../images/3d-gallery-icon-jpg.png) no-repeat;
@@ -6729,7 +6734,29 @@ a {
 .company .line-last {
   opacity: 0.2;
 }
-
+/*  */
+.logo-design-bnr {
+  background: url(../images/bnr-1.png) no-repeat center;
+  background-size: cover;
+  height: 1110px;
+  display: flex;
+  align-items: center;
+}
+/*  */
+.benifit_new .ffk_btn.flex-column span {
+  font-size: 18px;
+  line-height: 22px;
+  max-width: 190px;
+}
+.logoBrand_multi.webApp_inner.webapp_logobr .maxim_effort {
+  margin-top: -100px;
+}
+.logoBrand_multi.webApp_inner.webapp_logobr .automate_work h2 {
+  color: #fdb627;
+}
+.logoBrand_multi.webApp_inner.webapp_logobr .sec-3::before, .logoBrand_multi.webApp_inner.webapp_logobr .time_acquainted .why__us:first-child .automate_work::after {
+  content: none;
+}
 
 /* responsive */
 @media (min-width: 1200px) {
@@ -6739,6 +6766,7 @@ a {
 }
 
 @media (min-width: 1440px) {
+  
   .container,
   .container-xl {
     max-width: 1365px;
@@ -6782,12 +6810,19 @@ a {
 
 /*  */
 @media (max-width: 1900px) {
+  
   .gif_placer .gif_box img {
     height: 300px;
   }
 }
 
 @media (max-width: 1800px) {
+  .logo-design-bnr {
+    height: 800px;
+  }
+  .webApp_inner.logoBrand_multi.webapp_logobr {
+    padding-top: 30px;
+  }
   .letsTalk_inner h1::before {
     transform: rotate(0deg);
     bottom: auto;
@@ -7070,6 +7105,9 @@ a {
   .gll__inner .gll__inner-col:nth-child(2) img,
   .gll__inner .gll__inner-col:nth-child(3) img {
     height: 500px;
+  }
+  .logoBrand_multi.webApp_inner.webapp_logobr .maxim_effort {
+    margin-top: 0;
   }
 }
 
@@ -7589,9 +7627,19 @@ a {
   .more_content::after {
     height: 80%;
   }
+  .webApp_inner.logoBrand_multi.webapp_logobr .wus__ttl .vr-title {
+    padding-bottom: 0;
+  }
+  .logo-design-bnr {
+    height: 400px;
+  }
+  .webApp_inner.logoBrand_multi.webapp_logobr {
+    padding-top: 30px;
+  }
 }
 
 @media (max-width: 767px) {
+  
   .webDev .moji_para p {
     font-size: 16px;
     line-height: 26px !important;
