@@ -3250,6 +3250,25 @@ body.hosting {
   .vr-row-parent .child-row .sub-child {
     width: 100%;
   }
+
+  .aboutFounder {
+    background-image: url(../images/mob-area.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left top;
+    padding: 125px 0 0;
+    margin-top: -80px;
+  }
+  .aboutFounder::before, .aboutFounder::after {
+    content: none;
+  }
+  .bt-linkedin .btn-yellow {
+    width: 70px;
+    height: 70px;
+  }
+  .bt-linkedin .btn-yellow span svg {
+    width: 31px;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -4046,10 +4065,10 @@ body.hosting {
     margin-bottom: 0;
   }
 
-  .aboutFounder {
+  /* .aboutFounder {
     margin-top: 100px;
     background-size: cover;
-  }
+  } */
 
   .aboutFounder .userContainer {
     min-height: inherit;
@@ -4057,9 +4076,10 @@ body.hosting {
 
   .aboutFounder .userContainer {
     padding-bottom: 45px;
+    text-align: center;
   }
 
-  .aboutFounder .founderInfo h3 {
+  .aboutFounder .userContainer h3 {
     font-size: 20px;
   }
 
@@ -4467,17 +4487,7 @@ body.hosting {
     font-size: 16px !important;
     line-height: 26px;
   }
-  .aboutFounder {
-    background-image: url(../images/mob-area.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: top;
-    padding-top: 125px;
-    margin-top: -80px;
-  }
-  .aboutFounder::before, .aboutFounder::after {
-    content: none;
-  }
+  
   .aboutFounder .founderInfo img {
     height: 340px;
     max-width: 340px;
@@ -4570,6 +4580,9 @@ body.hosting {
   .aboutFounder .founderInfo img {
     height: 300px;
     max-width: 300px;
+  }
+  .aboutFounder .userContainer h3 {
+    font-size: 18px;
   }
 }
 

@@ -135,12 +135,12 @@ export default function LogoBranding({ data, themeOptions, form }) {
 
   return (
     <main
-      className="position-relative webApp_inner logoBrand_multi zindex-2 overflow-hidden"
+      className="position-relative webApp_inner logoBrand_multi zindex-2 overflow-hidden webapp_logobr"
       id="main"
     >
       <div className="banner__overlap">
         <div className="container-xl bbn_1">
-          <div className="design_development_container ecom_development_container"></div>
+          <div className="design_development_container ecom_development_container" hidden></div>
           <div className="bottom_shape">
             <div className="floor-1">
               <div className="torusLandingLottie">
@@ -150,11 +150,14 @@ export default function LogoBranding({ data, themeOptions, form }) {
           </div>
         </div>
       </div>
-      <div className="banner_content position-relative overflow-hidden">
+      <div className="banner_content logo-design-bnr position-relative overflow-hidden">
         <div className="container p-lg-0">
           <div className="row g-xxl-0">
             <div className="col-12 ecom__info position-relative">
               <div className="banner_content_info text-center">
+                <div className="text-center">
+                  <img src="../images/sp-1.svg"/>
+                </div>
                 {data.pageHeading && <h1>{data.pageHeading} </h1>}
                 {/* {data.bannerSubtitle && (
                   <div className="sub_title play_fair-ttl">
@@ -214,12 +217,12 @@ export default function LogoBranding({ data, themeOptions, form }) {
                 )}
               </div>
               {data.benefitsBlocks && (
-                <ul className="list-inline benifit__inner">
+                <ul className="list-inline benifit__inner benifit_new justify-content-start">
                   {data.benefitsBlocks.map((item, index) => {
                     return (
                       <li className="list-inline-item" key={`benefit-${index}`}>
-                        <div className="ffk_btn">
-                          <div className="d-md-none position-relative zindex-3">
+                        <div className="ffk_btn flex-column justify-content-center">
+                          <div className="position-relative zindex-3 mb-2">
                             <img src="../images/enf-1.png" />
                           </div>
                           <span>{item.benefitBlockTitle}</span>
@@ -248,7 +251,7 @@ export default function LogoBranding({ data, themeOptions, form }) {
                 )}
               </div>
               <div className="row g-xxl-0 why__us align-items-center mb-5">
-                <div className="col-lg-7 maxim_effort position-relative">
+                <div className="col-lg-6 maxim_effort position-relative">
                   {data.whyUsTitle && (
                     <div
                       dangerouslySetInnerHTML={{ __html: data.whyUsTitle }}
@@ -263,7 +266,7 @@ export default function LogoBranding({ data, themeOptions, form }) {
                   )}
                 </div>
                 {data.whyUsImage.sourceUrl && (
-                  <div className="col-lg-5 text-lg-end text-center mt-lg-0 mt-4 pt-lg-0 pt-4">
+                  <div className="col-lg-6 text-lg-end text-center mt-lg-0 mt-4 pt-lg-0 pt-4">
                     <img
                       className="img-fluid"
                       src={data.whyUsImage.sourceUrl}
