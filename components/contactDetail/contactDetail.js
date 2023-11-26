@@ -40,7 +40,7 @@ export default function ContactDetail({ data, form }) {
                       <div className="d-flex align-items-center">
                         <img src="../images/email.png" alt="email" />
 
-                        <a className="ms-3" href={`tel:` + data.email}>
+                        <a className="ms-3" href={`mailto:` + data.email}>
                           {data.email}
                         </a>
                       </div>

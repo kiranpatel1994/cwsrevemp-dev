@@ -1807,7 +1807,7 @@ body.hosting {
 }
 
 .aboutFounder::before {
-  content: '';
+  content: "";
   width: 100%;
   height: 1154px;
   /* background: linear-gradient(#07042b 0%, rgba(7, 4, 43, 0) 100%); */
@@ -1819,7 +1819,7 @@ body.hosting {
   pointer-events: none;
 }
 .aboutFounder::after {
-  content: '';
+  content: "";
   background: url(../images/stars.png) no-repeat center;
   background-size: contain;
   height: 100px;
@@ -3259,7 +3259,8 @@ body.hosting {
     padding: 125px 0 0;
     margin-top: -80px;
   }
-  .aboutFounder::before, .aboutFounder::after {
+  .aboutFounder::before,
+  .aboutFounder::after {
     content: none;
   }
   .bt-linkedin .btn-yellow {
@@ -4487,7 +4488,7 @@ body.hosting {
     font-size: 16px !important;
     line-height: 26px;
   }
-  
+
   .aboutFounder .founderInfo img {
     height: 340px;
     max-width: 340px;
@@ -4551,7 +4552,8 @@ body.hosting {
   .carouselSection {
     overflow: hidden;
     margin-top: 0;
-    padding-top: 75px;
+    padding-top: 60px;
+    padding-bottom: 120px;
   }
 
   .carouselSection::before {
@@ -4577,12 +4579,18 @@ body.hosting {
   .sub_title h2 {
     font-size: 35px;
   }
+
   .aboutFounder .founderInfo img {
     height: 300px;
     max-width: 300px;
   }
+
   .aboutFounder .userContainer h3 {
     font-size: 18px;
+  }
+
+  .carouselSlider .slider-inner {
+    height: 280px;
   }
 }
 
@@ -4590,67 +4598,67 @@ body.hosting {
   .homeBanner {
     padding-top: 160px;
   }
-  
+
   .new-title {
     font-size: 22px;
   }
-  
+
   .new-title em {
     height: 34px;
   }
-  
+
   .atmos-faces {
     width: 100%;
     height: 360px;
     margin: 55px auto 30px;
   }
-  
+
   .atmos-faces .face-1 {
     width: 200px;
     height: 200px;
     left: 15px;
   }
-  
+
   .atmos-faces .face-2 {
     width: 132px;
     height: 132px;
     left: 180px;
     bottom: 180px;
   }
-  
+
   .atmos-faces .face-3 {
     left: 240px;
     width: 80px;
     height: 80px;
     bottom: 80px;
   }
-  
+
   .atmos-faces:hover .face-1 {
     left: 30px;
     bottom: 10px;
   }
-  
+
   .atmos-faces:hover .face-2 {
     left: 148px;
     bottom: 218px;
   }
-  
+
   .atmos-faces:hover .face-3 {
     left: 246px;
     bottom: 130px;
   }
-  
+
   .atmos-faces:hover::before {
     left: 10px;
     bottom: inherit;
     top: 60px;
   }
-  
+
   .atmos-faces:hover::after {
     right: 30px;
     top: -35px;
   }
-  
+
   .friendly-atmos h3 {
     font-size: 14px;
   }
@@ -4659,20 +4667,20 @@ body.hosting {
     width: 100px;
     top: 70px;
   }
-  
+
   .banner_content h1 {
     font-size: 30px;
   }
-  
+
   .sub_title,
   .sub_title h2 {
     font-size: 30px;
   }
-  
+
   .ecom__info .moji_ttl h3 {
     font-size: 16px;
   }
-  
+
   .service__label p {
     font-size: 28px;
   }

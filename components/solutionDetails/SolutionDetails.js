@@ -55,7 +55,7 @@ export default function SolutionDetails({ detail, tags }) {
     modules: [EffectCoverflow, Pagination, Autoplay],
     effect: "coverflow",
     centeredSlides: true,
-    slidesPerView: 2,
+    slidesPerView: 1.25,
     loop: true,
     observer: true,
     observeParents: true,
@@ -72,6 +72,11 @@ export default function SolutionDetails({ detail, tags }) {
       slideShadows: false,
     },
     pagination: { clickable: true },
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+      },
+    },
   };
 
   useEffect(() => {
