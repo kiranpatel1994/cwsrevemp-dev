@@ -251,6 +251,22 @@ export default function Footer({ settings }) {
           </div>
         </div>
       </div>
+      <div className="trms_service">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 text-center">
+              <ul className="list-inline">
+                <li className="list-inline-item me-md-3">
+                  <a href="#">Website maintenance plans </a>
+                </li>
+                <li className="list-inline-item">
+                  <a href="#">Terms of Service </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
   );
 }
