@@ -1509,6 +1509,7 @@ export default class GraphAPI {
       opengraphUrl
       twitterDescription
       twitterTitle
+      focuskw
     }
   }
 }
@@ -1579,6 +1580,26 @@ export default class GraphAPI {
     const graphqlQuery = {
       operationName: "HomeSettings",
       query: homeSettings,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
+
+  static policySettings() {
+    const policySettings = `
+    query Policy {
+       pageBy(pageId: 3446) {
+    content
+  }
+    }
+    `;
+    const graphqlQuery = {
+      operationName: "Policy",
+      query: policySettings,
     };
     return axios({
       url: baseURL,
