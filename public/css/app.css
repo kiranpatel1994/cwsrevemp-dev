@@ -5108,7 +5108,6 @@ footer .ft-child:first-child {
   content: none;
 }
 
-
 .logoBrand_multi.webApp_inner .sec-3::before {
   content: "";
   background: url(../images/3d-gallery-icon-jpg.png) no-repeat;
@@ -6678,7 +6677,7 @@ a {
   position: relative;
 }
 .aboutFounder .founderInfo .img_bilder::after {
-  content: '';
+  content: "";
   position: absolute;
   border: 12px solid rgb(255, 255, 255, 0.1);
   width: 100%;
@@ -6717,9 +6716,10 @@ a {
   border-radius: 50%;
 }
 .bt-linkedin .btn-yellow::after {
-  content: '';
+  content: "";
   position: absolute;
-  background: transparent linear-gradient(180deg, #FCD077 0%, #B5821B 100%) 0% 0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #fcd077 0%, #b5821b 100%) 0%
+    0% no-repeat padding-box;
   width: 100%;
   height: 100%;
   left: 0;
@@ -6754,7 +6754,11 @@ a {
 .logoBrand_multi.webApp_inner.webapp_logobr .automate_work h2 {
   color: #fdb627;
 }
-.logoBrand_multi.webApp_inner.webapp_logobr .sec-3::before, .logoBrand_multi.webApp_inner.webapp_logobr .time_acquainted .why__us:first-child .automate_work::after {
+.logoBrand_multi.webApp_inner.webapp_logobr .sec-3::before,
+.logoBrand_multi.webApp_inner.webapp_logobr
+  .time_acquainted
+  .why__us:first-child
+  .automate_work::after {
   content: none;
 }
 
@@ -6766,7 +6770,6 @@ a {
 }
 
 @media (min-width: 1440px) {
-  
   .container,
   .container-xl {
     max-width: 1365px;
@@ -6810,7 +6813,6 @@ a {
 
 /*  */
 @media (max-width: 1900px) {
-  
   .gif_placer .gif_box img {
     height: 300px;
   }
@@ -6952,7 +6954,9 @@ a {
 }
 
 @media (max-width: 1399px) {
-  .aboutFounder .founderInfo img { height: 360px; }
+  .aboutFounder .founderInfo img {
+    height: 360px;
+  }
 }
 @media (max-width: 1440px) {
   .map-placeholder::before {
@@ -7639,7 +7643,6 @@ a {
 }
 
 @media (max-width: 767px) {
-  
   .webDev .moji_para p {
     font-size: 16px;
     line-height: 26px !important;
@@ -8497,14 +8500,15 @@ a {
   margin-top: 0;
   overflow: hidden;
 }
-.p_condition .privacy-content *, .p_condition .privacy-content {
+.p_condition .privacy-content *,
+.p_condition .privacy-content {
   color: #fff;
 }
 .condition-section {
   background: url(../images/banner.webp) no-repeat center;
   background-size: cover;
   text-align: center;
-  padding: clamp(1.875rem, 1.2523rem + 3.1230vw, 5rem) 0;
+  padding: clamp(1.875rem, 1.2523rem + 3.123vw, 5rem) 0;
   margin-bottom: 40px;
 }
 .condition-section .c_page_title h2 {
@@ -8517,22 +8521,24 @@ a {
 .p_condition .privacy-content h1 {
   margin-bottom: 30px;
   font-size: clamp(2.5rem, 2.1264rem + 1.8738vw, 4.375rem);
-  line-height: clamp(3rem, 2.6513rem + 1.7489vw, 4.75rem);  
+  line-height: clamp(3rem, 2.6513rem + 1.7489vw, 4.75rem);
 }
 .p_condition .privacy-content h2 {
   margin-bottom: 20px;
 }
 .p_condition .privacy-content p {
   font-size: clamp(1.125rem, 1.0752rem + 0.2498vw, 1.375rem);
-  line-height: clamp(1.5rem, 1.5000rem + 0.0000vw, 1.5rem);
+  line-height: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
 }
-.p_condition .privacy-content ol, .p_condition .privacy-content ul {
+.p_condition .privacy-content ol,
+.p_condition .privacy-content ul {
   list-style-position: inside;
   padding: 0;
 }
-.p_condition .privacy-content ol li, .p_condition .privacy-content ul li {
+.p_condition .privacy-content ol li,
+.p_condition .privacy-content ul li {
   font-size: clamp(1.125rem, 1.0752rem + 0.2498vw, 1.375rem);
-  line-height: clamp(1.5rem, 1.5000rem + 0.0000vw, 1.5rem);
+  line-height: clamp(1.5rem, 1.5rem + 0vw, 1.5rem);
   font-weight: 600;
   margin-bottom: 10px;
 }
@@ -8544,7 +8550,7 @@ a {
 }
 .trms_service a {
   color: #071533;
-  font-size: 18px;
+  font-size: 12px;
   font-weight: 600;
 }
 .trms_service a:hover {

@@ -256,11 +256,11 @@ export default function Footer({ settings }) {
           <div className="row">
             <div className="col-12 text-center">
               <ul className="list-inline">
-                <li className="list-inline-item me-md-3">
-                  <a href="#">Website maintenance plans </a>
-                </li>
+                {/* <li className="list-inline-item me-md-3">
+                  <Link href="/">Website maintenance plans </Link>
+                </li> */}
                 <li className="list-inline-item">
-                  <a href="#">Terms of Service </a>
+                  <Link href="/policies-condition">Terms of Service </Link>
                 </li>
               </ul>
             </div>
