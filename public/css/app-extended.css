@@ -4030,6 +4030,7 @@ body.hosting {
   .placed-add li a {
     font-size: 18px;
     line-height: 1.3333;
+    min-width: 128px;
   }
 
   .slider-area .raw-card .other-detail {
