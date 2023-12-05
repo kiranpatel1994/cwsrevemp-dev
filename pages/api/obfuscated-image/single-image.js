@@ -15,6 +15,7 @@ export default (req, res) => {
     "cws-revamp.vercel.app",
     "cws-revamp-git-main-aashnamehta810.vercel.app",
     "localhost",
+    "cwsio.com",
   ];
 
   // Check the request's referer header

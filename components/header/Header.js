@@ -5,6 +5,7 @@ import Brand from "/public/images/branding.png";
 import Link from "next/link";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Script from "next/script";
 import { useRef } from "react";
 export default function Header({ data, seo }) {
   const router = useRouter();
@@ -37,6 +38,17 @@ export default function Header({ data, seo }) {
         )}
         {seo?.focuskw && <meta name="keywords" content={seo.focuskw} />}
       </Head>
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-XLXXNVJPQ2"
+      ></Script>
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || []; function gtag()
+          {dataLayer.push(arguments)}
+          gtag('js', new Date()); gtag('config', 'G-XLXXNVJPQ2');
+          `}
+      </Script>
       <div className="line-last">
         <img src={LineImage.src} alt="" />
       </div>

@@ -1,0 +1,59 @@
+{
+  "redirects": [
+    {
+      "source": "/real-estate",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/healthcare",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-category/website-design-development",
+      "destination": "/services/website-design-development",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-category/ui-ux-design-web-applications-development",
+      "destination": "/services/ui-ux-design-web-applications-development",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-category/logo-design-and-branding",
+      "destination": "/services/logo-design-and-branding",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-category/social-media-management",
+      "destination": "/services/social-media-management",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-category/white-label",
+      "destination": "/services/white-label",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-category/ecommerce",
+      "destination": "/services/ecommerce",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-category/hosting",
+      "destination": "/services/hosting",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio_tag/healthcare",
+      "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio_tag/aba-therapy",
+      "destination": "/portfolio",
+      "permanent": true
+    }
+  ]
+}
