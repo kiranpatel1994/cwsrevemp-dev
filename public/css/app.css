@@ -8565,3 +8565,8 @@ a {
   max-width: 100%;
   width: 100%;
 }
+.readyProject_sol .readyProjectInner_button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
