@@ -211,7 +211,7 @@ export default function SolutionDetails({ detail, tags }) {
             </div>
           </section>
         )}
-        <section className="readyProject">
+        <section className="readyProject readyProject_sol">
           <div className="container">
             <div className="row">
               <div className="col-12">
