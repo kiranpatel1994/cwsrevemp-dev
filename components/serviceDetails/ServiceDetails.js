@@ -36,7 +36,7 @@ export default function ServiceDetails({ cat }) {
                     <em>Eye-catching </em> design
                     <img className="bl_plus" src="/images/blue_plus_sign.png" />
                     <br />
-                    <em>user-friendly </em> functionality
+                    <em>User-friendly </em> functionality
                     <img className="bl_arrow" src="/images/preview-24.png" />
                   </h1>
                   <div className="d-md-none">

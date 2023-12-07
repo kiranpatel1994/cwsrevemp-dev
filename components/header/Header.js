@@ -9,6 +9,8 @@ import Script from "next/script";
 import { useRef } from "react";
 export default function Header({ data, seo }) {
   const router = useRouter();
+  const { asPath } = router;
+  const canonicalUrl = `https://www.cwsio.com${asPath}`;
   const ref = useRef(null);
   const handleClick = (event) => {
     let navbarButton = event.currentTarget.getAttribute("aria-expanded");
@@ -26,6 +28,7 @@ export default function Header({ data, seo }) {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{seo?.title ? seo?.title : "Creative Web Services"}</title>
+        <link rel="canonical" href={canonicalUrl} />
         <link
           rel="icon"
           type="image/x-icon"

@@ -260,9 +260,9 @@ export default function HomeDetails({
                                             wrapper="span"
                                             repeat={Infinity}
                                         /> */}
-                    <span className="hs-1">Simplify your workflow. </span>
-                    <span className="hs-2">Delight your customers. </span>
-                    <span className="hs-3">Boost your profits. </span>
+                    <span className="hs-1">simplify your workflow. </span>
+                    <span className="hs-2">delight your customers. </span>
+                    <span className="hs-3">boost your profits. </span>
                   </em>
                 </div>
               </div>
