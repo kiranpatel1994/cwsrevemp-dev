@@ -421,10 +421,8 @@ header .nav-item .nav-link.dropdown-toggle::after {
   height: 170px;
   background-image: url(../images/CrewImg-anim2.png);
   position: absolute;
-  animation-name: faceBeforeAnimation;
-  animation-duration: 6.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: faceBeforeAnimation 4s linear 0s infinite normal;
+
 }
 
 .atmos-faces::after {
@@ -433,10 +431,8 @@ header .nav-item .nav-link.dropdown-toggle::after {
   height: 112px;
   background-image: url(../images/CrewImg-anim1.png);
   position: absolute;
-  animation-name: faceAfterAnimation;
-  animation-duration: 6.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: faceAfterAnimation 4s linear 0s infinite normal;
+
 }
 
 .atmos-faces img {
@@ -469,19 +465,15 @@ header .nav-item .nav-link.dropdown-toggle::after {
 .atmos-faces .face-1 {
   width: 334px;
   height: 334px;
-  animation-name: face1Animation;
-  animation-duration: 6.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: face1Animation 4s linear 0s infinite normal;
+
 }
 
 .atmos-faces .face-2 {
   width: 216px;
   height: 216px;
-  animation-name: face2Animation;
-  animation-duration: 6.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: face2Animation 4s linear 0s infinite normal;
+
 }
 
 .atmos-faces .face-3 {
@@ -489,10 +481,8 @@ header .nav-item .nav-link.dropdown-toggle::after {
   height: 150px;
   left: 400px;
   bottom: 190px;
-  animation-name: face3Animation;
-  animation-duration: 6.5s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: face3Animation 4s linear 0s infinite normal;
+
 }
 
 /* 
@@ -2960,11 +2950,8 @@ body.hosting {
   /* .vr-row-parent .child-row:nth-child(1),
   .vr-row-parent .child-row:nth-child(3) {
     animation-name: identifierMobile;
-    animation-duration: 3s;
-  }
-  .vr-row-parent .child-row:nth-child(2) {
-    animation-name: identifierMobile1;
-    animation-duration: 3s;
+      animation: in 4s linear 0s infinite normal;
+
   } */
   /* @keyframes identifierMobile {
     0% {
