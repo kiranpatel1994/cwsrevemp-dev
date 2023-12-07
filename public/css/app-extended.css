@@ -3,8 +3,7 @@
     display: none;
   }
 
-  .navbar .nav-item:hover .nav-link {
-  }
+  .navbar .nav-item:hover .nav-link {}
 
   .navbar .nav-item:hover .dropdown-menu {
     display: block;
@@ -60,14 +59,10 @@ header .nav-item .nav-link.dropdown-toggle::after {
   position: absolute;
   left: 0;
   top: 0;
-  background: transparent
-    linear-gradient(
-      180deg,
+  background: transparent linear-gradient(180deg,
       #07042a 10%,
       rgba(253, 182, 39, 0.4) 70%,
-      #fdb627 100%
-    )
-    0% 0% no-repeat;
+      #fdb627 100%) 0% 0% no-repeat;
   z-index: 3;
 }
 
@@ -77,7 +72,8 @@ header .nav-item .nav-link.dropdown-toggle::after {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 24px;
-  height: calc(100% - 80px);
+  height: calc(100% - 64px);
+  padding: 30px 28px;
 }
 
 .slider-area .raw-card:hover {
@@ -86,7 +82,7 @@ header .nav-item .nav-link.dropdown-toggle::after {
 
 .slider-area .raw-card::before {
   content: "";
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
   /* filter: blur(300px);
   backdrop-filter: blur(300px);
   -webkit-backdrop-filter: blur(300px); */
@@ -99,7 +95,7 @@ header .nav-item .nav-link.dropdown-toggle::after {
   border: 1px solid transparent;
 }
 
-.slider-area .raw-card > * {
+.slider-area .raw-card>* {
   z-index: 2;
   position: relative;
 }
@@ -425,9 +421,10 @@ header .nav-item .nav-link.dropdown-toggle::after {
   height: 170px;
   background-image: url(../images/CrewImg-anim2.png);
   position: absolute;
-  left: -60px;
-  bottom: 0;
-  transition: all 0.3s;
+  animation-name: faceBeforeAnimation;
+  animation-duration: 6.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .atmos-faces::after {
@@ -436,21 +433,21 @@ header .nav-item .nav-link.dropdown-toggle::after {
   height: 112px;
   background-image: url(../images/CrewImg-anim1.png);
   position: absolute;
-  right: -30px;
-  top: -10px;
-  transition: all 0.3s;
+  animation-name: faceAfterAnimation;
+  animation-duration: 6.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .atmos-faces img {
   border-radius: 50%;
 }
 
-.atmos-faces > div {
+.atmos-faces>div {
   position: absolute;
-  transition: all 0.3s;
 }
 
-.atmos-faces > div::before {
+.atmos-faces>div::before {
   content: "";
   position: absolute;
   left: 0;
@@ -462,7 +459,7 @@ header .nav-item .nav-link.dropdown-toggle::after {
   background: linear-gradient(#ddffe7 4.12%, #ecbaf0 100%);
 }
 
-.atmos-faces > div img {
+.atmos-faces>div img {
   padding: 5px;
   z-index: 2;
   position: relative;
@@ -472,15 +469,19 @@ header .nav-item .nav-link.dropdown-toggle::after {
 .atmos-faces .face-1 {
   width: 334px;
   height: 334px;
-  left: 40px;
-  bottom: 80px;
+  animation-name: face1Animation;
+  animation-duration: 6.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .atmos-faces .face-2 {
   width: 216px;
   height: 216px;
-  left: 310px;
-  bottom: 360px;
+  animation-name: face2Animation;
+  animation-duration: 6.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .atmos-faces .face-3 {
@@ -488,8 +489,13 @@ header .nav-item .nav-link.dropdown-toggle::after {
   height: 150px;
   left: 400px;
   bottom: 190px;
+  animation-name: face3Animation;
+  animation-duration: 6.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
+/* 
 .atmos-faces:hover .face-1 {
   left: 30px;
   bottom: 30px;
@@ -498,12 +504,12 @@ header .nav-item .nav-link.dropdown-toggle::after {
 .atmos-faces:hover .face-2 {
   left: 193px;
   bottom: 398px;
-}
+} 
 
 .atmos-faces:hover .face-3 {
   left: 386px;
   bottom: 250px;
-}
+} 
 
 .atmos-faces:hover::before {
   left: -60px;
@@ -513,6 +519,92 @@ header .nav-item .nav-link.dropdown-toggle::after {
 .atmos-faces:hover::after {
   right: 80px;
   top: -45px;
+}
+*/
+
+@keyframes face1Animation {
+  0% {
+    left: 40px;
+    bottom: 80px;
+  }
+
+  50% {
+    left: 30px;
+    bottom: 30px;
+  }
+
+  100% {
+    left: 40px;
+    bottom: 80px;
+  }
+}
+
+@keyframes face2Animation {
+  0% {
+    left: 310px;
+    bottom: 360px;
+  }
+
+  50% {
+    left: 193px;
+    bottom: 398px;
+  }
+
+  100% {
+    left: 310px;
+    bottom: 360px;
+  }
+}
+
+@keyframes face3Animation {
+  0% {
+    left: 400px;
+    bottom: 190px;
+  }
+
+  50% {
+    left: 386px;
+    bottom: 250px;
+  }
+
+  100% {
+    left: 400px;
+    bottom: 190px;
+  }
+}
+
+@keyframes faceBeforeAnimation {
+  0% {
+    left: -60px;
+    bottom: 0;
+  }
+
+  50% {
+    left: -60px;
+    bottom: -70px;
+  }
+
+  100% {
+    left: -60px;
+    bottom: 0;
+  }
+}
+
+@keyframes faceAfterAnimation {
+  0% {
+    right: -30px;
+    top: -10px;
+  }
+
+  50% {
+    right: 80px;
+    top: -45px;
+  }
+
+  100% {
+    right: -30px;
+    top: -10px;
+  }
 }
 
 .progress-bar {
@@ -879,7 +971,7 @@ header .nav-item .nav-link.dropdown-toggle::after {
   height: 92px;
   position: absolute;
   bottom: 60px;
-  left: 33%;
+  left: 29%;
   background-image: url(../images/preview-new.png);
   background-repeat: no-repeat;
   z-index: 0;
@@ -891,7 +983,7 @@ header .nav-item .nav-link.dropdown-toggle::after {
   height: 19px;
   position: absolute;
   bottom: 115px;
-  left: calc(33% + 119px);
+  left: calc(29% + 119px);
   background-image: url(../images/preview-new-cut.png);
   background-repeat: no-repeat;
   z-index: 2;
@@ -1388,12 +1480,7 @@ footer .ft-child:last-child {
   display: none;
 }
 
-.eCommerce
-  .banner__overlap
-  .ecom_development_container
-  ~ .bottom_shape
-  .floor-2
-  .dt_2 {
+.eCommerce .banner__overlap .ecom_development_container~.bottom_shape .floor-2 .dt_2 {
   display: none;
 }
 
@@ -1564,7 +1651,7 @@ body.solutions {
   width: 164px;
 }
 
-.banner__overlap .bottom_shape .floor-1 .torusLandingLottie > div {
+.banner__overlap .bottom_shape .floor-1 .torusLandingLottie>div {
   transform: scale(2);
 }
 
@@ -1624,7 +1711,7 @@ body.solutions {
   width: 640px;
 }
 
-.hosting .cloudServer > div {
+.hosting .cloudServer>div {
   transform: scale(1.65);
 }
 
@@ -1664,7 +1751,7 @@ body.hosting {
   top: 48%;
 }
 
-.social-media-management .floor-1 .torusLandingLottie > div {
+.social-media-management .floor-1 .torusLandingLottie>div {
   transform: scale(2);
 }
 
@@ -1818,6 +1905,7 @@ body.hosting {
   z-index: 0;
   pointer-events: none;
 }
+
 .aboutFounder::after {
   content: "";
   background: url(../images/stars.png) no-repeat center;
@@ -2220,7 +2308,7 @@ body.hosting {
   }
 
   .slider-area .raw-card {
-    padding: 30px;
+    padding: 25px 20px;
   }
 
   .slider-area .raw-card .sm-user-bild {
@@ -2336,42 +2424,81 @@ body.hosting {
   .atmos-faces .face-2 {
     width: 180px;
     height: 180px;
-    left: 240px;
-    bottom: 290px;
     overflow: hidden;
   }
 
   .atmos-faces .face-3 {
     width: 120px;
     height: 120px;
-    left: 310px;
-    bottom: 150px;
     overflow: hidden;
   }
 
-  .atmos-faces::after {
-    right: -20px;
-    top: -30px;
+  @keyframes face2Animation {
+    0% {
+      left: 240px;
+      bottom: 290px;
+    }
+
+    50% {
+      left: 183px;
+      bottom: 298px;
+    }
+
+    100% {
+      left: 240px;
+      bottom: 290px;
+    }
   }
 
-  .atmos-faces:hover .face-2 {
-    left: 183px;
-    bottom: 298px;
+  @keyframes face3Animation {
+    0% {
+      left: 310px;
+      bottom: 150px;
+    }
+
+    50% {
+      left: 316px;
+      bottom: 170px;
+    }
+
+    100% {
+      left: 310px;
+      bottom: 150px;
+    }
   }
 
-  .atmos-faces:hover .face-3 {
-    left: 316px;
-    bottom: 170px;
+  @keyframes faceBeforeAnimation {
+    0% {
+      left: -60px;
+      bottom: 0;
+    }
+
+    50% {
+      left: -70px;
+      bottom: -70px;
+    }
+
+    100% {
+      left: -60px;
+      bottom: 0;
+    }
   }
 
-  .atmos-faces:hover::after {
-    right: 35px;
-    top: -35px;
-  }
+  @keyframes faceAfterAnimation {
+    0% {
+      right: -20px;
+      top: -30px;
+    }
 
-  .atmos-faces:hover::before {
-    left: -70px;
-    bottom: -70px;
+    50% {
+      right: 35px;
+      top: -35px;
+    }
+
+    100% {
+      right: -10px;
+      top: -30px;
+    }
   }
 
   .position-new {
@@ -2657,7 +2784,7 @@ body.hosting {
     display: none;
   }
 
-  header .nav-item + .nav-item {
+  header .nav-item+.nav-item {
     margin-left: 0;
   }
 
@@ -2749,14 +2876,21 @@ body.hosting {
     font-size: 22px;
   }
 
-  .atmos-faces::after {
-    right: -79px;
-    top: -20px;
-  }
+  @keyframes faceAfterAnimation {
+    0% {
+      right: -79px;
+      top: -20px;
+    }
 
-  .atmos-faces:hover::after {
-    right: -25px;
-    top: -25px;
+    50% {
+      right: -25px;
+      top: -25px;
+    }
+
+    100% {
+      right: -79px;
+      top: -20px;
+    }
   }
 
   .companyDevelopment .menuall-slider .sliderObjectInner {
@@ -3215,12 +3349,8 @@ body.hosting {
     margin-bottom: 50px;
   }
 
-  .printed-marketing
-    .webApp_inner
-    .ecom_development_container.design_development_container::after,
-  .logo-branding
-    .webApp_inner
-    .ecom_development_container.design_development_container::after {
+  .printed-marketing .webApp_inner .ecom_development_container.design_development_container::after,
+  .logo-branding .webApp_inner .ecom_development_container.design_development_container::after {
     top: 7%;
     right: -90px;
     width: 300px;
@@ -3259,14 +3389,17 @@ body.hosting {
     padding: 125px 0 0;
     margin-top: -80px;
   }
+
   .aboutFounder::before,
   .aboutFounder::after {
     content: none;
   }
+
   .bt-linkedin .btn-yellow {
     width: 70px;
     height: 70px;
   }
+
   .bt-linkedin .btn-yellow span svg {
     width: 31px;
   }
@@ -3304,7 +3437,7 @@ body.hosting {
     margin: 75px auto 50px;
   }
 
-  .atmos-faces .face-1 {
+  /* .atmos-faces .face-1 {
     bottom: 0;
   }
 
@@ -3314,6 +3447,57 @@ body.hosting {
 
   .atmos-faces .face-3 {
     bottom: 70px;
+  } */
+
+  @keyframes face1Animation {
+    0% {
+      left: 40px;
+      bottom: 0;
+    }
+
+    50% {
+      left: 30px;
+      bottom: 30px;
+    }
+
+    100% {
+      left: 40px;
+      bottom: 0;
+    }
+  }
+
+  @keyframes face2Animation {
+    0% {
+      left: 240px;
+      bottom: 210px;
+    }
+
+    50% {
+      left: 183px;
+      bottom: 298px;
+    }
+
+    100% {
+      left: 240px;
+      bottom: 210px;
+    }
+  }
+
+  @keyframes face3Animation {
+    0% {
+      left: 310px;
+      bottom: 70px;
+    }
+
+    50% {
+      left: 316px;
+      bottom: 170px;
+    }
+
+    100% {
+      left: 310px;
+      bottom: 70px;
+    }
   }
 
   .position-new {
@@ -3415,7 +3599,7 @@ body.hosting {
   }
 
   .slider-area .raw-card {
-    padding: 20px 15px 40px;
+    padding: 20px 15px;
   }
 
   .slider-area .raw-card .other-detail h5 {
@@ -3845,20 +4029,51 @@ body.hosting {
   .atmos-faces::before {
     width: 110px;
     height: 110px;
-    left: 0;
-    bottom: inherit;
     transform: rotate(115deg);
     background-size: 110px auto;
-    top: 80px;
   }
 
   .atmos-faces::after {
-    right: 0;
-    top: 0px;
     width: 78px;
     height: 72px;
     background-size: 78px auto;
     transform: rotate(-5deg);
+  }
+
+  @keyframes faceBeforeAnimation {
+    0% {
+      left: 0;
+      bottom: inherit;
+      top: 80px;
+    }
+
+    50% {
+      left: -70px;
+      bottom: -70px;
+    }
+
+    100% {
+      left: 0;
+      bottom: inherit;
+      top: 80px;
+    }
+  }
+
+  @keyframes faceAfterAnimation {
+    0% {
+      right: 0;
+      top: 0px;
+    }
+
+    50% {
+      right: -25px;
+      top: -25px;
+    }
+
+    100% {
+      right: 0;
+      top: 0px;
+    }
   }
 
   .position-new {
@@ -3867,18 +4082,60 @@ body.hosting {
     left: 20%;
   }
 
-  .atmos-faces .face-1 {
-    left: 0;
-  }
-
   .atmos-faces .face-2 {
     width: 162px;
     height: 162px;
-    left: 200px;
   }
 
-  .atmos-faces .face-3 {
-    left: 270px;
+  @keyframes face1Animation {
+    0% {
+      left: 0;
+      bottom: 0;
+    }
+
+    50% {
+      left: 30px;
+      bottom: 30px;
+    }
+
+    100% {
+      left: 0;
+      bottom: 0;
+    }
+  }
+
+  @keyframes face2Animation {
+    0% {
+      left: 200px;
+      bottom: 210px;
+    }
+
+    50% {
+      left: 183px;
+      bottom: 278px;
+    }
+
+    100% {
+      left: 200px;
+      bottom: 210px;
+    }
+  }
+
+  @keyframes face3Animation {
+    0% {
+      left: 270px;
+      bottom: 70px;
+    }
+
+    50% {
+      left: 305px;
+      bottom: 150px;
+    }
+
+    100% {
+      left: 270px;
+      bottom: 70px;
+    }
   }
 
   .homeBanner .companyDevelopment .title {
@@ -4342,11 +4599,7 @@ body.hosting {
     justify-content: flex-start;
   }
 
-  .property-management
-    .work__efficient
-    .benifit__inner
-    .list-inline-item
-    .ffk_btn,
+  .property-management .work__efficient .benifit__inner .list-inline-item .ffk_btn,
   .sociaManagement .gl_area .ffk_btn,
   .printed-marketing .webApp_inner .gl_area .ffk_btn,
   .logo-branding .webApp_inner .gl_area .ffk_btn {
@@ -4354,12 +4607,7 @@ body.hosting {
     border-radius: 24px;
   }
 
-  .property-management
-    .work__efficient
-    .benifit__inner
-    .list-inline-item
-    .ffk_btn
-    span,
+  .property-management .work__efficient .benifit__inner .list-inline-item .ffk_btn span,
   .sociaManagement .gl_area .ffk_btn span,
   .printed-marketing .webApp_inner .gl_area .ffk_btn span,
   .logo-branding .webApp_inner .gl_area .ffk_btn span {
@@ -4463,16 +4711,8 @@ body.hosting {
     line-height: 1.4 !important;
   }
 
-  .printed-marketing
-    .logoBrand_multi
-    .time_acquainted
-    .why__us:first-child
-    .automate_work::after,
-  .logo-branding
-    .logoBrand_multi
-    .time_acquainted
-    .why__us:first-child
-    .automate_work::after {
+  .printed-marketing .logoBrand_multi .time_acquainted .why__us:first-child .automate_work::after,
+  .logo-branding .logoBrand_multi .time_acquainted .why__us:first-child .automate_work::after {
     display: none;
   }
 
@@ -4494,6 +4734,7 @@ body.hosting {
     height: 340px;
     max-width: 340px;
   }
+
   .aboutFounder .founderInfo .img_bilder::after {
     border-width: 6px;
   }
@@ -4617,47 +4858,105 @@ body.hosting {
   .atmos-faces .face-1 {
     width: 200px;
     height: 200px;
-    left: 15px;
+
+  }
+
+  @keyframes face1Animation {
+    0% {
+      left: 15px;
+      bottom: 0;
+    }
+
+    50% {
+      left: 30px;
+      bottom: 10px;
+    }
+
+    100% {
+      left: 15px;
+      bottom: 0;
+    }
   }
 
   .atmos-faces .face-2 {
     width: 132px;
     height: 132px;
-    left: 180px;
-    bottom: 180px;
+  }
+
+  @keyframes face2Animation {
+    0% {
+      left: 180px;
+      bottom: 180px;
+    }
+
+    50% {
+      left: 148px;
+      bottom: 218px;
+    }
+
+    100% {
+      left: 180px;
+      bottom: 180px;
+    }
   }
 
   .atmos-faces .face-3 {
-    left: 240px;
     width: 80px;
     height: 80px;
-    bottom: 80px;
   }
 
-  .atmos-faces:hover .face-1 {
-    left: 30px;
-    bottom: 10px;
+  @keyframes face3Animation {
+    0% {
+      left: 240px;
+      bottom: 80px;
+    }
+
+    50% {
+      left: 246px;
+      bottom: 130px;
+    }
+
+    100% {
+      left: 240px;
+      bottom: 80px;
+    }
   }
 
-  .atmos-faces:hover .face-2 {
-    left: 148px;
-    bottom: 218px;
+  @keyframes faceBeforeAnimation {
+    0% {
+      left: 0;
+      bottom: inherit;
+      top: 80px;
+    }
+
+    50% {
+      left: 10px;
+      bottom: inherit;
+      top: 60px;
+    }
+
+    100% {
+      left: 0;
+      bottom: inherit;
+      top: 80px;
+    }
   }
 
-  .atmos-faces:hover .face-3 {
-    left: 246px;
-    bottom: 130px;
-  }
+  @keyframes faceAfterAnimation {
+    0% {
+      right: 25px;
+      top: 10px;
+    }
 
-  .atmos-faces:hover::before {
-    left: 10px;
-    bottom: inherit;
-    top: 60px;
-  }
+    50% {
+      right: 50px;
+      top: -25px;
+    }
 
-  .atmos-faces:hover::after {
-    right: 30px;
-    top: -35px;
+    100% {
+      right: 25px;
+      top: 10px;
+    }
   }
 
   .friendly-atmos h3 {

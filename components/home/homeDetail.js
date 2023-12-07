@@ -91,15 +91,11 @@ export default function HomeDetails({
         spaceBetween: 20,
       },
       1200: {
-        slidesPerView: 3,
+        slidesPerView: 2.3,
         spaceBetween: 20,
       },
-      1600: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      1800: {
-        slidesPerView: 3,
+      1400: {
+        slidesPerView: 2.8,
         spaceBetween: 20,
       },
     },
@@ -805,14 +801,7 @@ export default function HomeDetails({
                 return (
                   <SwiperSlide key={index}>
                     <div className="raw-card">
-                      <div className="d-flex flex-xl-row flex-column align-items-start card-bunch">
-                        {item.authorImage && (
-                          <div className="sm-user-bild mb-xl-0 mb-4">
-                            <div className="circle_area">
-                              <img src={item.authorImage.sourceUrl} alt="" />
-                            </div>
-                          </div>
-                        )}
+                      <div className="mb-4">
                         {item.authorDescription && (
                           <div
                             className="para-side-detail"
@@ -822,7 +811,14 @@ export default function HomeDetails({
                           />
                         )}
                       </div>
-                      <div className="other-detail">
+                      <div className="other-detail d-flex align-items-center">
+                        {item.authorImage && (
+                          <div className="sm-user-bild">
+                            <div className="circle_area">
+                              <img src={item.authorImage.sourceUrl} alt="" />
+                            </div>
+                          </div>
+                        )}
                         <h5>
                           {item.authorName}
                           <span>{item.authorDesignation}</span>
