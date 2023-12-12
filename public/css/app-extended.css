@@ -2227,6 +2227,15 @@ body.hosting {
   padding-bottom: 120px;
 }
 
+.questionnaireForm .form_container .error-message {
+  display: block;
+  position: absolute;
+  top: inherit;
+  bottom: -15px;
+  font-size: 12px;
+  line-height: 1;
+}
+
 .questionnaireForm .form_container fieldset legend,
 .questionnaireForm .form_container fieldset select,
 .questionnaireForm .form_container fieldset label,
@@ -2263,7 +2272,8 @@ body.hosting {
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  position: relative;
 }
 
 .questionnaireForm .form_container #field_undefined_7 legend,
@@ -2307,7 +2317,8 @@ body.hosting {
   grid-template-rows: 2fr repeat(4, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  position: relative;
 }
 
 .questionnaireForm .form_container #field_undefined_11 legend {
