@@ -18,11 +18,34 @@ export default function CWSBranding({ form }) {
   }, []);
 
   return (
-    <main>
-      <h1>CWS – Branding and Logo Questionnaire</h1>
-      <ApolloProvider client={client}>
-        <GravityForm form={form} />
-      </ApolloProvider>
+    <main className="position-relative zindex-2">
+      <section className="companyBanner questionnaireBanner pb-lg-5">
+        <div className="container">
+          <div className="row">
+            <div className="col-12 text-center mb-lg-5 pb-lg-5">
+              <h1 className="mb-lg-5 pb-lg-5 mb-0">
+                CWS – Branding and Logo Questionnaire
+              </h1>
+              <div class="demo-container">
+                <div class="progress-bar">
+                  <div class="progress-bar-value"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="questionnaireForm">
+        <div className="container">
+          <div className="talkBanner position-relative">
+            <div className="form_container">
+              <ApolloProvider client={client}>
+                <GravityForm form={form} />
+              </ApolloProvider>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
