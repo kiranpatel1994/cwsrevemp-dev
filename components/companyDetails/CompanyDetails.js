@@ -57,15 +57,11 @@ export default function CompanyDetails({
         spaceBetween: 20,
       },
       1200: {
-        slidesPerView: 3,
+        slidesPerView: 2.3,
         spaceBetween: 20,
       },
-      1600: {
-        slidesPerView: 2,
-        spaceBetween: 20,
-      },
-      1800: {
-        slidesPerView: 3,
+      1400: {
+        slidesPerView: 2.8,
         spaceBetween: 20,
       },
     },
@@ -318,42 +314,37 @@ export default function CompanyDetails({
 
             <div className="slider-area">
               <Swiper className="slider-scroller" {...settingsB}>
-                {details.companySettings.testimonialBlocks.map(
-                  (item, index) => {
-                    return (
-                      <SwiperSlide key={index}>
-                        <div className="raw-card">
-                          <div className="d-flex flex-xl-row flex-column align-items-start card-bunch">
-                            {item.authorImage && (
-                              <div className="sm-user-bild mb-xl-0 mb-4">
-                                <div className="circle_area">
-                                  <img
-                                    src={item.authorImage.sourceUrl}
-                                    alt=""
-                                  />
-                                </div>
-                              </div>
-                            )}
-                            {item.authorDescription && (
-                              <div
-                                className="para-side-detail"
-                                dangerouslySetInnerHTML={{
-                                  __html: item.authorDescription,
-                                }}
-                              />
-                            )}
-                          </div>
-                          <div className="other-detail">
-                            <h5>
-                              {item.authorName}
-                              <span>{item.authorDesignation}</span>
-                            </h5>
-                          </div>
+                {testimonialSettings.clientTestimonials.map((item, index) => {
+                  return (
+                    <SwiperSlide key={index}>
+                      <div className="raw-card">
+                        <div className="mb-4">
+                          {item.authorDescription && (
+                            <div
+                              className="para-side-detail"
+                              dangerouslySetInnerHTML={{
+                                __html: item.authorDescription,
+                              }}
+                            />
+                          )}
                         </div>
-                      </SwiperSlide>
-                    );
-                  }
-                )}
+                        <div className="other-detail d-flex align-items-center">
+                          {item.authorImage && (
+                            <div className="sm-user-bild">
+                              <div className="circle_area">
+                                <img src={item.authorImage.sourceUrl} alt="" />
+                              </div>
+                            </div>
+                          )}
+                          <h5>
+                            {item.authorName}
+                            <span>{item.authorDesignation}</span>
+                          </h5>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
 
                 <div className="swiper-pagination"></div>
               </Swiper>
