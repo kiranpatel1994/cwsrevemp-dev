@@ -2265,7 +2265,83 @@ body.hosting {
   z-index: 1;
 }
 
-.questionnaireForm .form_container #field_undefined_7,
+.questionnaireForm .form_container #field_undefined_7 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr 6fr 6fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.questionnaireForm .form_container #field_undefined_7 legend {
+  grid-area: 1 / 1 / 2 / 6;
+}
+
+.questionnaireForm .form_container #field_undefined_7 div:nth-child(2) {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.questionnaireForm .form_container #field_undefined_7 div:nth-child(3) {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.questionnaireForm .form_container #field_undefined_7 div:nth-child(4) {
+  grid-area: 2 / 3 / 3 / 4;
+}
+
+.questionnaireForm .form_container #field_undefined_7 div:nth-child(5) {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.questionnaireForm .form_container #field_undefined_7 div:nth-child(6) {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.questionnaireForm .form_container #field_undefined_7 div:nth-child(7) {
+  grid-area: 4 / 3 / 4 / 1;
+  padding-top: 0;
+}
+
+.questionnaireForm .form_container #field_undefined_7 div {
+  padding-top: 120px;
+}
+
+.questionnaireForm .form_container #field_undefined_7 div:not(:last-child):after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 110px;
+  background-position: center;
+  background-size: calc(100% - 4px) calc(100% - 4px);
+  background-repeat: no-repeat;
+  border: 1px solid #fff;
+  padding: 1px;
+}
+
+.questionnaireForm .form_container #field_undefined_7 div:nth-child(2):after {
+  background-image: url("../images/wordmarks.png");
+}
+
+.questionnaireForm .form_container #field_undefined_7 div:nth-child(3):after {
+  background-image: url("../images/abstract.png");
+}
+
+.questionnaireForm .form_container #field_undefined_7 div:nth-child(4):after {
+  background-image: url("../images/Emblem.png");
+}
+
+.questionnaireForm .form_container #field_undefined_7 div:nth-child(5):after {
+  background-image: url("../images/symbol.png");
+}
+
+.questionnaireForm .form_container #field_undefined_7 div:nth-child(6):after {
+  background-image: url("../images/combined.png");
+}
+
 .questionnaireForm .form_container #field_undefined_9 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2276,37 +2352,30 @@ body.hosting {
   position: relative;
 }
 
-.questionnaireForm .form_container #field_undefined_7 legend,
 .questionnaireForm .form_container #field_undefined_9 legend {
   grid-area: 1 / 1 / 2 / 6;
 }
 
-.questionnaireForm .form_container #field_undefined_7 div:nth-child(2),
 .questionnaireForm .form_container #field_undefined_9 div:nth-child(2) {
   grid-area: 2 / 1 / 3 / 2;
 }
 
-.questionnaireForm .form_container #field_undefined_7 div:nth-child(3),
 .questionnaireForm .form_container #field_undefined_9 div:nth-child(3) {
   grid-area: 2 / 2 / 3 / 3;
 }
 
-.questionnaireForm .form_container #field_undefined_7 div:nth-child(4),
 .questionnaireForm .form_container #field_undefined_9 div:nth-child(4) {
   grid-area: 2 / 3 / 3 / 4;
 }
 
-.questionnaireForm .form_container #field_undefined_7 div:nth-child(5),
 .questionnaireForm .form_container #field_undefined_9 div:nth-child(5) {
   grid-area: 3 / 1 / 4 / 2;
 }
 
-.questionnaireForm .form_container #field_undefined_7 div:nth-child(6),
 .questionnaireForm .form_container #field_undefined_9 div:nth-child(6) {
   grid-area: 3 / 2 / 4 / 3;
 }
 
-.questionnaireForm .form_container #field_undefined_7 div:nth-child(7),
 .questionnaireForm .form_container #field_undefined_9 div:nth-child(7) {
   grid-area: 3 / 3 / 4 / 4;
 }
@@ -5061,47 +5130,69 @@ body.hosting {
     padding-bottom: 80px;
   }
 
-  .questionnaireForm .form_container #field_undefined_7,
+  .questionnaireForm .form_container #field_undefined_7 {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 6fr 6fr 6fr 1fr;
+  }
+
+  .questionnaireForm .form_container #field_undefined_7 legend {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+
+  .questionnaireForm .form_container #field_undefined_7 div:nth-child(2) {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .questionnaireForm .form_container #field_undefined_7 div:nth-child(3) {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  .questionnaireForm .form_container #field_undefined_7 div:nth-child(4) {
+    grid-area: 3 / 1 / 4 / 2;
+  }
+
+  .questionnaireForm .form_container #field_undefined_7 div:nth-child(5) {
+    grid-area: 3 / 2 / 4 / 3;
+  }
+
+  .questionnaireForm .form_container #field_undefined_7 div:nth-child(6) {
+    grid-area: 4 / 1 / 5 / 2;
+  }
+
+  .questionnaireForm .form_container #field_undefined_7 div:nth-child(7) {
+    grid-area: 5 / 1 / 5 / 3;
+  }
+
   .questionnaireForm .form_container #field_undefined_9 {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-rows: 1fr repeat(4, 1fr);
+    margin-bottom: 0;
   }
 
-  .questionnaireForm .form_container #field_undefined_9 {
-    grid-template-rows: 2fr repeat(4, 1fr);
-  }
-
-  .questionnaireForm .form_container #field_undefined_7 legend,
   .questionnaireForm .form_container #field_undefined_9 legend {
     grid-area: 1 / 1 / 2 / 3;
   }
 
-  .questionnaireForm .form_container #field_undefined_7 div:nth-child(2),
   .questionnaireForm .form_container #field_undefined_9 div:nth-child(2) {
     grid-area: 2 / 1 / 3 / 2;
   }
 
-  .questionnaireForm .form_container #field_undefined_7 div:nth-child(3),
   .questionnaireForm .form_container #field_undefined_9 div:nth-child(3) {
     grid-area: 2 / 2 / 3 / 3;
   }
 
-  .questionnaireForm .form_container #field_undefined_7 div:nth-child(4),
   .questionnaireForm .form_container #field_undefined_9 div:nth-child(4) {
     grid-area: 3 / 1 / 4 / 2;
   }
 
-  .questionnaireForm .form_container #field_undefined_7 div:nth-child(5),
   .questionnaireForm .form_container #field_undefined_9 div:nth-child(5) {
     grid-area: 3 / 2 / 4 / 3;
   }
 
-  .questionnaireForm .form_container #field_undefined_7 div:nth-child(6),
   .questionnaireForm .form_container #field_undefined_9 div:nth-child(6) {
     grid-area: 4 / 1 / 5 / 2;
   }
 
-  .questionnaireForm .form_container #field_undefined_7 div:nth-child(7),
   .questionnaireForm .form_container #field_undefined_9 div:nth-child(7) {
     grid-area: 4 / 2 / 5 / 3;
   }
