@@ -5154,6 +5154,11 @@ body.hosting {
   .questionnaireForm .form_container #field_undefined_11 div:nth-child(11) {
     grid-area: 6 / 2 / 7 / 3;
   }
+
+  .maintenance-table {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 
 @media screen and (max-width: 575px) {
