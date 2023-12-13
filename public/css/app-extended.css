@@ -2397,6 +2397,13 @@ body.hosting {
   border-radius: 50%;
 }
 
+.maintenance-table {
+  background-color: #fff;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 9;
+}
 
 @media screen and (max-width: 1699px) {
   .skyndroket {
