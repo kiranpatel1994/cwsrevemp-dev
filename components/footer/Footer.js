@@ -167,12 +167,12 @@ export default function Footer({ settings }) {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/website-design-development">
+                      <Link href="/services/website-design-and-development">
                         Website Design and Development
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/logo-design-and-branding">
+                      <Link href="/services/logo-design-branding-agency">
                         Logo Design and Branding
                       </Link>
                     </li>
@@ -191,15 +191,17 @@ export default function Footer({ settings }) {
                 <div className="col-lg-auto">
                   <ul className="list-unstyled">
                     <li>
-                      <Link href="/services/ecommerce">
+                      <Link href="/services/ecommerce-website-development">
                         Ecommerce Development
                       </Link>
                     </li>
                     <li>
-                      <Link href="/services/white-label">White Label</Link>
+                      <Link href="/services/white-label-development-services">
+                        White Label
+                      </Link>
                     </li>
                     <li>
-                      <Link href="/services/ecommerce">Managed Hosting</Link>
+                      <Link href="/services/web-hosting">Managed Hosting</Link>
                     </li>
                   </ul>
                 </div>
@@ -220,29 +222,29 @@ export default function Footer({ settings }) {
                 </div> */}
                 <div className="col-lg-auto">
                   <ul className="list-unstyled">
-                    <li>
+                    {/* <li>
                       <Link href="/services/property-management-websites">
                         Real Estate Property Pages
                       </Link>
+                    </li> */}
+                    <li>
+                      <Link href="/web-solutions">Company Intranet</Link>
                     </li>
                     <li>
-                      <Link href="/solutions">Company Intranet</Link>
+                      <Link href="/web-solutions">Donation Pages</Link>
                     </li>
                     <li>
-                      <Link href="/solutions">Donation Pages</Link>
-                    </li>
-                    <li>
-                      <Link href="/solutions">Payment Processing</Link>
+                      <Link href="/web-solutions">Payment Processing</Link>
                     </li>
                   </ul>
                 </div>
                 <div className="col-lg-auto">
                   <ul className="list-unstyled">
                     <li>
-                      <Link href="/solutions">Contact Database</Link>
+                      <Link href="/web-solutions">Contact Database</Link>
                     </li>
                     <li>
-                      <Link href="/solutions">Digital Forms</Link>
+                      <Link href="/web-solutions">Digital Forms</Link>
                     </li>
                   </ul>
                 </div>

@@ -12,7 +12,7 @@ export default function Custom404() {
             <h1>404 - Page Not Found!</h1>
             <p>
               Oops! That page can’t be found.
-              <Link href="/">Take me back to CWS Home.</Link>
+              <Link href="/">&nbsp;Take me back to CWS Home.</Link>
             </p>
           </div>
         </div>

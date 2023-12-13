@@ -172,7 +172,7 @@ export default function WhiteLabel({ data, themeOptions, form }) {
           <div className="row g-0">
             <div className="col-12 col-xl-7 ecom__info position-relative">
               <div className="banner_content_info">
-                <h1>White Label Solutions </h1>
+                <h1>White Label Development Services </h1>
                 {data.bannerTagline && (
                   <div className="sub_title play_fair-ttl">
                     <h2>{data.bannerTagline}</h2>

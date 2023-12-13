@@ -96,11 +96,11 @@ export default function Header({ data, seo }) {
                 <li className="nav-item">
                   <Link
                     className={
-                      router.pathname == "/company"
+                      router.pathname == "/about-creative-web-services"
                         ? "nav-link active"
                         : "nav-link"
                     }
-                    href="/company"
+                    href="/about-creative-web-services"
                   >
                     <span
                       data-bs-toggle="collapse"
@@ -169,11 +169,11 @@ export default function Header({ data, seo }) {
                       <Link
                         className={
                           router.asPath ==
-                          "/services/website-design-development"
+                          "/services/website-design-and-development"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
-                        href="/services/website-design-development"
+                        href="/services/website-design-and-development"
                       >
                         <span
                           data-bs-toggle="collapse"
@@ -186,11 +186,12 @@ export default function Header({ data, seo }) {
                     <li>
                       <Link
                         className={
-                          router.asPath == "/services/logo-design-and-branding"
+                          router.asPath ==
+                          "/services/logo-design-branding-agency"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
-                        href="/services/logo-design-and-branding"
+                        href="/services/logo-design-branding-agency"
                       >
                         <span
                           data-bs-toggle="collapse"
@@ -220,11 +221,12 @@ export default function Header({ data, seo }) {
                     <li>
                       <Link
                         className={
-                          router.asPath == "/services/ecommerce"
+                          router.asPath ==
+                          "/services/ecommerce-website-development"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
-                        href="/services/ecommerce"
+                        href="/services/ecommerce-website-development"
                       >
                         <span
                           data-bs-toggle="collapse"
@@ -237,11 +239,12 @@ export default function Header({ data, seo }) {
                     <li>
                       <Link
                         className={
-                          router.asPath == "/services/white-label"
+                          router.asPath ==
+                          "/services/white-label-development-services"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
-                        href="/services/white-label"
+                        href="/services/white-label-development-services"
                       >
                         <span
                           data-bs-toggle="collapse"
@@ -254,11 +257,11 @@ export default function Header({ data, seo }) {
                     <li>
                       <Link
                         className={
-                          router.asPath == "/services/hosting"
+                          router.asPath == "/services/web-hosting"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
-                        href="/services/hosting"
+                        href="/services/web-hosting"
                       >
                         <span
                           data-bs-toggle="collapse"
@@ -273,11 +276,11 @@ export default function Header({ data, seo }) {
                 <li className="nav-item">
                   <Link
                     className={
-                      router.pathname == "/solutions"
+                      router.pathname == "/web-solutions"
                         ? "nav-link active"
                         : "nav-link"
                     }
-                    href="/solutions"
+                    href="/web-solutions"
                   >
                     <span
                       data-bs-toggle="collapse"
