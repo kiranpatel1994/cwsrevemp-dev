@@ -51,6 +51,8 @@ export enum ACTION_TYPES {
   updateTextFieldValue = 'updateTextFieldValue',
   updateTimeFieldValue = 'updateTimeFieldValue',
   updateWebsiteFieldValue = 'updateWebsiteFieldValue',
+  updateNumberFieldValue = 'updateNumberFieldValue',
+  
 }
 
 function reducer(state: FieldValueUnion[], action: Action) {
@@ -79,6 +81,7 @@ function reducer(state: FieldValueUnion[], action: Action) {
     }
     case ACTION_TYPES.updateDateFieldValue:
     case ACTION_TYPES.updatePhoneFieldValue:
+      case ACTION_TYPES.updateNumberFieldValue:
     case ACTION_TYPES.updateRadioFieldValue:
     case ACTION_TYPES.updateSelectFieldValue:
     case ACTION_TYPES.updateTextAreaFieldValue:

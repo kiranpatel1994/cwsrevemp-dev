@@ -23,11 +23,6 @@ export default function HomeDetails({
   portfolioList,
   testimonialSettings,
 }) {
-  useEffect(() => {
-    const bannerVideo = document.querySelector(".bannerVideo video");
-    bannerVideo.play();
-  }, []);
-
   const videoRef = useRef(null);
   const perChunk = 6;
   const parts = 3;
@@ -180,6 +175,13 @@ export default function HomeDetails({
   const fireContainer = useRef(null);
   const fireContainer1 = useRef(null);
   useEffect(() => {
+    const bannerVideo = document.querySelector(".bannerVideo video");
+    const handleMetadataLoaded = () => {
+      bannerVideo.play();
+      bannerVideo.removeEventListener("loadedmetadata", handleMetadataLoaded);
+    };
+
+    bannerVideo.addEventListener("loadedmetadata", handleMetadataLoaded);
     const videoElement = videoRef.current;
     videoElement.play();
     lottie.loadAnimation({
@@ -227,6 +229,7 @@ export default function HomeDetails({
     });
 
     return () => {
+      bannerVideo.removeEventListener("loadedmetadata", handleMetadataLoaded);
       lottie.destroy();
     };
   }, []);

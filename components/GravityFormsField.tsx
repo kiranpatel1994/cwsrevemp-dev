@@ -6,6 +6,7 @@ import EmailField from "./GravityFormsFields/EmailField";
 import MultiSelectField from "./GravityFormsFields/MultiSelectField";
 import NameField from "./GravityFormsFields/NameField";
 import PhoneField from "./GravityFormsFields/PhoneField";
+import NumberField from "./GravityFormsFields/NumberField";
 import RadioField from "./GravityFormsFields/RadioField";
 import SelectField from "./GravityFormsFields/SelectField";
 import TextField from "./GravityFormsFields/TextField";
@@ -34,6 +35,8 @@ export default function GravityFormsField({ field, fieldErrors }: Props) {
       return <NameField field={field} fieldErrors={fieldErrors} />;
     case "PHONE":
       return <PhoneField field={field} fieldErrors={fieldErrors} />;
+    case "NUMBER":
+      return <NumberField field={field} fieldErrors={fieldErrors} />;
     case "RADIO":
       return <RadioField field={field} fieldErrors={fieldErrors} />;
     case "SELECT":

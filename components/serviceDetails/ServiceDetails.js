@@ -11,7 +11,7 @@ import SwiperCore, {
 } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-export default function ServiceDetails({ cat }) {
+export default function ServiceDetails({ cat, title }) {
   const perChunk = 2;
   const result = cat.reduce((resultArray, item, index) => {
     const chunkIndex = Math.floor(index / perChunk);
@@ -31,21 +31,14 @@ export default function ServiceDetails({ cat }) {
           <div className="container-xl">
             <div className="row">
               <div className="col-12">
-                <div className="service-title text-center">
-                  <h1>
-                    <em>Eye-catching </em> design
-                    <img className="bl_plus" src="/images/blue_plus_sign.png" />
-                    <br />
-                    <em>User-friendly </em> functionality
-                    <img className="bl_arrow" src="/images/preview-24.png" />
-                  </h1>
-                  <div className="d-md-none">
-                    <h2 className="boot_ttitel">
-                      The business <span>boost </span> you’re looking for is
-                      right here.
-                    </h2>
-                  </div>
-                </div>
+                {title.desktopBannerTitle && (
+                  <div
+                    className="service-title text-center"
+                    dangerouslySetInnerHTML={{
+                      __html: title.desktopBannerTitle,
+                    }}
+                  ></div>
+                )}
               </div>
             </div>
           </div>

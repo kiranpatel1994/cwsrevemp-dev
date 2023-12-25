@@ -82,6 +82,25 @@ export default class GraphAPI {
     });
   }
 
+  static serviceDetails() {
+    const serviceQuery = `query ServiceQuery {
+  pageBy(pageId: ${process.env.NEXT_PUBLIC_SERVICE_PAGE}) {
+    services {
+      desktopBannerTitle
+    }
+  }
+}`;
+    const graphqlQuery = {
+      operationName: "ServiceQuery",
+      query: serviceQuery,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
   static teamDetails() {
     const teamQuery = `
     query TeamQuery {
