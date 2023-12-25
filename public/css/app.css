@@ -5197,11 +5197,11 @@ footer .ft-child:first-child {
   color: #fff;
   font-family: "gilroy-bolduploaded_file";
   margin-bottom: 10px;
-  overflow: hidden;
+  /* overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: vertical; */
 }
 
 .artical__card .card_max_width figcaption p {
@@ -5440,7 +5440,7 @@ form .error-message {
 }
 
 .blogs__tag span {
-  max-width: 140px;
+  /* max-width: 140px; */
   min-width: inherit;
 }
 

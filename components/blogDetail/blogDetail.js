@@ -56,38 +56,7 @@ export default function BlogDetail({ blogDetail, relativeDetail }) {
       <section className="bologDetail_center">
         <div className="container-xl p-0 bologDetail_container">
           <div className="bologDetail_max ms-auto me-auto">
-            <div className="row tag_date">
-              <div className="col-12 col-md-8 order-2 order-md-1">
-                <ul className="list-inline blogs__tag justify-content-start">
-                  {blogDetail.categories.nodes.length > 0 && (
-                    <li className="list-inline-item">
-                      <span className="special__tag">
-                        {blogDetail.categories.nodes
-                          .map((node) => node.name)
-                          .join(",")}
-                      </span>
-                    </li>
-                  )}
-                  {blogDetail.tags.nodes.length > 0 && (
-                    <li className="list-inline-item">
-                      <span className="normal__tag">
-                        <em className="fst-normal">
-                          {blogDetail.tags.nodes
-                            .map((node) => node.name)
-                            .join(",")}
-                        </em>
-                      </span>
-                    </li>
-                  )}
-                </ul>
-              </div>
-              <div className="col-12 col-md-4 order-1 order-md-2">
-                <div className="d-flex align-items-center justify-content-md-end mb-4 mb-md-0">
-                  <img src="../images/calendar.png" alt="date" />
-                  <span className="date_tag">{formattedDate}</span>
-                </div>
-              </div>
-            </div>
+            
 
             <div className="title__content">
               <div className="row">
@@ -115,6 +84,37 @@ export default function BlogDetail({ blogDetail, relativeDetail }) {
                   ></div>
                 </div>
               </div>
+            </div>
+
+            <div className="row tag_date">
+              <div className="col-12">
+                <ul className="list-inline blogs__tag justify-content-start">
+                  {blogDetail.categories.nodes.length > 0 && (
+                    <li className="list-inline-item">
+                      <span className="special__tag">
+                        {blogDetail.categories.nodes
+                          .map((node) => node.name)
+                          .join(",")}
+                      </span>
+                    </li>
+                  )}
+                  {blogDetail.tags.nodes.length > 0 && (
+                    <li className="list-inline-item">
+                      <span className="normal__tag">
+                          {blogDetail.tags.nodes
+                            .map((node) => node.name)
+                            .join(",")}
+                      </span>
+                    </li>
+                  )}
+                </ul>
+              </div>
+              {/* <div className="col-12 col-md-4 order-1 order-md-2">
+                <div className="d-flex align-items-center justify-content-md-end mb-4 mb-md-0">
+                  <img src="../images/calendar.png" alt="date" />
+                  <span className="date_tag">{formattedDate}</span>
+                </div>
+              </div> */}
             </div>
           </div>
         </div>

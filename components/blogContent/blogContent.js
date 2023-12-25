@@ -145,10 +145,10 @@ export default function BlogContent({ blogData, blogDetail }) {
                       className="col-12 col-md-6 col-lg-4 artical__card-col"
                       key={`blog-${index}`}
                     >
-                      <Link href={`/blog/${item.node.slug}`}>
-                        <div className="card_max_width">
-                          <figure>
-                            <div className="card_max_width_fig">
+                      <Link className="h-100" href={`/blog/${item.node.slug}`}>
+                        <div className="card_max_width h-100">
+                          <figure className="h-100">
+                            <div className="card_max_width_fig h-100">
                               <img
                                 className="img-fluid w-100"
                                 src={
@@ -248,9 +248,9 @@ export default function BlogContent({ blogData, blogDetail }) {
                     className="col-12 col-md-6 col-lg-4 artical__card-col"
                     key={`blog-${index}`}
                   >
-                    <Link href={`/blog/${item.node.slug}`}>
-                      <div className="card_max_width">
-                        <figure>
+                    <Link className="h-100" href={`/blog/${item.node.slug}`}>
+                      <div className="card_max_width h-100">
+                        <figure className="h-100">
                           <div className="card_max_width_fig">
                             <img
                               className="img-fluid w-100"
