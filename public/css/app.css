@@ -4273,6 +4273,10 @@ footer .ft-child:first-child {
   margin-bottom: 30px;
 }
 
+.form_container fieldset{
+  margin-bottom: 16px;
+}
+
 .form_container fieldset legend,
 .form_container fieldset select,
 .form_container fieldset label,
@@ -4286,7 +4290,7 @@ footer .ft-child:first-child {
 }
 
 .form_container input,
-.form_container textarea {
+.form_container textarea{
   width: 100%;
   margin-bottom: 16px;
   border-radius: 6px;
@@ -4338,6 +4342,11 @@ footer .ft-child:first-child {
   top: 12px;
   opacity: 0;
   transition: 0.3s all;
+}
+
+.form_container p{
+  font-size: 16px;
+  line-height: 1.25;
 }
 
 /* .form_container form button[type=submit]:hover::before { opacity: 1; } */
@@ -5158,8 +5167,8 @@ footer .ft-child:first-child {
   color: #fff;
   font-family: "gilroy-bolduploaded_file";
   font-size: 16px;
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.33);
+  border-radius: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
   text-decoration: none;
   transition: 0.3s all;
 }
