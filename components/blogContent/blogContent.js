@@ -208,9 +208,9 @@ export default function BlogContent({ blogData, blogDetail }) {
                                   />
                                   <div className="blog_user">
                                     {item.node.postSettings.authorName}
-                                    <span className="d-block w-100">
+                                    {/* <span className="d-block w-100">
                                       {formattedDate}
-                                    </span>
+                                    </span> */}
                                   </div>
                                 </div>
                               )}
@@ -310,9 +310,9 @@ export default function BlogContent({ blogData, blogDetail }) {
                                 />
                                 <div className="blog_user">
                                   {item.node.postSettings.authorName}
-                                  <span className="d-block w-100">
+                                  {/* <span className="d-block w-100">
                                     {formattedDate}
-                                  </span>
+                                  </span> */}
                                 </div>
                               </div>
                             )}

@@ -99,13 +99,9 @@ export default function BlogDetail({ blogDetail, relativeDetail }) {
                     </li>
                   )}
                   {blogDetail.tags.nodes.length > 0 && (
-                    <li className="list-inline-item">
-                      <span className="normal__tag">
-                          {blogDetail.tags.nodes
-                            .map((node) => node.name)
-                            .join(",")}
-                      </span>
-                    </li>
+                        blogDetail.tags.nodes.map((node) => 
+                          <li className="list-inline-item"><span className="normal__tag"> {node.name}</span></li>
+                        )
                   )}
                 </ul>
               </div>
@@ -230,9 +226,9 @@ export default function BlogDetail({ blogDetail, relativeDetail }) {
                                   />
                                   <div className="blog_user">
                                     {item.node.postSettings.authorName}
-                                    <span className="d-block w-100">
+                                    {/* <span className="d-block w-100">
                                       {formattedDate}
-                                    </span>
+                                    </span> */}
                                   </div>
                                 </div>
                               )}

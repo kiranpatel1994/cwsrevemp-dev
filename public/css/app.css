@@ -5318,7 +5318,7 @@ footer .ft-child:first-child {
 }
 
 .bologDetail_center .tag_date {
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
 
 .bologDetail_center .tag_date .blogs__tag {
@@ -5328,6 +5328,7 @@ footer .ft-child:first-child {
 .bologDetail_center .tag_date .blogs__tag span {
   font-size: 12px;
   min-width: 124px;
+  text-align: center;
 }
 
 .bologDetail_center .date_tag {
@@ -5358,12 +5359,18 @@ footer .ft-child:first-child {
 
 .bologDetail_center .title__content p,
 .bologDetail_center .title__content ul li,
-.bologDetail_center .title__content ol li {
+.bologDetail_center .title__content ol li,
+.bologDetail_center .title__content table {
   font-size: 18px;
   line-height: 30px;
   color: rgba(255, 255, 255, 0.9);
   max-width: 930px;
   margin-bottom: 30px;
+}
+
+.bologDetail_center .title__content table td:not(:last-child),
+.bologDetail_center .title__content table th:not(:last-child){
+  padding-right: 30px;
 }
 
 .bologDetail_center .title__content ol li,
