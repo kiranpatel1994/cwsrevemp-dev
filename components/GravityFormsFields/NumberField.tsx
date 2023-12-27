@@ -4,7 +4,7 @@ import { NumberField as NumberFieldType, FieldError } from "../../generated/grap
 import useGravityForm, { ACTION_TYPES, FieldValue, StringFieldValue } from "../../hooks/useGravityForm";
 
 export const NUMBER_FIELD_FIELDS = gql`
-  fragment NumberFieldFields on PhoneField {
+  fragment NumberFieldFields on NumberField {
     id
     label
     description
@@ -21,7 +21,7 @@ interface Props {
 
 const DEFAULT_VALUE = '';
 
-export default function PhoneField({ field, fieldErrors }: Props) {
+export default function NumberField({ field, fieldErrors }: Props) {
   const { id, formId, type, label, description, cssClass, isRequired, placeholder } = field;
   const htmlId = `field_${formId}_${id}`;
   const { state, dispatch } = useGravityForm();
@@ -36,7 +36,6 @@ export default function PhoneField({ field, fieldErrors }: Props) {
         name={String(id)}
         id={htmlId}
         required={Boolean(isRequired)}
-        placeholder={placeholder || ''}
         value={value}
         onChange={event => {
           dispatch({

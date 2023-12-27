@@ -13,6 +13,7 @@ import TextField from "./GravityFormsFields/TextField";
 import TextAreaField from "./GravityFormsFields/TextAreaField";
 import TimeField from "./GravityFormsFields/TimeField";
 import WebsiteField from "./GravityFormsFields/WebsiteField";
+import HtmlField from "./GravityFormsFields/HtmlField";
 
 interface Props {
   field: FormField;
@@ -49,6 +50,8 @@ export default function GravityFormsField({ field, fieldErrors }: Props) {
       return <TimeField field={field} fieldErrors={fieldErrors} />;
     case "WEBSITE":
       return <WebsiteField field={field} fieldErrors={fieldErrors} />;
+    case "HTML":
+      return <HtmlField field={field} fieldErrors={fieldErrors} />;
     default:
       return <p>{`Field type not supported: ${field.type}.`}</p>;
   }

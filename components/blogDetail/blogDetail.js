@@ -56,8 +56,6 @@ export default function BlogDetail({ blogDetail, relativeDetail }) {
       <section className="bologDetail_center">
         <div className="container-xl p-0 bologDetail_container">
           <div className="bologDetail_max ms-auto me-auto">
-            
-
             <div className="title__content">
               <div className="row">
                 <div className="col-12">
@@ -98,11 +96,12 @@ export default function BlogDetail({ blogDetail, relativeDetail }) {
                       </span>
                     </li>
                   )}
-                  {blogDetail.tags.nodes.length > 0 && (
-                        blogDetail.tags.nodes.map((node) => 
-                          <li className="list-inline-item"><span className="normal__tag"> {node.name}</span></li>
-                        )
-                  )}
+                  {blogDetail.tags.nodes.length > 0 &&
+                    blogDetail.tags.nodes.map((node, i) => (
+                      <li className="list-inline-item" key={`tag-${i}`}>
+                        <span className="normal__tag"> {node.name}</span>
+                      </li>
+                    ))}
                 </ul>
               </div>
               {/* <div className="col-12 col-md-4 order-1 order-md-2">
@@ -115,7 +114,7 @@ export default function BlogDetail({ blogDetail, relativeDetail }) {
           </div>
         </div>
       </section>
-      {relativeDetail && (
+      {relativeDetail.length > 0 && (
         <section className="related-articles d-none d-md-block">
           <div className="container-xl">
             <div className="row">
