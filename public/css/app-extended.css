@@ -3876,6 +3876,11 @@ body.hosting {
     top: 100px;
   }
 
+  .friendly-atmos .demo-container {
+    top: inherit;
+    bottom: -20px;
+  }
+
   .progress-bar {
     height: 3px;
   }
