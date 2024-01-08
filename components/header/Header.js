@@ -7,7 +7,9 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import Script from "next/script";
 import { useRef } from "react";
-export default function Header({ data, seo }) {
+export default function Header({ data, seo, thumbnail }) {
+  console.log(seo, "s");
+  console.log(thumbnail, "t");
   const router = useRouter();
   const { asPath } = router;
   const canonicalUrl = `https://www.cwsio.com${asPath}`;
@@ -35,11 +37,18 @@ export default function Header({ data, seo }) {
           href="/images/logo_icon.png"
         ></link>
         {seo?.metaDesc && <meta name="description" content={seo.metaDesc} />}
-        {seo?.title && <meta property="og:title" content={seo.title} />}
-        {seo?.opengraphDescription && (
-          <meta property="og:description" content={seo.opengraphDescription} />
-        )}
-        {seo?.focuskw && <meta name="keywords" content={seo.focuskw} />}
+
+        <meta property="og:title" content={seo?.opengraphTitle} />
+        <meta property="og:type" content={seo?.opengraphType} />
+        <meta property="og:description" content={seo?.opengraphDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:image" content={thumbnail?.node?.sourceUrl} />
+        <meta name="keywords" content={seo?.focuskw} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seo?.twitterTitle} />
+        <meta name="twitter:description" content={seo?.twitterDescription} />
+        <meta name="twitter:image" content={thumbnail?.node?.sourceUrl} />
       </Head>
       <Script
         async

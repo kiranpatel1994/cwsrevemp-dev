@@ -12,7 +12,7 @@
     },
     {
       "source": "/portfolio-category/website-design-development",
-      "destination": "/services/website-design-development",
+      "destination": "/services/website-design-and-development",
       "permanent": true
     },
     {
@@ -22,7 +22,7 @@
     },
     {
       "source": "/portfolio-category/logo-design-and-branding",
-      "destination": "/services/logo-design-and-branding",
+      "destination": "/services/logo-design-branding-agency",
       "permanent": true
     },
     {
@@ -32,17 +32,17 @@
     },
     {
       "source": "/portfolio-category/white-label",
-      "destination": "/services/white-label",
+      "destination": "/services/white-label-development-services",
       "permanent": true
     },
     {
       "source": "/portfolio-category/ecommerce",
-      "destination": "/services/ecommerce",
+      "destination": "/services/ecommerce-website-development",
       "permanent": true
     },
     {
       "source": "/portfolio-category/hosting",
-      "destination": "/services/hosting",
+      "destination": "/services/web-hosting",
       "permanent": true
     },
     {
@@ -53,6 +53,36 @@
     {
       "source": "/portfolio_tag/aba-therapy",
       "destination": "/portfolio",
+      "permanent": true
+    },
+    {
+      "source": "/company",
+      "destination": "/about-creative-web-services",
+      "permanent": true
+    },
+    {
+      "source": "/solutions",
+      "destination": "/web-solutions",
+      "permanent": true
+    },
+    {
+      "source": "/services/website-design-development",
+      "destination": "/services/website-design-and-development",
+      "permanent": true
+    },
+    {
+      "source": "/services/hosting",
+      "destination": "/services/web-hosting",
+      "permanent": true
+    },
+    {
+      "source": "/services/ecommerce",
+      "destination": "/services/ecommerce-website-development",
+      "permanent": true
+    },
+    {
+      "source": "/services/logo-design-and-branding",
+      "destination": "/services/logo-design-branding-agency",
       "permanent": true
     }
   ]

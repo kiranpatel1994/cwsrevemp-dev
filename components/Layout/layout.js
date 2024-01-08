@@ -6,10 +6,11 @@ export default function Layout({
   headerSettings,
   footerSettings,
   seo,
+  thumbnail,
 }) {
   return (
     <>
-      <Header data={headerSettings} seo={seo} />
+      <Header data={headerSettings} seo={seo} thumbnail={thumbnail} />
       {children}
       <Footer settings={footerSettings} />
     </>

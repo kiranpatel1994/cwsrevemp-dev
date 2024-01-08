@@ -1516,7 +1516,44 @@ export default class GraphAPI {
   }
 
   static seoSettings(uri) {
-    const seoSettings = `
+    var seoSettings;
+    const regex = /\/blog\//;
+    if (regex.test(uri)) {
+      const updatedUri = uri.replace("/blog", "");
+      console.log("here blog", updatedUri);
+      seoSettings = `
+  query SeoSettings {
+    postBy(uri: "${updatedUri}") {
+    seo {
+      fullHead
+       metaDesc
+      metaKeywords
+      opengraphDescription
+      title
+      opengraphUrl
+      twitterDescription
+      twitterTitle
+      focuskw
+      focuskw
+      twitterImage {
+        sourceUrl
+      }
+      opengraphImage {
+        sourceUrl
+      }
+      opengraphTitle
+      opengraphType
+    }
+    featuredImage {
+      node {
+        sourceUrl
+      }
+    }
+  }
+}
+`;
+    } else {
+      seoSettings = `
   query SeoSettings {
     pageBy(uri: "${uri}") {
     seo {
@@ -1529,10 +1566,25 @@ export default class GraphAPI {
       twitterDescription
       twitterTitle
       focuskw
+      focuskw
+      twitterImage {
+        sourceUrl
+      }
+      opengraphImage {
+        sourceUrl
+      }
+      opengraphTitle
+      opengraphType
+    }
+    featuredImage {
+      node {
+        sourceUrl
+      }
     }
   }
 }
 `;
+    }
 
     const graphqlQuery = {
       operationName: "SeoSettings",

@@ -23,6 +23,7 @@ export default function MyApp({
   footerSettings,
   themeOptions,
   seo,
+  thumbnail,
 }) {
   useEffect(() => {
     async function loadBootstrap() {
@@ -100,6 +101,7 @@ export default function MyApp({
         headerSettings={headerSettings}
         footerSettings={footerSettings}
         seo={seo}
+        thumbnail={thumbnail}
       >
         <div className="main-shadow" onClick={handleClose}></div>
         <Component {...pageProps} />
@@ -116,6 +118,9 @@ MyApp.getInitialProps = async (ctx) => {
       themeOptions.data.data?.acfOptionsThemeOptions?.themeSettings,
     footerSettings:
       themeOptions.data.data?.acfOptionsThemeOptions?.themeSettings,
-    seo: seo.data.data?.pageBy?.seo,
+    seo: seo.data.data?.pageBy?.seo || seo.data.data?.postBy?.seo,
+    thumbnail:
+      seo.data.data?.pageBy?.featuredImage ||
+      seo.data.data?.postBy?.featuredImage,
   };
 };
