@@ -14,6 +14,7 @@ import PropertyManagement from "../../components/propertyManagement/propertyMana
 import getGravityForm from "../../utilities/gravity-forms";
 import GraphAPI from "../../services/graphQL";
 import Loader from "../../components/header/Loader";
+import AbaAgencies from "../../components/abaAgencies/abaAgencies";
 
 function ServiceDetail({
   catDetail,
@@ -93,6 +94,7 @@ function ServiceDetail({
           form={form}
         />
       )}
+      {catDetail[0].node.id == "dGVybToxMzI=" && <AbaAgencies />}
     </div>
   );
 }

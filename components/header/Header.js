@@ -49,6 +49,18 @@ export default function Header({ data, seo, thumbnail }) {
         <meta name="twitter:title" content={seo?.twitterTitle} />
         <meta name="twitter:description" content={seo?.twitterDescription} />
         <meta name="twitter:image" content={thumbnail?.node?.sourceUrl} />
+        <script
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+                (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                })(window, document, "clarity", "script", "k7drjtm0lm");
+              `,
+          }}
+        />
       </Head>
       <Script
         async
@@ -59,15 +71,6 @@ export default function Header({ data, seo, thumbnail }) {
           window.dataLayer = window.dataLayer || []; function gtag()
           {dataLayer.push(arguments)}
           gtag('js', new Date()); gtag('config', 'G-XLXXNVJPQ2');
-          `}
-      </Script>
-      <Script id="clarity">
-        {`
-          (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "k7drjtm0lm");
           `}
       </Script>
 
