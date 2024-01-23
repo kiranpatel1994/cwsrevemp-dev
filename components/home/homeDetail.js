@@ -267,7 +267,7 @@ export default function HomeDetails({
               </div>
               {homeSettings?.bannerVideoUrl && (
                 <div className="bannerVideo">
-                  <video ref={videoRef} autoPlay muted loop>
+                  <video ref={videoRef} autoPlay muted loop playsinline>
                     <source
                       src={homeSettings.bannerVideoUrl}
                       type="video/mp4"
