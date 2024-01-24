@@ -1,0 +1,12 @@
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="72.42" height="72.431" viewBox="0 0 72.42 72.431">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.115" y1="0.115" x2="0.915" y2="0.915" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#feeac2"/>
+      <stop offset="0.252" stop-color="#fbd382"/>
+      <stop offset="0.555" stop-color="#fbc965"/>
+      <stop offset="0.815" stop-color="#f8bf4d"/>
+      <stop offset="1" stop-color="#fdb627"/>
+    </linearGradient>
+  </defs>
+  <path id="Path_10815" data-name="Path 10815" d="M63.045,11.393A36.189,36.189,0,0,0,5.727,54.4a.909.909,0,0,1,0,.64L2.258,66.993a4.176,4.176,0,0,0,5.254,5.22L19.4,68.643a1.01,1.01,0,0,1,.674,0,35.765,35.765,0,0,0,17.377,4.58,38.627,38.627,0,0,0,7.779-.808A36.236,36.236,0,0,0,63.045,11.393ZM23.98,42.746a4.21,4.21,0,1,1,4.21-4.21A4.21,4.21,0,0,1,23.98,42.746Zm13.471,0a4.21,4.21,0,1,1,4.21-4.21A4.21,4.21,0,0,1,37.451,42.746Zm13.471,0a4.21,4.21,0,1,1,4.21-4.21A4.21,4.21,0,0,1,50.921,42.746Z" transform="translate(-1.251 -0.792)" fill="url(#linear-gradient)"/>
+</svg>
