@@ -8712,6 +8712,10 @@ box-sizing: border-box;
     max-width: 400px;
     margin: 0 auto;
   }
+
+  .homeBanner .bannerVideo:before{
+    display: none;
+  }
 }
 
 @media (max-width: 575px) {
