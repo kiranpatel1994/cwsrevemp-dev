@@ -289,7 +289,7 @@ export default function AbaAgencies() {
             </div>
           </div>
           <div className="row justify-content-between">
-            <div className="col-auto">
+            <div className="col-lg-auto col-md-4 mb-md-0 mb-4">
               <div className="needBox">
                 <div className="boxContent">
                   <img src={PuzzleImg.src} alt="" />
@@ -298,7 +298,7 @@ export default function AbaAgencies() {
                 </div>
               </div>
             </div>
-            <div className="col-auto">
+            <div className="col-lg-auto col-md-4 mb-md-0 mb-4">
               <div className="needBox">
                 <div className="boxContent">
                   <img src={WebDesignImg.src} alt="" />
@@ -310,7 +310,7 @@ export default function AbaAgencies() {
                 </div>
               </div>
             </div>
-            <div className="col-auto">
+            <div className="col-lg-auto col-md-4">
               <div className="needBox">
                 <div className="boxContent">
                   <img src={StarsImg.src} alt="" />
@@ -325,7 +325,7 @@ export default function AbaAgencies() {
         </div>
       </section>
       <section className="abaScrollSection">
-        <div className="container">
+        <div className="container px-md-3 ps-0">
           <div className="gl_area aba-agency_inner">
             <div className="container-xl position-relative p-0">
               <div className="line_anim">
@@ -343,9 +343,9 @@ export default function AbaAgencies() {
                     <h3 className="vr-title">Benefits</h3>
                   </div>
                 </div>
-                <div className="col-12 col-md-11 ps-md-5 pt-md-5">
+                <div className="col-12 col-md-11 ps-5 pt-md-5">
                   <div className="d-md-none">
-                    <div className="benifit_ttl_mb mb-stl pd-48-15">
+                    <div className="benifit_ttl_mb mb-stl">
                       <h3 className="vr-title_mb">Benefits</h3>
                     </div>
                   </div>
@@ -361,7 +361,7 @@ export default function AbaAgencies() {
                     </h4>
                     <div className="abaBenefits">
                       <div className="row">
-                        <div className="col">
+                        <div className="col-xxl col-lg-3 col-md-4">
                           <div className="card benefitCard">
                             <div className="card-body">
                               <div className="card-icon mb-3">
@@ -373,7 +373,7 @@ export default function AbaAgencies() {
                             </div>
                           </div>
                         </div>
-                        <div className="col">
+                        <div className="col-xxl col-lg-3 col-md-4">
                           <div className="card benefitCard">
                             <div className="card-body">
                               <div className="card-icon mb-3">
@@ -385,7 +385,7 @@ export default function AbaAgencies() {
                             </div>
                           </div>
                         </div>
-                        <div className="col">
+                        <div className="col-xxl col-lg-3 col-md-4">
                           <div className="card benefitCard">
                             <div className="card-body">
                               <div className="card-icon mb-3">
@@ -398,7 +398,7 @@ export default function AbaAgencies() {
                             </div>
                           </div>
                         </div>
-                        <div className="col">
+                        <div className="col-xxl col-lg-3 col-md-4">
                           <div className="card benefitCard">
                             <div className="card-body">
                               <div className="card-icon mb-3">
@@ -410,7 +410,7 @@ export default function AbaAgencies() {
                             </div>
                           </div>
                         </div>
-                        <div className="col">
+                        <div className="col-xxl col-lg-3 col-md-4">
                           <div className="card benefitCard">
                             <div className="card-body">
                               <div className="card-icon mb-3">
@@ -437,25 +437,25 @@ export default function AbaAgencies() {
                   </div>
                 </div>
                 <div className="col-12 col-md-11">
-                  <div className="d-md-none">
-                    <div className="benifit_ttl_mb mb-stl pd-48-15">
-                      <h3 className="vr-title_mb">Why Us</h3>
-                    </div>
-                  </div>
                   <div className="row g-0 why__us align-items-center">
-                    <div className="col-12 col-md-7 ps-md-5">
+                    <div className="col-12 col-lg-7 ps-5">
                       <div className="">
+                      <div className="d-md-none">
+                        <div className="benifit_ttl_mb mb-stl">
+                          <h3 className="vr-title_mb">Why Us</h3>
+                        </div>
+                      </div>
                         <h5 className="text-warning mb-3">Just getting started? <br/><span className="text-white">The kickstart you’re looking for</span></h5>
                         <p>ABA start-ups count on the CWS team to help crystallize their vision, build a brand, and share their voice. With friendly professionals who are here to help your agency get off the ground fast, you’ll love a winning combo of unmatched customer care and web design expertise.</p>
                       </div>
                     </div>
-                    <div class="col-lg-5 text-lg-end text-center groupImg"><img class="img-fluid" src={gettingStartImg.src} /></div>
+                    <div class="col-lg-5 text-lg-end text-center groupImg ps-lg-0 ps-5"><img class="img-fluid" src={gettingStartImg.src} /></div>
                   </div>
                   <div className="row g-0 align-items-center">
-                    <div class="col-lg-6 ps-lg-5">
-                      <img src={BusinessPickupImg.src} alt="" />
+                    <div class="col-lg-6 ps-5">
+                      <img className="img-fluid" src={BusinessPickupImg.src} alt="" />
                     </div>
-                    <div className="col-12 col-md-6 ps-md-0">
+                    <div className="col-12 col-lg-6 ps-lg-3 ps-5 mt-lg-0 mt-4">
                       <div className="">
                         <h5 className="text-warning mb-3">Been here a while? <br/><span className="text-white">Your business pick-me-up</span></h5>
                         <p className="fs-20">With an experienced team of website experts behind your project, you’ll get an impressive product that highlights your agency’s uniqueness. Our ABA sites don’t only look great, but also incorporate ABA industry knowledge that targets parents’ concerns and reaches potential employees. Give your agency a boost with a striking online space that is SEO-optimized.</p>
@@ -511,13 +511,13 @@ export default function AbaAgencies() {
                   </div>
                 </div>
                 <div className="col-12 col-md-11">
-                  <div className="d-md-none">
-                    <div className="benifit_ttl_mb mb-stl pd-48-15">
+                  <div className="d-md-none ps-md-0 ps-5 mb-md-0 mb-5 pb-md-0 pb-5">
+                    <div className="benifit_ttl_mb mb-stl">
                       <h3 className="vr-title_mb">Service Details</h3>
                     </div>
                   </div>
-                  <div className="row service_details ps-lg-5">
-                    <div className="col-lg-4">
+                  <div className="row service_details ps-5">
+                    <div className="col-xl-4 col-lg-6">
                       <div className="card serviceDetailCard">
                         <div className="card-icon">
                           <img src={CompellingCopyImg.src} alt="" />
@@ -528,7 +528,7 @@ export default function AbaAgencies() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-xl-4 col-lg-6">
                       <div className="card serviceDetailCard">
                         <div className="card-icon">
                           <img src={DistinctiveDesignImg.src} alt="" />
@@ -539,7 +539,7 @@ export default function AbaAgencies() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-xl-4 col-lg-6">
                       <div className="card serviceDetailCard">
                         <div className="card-icon">
                           <img src={PopupEnrollmentFormImg.src} alt="" />
@@ -550,7 +550,7 @@ export default function AbaAgencies() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-xl-4 col-lg-6">
                       <div className="card serviceDetailCard">
                         <div className="card-icon">
                           <img src={StrategicCareersImg.src} alt="" />
@@ -561,7 +561,7 @@ export default function AbaAgencies() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-xl-4 col-lg-6">
                       <div className="card serviceDetailCard">
                         <div className="card-icon">
                           <img src={BlogResourcesImg.src} alt="" />
@@ -572,7 +572,7 @@ export default function AbaAgencies() {
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-xl-4 col-lg-6">
                       <div className="card serviceDetailCard">
                         <div className="card-icon">
                           <img src={ChatBoxImg.src} alt="" />
@@ -595,19 +595,19 @@ export default function AbaAgencies() {
                     </div>
                   </div>
                 </div>
-                <div className="col-12 col-md-11 pd-30-l-mix time_acquainted">
-                  <div className="d-md-none">
-                    <div className="benifit_ttl_mb mb-stl pd-48-15">
-                      <h3 className="vr-title_mb">Optional Upgrades:</h3>
-                    </div>
-                  </div>
+                <div className="col-12 col-md-11 ps-lg-5 time_acquainted">
                   <div className="row g-0 align-items-center">
-                    <div className="col-12 col-md-6 ps-lg-5 leftColumn">
+                    <div className="col-12 col-lg-6 ps-5 leftColumn">
+                      <div className="d-md-none">
+                        <div className="benifit_ttl_mb mb-stl">
+                          <h3 className="vr-title_mb">Optional Upgrades:</h3>
+                        </div>
+                      </div>
                       <h5 className="mb-3">You want your business seen, <br/>and so do we. </h5>
                       <p className="fs-20 mb-3 text-black">Our SEO specialists strategically incorporate keywords, backlinks, and meta tags to make your website more visible and attractive to search engines. Now more people can find you faster.</p>
                       <a href="#" className="btn btn-blue rounded-pill text-white px-5">I need this.</a>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-lg-6">
                       <div className="optionalImgOuter">
                         <img className="optionalImg" src={OptionalUpgradeImg.src} alt="" />
                       </div>
@@ -625,18 +625,18 @@ export default function AbaAgencies() {
                   </div>
                 </div>
                 <div className="col-12 col-md-11 brandingPackageCol">
-                  <div className="d-md-none">
-                    <div className="benifit_ttl_mb mb-stl pd-48-15">
-                      <h3 className="vr-title_mb">Branding Package</h3>
-                    </div>
-                  </div>
                   <div className="row g-0 align-items-center justify-content-between">
-                    <div className="col-12 col-md-9 ps-lg-5">
+                    <div className="col-12 col-lg-9 ps-5">
+                      <div className="d-md-none">
+                        <div className="benifit_ttl_mb mb-stl">
+                          <h3 className="vr-title_mb">Branding Package</h3>
+                        </div>
+                      </div>
                       <h5 className="mb-2">Tell your story without words.</h5>
                       <p className="fs-20 mb-0 text-black">An iconic logo and branding get your business noticed and let people know what you have to offer. Our designers are tuned into the nuances of color psychology and typography, working closely with you to craft a visual identity that fits your company's strategy and creates the right association in your viewer’s mind.</p>
                     </div>
-                    <div className="col-md-3 text-end ps-md-5">
-                      <div className="d-grid">
+                    <div className="col-lg-3 text-lg-end ps-xl-5 ps-lg-0 ps-5 mt-lg-0 mt-3">
+                      <div className="d-lg-grid">
                         <a href="#" className="btn btn-blue rounded-pill text-white px-5">I need this.</a>
                       </div>
                     </div>
@@ -689,18 +689,18 @@ export default function AbaAgencies() {
                   </div>
                 </div>
                 <div className="col-12 col-md-11 brandingPackageCol fingerTipCol">
-                  <div className="d-md-none">
-                    <div className="benifit_ttl_mb mb-stl pd-48-15">
-                      <h3 className="vr-title_mb">Brochures and Flyers</h3>
-                    </div>
-                  </div>
                   <div className="row g-0 align-items-center justify-content-between">
-                    <div className="col-12 col-md-9 ps-lg-5">
+                    <div className="col-12 col-lg-9 ps-5">
+                      <div className="d-md-none">
+                        <div className="benifit_ttl_mb mb-stl">
+                          <h3 className="vr-title_mb">Brochures and Flyers</h3>
+                        </div>
+                      </div>
                       <h5 className="mb-2">Keep your business at everyone’s fingertips.</h5>
                       <p className="fs-20 mb-0 text-black">Whether you choose flyers, brochures, or letterheads, spread the word about your business and make the statement you want. Our design specialists merge marketing strategy with eye-catching graphics to give your brand the platform it needs to convert your audience.</p>
                     </div>
-                    <div className="col-md-3 text-end ps-md-5">
-                      <div className="d-grid">
+                    <div className="col-lg-3 text-lg-end ps-xl-5 ps-lg-0 ps-5 mt-lg-0 mt-3">
+                      <div className="d-lg-grid">
                         <a href="#" className="btn btn-blue rounded-pill text-white px-5">I need this.</a>
                       </div>
                     </div>
@@ -756,46 +756,46 @@ export default function AbaAgencies() {
               </div>
             </div>
             <div className="row justify-content-between">
-              <div className="col-lg-4">
+              <div className="col-lg-4 mb-lg-0 mb-4">
                 <div className="d-flex align-items-center">
                   <img className="me-2" src={MobileResponsivenessImg.src} alt="" />
                   <h4 className="mb-0 text-white fw-bold">Mobile responsiveness</h4>
                 </div>
               </div>
-              <div className="col-lg-3">
+              <div className="col-xl-3 col-lg-4 mb-lg-0 mb-4">
                 <div className="d-flex align-items-center">
                   <img className="me-2" src={WebsiteSpeedImg.src} alt="" />
                   <h4 className="mb-0 text-white fw-bold">Website speed</h4>
                 </div>
               </div>
-              <div className="col-lg-3">
+              <div className="col-xl-3 col-lg-4 mb-lg-0 mb-4">
                 <div className="d-flex align-items-center">
                   <img className="me-2" src={CustomerServiceImg.src} alt="" />
                   <h4 className="mb-0 text-white fw-bold">Customer service</h4>
                 </div>
               </div>
             </div>
-            <div className="row justify-content-between mt-4 pt-2">
-              <div className="col-lg-4">
+            <div className="row justify-content-between mt-lg-4 pt-lg-2">
+              <div className="col-lg-4 mb-lg-0 mb-4">
                 <div className="d-flex align-items-center">
                   <img className="me-2" src={QuickTurnaroundTimeImg.src} alt="" />
                   <h4 className="mb-0 text-white fw-bold">Quick turnaround time</h4>
                 </div>
               </div>
-              <div className="col-lg-3">
+              <div className="col-xl-3 col-lg-4 mb-lg-0 mb-4">
                 <div className="d-flex align-items-center">
                   <img className="me-2" src={HostingOptionsImg.src} alt="" />
                   <h4 className="mb-0 text-white fw-bold">Hosting options</h4>
                 </div>
               </div>
-              <div className="col-lg-3">
+              <div className="col-xl-3 col-lg-4 mb-lg-0 mb-4">
                 <div className="d-flex align-items-center">
                   <img className="me-2" src={CompetitiveRatesImg.src} alt="" />
                   <h4 className="mb-0 text-white fw-bold">Competitive rates </h4>
                 </div>
               </div>
             </div>
-            <div className="text-center mt-5">
+            <div className="text-center mt-lg-5">
               <a href="#" className="btn btn-yellow d-inline-flex">Get my site started</a>
             </div>
         </div>
@@ -803,21 +803,21 @@ export default function AbaAgencies() {
       <section className="abaWebsites">
         <div className="container-fluid">
           <div className="row justify-content-center mb-5 pb-3">
-            <div className="col-lg-6">
+            <div className="col-xl-6">
               <h2 className="text-center fw-bold text-primary">See how we’ve delivered for other ABA agencies like yours.</h2>
             </div>
           </div>
-          <div className="row mb-5 pb-3">
-            <div className="col-lg-3 text-center">
+          <div className="row mb-5 pb-3 gy-4">
+            <div className="col-lg-3 col-md-6 col-11 text-center">
               <img className="img-fluid" src={AbaAgencyImg1.src} alt="" />
             </div>
-            <div className="col-lg-3 text-center">
+            <div className="col-lg-3 col-md-6 col-11 text-center">
               <img className="img-fluid" src={AbaAgencyImg2.src} alt="" />
             </div>
-            <div className="col-lg-3 text-center">
+            <div className="col-lg-3 col-md-6 col-11 text-center">
               <img className="img-fluid" src={AbaAgencyImg3.src} alt="" />
             </div>
-            <div className="col-lg-3 text-center">
+            <div className="col-lg-3 col-md-6 col-11 text-center">
               <img className="img-fluid" src={AbaAgencyImg4.src} alt="" />
             </div>
           </div>
