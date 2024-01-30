@@ -148,7 +148,7 @@ export default function BlogContent({ blogData, blogDetail }) {
                       <Link className="h-100" href={`/blog/${item.node.slug}`}>
                         <div className="card_max_width h-100">
                           <figure className="h-100">
-                            <div className="card_max_width_fig h-100">
+                            <div className="card_max_width_fig">
                               <img
                                 className="img-fluid w-100"
                                 src={
