@@ -785,13 +785,15 @@ export default function HomeDetails({
             <div className="row">
               <div className="col-12 about-info overflow-hidden">
                 <h2 data-aos="fade-up" data-aos-duration="1000">
-                {testimonialSettings.testimonialsThemeTitle}
+                  {testimonialSettings.testimonialsThemeTitle}
                 </h2>
                 <p
                   data-aos="fade-up"
                   data-aos-duration="1000"
                   data-aos-delay="300"
-                >{testimonialSettings.testimonialsThemeSubtitle}</p>
+                >
+                  {testimonialSettings.testimonialsThemeSubtitle}
+                </p>
               </div>
             </div>
           </div>
