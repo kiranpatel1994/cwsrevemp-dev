@@ -8272,6 +8272,10 @@ a {
     padding-top: 30px;
   }
 
+  .abaScrollSection{
+    padding-top: 60px;
+  }
+
   .abaScrollSection .why__us .groupImg img {
     margin-right: 0;
     min-width: inherit;
@@ -8291,6 +8295,17 @@ a {
 
   .aba-agency_inner .optional_upgrades .leftColumn {
     padding-right: 30px;
+    padding-top: 180px;
+  }
+
+  .aba-agency_inner .optional_upgrades .leftColumn::before {
+    width: 230px;
+    height: 230px;
+    top: -75px;
+  }
+
+  .aba-agency_inner .service_details{
+    padding-bottom: 100px;
   }
 
   .aba-agency_inner .optional_upgrades .optionalImg {
@@ -8323,6 +8338,27 @@ a {
     width: 200px;
     right: -46px;
     top: -100px;
+  }
+
+  .abaAgencyVideoSec .abaAgencyVideo .abaAgencyVideoContent {
+    position: inherit;
+    bottom: inherit;
+    left: inherit;
+    height: auto;
+    margin-top: 20px;
+  }
+
+  .abaAgencyVideoSec .abaAgencyVideo .abaAgencyVideoContent p br{
+    display: none;
+  }
+  
+  .aba-agency_inner .beautifulWork .work-slider-area{
+    padding-top: 0;
+  }
+
+  .aba-agency_inner .beautifulWork h2{
+    margin-top: 0;
+    padding-left: 3rem;
   }
 }
 
@@ -8875,14 +8911,6 @@ a {
 
   .homeBanner .bannerVideo:before {
     display: none;
-  }
-
-  .abaAgencyVideoSec .abaAgencyVideo .abaAgencyVideoContent {
-    position: inherit;
-    bottom: inherit;
-    left: inherit;
-    height: auto;
-    margin-top: 20px;
   }
 
   .abaNeeds .needBox {

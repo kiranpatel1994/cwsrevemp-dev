@@ -236,12 +236,12 @@ export default function AbaAgencies() {
           <div className="row">
             <div className="col-12 text-center">
               <h1>
-                We know websites.{" "}
-                <em className="fw-bold text-warning">Especially ABA.</em>
+                ABA websites
+                <em className="fw-bold text-warning"> built by experts</em>
               </h1>
               <p className="mb-4 pb-2">
-                There’s a reason we’re the first choice of hundreds of ABA
-                agencies looking to impress online.
+                There’s a reason we’re the first choice for <br />
+                hundreds of ABA agencies looking to impress online.
               </p>
               <div className="text-center">
                 <img src={HandshakeImg.src} alt="" />
@@ -262,21 +262,25 @@ export default function AbaAgencies() {
           <div className="abaAgencyVideoContent">
             <div className="container">
               <h4 className="text-white fw-bold mb-4">
-                With us, <span className="text-warning">your ABA agency</span>{" "}
-                stands out from the others.
+                Web builders and writers
+                <span className="text-warning"> who just get ABA</span>
               </h4>
-              <p className="fs-20 mb-0">
-                We’re not just web developers; we’re website builders and
-                writers who really know the ABA therapy field. Over the years,
-                we’ve teamed up with countless ABA operators to build websites
-                that not only look great, but also meet the needs of the therapy
-                world.
+              <p className="fs-20 mb-4">
+                We’ve already teamed up with plenty of ABA operators like you.
+                Now it’s your turn for a great <br />
+                collab that will <span className="text-warning"> make your agency stand out from the others.</span>
               </p>
+              <a
+                href="#"
+                className="btn btn-yellow ft-gilroy_b fw-bold d-inline-flex px-5"
+              >
+                Get my website started
+              </a>
             </div>
           </div>
         </div>
       </section>
-      <section className="abaNeeds">
+      {/* <section className="abaNeeds">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-9 px-lg-0">
@@ -291,13 +295,13 @@ export default function AbaAgencies() {
                   href="#"
                   className="btn btn-yellow ft-gilroy_b fw-bold d-inline-flex px-5"
                 >
-                  My ABA agency needs this
+                  Get my website started
                 </a>
               </div>
             </div>
           </div>
           <div className="row justify-content-between">
-            <div className="col-auto">
+            <div className="col-lg-auto col-md-4 mb-md-0 mb-4">
               <div className="needBox">
                 <div className="boxContent">
                   <img src={PuzzleImg.src} alt="" />
@@ -306,7 +310,7 @@ export default function AbaAgencies() {
                 </div>
               </div>
             </div>
-            <div className="col-auto">
+            <div className="col-lg-auto col-md-4 mb-md-0 mb-4">
               <div className="needBox">
                 <div className="boxContent">
                   <img src={WebDesignImg.src} alt="" />
@@ -318,7 +322,7 @@ export default function AbaAgencies() {
                 </div>
               </div>
             </div>
-            <div className="col-auto">
+            <div className="col-lg-auto col-md-4">
               <div className="needBox">
                 <div className="boxContent">
                   <img src={StarsImg.src} alt="" />
@@ -331,9 +335,9 @@ export default function AbaAgencies() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="abaScrollSection">
-        <div className="container">
+        <div className="container-xl px-lg-3 pe-3 ps-0">
           <div className="gl_area aba-agency_inner">
             <div className="container-xl position-relative p-0">
               <div className="line_anim">
@@ -351,25 +355,25 @@ export default function AbaAgencies() {
                     <h3 className="vr-title">Benefits</h3>
                   </div>
                 </div>
-                <div className="col-12 col-md-11 ps-md-5 pt-md-5">
+                <div className="col-12 col-md-11 ps-5 pt-md-5">
                   <div className="d-md-none">
-                    <div className="benifit_ttl_mb mb-stl pd-48-15">
+                    <div className="benifit_ttl_mb mb-stl">
                       <h3 className="vr-title_mb">Benefits</h3>
                     </div>
                   </div>
                   <div className="title mb-5">
                     <h5 className="text-white fw-bold">
                       Your website is not just your online address. <br />
-                      It’s a platform for you to show the world what you’ve got.
+                      It’s a chance for you to show the world what you’ve got.
                     </h5>
                   </div>
                   <div className="aba-benefitsBlock">
                     <h4 className="fs-20 text-warning fw-semibold mb-3">
-                      A well-crafted website can help you
+                      With a well-crafted website, you can
                     </h4>
                     <div className="abaBenefits">
                       <div className="row">
-                        <div className="col">
+                        <div className="col-xxl col-lg-3 col-md-4">
                           <div className="card benefitCard">
                             <div className="card-body">
                               <div className="card-icon mb-3">
@@ -381,7 +385,7 @@ export default function AbaAgencies() {
                             </div>
                           </div>
                         </div>
-                        <div className="col">
+                        <div className="col-xxl col-lg-3 col-md-4">
                           <div className="card benefitCard">
                             <div className="card-body">
                               <div className="card-icon mb-3">
@@ -393,7 +397,7 @@ export default function AbaAgencies() {
                             </div>
                           </div>
                         </div>
-                        <div className="col">
+                        <div className="col-xxl col-lg-3 col-md-4">
                           <div className="card benefitCard">
                             <div className="card-body">
                               <div className="card-icon mb-3">
@@ -406,7 +410,7 @@ export default function AbaAgencies() {
                             </div>
                           </div>
                         </div>
-                        <div className="col">
+                        <div className="col-xxl col-lg-3 col-md-4">
                           <div className="card benefitCard">
                             <div className="card-body">
                               <div className="card-icon mb-3">
@@ -418,14 +422,14 @@ export default function AbaAgencies() {
                             </div>
                           </div>
                         </div>
-                        <div className="col">
+                        <div className="col-xxl col-lg-3 col-md-4">
                           <div className="card benefitCard">
                             <div className="card-body">
                               <div className="card-icon mb-3">
                                 <img src={QualityImg.src} alt="" />
                               </div>
                               <p className="card-title">
-                                Offer valuable resources to parents
+                                Offer parents valuable resources
                               </p>
                             </div>
                           </div>
@@ -445,14 +449,15 @@ export default function AbaAgencies() {
                   </div>
                 </div>
                 <div className="col-12 col-md-11">
-                  <div className="d-md-none">
-                    <div className="benifit_ttl_mb mb-stl pd-48-15">
-                      <h3 className="vr-title_mb">Why Us</h3>
-                    </div>
-                  </div>
+
                   <div className="row g-0 why__us align-items-center">
-                    <div className="col-12 col-md-7 ps-md-5">
+                    <div className="col-12 col-lg-7 ps-5">
                       <div className="">
+                        <div className="d-md-none">
+                          <div className="benifit_ttl_mb mb-stl">
+                            <h3 className="vr-title_mb">Why Us</h3>
+                          </div>
+                        </div>
                         <h5 className="text-warning mb-3">
                           Just getting started? <br />
                           <span className="text-white">
@@ -460,24 +465,24 @@ export default function AbaAgencies() {
                           </span>
                         </h5>
                         <p>
-                          ABA start-ups count on the CWS team to help
-                          crystallize their vision, build a brand, and share
-                          their voice. With friendly professionals who are here
-                          to help your agency get off the ground fast, you’ll
-                          love a winning combo of unmatched customer care and
-                          web design expertise.
+                          ABA start-ups count on us to define their vision,
+                          establish a brand, and share their voice. With
+                          friendly professionals who are here to help your
+                          agency get off the ground fast, you’ll love a winning
+                          combo of unmatched customer care and web design
+                          expertise.
                         </p>
                       </div>
                     </div>
-                    <div class="col-lg-5 text-lg-end text-center groupImg">
+                    <div class="col-lg-5 text-lg-end text-center groupImg ps-lg-0 ps-5">
                       <img class="img-fluid" src={gettingStartImg.src} />
                     </div>
                   </div>
                   <div className="row g-0 align-items-center">
-                    <div class="col-lg-6 ps-lg-5">
-                      <img src={BusinessPickupImg.src} alt="" />
+                    <div class="col-lg-6 ps-5">
+                      <img className="img-fluid" src={BusinessPickupImg.src} alt="" />
                     </div>
-                    <div className="col-12 col-md-6 ps-md-0">
+                    <div className="col-12 col-lg-6 ps-lg-3 ps-5 mt-lg-0 mt-4">
                       <div className="">
                         <h5 className="text-warning mb-3">
                           Been here a while? <br />
@@ -486,13 +491,13 @@ export default function AbaAgencies() {
                           </span>
                         </h5>
                         <p className="fs-20">
-                          With an experienced team of website experts behind
-                          your project, you’ll get an impressive product that
-                          highlights your agency’s uniqueness. Our ABA sites
-                          don’t only look great, but also incorporate ABA
-                          industry knowledge that targets parents’ concerns and
-                          reaches potential employees. Give your agency a boost
-                          with a striking online space that is SEO-optimized.
+                          With web experts behind your project, you’ll get an
+                          impressive product that brings out your agency’s
+                          uniqueness. Our ABA sites don’t just look great. They
+                          also incorporate ABA industry knowledge that targets
+                          parents’ concerns and reaches potential employees.
+                          Give your agency a boost with a striking online space
+                          that is SEO-optimized.
                         </p>
                       </div>
                     </div>
@@ -569,110 +574,120 @@ export default function AbaAgencies() {
                   </div>
                 </div>
                 <div className="col-12 col-md-11">
-                  <div className="d-md-none">
-                    <div className="benifit_ttl_mb mb-stl pd-48-15">
+                  <div className="d-md-none ps-md-0 ps-5 mb-md-0 mb-5 pb-md-0 pb-5">
+                    <div className="benifit_ttl_mb mb-stl">
                       <h3 className="vr-title_mb">Service Details</h3>
                     </div>
                   </div>
-                  <div className="row service_details ps-lg-5">
-                    <div className="col-lg-4">
+                  <div className="row service_details ps-5">
+                    <div className="col-12">
+                      <h5 className="text-warning mb-3">
+                        Did you know? <br />
+                        <span class="text-white">
+                          Our team launches an ABA website almost every 2 weeks.
+                        </span>
+                      </h5>
+                      <p className="fs-20">
+                        Here’s what goes into every ABA website we create:
+                      </p>
+                    </div>
+                    <div className="col-xl-4 col-lg-6">
                       <div className="card serviceDetailCard">
                         <div className="card-icon">
                           <img src={CompellingCopyImg.src} alt="" />
                         </div>
                         <div className="card-body">
                           <h3 className="text-warning text-center fw-bold mb-3">
-                            Compelling copy
+                            Engaging Content
                           </h3>
                           <p className="card-content">
-                            Our in-house copywriters incorporate ABA industry
-                            knowledge to address parent concerns, offer career
-                            opportunities, and highlight your agency’s
-                            uniqueness.
+                            Our in-house copywriters use their ABA industry
+                            knowledge to address parent concerns, share job
+                            opportunities, and speak out what makes your agency
+                            unique.
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-xl-4 col-lg-6">
                       <div className="card serviceDetailCard">
                         <div className="card-icon">
                           <img src={DistinctiveDesignImg.src} alt="" />
                         </div>
                         <div className="card-body">
                           <h3 className="text-warning text-center fw-bold mb-3">
-                            Distinctive design
+                            Customized Design
                           </h3>
                           <p className="card-content">
-                            Highly customized design ensures your website
-                            reflects your agency’s identity and appeals to your
-                            target audience.
+                            We create a unique design that reflects your
+                            agency's identity and appeals to the people you want
+                            to reach.
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-xl-4 col-lg-6">
                       <div className="card serviceDetailCard">
                         <div className="card-icon">
                           <img src={PopupEnrollmentFormImg.src} alt="" />
                         </div>
                         <div className="card-body">
                           <h3 className="text-warning text-center fw-bold mb-3">
-                            Popup enrollment form
+                            Popup Enrollment Form
                           </h3>
                           <p className="card-content">
-                            Make it easy for people to sign up quickly, give you
-                            essential information, and access your services
-                            faster.
+                            Make it easy for viewers to give you important
+                            information and access your services faster.
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-xl-4 col-lg-6">
                       <div className="card serviceDetailCard">
                         <div className="card-icon">
                           <img src={StrategicCareersImg.src} alt="" />
                         </div>
                         <div className="card-body">
                           <h3 className="text-warning text-center fw-bold mb-3">
-                            Strategic careers page
+                            Strategic Careers Page
                           </h3>
                           <p className="card-content">
-                            Showcase your unique work environment. Attract top
-                            talent for a strong team that boosts therapy quality
-                            and agency success.
+                            Show off your unique work environment. Attract top
+                            talent to build a strong team that enhances therapy
+                            quality and agency success.
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-xl-4 col-lg-6">
                       <div className="card serviceDetailCard">
                         <div className="card-icon">
                           <img src={BlogResourcesImg.src} alt="" />
                         </div>
                         <div className="card-body">
                           <h3 className="text-warning text-center fw-bold mb-3">
-                            Blog and resources
+                            Blog and Resources
                           </h3>
                           <p className="card-content">
-                            Share helpful information, establish your agency’s
-                            expertise, and build trust with your audience.
+                            Share useful information to demonstrate your
+                            agency's expertise and build trust with your
+                            audience.
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-4">
+                    <div className="col-xl-4 col-lg-6">
                       <div className="card serviceDetailCard">
                         <div className="card-icon">
                           <img src={ChatBoxImg.src} alt="" />
                         </div>
                         <div className="card-body">
                           <h3 className="text-warning text-center fw-bold mb-3">
-                            Chat box
+                            Chat Assistance
                           </h3>
                           <p className="card-content">
-                            Help people quickly get personalized information and
-                            support for ABA therapy services, making
-                            communication easier and more engaging.
+                            Offer quick, personalized information and support
+                            for ABA therapy services.
                           </p>
                         </div>
                       </div>
@@ -689,23 +704,26 @@ export default function AbaAgencies() {
                     </div>
                   </div>
                 </div>
-                <div className="col-12 col-md-11 pd-30-l-mix time_acquainted">
-                  <div className="d-md-none">
-                    <div className="benifit_ttl_mb mb-stl pd-48-15">
-                      <h3 className="vr-title_mb">Optional Upgrades:</h3>
-                    </div>
-                  </div>
+                <div className="col-12 col-md-11 ps-lg-5 time_acquainted">
+
                   <div className="row g-0 align-items-center">
-                    <div className="col-12 col-md-6 ps-lg-5 leftColumn">
+                    <div className="col-12 col-lg-6 ps-5 leftColumn">
+                      <div className="d-md-none">
+                        <div className="benifit_ttl_mb mb-stl">
+                          <h3 className="vr-title_mb">Optional Upgrades:</h3>
+                        </div>
+                      </div>
                       <h5 className="mb-3">
+                        <span className="text-primary">Seo Package</span>
+                        <br />
                         You want your business seen, <br />
-                        and so do we.{" "}
+                        and so do we.
                       </h5>
                       <p className="fs-20 mb-3 text-black">
-                        Our SEO specialists strategically incorporate keywords,
-                        backlinks, and meta tags to make your website more
-                        visible and attractive to search engines. Now more
-                        people can find you faster.
+                        Our SEO experts use specialized strategies like
+                        keywords, backlinks, and meta tags to help your website
+                        show up better on search engines. This way, more people
+                        can find your website quickly.
                       </p>
                       <a
                         href="#"
@@ -714,7 +732,7 @@ export default function AbaAgencies() {
                         I need this.
                       </a>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-lg-6">
                       <div className="optionalImgOuter">
                         <img
                           className="optionalImg"
@@ -736,25 +754,27 @@ export default function AbaAgencies() {
                   </div>
                 </div>
                 <div className="col-12 col-md-11 brandingPackageCol">
-                  <div className="d-md-none">
-                    <div className="benifit_ttl_mb mb-stl pd-48-15">
-                      <h3 className="vr-title_mb">Branding Package</h3>
-                    </div>
-                  </div>
                   <div className="row g-0 align-items-center justify-content-between">
-                    <div className="col-12 col-md-9 ps-lg-5">
+                    <div className="col-12 col-lg-9 ps-5">
+                      <div className="d-md-none">
+                        <div className="benifit_ttl_mb mb-stl">
+                          <h3 className="vr-title_mb">Branding Package</h3>
+                        </div>
+                      </div>
+
                       <h5 className="mb-2">Tell your story without words.</h5>
                       <p className="fs-20 mb-0 text-black">
                         An iconic logo and branding get your business noticed
-                        and let people know what you have to offer. Our
-                        designers are tuned into the nuances of color psychology
-                        and typography, working closely with you to craft a
-                        visual identity that fits your company's strategy and
-                        creates the right association in your viewer’s mind.
+                        and let people know what you have to offer.
+                        <b className="fw-semibold">
+                          Our designers use color psychology and typography
+                          details as they work closely with you to create a look
+                          that forms the right impression in people’s minds.
+                        </b>
                       </p>
                     </div>
-                    <div className="col-md-3 text-end ps-md-5">
-                      <div className="d-grid">
+                    <div className="col-lg-3 text-lg-end ps-xl-5 ps-lg-0 ps-5 mt-lg-0 mt-3">
+                      <div className="d-lg-grid">
                         <a
                           href="#"
                           className="btn btn-blue rounded-pill text-white px-5"
@@ -827,10 +847,8 @@ export default function AbaAgencies() {
                 </div>
               </section>
 
-              <section
-                className="row get_row g-0 branding_package brochureFlyer end_anim"
-                id="end_anim"
-              >
+              <section className="row get_row g-0 branding_package brochureFlyer end_anim" id="end_anim">
+
                 <div className="col-12 col-md-1 d-none d-md-block serv__ttl">
                   <div className="pd-48-15">
                     <div className="benifit_ttl align-self-center">
@@ -839,27 +857,25 @@ export default function AbaAgencies() {
                   </div>
                 </div>
                 <div className="col-12 col-md-11 brandingPackageCol fingerTipCol">
-                  <div className="d-md-none">
-                    <div className="benifit_ttl_mb mb-stl pd-48-15">
-                      <h3 className="vr-title_mb">Brochures and Flyers</h3>
-                    </div>
-                  </div>
                   <div className="row g-0 align-items-center justify-content-between">
-                    <div className="col-12 col-md-9 ps-lg-5">
+                    <div className="col-12 col-lg-9 ps-5">
+                      <div className="d-md-none">
+                        <div className="benifit_ttl_mb mb-stl">
+                          <h3 className="vr-title_mb">Brochures and Flyers</h3>
+                        </div>
+                      </div>
                       <h5 className="mb-2">
                         Keep your business at everyone’s fingertips.
                       </h5>
                       <p className="fs-20 mb-0 text-black">
                         Whether you choose flyers, brochures, or letterheads,
-                        spread the word about your business and make the
-                        statement you want. Our design specialists merge
-                        marketing strategy with eye-catching graphics to give
-                        your brand the platform it needs to convert your
-                        audience.
+                        your design specialists here merge marketing strategy
+                        with eye-catching graphics to spread the word about your
+                        business and make the statement you want to make.
                       </p>
                     </div>
-                    <div className="col-md-3 text-end ps-md-5">
-                      <div className="d-grid">
+                    <div className="col-lg-3 text-lg-end ps-xl-5 ps-lg-0 ps-5 mt-lg-0 mt-3">
+                      <div className="d-lg-grid">
                         <a
                           href="#"
                           className="btn btn-blue rounded-pill text-white px-5"
@@ -940,16 +956,16 @@ export default function AbaAgencies() {
           <div className="row mb-5">
             <div className="col-lg-12">
               <h2 className="text-white text-center fw-bold">
-                Experience our marketing know-how and sterling service. <br />
-                Come out with a website that is{" "}
+                Whether Wordpress, Webflow, Custom, or others, <br />
                 <span className="text-warning">
-                  as effective as it is beautiful.
+                  Your website is built by experts
                 </span>
+                who know just what you’re looking for.
               </h2>
             </div>
           </div>
           <div className="row justify-content-between">
-            <div className="col-lg-4">
+            <div className="col-lg-4 mb-lg-0 mb-4">
               <div className="d-flex align-items-center">
                 <img
                   className="me-2"
@@ -961,44 +977,44 @@ export default function AbaAgencies() {
                 </h4>
               </div>
             </div>
-            <div className="col-lg-3">
+            <div className="col-xl-3 col-lg-4 mb-lg-0 mb-4">
               <div className="d-flex align-items-center">
                 <img className="me-2" src={WebsiteSpeedImg.src} alt="" />
-                <h4 className="mb-0 text-white fw-bold">Website speed</h4>
+                <h4 className="mb-0 text-white fw-bold">High loading speed</h4>
               </div>
             </div>
-            <div className="col-lg-3">
+            <div className="col-xl-3 col-lg-4 mb-lg-0 mb-4">
               <div className="d-flex align-items-center">
                 <img className="me-2" src={CustomerServiceImg.src} alt="" />
                 <h4 className="mb-0 text-white fw-bold">Customer service</h4>
               </div>
             </div>
           </div>
-          <div className="row justify-content-between mt-4 pt-2">
-            <div className="col-lg-4">
+          <div className="row justify-content-between mt-lg-4 pt-lg-2">
+            <div className="col-lg-4 mb-lg-0 mb-4">
               <div className="d-flex align-items-center">
                 <img className="me-2" src={QuickTurnaroundTimeImg.src} alt="" />
+                <h4 className="mb-0 text-white fw-bold">Quick turnaround</h4>
+              </div>
+            </div>
+            <div className="col-xl-3 col-lg-4 mb-lg-0 mb-4">
+              <div className="d-flex align-items-center">
+                <img className="me-2" src={HostingOptionsImg.src} alt="" />
                 <h4 className="mb-0 text-white fw-bold">
-                  Quick turnaround time
+                  Hosting and maintenance plans
                 </h4>
               </div>
             </div>
-            <div className="col-lg-3">
-              <div className="d-flex align-items-center">
-                <img className="me-2" src={HostingOptionsImg.src} alt="" />
-                <h4 className="mb-0 text-white fw-bold">Hosting options</h4>
-              </div>
-            </div>
-            <div className="col-lg-3">
+            <div className="col-xl-3 col-lg-4 mb-lg-0 mb-4">
               <div className="d-flex align-items-center">
                 <img className="me-2" src={CompetitiveRatesImg.src} alt="" />
-                <h4 className="mb-0 text-white fw-bold">Competitive rates </h4>
+                <h4 className="mb-0 text-white fw-bold">Competitive rates</h4>
               </div>
             </div>
           </div>
-          <div className="text-center mt-5">
+          <div className="text-center mt-lg-5">
             <a href="#" className="btn btn-yellow d-inline-flex">
-              Get my site started
+              Continuous support
             </a>
           </div>
         </div>
@@ -1006,23 +1022,23 @@ export default function AbaAgencies() {
       <section className="abaWebsites">
         <div className="container-fluid">
           <div className="row justify-content-center mb-5 pb-3">
-            <div className="col-lg-6">
+            <div className="col-xl-6">
               <h2 className="text-center fw-bold text-primary">
                 See how we’ve delivered for other ABA agencies like yours.
               </h2>
             </div>
           </div>
-          <div className="row mb-5 pb-3">
-            <div className="col-lg-3 text-center">
+          <div className="row mb-5 pb-3 gy-4">
+            <div className="col-lg-3 col-md-6 col-11 text-center">
               <img className="img-fluid" src={AbaAgencyImg1.src} alt="" />
             </div>
-            <div className="col-lg-3 text-center">
+            <div className="col-lg-3 col-md-6 col-11 text-center">
               <img className="img-fluid" src={AbaAgencyImg2.src} alt="" />
             </div>
-            <div className="col-lg-3 text-center">
+            <div className="col-lg-3 col-md-6 col-11 text-center">
               <img className="img-fluid" src={AbaAgencyImg3.src} alt="" />
             </div>
-            <div className="col-lg-3 text-center">
+            <div className="col-lg-3 col-md-6 col-11 text-center">
               <img className="img-fluid" src={AbaAgencyImg4.src} alt="" />
             </div>
           </div>
