@@ -262,8 +262,8 @@ export default function AbaAgencies() {
           <div className="abaAgencyVideoContent">
             <div className="container">
               <h4 className="text-white fw-bold mb-4">
-                Web builders and writers
-                <span className="text-warning"> who just get ABA</span>
+                We've teamed up with plenty of
+                <span className="text-warning"> ABA operators like you.</span>
               </h4>
               <p className="fs-20 mb-4">
                 We’ve already teamed up with plenty of ABA operators like you.
@@ -472,6 +472,7 @@ export default function AbaAgencies() {
                           combo of unmatched customer care and web design
                           expertise.
                         </p>
+                        <a href="#" className="btn btn-yellow rounded-pill px-5 d-inline-flex">Get my site started</a>
                       </div>
                     </div>
                     <div class="col-lg-5 text-lg-end text-center groupImg ps-lg-0 ps-5">
@@ -499,6 +500,7 @@ export default function AbaAgencies() {
                           Give your agency a boost with a striking online space
                           that is SEO-optimized.
                         </p>
+                        <a href="#" className="btn btn-yellow rounded-pill px-5 d-inline-flex">Get my site started</a>
                       </div>
                     </div>
                   </div>
@@ -574,7 +576,7 @@ export default function AbaAgencies() {
                   </div>
                 </div>
                 <div className="col-12 col-md-11">
-                  <div className="d-md-none ps-md-0 ps-5 mb-md-0 mb-5 pb-md-0 pb-5">
+                  <div className="d-md-none ps-md-0 ps-5">
                     <div className="benifit_ttl_mb mb-stl">
                       <h3 className="vr-title_mb">Service Details</h3>
                     </div>
@@ -700,7 +702,7 @@ export default function AbaAgencies() {
                 <div className="col-12 col-md-1 d-none d-md-block serv__ttl">
                   <div className="pd-48-15">
                     <div className="benifit_ttl align-self-center">
-                      <h3 className="vr-title">Optional Upgrades:</h3>
+                      <h3 className="vr-title">Optional Upgrades</h3>
                     </div>
                   </div>
                 </div>
@@ -710,35 +712,21 @@ export default function AbaAgencies() {
                     <div className="col-12 col-lg-6 ps-5 leftColumn">
                       <div className="d-md-none">
                         <div className="benifit_ttl_mb mb-stl">
-                          <h3 className="vr-title_mb">Optional Upgrades:</h3>
+                          <h3 className="vr-title_mb">Optional Upgrades</h3>
                         </div>
                       </div>
-                      <h5 className="mb-3">
-                        <span className="text-primary">Seo Package</span>
-                        <br />
-                        You want your business seen, <br />
-                        and so do we.
-                      </h5>
+                      <h5 className="mb-3">You want your business seen, <br />and so do we.</h5>
                       <p className="fs-20 mb-3 text-black">
                         Our SEO experts use specialized strategies like
                         keywords, backlinks, and meta tags to help your website
                         show up better on search engines. This way, more people
                         can find your website quickly.
                       </p>
-                      <a
-                        href="#"
-                        className="btn btn-blue rounded-pill text-white px-5"
-                      >
-                        I need this.
-                      </a>
+                      <a href="#" className="btn btn-blue rounded-pill text-white px-5">I need this</a>
                     </div>
                     <div className="col-lg-6">
                       <div className="optionalImgOuter">
-                        <img
-                          className="optionalImg"
-                          src={OptionalUpgradeImg.src}
-                          alt=""
-                        />
+                        <img className="optionalImg" src={OptionalUpgradeImg.src} alt="" />
                       </div>
                     </div>
                   </div>
@@ -763,25 +751,8 @@ export default function AbaAgencies() {
                       </div>
 
                       <h5 className="mb-2">Tell your story without words.</h5>
-                      <p className="fs-20 mb-0 text-black">
-                        An iconic logo and branding get your business noticed
-                        and let people know what you have to offer.
-                        <b className="fw-semibold">
-                          Our designers use color psychology and typography
-                          details as they work closely with you to create a look
-                          that forms the right impression in people’s minds.
-                        </b>
-                      </p>
-                    </div>
-                    <div className="col-lg-3 text-lg-end ps-xl-5 ps-lg-0 ps-5 mt-lg-0 mt-3">
-                      <div className="d-lg-grid">
-                        <a
-                          href="#"
-                          className="btn btn-blue rounded-pill text-white px-5"
-                        >
-                          I need this.
-                        </a>
-                      </div>
+                      <p className="fs-20 mb-3 text-black">An iconic logo and branding get your business noticed and let people know what you have to offer. <b className="fw-semibold"> Our designers use color psychology and typography details as they work closely with you to create a look that forms the right impression in people’s minds.</b></p>
+                      <a href="#" className="btn btn-blue rounded-pill text-white px-5">I need this</a>
                     </div>
                   </div>
                   <div className="row g-0 align-items-center beautifulWork">
@@ -790,7 +761,7 @@ export default function AbaAgencies() {
                         <h2 className="text-primary fw-bold">
                           Check out <br />
                           our beautiful <br />
-                          work.
+                          branding.
                         </h2>
                         <Swiper className="slider-scroller" {...settingsB}>
                           <SwiperSlide>
@@ -848,7 +819,6 @@ export default function AbaAgencies() {
               </section>
 
               <section className="row get_row g-0 branding_package brochureFlyer end_anim" id="end_anim">
-
                 <div className="col-12 col-md-1 d-none d-md-block serv__ttl">
                   <div className="pd-48-15">
                     <div className="benifit_ttl align-self-center">
@@ -867,22 +837,13 @@ export default function AbaAgencies() {
                       <h5 className="mb-2">
                         Keep your business at everyone’s fingertips.
                       </h5>
-                      <p className="fs-20 mb-0 text-black">
+                      <p className="fs-20 mb-3 text-black">
                         Whether you choose flyers, brochures, or letterheads,
                         your design specialists here merge marketing strategy
                         with eye-catching graphics to spread the word about your
                         business and make the statement you want to make.
                       </p>
-                    </div>
-                    <div className="col-lg-3 text-lg-end ps-xl-5 ps-lg-0 ps-5 mt-lg-0 mt-3">
-                      <div className="d-lg-grid">
-                        <a
-                          href="#"
-                          className="btn btn-blue rounded-pill text-white px-5"
-                        >
-                          I need this.
-                        </a>
-                      </div>
+                      <a href="#" className="btn btn-blue rounded-pill text-white px-5">I need this</a>
                     </div>
                   </div>
                   <div className="row g-0 align-items-center beautifulWork">
@@ -891,7 +852,7 @@ export default function AbaAgencies() {
                         <h2 className="text-primary fw-bold">
                           Check out <br />
                           our beautiful <br />
-                          work.
+                          printed work.
                         </h2>
                         <Swiper className="slider-scroller" {...settingsB}>
                           <SwiperSlide>
@@ -957,9 +918,7 @@ export default function AbaAgencies() {
             <div className="col-lg-12">
               <h2 className="text-white text-center fw-bold">
                 Whether Wordpress, Webflow, Custom, or others, <br />
-                <span className="text-warning">
-                  Your website is built by experts
-                </span>
+                <span className="text-warning"> Your website is built by experts </span>
                 who know just what you’re looking for.
               </h2>
             </div>
