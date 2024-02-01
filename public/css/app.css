@@ -7923,7 +7923,7 @@ a {
   }
 
   .aba-agency_inner .optional_upgrades::before {
-    left: calc(-50vw + 84px);
+    left: calc(-50vw + 93px);
   }
 
   .aba-agency_inner .beautifulWork h2 {
@@ -8309,7 +8309,7 @@ a {
   }
 
   .aba-agency_inner .optional_upgrades .optionalImg {
-    width: 100%;
+    width: calc(100% + 16px);
   }
 
   .aba-agency_inner .optional_upgrades .optionalImgOuter {
