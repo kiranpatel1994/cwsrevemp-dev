@@ -6991,6 +6991,14 @@ a {
   background-image: url(../images/next-btn-yellow.svg);
 }
 
+.aba-agency_inner .branding_package .beautifulWork .work-slider-area .swiper .swiper-button-prev:hover {
+  background-image: url(../images/prev-btn-blue.svg);
+}
+
+.aba-agency_inner .branding_package .beautifulWork .work-slider-area .swiper .swiper-button-next:hover {
+  background-image: url(../images/next-btn-blue.svg);
+}
+
 .aba-agency_inner .serviceDetailSec {
   position: relative;
 }
