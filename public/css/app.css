@@ -7650,7 +7650,7 @@ a {
   }
 
   .aba-agency_inner .optional_upgrades::before {
-    left: calc(-50vw + 91px);
+    left: calc(-50vw + 100px);
   }
 
   .abaBenefits .row {
