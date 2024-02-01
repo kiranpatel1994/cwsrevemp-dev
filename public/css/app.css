@@ -6946,7 +6946,7 @@ a {
 .aba-agency_inner .beautifulWork .work-slider-area .swiper {
   margin-left: 370px;
   margin-right: calc((-100vw + 1200px + 160px) / 2);
-  padding-bottom: 60px;
+  padding-bottom: 80px;
 }
 
 .aba-agency_inner .beautifulWork .work-slider-area .swiper .swiper-slide img {
@@ -6958,15 +6958,15 @@ a {
   width: 52px;
   height: 52px;
   position: absolute;
-  left: 3rem;
-  top: 50%;
+  left: 0;
+  bottom: 0;
   background-size: 100% auto;
   opacity: 1;
   transform: none;
   right: inherit;
-  margin-top: 45px;
   z-index: 3;
   transition: all 0.5s;
+  top: inherit;
 }
 
 .aba-agency_inner .beautifulWork .work-slider-area .swiper .swiper-button-prev::after,
@@ -6979,7 +6979,7 @@ a {
 }
 
 .aba-agency_inner .beautifulWork .work-slider-area .swiper .swiper-button-next {
-  left: calc(3rem + 66px);
+  left: 66px;
   background-image: url(../images/next-btn-white.svg);
 }
 
