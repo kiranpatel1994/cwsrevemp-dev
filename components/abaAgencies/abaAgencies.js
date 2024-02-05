@@ -254,7 +254,7 @@ export default function AbaAgencies() {
         <div className="abaAgencyVideo">
           <video autoPlay muted loop playsInline>
             <source
-              src="https://cms.cwsio.com/wp-content/uploads/2024/01/aba-agency-video.mp4"
+              src="https://cms.cwsio.com/wp-content/uploads/2024/02/aba-video.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
@@ -583,15 +583,9 @@ export default function AbaAgencies() {
                   </div>
                   <div className="row service_details ps-5">
                     <div className="col-12">
-                      <h5 className="text-warning mb-3">
-                        Did you know? <br />
-                        <span class="text-white">
-                          Our team launches an ABA website almost every 2 weeks.
-                        </span>
+                      <h5 className="text-white mb-3 text-center">
+                        Here’s what goes into every ABA website <br />we create:
                       </h5>
-                      <p className="fs-20">
-                        Here’s what goes into every ABA website we create:
-                      </p>
                     </div>
                     <div className="col-xl-4 col-lg-6">
                       <div className="card serviceDetailCard">
@@ -698,7 +692,7 @@ export default function AbaAgencies() {
                 </div>
               </section>
 
-              <section className="row get_row g-0 optional_upgrades">
+              <section className="row get_row g-0 optional_upgrades end_anim" id="end_anim">
                 <div className="col-12 col-md-1 d-none d-md-block serv__ttl">
                   <div className="pd-48-15">
                     <div className="benifit_ttl align-self-center">
@@ -708,12 +702,15 @@ export default function AbaAgencies() {
                 </div>
                 <div className="col-12 col-md-11 ps-lg-5 time_acquainted">
 
-                  <div className="row g-0 align-items-center">
+                  <div className="row g-0 align-items-center seo_package">
                     <div className="col-12 col-lg-6 ps-5 leftColumn">
                       <div className="d-md-none">
                         <div className="benifit_ttl_mb mb-stl">
                           <h3 className="vr-title_mb">Optional Upgrades</h3>
                         </div>
+                      </div>
+                      <div className="benifit_ttl_mb mb-stl mb-2">
+                        <h3 className="vr-title_mb">SEO Package</h3>
                       </div>
                       <h5 className="mb-3">You want your business seen, <br />and so do we.</h5>
                       <p className="fs-20 mb-3 text-black">
@@ -730,184 +727,167 @@ export default function AbaAgencies() {
                       </div>
                     </div>
                   </div>
-                </div>
-              </section>
 
-              <section className="row get_row g-0 branding_package">
-                <div className="col-12 col-md-1 d-none d-md-block serv__ttl">
-                  <div className="pd-48-15">
-                    <div className="benifit_ttl align-self-center">
-                      <h3 className="vr-title">Branding Package</h3>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12 col-md-11 brandingPackageCol">
-                  <div className="row g-0 align-items-center justify-content-between">
-                    <div className="col-12 col-lg-9 ps-5">
-                      <div className="d-md-none">
-                        <div className="benifit_ttl_mb mb-stl">
-                          <h3 className="vr-title_mb">Branding Package</h3>
+                  <div className="row get_row g-0 branding_package">
+                    <div className="col-12 col-md-11 brandingPackageCol">
+                      <div className="row g-0 align-items-center justify-content-between">
+                        <div className="col-12 col-lg-9 ps-5">
+                          <div className="benifit_ttl_mb mb-stl mb-2">
+                            <h3 className="vr-title_mb">Branding Package</h3>
+                          </div>
+                          <h5 className="mb-2">Tell your story without words.</h5>
+                          <p className="fs-20 mb-3 text-black">An iconic logo and branding get your business noticed and let people know what you have to offer. <b className="fw-semibold"> Our designers use color psychology and typography details as they work closely with you to create a look that forms the right impression in people’s minds.</b></p>
+                          <a href="#" className="btn btn-blue rounded-pill text-white px-5">I need this</a>
                         </div>
                       </div>
-
-                      <h5 className="mb-2">Tell your story without words.</h5>
-                      <p className="fs-20 mb-3 text-black">An iconic logo and branding get your business noticed and let people know what you have to offer. <b className="fw-semibold"> Our designers use color psychology and typography details as they work closely with you to create a look that forms the right impression in people’s minds.</b></p>
-                      <a href="#" className="btn btn-blue rounded-pill text-white px-5">I need this</a>
-                    </div>
-                  </div>
-                  <div className="row g-0 align-items-center beautifulWork">
-                    <div className="col-lg-12">
-                      <div className="work-slider-area">
-                        <h2 className="text-primary fw-bold">
-                          Check out <br />
-                          our beautiful <br />
-                          branding.
-                        </h2>
-                        <Swiper className="slider-scroller" {...settingsB}>
-                          <SwiperSlide>
-                            <a href="#">
-                              <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
-                                alt=""
-                              />
-                            </a>
-                          </SwiperSlide>
-                          <SwiperSlide>
-                            <a href="#">
-                              <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
-                                alt=""
-                              />
-                            </a>
-                          </SwiperSlide>
-                          <SwiperSlide>
-                            <a href="#">
-                              <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
-                                alt=""
-                              />
-                            </a>
-                          </SwiperSlide>
-                          <SwiperSlide>
-                            <a href="#">
-                              <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
-                                alt=""
-                              />
-                            </a>
-                          </SwiperSlide>
-                          <SwiperSlide>
-                            <a href="#">
-                              <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
-                                alt=""
-                              />
-                            </a>
-                          </SwiperSlide>
-                          <div class="swiper-button-prev"></div>
-                          <div class="swiper-button-next"></div>
-                        </Swiper>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section className="row get_row g-0 branding_package brochureFlyer end_anim" id="end_anim">
-                <div className="col-12 col-md-1 d-none d-md-block serv__ttl">
-                  <div className="pd-48-15">
-                    <div className="benifit_ttl align-self-center">
-                      <h3 className="vr-title">Brochures and Flyers</h3>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-12 col-md-11 brandingPackageCol fingerTipCol">
-                  <div className="row g-0 align-items-center justify-content-between">
-                    <div className="col-12 col-lg-9 ps-5">
-                      <div className="d-md-none">
-                        <div className="benifit_ttl_mb mb-stl">
-                          <h3 className="vr-title_mb">Brochures and Flyers</h3>
+                      <div className="row g-0 align-items-center beautifulWork">
+                        <div className="col-lg-12">
+                          <div className="work-slider-area">
+                            <h2 className="text-primary fw-bold">
+                              Check out <br />
+                              our beautiful <br />
+                              branding.
+                            </h2>
+                            <Swiper className="slider-scroller" {...settingsB}>
+                              <SwiperSlide>
+                                <a href="#">
+                                  <img
+                                    className="rounded-4"
+                                    src={KidsNHeartImg.src}
+                                    alt=""
+                                  />
+                                </a>
+                              </SwiperSlide>
+                              <SwiperSlide>
+                                <a href="#">
+                                  <img
+                                    className="rounded-4"
+                                    src={KidsNHeartImg.src}
+                                    alt=""
+                                  />
+                                </a>
+                              </SwiperSlide>
+                              <SwiperSlide>
+                                <a href="#">
+                                  <img
+                                    className="rounded-4"
+                                    src={KidsNHeartImg.src}
+                                    alt=""
+                                  />
+                                </a>
+                              </SwiperSlide>
+                              <SwiperSlide>
+                                <a href="#">
+                                  <img
+                                    className="rounded-4"
+                                    src={KidsNHeartImg.src}
+                                    alt=""
+                                  />
+                                </a>
+                              </SwiperSlide>
+                              <SwiperSlide>
+                                <a href="#">
+                                  <img
+                                    className="rounded-4"
+                                    src={KidsNHeartImg.src}
+                                    alt=""
+                                  />
+                                </a>
+                              </SwiperSlide>
+                              <div class="swiper-button-prev"></div>
+                              <div class="swiper-button-next"></div>
+                            </Swiper>
+                          </div>
                         </div>
                       </div>
-                      <h5 className="mb-2">
-                        Keep your business at everyone’s fingertips.
-                      </h5>
-                      <p className="fs-20 mb-3 text-black">
-                        Whether you choose flyers, brochures, or letterheads,
-                        your design specialists here merge marketing strategy
-                        with eye-catching graphics to spread the word about your
-                        business and make the statement you want to make.
-                      </p>
-                      <a href="#" className="btn btn-blue rounded-pill text-white px-5">I need this</a>
                     </div>
                   </div>
-                  <div className="row g-0 align-items-center beautifulWork">
-                    <div className="col-lg-12">
-                      <div className="work-slider-area">
-                        <h2 className="text-primary fw-bold">
-                          Check out <br />
-                          our beautiful <br />
-                          printed work.
-                        </h2>
-                        <Swiper className="slider-scroller" {...settingsB}>
-                          <SwiperSlide>
-                            <a href="#">
-                              <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
-                                alt=""
-                              />
-                            </a>
-                          </SwiperSlide>
-                          <SwiperSlide>
-                            <a href="#">
-                              <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
-                                alt=""
-                              />
-                            </a>
-                          </SwiperSlide>
-                          <SwiperSlide>
-                            <a href="#">
-                              <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
-                                alt=""
-                              />
-                            </a>
-                          </SwiperSlide>
-                          <SwiperSlide>
-                            <a href="#">
-                              <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
-                                alt=""
-                              />
-                            </a>
-                          </SwiperSlide>
-                          <SwiperSlide>
-                            <a href="#">
-                              <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
-                                alt=""
-                              />
-                            </a>
-                          </SwiperSlide>
-                          <div class="swiper-button-prev"></div>
-                          <div class="swiper-button-next"></div>
-                        </Swiper>
+
+                  <div className="row get_row g-0 branding_package brochureFlyer">
+                    <div className="col-12 col-md-11 brandingPackageCol fingerTipCol">
+                      <div className="row g-0 align-items-center justify-content-between">
+                        <div className="col-12 col-lg-9 ps-5">
+                          <div className="benifit_ttl_mb mb-stl mb-2">
+                            <h3 className="vr-title_mb">Brochures and Flyers</h3>
+                          </div>
+                          <h5 className="mb-2">
+                            Keep your business at everyone’s fingertips.
+                          </h5>
+                          <p className="fs-20 mb-3 text-black">
+                            Whether you choose flyers, brochures, or letterheads,
+                            your design specialists here merge marketing strategy
+                            with eye-catching graphics to spread the word about your
+                            business and make the statement you want to make.
+                          </p>
+                          <a href="#" className="btn btn-blue rounded-pill text-white px-5">I need this</a>
+                        </div>
+                      </div>
+                      <div className="row g-0 align-items-center beautifulWork">
+                        <div className="col-lg-12">
+                          <div className="work-slider-area">
+                            <h2 className="text-primary fw-bold">
+                              Check out <br />
+                              our beautiful <br />
+                              printed work.
+                            </h2>
+                            <Swiper className="slider-scroller" {...settingsB}>
+                              <SwiperSlide>
+                                <a href="#">
+                                  <img
+                                    className="rounded-4"
+                                    src={KidsNHeartImg.src}
+                                    alt=""
+                                  />
+                                </a>
+                              </SwiperSlide>
+                              <SwiperSlide>
+                                <a href="#">
+                                  <img
+                                    className="rounded-4"
+                                    src={KidsNHeartImg.src}
+                                    alt=""
+                                  />
+                                </a>
+                              </SwiperSlide>
+                              <SwiperSlide>
+                                <a href="#">
+                                  <img
+                                    className="rounded-4"
+                                    src={KidsNHeartImg.src}
+                                    alt=""
+                                  />
+                                </a>
+                              </SwiperSlide>
+                              <SwiperSlide>
+                                <a href="#">
+                                  <img
+                                    className="rounded-4"
+                                    src={KidsNHeartImg.src}
+                                    alt=""
+                                  />
+                                </a>
+                              </SwiperSlide>
+                              <SwiperSlide>
+                                <a href="#">
+                                  <img
+                                    className="rounded-4"
+                                    src={KidsNHeartImg.src}
+                                    alt=""
+                                  />
+                                </a>
+                              </SwiperSlide>
+                              <div class="swiper-button-prev"></div>
+                              <div class="swiper-button-next"></div>
+                            </Swiper>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </section>
+
+
             </div>
           </div>
         </div>

@@ -2796,6 +2796,10 @@ footer .ft-child:first-child {
   top: 145px;
 }
 
+.designFunctionality .setContainerFunctionality .row:last-child {
+  display: none;
+}
+
 /*  */
 .solutionDetail {
   margin-top: 90px;
@@ -6914,6 +6918,7 @@ a {
 
 .aba-agency_inner .whyUs_title .vr-title {
   padding-bottom: 385px;
+  white-space: nowrap;
 }
 
 .aba-agency_inner .time_acquainted .why__us::after {
@@ -7088,7 +7093,6 @@ a {
 
 .aba-agency_inner .optional_upgrades {
   position: relative;
-  padding-bottom: 120px;
 }
 
 .aba-agency_inner .optional_upgrades::before {
@@ -7103,14 +7107,18 @@ a {
   border-radius: 0 165px 0 0;
 }
 
-.aba-agency_inner .optional_upgrades::after {
+.aba-agency_inner .seo_package {
+  position: relative;
+}
+
+.aba-agency_inner .optional_upgrades .seo_package::after {
   content: '';
-  width: 75vw;
+  width: 120vw;
   height: 350px;
   background-color: #FDB627;
   position: absolute;
-  left: 38vw;
-  bottom: 0;
+  left: 0vw;
+  bottom: -20px;
   z-index: 0;
 }
 
@@ -7150,6 +7158,7 @@ a {
   background-image: url(../images/optionalImg-shape.png);
   background-size: cover;
   background-position: left bottom;
+  z-index: 1;
 }
 
 .aba-agency_inner .optional_upgrades .leftColumn {
@@ -7171,6 +7180,7 @@ a {
 .aba-agency_inner .branding_package {
   position: relative;
   padding-bottom: 160px;
+  padding-top: 150px;
 }
 
 .aba-agency_inner .branding_package::before {
@@ -7223,7 +7233,8 @@ a {
 }
 
 .aba-agency_inner .branding_package.brochureFlyer {
-  padding-bottom: 60px;
+  padding-top: 0;
+  padding-bottom: 120px;
 }
 
 .aba-agencies .banner__overlap .bottom_shape {
@@ -7257,16 +7268,17 @@ a {
 }
 
 .abaAgencyVideoSec .abaAgencyVideo .abaAgencyVideoContent {
-  background: transparent linear-gradient(180deg, #07042B00 0%, #07042B 100%) 0% 0% no-repeat padding-box;
-  height: 330px;
+  background: transparent linear-gradient(180deg, #07042B00 0%, #07042B 35%) 0% 0% no-repeat padding-box;
+  height: 480px;
   width: 100%;
   position: absolute;
   left: 0;
   bottom: 0;
   z-index: 2;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   text-align: center;
+  padding-bottom: 100px;
 }
 
 .aba-agencies .abaWebsites {
@@ -7321,6 +7333,14 @@ a {
 
 .aba-agencies .abaFeatures .btn-yellow:hover {
   color: var(--bs-warning);
+}
+
+.aba-agencies .optional_upgrades .benifit_ttl_mb .vr-title_mb {
+  color: rgba(7, 4, 43, 0.3);
+}
+
+.aba-agencies .optional_upgrades .benifit_ttl_mb.activate .vr-title_mb {
+  color: rgba(7, 4, 43, 1);
 }
 
 /* responsive */
@@ -8326,7 +8346,7 @@ a {
   }
 
   .aba-agency_inner .optional_upgrades .optionalImgOuter::before,
-  .aba-agency_inner .optional_upgrades::after {
+  .aba-agency_inner .optional_upgrades .seo_package::after {
     display: none;
   }
 
