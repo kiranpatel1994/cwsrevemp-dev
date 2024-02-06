@@ -123,7 +123,7 @@ export default function AbaAgencies() {
           trigger: ".gl_area",
           start: "-=600",
           endTrigger: "#end_anim",
-          end: "+=6000",
+          end: "+=6400",
           markers: false,
           scrub: -2,
           pinSpacing: false,
@@ -142,7 +142,7 @@ export default function AbaAgencies() {
           trigger: "#start_anim",
           start: "-=600",
           endTrigger: "#end_anim",
-          end: "+=6000",
+          end: "+=6400",
           markers: false,
           scrub: -2,
           pinSpacing: false,
@@ -150,7 +150,11 @@ export default function AbaAgencies() {
           once: true,
         });
 
-        const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
+        // const panels = gsap.utils.toArray(".gl_area .benifit_ttl");
+        const panels = gsap.utils.toArray([
+          ".gl_area .benifit_ttl",
+          ".gl_area .benifit_ttl_mb",
+        ]);
         panels.forEach((panel, i) => {
           ScrollTrigger.create({
             trigger: panel,
@@ -484,12 +488,12 @@ export default function AbaAgencies() {
                         <a href="#" className="btn btn-yellow rounded-pill px-5 d-inline-flex">Get my site started</a>
                       </div>
                     </div>
-                    <div class="col-lg-5 text-lg-end text-center groupImg ps-lg-0 ps-5">
-                      <img class="img-fluid" src={gettingStartImg.src} />
+                    <div className="col-lg-5 text-lg-end text-center groupImg ps-lg-0 ps-5">
+                      <img className="img-fluid" src={gettingStartImg.src} />
                     </div>
                   </div>
                   <div className="row g-0 align-items-center">
-                    <div class="col-lg-6 ps-5">
+                    <div className="col-lg-6 ps-5">
                       <img className="img-fluid" src={BusinessPickupImg.src} alt="" />
                     </div>
                     <div className="col-12 col-lg-6 ps-lg-3 ps-5 mt-lg-0 mt-4">
@@ -562,8 +566,8 @@ export default function AbaAgencies() {
                               />
                             </a>
                           </SwiperSlide>
-                          <div class="swiper-button-prev"></div>
-                          <div class="swiper-button-next"></div>
+                          <div className="swiper-button-prev"></div>
+                          <div className="swiper-button-next"></div>
                         </Swiper>
                       </div>
                     </div>
@@ -793,8 +797,8 @@ export default function AbaAgencies() {
                                   />
                                 </a>
                               </SwiperSlide>
-                              <div class="swiper-button-prev"></div>
-                              <div class="swiper-button-next"></div>
+                              <div className="swiper-button-prev"></div>
+                              <div className="swiper-button-next"></div>
                             </Swiper>
                           </div>
                         </div>
@@ -865,8 +869,8 @@ export default function AbaAgencies() {
                                   />
                                 </a>
                               </SwiperSlide>
-                              <div class="swiper-button-prev"></div>
-                              <div class="swiper-button-next"></div>
+                              <div className="swiper-button-prev"></div>
+                              <div className="swiper-button-next"></div>
                             </Swiper>
                           </div>
                         </div>

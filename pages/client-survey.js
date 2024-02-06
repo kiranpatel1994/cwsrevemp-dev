@@ -24,9 +24,9 @@ export default function ClientSurvey({ form }) {
           <div className="row">
             <div className="col-12 text-center mb-lg-5 pb-lg-5">
               <h1 className="mb-lg-5 pb-lg-5 mb-0">Client Survey</h1>
-              <div class="demo-container">
-                <div class="progress-bar">
-                  <div class="progress-bar-value"></div>
+              <div className="demo-container">
+                <div className="progress-bar">
+                  <div className="progress-bar-value"></div>
                 </div>
               </div>
             </div>

@@ -193,7 +193,7 @@ export default function CompanyDetails({
                   {themeData?.linkedinLink && (
                     <div className="d-block bt-linkedin">
                       <a
-                        class="btn btn-yellow d-table mx-auto"
+                        className="btn btn-yellow d-table mx-auto"
                         href={themeData.linkedinLink}
                         target="_blank"
                       >

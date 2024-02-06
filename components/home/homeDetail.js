@@ -589,7 +589,7 @@ export default function HomeDetails({
                             {item.map((element, elementIndex) => {
                               return (
                                 <SwiperSlide key={`eleI-${elementIndex}`}>
-                                  <div class="sub-child">
+                                  <div className="sub-child">
                                     <img
                                       src={element.businessImage.sourceUrl}
                                     />
@@ -657,7 +657,7 @@ export default function HomeDetails({
                         {item.map((element, elementIndex) => {
                           return (
                             <SwiperSlide key={`eleI-${elementIndex}`}>
-                              <div class="sub-child">
+                              <div className="sub-child">
                                 <img src={element.businessImage.sourceUrl} />
                               </div>
                             </SwiperSlide>
@@ -882,7 +882,7 @@ export default function HomeDetails({
                   </div>
                 </div>
                 <div className="process__action d-table">
-                  <Link class="btn btn-yellow" href="/contact">
+                  <Link className="btn btn-yellow" href="/contact">
                     <span>Let’s start your process today. </span>
                   </Link>
                 </div>

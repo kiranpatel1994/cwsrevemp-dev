@@ -8,8 +8,8 @@ import { useRouter } from "next/router";
 import Script from "next/script";
 import { useRef } from "react";
 export default function Header({ data, seo, thumbnail }) {
-  console.log(seo, "s");
-  console.log(thumbnail, "t");
+  // console.log(seo, "s");
+  // console.log(thumbnail, "t");
   const router = useRouter();
   const { asPath } = router;
   const canonicalUrl = `https://www.cwsio.com${asPath}`;
@@ -136,7 +136,7 @@ export default function Header({ data, seo, thumbnail }) {
                   <Link
                     className={
                       router.pathname == "/portfolio" ||
-                      router.pathname == "/portfolio/[slug]"
+                        router.pathname == "/portfolio/[slug]"
                         ? "nav-link active"
                         : "nav-link"
                     }
@@ -155,7 +155,7 @@ export default function Header({ data, seo, thumbnail }) {
                     data-target="/services"
                     className={
                       router.pathname == "/services" ||
-                      router.pathname == "/services/[slug]"
+                        router.pathname == "/services/[slug]"
                         ? "nav-link active dropdown-toggle"
                         : "nav-link dropdown-toggle"
                     }
@@ -168,12 +168,12 @@ export default function Header({ data, seo, thumbnail }) {
                       Services & Specialties
                     </span>
                   </Link>
-                  <ul class="dropdown-menu">
+                  <ul className="dropdown-menu">
                     <li>
                       <Link
                         className={
                           router.asPath ==
-                          "/services/ui-ux-design-web-applications-development"
+                            "/services/ui-ux-design-web-applications-development"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
@@ -191,7 +191,7 @@ export default function Header({ data, seo, thumbnail }) {
                       <Link
                         className={
                           router.asPath ==
-                          "/services/website-design-and-development"
+                            "/services/website-design-and-development"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
@@ -209,7 +209,7 @@ export default function Header({ data, seo, thumbnail }) {
                       <Link
                         className={
                           router.asPath ==
-                          "/services/logo-design-branding-agency"
+                            "/services/logo-design-branding-agency"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
@@ -244,7 +244,7 @@ export default function Header({ data, seo, thumbnail }) {
                       <Link
                         className={
                           router.asPath ==
-                          "/services/ecommerce-website-development"
+                            "/services/ecommerce-website-development"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
@@ -262,7 +262,7 @@ export default function Header({ data, seo, thumbnail }) {
                       <Link
                         className={
                           router.asPath ==
-                          "/services/white-label-development-services"
+                            "/services/white-label-development-services"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
@@ -333,7 +333,7 @@ export default function Header({ data, seo, thumbnail }) {
                   <Link
                     className={
                       router.pathname == "/blog" ||
-                      router.pathname == "/blog/[slug]"
+                        router.pathname == "/blog/[slug]"
                         ? "nav-link active"
                         : "nav-link"
                     }

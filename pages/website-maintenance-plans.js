@@ -8,9 +8,9 @@ const WebsiteMaintenance = () => {
             <div className="row">
               <div className="col-12 text-center mb-lg-5">
                 <h1 className="mb-3 text-center">Website Maintenance Plans</h1>
-                <div class="demo-container">
-                  <div class="progress-bar">
-                    <div class="progress-bar-value"></div>
+                <div className="demo-container">
+                  <div className="progress-bar">
+                    <div className="progress-bar-value"></div>
                   </div>
                 </div>
               </div>

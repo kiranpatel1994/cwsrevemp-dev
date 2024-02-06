@@ -78,7 +78,7 @@ export default function ServiceDetails({ cat, title }) {
                               <li>Copywriting </li>
                               <li>Design and development </li>
                             </ul>
-                            <div class="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
+                            <div className="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
                           </div>
                         </div>
                       </a>
@@ -96,7 +96,7 @@ export default function ServiceDetails({ cat, title }) {
                               <li>Copywriting </li>
                               <li>Design and development </li>
                             </ul>
-                            <div class="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
+                            <div className="fk-btn">Explore more<span><img src="/images/img-stars.png" /></span></div>
                           </div>
                         </div>
                       </a>
@@ -122,32 +122,32 @@ export default function ServiceDetails({ cat, title }) {
                             <div className="content-area ">
                               {element.node.portfolioCategoriesSettings
                                 .categoryIcon?.sourceUrl && (
-                                <img
-                                  className="cod_placeholder"
-                                  src={
-                                    element.node.portfolioCategoriesSettings
-                                      .categoryIcon.sourceUrl
-                                  }
-                                  alt="placeholder"
-                                />
-                              )}
+                                  <img
+                                    className="cod_placeholder"
+                                    src={
+                                      element.node.portfolioCategoriesSettings
+                                        .categoryIcon.sourceUrl
+                                    }
+                                    alt="placeholder"
+                                  />
+                                )}
                               <h5 className="text-white">
                                 {element.node.name}
                               </h5>
                               {element.node.portfolioCategoriesSettings
                                 .listDescription && (
-                                <ul className="list-unstyled">
-                                  {element.node.portfolioCategoriesSettings.listDescription.map(
-                                    (desc, k) => {
-                                      return (
-                                        <li key={`catdesc${k}`}>
-                                          <span>{desc.listPoint}</span>
-                                        </li>
-                                      );
-                                    }
-                                  )}
-                                </ul>
-                              )}
+                                  <ul className="list-unstyled">
+                                    {element.node.portfolioCategoriesSettings.listDescription.map(
+                                      (desc, k) => {
+                                        return (
+                                          <li key={`catdesc${k}`}>
+                                            <span>{desc.listPoint}</span>
+                                          </li>
+                                        );
+                                      }
+                                    )}
+                                  </ul>
+                                )}
                               <div className="fk-btn">
                                 Explore more
                                 <span>
