@@ -737,7 +737,7 @@ export default function AbaAgencies() {
                   </div>
 
                   <div className="row get_row g-0 branding_package">
-                    <div className="col-12 col-md-11 brandingPackageCol">
+                    <div className="col-12 brandingPackageCol">
                       <div className="row g-0 align-items-center justify-content-between">
                         <div className="col-12 col-lg-9 ps-5">
                           <div className="benifit_ttl_mb mb-stl mb-2">
@@ -807,7 +807,7 @@ export default function AbaAgencies() {
                   </div>
 
                   <div className="row get_row g-0 branding_package brochureFlyer">
-                    <div className="col-12 col-md-11 brandingPackageCol fingerTipCol">
+                    <div className="col-12 brandingPackageCol fingerTipCol">
                       <div className="row g-0 align-items-center justify-content-between">
                         <div className="col-12 col-lg-9 ps-5">
                           <div className="benifit_ttl_mb mb-stl mb-2">
