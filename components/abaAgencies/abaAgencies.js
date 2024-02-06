@@ -47,7 +47,7 @@ import StrategicCareersImg from "../../public/images/strategic-careers-page.svg"
 import BlogResourcesImg from "../../public/images/blog-and-resources.svg";
 import ChatBoxImg from "../../public/images/chat-box.svg";
 import OptionalUpgradeImg from "../../public/images/optional-upgrade-img.png";
-import AbaAgencyImg1 from "../../public/images/aba-website-5.png";
+import AbaAgencyImg1 from "../../public/images/aba-website-1.png";
 import AbaAgencyImg2 from "../../public/images/aba-website-2.png";
 import AbaAgencyImg3 from "../../public/images/aba-website-3.png";
 import AbaAgencyImg4 from "../../public/images/aba-website-4.png";
