@@ -7093,6 +7093,7 @@ a {
 
 .aba-agency_inner .optional_upgrades {
   position: relative;
+  z-index: 0;
 }
 
 .aba-agency_inner .optional_upgrades::before {
