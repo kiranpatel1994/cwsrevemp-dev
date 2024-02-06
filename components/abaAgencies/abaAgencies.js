@@ -18,18 +18,28 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json";
 import HandshakeImg from "../../public/images/human-hand.png";
-import TorusImg from "../../public/images/torus.png";
-import StarsImg from "../../public/images/3d-stars.png";
-import PuzzleImg from "../../public/images/3d​-puzzle.png";
 import gettingStartImg from "../../public/images/gettingStartImg.png";
-import WebDesignImg from "../../public/images/web-design.png";
 import GoogleRankImg from "../../public/images/google-white.svg";
 import DiamondImg from "../../public/images/diamond-white.svg";
 import TopTalentImg from "../../public/images/topTalent-white.svg";
 import AcquisitionImg from "../../public/images/acquisition-white.svg";
 import QualityImg from "../../public/images/quality-white.svg";
 import BusinessPickupImg from "../../public/images/business-pickup.png";
-import KidsNHeartImg from "../../public/images/Kids-N-Heart.jpg";
+import BeautifulWorkImg1 from "../../public/images/beautiful-work-1.png";
+import BeautifulWorkImg2 from "../../public/images/beautiful-work-2.png";
+import BeautifulWorkImg3 from "../../public/images/beautiful-work-3.png";
+import BeautifulWorkImg4 from "../../public/images/beautiful-work-4.png";
+import BeautifulWorkImg5 from "../../public/images/beautiful-work-5.png";
+import BeautifulWorkImg6 from "../../public/images/beautiful-work-6.png";
+import BeautifulWorkImg7 from "../../public/images/beautiful-work-7.png";
+import BeautifulWorkImg8 from "../../public/images/beautiful-work-8.png";
+import BeautifulWorkImg9 from "../../public/images/beautiful-work-9.png";
+import BeautifulWorkImg10 from "../../public/images/beautiful-work-10.png";
+import BeautifulWorkImg11 from "../../public/images/beautiful-work-11.png";
+import BeautifulWorkImg12 from "../../public/images/beautiful-work-12.png";
+import BeautifulWorkImg13 from "../../public/images/beautiful-work-13.png";
+import BeautifulWorkImg14 from "../../public/images/beautiful-work-14.png";
+import BeautifulWorkImg15 from "../../public/images/beautiful-work-15.png";
 import CompellingCopyImg from "../../public/images/compelling-copy.svg";
 import DistinctiveDesignImg from "../../public/images/distinctive-design.svg";
 import PopupEnrollmentFormImg from "../../public/images/popup-enrollment-form.svg";
@@ -37,7 +47,7 @@ import StrategicCareersImg from "../../public/images/strategic-careers-page.svg"
 import BlogResourcesImg from "../../public/images/blog-and-resources.svg";
 import ChatBoxImg from "../../public/images/chat-box.svg";
 import OptionalUpgradeImg from "../../public/images/optional-upgrade-img.png";
-import AbaAgencyImg1 from "../../public/images/aba-website-1.png";
+import AbaAgencyImg1 from "../../public/images/aba-website-5.png";
 import AbaAgencyImg2 from "../../public/images/aba-website-2.png";
 import AbaAgencyImg3 from "../../public/images/aba-website-3.png";
 import AbaAgencyImg4 from "../../public/images/aba-website-4.png";
@@ -266,9 +276,8 @@ export default function AbaAgencies() {
                 <span className="text-warning"> ABA operators like you.</span>
               </h4>
               <p className="fs-20 mb-4">
-                We’ve already teamed up with plenty of ABA operators like you.
-                Now it’s your turn for a great <br />
-                collab that will <span className="text-warning"> make your agency stand out from the others.</span>
+                Now it’s your turn for a great collab that will <br />
+                <span className="text-warning"> make your agency stand out from the others.</span>
               </p>
               <a
                 href="#"
@@ -516,8 +525,7 @@ export default function AbaAgencies() {
                           <SwiperSlide>
                             <a href="#">
                               <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
+                                src={BeautifulWorkImg1.src}
                                 alt=""
                               />
                             </a>
@@ -525,8 +533,7 @@ export default function AbaAgencies() {
                           <SwiperSlide>
                             <a href="#">
                               <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
+                                src={BeautifulWorkImg2.src}
                                 alt=""
                               />
                             </a>
@@ -534,8 +541,7 @@ export default function AbaAgencies() {
                           <SwiperSlide>
                             <a href="#">
                               <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
+                                src={BeautifulWorkImg3.src}
                                 alt=""
                               />
                             </a>
@@ -543,8 +549,7 @@ export default function AbaAgencies() {
                           <SwiperSlide>
                             <a href="#">
                               <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
+                                src={BeautifulWorkImg4.src}
                                 alt=""
                               />
                             </a>
@@ -552,8 +557,7 @@ export default function AbaAgencies() {
                           <SwiperSlide>
                             <a href="#">
                               <img
-                                className="rounded-4"
-                                src={KidsNHeartImg.src}
+                                src={BeautifulWorkImg5.src}
                                 alt=""
                               />
                             </a>
@@ -629,7 +633,7 @@ export default function AbaAgencies() {
                         </div>
                         <div className="card-body">
                           <h3 className="text-warning text-center fw-bold mb-3">
-                            Popup Enrollment Form
+                            Pop-up Enrollment Form
                           </h3>
                           <p className="card-content">
                             Make it easy for viewers to give you important
@@ -752,8 +756,7 @@ export default function AbaAgencies() {
                               <SwiperSlide>
                                 <a href="#">
                                   <img
-                                    className="rounded-4"
-                                    src={KidsNHeartImg.src}
+                                    src={BeautifulWorkImg6.src}
                                     alt=""
                                   />
                                 </a>
@@ -761,8 +764,7 @@ export default function AbaAgencies() {
                               <SwiperSlide>
                                 <a href="#">
                                   <img
-                                    className="rounded-4"
-                                    src={KidsNHeartImg.src}
+                                    src={BeautifulWorkImg7.src}
                                     alt=""
                                   />
                                 </a>
@@ -770,8 +772,7 @@ export default function AbaAgencies() {
                               <SwiperSlide>
                                 <a href="#">
                                   <img
-                                    className="rounded-4"
-                                    src={KidsNHeartImg.src}
+                                    src={BeautifulWorkImg8.src}
                                     alt=""
                                   />
                                 </a>
@@ -779,8 +780,7 @@ export default function AbaAgencies() {
                               <SwiperSlide>
                                 <a href="#">
                                   <img
-                                    className="rounded-4"
-                                    src={KidsNHeartImg.src}
+                                    src={BeautifulWorkImg9.src}
                                     alt=""
                                   />
                                 </a>
@@ -788,8 +788,7 @@ export default function AbaAgencies() {
                               <SwiperSlide>
                                 <a href="#">
                                   <img
-                                    className="rounded-4"
-                                    src={KidsNHeartImg.src}
+                                    src={BeautifulWorkImg10.src}
                                     alt=""
                                   />
                                 </a>
@@ -813,12 +812,7 @@ export default function AbaAgencies() {
                           <h5 className="mb-2">
                             Keep your business at everyone’s fingertips.
                           </h5>
-                          <p className="fs-20 mb-3 text-black">
-                            Whether you choose flyers, brochures, or letterheads,
-                            your design specialists here merge marketing strategy
-                            with eye-catching graphics to spread the word about your
-                            business and make the statement you want to make.
-                          </p>
+                          <p className="fs-20 mb-3 text-black">Whether you choose flyers, brochures, or letterheads, we'll help you make the statement you want to make. <strong>Your design specialists here merge marketing strategy with eye-catching graphics to spread the word about your business and impact your audience.</strong></p>
                           <a href="#" className="btn btn-blue rounded-pill text-white px-5">I need this</a>
                         </div>
                       </div>
@@ -834,8 +828,7 @@ export default function AbaAgencies() {
                               <SwiperSlide>
                                 <a href="#">
                                   <img
-                                    className="rounded-4"
-                                    src={KidsNHeartImg.src}
+                                    src={BeautifulWorkImg11.src}
                                     alt=""
                                   />
                                 </a>
@@ -843,8 +836,7 @@ export default function AbaAgencies() {
                               <SwiperSlide>
                                 <a href="#">
                                   <img
-                                    className="rounded-4"
-                                    src={KidsNHeartImg.src}
+                                    src={BeautifulWorkImg12.src}
                                     alt=""
                                   />
                                 </a>
@@ -852,8 +844,7 @@ export default function AbaAgencies() {
                               <SwiperSlide>
                                 <a href="#">
                                   <img
-                                    className="rounded-4"
-                                    src={KidsNHeartImg.src}
+                                    src={BeautifulWorkImg13.src}
                                     alt=""
                                   />
                                 </a>
@@ -861,8 +852,7 @@ export default function AbaAgencies() {
                               <SwiperSlide>
                                 <a href="#">
                                   <img
-                                    className="rounded-4"
-                                    src={KidsNHeartImg.src}
+                                    src={BeautifulWorkImg14.src}
                                     alt=""
                                   />
                                 </a>
@@ -870,8 +860,7 @@ export default function AbaAgencies() {
                               <SwiperSlide>
                                 <a href="#">
                                   <img
-                                    className="rounded-4"
-                                    src={KidsNHeartImg.src}
+                                    src={BeautifulWorkImg15.src}
                                     alt=""
                                   />
                                 </a>
@@ -897,7 +886,7 @@ export default function AbaAgencies() {
           <div className="row mb-5">
             <div className="col-lg-12">
               <h2 className="text-white text-center fw-bold">
-                Whether Wordpress, Webflow, Custom, or others, <br />
+                Whether Wordpress, Webflow, custom, or others, <br />
                 <span className="text-warning"> Your website is built by experts </span>
                 who know just what you’re looking for.
               </h2>
@@ -906,14 +895,8 @@ export default function AbaAgencies() {
           <div className="row justify-content-between">
             <div className="col-lg-4 mb-lg-0 mb-4">
               <div className="d-flex align-items-center">
-                <img
-                  className="me-2"
-                  src={MobileResponsivenessImg.src}
-                  alt=""
-                />
-                <h4 className="mb-0 text-white fw-bold">
-                  Mobile responsiveness
-                </h4>
+                <img className="me-2" src={MobileResponsivenessImg.src} alt="" />
+                <h4 className="mb-0 text-white fw-bold">Mobile responsiveness</h4>
               </div>
             </div>
             <div className="col-xl-3 col-lg-4 mb-lg-0 mb-4">
@@ -925,7 +908,7 @@ export default function AbaAgencies() {
             <div className="col-xl-3 col-lg-4 mb-lg-0 mb-4">
               <div className="d-flex align-items-center">
                 <img className="me-2" src={CustomerServiceImg.src} alt="" />
-                <h4 className="mb-0 text-white fw-bold">Customer service</h4>
+                <h4 className="mb-0 text-white fw-bold">Continuous support</h4>
               </div>
             </div>
           </div>
@@ -939,9 +922,7 @@ export default function AbaAgencies() {
             <div className="col-xl-3 col-lg-4 mb-lg-0 mb-4">
               <div className="d-flex align-items-center">
                 <img className="me-2" src={HostingOptionsImg.src} alt="" />
-                <h4 className="mb-0 text-white fw-bold">
-                  Hosting and maintenance plans
-                </h4>
+                <h4 className="mb-0 text-white fw-bold">Hosting and maintenance plans</h4>
               </div>
             </div>
             <div className="col-xl-3 col-lg-4 mb-lg-0 mb-4">
@@ -952,9 +933,7 @@ export default function AbaAgencies() {
             </div>
           </div>
           <div className="text-center mt-lg-5">
-            <a href="#" className="btn btn-yellow d-inline-flex">
-              Continuous support
-            </a>
+            <a href="#" className="btn btn-yellow d-inline-flex">Get my site started</a>
           </div>
         </div>
       </section>
