@@ -28,8 +28,12 @@ function ServiceDetail({
   socialMediaDetail,
   logoDesignandBrandingDetail,
   printedMarketingDetail,
+  abaDetail,
+  abaPortfolio,
+  abaLogoBrands,
   themeOptions,
 }) {
+  console.log(abaDetail, "abadetail");
   const router = useRouter();
   if (router.isFallback) {
     return <Loader />;
@@ -94,7 +98,13 @@ function ServiceDetail({
           form={form}
         />
       )}
-      {catDetail[0].node.id == "dGVybToxMzM=" && <AbaAgencies />}
+      {catDetail[0].node.id == "dGVybToxMzM=" && (
+        <AbaAgencies
+          data={abaDetail}
+          abaPortfolio={abaPortfolio}
+          logoBrands={abaLogoBrands}
+        />
+      )}
     </div>
   );
 }
@@ -119,6 +129,9 @@ export async function getStaticProps({ params }) {
   const propertyManagement = await GraphAPI.propertyManagementDetail();
   const logoDesignandBranding = await GraphAPI.logoDesignandBrandingDetail();
   const printedMarketing = await GraphAPI.printedMarketingDetail();
+  const abaDetail = await GraphAPI.abaSettings();
+  const abaPortfolio = await GraphAPI.abaPortfolio();
+  const abaLogoBrands = await GraphAPI.abaLogoBrand();
   const jsonDetail = await GraphAPI.portfolioCategoriesSettings(params);
   const form = await getGravityForm(1);
   const themeOptions = await GraphAPI.themeOptions();
@@ -143,6 +156,10 @@ export async function getStaticProps({ params }) {
         logoDesignandBranding.data.data.pageBy.logoDesignAndBrandingSettings,
       printedMarketingDetail:
         printedMarketing.data.data.pageBy.printedMarketingSettings,
+      abaDetail: abaDetail.data.data.pageBy.abaSettings,
+      abaPortfolio: abaPortfolio.data.data?.portfolioTags?.nodes || null,
+      abaLogoBrands:
+        abaLogoBrands.data.data?.portfolioCategories?.nodes || null,
       form: form,
       themeOptions: themeOptions.data.data,
     },

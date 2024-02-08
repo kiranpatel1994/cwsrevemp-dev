@@ -1520,7 +1520,6 @@ export default class GraphAPI {
     const regex = /\/blog\//;
     if (regex.test(uri)) {
       const updatedUri = uri.replace("/blog", "");
-      console.log("here blog", updatedUri);
       seoSettings = `
   query SeoSettings {
     postBy(uri: "${updatedUri}") {
@@ -1663,7 +1662,7 @@ export default class GraphAPI {
   static policySettings() {
     const policySettings = `
     query Policy {
-       pageBy(pageId: 3446) {
+       pageBy(pageId: ${process.env.NEXT_PUBLIC_POLICY}) {
     content
   }
     }
@@ -1671,6 +1670,144 @@ export default class GraphAPI {
     const graphqlQuery = {
       operationName: "Policy",
       query: policySettings,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
+
+  static abaSettings() {
+    const abaSettings = `
+    query ABAData {
+  pageBy(pageId: ${process.env.NEXT_PUBLIC_ABA_PAGE}) {
+    abaSettings {
+      abaTitle
+      abaDescription
+      aboutImages {
+        blockImage {
+          sourceUrl
+        }
+      }
+      aboutTitle
+      bannerSubdescription
+      bannerSubtitle
+      bannerVideo {
+        mediaItemUrl
+      }
+      benefitBlocks {
+        icon {
+          sourceUrl
+        }
+        title
+      }
+      benefitDescription
+      benefitsTitle
+      brandingDescription
+      brandingTitle
+      brochureTitle
+      businessDescription
+      businessTitle
+      featureBlocks {
+        featureBlockTitle
+        featureImage {
+          sourceUrl
+        }
+      }
+      featureTitle
+      listOfBrochures {
+        brochureImage {
+          sourceUrl
+        }
+      }
+      seoDescription
+      seoImage {
+        sourceUrl
+      }
+      seoTitle
+      serviceBlocks {
+        serviceBlockTitle
+        serviceBlockDescription
+        serviceIcon {
+          sourceUrl
+        }
+      }
+      serviceTitle
+      whyUsDescription
+      whyUsTitle
+    }
+  }
+}
+    `;
+    const graphqlQuery = {
+      operationName: "ABAData",
+      query: abaSettings,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
+
+  static abaPortfolio() {
+    const abaPortfolio = `
+    query ABAPortfolio {
+  portfolioTags(where: {slug: "${process.env.NEXT_PUBLIC_ABA_THERAPY}"}) {
+    nodes {
+      portfolios(first: ${process.env.NEXT_PUBLIC_TEAM_LIMIT}) {
+        nodes {
+          title
+          slug
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+    const graphqlQuery = {
+      operationName: "ABAPortfolio",
+      query: abaPortfolio,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
+
+  static abaLogoBrand() {
+    const abaLogoBrand = `
+    query abaLogoBrand {
+  portfolioCategories(where: {slug: "${process.env.NEXT_PUBLIC_ABA_LOGO_BRANDS}"}) {
+    nodes {
+      portfolios(first: ${process.env.NEXT_PUBLIC_TEAM_LIMIT}) {
+        nodes {
+          title
+          slug
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+    const graphqlQuery = {
+      operationName: "abaLogoBrand",
+      query: abaLogoBrand,
     };
     return axios({
       url: baseURL,
