@@ -408,7 +408,13 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                                   <div className="card-icon mb-3">
                                     <img src={item.icon.sourceUrl} alt="" />
                                   </div>
-                                  <p className="card-title">{item.title}</p>
+                                  {item?.title && (
+                                    <div
+                                      dangerouslySetInnerHTML={{
+                                        __html: item.title,
+                                      }}
+                                    ></div>
+                                  )}
                                 </div>
                               </div>
                             </div>
