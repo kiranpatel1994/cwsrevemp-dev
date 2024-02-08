@@ -406,7 +406,12 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                               <div className="card benefitCard">
                                 <div className="card-body">
                                   <div className="card-icon mb-3">
-                                    <Image src={item.icon.sourceUrl} alt="" />
+                                    <Image
+                                      src={item.icon.sourceUrl}
+                                      alt=""
+                                      width={30}
+                                      height={30}
+                                    />
                                   </div>
                                   {item?.title && (
                                     <div
@@ -520,6 +525,8 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                                       <Image
                                         src={item.featuredImage.node.sourceUrl}
                                         alt=""
+                                        width={400}
+                                        height={300}
                                       />
                                     </Link>
                                   )}
@@ -574,6 +581,8 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                                     <Image
                                       src={item.serviceIcon.sourceUrl}
                                       alt=""
+                                      width={50}
+                                      height={50}
                                     />
                                   </div>
                                 )}
@@ -714,6 +723,8 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                                                   .sourceUrl
                                               }
                                               alt=""
+                                              width={400}
+                                              height={300}
                                             />
                                           </Link>
                                         )}
@@ -776,6 +787,8 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                                           <Image
                                             src={item.brochureImage.sourceUrl}
                                             alt=""
+                                            width={400}
+                                            height={300}
                                           />
                                         </Link>
                                       )}
@@ -821,6 +834,8 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                           className="me-2"
                           src={item.featureImage.sourceUrl}
                           alt=""
+                          width={56}
+                          height={56}
                         />
                       )}
                       <h4 className="mb-0 text-white fw-bold">
@@ -862,6 +877,8 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                         className="img-fluid"
                         src={item.blockImage.sourceUrl}
                         alt=""
+                        width={336}
+                        height={259}
                       />
                     )}
                   </div>
