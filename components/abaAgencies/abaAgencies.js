@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
+import Image from "next/image";
 
 import SwiperCore, {
   Navigation,
@@ -60,7 +61,6 @@ import WebsiteSpeedImg from "../../public/images/website-speed.png";
 import CompetitiveRatesImg from "../../public/images/competitive-rates.png";
 
 export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
-  console.log(logoBrands);
   SwiperCore.use([
     Navigation,
     Pagination,
@@ -406,7 +406,7 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                               <div className="card benefitCard">
                                 <div className="card-body">
                                   <div className="card-icon mb-3">
-                                    <img src={item.icon.sourceUrl} alt="" />
+                                    <Image src={item.icon.sourceUrl} alt="" />
                                   </div>
                                   {item?.title && (
                                     <div
@@ -517,7 +517,7 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                                 <SwiperSlide key={`swipe-${i}`}>
                                   {item?.featuredImage?.node?.sourceUrl && (
                                     <Link href={`/portfolio/${item.slug}`}>
-                                      <img
+                                      <Image
                                         src={item.featuredImage.node.sourceUrl}
                                         alt=""
                                       />
@@ -571,7 +571,7 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                               <div className="card serviceDetailCard">
                                 {item?.serviceIcon?.sourceUrl && (
                                   <div className="card-icon">
-                                    <img
+                                    <Image
                                       src={item.serviceIcon.sourceUrl}
                                       alt=""
                                     />
@@ -708,7 +708,7 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                                           <Link
                                             href={`/portfolio/${item.slug}`}
                                           >
-                                            <img
+                                            <Image
                                               src={
                                                 item.featuredImage.node
                                                   .sourceUrl
@@ -773,7 +773,7 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                                     <SwiperSlide key={`brochure-${i}`}>
                                       {item?.brochureImage?.sourceUrl && (
                                         <Link href="javascript:void(0)">
-                                          <img
+                                          <Image
                                             src={item.brochureImage.sourceUrl}
                                             alt=""
                                           />
@@ -817,7 +817,7 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                   <div className="col-lg-4 mb-lg-0 mb-4" key={`feature-${i}`}>
                     <div className="d-flex align-items-center">
                       {item?.featureImage?.sourceUrl && (
-                        <img
+                        <Image
                           className="me-2"
                           src={item.featureImage.sourceUrl}
                           alt=""
@@ -858,7 +858,7 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                     key={`about-${i}`}
                   >
                     {item?.blockImage?.sourceUrl && (
-                      <img
+                      <Image
                         className="img-fluid"
                         src={item.blockImage.sourceUrl}
                         alt=""
