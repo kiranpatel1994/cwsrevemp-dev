@@ -278,10 +278,10 @@ export default class GraphAPI {
     });
   }
 
-  static allPortfolioTags() {
+  static allPortfolioTags(first) {
     const allPortfolioTagsQuery = `
     query allPortfolioTags {
-    portfolioTags {
+    portfolioTags(first: ${first}) {
       nodes {
         slug
         name

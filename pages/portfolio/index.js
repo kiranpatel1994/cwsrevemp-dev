@@ -29,7 +29,7 @@ export async function getStaticProps() {
   );
   const allPortfolioCat = await GraphAPI.allPortfolioCat(limit, null);
   const allPortfolio = await GraphAPI.allPortfolio();
-  const allPortfolioTags = await GraphAPI.allPortfolioTags();
+  const allPortfolioTags = await GraphAPI.allPortfolioTags(500);
   const tagsCount = allPortfolioTags.data.data?.portfolioTags?.nodes.filter(
     (val, index) => {
       return val.count > 0;
