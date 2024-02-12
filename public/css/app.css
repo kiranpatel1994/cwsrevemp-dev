@@ -6956,6 +6956,11 @@ a {
 
 .aba-agency_inner .beautifulWork .work-slider-area .swiper .swiper-slide img {
   max-width: 100%;
+  object-fit: cover;
+}
+
+.aba-agency_inner .brochureFlyer .beautifulWork .work-slider-area .swiper .swiper-slide img {
+  object-fit: contain;
 }
 
 .aba-agency_inner .beautifulWork .work-slider-area .swiper .swiper-button-prev,
@@ -8375,6 +8380,7 @@ a {
     left: inherit;
     height: auto;
     margin-top: 20px;
+    padding-bottom: 30px;
   }
 
   .abaAgencyVideoSec .abaAgencyVideo .abaAgencyVideoContent p br {
