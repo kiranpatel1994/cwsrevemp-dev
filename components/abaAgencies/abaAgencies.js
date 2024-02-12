@@ -525,8 +525,9 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                                       <Image
                                         src={item.featuredImage.node.sourceUrl}
                                         alt=""
-                                        width={400}
-                                        height={300}
+                                        className="rounded-4"
+                                        width={508}
+                                        height={344}
                                       />
                                     </Link>
                                   )}
@@ -714,20 +715,21 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                                       <SwiperSlide key={`logo-${i}`}>
                                         {item?.featuredImage?.node
                                           ?.sourceUrl && (
-                                          <Link
-                                            href={`/portfolio/${item.slug}`}
-                                          >
-                                            <Image
-                                              src={
-                                                item.featuredImage.node
-                                                  .sourceUrl
-                                              }
-                                              alt=""
-                                              width={400}
-                                              height={300}
-                                            />
-                                          </Link>
-                                        )}
+                                            <Link
+                                              href={`/portfolio/${item.slug}`}
+                                            >
+                                              <Image
+                                                src={
+                                                  item.featuredImage.node
+                                                    .sourceUrl
+                                                }
+                                                alt=""
+                                                className="rounded-4"
+                                                width={508}
+                                                height={344}
+                                              />
+                                            </Link>
+                                          )}
                                       </SwiperSlide>
                                     );
                                   }
@@ -787,8 +789,8 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                                           <Image
                                             src={item.brochureImage.sourceUrl}
                                             alt=""
-                                            width={400}
-                                            height={300}
+                                            width={508}
+                                            height={344}
                                           />
                                         </Link>
                                       )}
@@ -824,7 +826,7 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
             </div>
           </div>
           {data?.featureBlocks?.length && (
-            <div className="row justify-content-between">
+            <div className="row justify-content-between gy-4 gx-5">
               {data.featureBlocks.map((item, i) => {
                 return (
                   <div className="col-lg-4 mb-lg-0 mb-4" key={`feature-${i}`}>
@@ -877,8 +879,8 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                         className="img-fluid"
                         src={item.blockImage.sourceUrl}
                         alt=""
-                        width={336}
-                        height={259}
+                        width={420}
+                        height={324}
                       />
                     )}
                   </div>
