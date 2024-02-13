@@ -21,44 +21,7 @@ import lottie from "lottie-web";
 import torusLanding from "/public/lottie/3d-torus-loading.json";
 import HandshakeImg from "../../public/images/human-hand.png";
 import gettingStartImg from "../../public/images/gettingStartImg.png";
-import GoogleRankImg from "../../public/images/google-white.svg";
-import DiamondImg from "../../public/images/diamond-white.svg";
-import TopTalentImg from "../../public/images/topTalent-white.svg";
-import AcquisitionImg from "../../public/images/acquisition-white.svg";
-import QualityImg from "../../public/images/quality-white.svg";
 import BusinessPickupImg from "../../public/images/business-pickup.png";
-import BeautifulWorkImg1 from "../../public/images/beautiful-work-1.png";
-import BeautifulWorkImg2 from "../../public/images/beautiful-work-2.png";
-import BeautifulWorkImg3 from "../../public/images/beautiful-work-3.png";
-import BeautifulWorkImg4 from "../../public/images/beautiful-work-4.png";
-import BeautifulWorkImg5 from "../../public/images/beautiful-work-5.png";
-import BeautifulWorkImg6 from "../../public/images/beautiful-work-6.png";
-import BeautifulWorkImg7 from "../../public/images/beautiful-work-7.png";
-import BeautifulWorkImg8 from "../../public/images/beautiful-work-8.png";
-import BeautifulWorkImg9 from "../../public/images/beautiful-work-9.png";
-import BeautifulWorkImg10 from "../../public/images/beautiful-work-10.png";
-import BeautifulWorkImg11 from "../../public/images/beautiful-work-11.png";
-import BeautifulWorkImg12 from "../../public/images/beautiful-work-12.png";
-import BeautifulWorkImg13 from "../../public/images/beautiful-work-13.png";
-import BeautifulWorkImg14 from "../../public/images/beautiful-work-14.png";
-import BeautifulWorkImg15 from "../../public/images/beautiful-work-15.png";
-import CompellingCopyImg from "../../public/images/compelling-copy.svg";
-import DistinctiveDesignImg from "../../public/images/distinctive-design.svg";
-import PopupEnrollmentFormImg from "../../public/images/popup-enrollment-form.svg";
-import StrategicCareersImg from "../../public/images/strategic-careers-page.svg";
-import BlogResourcesImg from "../../public/images/blog-and-resources.svg";
-import ChatBoxImg from "../../public/images/chat-box.svg";
-import OptionalUpgradeImg from "../../public/images/optional-upgrade-img.png";
-import AbaAgencyImg1 from "../../public/images/aba-website-1.png";
-import AbaAgencyImg2 from "../../public/images/aba-website-2.png";
-import AbaAgencyImg3 from "../../public/images/aba-website-3.png";
-import AbaAgencyImg4 from "../../public/images/aba-website-4.png";
-import MobileResponsivenessImg from "../../public/images/mobile-responsiveness.png";
-import CustomerServiceImg from "../../public/images/customer-service.png";
-import QuickTurnaroundTimeImg from "../../public/images/quick-turnaround-time.png";
-import HostingOptionsImg from "../../public/images/hosting-options.png";
-import WebsiteSpeedImg from "../../public/images/website-speed.png";
-import CompetitiveRatesImg from "../../public/images/competitive-rates.png";
 
 export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
   SwiperCore.use([
@@ -456,7 +419,7 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                           ></div>
                         )}
                         {data?.whyUsDescription && (
-                          <div
+                          <div className="mb-3"
                             dangerouslySetInnerHTML={{
                               __html: data.whyUsDescription,
                             }}
@@ -500,7 +463,7 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                         )}
                         <Link
                           href="/contact"
-                          className="btn btn-yellow rounded-pill px-5 d-inline-flex"
+                          className="btn btn-yellow rounded-pill px-5 d-inline-flex mt-3"
                         >
                           Get my site started
                         </Link>
