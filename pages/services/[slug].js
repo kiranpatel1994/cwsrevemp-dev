@@ -33,7 +33,6 @@ function ServiceDetail({
   abaLogoBrands,
   themeOptions,
 }) {
-  console.log(abaDetail, "abadetail");
   const router = useRouter();
   if (router.isFallback) {
     return <Loader />;
