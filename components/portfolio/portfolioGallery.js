@@ -87,13 +87,11 @@ function PortfolioGallery({
         500,
         null
       );
-
       const filteredAllPortfolio =
         allPortfolioForTag.data.data?.portfolios.edges.filter((portfolio) => {
           const tags = portfolio.node.portfolioTags.nodes;
           return tags.some((tag) => tag.slug === selectedTag);
         });
-      console.log(filteredAllPortfolio);
       setPortfolio({ ...portfolio, edges: filteredAllPortfolio });
     }
     document.querySelector(".tab-loader")?.classList.add("d-none");

@@ -23,7 +23,22 @@ import HandshakeImg from "../../public/images/human-hand.png";
 import gettingStartImg from "../../public/images/gettingStartImg.png";
 import BusinessPickupImg from "../../public/images/business-pickup.png";
 
-export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
+export default function AbaAgencies({
+  data,
+  abaPortfolio,
+  logoBrands,
+  homeSettings,
+  testimonialSettings,
+}) {
+  const parts = 3;
+  const chunkSize = Math.ceil(homeSettings?.businessImageSlider.length / parts);
+
+  const businessImageArray = Array.from({ length: parts }, (_, index) =>
+    homeSettings?.businessImageSlider.slice(
+      index * chunkSize,
+      (index + 1) * chunkSize
+    )
+  );
   SwiperCore.use([
     Navigation,
     Pagination,
@@ -419,7 +434,8 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                           ></div>
                         )}
                         {data?.whyUsDescription && (
-                          <div className="mb-3"
+                          <div
+                            className="mb-3"
                             dangerouslySetInnerHTML={{
                               __html: data.whyUsDescription,
                             }}
@@ -678,21 +694,21 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
                                       <SwiperSlide key={`logo-${i}`}>
                                         {item?.featuredImage?.node
                                           ?.sourceUrl && (
-                                            <Link
-                                              href={`/portfolio/${item.slug}`}
-                                            >
-                                              <Image
-                                                src={
-                                                  item.featuredImage.node
-                                                    .sourceUrl
-                                                }
-                                                alt=""
-                                                className="rounded-4"
-                                                width={508}
-                                                height={344}
-                                              />
-                                            </Link>
-                                          )}
+                                          <Link
+                                            href={`/portfolio/${item.slug}`}
+                                          >
+                                            <Image
+                                              src={
+                                                item.featuredImage.node
+                                                  .sourceUrl
+                                              }
+                                              alt=""
+                                              className="rounded-4"
+                                              width={508}
+                                              height={344}
+                                            />
+                                          </Link>
+                                        )}
                                       </SwiperSlide>
                                     );
                                   }
@@ -858,6 +874,203 @@ export default function AbaAgencies({ data, abaPortfolio, logoBrands }) {
           </div>
         </div>
       </section>
+      <section className="all-business bg-white">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-12 col-xl-6">
+              <div className="update-pseudo">
+                <div className="" data-aos="fade-up" data-aos-duration="1000">
+                  <img
+                    className="flyingImg mb-2"
+                    src="images/rectangle3434.png"
+                  />
+                  <h2
+                    dangerouslySetInnerHTML={{
+                      __html: homeSettings.businessTitle,
+                    }}
+                  ></h2>
+                  <em className="yello-title-em">
+                    {homeSettings.businessSubtitle}
+                  </em>
+                </div>
+              </div>
+            </div>
+            {businessImageArray && (
+              <div className="col-12 col-xl-6 mt-xl-0 mt-4 pt-xl-0 pt-3">
+                <div className="d-none d-xl-block">
+                  <div className="vr-row-parent">
+                    {businessImageArray.map((item, index) => {
+                      const directionV = index === 1 ? true : false;
+                      return (
+                        <div className="child-row" key={`ibi-${index}`}>
+                          <Swiper
+                            direction={"vertical"}
+                            slidesPerView={4.2}
+                            spaceBetween={50}
+                            autoplay={{
+                              delay: 1500,
+                              disableOnInteraction: false,
+                              reverseDirection: directionV,
+                            }}
+                            loop={true}
+                            breakpoints={{
+                              1200: {
+                                slidesPerView: 5.5,
+                                spaceBetween: 20,
+                              },
+                              1400: {
+                                slidesPerView: 4.5,
+                                spaceBetween: 30,
+                              },
+                            }}
+                            modules={[Autoplay]}
+                            className="mySwiper"
+                          >
+                            {item.map((element, elementIndex) => {
+                              return (
+                                <SwiperSlide key={`eleI-${elementIndex}`}>
+                                  <div className="sub-child">
+                                    <img
+                                      src={element.businessImage.sourceUrl}
+                                    />
+                                  </div>
+                                </SwiperSlide>
+                              );
+                            })}
+                          </Swiper>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+        <div className="container-fluid p-0 d-xl-none">
+          <div className="row g-0">
+            <div className="col-12">
+              <div className="vr-row-parent">
+                {businessImageArray.map((item, index) => {
+                  const directionV = index === 1 ? true : false;
+                  return (
+                    <div className="child-row" key={`ibi-${index}`}>
+                      <Swiper
+                        //direction={"vertical"}
+                        slidesPerView={4.2}
+                        spaceBetween={50}
+                        autoplay={{
+                          delay: 1500,
+                          disableOnInteraction: false,
+                          reverseDirection: directionV,
+                        }}
+                        loop={true}
+                        breakpoints={{
+                          319: {
+                            slidesPerView: 2,
+                            spaceBetween: 14,
+                          },
+                          360: {
+                            slidesPerView: 2.5,
+                            spaceBetween: 14,
+                          },
+                          425: {
+                            slidesPerView: 3,
+                            spaceBetween: 14,
+                          },
+                          568: {
+                            slidesPerView: 4,
+                            spaceBetween: 14,
+                          },
+                          768: {
+                            slidesPerView: 4,
+                            spaceBetween: 20,
+                          },
+                          1024: {
+                            slidesPerView: 5,
+                            spaceBetween: 30,
+                          },
+                        }}
+                        modules={[Autoplay]}
+                        className="mySwiper"
+                      >
+                        {item.map((element, elementIndex) => {
+                          return (
+                            <SwiperSlide key={`eleI-${elementIndex}`}>
+                              <div className="sub-child">
+                                <img src={element.businessImage.sourceUrl} />
+                              </div>
+                            </SwiperSlide>
+                          );
+                        })}
+                      </Swiper>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {testimonialSettings.clientTestimonials.length > 0 && (
+        <section className="about-us">
+          {/* <div className="floating-object"></div> */}
+          <div className="aboutUs-title position-relative zindex-2">
+            <div className="row">
+              <div className="col-12 about-info overflow-hidden">
+                <h2 data-aos="fade-up" data-aos-duration="1000">
+                  {testimonialSettings.testimonialsThemeTitle}
+                </h2>
+                <p
+                  data-aos="fade-up"
+                  data-aos-duration="1000"
+                  data-aos-delay="300"
+                >
+                  {testimonialSettings.testimonialsThemeSubtitle}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="slider-area">
+            <Swiper className="slider-scroller" {...settingsB}>
+              {testimonialSettings.clientTestimonials.map((item, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <div className="raw-card">
+                      <div className="mb-4">
+                        {item.authorDescription && (
+                          <div
+                            className="para-side-detail"
+                            dangerouslySetInnerHTML={{
+                              __html: item.authorDescription,
+                            }}
+                          />
+                        )}
+                      </div>
+                      <div className="other-detail d-flex align-items-center">
+                        {item.authorImage && (
+                          <div className="sm-user-bild">
+                            <div className="circle_area">
+                              <img src={item.authorImage.sourceUrl} alt="" />
+                            </div>
+                          </div>
+                        )}
+                        <h5>
+                          {item.authorName}
+                          <span>{item.authorDesignation}</span>
+                        </h5>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
+
+              <div className="swiper-pagination"></div>
+            </Swiper>
+          </div>
+        </section>
+      )}
     </main>
   );
 }

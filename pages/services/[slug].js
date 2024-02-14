@@ -17,6 +17,8 @@ import Loader from "../../components/header/Loader";
 import AbaAgencies from "../../components/abaAgencies/abaAgencies";
 
 function ServiceDetail({
+  homeSettings,
+  testimonialSettings,
   catDetail,
   webResDetail,
   webApplication,
@@ -102,6 +104,8 @@ function ServiceDetail({
           data={abaDetail}
           abaPortfolio={abaPortfolio}
           logoBrands={abaLogoBrands}
+          homeSettings={homeSettings}
+          testimonialSettings={testimonialSettings}
         />
       )}
     </div>
@@ -134,6 +138,8 @@ export async function getStaticProps({ params }) {
   const jsonDetail = await GraphAPI.portfolioCategoriesSettings(params);
   const form = await getGravityForm(1);
   const themeOptions = await GraphAPI.themeOptions();
+  const homeJson = await GraphAPI.homeSettings();
+  const testimonial = await GraphAPI.clientTestimonialSettings();
   if (jsonDetail.data.data.portfolioCategories.edges.length == 0) {
     return {
       notFound: true,
@@ -141,6 +147,9 @@ export async function getStaticProps({ params }) {
   }
   return {
     props: {
+      homeSettings: homeJson.data.data.pageBy.homeSettings,
+      testimonialSettings:
+        testimonial.data?.data?.acfOptionsThemeOptions.themeSettings,
       catDetail: jsonDetail.data.data.portfolioCategories.edges,
       webResDetail: webRes.data.data.pageBy.websiteDesignAndDevelopment,
       webApplication:
