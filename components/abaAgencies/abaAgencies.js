@@ -75,11 +75,11 @@ export default function AbaAgencies({
         spaceBetween: 20,
       },
       1200: {
-        slidesPerView: 2,
+        slidesPerView: 2.3,
         spaceBetween: 20,
       },
       1400: {
-        slidesPerView: 2.2,
+        slidesPerView: 2.8,
         spaceBetween: 20,
       },
     },
@@ -694,21 +694,21 @@ export default function AbaAgencies({
                                       <SwiperSlide key={`logo-${i}`}>
                                         {item?.featuredImage?.node
                                           ?.sourceUrl && (
-                                          <Link
-                                            href={`/portfolio/${item.slug}`}
-                                          >
-                                            <Image
-                                              src={
-                                                item.featuredImage.node
-                                                  .sourceUrl
-                                              }
-                                              alt=""
-                                              className="rounded-4"
-                                              width={508}
-                                              height={344}
-                                            />
-                                          </Link>
-                                        )}
+                                            <Link
+                                              href={`/portfolio/${item.slug}`}
+                                            >
+                                              <Image
+                                                src={
+                                                  item.featuredImage.node
+                                                    .sourceUrl
+                                                }
+                                                alt=""
+                                                className="rounded-4"
+                                                width={508}
+                                                height={344}
+                                              />
+                                            </Link>
+                                          )}
                                       </SwiperSlide>
                                     );
                                   }
