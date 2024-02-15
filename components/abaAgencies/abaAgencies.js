@@ -694,21 +694,21 @@ export default function AbaAgencies({
                                       <SwiperSlide key={`logo-${i}`}>
                                         {item?.featuredImage?.node
                                           ?.sourceUrl && (
-                                          <Link
-                                            href={`/portfolio/${item.slug}`}
-                                          >
-                                            <Image
-                                              src={
-                                                item.featuredImage.node
-                                                  .sourceUrl
-                                              }
-                                              alt=""
-                                              className="rounded-4"
-                                              width={508}
-                                              height={344}
-                                            />
-                                          </Link>
-                                        )}
+                                            <Link
+                                              href={`/portfolio/${item.slug}`}
+                                            >
+                                              <Image
+                                                src={
+                                                  item.featuredImage.node
+                                                    .sourceUrl
+                                                }
+                                                alt=""
+                                                className="rounded-4"
+                                                width={508}
+                                                height={344}
+                                              />
+                                            </Link>
+                                          )}
                                       </SwiperSlide>
                                     );
                                   }
@@ -805,7 +805,7 @@ export default function AbaAgencies({
             </div>
           </div>
           {data?.featureBlocks?.length && (
-            <div className="row justify-content-between gy-4 gx-5">
+            <div className="row justify-content-between gy-4 gx-md-5">
               {data.featureBlocks.map((item, i) => {
                 return (
                   <div className="col-lg-4 mb-lg-0 mb-4" key={`feature-${i}`}>
