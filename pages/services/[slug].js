@@ -12,7 +12,7 @@ import LogoBranding from "../../components/logoBranding/logoBranding";
 import PrintedMarketing from "../../components/printedMarketing/printedMarketing";
 import PropertyManagement from "../../components/propertyManagement/propertyManagement";
 import getGravityForm from "../../utilities/gravity-forms";
-import GraphAPI from "../../services/graphQL";
+import GraphAPI, { replaceImgUrls } from "../../services/graphQL";
 import Loader from "../../components/header/Loader";
 import AbaAgencies from "../../components/abaAgencies/abaAgencies";
 
@@ -43,69 +43,69 @@ function ServiceDetail({
     <div>
       {catDetail[0].node.id == "dGVybToz" && (
         <WebsiteDesignDev
-          data={webResDetail}
+          data={replaceImgUrls(webResDetail)}
           themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
           form={form}
         />
       )}
       {catDetail[0].node.id == "dGVybTo1" && (
         <WebApp
-          data={webApplication}
+          data={replaceImgUrls(webApplication)}
           themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
           form={form}
         />
       )}
       {catDetail[0].node.id == "dGVybTo2NQ==" && (
         <Hosting
-          data={hostingDetail}
+          data={replaceImgUrls(hostingDetail)}
           themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
           form={form}
         />
       )}
       {catDetail[0].node.id == "dGVybTo2" && (
         <Ecommerce
-          data={ecomDetail}
+          data={replaceImgUrls(ecomDetail)}
           themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
         />
       )}
       {catDetail[0].node.id == "dGVybTo0" && (
         <SocialMediaManagement
-          data={socialMediaDetail}
+          data={replaceImgUrls(socialMediaDetail)}
           themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
           form={form}
         />
       )}
       {catDetail[0].node.id == "dGVybTo2Ng==" && (
         <WhiteLabel
-          data={whiteLabelDetail.pageBy.whitelabelSettings}
+          data={replaceImgUrls(whiteLabelDetail.pageBy.whitelabelSettings)}
           themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
           form={form}
         />
       )}
       {catDetail[0].node.id == "dGVybTo2OA==" && (
         <LogoBranding
-          data={logoDesignandBrandingDetail}
+          data={replaceImgUrls(logoDesignandBrandingDetail)}
           themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
           form={form}
         />
       )}
       {catDetail[0].node.id == "dGVybTo2OQ==" && (
-        <PrintedMarketing data={printedMarketingDetail} />
+        <PrintedMarketing data={replaceImgUrls(printedMarketingDetail)} />
       )}
       {catDetail[0].node.id == "dGVybTo2Nw==" && (
         <PropertyManagement
-          data={propertyManagementDetail}
+          data={replaceImgUrls(propertyManagementDetail)}
           themeOptions={themeOptions.acfOptionsThemeOptions.themeSettings}
           form={form}
         />
       )}
       {catDetail[0].node.id == "dGVybToxMzM=" && (
         <AbaAgencies
-          data={abaDetail}
-          abaPortfolio={abaPortfolio}
-          logoBrands={abaLogoBrands}
-          homeSettings={homeSettings}
-          testimonialSettings={testimonialSettings}
+          data={replaceImgUrls(abaDetail)}
+          abaPortfolio={replaceImgUrls(abaPortfolio)}
+          logoBrands={replaceImgUrls(abaLogoBrands)}
+          homeSettings={replaceImgUrls(homeSettings)}
+          testimonialSettings={replaceImgUrls(testimonialSettings)}
         />
       )}
     </div>

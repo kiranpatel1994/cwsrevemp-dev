@@ -3,7 +3,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import ServiceDetails from "../../components/serviceDetails/ServiceDetails";
 import { useEffect } from "react";
-import GraphAPI from "../../services/graphQL";
+import GraphAPI, { replaceImgUrls } from "../../services/graphQL";
 function Services({ portfolioCategories, serviceBanner }) {
   useEffect(() => {
     document.body.classList.add("services");
@@ -11,7 +11,12 @@ function Services({ portfolioCategories, serviceBanner }) {
       document.body.classList.remove("services");
     };
   }, []);
-  return <ServiceDetails cat={portfolioCategories} title={serviceBanner} />;
+  return (
+    <ServiceDetails
+      cat={replaceImgUrls(portfolioCategories)}
+      title={serviceBanner}
+    />
+  );
 }
 
 export default Services;

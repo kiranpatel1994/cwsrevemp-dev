@@ -12,7 +12,7 @@ import LogoBranding from "../../components/logoBranding/logoBranding";
 import PrintedMarketing from "../../components/printedMarketing/printedMarketing";
 import PropertyManagement from "../../components/propertyManagement/propertyManagement";
 import BlogDetail from "../../components/blogDetail/blogDetail";
-import GraphAPI from "../../services/graphQL";
+import GraphAPI, { replaceImgUrls } from "../../services/graphQL";
 import Custom404 from "../../components/404/404";
 import Loader from "../../components/header/Loader";
 import { useEffect } from "react";
@@ -29,7 +29,10 @@ function BlogDetails({ blogDetail, relativePostDetail }) {
     return <Loader />;
   }
   return (
-    <BlogDetail blogDetail={blogDetail} relativeDetail={relativePostDetail} />
+    <BlogDetail
+      blogDetail={replaceImgUrls(blogDetail)}
+      relativeDetail={replaceImgUrls(relativePostDetail)}
+    />
   );
 }
 

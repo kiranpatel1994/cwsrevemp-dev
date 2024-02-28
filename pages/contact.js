@@ -1,7 +1,7 @@
 import getGravityForm from "../utilities/gravity-forms";
 import { useEffect } from "react";
 import ContactDetail from "../components/contactDetail/contactDetail";
-import GraphAPI from "../services/graphQL";
+import GraphAPI, { replaceImgUrls } from "../services/graphQL";
 
 export default function Contact({ form, themeDetail }) {
   const { title, description } = form;
@@ -12,7 +12,7 @@ export default function Contact({ form, themeDetail }) {
     };
   }, []);
 
-  return <ContactDetail data={themeDetail} form={form} />;
+  return <ContactDetail data={replaceImgUrls(themeDetail)} form={form} />;
 }
 
 export async function getStaticProps() {

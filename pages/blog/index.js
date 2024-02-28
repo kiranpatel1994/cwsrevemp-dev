@@ -3,7 +3,7 @@ import Header from "../../components/header/Header";
 import Footer from "../../components/footer/Footer";
 import BlogContent from "../../components/blogContent/blogContent";
 import { useEffect } from "react";
-import GraphAPI from "../../services/graphQL";
+import GraphAPI, { replaceImgUrls } from "../../services/graphQL";
 function Blog({ blogPagination, blogListingDetail }) {
   useEffect(() => {
     document.body.classList.add("blog");
@@ -13,7 +13,10 @@ function Blog({ blogPagination, blogListingDetail }) {
   }, []);
   return (
     <div>
-      <BlogContent blogData={blogPagination} blogDetail={blogListingDetail} />
+      <BlogContent
+        blogData={replaceImgUrls(blogPagination)}
+        blogDetail={replaceImgUrls(blogListingDetail)}
+      />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import PortfolioDetailContent from "../../components/portfolio/portfolioDetail";
-import GraphAPI from "../../services/graphQL";
+import GraphAPI, { replaceImgUrls } from "../../services/graphQL";
 import Loader from "../../components/header/Loader";
 
 function PortfolioDetail({ portfolioDetail, relativePortfolioDetail }) {
@@ -10,8 +10,8 @@ function PortfolioDetail({ portfolioDetail, relativePortfolioDetail }) {
   }
   return (
     <PortfolioDetailContent
-      data={portfolioDetail}
-      relativeData={relativePortfolioDetail}
+      data={replaceImgUrls(portfolioDetail)}
+      relativeData={replaceImgUrls(relativePortfolioDetail)}
     />
   );
 }

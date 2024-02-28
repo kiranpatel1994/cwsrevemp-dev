@@ -1032,7 +1032,7 @@ export default class GraphAPI {
       nodes {
         name
         slug
-        portfolios(first: 500) {
+        portfolios(first: 200) {
           pageInfo {
             hasNextPage
             endCursor
@@ -1072,6 +1072,53 @@ export default class GraphAPI {
     const graphqlQuery = {
       operationName: "allPortfolio",
       query: allPortfolioQuery,
+    };
+    return axios({
+      url: baseURL,
+      method: "post",
+      headers: headers,
+      data: graphqlQuery,
+    });
+  }
+
+  static justPortfolios() {
+    const justPortfolios = `
+    query justPortfolios {
+      portfolios(first: 200) {
+        edges {
+          cursor
+          node {
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+            title
+            slug
+            portfolioSettings {
+              portfolioUrl
+            }
+            portfolioCategories {
+              nodes {
+                name
+                slug
+              }
+            }
+            portfolioTags {
+              nodes {
+                slug
+                name
+                count
+              }
+            }
+          }
+        }
+      }
+    }
+  `;
+    const graphqlQuery = {
+      operationName: "justPortfolios",
+      query: justPortfolios,
     };
     return axios({
       url: baseURL,
@@ -1816,4 +1863,27 @@ export default class GraphAPI {
       data: graphqlQuery,
     });
   }
+}
+
+export function replaceImgUrls(obj) {
+  if (typeof obj === "object") {
+    for (const key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        if (
+          (key === "sourceUrl" || key === "bannerVideoUrl") &&
+          typeof obj[key] === "string"
+        ) {
+          obj[key] = obj[key].replace(
+            "https://cms.cwsio.com",
+            process.env.NEXT_PUBLIC_CDN_LINK
+          );
+        } else {
+          replaceImgUrls(obj[key]);
+        }
+      }
+    }
+  } else if (Array.isArray(obj)) {
+    obj.forEach((item) => replaceImgUrls(item));
+  }
+  return obj;
 }

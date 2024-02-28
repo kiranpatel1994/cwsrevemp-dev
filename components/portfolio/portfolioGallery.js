@@ -13,9 +13,12 @@ function PortfolioGallery({
   portfolios,
   tags,
   allPortfolio,
+  justPortfolios,
   themeOptions,
 }) {
+  // console.log(justPortfolios);
   const router = useRouter();
+  tags.sort((a, b) => a.name.localeCompare(b.name));
   const [tag, setTag] = useState(tags);
   const [portfolio, setPortfolio] = useState(null);
   const [portfolioCat, setPortfolioCat] = useState(null);
@@ -33,6 +36,7 @@ function PortfolioGallery({
       siblingElement.classList.remove("active");
     });
     setSelectedTag(null);
+    tags.sort((a, b) => a.name.localeCompare(b.name));
     setTag(tags);
     setPortfolio({ ...portfolios });
   };
@@ -69,29 +73,33 @@ function PortfolioGallery({
 
   const updateSelectedTag = async (selectedTag, selectedCat) => {
     if (selectedCat) {
-      const portfolioCatFilterPagination =
-        await GraphAPI.allPortfolioCatPagination(500, null, selectedCat);
-      const filteredCatPortfolio =
-        portfolioCatFilterPagination.data.data.portfolioCategories?.nodes[0].portfolios.edges.filter(
-          (portfolio) => {
-            const tags = portfolio.node.portfolioTags.nodes;
-            return tags.some((tag) => tag.slug === selectedTag);
-          }
+      // const portfolioCatFilterPagination =
+      //   await GraphAPI.allPortfolioCatPagination(500, null, selectedCat);
+      const filteredCatPortfolio = justPortfolios?.filter((portfolio) => {
+        const portfolioTags = portfolio.node.portfolioTags.nodes;
+        const portfolioCat = portfolio.node.portfolioCategories.nodes;
+
+        const tagMatch = portfolioTags.some((tag) => tag.slug === selectedTag);
+        const catNodeMatch = portfolioCat.some(
+          (catNode) => catNode.slug === selectedCat
         );
+
+        const result = tagMatch && catNodeMatch;
+        return result;
+      });
       setActiveTabPortfolio({
         ...activeTabPortfolio,
         edges: filteredCatPortfolio,
       });
     } else {
-      const allPortfolioForTag = await GraphAPI.allportfolioPagination(
-        500,
-        null
-      );
-      const filteredAllPortfolio =
-        allPortfolioForTag.data.data?.portfolios.edges.filter((portfolio) => {
-          const tags = portfolio.node.portfolioTags.nodes;
-          return tags.some((tag) => tag.slug === selectedTag);
-        });
+      // const allPortfolioForTag = await GraphAPI.allportfolioPagination(
+      //   500,
+      //   null
+      // );
+      const filteredAllPortfolio = justPortfolios?.filter((portfolio) => {
+        const tags = portfolio.node.portfolioTags.nodes;
+        return tags.some((tag) => tag.slug === selectedTag);
+      });
       setPortfolio({ ...portfolio, edges: filteredAllPortfolio });
     }
     document.querySelector(".tab-loader")?.classList.add("d-none");
@@ -135,6 +143,7 @@ function PortfolioGallery({
         slug: tag.slug,
       };
     });
+    uniquePortfolioTags.sort((a, b) => a.name.localeCompare(b.name));
     setTag(uniquePortfolioTags);
     setActiveTabPortfolio(selectedCategoryPortfolios[0].portfolios);
   };
@@ -145,6 +154,13 @@ function PortfolioGallery({
         c,
         selectedCat
       );
+
+      const filteredCatPortfolio = justPortfolios?.filter((portfolio) => {
+        const cat = portfolio.node.portfolioCategories.nodes;
+        return cat.some((cat) => cat.slug === selectedTag);
+      });
+
+      console.log(filteredCatPortfolio, "here");
 
       const updatedEdges = [
         ...activeTabPortfolio.edges,
@@ -245,7 +261,10 @@ function PortfolioGallery({
                 </li>
               )}
               {data.map((item, index) => {
-                if (item?.portfolios?.edges?.length) {
+                if (
+                  item?.portfolios?.edges?.length &&
+                  item.slug !== "aba-agencies"
+                ) {
                   return (
                     <li
                       key={`nav-tabs-${index}`}

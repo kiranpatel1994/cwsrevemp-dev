@@ -3,7 +3,7 @@ import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import SolutionDetails from "../components/solutionDetails/SolutionDetails";
 import { useEffect } from "react";
-import GraphAPI from "../services/graphQL";
+import GraphAPI, { replaceImgUrls } from "../services/graphQL";
 
 function Solutions({ solutionDetails, tagSettings }) {
   useEffect(() => {
@@ -12,7 +12,12 @@ function Solutions({ solutionDetails, tagSettings }) {
       document.body.classList.remove("solutions");
     };
   }, []);
-  return <SolutionDetails detail={solutionDetails} tags={tagSettings} />;
+  return (
+    <SolutionDetails
+      detail={replaceImgUrls(solutionDetails)}
+      tags={tagSettings}
+    />
+  );
 }
 
 export default Solutions;

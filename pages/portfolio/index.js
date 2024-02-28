@@ -1,8 +1,9 @@
 import PortfolioGallery from "../../components/portfolio/portfolioGallery";
-import GraphAPI from "../../services/graphQL";
+import GraphAPI, { replaceImgUrls } from "../../services/graphQL";
 
 function Portfolio({
   allPortfolioCat,
+  justPortfolios,
   allPortfolio,
   allportfolioPagination,
   allPortfolioTags,
@@ -10,10 +11,11 @@ function Portfolio({
   return (
     <main className="position-relative zindex-2 am_project_main">
       <PortfolioGallery
-        data={allPortfolioCat}
-        allPortfolio={allPortfolio}
-        portfolios={allportfolioPagination}
-        tags={allPortfolioTags}
+        data={replaceImgUrls(allPortfolioCat)}
+        allPortfolio={replaceImgUrls(allPortfolio)}
+        portfolios={replaceImgUrls(allportfolioPagination)}
+        tags={replaceImgUrls(allPortfolioTags)}
+        justPortfolios={replaceImgUrls(justPortfolios)}
       />
     </main>
   );
@@ -29,6 +31,7 @@ export async function getStaticProps() {
   );
   const allPortfolioCat = await GraphAPI.allPortfolioCat(limit, null);
   const allPortfolio = await GraphAPI.allPortfolio();
+  const justPortfolios = await GraphAPI.justPortfolios();
   const allPortfolioTags = await GraphAPI.allPortfolioTags(500);
   const tagsCount = allPortfolioTags.data.data?.portfolioTags?.nodes.filter(
     (val, index) => {
@@ -37,6 +40,7 @@ export async function getStaticProps() {
   );
   return {
     props: {
+      justPortfolios: justPortfolios.data?.data?.portfolios?.edges,
       allPortfolioCat: allPortfolioCat.data.data?.portfolioCategories?.nodes,
       allPortfolio: allPortfolio.data.data?.portfolioCategories?.nodes,
       allportfolioPagination: allportfolioPagination.data.data?.portfolios,

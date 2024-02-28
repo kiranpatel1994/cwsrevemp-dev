@@ -3,7 +3,7 @@ import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import CompanyDetails from "../components/companyDetails/CompanyDetails";
 import { useEffect } from "react";
-import GraphAPI from "../services/graphQL";
+import GraphAPI, { replaceImgUrls } from "../services/graphQL";
 function Company({
   companySettings,
   memberList,
@@ -19,10 +19,10 @@ function Company({
 
   return (
     <CompanyDetails
-      details={companySettings}
-      list={memberList}
-      themeData={themeDetail}
-      testimonialSettings={testimonialSettings}
+      details={replaceImgUrls(companySettings)}
+      list={replaceImgUrls(memberList)}
+      themeData={replaceImgUrls(themeDetail)}
+      testimonialSettings={replaceImgUrls(testimonialSettings)}
     />
   );
 }

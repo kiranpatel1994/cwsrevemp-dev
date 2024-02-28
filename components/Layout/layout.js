@@ -1,5 +1,6 @@
 import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import { replaceImgUrls } from "../../services/graphQL";
 
 export default function Layout({
   children,
@@ -10,9 +11,13 @@ export default function Layout({
 }) {
   return (
     <>
-      <Header data={headerSettings} seo={seo} thumbnail={thumbnail} />
+      <Header
+        data={replaceImgUrls(headerSettings)}
+        seo={replaceImgUrls(seo)}
+        thumbnail={replaceImgUrls(thumbnail)}
+      />
       {children}
-      <Footer settings={footerSettings} />
+      <Footer settings={replaceImgUrls(footerSettings)} />
     </>
   );
 }

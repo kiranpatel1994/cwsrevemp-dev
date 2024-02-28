@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import GraphAPI from "../services/graphQL";
+import GraphAPI, { replaceImgUrls } from "../services/graphQL";
 import HomeDetails from "../components/home/homeDetail";
 
 const Home = ({ homeSettings, portfolioList, testimonialSettings }) => {
@@ -13,9 +13,9 @@ const Home = ({ homeSettings, portfolioList, testimonialSettings }) => {
   }, []);
   return (
     <HomeDetails
-      homeSettings={homeSettings}
-      portfolioList={portfolioList}
-      testimonialSettings={testimonialSettings}
+      homeSettings={replaceImgUrls(homeSettings)}
+      portfolioList={replaceImgUrls(portfolioList)}
+      testimonialSettings={replaceImgUrls(testimonialSettings)}
     />
   );
 };
