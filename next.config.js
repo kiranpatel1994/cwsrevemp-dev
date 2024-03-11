@@ -4,11 +4,17 @@ const nextConfig = {
   swcMinify: true,
   optimizeFonts: false,
   images: {
-    domains: ["cms.cwsio.com"],
+    domains: ["cms.cwsio.com", "cms-cdn.cwsio.com"],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "cms.cwsio.com",
+        port: "",
+        pathname: "/*",
+      },
+      {
+        protocol: "https",
+        hostname: "cms-cdn.cwsio.com",
         port: "",
         pathname: "/*",
       },
