@@ -449,7 +449,7 @@ export default function AbaAgencies({
                         </Link>
                       </div>
                     </div>
-                    <div className="col-lg-5 text-lg-end text-center groupImg ps-lg-0 ps-5">
+                    <div className="col-lg-5 text-lg-end text-center groupImg ps-lg-0 ps-5 mt-lg-0 mt-4">
                       <img className="img-fluid" src={gettingStartImg.src} />
                     </div>
                   </div>
@@ -534,7 +534,7 @@ export default function AbaAgencies({
                 <div className="col-12 col-md-11">
                   <div className="d-md-none ps-md-0 ps-5">
                     <div className="benifit_ttl_mb mb-stl">
-                      <h3 className="vr-title_mb">Service Details</h3>
+                      <h3 className="vr-title_mb text-md-start text-center">Service Details</h3>
                     </div>
                   </div>
                   <div className="row service_details ps-5">
@@ -633,7 +633,7 @@ export default function AbaAgencies({
                     </div>
                     <div className="col-lg-6">
                       {data?.seoImage?.sourceUrl && (
-                        <div className="optionalImgOuter">
+                        <div className="optionalImgOuter mt-lg-0 mt-5">
                           {data?.seoImage?.sourceUrl && (
                             <img
                               className="optionalImg"

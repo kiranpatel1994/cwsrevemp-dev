@@ -8983,6 +8983,14 @@ a {
     padding-bottom: 40px;
   }
 
+  .abaAgencyBanner p br {
+    display: none;
+  }
+
+  .aba-agency_inner .title br {
+    display: none;
+  }
+
   .abaNeeds h3 {
     font-size: 22px;
   }
@@ -9053,8 +9061,12 @@ a {
     display: none;
   }
 
-  .aba-agency_inner .beautifulWork h2 {
+  /* .aba-agency_inner .beautifulWork h2 {
     margin-bottom: 0;
+  } */
+
+  .aba-agencies .all-business h2 br {
+    display: none;
   }
 }
 
