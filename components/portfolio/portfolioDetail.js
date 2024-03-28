@@ -162,6 +162,10 @@ function PortfolioDetailContent({ data, relativeData }) {
                   </Link>
                 </div>
               )}
+              <div className="d-flex flex-column flex-sm-row justify-content-center mt-5">
+                <a className="btn btn-yellow" href="#"><span>Back to industry</span></a>
+                <a className="btn btn-outline-yellow ms-sm-4 mt-sm-0 mt-3" href="#"><span>Portfolio Home</span></a>
+              </div>
             </div>
           </div>
         )}

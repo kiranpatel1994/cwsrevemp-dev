@@ -99,6 +99,28 @@ body {
   transform: scale(1.1);
 }
 
+.btn-outline-yellow {
+  border: 0;
+  background-color: transparent;
+  border: 1px solid #fdb627;
+  color: #fdb627;
+  font-family: "gilroy-bolduploaded_file";
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 29px;
+  transition: 0.3s all;
+  border-radius: 50px;
+}
+
+.btn-outline-yellow:hover {
+  background-color: #fdb627;
+  color: #07042b;
+  border: 1px solid #fdb627;
+  transform: scale(1.1);
+}
+
 .btn-blue {
   border: 0;
   background-color: #07042b;
