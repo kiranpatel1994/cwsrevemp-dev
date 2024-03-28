@@ -42,7 +42,42 @@ function PortfolioGallery({
   const [activeTabPortfolio, setActiveTabPortfolio] = useState(null);
   const [selectedTag, setSelectedTag] = useState(null);
   const [matchingCategory, setMatchingCategory] = useState(null);
+  const [searchText, setSearchText] = useState(null);
+  const [emptyResult, setEmptyResult] = useState(null);
   const limit = process.env.NEXT_PUBLIC_PORTFOLIO_LIMIT;
+
+  const handlesearch = (e) =>{
+    const searchVal = e.target.value.replace(/^\s+/g, '');
+    setSearchText(searchVal);
+    
+    if (searchVal && searchVal.length >=3) {
+      const searchData = justPortfolios.filter((portfolio) => {
+        const portfolioTitle = portfolio.node.title.toLowerCase();
+        return (portfolioTitle.search(searchVal) != -1);
+      });
+      
+      if(searchData.length == 0){
+        setEmptyResult(true);
+      }
+
+      searchData.sort((a, b) => {
+        const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
+        const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+        return yearB - yearA;
+      });
+      setPortfolio({
+        ...portfolio,
+        edges: replaceImgUrls(searchData),
+      });
+    }
+    else
+    {
+      if(e.target.value == ""){
+        setSearchText(null);
+      }
+      setPortfolio(portfolios);
+    }
+  }
 
   const handleAllPortfolio = () => {
     router.push(router.pathname, undefined, { shallow: true });
@@ -54,7 +89,28 @@ function PortfolioGallery({
     setSelectedTag(null);
     tags.sort((a, b) => a.name.localeCompare(b.name));
     setTag(tags);
-    setPortfolio({ ...portfolios });
+    
+    if (searchText && searchText.length >=3) {
+      const searchData = justPortfolios.filter((portfolio) => {
+        const portfolioTitle = portfolio.node.title.toLowerCase();
+        return (portfolioTitle.search(searchText) != -1);
+      });
+      
+      searchData.sort((a, b) => {
+        const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
+        const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+        return yearB - yearA;
+      });
+
+      setPortfolio({
+        ...portfolio,
+        edges: replaceImgUrls(searchData),
+      });
+    }
+    else
+    {
+      setPortfolio({ ...portfolios });
+    }
   };
 
   const handleSelectTag = (e) => {
@@ -103,15 +159,35 @@ function PortfolioGallery({
         const result = tagMatch && catNodeMatch;
         return result;
       });
-      filteredCatPortfolio.sort((a, b) => {
-        const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
-        const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
-        return yearB - yearA;
-      });
-      setActiveTabPortfolio({
-        ...activeTabPortfolio,
-        edges: replaceImgUrls(filteredCatPortfolio),
-      });
+
+      if(searchText != null && searchText.length >=3){
+        const searchDatact = filteredCatPortfolio.filter((portfolio) => {
+          const portfolioTitlect = portfolio.node.title.toLowerCase();
+          return (portfolioTitlect.search(searchText) != -1);
+        });
+        searchDatact.sort((a, b) => {
+          const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
+          const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+          return yearB - yearA;
+        });
+        setActiveTabPortfolio({
+          ...activeTabPortfolio,
+          edges: replaceImgUrls(searchDatact),
+        });
+      }
+      else
+      {
+        filteredCatPortfolio.sort((a, b) => {
+          const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
+          const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+          return yearB - yearA;
+        });
+        setActiveTabPortfolio({
+          ...activeTabPortfolio,
+          edges: replaceImgUrls(filteredCatPortfolio),
+        });
+      }
+      
     } else {
       // const allPortfolioForTag = await GraphAPI.allportfolioPagination(
       //   500,
@@ -121,15 +197,34 @@ function PortfolioGallery({
         const tags = portfolio.node.portfolioTags.nodes;
         return tags.some((tag) => tag.slug === selectedTag);
       });
-      filteredAllPortfolio.sort((a, b) => {
-        const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
-        const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
-        return yearB - yearA;
-      });
-      setPortfolio({
-        ...portfolio,
-        edges: replaceImgUrls(filteredAllPortfolio),
-      });
+
+      if(searchText != null && searchText.length >=3){
+        const searchDatat = filteredAllPortfolio.filter((portfolio) => {
+          const portfolioTitlet = portfolio.node.title.toLowerCase();
+          return (portfolioTitlet.search(searchText) != -1);
+        });
+        searchDatat.sort((a, b) => {
+          const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
+          const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+          return yearB - yearA;
+        });
+        setPortfolio({
+          ...portfolio,
+          edges: replaceImgUrls(searchDatat),
+        });
+      }
+      else
+      {
+        filteredAllPortfolio.sort((a, b) => {
+          const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
+          const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+          return yearB - yearA;
+        });
+        setPortfolio({
+          ...portfolio,
+          edges: replaceImgUrls(filteredAllPortfolio),
+        });
+      }      
     }
     document.querySelector(".tab-loader")?.classList.add("d-none");
   };
@@ -150,36 +245,71 @@ function PortfolioGallery({
     if (!selectedTag) {
       setSelectedTag(null);
     }
-    const selectedCategoryPortfolios = data.filter(
-      (element) => element.slug.toLowerCase() === catSlug.toLowerCase()
-    );
-    const selectedCategoryFromAllPortfolios = allPortfolio.filter(
-      (element) => element.slug.toLowerCase() === catSlug.toLowerCase()
-    );
-    const portfolioTags =
-      selectedCategoryFromAllPortfolios[0].portfolios.edges.flatMap((item) =>
-        item.node.portfolioTags.nodes.map((tag) => ({
-          name: tag.name,
-          slug: tag.slug,
-        }))
+    if(catSlug){
+      const selectedCategoryPortfolios = data.filter(
+        (element) => element.slug.toLowerCase() === catSlug.toLowerCase()
       );
-    const uniquePortfolioTags = Array.from(
-      new Set(portfolioTags.map((tag) => tag.name))
-    ).map((name) => {
-      const tag = portfolioTags.find((tag) => tag.name === name);
-      return {
-        name: name,
-        slug: tag.slug,
-      };
-    });
-    uniquePortfolioTags.sort((a, b) => a.name.localeCompare(b.name));
-    selectedCategoryPortfolios[0].portfolios?.edges?.sort((a, b) => {
-      const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
-      const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
-      return yearB - yearA;
-    });
-    setTag(uniquePortfolioTags);
-    setActiveTabPortfolio(selectedCategoryPortfolios[0].portfolios);
+      const selectedCategoryFromAllPortfolios = allPortfolio.filter(
+        (element) => element.slug.toLowerCase() === catSlug.toLowerCase()
+      );
+      const portfolioTags =
+        selectedCategoryFromAllPortfolios[0].portfolios.edges.flatMap((item) =>
+          item.node.portfolioTags.nodes.map((tag) => ({
+            name: tag.name,
+            slug: tag.slug,
+          }))
+        );
+      const uniquePortfolioTags = Array.from(
+        new Set(portfolioTags.map((tag) => tag.name))
+      ).map((name) => {
+        const tag = portfolioTags.find((tag) => tag.name === name);
+        return {
+          name: name,
+          slug: tag.slug,
+        };
+      });
+      uniquePortfolioTags.sort((a, b) => a.name.localeCompare(b.name));
+      selectedCategoryPortfolios[0].portfolios?.edges?.sort((a, b) => {
+        const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
+        const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+        return yearB - yearA;
+      });
+      setTag(uniquePortfolioTags);
+      if(searchText != null && searchText.length >=3){
+        const filterData = selectedCategoryPortfolios[0].portfolios.edges;
+        const searchDatac = filterData.filter((portfolio) => {
+          const portfolioTitlec = portfolio.node.title.toLowerCase();
+          return (portfolioTitlec.search(searchText) != -1);
+        });
+        searchDatac.sort((a, b) => {
+          const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
+          const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+          return yearB - yearA;
+        });
+        setActiveTabPortfolio({
+          ...activeTabPortfolio,
+          edges: replaceImgUrls(searchDatac),
+        });
+      }
+      else
+      {
+        setActiveTabPortfolio(selectedCategoryPortfolios[0].portfolios);
+      }
+    }
+    else
+    {
+      if(searchText != null && searchText.length >=3){
+        const searchDatan = justPortfolios.filter((portfolio) => {
+          const portfolioTitlen = portfolio.node.title.toLowerCase();
+          return (portfolioTitlen.search(searchText) != -1);
+        });
+        
+        setPortfolio({
+          ...portfolio,
+          edges: replaceImgUrls(searchDatan),
+        });
+      }
+    }
   };
   // const handleInfiniteScroll = async (e, c) => {
   //   if (e === selectedCat && c !== null) {
@@ -234,6 +364,15 @@ function PortfolioGallery({
   }, [portfolios]);
 
   useEffect(() => {
+    if(selectedCat && selectedTag){
+      updateSelectedTag(selectedTag, selectedCat);
+    }
+    else if(selectedCat){
+      updateSelectedCat(selectedCat);
+    }
+  }, [searchText]);
+
+  useEffect(() => {
     setSelectedCat(null);
     setSelectedTag(null);
     const categorySlug = router.query.category;
@@ -269,7 +408,9 @@ function PortfolioGallery({
             </h1>
           </div>
         </div>
-
+        <div className="row g-0">
+          <input name="searchBox" type="text" placeholder="search" value={searchText || ''} onChange={handlesearch}/>
+        </div>
         <div className="nav_mixitup">
           <div className="allProject_box">
             <ul className="list-inline text-center mb-0" role="tablist">
@@ -445,6 +586,14 @@ function PortfolioGallery({
                   })}
                 </div>
                 {/* </InfiniteScroll> */}
+                {
+                  emptyResult == true ? 
+                    <div className="st_text">
+                      <h3>No Data found for search : {searchText}</h3>
+                    </div> 
+                  :
+                  ''
+                }
                 <div className="mx-auto d-table d-100-sm st_text center">
                   <h3>
                     Like what you see? The next project here could be yours.
@@ -610,6 +759,14 @@ function PortfolioGallery({
                           })}
                     </div>
                     {/* </InfiniteScroll> */}
+                    {
+                      emptyResult == true ? 
+                        <div className="st_text">
+                          <h3>No Data found for search : {searchText}</h3>
+                        </div> 
+                      :
+                      ''
+                    }
                     <div className="mx-auto d-table d-100-sm st_text center">
                       <h3>
                         Like what you see? The next project here could be yours.
