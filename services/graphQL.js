@@ -180,6 +180,7 @@ export default class GraphAPI {
             }
           }
           portfolioSettings {
+            launchedYear
             portfolioUrl
           }
         }
@@ -229,7 +230,7 @@ export default class GraphAPI {
       nodes {
         name
         slug
-        portfolios(first: ${first}, after: ${afterCursor}) {
+        portfolios(first: ${process.env.NEXT_PUBLIC_PORTFOLIO_LIST_LIMIT}) {
           pageInfo {
             hasNextPage
             endCursor
@@ -245,6 +246,7 @@ export default class GraphAPI {
               title
               slug
               portfolioSettings {
+                launchedYear
                 portfolioUrl
               }
               portfolioCategories {
@@ -326,6 +328,7 @@ export default class GraphAPI {
               title
               slug
               portfolioSettings {
+                launchedYear
                 portfolioUrl
               }
               portfolioCategories {
@@ -375,6 +378,7 @@ export default class GraphAPI {
           ... on Portfolio {
             id
             portfolioSettings {
+              launchedYear
               modalImage {
                 sourceUrl
               }
@@ -1032,7 +1036,7 @@ export default class GraphAPI {
       nodes {
         name
         slug
-        portfolios(first: 200) {
+        portfolios(first: ${process.env.NEXT_PUBLIC_PORTFOLIO_LIST_LIMIT}) {
           pageInfo {
             hasNextPage
             endCursor
@@ -1048,6 +1052,7 @@ export default class GraphAPI {
               title
               slug
               portfolioSettings {
+                launchedYear
                 portfolioUrl
               }
               portfolioCategories {
@@ -1084,7 +1089,7 @@ export default class GraphAPI {
   static justPortfolios() {
     const justPortfolios = `
     query justPortfolios {
-      portfolios(first: 200) {
+      portfolios(first: ${process.env.NEXT_PUBLIC_PORTFOLIO_LIST_LIMIT}) {
         edges {
           cursor
           node {
@@ -1096,6 +1101,7 @@ export default class GraphAPI {
             title
             slug
             portfolioSettings {
+              launchedYear
               portfolioUrl
             }
             portfolioCategories {
@@ -1132,7 +1138,7 @@ export default class GraphAPI {
     const afterCursor = after ? '"' + after + '"' : null;
     const allportfolioPaginationQuery = `
   query allportfolioPaginationQuery {
-    portfolios(first: ${first}, after: ${afterCursor}) {
+    portfolios(first: ${process.env.NEXT_PUBLIC_PORTFOLIO_LIST_LIMIT}) {
     pageInfo {
       hasNextPage
       endCursor
@@ -1148,6 +1154,7 @@ export default class GraphAPI {
         title
         slug
         portfolioSettings {
+          launchedYear
           portfolioUrl
         }
         portfolioCategories {
@@ -1306,6 +1313,7 @@ export default class GraphAPI {
         slug
         title
         portfolioSettings {
+          launchedYear
           portfolioUrl
           portfolioGallery {
             sourceUrl
@@ -1443,6 +1451,7 @@ export default class GraphAPI {
   }
 
   static relativePortfolioSettings(catName, notIn) {
+    console.log(catName, "cat");
     const relativePortfolioSettingsQuery = `
   query RelativePortfolioSettingsQuery {
   portfolioCategories(where: {name: "${catName}"}) {
@@ -1457,6 +1466,7 @@ export default class GraphAPI {
                 }
             }
         portfolioSettings {
+          launchedYear
           portfolioUrl
           portfolioGallery {
             sourceUrl
@@ -1539,6 +1549,7 @@ export default class GraphAPI {
                 }
             }
             portfolioSettings {
+              launchedYear
                 portfolioUrl
                 modalImage {
                 sourceUrl

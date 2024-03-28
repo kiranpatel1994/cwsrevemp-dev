@@ -27,7 +27,7 @@ export default function Header({ data, seo, thumbnail }) {
   return (
     <>
       <Head>
-        <meta charset="utf-8" />
+        <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{seo?.title ? seo?.title : "Creative Web Services"}</title>
         <link rel="canonical" href={canonicalUrl} />
@@ -136,7 +136,7 @@ export default function Header({ data, seo, thumbnail }) {
                   <Link
                     className={
                       router.pathname == "/portfolio" ||
-                        router.pathname == "/portfolio/[slug]"
+                      router.pathname == "/portfolio/[slug]"
                         ? "nav-link active"
                         : "nav-link"
                     }
@@ -155,7 +155,7 @@ export default function Header({ data, seo, thumbnail }) {
                     data-target="/services"
                     className={
                       router.pathname == "/services" ||
-                        router.pathname == "/services/[slug]"
+                      router.pathname == "/services/[slug]"
                         ? "nav-link active dropdown-toggle"
                         : "nav-link dropdown-toggle"
                     }
@@ -173,7 +173,7 @@ export default function Header({ data, seo, thumbnail }) {
                       <Link
                         className={
                           router.asPath ==
-                            "/services/ui-ux-design-web-applications-development"
+                          "/services/ui-ux-design-web-applications-development"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
@@ -191,7 +191,7 @@ export default function Header({ data, seo, thumbnail }) {
                       <Link
                         className={
                           router.asPath ==
-                            "/services/website-design-and-development"
+                          "/services/website-design-and-development"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
@@ -209,7 +209,7 @@ export default function Header({ data, seo, thumbnail }) {
                       <Link
                         className={
                           router.asPath ==
-                            "/services/logo-design-branding-agency"
+                          "/services/logo-design-branding-agency"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
@@ -244,7 +244,7 @@ export default function Header({ data, seo, thumbnail }) {
                       <Link
                         className={
                           router.asPath ==
-                            "/services/ecommerce-website-development"
+                          "/services/ecommerce-website-development"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
@@ -262,7 +262,7 @@ export default function Header({ data, seo, thumbnail }) {
                       <Link
                         className={
                           router.asPath ==
-                            "/services/white-label-development-services"
+                          "/services/white-label-development-services"
                             ? "dropdown-item active"
                             : "dropdown-item"
                         }
@@ -306,7 +306,7 @@ export default function Header({ data, seo, thumbnail }) {
                           data-bs-toggle="collapse"
                           data-bs-target=".navbar-collapse.show"
                         >
-                          Aba Agencies
+                          ABA Agencies
                         </span>
                       </Link>
                     </li>
@@ -333,7 +333,7 @@ export default function Header({ data, seo, thumbnail }) {
                   <Link
                     className={
                       router.pathname == "/blog" ||
-                        router.pathname == "/blog/[slug]"
+                      router.pathname == "/blog/[slug]"
                         ? "nav-link active"
                         : "nav-link"
                     }

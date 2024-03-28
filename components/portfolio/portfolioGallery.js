@@ -4,9 +4,10 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import GraphAPI from "../../services/graphQL";
+import GraphAPI, { replaceImgUrls } from "../../services/graphQL";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 function PortfolioGallery({
   data,
@@ -16,9 +17,24 @@ function PortfolioGallery({
   justPortfolios,
   themeOptions,
 }) {
-  // console.log(justPortfolios);
   const router = useRouter();
   tags.sort((a, b) => a.name.localeCompare(b.name));
+  justPortfolios.sort((a, b) => {
+    const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
+    const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+    return yearB - yearA;
+  });
+  allPortfolio.sort((a, b) => {
+    const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
+    const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+    return yearB - yearA;
+  });
+  portfolios?.edges?.sort((a, b) => {
+    const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
+    const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+    return yearB - yearA;
+  });
+
   const [tag, setTag] = useState(tags);
   const [portfolio, setPortfolio] = useState(null);
   const [portfolioCat, setPortfolioCat] = useState(null);
@@ -87,9 +103,14 @@ function PortfolioGallery({
         const result = tagMatch && catNodeMatch;
         return result;
       });
+      filteredCatPortfolio.sort((a, b) => {
+        const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
+        const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+        return yearB - yearA;
+      });
       setActiveTabPortfolio({
         ...activeTabPortfolio,
-        edges: filteredCatPortfolio,
+        edges: replaceImgUrls(filteredCatPortfolio),
       });
     } else {
       // const allPortfolioForTag = await GraphAPI.allportfolioPagination(
@@ -100,7 +121,15 @@ function PortfolioGallery({
         const tags = portfolio.node.portfolioTags.nodes;
         return tags.some((tag) => tag.slug === selectedTag);
       });
-      setPortfolio({ ...portfolio, edges: filteredAllPortfolio });
+      filteredAllPortfolio.sort((a, b) => {
+        const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
+        const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+        return yearB - yearA;
+      });
+      setPortfolio({
+        ...portfolio,
+        edges: replaceImgUrls(filteredAllPortfolio),
+      });
     }
     document.querySelector(".tab-loader")?.classList.add("d-none");
   };
@@ -144,58 +173,61 @@ function PortfolioGallery({
       };
     });
     uniquePortfolioTags.sort((a, b) => a.name.localeCompare(b.name));
+    selectedCategoryPortfolios[0].portfolios?.edges?.sort((a, b) => {
+      const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
+      const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+      return yearB - yearA;
+    });
     setTag(uniquePortfolioTags);
     setActiveTabPortfolio(selectedCategoryPortfolios[0].portfolios);
   };
-  const handleInfiniteScroll = async (e, c) => {
-    if (e === selectedCat && c !== null) {
-      const portfolioCatPagination = await GraphAPI.allPortfolioCatPagination(
-        limit,
-        c,
-        selectedCat
-      );
+  // const handleInfiniteScroll = async (e, c) => {
+  //   if (e === selectedCat && c !== null) {
+  //     const portfolioCatPagination = await GraphAPI.allPortfolioCatPagination(
+  //       limit,
+  //       c,
+  //       selectedCat
+  //     );
 
-      const filteredCatPortfolio = justPortfolios?.filter((portfolio) => {
-        const cat = portfolio.node.portfolioCategories.nodes;
-        return cat.some((cat) => cat.slug === selectedTag);
-      });
+  //     const filteredCatPortfolio = justPortfolios?.filter((portfolio) => {
+  //       const cat = portfolio.node.portfolioCategories.nodes;
+  //       return cat.some((cat) => cat.slug === selectedTag);
+  //     });
 
-      console.log(filteredCatPortfolio, "here");
+  //     const updatedEdges = [
+  //       ...activeTabPortfolio.edges,
+  //       ...portfolioCatPagination.data.data.portfolioCategories?.nodes[0]
+  //         .portfolios.edges,
+  //     ];
+  //     const updatedPageInfo =
+  //       portfolioCatPagination.data.data.portfolioCategories?.nodes[0]
+  //         .portfolios.pageInfo;
 
-      const updatedEdges = [
-        ...activeTabPortfolio.edges,
-        ...portfolioCatPagination.data.data.portfolioCategories?.nodes[0]
-          .portfolios.edges,
-      ];
-      const updatedPageInfo =
-        portfolioCatPagination.data.data.portfolioCategories?.nodes[0]
-          .portfolios.pageInfo;
+  //     const updatedPortfolioData = {
+  //       ...activeTabPortfolio,
+  //       edges: updatedEdges,
+  //       pageInfo: updatedPageInfo,
+  //     };
+  //     setActiveTabPortfolio(replaceImgUrls(updatedPortfolioData));
+  //   }
+  // };
 
-      const updatedPortfolioData = {
-        ...activeTabPortfolio,
-        edges: updatedEdges,
-        pageInfo: updatedPageInfo,
-      };
-      setActiveTabPortfolio(updatedPortfolioData);
-    }
-  };
+  // const handleLoadMore = async (c) => {
+  //   const portfolioPagination = await GraphAPI.allportfolioPagination(limit, c);
+  //   const updatedEdges = [
+  //     ...portfolio.edges,
+  //     ...portfolioPagination.data.data?.portfolios.edges,
+  //   ];
 
-  const handleLoadMore = async (c) => {
-    const portfolioPagination = await GraphAPI.allportfolioPagination(limit, c);
-    const updatedEdges = [
-      ...portfolio.edges,
-      ...portfolioPagination.data.data?.portfolios.edges,
-    ];
+  //   const updatedPageInfo = portfolioPagination.data.data?.portfolios.pageInfo;
 
-    const updatedPageInfo = portfolioPagination.data.data?.portfolios.pageInfo;
-
-    const updatedPortfolioData = {
-      ...portfolio,
-      edges: updatedEdges,
-      pageInfo: updatedPageInfo,
-    };
-    setPortfolio(updatedPortfolioData);
-  };
+  //   const updatedPortfolioData = {
+  //     ...portfolio,
+  //     edges: updatedEdges,
+  //     pageInfo: updatedPageInfo,
+  //   };
+  //   setPortfolio(replaceImgUrls(updatedPortfolioData));
+  // };
 
   useEffect(() => {
     setPortfolio(portfolios);
@@ -263,7 +295,8 @@ function PortfolioGallery({
               {data.map((item, index) => {
                 if (
                   item?.portfolios?.edges?.length &&
-                  item.slug !== "aba-agencies"
+                  item.slug !== "aba-agencies" &&
+                  item.slug !== "ecommerce-website-development"
                 ) {
                   return (
                     <li
@@ -338,7 +371,7 @@ function PortfolioGallery({
                 aria-labelledby="all-tab"
                 tabIndex="0"
               >
-                <InfiniteScroll
+                {/* <InfiniteScroll
                   dataLength={portfolio?.edges?.length}
                   next={() =>
                     handleLoadMore(
@@ -361,55 +394,65 @@ function PortfolioGallery({
                       </Link>
                     </div>
                   }
-                >
-                  <div className="row g-15">
-                    {portfolio?.edges?.map((item, index) => {
-                      return (
-                        <div
-                          className="col-12 col-md-6 col-xl-4 project-col"
-                          key={`allPortfolio-${index}`}
-                        >
-                          <div className="gif_placer">
-                            <div className="gif_box">
-                              <img
-                                className="img-fluid w-100"
-                                src={
-                                  item?.node?.featuredImage?.node?.sourceUrl
-                                    ? item.node.featuredImage.node.sourceUrl
-                                    : "images/placeholder.png"
-                                }
-                              />
-                            </div>
-                            <div className="gradient_wall">
-                              <Link
-                                href={`/portfolio/${item.node.slug}`}
-                                className="explore_btn"
-                              >
-                                <span>
-                                  Explore <img src="images/down-right.png" />
-                                </span>
-                              </Link>
+                > */}
+                <div className="row g-15">
+                  {portfolio?.edges?.map((item, index) => {
+                    return (
+                      <div
+                        className="col-12 col-md-6 col-xl-4 project-col"
+                        key={`allPortfolio-${index}`}
+                      >
+                        <div className="gif_placer">
+                          <div className="gif_box">
+                            <Image
+                              className="img-fluid w-100"
+                              width={630}
+                              height={410}
+                              src={
+                                item?.node?.featuredImage?.node?.sourceUrl
+                                  ? item.node.featuredImage.node.sourceUrl
+                                  : "images/placeholder.png"
+                              }
+                            />
+                          </div>
+                          <div className="gradient_wall">
+                            <Link
+                              href={`/portfolio/${item.node.slug}`}
+                              className="explore_btn"
+                            >
+                              <span>
+                                Explore <img src="images/down-right.png" />
+                              </span>
+                            </Link>
 
-                              <div className="gradient_box">
-                                {item.node.title && <h3>{item.node.title}</h3>}
-                                <span className="fake_button">
-                                  {item?.node?.portfolioCategories?.nodes
-                                    ?.length && (
-                                    <span className="fake_button_1">
-                                      {item.node.portfolioCategories?.nodes
-                                        .map((node) => node.name)
-                                        .join(",")}
-                                    </span>
-                                  )}
-                                </span>
-                              </div>
+                            <div className="gradient_box">
+                              {item.node.title && <h3>{item.node.title}</h3>}
+                              <span className="fake_button">
+                                {item?.node?.portfolioCategories?.nodes
+                                  ?.length && (
+                                  <span className="fake_button_1">
+                                    {item.node.portfolioCategories?.nodes
+                                      .map((node) => node.name)
+                                      .join(",")}
+                                  </span>
+                                )}
+                              </span>
                             </div>
                           </div>
                         </div>
-                      );
-                    })}
-                  </div>
-                </InfiniteScroll>
+                      </div>
+                    );
+                  })}
+                </div>
+                {/* </InfiniteScroll> */}
+                <div className="mx-auto d-table d-100-sm st_text center">
+                  <h3>
+                    Like what you see? The next project here could be yours.
+                  </h3>
+                  <Link href="/contact" className="btn center btn-yellow">
+                    <span>Reach Out</span>
+                  </Link>
+                </div>
               </div>
             )}
 
@@ -434,7 +477,7 @@ function PortfolioGallery({
                     aria-labelledby={`${item.slug}-tab`}
                     tabIndex="0"
                   >
-                    <InfiniteScroll
+                    {/* <InfiniteScroll
                       dataLength={
                         activeTabPortfolio === null
                           ? item?.portfolios?.edges?.length
@@ -466,105 +509,115 @@ function PortfolioGallery({
                           </Link>
                         </div>
                       }
-                    >
-                      <div className="row g-15">
-                        {activeTabPortfolio === null
-                          ? item?.portfolios?.edges.map((item, index) => {
-                              return (
-                                <div
-                                  className="col-12 col-md-6 col-lg-4 project-col"
-                                  key={`portfolio-index-${index}`}
-                                >
-                                  <div className="gif_placer">
-                                    <div className="gif_box">
-                                      <img
-                                        className="img-fluid w-100"
-                                        src={
-                                          item.node.featuredImage.node.sourceUrl
-                                            ? item.node.featuredImage.node
-                                                .sourceUrl
-                                            : "images/placeholder.png"
-                                        }
-                                      />
-                                    </div>
-                                    <div className="gradient_wall">
-                                      <Link
-                                        href={`/portfolio/${item.node.slug}`}
-                                        className="explore_btn"
-                                      >
-                                        <span>
-                                          Explore
-                                          <img src="images/down-right.png" />
-                                        </span>
-                                      </Link>
+                    > */}
+                    <div className="row g-15">
+                      {activeTabPortfolio === null
+                        ? item?.portfolios?.edges.map((item, index) => {
+                            return (
+                              <div
+                                className="col-12 col-md-6 col-lg-4 project-col"
+                                key={`portfolio-index-${index}`}
+                              >
+                                <div className="gif_placer">
+                                  <div className="gif_box">
+                                    <Image
+                                      width={630}
+                                      height={410}
+                                      className="img-fluid w-100"
+                                      src={
+                                        item.node.featuredImage.node.sourceUrl
+                                          ? item.node.featuredImage.node
+                                              .sourceUrl
+                                          : "images/placeholder.png"
+                                      }
+                                    />
+                                  </div>
+                                  <div className="gradient_wall">
+                                    <Link
+                                      href={`/portfolio/${item.node.slug}`}
+                                      className="explore_btn"
+                                    >
+                                      <span>
+                                        Explore
+                                        <img src="images/down-right.png" />
+                                      </span>
+                                    </Link>
 
-                                      <div className="gradient_box">
-                                        {item.node.title && (
-                                          <h3>{item.node.title}</h3>
-                                        )}
-                                        {item?.node?.portfolioCategories?.nodes
-                                          ?.length && (
-                                          <span className="fake_button">
-                                            {item.node.portfolioCategories?.nodes
-                                              .map((node) => node.name)
-                                              .join(",")}
-                                          </span>
-                                        )}
-                                      </div>
+                                    <div className="gradient_box">
+                                      {item.node.title && (
+                                        <h3>{item.node.title}</h3>
+                                      )}
+                                      {item?.node?.portfolioCategories?.nodes
+                                        ?.length && (
+                                        <span className="fake_button">
+                                          {item.node.portfolioCategories?.nodes
+                                            .map((node) => node.name)
+                                            .join(",")}
+                                        </span>
+                                      )}
                                     </div>
                                   </div>
                                 </div>
-                              );
-                            })
-                          : activeTabPortfolio.edges.map((item, index) => {
-                              return (
-                                <div
-                                  className="col-12 col-md-6 col-lg-4 project-col"
-                                  key={`portfolio-index-${index}`}
-                                >
-                                  <div className="gif_placer">
-                                    <div className="gif_box">
-                                      <img
-                                        className="img-fluid w-100"
-                                        src={
-                                          item.node.featuredImage.node.sourceUrl
-                                            ? item.node.featuredImage.node
-                                                .sourceUrl
-                                            : "images/placeholder.png"
-                                        }
-                                      />
-                                    </div>
-                                    <div className="gradient_wall">
-                                      <Link
-                                        href={`/portfolio/${item.node.slug}`}
-                                        className="explore_btn"
-                                      >
-                                        <span>
-                                          Explore
-                                          <img src="images/down-right.png" />
-                                        </span>
-                                      </Link>
+                              </div>
+                            );
+                          })
+                        : activeTabPortfolio.edges.map((item, index) => {
+                            return (
+                              <div
+                                className="col-12 col-md-6 col-lg-4 project-col"
+                                key={`portfolio-index-${index}`}
+                              >
+                                <div className="gif_placer">
+                                  <div className="gif_box">
+                                    <img
+                                      className="img-fluid w-100"
+                                      src={
+                                        item.node.featuredImage.node.sourceUrl
+                                          ? item.node.featuredImage.node
+                                              .sourceUrl
+                                          : "images/placeholder.png"
+                                      }
+                                    />
+                                  </div>
+                                  <div className="gradient_wall">
+                                    <Link
+                                      href={`/portfolio/${item.node.slug}`}
+                                      className="explore_btn"
+                                    >
+                                      <span>
+                                        Explore
+                                        <img src="images/down-right.png" />
+                                      </span>
+                                    </Link>
 
-                                      <div className="gradient_box">
-                                        {item.node.title && (
-                                          <h3>{item.node.title}</h3>
-                                        )}
-                                        {item?.node?.portfolioCategories?.nodes
-                                          ?.length && (
-                                          <span className="fake_button">
-                                            {item.node.portfolioCategories?.nodes
-                                              .map((node) => node.name)
-                                              .join(",")}
-                                          </span>
-                                        )}
-                                      </div>
+                                    <div className="gradient_box">
+                                      {item.node.title && (
+                                        <h3>{item.node.title}</h3>
+                                      )}
+                                      {item?.node?.portfolioCategories?.nodes
+                                        ?.length && (
+                                        <span className="fake_button">
+                                          {item.node.portfolioCategories?.nodes
+                                            .map((node) => node.name)
+                                            .join(",")}
+                                        </span>
+                                      )}
                                     </div>
                                   </div>
                                 </div>
-                              );
-                            })}
-                      </div>
-                    </InfiniteScroll>
+                              </div>
+                            );
+                          })}
+                    </div>
+                    {/* </InfiniteScroll> */}
+                    <div className="mx-auto d-table d-100-sm st_text center">
+                      <h3>
+                        Like what you see? The next project here could be yours.
+                      </h3>
+                      <Link href="/contact" className="btn center btn-yellow">
+                        <span>Reach Out</span>
+                      </Link>
+                    </div>
                   </div>
                 );
               }
