@@ -46,17 +46,17 @@ function PortfolioGallery({
   const [emptyResult, setEmptyResult] = useState(null);
   const limit = process.env.NEXT_PUBLIC_PORTFOLIO_LIMIT;
 
-  const handlesearch = (e) =>{
-    const searchVal = e.target.value.replace(/^\s+/g, '');
+  const handlesearch = (e) => {
+    const searchVal = e.target.value.replace(/^\s+/g, "");
     setSearchText(searchVal);
-    
-    if (searchVal && searchVal.length >=3) {
+
+    if (searchVal && searchVal.length >= 3) {
       const searchData = justPortfolios.filter((portfolio) => {
         const portfolioTitle = portfolio.node.title.toLowerCase();
-        return (portfolioTitle.search(searchVal) != -1);
+        return portfolioTitle.search(searchVal) != -1;
       });
-      
-      if(searchData.length == 0){
+
+      if (searchData.length == 0) {
         setEmptyResult(true);
       }
 
@@ -69,15 +69,13 @@ function PortfolioGallery({
         ...portfolio,
         edges: replaceImgUrls(searchData),
       });
-    }
-    else
-    {
-      if(e.target.value == ""){
+    } else {
+      if (e.target.value == "") {
         setSearchText(null);
       }
       setPortfolio(portfolios);
     }
-  }
+  };
 
   const handleAllPortfolio = () => {
     router.push(router.pathname, undefined, { shallow: true });
@@ -89,13 +87,13 @@ function PortfolioGallery({
     setSelectedTag(null);
     tags.sort((a, b) => a.name.localeCompare(b.name));
     setTag(tags);
-    
-    if (searchText && searchText.length >=3) {
+
+    if (searchText && searchText.length >= 3) {
       const searchData = justPortfolios.filter((portfolio) => {
         const portfolioTitle = portfolio.node.title.toLowerCase();
-        return (portfolioTitle.search(searchText) != -1);
+        return portfolioTitle.search(searchText) != -1;
       });
-      
+
       searchData.sort((a, b) => {
         const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
         const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
@@ -106,9 +104,7 @@ function PortfolioGallery({
         ...portfolio,
         edges: replaceImgUrls(searchData),
       });
-    }
-    else
-    {
+    } else {
       setPortfolio({ ...portfolios });
     }
   };
@@ -160,26 +156,32 @@ function PortfolioGallery({
         return result;
       });
 
-      if(searchText != null && searchText.length >=3){
+      if (searchText != null && searchText.length >= 3) {
         const searchDatact = filteredCatPortfolio.filter((portfolio) => {
           const portfolioTitlect = portfolio.node.title.toLowerCase();
-          return (portfolioTitlect.search(searchText) != -1);
+          return portfolioTitlect.search(searchText) != -1;
         });
         searchDatact.sort((a, b) => {
-          const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
-          const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+          const yearA = parseInt(
+            a?.node?.portfolioSettings?.launchedYear || "0"
+          );
+          const yearB = parseInt(
+            b?.node?.portfolioSettings?.launchedYear || "0"
+          );
           return yearB - yearA;
         });
         setActiveTabPortfolio({
           ...activeTabPortfolio,
           edges: replaceImgUrls(searchDatact),
         });
-      }
-      else
-      {
+      } else {
         filteredCatPortfolio.sort((a, b) => {
-          const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
-          const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+          const yearA = parseInt(
+            a?.node?.portfolioSettings?.launchedYear || "0"
+          );
+          const yearB = parseInt(
+            b?.node?.portfolioSettings?.launchedYear || "0"
+          );
           return yearB - yearA;
         });
         setActiveTabPortfolio({
@@ -187,7 +189,6 @@ function PortfolioGallery({
           edges: replaceImgUrls(filteredCatPortfolio),
         });
       }
-      
     } else {
       // const allPortfolioForTag = await GraphAPI.allportfolioPagination(
       //   500,
@@ -198,33 +199,39 @@ function PortfolioGallery({
         return tags.some((tag) => tag.slug === selectedTag);
       });
 
-      if(searchText != null && searchText.length >=3){
+      if (searchText != null && searchText.length >= 3) {
         const searchDatat = filteredAllPortfolio.filter((portfolio) => {
           const portfolioTitlet = portfolio.node.title.toLowerCase();
-          return (portfolioTitlet.search(searchText) != -1);
+          return portfolioTitlet.search(searchText) != -1;
         });
         searchDatat.sort((a, b) => {
-          const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
-          const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+          const yearA = parseInt(
+            a?.node?.portfolioSettings?.launchedYear || "0"
+          );
+          const yearB = parseInt(
+            b?.node?.portfolioSettings?.launchedYear || "0"
+          );
           return yearB - yearA;
         });
         setPortfolio({
           ...portfolio,
           edges: replaceImgUrls(searchDatat),
         });
-      }
-      else
-      {
+      } else {
         filteredAllPortfolio.sort((a, b) => {
-          const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
-          const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+          const yearA = parseInt(
+            a?.node?.portfolioSettings?.launchedYear || "0"
+          );
+          const yearB = parseInt(
+            b?.node?.portfolioSettings?.launchedYear || "0"
+          );
           return yearB - yearA;
         });
         setPortfolio({
           ...portfolio,
           edges: replaceImgUrls(filteredAllPortfolio),
         });
-      }      
+      }
     }
     document.querySelector(".tab-loader")?.classList.add("d-none");
   };
@@ -245,7 +252,7 @@ function PortfolioGallery({
     if (!selectedTag) {
       setSelectedTag(null);
     }
-    if(catSlug){
+    if (catSlug) {
       const selectedCategoryPortfolios = data.filter(
         (element) => element.slug.toLowerCase() === catSlug.toLowerCase()
       );
@@ -275,35 +282,35 @@ function PortfolioGallery({
         return yearB - yearA;
       });
       setTag(uniquePortfolioTags);
-      if(searchText != null && searchText.length >=3){
+      if (searchText != null && searchText.length >= 3) {
         const filterData = selectedCategoryPortfolios[0].portfolios.edges;
         const searchDatac = filterData.filter((portfolio) => {
           const portfolioTitlec = portfolio.node.title.toLowerCase();
-          return (portfolioTitlec.search(searchText) != -1);
+          return portfolioTitlec.search(searchText) != -1;
         });
         searchDatac.sort((a, b) => {
-          const yearA = parseInt(a?.node?.portfolioSettings?.launchedYear || "0");
-          const yearB = parseInt(b?.node?.portfolioSettings?.launchedYear || "0");
+          const yearA = parseInt(
+            a?.node?.portfolioSettings?.launchedYear || "0"
+          );
+          const yearB = parseInt(
+            b?.node?.portfolioSettings?.launchedYear || "0"
+          );
           return yearB - yearA;
         });
         setActiveTabPortfolio({
           ...activeTabPortfolio,
           edges: replaceImgUrls(searchDatac),
         });
-      }
-      else
-      {
+      } else {
         setActiveTabPortfolio(selectedCategoryPortfolios[0].portfolios);
       }
-    }
-    else
-    {
-      if(searchText != null && searchText.length >=3){
+    } else {
+      if (searchText != null && searchText.length >= 3) {
         const searchDatan = justPortfolios.filter((portfolio) => {
           const portfolioTitlen = portfolio.node.title.toLowerCase();
-          return (portfolioTitlen.search(searchText) != -1);
+          return portfolioTitlen.search(searchText) != -1;
         });
-        
+
         setPortfolio({
           ...portfolio,
           edges: replaceImgUrls(searchDatan),
@@ -364,10 +371,9 @@ function PortfolioGallery({
   }, [portfolios]);
 
   useEffect(() => {
-    if(selectedCat && selectedTag){
+    if (selectedCat && selectedTag) {
       updateSelectedTag(selectedTag, selectedCat);
-    }
-    else if(selectedCat){
+    } else if (selectedCat) {
       updateSelectedCat(selectedCat);
     }
   }, [searchText]);
@@ -409,7 +415,13 @@ function PortfolioGallery({
           </div>
         </div>
         <div className="row g-0">
-          <input name="searchBox" type="text" placeholder="search" value={searchText || ''} onChange={handlesearch}/>
+          <input
+            name="searchBox"
+            type="text"
+            placeholder="search"
+            value={searchText || ""}
+            onChange={handlesearch}
+          />
         </div>
         <div className="nav_mixitup">
           <div className="allProject_box">
@@ -586,14 +598,11 @@ function PortfolioGallery({
                   })}
                 </div>
                 {/* </InfiniteScroll> */}
-                {
-                  emptyResult == true ? 
-                    <div className="st_text">
-                      <h3>No Data found for search : {searchText}</h3>
-                    </div> 
-                  :
-                  ''
-                }
+                {emptyResult == true && (
+                  <div className="st_text">
+                    <h3>No Data found for search : {searchText}</h3>
+                  </div>
+                )}
                 <div className="mx-auto d-table d-100-sm st_text center">
                   <h3>
                     Like what you see? The next project here could be yours.
@@ -759,14 +768,13 @@ function PortfolioGallery({
                           })}
                     </div>
                     {/* </InfiniteScroll> */}
-                    {
-                      emptyResult == true ? 
-                        <div className="st_text">
-                          <h3>No Data found for search : {searchText}</h3>
-                        </div> 
-                      :
-                      ''
-                    }
+                    {emptyResult == true ? (
+                      <div className="st_text">
+                        <h3>No Data found for search : {searchText}</h3>
+                      </div>
+                    ) : (
+                      ""
+                    )}
                     <div className="mx-auto d-table d-100-sm st_text center">
                       <h3>
                         Like what you see? The next project here could be yours.

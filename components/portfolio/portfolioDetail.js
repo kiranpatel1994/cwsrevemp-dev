@@ -1,15 +1,22 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { AppContext } from "../../pages/_app";
+import { useContext } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 function PortfolioDetailContent({ data, relativeData }) {
-  const storage = globalThis?.sessionStorage;
-
+  const router = useRouter();
+  const { prevUrl } = useContext(AppContext);
+  function hasQueryString(url) {
+    return /\?/.test(url);
+  }
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -165,14 +172,24 @@ function PortfolioDetailContent({ data, relativeData }) {
                 </div>
               )}
               <div className="d-flex flex-column flex-sm-row justify-content-center mt-5">
-                {
-                  storage?.prevPath ? (
-                    <a className="btn btn-yellow" href={storage.prevPath}><span>Back to {data.portfolioCategories.nodes[0].name}</span></a>
-                  )
-                  :
-                  ''
-                }                
-                <a className="btn btn-outline-yellow ms-sm-4 mt-sm-0 mt-3" href="/portfolio"><span>Portfolio Home</span></a>
+                {hasQueryString(prevUrl) && (
+                  <Link
+                    className="btn btn-yellow"
+                    href="javascript:void(0)"
+                    onClick={() => router.back()}
+                  >
+                    <span>
+                      Back to {data.portfolioCategories.nodes[0].name}
+                    </span>
+                  </Link>
+                )}
+
+                <Link
+                  className="btn btn-outline-yellow ms-sm-4 mt-sm-0 mt-3"
+                  href="/portfolio"
+                >
+                  <span>Portfolio Home</span>
+                </Link>
               </div>
             </div>
           </div>

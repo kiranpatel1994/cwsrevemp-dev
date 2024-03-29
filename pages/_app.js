@@ -12,10 +12,12 @@ import "/public/css/app.css";
 import "/public/css/app-extended.css";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useEffect } from "react";
+import { useEffect, useState, createContext } from "react";
 import Layout from "../components/Layout/layout";
 import GraphAPI from "../services/graphQL";
 gsap.registerPlugin(ScrollTrigger);
+
+export const AppContext = createContext(null);
 
 export default function MyApp({
   Component,
@@ -26,23 +28,8 @@ export default function MyApp({
   seo,
   thumbnail,
 }) {
-
   const router = useRouter();
-
-  const storePathValues = () => {
-    const storage = globalThis?.sessionStorage;
-    if (!storage) return;
-    const prevPath = storage.getItem("currentPath");
-    if(prevPath != globalThis.location.href){
-      storage.setItem("prevPath", prevPath);
-    }
-    storage.setItem("currentPath", globalThis.location.href);
-  }
-
-  useEffect(() => {
-    storePathValues();
-  }, [router.asPath]);
-
+  const [prevUrl, setPrevUrl] = useState(null);
   useEffect(() => {
     async function loadBootstrap() {
       const bootstrap = await import(
@@ -113,6 +100,16 @@ export default function MyApp({
     );
   };
 
+  useEffect(() => {
+    const handleRouteChange = (url, { shallow }) => {
+      setPrevUrl(router.asPath);
+    };
+    router.events.on("routeChangeStart", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [router]);
+
   return (
     <>
       <Layout
@@ -122,7 +119,9 @@ export default function MyApp({
         thumbnail={thumbnail}
       >
         <div className="main-shadow" onClick={handleClose}></div>
-        <Component {...pageProps} />
+        <AppContext.Provider value={{ prevUrl, setPrevUrl }}>
+          <Component {...pageProps} />
+        </AppContext.Provider>
       </Layout>
     </>
   );
