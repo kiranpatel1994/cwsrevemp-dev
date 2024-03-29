@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import "/public/fonts/googlefonts.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "swiper/swiper-bundle.min.css";
@@ -25,6 +26,23 @@ export default function MyApp({
   seo,
   thumbnail,
 }) {
+
+  const router = useRouter();
+
+  const storePathValues = () => {
+    const storage = globalThis?.sessionStorage;
+    if (!storage) return;
+    const prevPath = storage.getItem("currentPath");
+    if(prevPath != globalThis.location.href){
+      storage.setItem("prevPath", prevPath);
+    }
+    storage.setItem("currentPath", globalThis.location.href);
+  }
+
+  useEffect(() => {
+    storePathValues();
+  }, [router.asPath]);
+
   useEffect(() => {
     async function loadBootstrap() {
       const bootstrap = await import(

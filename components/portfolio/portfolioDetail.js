@@ -8,6 +8,8 @@ gsap.registerPlugin(ScrollTrigger);
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 function PortfolioDetailContent({ data, relativeData }) {
+  const storage = globalThis?.sessionStorage;
+
   useEffect(() => {
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -163,8 +165,14 @@ function PortfolioDetailContent({ data, relativeData }) {
                 </div>
               )}
               <div className="d-flex flex-column flex-sm-row justify-content-center mt-5">
-                <a className="btn btn-yellow" href="#"><span>Back to industry</span></a>
-                <a className="btn btn-outline-yellow ms-sm-4 mt-sm-0 mt-3" href="#"><span>Portfolio Home</span></a>
+                {
+                  storage?.prevPath ? (
+                    <a className="btn btn-yellow" href={storage.prevPath}><span>Back to {data.portfolioCategories.nodes[0].name}</span></a>
+                  )
+                  :
+                  ''
+                }                
+                <a className="btn btn-outline-yellow ms-sm-4 mt-sm-0 mt-3" href="/portfolio"><span>Portfolio Home</span></a>
               </div>
             </div>
           </div>
