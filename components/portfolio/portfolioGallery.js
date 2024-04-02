@@ -283,7 +283,7 @@ function PortfolioGallery({
               <input
                 name="searchBox"
                 type="text"
-                placeholder="search"
+                placeholder="Search"
                 value={searchText}
                 onChange={handleSearch}
               />
