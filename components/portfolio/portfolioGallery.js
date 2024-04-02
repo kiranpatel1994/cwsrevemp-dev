@@ -270,6 +270,27 @@ function PortfolioGallery({
 
   return (
     <section className="am_project">
+      <div className="container-xl">
+        <div className="row g-0">
+          <div className="col-12 text-center">
+            <div class="input_search">
+              <span>
+                <img
+                  src="../images/search-interface-symbol.svg"
+                  alt="search"
+                />
+              </span>
+              <input
+                name="searchBox"
+                type="text"
+                placeholder="search"
+                value={searchText}
+                onChange={handleSearch}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="container-xl p-0">
         <div className="row g-0">
           <div className="col-12 text-center">
@@ -277,15 +298,6 @@ function PortfolioGallery({
               Take a look at our amazing <em>projects</em>.
             </h1>
           </div>
-        </div>
-        <div className="row g-0">
-          <input
-            name="searchBox"
-            type="text"
-            placeholder="search"
-            value={searchText}
-            onChange={handleSearch}
-          />
         </div>
         <div className="nav_mixitup">
           <div className="allProject_box">
