@@ -47,16 +47,16 @@ function PortfolioGallery({
   const limit = process.env.NEXT_PUBLIC_PORTFOLIO_LIMIT;
 
   const searchPortfolio = (
-    searchVal,
+    searchValue,
     portfolioList,
     defaultPortfolios,
     portfolioType
   ) => {
     var searchData = [];
-    if (searchVal && searchVal.length >= 3) {
+    if (searchValue && searchValue.length >= 3) {
       searchData = portfolioList.filter((portfolio) => {
         const portfolioTitle = portfolio.node.title.toLowerCase();
-        return portfolioTitle.search(searchVal) != -1;
+        return portfolioTitle.search(searchValue) != -1;
       });
 
       searchData.sort((a, b) => {
@@ -92,10 +92,10 @@ function PortfolioGallery({
     }
   };
 
-  const handlesearch = (e) => {
-    const searchVal = e.target.value.replace(/^\s+/g, "");
+  const handleSearch = async (e) => {
+    const searchVal = e.target.value.trim();
     setSearchText(searchVal);
-    searchPortfolio(searchText, justPortfolios, portfolios?.edges, "all");
+    searchPortfolio(searchVal, justPortfolios, portfolios?.edges, "all");
   };
 
   const handleAllPortfolio = () => {
@@ -283,8 +283,8 @@ function PortfolioGallery({
             name="searchBox"
             type="text"
             placeholder="search"
-            value={searchText || ""}
-            onChange={handlesearch}
+            value={searchText}
+            onChange={handleSearch}
           />
         </div>
         <div className="nav_mixitup">
