@@ -1451,7 +1451,6 @@ export default class GraphAPI {
   }
 
   static relativePortfolioSettings(catName, notIn) {
-    console.log(catName, "cat");
     const relativePortfolioSettingsQuery = `
   query RelativePortfolioSettingsQuery {
   portfolioCategories(where: {name: "${catName}"}) {

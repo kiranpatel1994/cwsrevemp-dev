@@ -53,6 +53,7 @@ function PortfolioGallery({
     portfolioType
   ) => {
     var searchData = [];
+    setEmptyResult(false);
     if (searchValue && searchValue.length >= 3) {
       searchData = portfolioList.filter((portfolio) => {
         const portfolioTitle = portfolio.node.title.toLowerCase();
@@ -275,15 +276,12 @@ function PortfolioGallery({
           <div className="col-12 text-center">
             <div class="input_search">
               <span>
-                <img
-                  src="../images/search-interface-symbol.svg"
-                  alt="search"
-                />
+                <img src="../images/search-interface-symbol.svg" alt="search" />
               </span>
               <input
                 name="searchBox"
                 type="text"
-                placeholder="Search"
+                placeholder="search"
                 value={searchText}
                 onChange={handleSearch}
               />
@@ -411,16 +409,19 @@ function PortfolioGallery({
                           >
                             <div className="gif_placer">
                               <div className="gif_box">
-                                <Image
-                                  className="img-fluid w-100"
-                                  width={630}
-                                  height={410}
-                                  src={
-                                    item?.node?.featuredImage?.node?.sourceUrl
-                                      ? item.node.featuredImage.node.sourceUrl
-                                      : "images/placeholder.png"
-                                  }
-                                />
+                                {item?.node?.featuredImage?.node?.sourceUrl && (
+                                  <Image
+                                    className="img-fluid w-100"
+                                    width={630}
+                                    height={410}
+                                    src={
+                                      item?.node?.featuredImage?.node?.sourceUrl
+                                        ? item.node?.featuredImage?.node
+                                            ?.sourceUrl
+                                        : "/public/images/placeholder.png"
+                                    }
+                                  />
+                                )}
                               </div>
                               <div className="gradient_wall">
                                 <Link
@@ -504,18 +505,21 @@ function PortfolioGallery({
                                   >
                                     <div className="gif_placer">
                                       <div className="gif_box">
-                                        <Image
-                                          width={630}
-                                          height={410}
-                                          className="img-fluid w-100"
-                                          src={
-                                            item.node.featuredImage.node
-                                              .sourceUrl
-                                              ? item.node.featuredImage.node
-                                                  .sourceUrl
-                                              : "images/placeholder.png"
-                                          }
-                                        />
+                                        {item?.node?.featuredImage?.node
+                                          ?.sourceUrl && (
+                                          <Image
+                                            width={630}
+                                            height={410}
+                                            className="img-fluid w-100"
+                                            src={
+                                              item?.node?.featuredImage?.node
+                                                .sourceUrl
+                                                ? item?.node?.featuredImage
+                                                    ?.node.sourceUrl
+                                                : "images/placeholder.png"
+                                            }
+                                          />
+                                        )}
                                       </div>
                                       <div className="gradient_wall">
                                         <Link
@@ -554,16 +558,19 @@ function PortfolioGallery({
                                   >
                                     <div className="gif_placer">
                                       <div className="gif_box">
-                                        <img
-                                          className="img-fluid w-100"
-                                          src={
-                                            item.node.featuredImage.node
-                                              .sourceUrl
-                                              ? item.node.featuredImage.node
-                                                  .sourceUrl
-                                              : "images/placeholder.png"
-                                          }
-                                        />
+                                        {item?.node?.featuredImage?.node
+                                          ?.sourceUrl && (
+                                          <img
+                                            className="img-fluid w-100"
+                                            src={
+                                              item?.node?.featuredImage?.node
+                                                .sourceUrl
+                                                ? item?.node?.featuredImage
+                                                    ?.node.sourceUrl
+                                                : "images/placeholder.png"
+                                            }
+                                          />
+                                        )}
                                       </div>
                                       <div className="gradient_wall">
                                         <Link

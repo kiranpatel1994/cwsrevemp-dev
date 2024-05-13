@@ -1,5 +1,30 @@
 import GraphAPI from "../services/graphQL";
+import { useEffect, useState } from "react";
 const WebsiteMaintenance = () => {
+  const [stripeScriptLoaded, setStripeScriptLoaded] = useState(false);
+  useEffect(() => {
+    const loadStripeScript = async () => {
+      const stripeScript = document.createElement("script");
+      stripeScript.src = "https://js.stripe.com/v3/pricing-table.js";
+      stripeScript.async = true;
+      stripeScript.onload = () => {
+        setStripeScriptLoaded(true);
+      };
+      document.body.appendChild(stripeScript);
+    };
+
+    loadStripeScript();
+
+    return () => {
+      // Clean up: remove the Stripe script when the component unmounts
+      const stripeScript = document.querySelector(
+        'script[src="https://js.stripe.com/v3/pricing-table.js"]'
+      );
+      if (stripeScript) {
+        document.body.removeChild(stripeScript);
+      }
+    };
+  }, []);
   return (
     <>
       <main className="wesite_maintenance position-relative zindex-2">
@@ -19,14 +44,14 @@ const WebsiteMaintenance = () => {
         </section>
         <section className="maintenance-table">
           <div className="container">
-            <script
-              async
-              src="https://js.stripe.com/v3/pricing-table.js"
-            ></script>
-            <stripe-pricing-table
-              pricing-table-id="prctbl_1OHxJWJWYUGeMyAR9deBXLLT"
-              publishable-key="pk_live_cnlOmSdLR4yX7Wp8N2RKj4yk"
-            ></stripe-pricing-table>
+            {stripeScriptLoaded ? (
+              <stripe-pricing-table
+                pricing-table-id="prctbl_1OHxJWJWYUGeMyAR9deBXLLT"
+                publishable-key="pk_live_cnlOmSdLR4yX7Wp8N2RKj4yk"
+              ></stripe-pricing-table>
+            ) : (
+              <p>Loading...</p>
+            )}
           </div>
         </section>
       </main>
