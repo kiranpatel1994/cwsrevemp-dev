@@ -34,7 +34,7 @@ export default function PrivacyPolicyGenerator() {
     if (name === 'companyPhone') {
       value = value.replace(/\D/g, '');
       if (value.length > 0) {
-        value = `(${value.slice(0,3)}) ${value.slice(3,6)}-${value.slice(6,10)}`;
+        value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
       }
     }
 
@@ -228,106 +228,112 @@ export default function PrivacyPolicyGenerator() {
   };
 
   return (
-    <Box sx={{ maxWidth: 800, margin: 'auto', padding: 2 }}>
-      <Card sx={{ marginBottom: 2 }}>
-        <CardHeader title="SMS/MMS Consent and Privacy Policy Generator" />
-        <CardContent>
-          <Box component="form" noValidate autoComplete="off" sx={{ '& .MuiTextField-root': { marginBottom: 2 } }}>
-            <TextField
-              fullWidth
-              id="websiteUrl"
-              name="websiteUrl"
-              label="Website URL"
-              value={formData.websiteUrl}
-              onChange={handleInputChange}
-              onBlur={handleWebsiteUrlBlur}
-              placeholder="https://www.example.com"
-            />
-            <TextField
-              fullWidth
-              id="companyName"
-              name="companyName"
-              label="Company Name"
-              value={formData.companyName}
-              onChange={handleInputChange}
-              placeholder="Your Company Name"
-            />
-            <TextField
-              fullWidth
-              id="companyPhone"
-              name="companyPhone"
-              label="Company Phone Number"
-              value={formData.companyPhone}
-              onChange={handleInputChange}
-              placeholder="(888) 888-8888"
-              inputProps={{ maxLength: 14 }}
-            />
-            <TextField
-              fullWidth
-              id="companyEmail"
-              name="companyEmail"
-              label="Company Email"
-              value={formData.companyEmail}
-              onChange={handleInputChange}
-              placeholder="info@example.com"
-              type="email"
-            />
-            <Button variant="contained" onClick={generatePolicy} sx={{ marginTop: 2 }}>
-              Generate Policy
-            </Button>
-          </Box>
-        </CardContent>
-      </Card>
+    <main className="pb-5 mb-lg-5">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-lg-8">
+            <div className="talkBanner position-relative privacyBanner">
+              <div className="form_container">
+                <div class="text-center">
+                  <h2>SMS/MMS Consent and Privacy Policy Generator</h2>
+                </div>
+                <Box component="form" noValidate autoComplete="off" sx={{ '& .MuiTextField-root': { marginBottom: 2 } }}>
+                  <TextField
+                    fullWidth
+                    id="websiteUrl"
+                    name="websiteUrl"
+                    // label="Website URL"
+                    value={formData.websiteUrl}
+                    onChange={handleInputChange}
+                    onBlur={handleWebsiteUrlBlur}
+                    placeholder="Website URL"
+                  />
+                  <TextField
+                    fullWidth
+                    id="companyName"
+                    name="companyName"
+                    // label="Company Name"
+                    value={formData.companyName}
+                    onChange={handleInputChange}
+                    placeholder="Your Company Name"
+                  />
+                  <TextField
+                    fullWidth
+                    id="companyPhone"
+                    name="companyPhone"
+                    // label="Company Phone Number"
+                    value={formData.companyPhone}
+                    onChange={handleInputChange}
+                    placeholder="Company Phone Number"
+                    inputProps={{ maxLength: 14 }}
+                  />
+                  <TextField
+                    fullWidth
+                    id="companyEmail"
+                    name="companyEmail"
+                    // label="Company Email"
+                    value={formData.companyEmail}
+                    onChange={handleInputChange}
+                    placeholder="Company Email"
+                    type="email"
+                  />
+                  <Button variant="contained" onClick={generatePolicy}>
+                    Generate Policy
+                  </Button>
+                </Box>
 
-      {generatedPolicy && (
-        <>
-          <Card sx={{ marginBottom: 2 }}>
-            <CardHeader title="Generated Policy" />
-            <CardContent>
-              <Box 
-                ref={policyRef}
-                sx={{ 
-                  maxHeight: '60vh', 
-                  overflow: 'auto', 
-                  bgcolor: 'background.paper', 
-                  p: 2, 
-                  borderRadius: 1,
-                  '& h1': { fontSize: '1.5rem', fontWeight: 'bold', mt: 2, mb: 1 },
-                  '& h2': { fontSize: '1.2rem', fontWeight: 'bold', mt: 2, mb: 1 },
-                  '& p': { mb: 1 },
-                  '& ul': { pl: 2, mb: 1 }
-                }}
-              />
-              <Box sx={{ mt: 2, display: 'flex', gap: 2 }}>
-                <Button 
-                  variant="outlined" 
-                  startIcon={<ContentCopyIcon />}
-                  onClick={() => copyToClipboard(policyRef.current?.innerText || '', "The formatted policy has been copied to your clipboard.")}
-                >
-                  Copy to Clipboard
-                </Button>
-                <Button 
-                  variant="outlined" 
-                  startIcon={<DownloadIcon />}
-                  onClick={downloadAsHtml}
-                >
-                  Download as HTML
-                </Button>
-              </Box>
-            </CardContent>
-          </Card>
-        </>
-      )}
+                {generatedPolicy && (
+                  <div className="generatedPolicy mt-5">
+                    <div class="text-center">
+                      <h2>Generated Policy</h2>
+                    </div>
+                    <Box
+                      ref={policyRef}
+                      sx={{
+                        maxHeight: '60vh',
+                        overflow: 'auto',
+                        bgcolor: 'background.paper',
+                        p: 2,
+                        borderRadius: 1,
+                        '& h1': { fontSize: '1.5rem', fontWeight: 'bold', mt: 2, mb: 1, color: '#000' },
+                        '& h2': { fontSize: '1.2rem', fontWeight: 'bold', mt: 2, mb: 1, color: '#000' },
+                        '& p': { mb: 1, color: '#000' },
+                        '& ul': { pl: 2, mb: 1, color: '#000' }
+                      }}
+                    />
+                    <div className="d-flex mt-3">
+                      <Button
+                        variant="outlined"
+                        startIcon={<ContentCopyIcon />}
+                        onClick={() => copyToClipboard(policyRef.current?.innerText || '', "The formatted policy has been copied to your clipboard.")}
+                      >
+                        Copy to Clipboard
+                      </Button>
+                      <Button
+                        variant="outlined"
+                        startIcon={<DownloadIcon />}
+                        onClick={downloadAsHtml}
+                      >
+                        Download as HTML
+                      </Button>
+                    </div>
+                  </div>
+                )}
 
-      <Snackbar 
-        open={snackbar.open} 
-        autoHideDuration={6000} 
-        onClose={() => setSnackbar({ ...snackbar, open: false })}
-      >
-        <Alert onClose={() => setSnackbar({ ...snackbar, open: false })} severity={snackbar.severity} sx={{ width: '100%' }}>
-          {snackbar.message}
-        </Alert>
-      </Snackbar>
-    </Box>
+                <Snackbar
+                  open={snackbar.open}
+                  autoHideDuration={6000}
+                  onClose={() => setSnackbar({ ...snackbar, open: false })}
+                >
+                  <Alert onClose={() => setSnackbar({ ...snackbar, open: false })} severity={snackbar.severity} sx={{ width: '100%' }}>
+                    {snackbar.message}
+                  </Alert>
+                </Snackbar>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }

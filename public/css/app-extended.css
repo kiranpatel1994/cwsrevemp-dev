@@ -3,8 +3,7 @@
     display: none;
   }
 
-  .navbar .nav-item:hover .nav-link {
-  }
+  .navbar .nav-item:hover .nav-link {}
 
   .navbar .nav-item:hover .dropdown-menu {
     display: block;
@@ -60,14 +59,10 @@ header .nav-item .nav-link.dropdown-toggle::after {
   position: absolute;
   left: 0;
   top: 0;
-  background: transparent
-    linear-gradient(
-      180deg,
+  background: transparent linear-gradient(180deg,
       #07042a 10%,
       rgba(253, 182, 39, 0.4) 70%,
-      #fdb627 100%
-    )
-    0% 0% no-repeat;
+      #fdb627 100%) 0% 0% no-repeat;
   z-index: 3;
 }
 
@@ -100,7 +95,7 @@ header .nav-item .nav-link.dropdown-toggle::after {
   border: 1px solid transparent;
 }
 
-.slider-area .raw-card > * {
+.slider-area .raw-card>* {
   z-index: 2;
   position: relative;
 }
@@ -446,11 +441,11 @@ header .nav-item .nav-link.dropdown-toggle::after {
   border-radius: 50%;
 }
 
-.atmos-faces > div {
+.atmos-faces>div {
   position: absolute;
 }
 
-.atmos-faces > div::before {
+.atmos-faces>div::before {
   content: "";
   position: absolute;
   left: 0;
@@ -462,7 +457,7 @@ header .nav-item .nav-link.dropdown-toggle::after {
   background: linear-gradient(#ddffe7 4.12%, #ecbaf0 100%);
 }
 
-.atmos-faces > div img {
+.atmos-faces>div img {
   padding: 5px;
   z-index: 2;
   position: relative;
@@ -1493,12 +1488,7 @@ footer .ft-child:last-child {
   display: none;
 }
 
-.eCommerce
-  .banner__overlap
-  .ecom_development_container
-  ~ .bottom_shape
-  .floor-2
-  .dt_2 {
+.eCommerce .banner__overlap .ecom_development_container~.bottom_shape .floor-2 .dt_2 {
   display: none;
 }
 
@@ -1669,7 +1659,7 @@ body.solutions {
   width: 164px;
 }
 
-.banner__overlap .bottom_shape .floor-1 .torusLandingLottie > div {
+.banner__overlap .bottom_shape .floor-1 .torusLandingLottie>div {
   transform: scale(2);
 }
 
@@ -1729,7 +1719,7 @@ body.solutions {
   width: 640px;
 }
 
-.hosting .cloudServer > div {
+.hosting .cloudServer>div {
   transform: scale(1.65);
 }
 
@@ -1769,7 +1759,7 @@ body.hosting {
   top: 48%;
 }
 
-.social-media-management .floor-1 .torusLandingLottie > div {
+.social-media-management .floor-1 .torusLandingLottie>div {
   transform: scale(2);
 }
 
@@ -2318,10 +2308,7 @@ body.hosting {
   padding-top: 120px;
 }
 
-.questionnaireForm
-  .form_container
-  #field_undefined_7
-  div:not(:last-child):after {
+.questionnaireForm .form_container #field_undefined_7 div:not(:last-child):after {
   content: "";
   position: absolute;
   left: 0;
@@ -2447,17 +2434,13 @@ body.hosting {
   grid-area: 5 / 1 / 6 / 2;
 }
 
-.questionnaireForm .form_container .gfield input[type="checkbox"] ~ label,
-.questionnaireForm .form_container .gfield input[type="radio"] ~ label {
+.questionnaireForm .form_container .gfield input[type="checkbox"]~label,
+.questionnaireForm .form_container .gfield input[type="radio"]~label {
   padding-left: 30px;
 }
 
-.questionnaireForm
-  .form_container
-  .gfield
-  input[type="checkbox"]
-  ~ label::before,
-.questionnaireForm .form_container .gfield input[type="radio"] ~ label::before {
+.questionnaireForm .form_container .gfield input[type="checkbox"]~label::before,
+.questionnaireForm .form_container .gfield input[type="radio"]~label::before {
   content: "";
   position: absolute;
   left: 0;
@@ -2467,16 +2450,8 @@ body.hosting {
   border: 1px solid #fff;
 }
 
-.questionnaireForm
-  .form_container
-  .gfield
-  input[type="checkbox"]:checked
-  ~ label::after,
-.questionnaireForm
-  .form_container
-  .gfield
-  input[type="radio"]:checked
-  ~ label::after {
+.questionnaireForm .form_container .gfield input[type="checkbox"]:checked~label::after,
+.questionnaireForm .form_container .gfield input[type="radio"]:checked~label::after {
   content: "";
   position: absolute;
   left: 4px;
@@ -2486,12 +2461,8 @@ body.hosting {
   background-color: #fff;
 }
 
-.questionnaireForm .form_container .gfield input[type="radio"] ~ label::before,
-.questionnaireForm
-  .form_container
-  .gfield
-  input[type="radio"]:checked
-  ~ label::after {
+.questionnaireForm .form_container .gfield input[type="radio"]~label::before,
+.questionnaireForm .form_container .gfield input[type="radio"]:checked~label::after {
   border-radius: 50%;
 }
 
@@ -2501,6 +2472,72 @@ body.hosting {
   padding-bottom: 80px;
   position: relative;
   z-index: 9;
+}
+
+.privacyBanner .form_container fieldset {
+  border: none;
+}
+
+.privacyBanner .form_container input,
+.privacyBanner .form_container textarea {
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Gilroy";
+  margin: 0;
+}
+
+.privacyBanner .form_container .MuiFormLabel-root {
+  font-family: "Gilroy";
+  line-height: 1;
+  font-size: 16px;
+}
+
+.privacyBanner .form_container .MuiButtonBase-root {
+  background-color: #1d2052;
+  border: 0;
+  border-radius: 9px;
+  color: #fff;
+  font-family: "gilroy-bolduploaded_file";
+  font-size: 18px;
+  padding: 12px 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 148px;
+  margin: 0 auto;
+}
+
+.privacyBanner .form_container .MuiButtonBase-root::before {
+  content: "";
+  background: url(/_next/static/media/img-starsy.6ff9aec1.png) no-repeat center;
+  height: 32px;
+  width: 30px;
+  position: absolute;
+  right: 17%;
+  top: 12px;
+  opacity: 0;
+  transition: 0.3s all;
+}
+
+.privacyBanner .form_container .MuiButtonBase-root::after {
+  content: "";
+  background: url(/_next/static/media/img-stars.66f50218.png) no-repeat center;
+  height: 32px;
+  width: 30px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.generatedPolicy h2 {
+  color: #000;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.generatedPolicy p em {
+  color: #000;
+  font-family: "Gilroy";
 }
 
 @media screen and (max-width: 1699px) {
@@ -3102,7 +3139,7 @@ body.hosting {
     display: none;
   }
 
-  header .nav-item + .nav-item {
+  header .nav-item+.nav-item {
     margin-left: 0;
   }
 
@@ -3672,12 +3709,8 @@ body.hosting {
     margin-bottom: 50px;
   }
 
-  .printed-marketing
-    .webApp_inner
-    .ecom_development_container.design_development_container::after,
-  .logo-branding
-    .webApp_inner
-    .ecom_development_container.design_development_container::after {
+  .printed-marketing .webApp_inner .ecom_development_container.design_development_container::after,
+  .logo-branding .webApp_inner .ecom_development_container.design_development_container::after {
     top: 7%;
     right: -90px;
     width: 300px;
@@ -5024,11 +5057,7 @@ body.hosting {
     justify-content: flex-start;
   }
 
-  .property-management
-    .work__efficient
-    .benifit__inner
-    .list-inline-item
-    .ffk_btn,
+  .property-management .work__efficient .benifit__inner .list-inline-item .ffk_btn,
   .sociaManagement .gl_area .ffk_btn,
   .printed-marketing .webApp_inner .gl_area .ffk_btn,
   .logo-branding .webApp_inner .gl_area .ffk_btn {
@@ -5036,12 +5065,7 @@ body.hosting {
     border-radius: 24px;
   }
 
-  .property-management
-    .work__efficient
-    .benifit__inner
-    .list-inline-item
-    .ffk_btn
-    span,
+  .property-management .work__efficient .benifit__inner .list-inline-item .ffk_btn span,
   .sociaManagement .gl_area .ffk_btn span,
   .printed-marketing .webApp_inner .gl_area .ffk_btn span,
   .logo-branding .webApp_inner .gl_area .ffk_btn span {
@@ -5145,16 +5169,8 @@ body.hosting {
     line-height: 1.4 !important;
   }
 
-  .printed-marketing
-    .logoBrand_multi
-    .time_acquainted
-    .why__us:first-child
-    .automate_work::after,
-  .logo-branding
-    .logoBrand_multi
-    .time_acquainted
-    .why__us:first-child
-    .automate_work::after {
+  .printed-marketing .logoBrand_multi .time_acquainted .why__us:first-child .automate_work::after,
+  .logo-branding .logoBrand_multi .time_acquainted .why__us:first-child .automate_work::after {
     display: none;
   }
 
@@ -5588,8 +5604,8 @@ body.hosting {
     font-size: 14px;
   }
 
-  .questionnaireForm .form_container .gfield input[type="checkbox"] ~ label,
-  .questionnaireForm .form_container .gfield input[type="radio"] ~ label {
+  .questionnaireForm .form_container .gfield input[type="checkbox"]~label,
+  .questionnaireForm .form_container .gfield input[type="radio"]~label {
     font-size: 14px;
   }
 }
