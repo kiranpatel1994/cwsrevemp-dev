@@ -94,9 +94,9 @@ function PortfolioGallery({
   };
 
   const handleSearch = async (e) => {
-    const searchVal = e.target.value.trim();
+    const searchVal = e.target.value
     setSearchText(searchVal);
-    searchPortfolio(searchVal, justPortfolios, portfolios?.edges, "all");
+    searchPortfolio(searchVal.trim(), justPortfolios, portfolios?.edges, "all");
   };
 
   const handleAllPortfolio = () => {
