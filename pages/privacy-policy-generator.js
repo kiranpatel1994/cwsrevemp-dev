@@ -290,8 +290,8 @@ export default function PrivacyPolicyGenerator() {
             <div className="generatedPolicyouter mt-5">
               {generatedPolicy && (
                 <div className="generatedPolicy">
-                  <div class="text-center">
-                    <h2>Generated Policy</h2>
+                  <div class="text-center title">
+                    <h2 className='text-white h1 mb-4'>Generated Policy</h2>
                   </div>
                   <Box
                     ref={policyRef}

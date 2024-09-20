@@ -2544,6 +2544,10 @@ body.hosting {
   margin-top: 0;
 }
 
+.generatedPolicy .title h2{
+  font-size: 2rem;
+}
+
 .generatedPolicy h2 {
   color: #000;
   font-size: 1.2rem;
