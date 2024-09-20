@@ -2492,7 +2492,8 @@ body.hosting {
   font-size: 16px;
 }
 
-.privacyBanner .form_container .MuiButtonBase-root {
+.privacyBanner .form_container .generatorForm .MuiButtonBase-root,
+.generatedPolicy .MuiButtonBase-root {
   background-color: #1d2052;
   border: 0;
   border-radius: 9px;
@@ -2508,7 +2509,11 @@ body.hosting {
   margin: 0 auto;
 }
 
-.privacyBanner .form_container .MuiButtonBase-root::before {
+.generatedPolicy .MuiButtonBase-root{
+  margin: 0 0 0 15px;
+}
+
+.privacyBanner .form_container .generatorForm .MuiButtonBase-root::before {
   content: "";
   background: url(/_next/static/media/img-starsy.6ff9aec1.png) no-repeat center;
   height: 32px;
@@ -2520,7 +2525,7 @@ body.hosting {
   transition: 0.3s all;
 }
 
-.privacyBanner .form_container .MuiButtonBase-root::after {
+.privacyBanner .form_container .generatorForm .MuiButtonBase-root::after {
   content: "";
   background: url(/_next/static/media/img-stars.66f50218.png) no-repeat center;
   height: 32px;
@@ -2529,10 +2534,28 @@ body.hosting {
   margin-left: 10px;
 }
 
+.generatedPolicy h1{
+  font-size: 2rem;
+  margin: 40px 0 15px;
+  color: #000;
+}
+
+.generatedPolicy h1:first-child{
+  margin-top: 0;
+}
+
 .generatedPolicy h2 {
   color: #000;
   font-size: 1.2rem;
   margin-bottom: 8px;
+  font-family: "gilroy-semibolduploaded_file";
+}
+
+.generatedPolicy p,
+.generatedPolicy ul li{
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #000;
 }
 
 .generatedPolicy p em {

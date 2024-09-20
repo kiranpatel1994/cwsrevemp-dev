@@ -237,7 +237,7 @@ export default function PrivacyPolicyGenerator() {
                 <div class="text-center">
                   <h2>SMS/MMS Consent and Privacy Policy Generator</h2>
                 </div>
-                <Box component="form" noValidate autoComplete="off" sx={{ '& .MuiTextField-root': { marginBottom: 2 } }}>
+                <Box className='generatorForm' component="form" noValidate autoComplete="off" sx={{ '& .MuiTextField-root': { marginBottom: 2 } }}>
                   <TextField
                     fullWidth
                     id="websiteUrl"
@@ -281,58 +281,56 @@ export default function PrivacyPolicyGenerator() {
                     Generate Policy
                   </Button>
                 </Box>
-
-                {generatedPolicy && (
-                  <div className="generatedPolicy mt-5">
-                    <div class="text-center">
-                      <h2>Generated Policy</h2>
-                    </div>
-                    <Box
-                      ref={policyRef}
-                      sx={{
-                        maxHeight: '60vh',
-                        overflow: 'auto',
-                        bgcolor: 'background.paper',
-                        p: 2,
-                        borderRadius: 1,
-                        '& h1': { fontSize: '1.5rem', fontWeight: 'bold', mt: 2, mb: 1, color: '#000' },
-                        '& h2': { fontSize: '1.2rem', fontWeight: 'bold', mt: 2, mb: 1, color: '#000' },
-                        '& p': { mb: 1, color: '#000' },
-                        '& ul': { pl: 2, mb: 1, color: '#000' }
-                      }}
-                    />
-                    <div className="d-flex mt-3">
-                      <Button
-                        variant="outlined"
-                        startIcon={<ContentCopyIcon />}
-                        onClick={() => copyToClipboard(policyRef.current?.innerText || '', "The formatted policy has been copied to your clipboard.")}
-                      >
-                        Copy to Clipboard
-                      </Button>
-                      <Button
-                        variant="outlined"
-                        startIcon={<DownloadIcon />}
-                        onClick={downloadAsHtml}
-                      >
-                        Download as HTML
-                      </Button>
-                    </div>
-                  </div>
-                )}
-
-                <Snackbar
-                  open={snackbar.open}
-                  autoHideDuration={6000}
-                  onClose={() => setSnackbar({ ...snackbar, open: false })}
-                >
-                  <Alert onClose={() => setSnackbar({ ...snackbar, open: false })} severity={snackbar.severity} sx={{ width: '100%' }}>
-                    {snackbar.message}
-                  </Alert>
-                </Snackbar>
               </div>
             </div>
           </div>
         </div>
+        <div className="row justify-content-center">
+          <div className="col-lg-12">
+            <div className="generatedPolicyouter mt-5">
+              {generatedPolicy && (
+                <div className="generatedPolicy">
+                  <div class="text-center">
+                    <h2>Generated Policy</h2>
+                  </div>
+                  <Box
+                    ref={policyRef}
+                    sx={{
+                      bgcolor: 'background.paper',
+                      p: 4,
+                      borderRadius: 5
+                    }}
+                  />
+                  <div className="d-flex justify-content-end mt-3">
+                    <Button
+                      variant="outlined"
+                      startIcon={<ContentCopyIcon />}
+                      onClick={() => copyToClipboard(policyRef.current?.innerText || '', "The formatted policy has been copied to your clipboard.")}
+                    >
+                      Copy to Clipboard
+                    </Button>
+                    <Button
+                      variant="outlined"
+                      startIcon={<DownloadIcon />}
+                      onClick={downloadAsHtml}
+                    >
+                      Download as HTML
+                    </Button>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+        <Snackbar
+          open={snackbar.open}
+          autoHideDuration={6000}
+          onClose={() => setSnackbar({ ...snackbar, open: false })}
+        >
+          <Alert onClose={() => setSnackbar({ ...snackbar, open: false })} severity={snackbar.severity} sx={{ width: '100%' }}>
+            {snackbar.message}
+          </Alert>
+        </Snackbar>
       </div>
     </main>
   );
