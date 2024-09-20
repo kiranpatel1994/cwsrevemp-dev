@@ -158,8 +158,8 @@ export default function WebsiteDesignDev({ data, themeOptions, form }) {
           <div className="row g-0">
             <div className="col-12">
               <div className="banner_content_info">
-                {/* <h1>Web Design and Development </h1> */}
                 <h1>Creative Web Services </h1>
+                <h1>Web Design and Development </h1>
                 {data.bannerSubtitle && (
                   <h2 className="sub_title play_fair-ttl mb-4 pb-2">
                     {data.bannerSubtitle}
